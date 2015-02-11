@@ -8,16 +8,15 @@
 #ifndef BITCOIN_CHAINPARAMS_H
 #define BITCOIN_CHAINPARAMS_H
 
+#include "uint256.h"
 #include "chainparamsbase.h"
 #include "checkpoints.h"
+#include "consensus/params.h"
 #include "primitives/block.h"
 #include "protocol.h"
-#include "uint256.h"
 
 #include "libzerocoin/Params.h"
 #include <vector>
-
-typedef unsigned char MessageStartChars[MESSAGE_START_SIZE];
 
 struct CDNSSeedData {
     std::string name, host;
@@ -44,19 +43,20 @@ public:
 
         MAX_BASE58_TYPES
     };
-
-    const uint256& HashGenesisBlock() const { return hashGenesisBlock; }
-    const MessageStartChars& MessageStart() const { return pchMessageStart; }
+  const Consensus::Params& GetConsensus() const { return consensus; }
+    const uint256& HashGenesisBlock() const { return consensus.hashGenesisBlock; }
+  const CMessageHeader::MessageStartChars& MessageStart() const { return pchMessageStart; }
     const std::vector<unsigned char>& AlertKey() const { return vAlertPubKey; }
     int GetDefaultPort() const { return nDefaultPort; }
-    const uint256& ProofOfWorkLimit() const { return bnProofOfWorkLimit; }
-    const uint256& ProofOfStakeLimit() const { return bnProofOfStakeLimit; }
-    int SubsidyHalvingInterval() const { return nSubsidyHalvingInterval; }
+    const uint256& ProofOfWorkLimit() const { return consensus.powLimit; }
+    const uint256& ProofOfStakeLimit() const { return consensus.stakeLimit; }
+    int SubsidyHalvingInterval() const { return consensus.nSubsidyHalvingInterval; }
     /** Used to check majorities for block version upgrade */
-    int EnforceBlockUpgradeMajority() const { return nEnforceBlockUpgradeMajority; }
-    int RejectBlockOutdatedMajority() const { return nRejectBlockOutdatedMajority; }
-    int ToCheckBlockUpgradeMajority() const { return nToCheckBlockUpgradeMajority; }
-    int MaxReorganizationDepth() const { return nMaxReorganizationDepth; }
+    int EnforceBlockUpgradeMajority() const { return consensus.nEnforceBlockUpgradeMajority; }
+  int RejectBlockOutdatedMajority() const { return consensus.nRejectBlockOutdatedMajority; }
+  int ToCheckBlockUpgradeMajority() const { return consensus.nToCheckBlockUpgradeMajority; }
+
+  int MaxReorganizationDepth() const { return consensus.nMaxReorganizationDepth; }
 
     /** Used if GenerateBitcoins is called with a negative number of threads */
     int DefaultMinerThreads() const { return nMinerThreads; }
@@ -68,33 +68,33 @@ public:
     /** Default value for -checkmempool and -checkblockindex argument */
     bool DefaultConsistencyChecks() const { return fDefaultConsistencyChecks; }
     /** Allow mining of a min-difficulty block */
-    bool AllowMinDifficultyBlocks() const { return fAllowMinDifficultyBlocks; }
+    bool AllowMinDifficultyBlocks() const { return consensus.fAllowMinDifficultyBlocks; }
     /** Skip proof-of-work check: allow mining of any difficulty block */
-    bool SkipProofOfWorkCheck() const { return fSkipProofOfWorkCheck; }
+    bool SkipProofOfWorkCheck() const { return consensus.fSkipProofOfWorkCheck; }
     /** Make standard checks */
     bool RequireStandard() const { return fRequireStandard; }
     int64_t TargetTimespanV1() const {
-            return nTargetTimespanV1;
+            return consensus.nTargetTimespanV1;
     }
     int64_t TargetSpacingV1() const {
-            return nTargetSpacingV1;
+            return consensus.nTargetSpacingV1;
     }
     int64_t IntervalV1() const {
-            return nTargetTimespanV1 / nTargetSpacingV1;
+            return consensus.nTargetTimespanV1 / consensus.nTargetSpacingV1;
         }
     int64_t TargetTimespanV2() const {
-        return nTargetTimespanV2;
+        return consensus.nTargetTimespanV2;
     }
     int64_t TargetSpacingV2() const {
-        return nTargetSpacingV2;
+        return consensus.nTargetSpacingV2;
     }
     int64_t IntervalV2() const {
-        return nTargetTimespanV2 / nTargetSpacingV2;
+        return consensus.nTargetTimespanV2 / consensus.nTargetSpacingV2;
     }
-    int COINBASE_MATURITY() const { return nMaturity; }
-    CAmount MaxMoneyOut() const { return nMaxMoneyOut; }
+    int COINBASE_MATURITY() const { return consensus.nMaturity; }
+    CAmount MaxMoneyOut() const { return consensus.nMaxMoneyOut; }
     /** The masternode count that we will allow the see-saw reward payments to be off by */
-    int MasternodeCountDrift() const { return nMasternodeCountDrift; }
+    int MasternodeCountDrift() const { return consensus.nMasternodeCountDrift; }
     /** Make miner stop after a block is found. In RPC, don't return until nGenProcLimit blocks are generated */
     bool MineBlocksOnDemand() const { return fMineBlocksOnDemand; }
     /** In the future use NetworkIDString() for RPC fields */
@@ -105,68 +105,40 @@ public:
     const std::vector<unsigned char>& Base58Prefix(Base58Type type) const { return base58Prefixes[type]; }
     const std::vector<CAddress>& FixedSeeds() const { return vFixedSeeds; }
     virtual const Checkpoints::CCheckpointData& Checkpoints() const = 0;
-    int PoolMaxTransactions() const { return nPoolMaxTransactions; }
+    int PoolMaxTransactions() const { return consensus.nPoolMaxTransactions; }
 
     /** Spork key and Masternode Handling **/
-    std::string SporkKey() const { return strSporkKey; }
-//    std::string SporkKeyOld() const { return strSporkKeyOld; }
-//    int64_t NewSporkStart() const { return nEnforceNewSporkKey; }
-//    int64_t RejectOldSporkKey() const { return nRejectOldSporkKey; }
-    std::string ObfuscationPoolDummyAddress() const { return strObfuscationPoolDummyAddress; }
-    int64_t StartMasternodePayments() const { return nStartMasternodePayments; }
-    int64_t Budget_Fee_Confirmations() const { return nBudget_Fee_Confirmations; }
+    std::string SporkKey() const { return consensus.strSporkKey; }
+    std::string ObfuscationPoolDummyAddress() const { return consensus.strObfuscationPoolDummyAddress; }
+    int64_t StartMasternodePayments() const { return consensus.nStartMasternodePayments; }
+    int64_t Budget_Fee_Confirmations() const { return consensus.nBudget_Fee_Confirmations; }
 
     CBaseChainParams::Network NetworkID() const { return networkID; }
 
     /** Zerocoin **/
-    std::string Zerocoin_Modulus() const { return zerocoinModulus; }
+    std::string Zerocoin_Modulus() const { return consensus.zerocoinModulus; }
     libzerocoin::ZerocoinParams* Zerocoin_Params(bool useModulusV1) const;
-    int Zerocoin_MaxSpendsPerTransaction() const { return nMaxZerocoinSpendsPerTransaction; }
-    CAmount Zerocoin_MintFee() const { return nMinZerocoinMintFee; }
-    int Zerocoin_MintRequiredConfirmations() const { return nMintRequiredConfirmations; }
-    int Zerocoin_RequiredAccumulation() const { return nRequiredAccumulation; }
-    int Zerocoin_DefaultSpendSecurity() const { return nDefaultSecurityLevel; }
-    int Zerocoin_HeaderVersion() const { return nZerocoinHeaderVersion; }
-    int Zerocoin_RequiredStakeDepth() const { return nZerocoinRequiredStakeDepth; }
+    int Zerocoin_MaxSpendsPerTransaction() const { return consensus.nMaxZerocoinSpendsPerTransaction; }
+    CAmount Zerocoin_MintFee() const { return consensus.nMinZerocoinMintFee; }
+    int Zerocoin_MintRequiredConfirmations() const { return consensus.nMintRequiredConfirmations; }
+    int Zerocoin_RequiredAccumulation() const { return consensus.nRequiredAccumulation; }
+    int Zerocoin_DefaultSpendSecurity() const { return consensus.nDefaultSecurityLevel; }
+    int Zerocoin_HeaderVersion() const { return consensus.nZerocoinHeaderVersion; }
+    int Zerocoin_RequiredStakeDepth() const { return consensus.nZerocoinRequiredStakeDepth; }
 
     /** Height or Time Based Activations **/
-//    int ModifierUpgradeBlock() const { return nModifierUpdateBlock; }
-    int LAST_POW_BLOCK() const { return nLastPOWBlock; }
-//    int Zerocoin_StartHeight() const { return nZerocoinStartHeight; }
-    int NEW_PROTOCOLS_STARTHEIGHT() const { return nNewProtocolStartHeight; }
-    int NEW_PROTOCOLS_STARTTIME() const { return nNewProtocolStartTime; }
-//    int Zerocoin_Block_EnforceSerialRange() const { return nBlockEnforceSerialRange; }
-//    int Zerocoin_Block_RecalculateAccumulators() const { return nBlockRecalculateAccumulators; }
-//    int Zerocoin_Block_FirstFraudulent() const { return nBlockFirstFraudulent; }
-//    int Zerocoin_Block_LastGoodCheckpoint() const { return nBlockLastGoodCheckpoint; }
-//    int Zerocoin_StartTime() const { return nZerocoinStartTime; }
-//    int Block_Enforce_Invalid() const { return nBlockEnforceInvalidUTXO; }
-//    int Zerocoin_Block_V2_Start() const { return nBlockZerocoinV2; }
-//    CAmount InvalidAmountFiltered() const { return nInvalidAmountFiltered; };
+    int LAST_POW_BLOCK() const { return consensus.nLastPOWBlock; }
+    int NEW_PROTOCOLS_STARTHEIGHT() const { return consensus.nNewProtocolStartHeight; }
+    int NEW_PROTOCOLS_STARTTIME() const { return consensus.nNewProtocolStartTime; }
 
 protected:
     CChainParams() {}
 
-    uint256 hashGenesisBlock;
-    MessageStartChars pchMessageStart;
+    Consensus::Params consensus;
+    CMessageHeader::MessageStartChars pchMessageStart;
     //! Raw pub key bytes for the broadcast alert signing key.
     std::vector<unsigned char> vAlertPubKey;
     int nDefaultPort;
-    uint256 bnProofOfWorkLimit;
-    int nMaxReorganizationDepth;
-    int nSubsidyHalvingInterval;
-    int nEnforceBlockUpgradeMajority;
-    int nRejectBlockOutdatedMajority;
-    int nToCheckBlockUpgradeMajority;
-    int64_t nTargetTimespanV1;
-    int64_t nTargetTimespanV2;
-    int64_t nTargetSpacingV1;
-    int64_t nTargetSpacingV2;
-    int nLastPOWBlock;
-    int nMasternodeCountDrift;
-    int nMaturity;
-//    int nModifierUpdateBlock;
-    CAmount nMaxMoneyOut;
     int nMinerThreads;
     std::vector<CDNSSeedData> vSeeds;
     std::vector<unsigned char> base58Prefixes[MAX_BASE58_TYPES];
@@ -175,43 +147,12 @@ protected:
     CBlock genesis;
     std::vector<CAddress> vFixedSeeds;
     bool fMiningRequiresPeers;
-    bool fAllowMinDifficultyBlocks;
     bool fDefaultConsistencyChecks;
+    bool fDefaultCheckMemPool;
     bool fRequireStandard;
     bool fMineBlocksOnDemand;
-    bool fSkipProofOfWorkCheck;
     bool fTestnetToBeDeprecatedFieldRPC;
     bool fHeadersFirstSyncingActive;
-    int nPoolMaxTransactions;
-    std::string strSporkKey;
-//    std::string strSporkKeyOld;
-//    int64_t nEnforceNewSporkKey;
-//    int64_t nRejectOldSporkKey;
-    std::string strObfuscationPoolDummyAddress;
-    int64_t nStartMasternodePayments;
-    std::string zerocoinModulus;
-    int nMaxZerocoinSpendsPerTransaction;
-    CAmount nMinZerocoinMintFee;
-//    CAmount nInvalidAmountFiltered;
-    int nMintRequiredConfirmations;
-    int nRequiredAccumulation;
-    int nDefaultSecurityLevel;
-    int nZerocoinHeaderVersion;
-    int64_t nBudget_Fee_Confirmations;
-    int nZerocoinStartHeight;
-    int nNewProtocolStartHeight;
-
-    int nZerocoinStartTime;
-    int nNewProtocolStartTime;
-    int nZerocoinRequiredStakeDepth;
-    uint256 bnProofOfStakeLimit;
-
-//    int nBlockEnforceSerialRange;
-//    int nBlockRecalculateAccumulators;
-//    int nBlockFirstFraudulent;
-//    int nBlockLastGoodCheckpoint;
-//    int nBlockEnforceInvalidUTXO;
-//    int nBlockZerocoinV2;
 };
 
 /**
