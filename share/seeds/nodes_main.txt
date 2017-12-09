@@ -1,0 +1,7 @@
+# List of fixed seed nodes for main network
+
+# IPv4 nodes
+
+# IPv6 nodes
+
+# Onion nodes
