@@ -15,7 +15,7 @@
         <location line="+41"/>
         <source>Copyright © 2009-2017 The Bitcoin developers
 Copyright © 2012-2014 The NovaCoin developers
-Copyright © 2014-2017 The Blackcoin developers
+Copyright © 2014-2017 The Wispr developers
 Copyright © 2017 The Wispr developers</source>
         <translation type="unfinished"/>
     </message>
@@ -3017,8 +3017,8 @@ napríklad: alertnotify=echo %%s | mail -s &quot;Wispr upozornenie&quot; admin@f
     </message>
     <message>
         <location line="+1"/>
-        <source>Imports blocks from external blk000?.dat file</source>
-        <translation>Importovať bloky z externého blk000?.dat súbora</translation>
+        <source>Imports blocks from external wsp000?.dat file</source>
+        <translation>Importovať bloky z externého wsp000?.dat súbora</translation>
     </message>
     <message>
         <location line="+1"/>

@@ -89,7 +89,7 @@ QT_TRANSLATE_NOOP("bitcoin-core", "Rescan the block chain for missing wallet tra
 QT_TRANSLATE_NOOP("bitcoin-core", "Attempt to recover private keys from a corrupt wallet.dat"),
 QT_TRANSLATE_NOOP("bitcoin-core", "How many blocks to check at startup (default: 500, 0 = all)"),
 QT_TRANSLATE_NOOP("bitcoin-core", "How thorough the block verification is (0-6, default: 1)"),
-QT_TRANSLATE_NOOP("bitcoin-core", "Imports blocks from external blk000?.dat file"),
+QT_TRANSLATE_NOOP("bitcoin-core", "Imports blocks from external wsp000?.dat file"),
 QT_TRANSLATE_NOOP("bitcoin-core", "Keep at most <n> MiB of unconnectable blocks in memory (default: %u)"),
 QT_TRANSLATE_NOOP("bitcoin-core", "Block creation options:"),
 QT_TRANSLATE_NOOP("bitcoin-core", "Set minimum block size in bytes (default: 0)"),

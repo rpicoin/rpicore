@@ -1,2 +1,2 @@
-debian/bin/blackcoind usr/bin
-src/blackcoind usr/lib/blackcoin
+debian/bin/wisprd usr/bin
+src/wisprd usr/lib/wispr

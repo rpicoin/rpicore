@@ -15,7 +15,7 @@
         <location line="+41"/>
         <source>Copyright © 2009-2017 The Bitcoin developers
 Copyright © 2012-2014 The NovaCoin developers
-Copyright © 2014-2017 The Blackcoin developers
+Copyright © 2014-2017 The Wispr developers
 Copyright © 2017 The Wispr developers</source>
         <translation type="unfinished"/>
     </message>
@@ -2998,7 +2998,7 @@ for example: alertnotify=echo %%s | mail -s &quot;Wispr Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="+1"/>
-        <source>Imports blocks from external blk000?.dat file</source>
+        <source>Imports blocks from external wsp000?.dat file</source>
         <translation type="unfinished"/>
     </message>
     <message>

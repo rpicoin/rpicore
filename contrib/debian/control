@@ -1,4 +1,4 @@
-Source: blackcoin
+Source: wispr
 Section: utils
 Priority: optional
 Maintainer: Jonas Smedegaard <dr@jones.dk>
@@ -19,11 +19,11 @@ Build-Depends: debhelper,
  libqt4-dev,
  libqrencode-dev
 Standards-Version: 3.9.2
-Homepage: http://www.blackcoin.co/
-Vcs-Git: git://github.com/CoinBlack/blackcoin.git
-Vcs-Browser: http://github.com/CoinBlack/blackcoin
+Homepage: http://www.wispr.co/
+Vcs-Git: git://github.com/CoinBlack/wispr.git
+Vcs-Browser: http://github.com/CoinBlack/wispr
 
-Package: blackcoind
+Package: wisprd
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - daemon
@@ -38,10 +38,10 @@ Description: peer-to-peer network based digital currency - daemon
  Full transaction history is stored locally at each client.  This
  requires 2+ GB of space, slowly growing.
  .
- This package provides blackcoind, a combined daemon and CLI tool to
+ This package provides wisprd, a combined daemon and CLI tool to
  interact with the daemon.
 
-Package: blackcoin-qt
+Package: wispr-qt
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - Qt GUI
@@ -56,4 +56,4 @@ Description: peer-to-peer network based digital currency - Qt GUI
  Full transaction history is stored locally at each client.  This
  requires 2+ GB of space, slowly growing.
  .
- This package provides Blackcoin-Qt, a GUI for Blackcoin based on Qt.
+ This package provides Wispr-Qt, a GUI for Wispr based on Qt.

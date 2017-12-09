@@ -1,12 +1,12 @@
 [Desktop Entry]
 Encoding=UTF-8
-Name=BlackCoin
-Comment=BlackCoin P2P Cryptocurrency
-Comment[fr]=BlackCoin, monnaie virtuelle cryptographique pair à pair
-Comment[tr]=BlackCoin, eşten eşe kriptografik sanal para birimi
-Exec=/usr/bin/blackcoin-qt
+Name=Wispr
+Comment=Wispr P2P Cryptocurrency
+Comment[fr]=Wispr, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Wispr, eşten eşe kriptografik sanal para birimi
+Exec=/usr/bin/wispr-qt
 Terminal=false
 Type=Application
 Icon=/usr/share/pixmaps/bitcoin80.xpm
-MimeType=x-scheme-handler/blackcoin;
+MimeType=x-scheme-handler/wispr;
 Categories=Office;
