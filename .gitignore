@@ -37,3 +37,7 @@ build
 .idea/
 .qmake.stash
 cmake-build-debug/
+
+# VS Code related files
+.vscode/
+
