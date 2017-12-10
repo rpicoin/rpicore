@@ -1,6 +1,8 @@
 # List of fixed seed nodes for main network
 
 # IPv4 nodes
+136.144.157.58
+136.144.172.127
 
 # IPv6 nodes
 
