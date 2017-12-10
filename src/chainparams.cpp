@@ -111,6 +111,7 @@ static CMainParams mainParams;
 class CTestNetParams : public CMainParams {
 public:
     CTestNetParams() {
+        strDataDir = "testnet";
         pchMessageStart[0] = 0x21;
         pchMessageStart[1] = 0x46;
         pchMessageStart[2] = 0x13;
