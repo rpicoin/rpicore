@@ -59,24 +59,27 @@ public:
 
         const char* pszTimestamp = "I would rather be without a state than without a voice";
         std::vector<CTxIn> vin;
-        vin.resize(1);
-        vin[0].scriptSig = CScript() << 0 << CBigNum(42) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
         std::vector<CTxOut> vout;
+
+        vin.resize(1);
         vout.resize(1);
-        vout[0].SetEmpty();
-        CTransaction txNew(1, 1512928017, vin, vout, 0);
+        vin[0].scriptSig = CScript() << 0 << CBigNum(42) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
+        vout[0].nValue = 100000 * COIN;
+        vout[0].scriptPubKey = CScript() << ParseHex("0433f2952f9002c9088a19607e3d4a54d3d9dfe1cf5c78168b8ba6524fb19fc5d7d3202948e6b8b09e98c425875af6af78fd4f64ff07d97a9ae31ebda5162fbac3") << OP_CHECKSIG;
+
+        CTransaction txNew(1, 1512941926, vin, vout, 0);
         genesis.vtx.push_back(txNew);
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime    = 1512928017;
+        genesis.nTime    = 1512941926;
         genesis.nBits    = bnProofOfWorkLimit.GetCompact();
-        genesis.nNonce   = 242580;
+        genesis.nNonce   = 2487269;
 
         hashGenesisBlock = genesis.GetHash();
-    
-        assert(hashGenesisBlock == uint256("0x00000d93b46f2d9d98b323077e6812f4cbe865abe08eadc7714488c4540f5530"));
-        assert(genesis.hashMerkleRoot == uint256("0x3978530a0802ff5c7245ebc535001f38b85bba063bba7d0a60399b1374a11321"));
+
+        assert(hashGenesisBlock == uint256("0x00000be75600f2fcad677a02336774e547c9ac0dd38bf6cee11f7149847fcb07"));
+        assert(genesis.hashMerkleRoot == uint256("0xaf30b4e934a57a1aee4a48d96c254ddf6c4ee6a829fe6b9323629aad98c25d6d"));
 
         vSeeds.clear();
 
