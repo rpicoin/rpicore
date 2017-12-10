@@ -1,5 +1,0 @@
-wispr-qt usr/bin
-share/pixmaps/bitcoin32.xpm usr/share/pixmaps
-share/pixmaps/bitcoin80.xpm usr/share/pixmaps
-debian/wispr-qt.desktop usr/share/applications
-debian/wispr-qt.protocol usr/share/kde4/services/
