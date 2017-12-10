@@ -15,7 +15,7 @@
         <location line="+41"/>
         <source>Copyright © 2009-2017 The Bitcoin developers
 Copyright © 2012-2014 The NovaCoin developers
-Copyright © 2014-2017 The Wispr developers
+Copyright © 2014-2017 The Blackcoin developers
 Copyright © 2017 The Wispr developers</source>
         <translation type="unfinished"/>
     </message>
