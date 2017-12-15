@@ -365,9 +365,9 @@ void BitcoinGUI::createToolBars()
     if (fUseBlackTheme)
     {
         QWidget* header = new QWidget();
-        header->setMinimumSize(160, 116);
+        header->setMinimumSize(200, 200);
         header->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
-        header->setStyleSheet("QWidget { background-color: #2d3245; background-repeat: no-repeat; background-image: url(:/images/logo); background-position: top center; }");
+        header->setStyleSheet("QWidget { background-color: #2d3245; background-repeat: no-repeat; background-image: url(:/images/header); }");
 		toolbar->addWidget(header);
         toolbar->addWidget(makeToolBarSpacer());
     }
