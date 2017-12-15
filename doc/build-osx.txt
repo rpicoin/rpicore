@@ -1,3 +1,4 @@
+Copyright (c) 2017 Wispr Developers
 Copyright (c) 2009-2012 Bitcoin Developers
 Distributed under the MIT/X11 software license, see the accompanying file
 license.txt or http://www.opensource.org/licenses/mit-license.php.  This
@@ -27,7 +28,7 @@ but you can get the current version from http://developer.apple.com
 
 1.  Clone the github tree to get the source code:
 
-git clone https://github.com/CoinBlack/wispr.git wispr
+git clone https://github.com/WisprProject/core wispr
 
 2.  Download and install MacPorts from http://www.macports.org/
 
