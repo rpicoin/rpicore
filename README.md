@@ -1,7 +1,7 @@
 Wispr Core integration/staging repository
 =====================================
 
-Wispr is an experimental cryptocurrency which aims to bring a blockchain-backed secure messaging system, along with several other state-of-the-art blockchain features, explained in our roadmap.<br>
+Wispr is an experimental cryptocurrency which aims to bring a blockchain-backed secure messaging system, along with several other state-of-the-art blockchain features, as announced in our roadmap.<br>
 Forked off of [Blackcoin](https://github.com/CoinBlack/blackcoin), it's a fully Proof-of-Stake cryptocurrency with a fair reward system that encourages every type of user to stake and make the network more secure and efficient.
 
 For more info, visit us at [wispr.tech](http://wispr.tech) or check out our ANN thread at [BitcoinTalk](https://bitcointalk.org/index.php?topic=2561885).
@@ -27,9 +27,12 @@ For more info, visit us at [wispr.tech](http://wispr.tech) or check out our ANN 
 </table>
 *A premine occured during the initial PoW phase (up to block 250), not accessible to the public. To see how the funds were distributed, check the above links
 
+### Building Wispr
+Check out <b>/doc</b> for specific OS build instructions.
+
 ### Contributing
 Everyone is encouraged to contribute. This project generally follows [Bitcoin Core's development process](https://github.com/bitcoin/bitcoin/blob/master/CONTRIBUTING.md), with more specific information coming soon about workflow.
 
 ### Join our community
 Want to get in touch or need any help? Come say hi to us on our active social platforms!<br>
-[Telegram](https://t.me/wisprchat) | [Discord](https://discord.gg/mhRPTd) | [Twitter](http://twitter.com/WisprTech/) | [Facebook](https://facebook.com/WisprTech) | [Official Website](https://wispr.tech/)
+[Telegram](https://t.me/wisprchat) | [Discord](https://discord.gg/9KdxdJM) | [Twitter](http://twitter.com/WisprTech/) | [Facebook](https://facebook.com/WisprTech) | [Official Website](https://wispr.tech/)
