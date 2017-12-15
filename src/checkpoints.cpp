@@ -1,4 +1,5 @@
 // Copyright (c) 2009-2012 The Bitcoin developers
+// Copyright (c) 2017 The Wispr developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -27,7 +28,7 @@ namespace Checkpoints
     //
     static MapCheckpoints mapCheckpoints =
         boost::assign::map_list_of
-        (0, uint256("0x000005109074450dd3d33498c01db853551d1c4431817e09b6fad8ecf389229a")) 
+        (0, uint256("0x00000be75600f2fcad677a02336774e547c9ac0dd38bf6cee11f7149847fcb07")) 
     ;
 
     // TestNet has no checkpoints

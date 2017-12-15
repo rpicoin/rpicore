@@ -1,8 +1,8 @@
 # Generic coin related binaries and tmp files.
 src/*.exe
-src/blackcoin
-src/blackcoind
-src/test_blackcoin
+src/wispr
+src/wisprd
+src/test_wispr
 src/build.h
 .*.swp
 *.*~*
@@ -11,7 +11,7 @@ src/build.h
 *.orig
 *.o
 *.patch
-.blackcoin
+.wispr
 
 # 'Compiled' translation files.
 *.qm
@@ -19,7 +19,7 @@ src/build.h
 #compilation and Qt preprocessor part
 *.qm
 Makefile
-blackcoin-qt
+wispr-qt
 wispr-qt
 
 #resources cpp
@@ -37,3 +37,7 @@ build
 .idea/
 .qmake.stash
 cmake-build-debug/
+
+# VS Code related files
+.vscode/
+

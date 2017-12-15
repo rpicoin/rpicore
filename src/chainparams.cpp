@@ -1,5 +1,6 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2012 The Bitcoin developers
+// Copyright (c) 2017 The Wispr developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -53,39 +54,33 @@ public:
         pchMessageStart[2] = 0x12;
         pchMessageStart[3] = 0x77;
         vAlertPubKey=ParseHex("04a2b4f239f3f1f4439ef384d0e1927f42d1b33963400735fa0db35946816d2ddce9588dae345108f4ed295d7f2df826fe63bfa0ee7f3bde18805a8465386edb4c");
-        nDefaultPort = 15714;
-        nRPCPort = 15715;
+        nDefaultPort = 17000;
+        nRPCPort = 17001;
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 20);
-
-        // Build the genesis block. Note that the output of the genesis coinbase cannot
-        // be spent as it did not originally exist in the database.
-        //
-        //CBlock(hash=000001faef25dec4fbcf906e6242621df2c183bf232f263d0ba5b101911e4563, ver=1, hashPrevBlock=0000000000000000000000000000000000000000000000000000000000000000, hashMerkleRoot=12630d16a97f24b287c8c2594dda5fb98c9e6c70fc61d44191931ea2aa08dc90, nTime=1393221600, nBits=1e0fffff, nNonce=164482, vtx=1, vchBlockSig=)
-        //  Coinbase(hash=12630d16a9, nTime=1393221600, ver=1, vin.size=1, vout.size=1, nLockTime=0)
-        //    CTxIn(COutPoint(0000000000, 4294967295), coinbase 00012a24323020466562203230313420426974636f696e2041544d7320636f6d6520746f20555341)
-        //    CTxOut(empty)
-        //  vMerkleTree: 12630d16a9
 
         const char* pszTimestamp = "I would rather be without a state than without a voice";
         std::vector<CTxIn> vin;
-        vin.resize(1);
-        vin[0].scriptSig = CScript() << 0 << CBigNum(42) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
         std::vector<CTxOut> vout;
+
+        vin.resize(1);
         vout.resize(1);
-        vout[0].SetEmpty();
-        CTransaction txNew(1, 1509888420, vin, vout, 0);
+        vin[0].scriptSig = CScript() << 0 << CBigNum(42) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
+        vout[0].nValue = 100000 * COIN;
+        vout[0].scriptPubKey = CScript() << ParseHex("0433f2952f9002c9088a19607e3d4a54d3d9dfe1cf5c78168b8ba6524fb19fc5d7d3202948e6b8b09e98c425875af6af78fd4f64ff07d97a9ae31ebda5162fbac3") << OP_CHECKSIG;
+
+        CTransaction txNew(1, 1512941926, vin, vout, 0);
         genesis.vtx.push_back(txNew);
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime    = 1509888420;
+        genesis.nTime    = 1512941926;
         genesis.nBits    = bnProofOfWorkLimit.GetCompact();
-        genesis.nNonce   = 263159;
+        genesis.nNonce   = 2487269;
 
         hashGenesisBlock = genesis.GetHash();
-        
-        assert(hashGenesisBlock == uint256("0x000005109074450dd3d33498c01db853551d1c4431817e09b6fad8ecf389229a"));
-        assert(genesis.hashMerkleRoot == uint256("0x12deafc8f6af6d5758b6869114d5e780f931ac1e8b478263d4dc910438b0e13e"));
+
+        assert(hashGenesisBlock == uint256("0x00000be75600f2fcad677a02336774e547c9ac0dd38bf6cee11f7149847fcb07"));
+        assert(genesis.hashMerkleRoot == uint256("0xaf30b4e934a57a1aee4a48d96c254ddf6c4ee6a829fe6b9323629aad98c25d6d"));
 
         vSeeds.clear();
 
@@ -120,39 +115,61 @@ static CMainParams mainParams;
 class CTestNetParams : public CMainParams {
 public:
     CTestNetParams() {
-        // The message start string is designed to be unlikely to occur in normal data.
-        // The characters are rarely used upper ASCII, not valid as UTF-8, and produce
-        // a large 4-byte int at any alignment.
-        pchMessageStart[0] = 0xCF;
-        pchMessageStart[1] = 0xF1;
-        pchMessageStart[2] = 0xD0;
-        pchMessageStart[3] = 0xAF;
-        bnProofOfWorkLimit = CBigNum(~uint256(0) >> 16);
-        vAlertPubKey = ParseHex("0433f2952f9002c9088a19607e3d4a54d3d9dfe1cf5c78168b8ba6524fb19fc5d7d3202948e6b8b09e98c425875af6af78fd4f64ff07d97a9ae31ebda5162fbac3");
-        nDefaultPort = 25714;
-        nRPCPort = 25715;
         strDataDir = "testnet";
+        pchMessageStart[0] = 0x21;
+        pchMessageStart[1] = 0x46;
+        pchMessageStart[2] = 0x13;
+        pchMessageStart[3] = 0x78;
+        vAlertPubKey=ParseHex("0433f2952f9002c9088a19607e3d4a54d3d9dfe1cf5c78168b8ba6524fb19fc5d7d3202948e6b8b09e98c425875af6af78fd4f64ff07d97a9ae31ebda5162fbac3");
+        nDefaultPort = 17002;
+        nRPCPort = 17003;
+        bnProofOfWorkLimit = CBigNum(~uint256(0) >> 16);
 
-        // Modify the testnet genesis block so the timestamp is valid for a later start.
-        genesis.nBits  = bnProofOfWorkLimit.GetCompact();
-        genesis.nNonce = 216178;
+        const char* pszTimestamp = "I would rather be without a state than without a voice";
+        std::vector<CTxIn> vin;
+        std::vector<CTxOut> vout;
+
+        vin.resize(1);
+        vout.resize(1);
+        vin[0].scriptSig = CScript() << 0 << CBigNum(42) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
+        vout[0].SetEmpty();
+        
+        CTransaction txNew(1, 1512932225, vin, vout, 0);
+        genesis.vtx.push_back(txNew);
+        genesis.hashPrevBlock = 0;
+        genesis.hashMerkleRoot = genesis.BuildMerkleTree();
+        genesis.nVersion = 1;
+        genesis.nTime    = 1512932225;
+        genesis.nBits    = bnProofOfWorkLimit.GetCompact();
+        genesis.nNonce   = 142000;
+
         hashGenesisBlock = genesis.GetHash();
-        //assert(hashGenesisBlock == uint256("0x0000724595fb3b9609d441cbfb9577615c292abf07d996d3edabc48de843642d"));
 
-        vFixedSeeds.clear();
+        assert(hashGenesisBlock == uint256("03205c57ebefb02d86c2c0c2de368fa48e92f7df7240f1b528ebbeae70fdbdb1"));
+        assert(genesis.hashMerkleRoot == uint256("0x26069b04c7c7b5b8773824b15cfbf0ddaf11ee261657a1aeb28aa5c8163909ee"));
+
         vSeeds.clear();
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 111);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 196);
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 110);
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 8);
         base58Prefixes[SECRET_KEY]     = std::vector<unsigned char>(1, 239);
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x35)(0x87)(0xCF).convert_to_container<std::vector<unsigned char> >();
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x35)(0x83)(0x94).convert_to_container<std::vector<unsigned char> >();
 
         convertSeed6(vFixedSeeds, pnSeed6_test, ARRAYLEN(pnSeed6_test));
 
-        nLastPOWBlock = 0x7fffffff;
+        nLastPOWBlock = 250;
     }
+
+    virtual const CBlock& GenesisBlock() const { return genesis; }
     virtual Network NetworkID() const { return CChainParams::TESTNET; }
+
+    virtual const vector<CAddress>& FixedSeeds() const {
+        return vFixedSeeds;
+    }
+protected:
+    CBlock genesis;
+    vector<CAddress> vFixedSeeds;
 };
 static CTestNetParams testNetParams;
 
@@ -172,7 +189,7 @@ public:
         genesis.nBits  = bnProofOfWorkLimit.GetCompact();
         genesis.nNonce = 2;
         hashGenesisBlock = genesis.GetHash();
-        nDefaultPort = 18444;
+        nDefaultPort = 17004;
         strDataDir = "regtest";
         //assert(hashGenesisBlock == uint256("0x523dda6d336047722cbaf1c5dce622298af791bac21b33bf6e2d5048b2a13e3d"));
 

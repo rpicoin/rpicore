@@ -1,5 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2012 The Bitcoin developers
+// Copyright (c) 2017 The Wispr developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -1010,7 +1011,7 @@ void ThreadMapPort()
             }
         }
 
-        string strDesc = "BlackCoin " + FormatFullVersion();
+        string strDesc = "Wispr " + FormatFullVersion();
 
         try {
           while (true) {
@@ -1384,7 +1385,7 @@ void static StartSync(const vector<CNode*> &vNodes) {
         if (!pnode->fClient && !pnode->fOneShot &&
             !pnode->fDisconnect && pnode->fSuccessfullyConnected &&
             (pnode->nStartingHeight > (nBestHeight - 144)) &&
-            (pnode->nVersion < NOBLKS_VERSION_START || pnode->nVersion >= NOBLKS_VERSION_END)) {
+            (pnode->nVersion < NOWSPS_VERSION_START || pnode->nVersion >= NOWSPS_VERSION_END)) {
             // if ok, compare node's score with the best so far
             int64_t nScore = NodeSyncScore(pnode);
             if (pnodeNewSync == NULL || nScore > nBestScore) {
@@ -1546,7 +1547,7 @@ bool BindListenPort(const CService &addrBind, string& strError)
     {
         int nErr = WSAGetLastError();
         if (nErr == WSAEADDRINUSE)
-            strError = strprintf(_("Unable to bind to %s on this computer. BlackCoin is probably already running."), addrBind.ToString());
+            strError = strprintf(_("Unable to bind to %s on this computer. Wispr is probably already running."), addrBind.ToString());
         else
             strError = strprintf(_("Unable to bind to %s on this computer (bind returned error %d, %s)"), addrBind.ToString(), nErr, strerror(nErr));
         LogPrintf("%s\n", strError);

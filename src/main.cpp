@@ -1,5 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2012 The Bitcoin developers
+// Copyright (c) 2017 The Wispr developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -22,7 +23,7 @@ using namespace std;
 using namespace boost;
 
 #if defined(NDEBUG)
-# error "BlackCoin cannot be compiled without assertions."
+# error "Wispr cannot be compiled without assertions."
 #endif
 
 //
@@ -76,7 +77,7 @@ map<uint256, set<uint256> > mapOrphanTransactionsByPrev;
 // Constant stuff for coinbase transactions we create:
 CScript COINBASE_FLAGS;
 
-const string strMessageMagic = "BlackCoin Signed Message:\n";
+const string strMessageMagic = "Wispr Signed Message:\n";
 
 //////////////////////////////////////////////////////////////////////////////
 //
@@ -978,7 +979,7 @@ int64_t GetProofOfWorkReward(int64_t nFees)
 int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, int64_t nFees)
 {
     int64_t nSubsidy;
-    nSubsidy = COIN * 3 / 2;
+    nSubsidy = COIN * 5;
     LogPrint("creation", "GetProofOfStakeReward(): create=%s nCoinAge=%d\n", FormatMoney(nSubsidy), nCoinAge);
 
     return nSubsidy + nFees;
@@ -2358,7 +2359,7 @@ bool CheckDiskSpace(uint64_t nAdditionalBytes)
 
 static filesystem::path BlockFilePath(unsigned int nFile)
 {
-    string strBlockFn = strprintf("blk%04u.dat", nFile);
+    string strBlockFn = strprintf("wsp%04u.dat", nFile);
     return GetDataDir() / strBlockFn;
 }
 
@@ -2523,15 +2524,15 @@ bool LoadExternalBlockFile(FILE* fileIn)
     int nLoaded = 0;
     {
         try {
-            CAutoFile blkdat(fileIn, SER_DISK, CLIENT_VERSION);
+            CAutoFile wspdat(fileIn, SER_DISK, CLIENT_VERSION);
             unsigned int nPos = 0;
-            while (nPos != (unsigned int)-1 && blkdat.good())
+            while (nPos != (unsigned int)-1 && wspdat.good())
             {
                 boost::this_thread::interruption_point();
                 unsigned char pchData[65536];
                 do {
-                    fseek(blkdat, nPos, SEEK_SET);
-                    int nRead = fread(pchData, 1, sizeof(pchData), blkdat);
+                    fseek(wspdat, nPos, SEEK_SET);
+                    int nRead = fread(pchData, 1, sizeof(pchData), wspdat);
                     if (nRead <= 8)
                     {
                         nPos = (unsigned int)-1;
@@ -2553,13 +2554,13 @@ bool LoadExternalBlockFile(FILE* fileIn)
                 } while(true);
                 if (nPos == (unsigned int)-1)
                     break;
-                fseek(blkdat, nPos, SEEK_SET);
+                fseek(wspdat, nPos, SEEK_SET);
                 unsigned int nSize;
-                blkdat >> nSize;
+                wspdat >> nSize;
                 if (nSize > 0 && nSize <= MAX_BLOCK_SIZE)
                 {
                     CBlock block;
-                    blkdat >> block;
+                    wspdat >> block;
                     LOCK(cs_main);
                     if (ProcessBlock(NULL,&block))
                     {
@@ -2593,7 +2594,7 @@ struct CImportingNow
 
 void ThreadImport(std::vector<boost::filesystem::path> vImportFiles)
 {
-    RenameThread("blackcoin-loadblk");
+    RenameThread("wispr-loadwsp");
 
     CImportingNow imp;
 

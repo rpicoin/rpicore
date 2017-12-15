@@ -1,5 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2012 The Bitcoin developers
+// Copyright (c) 2017 The Wispr developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 #ifndef BITCOIN_MAIN_H
@@ -567,7 +568,7 @@ public:
  * in the block is a special one that creates a new coin owned by the creator
  * of the block.
  *
- * Blocks are appended to blk0001.dat files on disk.  Their location on disk
+ * Blocks are appended to wsp0001.dat files on disk.  Their location on disk
  * is indexed by CBlockIndex objects in memory.
  */
 class CBlock
