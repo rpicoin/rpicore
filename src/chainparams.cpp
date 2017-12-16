@@ -56,7 +56,7 @@ public:
         vAlertPubKey=ParseHex("04a2b4f239f3f1f4439ef384d0e1927f42d1b33963400735fa0db35946816d2ddce9588dae345108f4ed295d7f2df826fe63bfa0ee7f3bde18805a8465386edb4c");
         nDefaultPort = 17000;
         nRPCPort = 17001;
-        bnProofOfWorkLimit = CBigNum(~uint256(0) >> 20);
+        bnProofOfWorkLimit = CBigNum(~uint256(0) >> 16);
 
         const char* pszTimestamp = "I would rather be without a state than without a voice";
         std::vector<CTxIn> vin;
@@ -65,22 +65,22 @@ public:
         vin.resize(1);
         vout.resize(1);
         vin[0].scriptSig = CScript() << 0 << CBigNum(42) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
-        vout[0].nValue = 100000 * COIN;
+        vout[0].nValue = 125000 * COIN;
         vout[0].scriptPubKey = CScript() << ParseHex("0433f2952f9002c9088a19607e3d4a54d3d9dfe1cf5c78168b8ba6524fb19fc5d7d3202948e6b8b09e98c425875af6af78fd4f64ff07d97a9ae31ebda5162fbac3") << OP_CHECKSIG;
 
-        CTransaction txNew(1, 1512941926, vin, vout, 0);
+        CTransaction txNew(1, 1513403825, vin, vout, 0);
         genesis.vtx.push_back(txNew);
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime    = 1512941926;
+        genesis.nTime    = 1513403825;
         genesis.nBits    = bnProofOfWorkLimit.GetCompact();
-        genesis.nNonce   = 2487269;
+        genesis.nNonce   = 36156;
 
         hashGenesisBlock = genesis.GetHash();
 
-        assert(hashGenesisBlock == uint256("0x00000be75600f2fcad677a02336774e547c9ac0dd38bf6cee11f7149847fcb07"));
-        assert(genesis.hashMerkleRoot == uint256("0xaf30b4e934a57a1aee4a48d96c254ddf6c4ee6a829fe6b9323629aad98c25d6d"));
+        assert(hashGenesisBlock == uint256("0x0000ec93e0a3fe0aafa3be7dafe1290f5fca039a4037dd5174bc3dd7a35d67f0"));
+        assert(genesis.hashMerkleRoot == uint256("0xbcd0064f46daed0b3c1ccff16656a0da04b5509924118b7c13d21c81d62ec521"));
 
         vSeeds.clear();
 
@@ -92,7 +92,7 @@ public:
 
         convertSeed6(vFixedSeeds, pnSeed6_main, ARRAYLEN(pnSeed6_main));
 
-        nLastPOWBlock = 250;
+        nLastPOWBlock = 450;
     }
 
     virtual const CBlock& GenesisBlock() const { return genesis; }
@@ -158,7 +158,7 @@ public:
 
         convertSeed6(vFixedSeeds, pnSeed6_test, ARRAYLEN(pnSeed6_test));
 
-        nLastPOWBlock = 250;
+        nLastPOWBlock = 450;
     }
 
     virtual const CBlock& GenesisBlock() const { return genesis; }
