@@ -2714,8 +2714,8 @@ rpcpassword=%s
     </message>
     <message>
         <location line="-126"/>
-        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 15715 or testnet: 25715)</source>
-        <translation>&lt;port&gt;의 JSON-RPC 연결을 수신 (기본값: 15715 or testnet: 25715)</translation>
+        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 17001 or testnet: 17003)</source>
+        <translation>&lt;port&gt;의 JSON-RPC 연결을 수신 (기본값: 17001 or testnet: 17003)</translation>
     </message>
     <message>
         <location line="-16"/>
