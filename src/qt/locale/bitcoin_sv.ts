@@ -2653,8 +2653,8 @@ for example: alertnotify=echo %%s | mail -s &quot;Wispr Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="+5"/>
-        <source>Listen for connections on &lt;port&gt; (default: 15714 or testnet: 25714)</source>
-        <translation>Lyssna efter anslutningar på &lt;port&gt; (standard: 15714 eller testnät: 25714)</translation>
+        <source>Listen for connections on &lt;port&gt; (default: 17000 or testnet: 17002)</source>
+        <translation>Lyssna efter anslutningar på &lt;port&gt; (standard: 17000 eller testnät: 17002)</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2703,8 +2703,8 @@ for example: alertnotify=echo %%s | mail -s &quot;Wispr Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="-126"/>
-        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 15715 or testnet: 25715)</source>
-        <translation>Lyssna efter JSON-RPC anslutningar på &lt;port&gt; (standard: 15715 eller testnät: 25715)</translation>
+        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 17001 or testnet: 17003)</source>
+        <translation>Lyssna efter JSON-RPC anslutningar på &lt;port&gt; (standard: 17001 eller testnät: 17003)</translation>
     </message>
     <message>
         <location line="-16"/>
@@ -3003,8 +3003,8 @@ for example: alertnotify=echo %%s | mail -s &quot;Wispr Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="+1"/>
-        <source>Imports blocks from external blk000?.dat file</source>
-        <translation>Importera block från en extern blk000?.dat fil</translation>
+        <source>Imports blocks from external wsp000?.dat file</source>
+        <translation>Importera block från en extern wsp000?.dat fil</translation>
     </message>
     <message>
         <location line="+1"/>

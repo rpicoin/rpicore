@@ -2650,8 +2650,8 @@ for example: alertnotify=echo %%s | mail -s &quot;Wispr Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="+5"/>
-        <source>Listen for connections on &lt;port&gt; (default: 15714 or testnet: 25714)</source>
-        <translation>Horche für verbindungen auf &lt;Port&gt; (Standard: 15714 oder Testnetz: 25714)</translation>
+        <source>Listen for connections on &lt;port&gt; (default: 17000 or testnet: 17002)</source>
+        <translation>Horche für verbindungen auf &lt;Port&gt; (Standard: 17000 oder Testnetz: 17002)</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2700,8 +2700,8 @@ for example: alertnotify=echo %%s | mail -s &quot;Wispr Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="-126"/>
-        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 15715 or testnet: 25715)</source>
-        <translation>Horche für eingehende JSON-RPC Verbindungen auf &lt;Port&gt;(Standard: 15715 or Testnetz: 25715)</translation>
+        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 17001 or testnet: 17003)</source>
+        <translation>Horche für eingehende JSON-RPC Verbindungen auf &lt;Port&gt;(Standard: 17001 or Testnetz: 17003)</translation>
     </message>
     <message>
         <location line="-16"/>
@@ -3000,8 +3000,8 @@ for example: alertnotify=echo %%s | mail -s &quot;Wispr Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="+1"/>
-        <source>Imports blocks from external blk000?.dat file</source>
-        <translation>Importiere Blöcke aus externer blk000?.dat Datei.</translation>
+        <source>Imports blocks from external wsp000?.dat file</source>
+        <translation>Importiere Blöcke aus externer wsp000?.dat Datei.</translation>
     </message>
     <message>
         <location line="+1"/>

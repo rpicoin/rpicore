@@ -2667,8 +2667,8 @@ napríklad: alertnotify=echo %%s | mail -s &quot;Wispr upozornenie&quot; admin@f
     </message>
     <message>
         <location line="+5"/>
-        <source>Listen for connections on &lt;port&gt; (default: 15714 or testnet: 25714)</source>
-        <translation>Počúvať pripojenia na &lt;port&gt; (predvolené: 15714 alebo testovacia sieť: 25714)</translation>
+        <source>Listen for connections on &lt;port&gt; (default: 17000 or testnet: 17002)</source>
+        <translation>Počúvať pripojenia na &lt;port&gt; (predvolené: 17000 alebo testovacia sieť: 17002)</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2717,8 +2717,8 @@ napríklad: alertnotify=echo %%s | mail -s &quot;Wispr upozornenie&quot; admin@f
     </message>
     <message>
         <location line="-126"/>
-        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 15715 or testnet: 25715)</source>
-        <translation>Počúvajte pre JSON-RPC spojenie na &lt;port&gt; (predvolené: 15715 alebo testovacia sieť: 25715)</translation>
+        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 17001 or testnet: 17003)</source>
+        <translation>Počúvajte pre JSON-RPC spojenie na &lt;port&gt; (predvolené: 17001 alebo testovacia sieť: 17003)</translation>
     </message>
     <message>
         <location line="-16"/>
@@ -3017,8 +3017,8 @@ napríklad: alertnotify=echo %%s | mail -s &quot;Wispr upozornenie&quot; admin@f
     </message>
     <message>
         <location line="+1"/>
-        <source>Imports blocks from external blk000?.dat file</source>
-        <translation>Importovať bloky z externého blk000?.dat súbora</translation>
+        <source>Imports blocks from external wsp000?.dat file</source>
+        <translation>Importovať bloky z externého wsp000?.dat súbora</translation>
     </message>
     <message>
         <location line="+1"/>

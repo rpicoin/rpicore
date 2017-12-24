@@ -2665,8 +2665,8 @@ On myös suositeltavaa asettaa alertnotify jolloin olet tiedotettu ongelmista; e
     </message>
     <message>
         <location line="+5"/>
-        <source>Listen for connections on &lt;port&gt; (default: 15714 or testnet: 25714)</source>
-        <translation>Kuuntele yhteyksiä portissa &lt;port&gt; (oletus: 15714 tai testiverkko: 25714)</translation>
+        <source>Listen for connections on &lt;port&gt; (default: 17000 or testnet: 17002)</source>
+        <translation>Kuuntele yhteyksiä portissa &lt;port&gt; (oletus: 17000 tai testiverkko: 17002)</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2715,8 +2715,8 @@ On myös suositeltavaa asettaa alertnotify jolloin olet tiedotettu ongelmista; e
     </message>
     <message>
         <location line="-126"/>
-        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 15715 or testnet: 25715)</source>
-        <translation>Kuuntele JSON-RPC-yhteyksiä portissa &lt;port&gt; (oletus: 15715 tai testiverkko: 25715)</translation>
+        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 17001 or testnet: 17003)</source>
+        <translation>Kuuntele JSON-RPC-yhteyksiä portissa &lt;port&gt; (oletus: 17001 tai testiverkko: 17003)</translation>
     </message>
     <message>
         <location line="-16"/>
@@ -3015,8 +3015,8 @@ On myös suositeltavaa asettaa alertnotify jolloin olet tiedotettu ongelmista; e
     </message>
     <message>
         <location line="+1"/>
-        <source>Imports blocks from external blk000?.dat file</source>
-        <translation>Tuo lohkoja erillisestä blk000?.dat-tiedostosta</translation>
+        <source>Imports blocks from external wsp000?.dat file</source>
+        <translation>Tuo lohkoja erillisestä wsp000?.dat-tiedostosta</translation>
     </message>
     <message>
         <location line="+1"/>

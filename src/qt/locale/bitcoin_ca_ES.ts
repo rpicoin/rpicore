@@ -2649,8 +2649,8 @@ for example: alertnotify=echo %%s | mail -s &quot;Wispr Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="+5"/>
-        <source>Listen for connections on &lt;port&gt; (default: 15714 or testnet: 25714)</source>
-        <translation>Escoltar connexions en &lt;port&gt; (per defecte: 15714 o testnet: 25714)</translation>
+        <source>Listen for connections on &lt;port&gt; (default: 17000 or testnet: 17002)</source>
+        <translation>Escoltar connexions en &lt;port&gt; (per defecte: 17000 o testnet: 17002)</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2699,8 +2699,8 @@ for example: alertnotify=echo %%s | mail -s &quot;Wispr Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="-126"/>
-        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 15715 or testnet: 25715)</source>
-        <translation>Escoltar connexions JSON-RPC al port &lt;port&gt; (per defecte: 15715 o testnet: 25715)</translation>
+        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 17001 or testnet: 17003)</source>
+        <translation>Escoltar connexions JSON-RPC al port &lt;port&gt; (per defecte: 17001 o testnet: 17003)</translation>
     </message>
     <message>
         <location line="-16"/>
@@ -3000,8 +3000,8 @@ Executar una ordre quan es rep un avís rellevant (%s en cmd es substitueix per 
     </message>
     <message>
         <location line="+1"/>
-        <source>Imports blocks from external blk000?.dat file</source>
-        <translation>Importar blocs desde l&apos;arxiu extern blk000?.dat</translation>
+        <source>Imports blocks from external wsp000?.dat file</source>
+        <translation>Importar blocs desde l&apos;arxiu extern wsp000?.dat</translation>
     </message>
     <message>
         <location line="+1"/>

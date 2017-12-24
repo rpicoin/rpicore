@@ -1,5 +1,6 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2013 The Bitcoin developers
+// Copyright (c) 2017 The Wispr developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -116,8 +117,8 @@ Value validateaddress(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() != 1)
         throw runtime_error(
-            "validateaddress <blackcoinaddress>\n"
-            "Return information about <blackcoinaddress>.");
+            "validateaddress <wispraddress>\n"
+            "Return information about <wispraddress>.");
 
     CBitcoinAddress address(params[0].get_str());
     bool isValid = address.IsValid();
@@ -147,8 +148,8 @@ Value validatepubkey(const Array& params, bool fHelp)
 {
     if (fHelp || !params.size() || params.size() > 2)
         throw runtime_error(
-            "validatepubkey <blackcoinpubkey>\n"
-            "Return information about <blackcoinpubkey>.");
+            "validatepubkey <wisprpubkey>\n"
+            "Return information about <wisprpubkey>.");
 
     std::vector<unsigned char> vchPubKey = ParseHex(params[0].get_str());
     CPubKey pubKey(vchPubKey);
@@ -186,7 +187,7 @@ Value verifymessage(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() != 3)
         throw runtime_error(
-            "verifymessage <blackcoinaddress> <signature> <message>\n"
+            "verifymessage <wispraddress> <signature> <message>\n"
             "Verify a signed message");
 
     string strAddress  = params[0].get_str();

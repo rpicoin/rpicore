@@ -2667,8 +2667,8 @@ alertnotify=echo %%s | mail -s &quot;Wispr Alert&quot; admin@foo.com
     </message>
     <message>
         <location line="+5"/>
-        <source>Listen for connections on &lt;port&gt; (default: 15714 or testnet: 25714)</source>
-        <translation>监听&lt;port&gt;端口的连接 (默认: 15714 测试网: 25714)</translation>
+        <source>Listen for connections on &lt;port&gt; (default: 17000 or testnet: 17002)</source>
+        <translation>监听&lt;port&gt;端口的连接 (默认: 17000 测试网: 17002)</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2717,8 +2717,8 @@ alertnotify=echo %%s | mail -s &quot;Wispr Alert&quot; admin@foo.com
     </message>
     <message>
         <location line="-126"/>
-        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 15715 or testnet: 25715)</source>
-        <translation>监听 &lt;port&gt; 端口的JSON-RPC连接 (默认: 15715 测试网: 25715)</translation>
+        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 17001 or testnet: 17003)</source>
+        <translation>监听 &lt;port&gt; 端口的JSON-RPC连接 (默认: 17001 测试网: 17003)</translation>
     </message>
     <message>
         <location line="-16"/>
@@ -3023,8 +3023,8 @@ alertnotify=echo %%s | mail -s &quot;Wispr Alert&quot; admin@foo.com
     </message>
     <message>
         <location line="+1"/>
-        <source>Imports blocks from external blk000?.dat file</source>
-        <translation>从外部 blk000?.dat 文件导入区块</translation>
+        <source>Imports blocks from external wsp000?.dat file</source>
+        <translation>从外部 wsp000?.dat 文件导入区块</translation>
     </message>
     <message>
         <location line="+1"/>
