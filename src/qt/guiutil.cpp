@@ -481,7 +481,6 @@ void SetWisprTheme(QApplication& app)
                       "QMenu          { background: #2d3245; color: #ffffff; }"
                       "QMenu::item:selected { background-color: #2ebb89; }"
                       "QLabel         { color: #ffffff; }"
-                      "QLabel         { color: #ffffff; }"
                       "QScrollBar     { color: #ffffff; }"
                       "QCheckBox      { color: #2ebb89; }"
                       "QRadioButton   { color: #2ebb89; }"
