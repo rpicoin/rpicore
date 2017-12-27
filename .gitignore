@@ -20,7 +20,7 @@ src/build.h
 *.qm
 Makefile
 wispr-qt
-wispr-qt
+wisprd
 
 #resources cpp
 qrc_*.cpp
@@ -40,4 +40,3 @@ cmake-build-debug/
 
 # VS Code related files
 .vscode/
-

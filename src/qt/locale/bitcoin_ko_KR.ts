@@ -28,9 +28,9 @@ Distributed under the MIT/X11 software license, see the accompanying file COPYIN
 
 This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit (&lt;a href=&quot;https://www.openssl.org/&quot;&gt;https://www.openssl.org/&lt;/a&gt;) and cryptographic software written by Eric Young (&lt;a href=&quot;mailto:eay@cryptsoft.com&quot;&gt;eay@cryptsoft.com&lt;/a&gt;) and UPnP software written by Thomas Bernard.</source>
         <translation>
-이것은 실험용 소프트웨어입니다.
+이것은 실험용 소프트웨어입니다.&lt;br&gt;
 
-MIT/X11 소프트웨어 라이센스 하에 배포된 첨부 파일 COPYING 또는 &lt;a href=&quot;http://www.opensource.org/licenses/mit-license.php&quot;&gt;http://www.opensource.org/licenses/mit-license.php&lt;/a&gt;를 참고하시기 바랍니다.
+MIT/X11 소프트웨어 라이센스 하에 배포된 첨부 파일 COPYING 또는 &lt;a href=&quot;http://www.opensource.org/licenses/mit-license.php&quot;&gt;http://www.opensource.org/licenses/mit-license.php&lt;/a&gt;를 참고하시기 바랍니다.&lt;br&gt;
 
 이 제품은 OpenSSL 툴킷을 사용하기 위하여 OpenSSL 프로젝트에 의해 개발된 소프트웨어와(&lt;a href=&quot;https://www.openssl.org/&quot;&gt;https://www.openssl.org/&lt;/a&gt;)  Eric Young에 의해 작성된 크립토 그래픽 소프트웨어(&lt;a href=&quot;mailto:eay@cryptsoft.com&quot;&gt;eay@cryptsoft.com&lt;/a&gt;) 그리고 Thomas Bernard에 의해 작성된 UPnP 소프트웨어(&lt;a href=&quot;https://www.openssl.org/&quot;&gt;https://www.openssl.org/&lt;/a&gt;)가 포함되어 있습니다 </translation>    
 	</message>
@@ -65,7 +65,7 @@ MIT/X11 소프트웨어 라이센스 하에 배포된 첨부 파일 COPYING 또�
     <message>
         <location line="-43"/>
         <source>These are your Wispr addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
-        <translation>이것들은 지불을 받기 위한 Wispr 주소들입니다. 당신에게 지불하는 사람을 추적, 기록할 수 하기 위해서, 당신은 각각의 송금하는 사람에게 다른 주소를 보내고 싶어할 지도 모릅니다. </translation>
+        <translation>송금을 받기 위한 Wispr 주소입니다. 송금하는 사람을 추적, 기록할 수 하기 위하여 서로 다른 송금 주소와 라벨을 설정할수 있습니다. </translation>
     </message>
     <message>
         <location line="+53"/>
@@ -80,7 +80,7 @@ MIT/X11 소프트웨어 라이센스 하에 배포된 첨부 파일 COPYING 또�
     <message>
         <location line="+7"/>
         <source>Sign a message to prove you own a Wispr address</source>
-        <translation>소유하고 있는 Wispr 주소를 증명하기 위해 메시지에 서명하세요.</translation>
+        <translation>소유하고 있는 Wispr 주소를 증명하기 위해 메시지에 서명</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -95,7 +95,7 @@ MIT/X11 소프트웨어 라이센스 하에 배포된 첨부 파일 COPYING 또�
     <message>
         <location line="-10"/>
         <source>Verify a message to ensure it was signed with a specified Wispr address</source>
-        <translation>특정한 Wispr 주소로 서명되었는지 메시지를 확인 하십시오.</translation>
+        <translation>특정한 Wispr 주소로 서명되었는지 메시지를 확인</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -130,12 +130,12 @@ MIT/X11 소프트웨어 라이센스 하에 배포된 첨부 파일 COPYING 또�
     <message>
         <location line="+13"/>
         <source>Error exporting</source>
-		<translation>오류 내보내는 중</translation>
+<translation>오류 내보내는 중</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Could not write to file %1.</source>
-        <translation>%1 파일을 쓸 수 없음.</translation>
+        <translation>%1 파일을 쓸 수 없음</translation>
     </message>
 </context>
 <context>
@@ -231,7 +231,7 @@ MIT/X11 소프트웨어 라이센스 하에 배포된 첨부 파일 COPYING 또�
     <message>
         <location line="+1"/>
         <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR COINS&lt;/b&gt;!</source>
-        <translation>경고: 당신의 지갑을 암호화한 후 암호를 잃어버리면, &lt;b&gt;당신의 모든 코인을 잃게 될 것입니다. &lt;/b&gt;!</translation>
+        <source>경고: 당신의 지갑을 암호화하고 암호를 잃어버리면, &lt;b&gt;당신의 모든 코인을 잃을 수 있습니다. &lt;/b&gt;</source>
     </message>
     <message>
         <location line="+0"/>
@@ -263,7 +263,7 @@ MIT/X11 소프트웨어 라이센스 하에 배포된 첨부 파일 COPYING 또�
     <message>
         <location line="+82"/>
         <source>Wispr will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
-        <translation>Wispr는 암호화 과정을 끝내고 지금 닫혀질 것입니다. 당신의 지갑을 암호화한다는 것으로 멜웨어에 의해 감염된 당신의 컴퓨터로부터 코인이 도난 당하는 것을 완벽하게 방지할 수 없다는 것을 기억하시기 바랍니다.</translation>
+        <translation>Wispr는 암호화 과정을 끝내고 지금 닫혀질 것입니다. 당신의 지갑을 암호화한다는 것으로 멀웨어에 의해 감염된 당신의 컴퓨터로부터 코인이 도난 당하는 것을 완벽하게 방지할 수 없다는 것을 기억하시기 바랍니다.</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -317,7 +317,7 @@ MIT/X11 소프트웨어 라이센스 하에 배포된 첨부 파일 COPYING 또�
     <message>
         <location line="-64"/>
         <source>Show general overview of wallet</source>
-        <translation>지갑의 일반적 개요를 보여 줍니다.</translation>
+        <translation>지갑의 일반적 개요를 보기</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -327,7 +327,7 @@ MIT/X11 소프트웨어 라이센스 하에 배포된 첨부 파일 COPYING 또�
     <message>
         <location line="+1"/>
         <source>Browse transaction history</source>
-        <translation>거래내역을 검색합니다.</translation>
+        <translation>거래내역을 검색</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -422,7 +422,7 @@ MIT/X11 소프트웨어 라이센스 하에 배포된 첨부 파일 COPYING 또�
     <message>
         <location line="+2"/>
         <source>Change the passphrase used for wallet encryption</source>
-        <translation>지갑 암호화에 사용되는 암호를 변경합니다</translation>
+        <translation>지갑 암호화에 사용되는 암호 변경</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -432,7 +432,7 @@ MIT/X11 소프트웨어 라이센스 하에 배포된 첨부 파일 COPYING 또�
     <message>
         <location line="+1"/>
         <source>Open debugging and diagnostic console</source>
-        <translation>디버깅 및 진단 콘솔을 엽니다</translation>
+        <translation>디버깅 및 진단 콘솔 열기</translation>
     </message>
     <message>
         <location line="-5"/>
@@ -510,32 +510,32 @@ MIT/X11 소프트웨어 라이센스 하에 배포된 첨부 파일 COPYING 또�
     <message>
         <location line="+70"/>
         <source>%n active connection(s) to Wispr network</source>
-        <translation>%n 개의 Wispr 네트워크 활성 연결 </translation>
+        <translation>%n개의 활성화된 Wispr 네트워크와 연결</translation>
     </message>
     <message>
         <location line="+488"/>
         <source>Staking.&lt;br&gt;Your weight is %1&lt;br&gt;Network weight is %2&lt;br&gt;Expected time to earn reward is %3</source>
-        <translation>스테이킹.&lt;br&gt;지갑의 웨이트는 %1&lt;br&gt; 입니다. 네트워크 웨이트는 %2&lt;br&gt; 입니다. 보상을 받기 위한 기대 시간은 %3 입니다.</translation>
+        <translation>스테이킹 중.&lt;br&gt;지갑의 웨이트: %1 &lt;br&gt; 네트워크 웨이트: %2 &lt;br&gt; 보상을 받기 위한 기대 시간: %3</translation>
     </message>
     <message>
         <location line="+6"/>   
         <source>Not staking because wallet is locked</source>
-        <translation>지갑이 잠겨 있어서 스테이킹 하지 않습니다.</translation>
+        <translation>지갑이 잠겨 있어서 스테이킹을 하지 않고 있습니다.</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Not staking because wallet is offline</source>
-        <translation>지갑이 오프라인이어서 스테이킹 하지 않습니다.</translation>
+        <translation>지갑이 오프라인이어서 스테이킹을 하지 않고 있습니다.</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Not staking because wallet is syncing</source>
-        <translation>지갑이 동기화하는 중이어서 스테이킹 하지 않습니다.</translation>
+        <translation>지갑이 동기화하는 중이어서 스테이킹을 하지 않고 있습니다.</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Not staking because you don&apos;t have mature coins</source>
-        <translation>코인이 아직 사용가능하지 않는 중이어서 스테이킹 하지 않습니다.</translation>
+        <translation>코인이 아직 사용가능하지 않아서 스테이킹을 하지 않고 있습니다.</translation>
     </message>
     <message>
         <location line="-812"/>
@@ -615,12 +615,12 @@ Address: %4
     <message>
         <location line="+8"/>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</source>
-        <translation>지갑이 암호화 되었고 현재 잠금해제 되었습니다</translation>
+        <translation>지갑이 암호화 되었고, 현재 잠금해제 되었습니다</translation>
     </message>
     <message>
         <location line="+8"/>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
-        <translation>지갑이 암호화 되었고 현재 잠겨져 있습니다</translation>
+        <translation>지갑이 암호화 되었고, 현재 잠겨져 있습니다</translation>
     </message>
     <message>
         <location line="+24"/>
@@ -698,7 +698,7 @@ Address: %4
     <message>
         <location line="+2"/>
         <source>Transactions after this will not yet be visible.</source>
-        <translation>이 이후에 거래는 아직 표시되지 않을 것입니다.</translation>
+        <translation>이 이후의 거래는 아직 표시되지 않을 것입니다.</translation>
     </message>
     <message>
         <location line="+23"/>
@@ -728,7 +728,7 @@ Address: %4
     <message>
         <location filename="../bitcoin.cpp" line="+104"/>
         <source>A fatal error occurred. Wispr can no longer continue safely and will quit.</source>
-        <translation>심각한 오류가 발생했습니다. Wispr는 더 이상 안전하게 진행할 수 없어서 중단될 것입니다.</translation>
+        <translation>심각한 오류가 발생했습니다. Wispr가 더 이상 안전하게 진행될 수 없어서 중단될 것입니다.</translation>
     </message>
 </context>
 <context>
@@ -1072,7 +1072,7 @@ Address: %4
     <message>
         <location line="+6"/>
         <source>Optional transaction fee per kB that helps make sure your transactions are processed quickly. Most transactions are 1 kB. Fee 0.01 recommended.</source>
-        <translation>거래가 빨리 처리되게 하는 kB 당의 옵션적 거래 수수료. 대부분의 거래는 1kB입니다. 0.01 수수료를 권장합니다.</translation>
+        <translation>거래가 빨리 처리되게 하는 KB 당의 옵션적 거래 수수료. 대부분의 거래는 1KB입니다. 0.01 수수료를 권장합니다.</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -1082,7 +1082,7 @@ Address: %4
     <message>
         <location line="+31"/>
         <source>Reserved amount does not participate in staking and is therefore spendable at any time.</source>
-        <translation>예정된 금액은 스테이킹에 참여하지 않아서 언제나 사용 가능합니다.</translation>
+        <translation>예정된 금액은 스테이킹에 포함되지 않아서 언제나 사용 가능합니다.</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -1097,7 +1097,7 @@ Address: %4
     <message>
         <location line="+3"/>
         <source>&amp;Start Wispr on system login</source>
-        <translation>&amp;시스템 로그인시, Wispr 시작</translation>
+        <translation>&amp;시스템 로그인 시, Wispr 시작</translation>
     </message>
     <message>
         <location line="+21"/>
@@ -1122,7 +1122,7 @@ Address: %4
     <message>
         <location line="+19"/>
         <source>IP address of the proxy (e.g. 127.0.0.1)</source>
-        <translation>프록시의 IP address</translation>
+        <translation>프록시의 IP 주소</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -1202,12 +1202,12 @@ Address: %4
     <message>
         <location line="+3"/>
         <source>Display coin &amp;control features (experts only!)</source>
-        <translation>코인 제어 기능 표시(전문가용!)</translation>
+        <translation>코인 제어 기능 표시(전문가용)</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>Use black visual theme (requires restart)</source>
-        <translation>블랙의 시각적 테마 사용</translation>
+        <translation>블랙의 시각적 테마 사용(지갑 재시작 필요)</translation>
     </message>
     <message>
         <location line="+71"/>
@@ -1324,15 +1324,15 @@ Address: %4
         <location filename="../overviewpage.cpp" line="+116"/>
         <location line="+1"/>
         <source>out of sync</source>
-        <translation>Sync가 않되고 있음</translation>
+        <translation>Sync가 되지 않고 있습니다.</translation>
     </message>
 </context>
 <context>
     <name>PaymentServer</name>
     <message>
         <location filename="../paymentserver.cpp" line="+107"/>
-        <source>Cannot start Wispr: click-to-pay handler</source>
-        <translation>Wispr를 시작할 수 없슴: click-to-pay handler</translation>
+        <source>Cannot start Wispr: Click-to-pay handler</source>
+        <translation>Wispr를 시작할 수 없습니다: click-to-pay handler</translation>
     </message>
 </context>
 <context>
@@ -1360,7 +1360,7 @@ Address: %4
     <message>
         <location line="+19"/>
         <source>Message:</source>
-        <translation>메시지</translation>
+        <translation>메시지:</translation>
     </message>
     <message>
         <location line="+71"/>
@@ -1380,7 +1380,7 @@ Address: %4
     <message>
         <location line="+23"/>
         <source>Resulting URI too long, try to reduce the text for label / message.</source>
-        <translation>URI가 너무 길어서 라벨/메시지를 위한 텍스트를 줄여 주세요.</translation>
+        <translation>URI가 너무 많이 입력되었으니 라벨/메시지를 위해 텍스트를 줄여 주세요.</translation>
     </message>
     <message>
         <location line="+25"/>
@@ -1592,7 +1592,7 @@ Address: %4
     <message>
         <location line="+2"/>
         <source>%1 h %2 m</source>
-        <translation>>%1 h %2 m</translation>
+        <translation>%1 h %2 m</translation>
     </message>
 </context>
 <context>
@@ -1612,12 +1612,12 @@ Address: %4
     <message>
         <location line="+76"/>
         <source>Coin Control Features</source>
-        <translation>코인 컨트롤 기능</translation>
+        <translation>코인 콘트롤 기능</translation>
     </message>
     <message>
         <location line="+20"/>
         <source>Inputs...</source>
-        <translation>...을 입력</translation>
+        <translation>코인 수량 입력</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -1643,7 +1643,7 @@ Address: %4
     <message>
         <location line="-19"/>
         <source>Bytes:</source>
-        <translation>Bytes:</translation>
+        <translation>바이트:</translation>
     </message>
     <message>
         <location line="+51"/>
@@ -1663,7 +1663,7 @@ Address: %4
     <message>
         <location line="+19"/>
         <source>no</source>
-        <translation>no</translation>
+        <translation>아니요.</translation>
     </message>
     <message>
         <location line="+32"/>
@@ -1717,8 +1717,8 @@ Address: %4
     </message>
     <message>
         <location filename="../sendcoinsdialog.cpp" line="-171"/>
-        <source>Enter a Wispr address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
-        <translation>Wispr 주소 입력 (예: B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
+        <source>Enter a Wispr address (e.g. WiyoBkzfbHKt79GxCVwSpHoEyxbL1X49XZ)</source>
+        <translation>Wispr 주소 입력 (예: WiyoBkzfbHKt79GxCVwSpHoEyxbL1X49XZ)</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -1841,18 +1841,18 @@ Address: %4
     <message>
         <location line="+13"/>
         <source>Pay &amp;To:</source>
-        <translation>지급&amp;수신:</translation>
+        <translation>수신자 주소:</translation>
     </message>
     <message>
         <location line="+34"/>
-        <source>The address to send the payment to (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
-        <translation>지불할 주소(예: B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
+        <source>The address to send the payment to (e.g. WiyoBkzfbHKt79GxCVwSpHoEyxbL1X49XZ)</source>
+        <translation>지불할 주소(예: WiyoBkzfbHKt79GxCVwSpHoEyxbL1X49XZ)</translation>
     </message>
     <message>
         <location line="+60"/>
         <location filename="../sendcoinsentry.cpp" line="+26"/>
         <source>Enter a label for this address to add it to your address book</source>
-        <translation>당신의 주소록에 이 주소를 추가하기 위하여 라벨을 입역하세요 </translation>
+        <translation>당신의 주소록에 이 주소를 추가하기 위하여 라벨을 입력하세요.</translation>
     </message>
     <message>
         <location line="-78"/>
@@ -1872,7 +1872,7 @@ Address: %4
     <message>
         <location line="+7"/>
         <source>Paste address from clipboard</source>
-        <translation>클립보드로 부터 주소를 붙이세요.</translation>
+        <translation>클립보드로부터 주소를 붙이기</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1882,12 +1882,12 @@ Address: %4
     <message>
         <location line="+7"/>
         <source>Remove this recipient</source>
-        <translation>수신자를 삭제하세요.</translation>
+        <translation>수신자를 삭제</translation>
     </message>
     <message>
         <location filename="../sendcoinsentry.cpp" line="+1"/>
-        <source>Enter a Wispr address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
-        <translation>Wispr 주소 입력하세요. (예: B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
+        <source>Enter a Wispr address (e.g. WiyoBkzfbHKt79GxCVwSpHoEyxbL1X49XZ)</source>
+        <translation>Wispr 주소를 입력하세요. (예: WiyoBkzfbHKt79GxCVwSpHoEyxbL1X49XZ)</translation>
     </message>
 </context>
 <context>
@@ -1895,7 +1895,7 @@ Address: %4
     <message>
         <location filename="../forms/signverifymessagedialog.ui" line="+14"/>
         <source>Signatures - Sign / Verify a Message</source>
-        <translation>서명 - 싸인 / 메시지 확인</translation>
+        <translation>서명 - 서명 / 메시지 확인</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -1906,12 +1906,12 @@ Address: %4
     <message>
         <location line="-118"/>
         <source>You can sign messages with your addresses to prove you own them. Be careful not to sign anything vague, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
-        <translation>여러분 자신을 증명하기 위해 주소를 첨가하고 서명할 수 있습니다. 피싱 공격으로 말미암아 여러분의 서명을 통해 속아 넘어가게 할 수 있으므로, 서명하지 않은 어떤 모호한 요소든 주의 하십시오. 동의하는 완전 무결한 조항에만 서명 하십시오.</translation>
+        <translation>여러분 자신을 증명하기 위해 주소를 첨가하고 서명할 수 있습니다. 피싱 공격은 당신의 신원을 피싱에 서명하게 속일 수 있으므로, 어떤 모호한 요소에 대해 서명하지 않도록 주의 하십시오. 동의하는 완전 무결한 조항에만 서명 하십시오.</translation>
     </message>
     <message>
         <location line="+18"/>
-        <source>The address to sign the message with (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
-        <translation>메시지에 서명할 주소 (예: B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
+        <source>The address to sign the message with (e.g. WiyoBkzfbHKt79GxCVwSpHoEyxbL1X49XZ)</source>
+        <translation>메시지에 서명할 주소 (예: WiyoBkzfbHKt79GxCVwSpHoEyxbL1X49XZ)</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1938,7 +1938,7 @@ Address: %4
     <message>
         <location line="+12"/>
         <source>Enter the message you want to sign here</source>
-        <translation>여기에 서명하려는 메시지를 입력 하십시오.</translation>
+        <translation>서명하려는 메시지를 입력 하세요.</translation>
     </message>
     <message>
         <location line="+24"/>
@@ -1970,12 +1970,12 @@ Address: %4
     <message>
         <location line="-64"/>
         <source>Enter the signing address, message (ensure you copy line breaks, spaces, tabs, etc. exactly) and signature below to verify the message. Be careful not to read more into the signature than what is in the signed message itself, to avoid being tricked by a man-in-the-middle attack.</source>
-        <translation>서명 주소, 메시지(줄 바꿈, 스페이스, 탭 등을 정확하게 복사하세요.), 그리고 메시지를 확인할 아래의 서명을 입력하세요. 미들맨 어택에 속지 않기 위해서 서명된 메시지 자체보다 서명을 더 자세히 읽지 않도록 주의하세요.</translation>
+        <translation>서명 주소, 메시지(줄 바꿈, 스페이스, 탭 등을 정확하게 복사하세요.), 그리고 메시지를 확인할 서명을 입력하세요. 미들맨 어택에 속지 않기 위하여 서명된 메시지 그 자체보다 서명 안의 내용을 더 자세히 읽지 않도록 주의하세요.</translation>
     </message>
     <message>
         <location line="+21"/>
-        <source>The address the message was signed with (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
-        <translation>메시지가 서명된 주소 (예: B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
+        <source>The address the message was signed with (e.g. WiyoBkzfbHKt79GxCVwSpHoEyxbL1X49XZ)</source>
+        <translation>메시지가 서명된 주소 (예: WiyoBkzfbHKt79GxCVwSpHoEyxbL1X49XZ)</translation>
     </message>
     <message>
         <location line="+40"/>
@@ -1990,8 +1990,8 @@ Address: %4
     <message>
         <location filename="../signverifymessagedialog.cpp" line="+27"/>
         <location line="+3"/>
-        <source>Enter a Wispr address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
-        <translation>Wispr 주소를 입력하세요. (예: B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
+        <source>Enter a Wispr address (e.g. WiyoBkzfbHKt79GxCVwSpHoEyxbL1X49XZ)</source>
+        <translation>Wispr 주소를 입력하세요. (예: WiyoBkzfbHKt79GxCVwSpHoEyxbL1X49XZ)</translation>
     </message>
     <message>
         <location line="-2"/>
@@ -2001,7 +2001,7 @@ Address: %4
     <message>
         <location line="+3"/>
         <source>Enter Wispr signature</source>
-        <translation>Wispr 사인을 입력</translation>
+        <translation>Wispr 서명을 입력</translation>
     </message>
     <message>
         <location line="+85"/>
@@ -2118,7 +2118,7 @@ Address: %4
     <message>
         <location line="+4"/>
         <source>Date</source>
-        <translation>날짜</translation>
+        <translation>날자</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -2128,20 +2128,20 @@ Address: %4
     <message>
         <location line="+0"/>
         <source>Generated</source>
-        <translation>생성됨</translation>
+        <translation>채굴됨</translation>
     </message>
     <message>
         <location line="+5"/>
         <location line="+13"/>
         <source>From</source>
-        <translation>로부터</translation>
+        <translation>다음으로부터 받음</translation>
     </message>
     <message>
         <location line="+1"/>
         <location line="+19"/>
         <location line="+58"/>
         <source>To</source>
-        <translation>에게</translation>
+        <translation>다음에게 보내짐</translation>
     </message>
     <message>
         <location line="-74"/>
@@ -2161,7 +2161,7 @@ Address: %4
         <location line="+17"/>
         <location line="+30"/>
         <source>Credit</source>
-        <translation>보낼 금액</translation>
+        <translation>보낸 금액</translation>
     </message>
     <message>
         <location line="-102"/>
@@ -2179,7 +2179,7 @@ Address: %4
         <location line="+15"/>
         <location line="+30"/>
         <source>Debit</source>
-        <translation>받을 금액</translation>
+        <translation>받는 금액</translation>
     </message>
     <message>
         <location line="-39"/>
@@ -2189,7 +2189,7 @@ Address: %4
     <message>
         <location line="+16"/>
         <source>Net amount</source>
-        <translation>총액</translation>
+        <translation>총금액</translation>
     </message>
     <message>
         <location line="+6"/>
@@ -2208,8 +2208,8 @@ Address: %4
     </message>
     <message>
         <location line="+3"/>
-        <source>Generated coins must mature 510 blocks before they can be spent. When you generated this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to &quot;not accepted&quot; and it won&apos;t be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
-        <translation>생성된 코인은 510블럭이 지나야 사용가능합니다. 이 블럭이 생성되었을 떄, 생성된 코인은 블럭체인에 포함되어 네트워크를 통해 브로드캐스트 되었습니다. 체인에 포함되는 것이 실패하면, 상태가 &quot;승인되지 않음&quot;으로 변경되며 사용 불가능 해집니다. 이것은 다른 노드가 몇 초안에 블럭을 생성하면 가끔 발생할 수 있습니다.</translation>
+        <source>Generated coins must mature a considerable amount blocks before they can be spent. When you generated this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to &quot;not accepted&quot; and it won&apos;t be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
+        <translation>생성된 코인은 상당량의 블럭이 지나야 사용가능합니다. 이 블럭이 생성되었을 떄, 생성된 코인은 블럭체인에 포함되어 네트워크를 통해 브로드캐스트 되었습니다. 체인에 포함되는 것이 실패하면, 상태가 &quot;승인되지 않음&quot;으로 변경되며 사용 불가능 해집니다. 이것은 다른 노드가 몇 초안에 블럭을 생성하면 가끔 발생할 수 있습니다.</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -2664,8 +2664,8 @@ rpcpassword=%s
     </message>
     <message>
         <location line="+5"/>
-        <source>Listen for connections on &lt;port&gt; (default: 17000 or testnet: 17002)</source>
-        <translation>&lt;포트&gt;에서 연결을 수신 (기본값: 17000 또는 testnet: 17002)</translation>
+        <source>Listen for connections on &lt;port&gt; (default: 15714 or testnet: 25714)</source>
+        <translation>&lt;포트&gt;에서 연결을 수신 (기본값: 15714 또는 testnet: 25714)</translation>
     </message>
     <message>
         <location line="+1"/>
