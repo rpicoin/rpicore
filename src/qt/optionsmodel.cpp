@@ -8,8 +8,6 @@
 
 #include <QSettings>
 
-bool fUseBlackTheme;
-
 OptionsModel::OptionsModel(QObject *parent) :
     QAbstractListModel(parent)
 {
