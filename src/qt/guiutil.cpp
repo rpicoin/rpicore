@@ -412,9 +412,6 @@ bool SetStartOnSystemStartup(bool fAutoStart)
 }
 #else
 
-// TODO: OSX startup stuff; see:
-// https://developer.apple.com/library/mac/#documentation/MacOSX/Conceptual/BPSystemStartup/Articles/CustomLogin.html
-
 bool GetStartOnSystemStartup() { return false; }
 bool SetStartOnSystemStartup(bool fAutoStart) { return false; }
 
@@ -461,6 +458,7 @@ void HelpMessageBox::showOrPrint()
 }
 
 /*
+ Main color pallet.
 Donker: #2d3245
 Groen: #2ebb89
 Licht-blauw: #4a5d97
@@ -468,7 +466,7 @@ Blauw: #2e3e70
 Vaal-blauw: #3d4664
 */
 
-void SetBlackThemeQSS(QApplication& app)
+void SetWisprTheme(QApplication& app)
 {
     app.setStyleSheet("QWidget        { background: #3d4664; color: #2ebb89; }"
                       "QFrame         { border: none; }"
@@ -482,7 +480,6 @@ void SetBlackThemeQSS(QApplication& app)
                       "QMenuBar       { background: #3d4664; color: #2ebb89; }"
                       "QMenu          { background: #2d3245; color: #ffffff; }"
                       "QMenu::item:selected { background-color: #2ebb89; }"
-                      "QLabel         { color: #ffffff; }"
                       "QLabel         { color: #ffffff; }"
                       "QScrollBar     { color: #ffffff; }"
                       "QCheckBox      { color: #2ebb89; }"

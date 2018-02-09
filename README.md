@@ -19,13 +19,16 @@ For more info, visit us at [wispr.tech](http://wispr.tech) or check out our ANN 
 <tr><td>Block Reward</td><td>5 WSP + tx Fees paid to miners</td></tr>
 <tr><td>Min Tx Fee</td><td>0.0001 WSP</td></tr>
 <tr><td>Difficulty Retargeting</td><td>Every Block</td></tr>
-<tr><td>Coin Maturity</td><td>101 blocks</td></tr>
+<tr><td>Coin Maturity</td><td>100 blocks</td></tr>
 <tr><td>Confirmations</td><td>10</td></tr>
 <tr><td>Stake Confirmations</td><td>100</td></tr>
 <tr><td>Max Coin Supply</td><td>120,000,000 WSP</td></tr>
 <tr><td>Premine</td><td>25,125,000 WSP*</td></tr>
 </table>
-*A premine occured during the initial PoW phase (up to block 251), not accessible to the public. To see how the funds were distributed, check the above links
+
+### Premine
+The initial coins were premined in a private PoW phase up to block 450. Each block held 125,000 coins and some blocks were PoS in order to make a total of 25,000,000 WSP. Due to mining calculations an extra 125,000 WSP was mined and later [burned](https://explorer.wispr.tech/tx/ccabff166654a078da5cda2aa758e1f801f14e8886c8b2fcc9e2d32126755fb9).<br>
+To find out how the premine was distributed, check our [ANN thread](https://bitcointalk.org/index.php?topic=2561885). 
 
 ### Building Wispr
 Check out <b>/doc</b> for specific OS build instructions.
