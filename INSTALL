@@ -1,0 +1,9 @@
+Building RPITCoin
+
+See doc/readme-qt.rst for instructions on building RPITCoin QT,
+the intended-for-end-users, nice-graphical-interface, reference
+implementation of RPITCoin.
+
+See doc/build-*.txt for instructions on building RpiCoind,
+the intended-for-services, no-graphical-interface, reference
+implementation of RPITCoin.
