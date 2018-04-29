@@ -1,12 +1,12 @@
-![alt text](https://i.imgur.com/BdjuuqJ.png)
+![alt text](https://i.imgur.com/QW7p8Vu.jpg)
 
-http://rpicoinproject.com/
+https://rpicoin.com
 
 Instant, Secure, No fee & Rewarding Cryptocurrency For Everyone
 
 Instant Transactions - Send and receive payments and confirm within seconds
 
-Zero Fees - Improve your savings with RpiCoin zero transaction fees
+Zero Fees - Improve your savings with RPICoin zero transaction fees
 
 Secure - Have complete ownership and control over your finances.
 
@@ -22,7 +22,7 @@ Algo: Scrypt
 
 Type: PoW + POS
 
-Address letter: B
+Address letter: R
 
 RPC port: 21327
 
