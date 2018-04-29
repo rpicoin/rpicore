@@ -8,12 +8,12 @@ obj/wallet.o: wallet.cpp txdb.h txdb-leveldb.h main.h bignum.h \
  zerocoin/CoinSpend.h zerocoin/SerialNumberSignatureOfKnowledge.h \
  zerocoin/SpendMetaData.h zerocoin/../uint256.h \
  zerocoin/ParamGeneration.h \
- /root/BitBlocks/src/leveldb/include/leveldb/db.h \
- /root/BitBlocks/src/leveldb/include/leveldb/iterator.h \
- /root/BitBlocks/src/leveldb/include/leveldb/slice.h \
- /root/BitBlocks/src/leveldb/include/leveldb/status.h \
- /root/BitBlocks/src/leveldb/include/leveldb/options.h \
- /root/BitBlocks/src/leveldb/include/leveldb/write_batch.h wallet.h \
+ /root/rpicoin/src/leveldb/include/leveldb/db.h \
+ /root/rpicoin/src/leveldb/include/leveldb/iterator.h \
+ /root/rpicoin/src/leveldb/include/leveldb/slice.h \
+ /root/rpicoin/src/leveldb/include/leveldb/status.h \
+ /root/rpicoin/src/leveldb/include/leveldb/options.h \
+ /root/rpicoin/src/leveldb/include/leveldb/write_batch.h wallet.h \
  ui_interface.h walletdb.h db.h base58.h kernel.h coincontrol.h
 wallet.cpp txdb.h txdb-leveldb.h main.h bignum.h :
  serialize.h allocators.h version.h clientversion.h uint256.h sync.h :
@@ -25,10 +25,10 @@ wallet.cpp txdb.h txdb-leveldb.h main.h bignum.h :
  zerocoin/CoinSpend.h zerocoin/SerialNumberSignatureOfKnowledge.h :
  zerocoin/SpendMetaData.h zerocoin/../uint256.h :
  zerocoin/ParamGeneration.h :
- /root/BitBlocks/src/leveldb/include/leveldb/db.h :
- /root/BitBlocks/src/leveldb/include/leveldb/iterator.h :
- /root/BitBlocks/src/leveldb/include/leveldb/slice.h :
- /root/BitBlocks/src/leveldb/include/leveldb/status.h :
- /root/BitBlocks/src/leveldb/include/leveldb/options.h :
- /root/BitBlocks/src/leveldb/include/leveldb/write_batch.h wallet.h :
+ /root/rpicoin/src/leveldb/include/leveldb/db.h :
+ /root/rpicoin/src/leveldb/include/leveldb/iterator.h :
+ /root/rpicoin/src/leveldb/include/leveldb/slice.h :
+ /root/rpicoin/src/leveldb/include/leveldb/status.h :
+ /root/rpicoin/src/leveldb/include/leveldb/options.h :
+ /root/rpicoin/src/leveldb/include/leveldb/write_batch.h wallet.h :
  ui_interface.h walletdb.h db.h base58.h kernel.h coincontrol.h :

@@ -1,10 +1,10 @@
 obj/txdb-leveldb.o: txdb-leveldb.cpp \
- /root/BitBlocks/src/leveldb/include/leveldb/env.h \
- /root/BitBlocks/src/leveldb/include/leveldb/status.h \
- /root/BitBlocks/src/leveldb/include/leveldb/slice.h \
- /root/BitBlocks/src/leveldb/include/leveldb/cache.h \
- /root/BitBlocks/src/leveldb/include/leveldb/filter_policy.h \
- /root/BitBlocks/src/leveldb/helpers/memenv/memenv.h kernel.h main.h \
+ /root/rpicoin/src/leveldb/include/leveldb/env.h \
+ /root/rpicoin/src/leveldb/include/leveldb/status.h \
+ /root/rpicoin/src/leveldb/include/leveldb/slice.h \
+ /root/rpicoin/src/leveldb/include/leveldb/cache.h \
+ /root/rpicoin/src/leveldb/include/leveldb/filter_policy.h \
+ /root/rpicoin/src/leveldb/helpers/memenv/memenv.h kernel.h main.h \
  bignum.h serialize.h allocators.h version.h clientversion.h uint256.h \
  sync.h threadsafety.h net.h mruset.h netbase.h compat.h protocol.h \
  addrman.h util.h script.h keystore.h crypter.h key.h scrypt.h \
@@ -14,17 +14,17 @@ obj/txdb-leveldb.o: txdb-leveldb.cpp \
  zerocoin/AccumulatorProofOfKnowledge.h zerocoin/CoinSpend.h \
  zerocoin/SerialNumberSignatureOfKnowledge.h zerocoin/SpendMetaData.h \
  zerocoin/../uint256.h zerocoin/ParamGeneration.h checkpoints.h txdb.h \
- txdb-leveldb.h /root/BitBlocks/src/leveldb/include/leveldb/db.h \
- /root/BitBlocks/src/leveldb/include/leveldb/iterator.h \
- /root/BitBlocks/src/leveldb/include/leveldb/options.h \
- /root/BitBlocks/src/leveldb/include/leveldb/write_batch.h
+ txdb-leveldb.h /root/rpicoin/src/leveldb/include/leveldb/db.h \
+ /root/rpicoin/src/leveldb/include/leveldb/iterator.h \
+ /root/rpicoin/src/leveldb/include/leveldb/options.h \
+ /root/rpicoin/src/leveldb/include/leveldb/write_batch.h
 txdb-leveldb.cpp :
- /root/BitBlocks/src/leveldb/include/leveldb/env.h :
- /root/BitBlocks/src/leveldb/include/leveldb/status.h :
- /root/BitBlocks/src/leveldb/include/leveldb/slice.h :
- /root/BitBlocks/src/leveldb/include/leveldb/cache.h :
- /root/BitBlocks/src/leveldb/include/leveldb/filter_policy.h :
- /root/BitBlocks/src/leveldb/helpers/memenv/memenv.h kernel.h main.h :
+ /root/rpicoin/src/leveldb/include/leveldb/env.h :
+ /root/rpicoin/src/leveldb/include/leveldb/status.h :
+ /root/rpicoin/src/leveldb/include/leveldb/slice.h :
+ /root/rpicoin/src/leveldb/include/leveldb/cache.h :
+ /root/rpicoin/src/leveldb/include/leveldb/filter_policy.h :
+ /root/rpicoin/src/leveldb/helpers/memenv/memenv.h kernel.h main.h :
  bignum.h serialize.h allocators.h version.h clientversion.h uint256.h :
  sync.h threadsafety.h net.h mruset.h netbase.h compat.h protocol.h :
  addrman.h util.h script.h keystore.h crypter.h key.h scrypt.h :
@@ -34,7 +34,7 @@ txdb-leveldb.cpp :
  zerocoin/AccumulatorProofOfKnowledge.h zerocoin/CoinSpend.h :
  zerocoin/SerialNumberSignatureOfKnowledge.h zerocoin/SpendMetaData.h :
  zerocoin/../uint256.h zerocoin/ParamGeneration.h checkpoints.h txdb.h :
- txdb-leveldb.h /root/BitBlocks/src/leveldb/include/leveldb/db.h :
- /root/BitBlocks/src/leveldb/include/leveldb/iterator.h :
- /root/BitBlocks/src/leveldb/include/leveldb/options.h :
- /root/BitBlocks/src/leveldb/include/leveldb/write_batch.h :
+ txdb-leveldb.h /root/rpicoin/src/leveldb/include/leveldb/db.h :
+ /root/rpicoin/src/leveldb/include/leveldb/iterator.h :
+ /root/rpicoin/src/leveldb/include/leveldb/options.h :
+ /root/rpicoin/src/leveldb/include/leveldb/write_batch.h :
