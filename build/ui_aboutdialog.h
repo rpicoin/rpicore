@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'aboutdialog.ui'
 **
-** Created by: Qt User Interface Compiler version 5.9.2
+** Created by: Qt User Interface Compiler version 4.8.7
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -10,16 +10,16 @@
 #define UI_ABOUTDIALOG_H
 
 #include <QtCore/QVariant>
-#include <QtWidgets/QAction>
-#include <QtWidgets/QApplication>
-#include <QtWidgets/QButtonGroup>
-#include <QtWidgets/QDialog>
-#include <QtWidgets/QDialogButtonBox>
-#include <QtWidgets/QHBoxLayout>
-#include <QtWidgets/QHeaderView>
-#include <QtWidgets/QLabel>
-#include <QtWidgets/QSpacerItem>
-#include <QtWidgets/QVBoxLayout>
+#include <QtGui/QAction>
+#include <QtGui/QApplication>
+#include <QtGui/QButtonGroup>
+#include <QtGui/QDialog>
+#include <QtGui/QDialogButtonBox>
+#include <QtGui/QHBoxLayout>
+#include <QtGui/QHeaderView>
+#include <QtGui/QLabel>
+#include <QtGui/QSpacerItem>
+#include <QtGui/QVBoxLayout>
 
 QT_BEGIN_NAMESPACE
 
@@ -42,12 +42,12 @@ public:
     void setupUi(QDialog *AboutDialog)
     {
         if (AboutDialog->objectName().isEmpty())
-            AboutDialog->setObjectName(QStringLiteral("AboutDialog"));
+            AboutDialog->setObjectName(QString::fromUtf8("AboutDialog"));
         AboutDialog->resize(593, 319);
         horizontalLayout_2 = new QHBoxLayout(AboutDialog);
-        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
+        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
         label_4 = new QLabel(AboutDialog);
-        label_4->setObjectName(QStringLiteral("label_4"));
+        label_4->setObjectName(QString::fromUtf8("label_4"));
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Ignored);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -58,24 +58,24 @@ public:
         horizontalLayout_2->addWidget(label_4);
 
         verticalLayout_2 = new QVBoxLayout();
-        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
+        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
         verticalLayout_2->addItem(verticalSpacer_2);
 
         horizontalLayout = new QHBoxLayout();
-        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         label = new QLabel(AboutDialog);
-        label->setObjectName(QStringLiteral("label"));
+        label->setObjectName(QString::fromUtf8("label"));
         label->setCursor(QCursor(Qt::IBeamCursor));
         label->setTextInteractionFlags(Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse);
 
         horizontalLayout->addWidget(label);
 
         versionLabel = new QLabel(AboutDialog);
-        versionLabel->setObjectName(QStringLiteral("versionLabel"));
+        versionLabel->setObjectName(QString::fromUtf8("versionLabel"));
         versionLabel->setCursor(QCursor(Qt::IBeamCursor));
-        versionLabel->setText(QStringLiteral("0.3.666-beta"));
+        versionLabel->setText(QString::fromUtf8("0.3.666-beta"));
         versionLabel->setTextInteractionFlags(Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse);
 
         horizontalLayout->addWidget(versionLabel);
@@ -88,14 +88,14 @@ public:
         verticalLayout_2->addLayout(horizontalLayout);
 
         copyrightLabel = new QLabel(AboutDialog);
-        copyrightLabel->setObjectName(QStringLiteral("copyrightLabel"));
+        copyrightLabel->setObjectName(QString::fromUtf8("copyrightLabel"));
         copyrightLabel->setCursor(QCursor(Qt::IBeamCursor));
         copyrightLabel->setTextInteractionFlags(Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse);
 
         verticalLayout_2->addWidget(copyrightLabel);
 
         label_2 = new QLabel(AboutDialog);
-        label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setObjectName(QString::fromUtf8("label_2"));
         label_2->setCursor(QCursor(Qt::IBeamCursor));
         label_2->setTextFormat(Qt::RichText);
         label_2->setWordWrap(true);
@@ -108,7 +108,7 @@ public:
         verticalLayout_2->addItem(verticalSpacer);
 
         buttonBox = new QDialogButtonBox(AboutDialog);
-        buttonBox->setObjectName(QStringLiteral("buttonBox"));
+        buttonBox->setObjectName(QString::fromUtf8("buttonBox"));
         buttonBox->setOrientation(Qt::Horizontal);
         buttonBox->setStandardButtons(QDialogButtonBox::Ok);
 
@@ -127,17 +127,17 @@ public:
 
     void retranslateUi(QDialog *AboutDialog)
     {
-        AboutDialog->setWindowTitle(QApplication::translate("AboutDialog", "About Rpicoin", Q_NULLPTR));
-        label->setText(QApplication::translate("AboutDialog", "<b>Rpicoin</b> version", Q_NULLPTR));
+        AboutDialog->setWindowTitle(QApplication::translate("AboutDialog", "About rpicoin", 0, QApplication::UnicodeUTF8));
+        label->setText(QApplication::translate("AboutDialog", "<b>rpicoin</b> version", 0, QApplication::UnicodeUTF8));
         copyrightLabel->setText(QApplication::translate("AboutDialog", "Copyright \302\251 2009-2014 The Bitcoin developers\n"
 "Copyright \302\251 2012-2014 The NovaCoin developers\n"
-"Copyright \302\251 2017 The Rpicoin developers", Q_NULLPTR));
+"Copyright \302\251 2017 The rpicoin developers", 0, QApplication::UnicodeUTF8));
         label_2->setText(QApplication::translate("AboutDialog", "\n"
 "This is experimental software.\n"
 "\n"
 "Distributed under the MIT/X11 software license, see the accompanying file COPYING or <a href=\"http://www.opensource.org/licenses/mit-license.php\">http://www.opensource.org/licenses/mit-license.php</a>.\n"
 "\n"
-"This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit (<a href=\"https://www.openssl.org/\">https://www.openssl.org/</a>) and cryptographic software written by Eric Young (<a href=\"mailto:eay@cryptsoft.com\">eay@cryptsoft.com</a>) and UPnP software written by Thomas Bernard.", Q_NULLPTR));
+"This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit (<a href=\"https://www.openssl.org/\">https://www.openssl.org/</a>) and cryptographic software written by Eric Young (<a href=\"mailto:eay@cryptsoft.com\">eay@cryptsoft.com</a>) and UPnP software written by Thomas Bernard.", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };
