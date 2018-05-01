@@ -276,10 +276,10 @@ class CBitcoinAddress : public CBase58Data
 public:
     enum
     {
-        PUBKEY_ADDRESS = 26, //Rpicoin address start with R
-        SCRIPT_ADDRESS = 85,
-        PUBKEY_ADDRESS_TEST = 111,
-        SCRIPT_ADDRESS_TEST = 196,
+        PUBKEY_ADDRESS = 60, //Rpicoin address start with R
+        SCRIPT_ADDRESS = 122,
+        PUBKEY_ADDRESS_TEST = 75,//RPI testnet address starts with X
+        SCRIPT_ADDRESS_TEST = 137,
     };
 
     bool Set(const CKeyID &id) {
