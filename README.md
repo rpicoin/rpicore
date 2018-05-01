@@ -30,4 +30,4 @@ Specifications
 Links
 ===========================
 * Official Website(https://www.rpicoin.com/)<br>
-
+* 
