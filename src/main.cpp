@@ -1007,17 +1007,17 @@ int64_t GetProofOfWorkReward(int nHeight, int64_t nFees)
 
             if(nBestHeight == 0)
             {
-            nSubsidy = 15000000 * COIN; // 3% for developers - Presale - Bounty - Market
+            nSubsidy = 4000000 * COIN; // 4% pre-mine developer funds
 			
 			}
-            else if(nBestHeight <= 3200) // Pre-sale time
+            else if(nBestHeight <= 3200)
             {
-            nSubsidy = 0 * COIN;
+            nSubsidy = 50 * COIN;
             }
 			
 		    else if(nBestHeight <= 100000)
             {
-            nSubsidy = 50 * COIN;
+            nSubsidy = 45 * COIN;
             }
 			
 			 else if(nBestHeight <= 200000)
@@ -1027,52 +1027,52 @@ int64_t GetProofOfWorkReward(int nHeight, int64_t nFees)
 			
 			 else if(nBestHeight <= 300000)
             {
-            nSubsidy = 30 * COIN;
+            nSubsidy = 35 * COIN;
             }
 			
 			else if(nBestHeight <= 400000)
             {
-            nSubsidy = 25 * COIN;
+            nSubsidy = 30 * COIN;
             }
 			
 			else if(nBestHeight <= 500000)
             {
-            nSubsidy = 20 * COIN;
+            nSubsidy = 25 * COIN;
             }
 			
 			else if(nBestHeight <= 600000)
             {
-            nSubsidy = 15 * COIN;
+            nSubsidy = 20 * COIN;
             }
 			
 			else if(nBestHeight <= 700000)
             {
-            nSubsidy = 10 * COIN;
+            nSubsidy = 15 * COIN;
             }
 			
 			else if(nBestHeight <= 800000)
             {
-            nSubsidy = 9 * COIN;
+            nSubsidy = 14 * COIN;
             }
 			
 			else if(nBestHeight <= 900000)
             {
-            nSubsidy = 8 * COIN;
+            nSubsidy = 12 * COIN;
             }
 			
 			else if(nBestHeight <= 1000000)
             {
-            nSubsidy = 7 * COIN;
+            nSubsidy = 10 * COIN;
             }
 			
 			else if(nBestHeight <= 1500000)
             {
-            nSubsidy = 6 * COIN;
+            nSubsidy = 9 * COIN;
             }
 			
 			else if(nBestHeight <= 2000000)
             {
-            nSubsidy = 5 * COIN;
+            nSubsidy = 6 * COIN;
             }
 			
 			else if(nBestHeight <= 3000000)
@@ -1115,7 +1115,7 @@ int64_t GetProofOfStakeReward(int nHeight, int64_t nCoinAge, int64_t nFees)
 				 else if(nBestHeight <= 100000)
 				
 			 {
-				 nSubsidy = nSubsidy * 5 ;  //500%
+				 nSubsidy = nSubsidy * 3 ;  //300%
 			 }
 			 
 			  else if(nBestHeight <= 200000)
