@@ -40,14 +40,12 @@ CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // "standard" scrypt target limit
 CBigNum bnProofOfStakeLimit(~uint256(0) >> 20);
 CBigNum bnProofOfWorkLimitTestNet(~uint256(0) >> 16);
 
-unsigned int nTargetSpacing = 60 * 2; // 2 minute
-unsigned int nTargetSpacing_v2 = 60 * 1; // 1 minute
-unsigned int nTargetSpacing_v3 = 25; // 25 seconds
-unsigned int nStakeMinAge = 60 * 60 * 2; //2 hours stake age
+unsigned int nTargetSpacing = 1 * 60; // 1min
+unsigned int nStakeMinAge = 4 * 60 * 60; //4 hours stake age
 unsigned int nStakeMaxAge = -1; // unlimited
 unsigned int nModifierInterval = 10 * 60; // time to elapse before new modifier is computed
 
-int nCoinbaseMaturity = 6;
+int nCoinbaseMaturity = 10;
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
 
@@ -73,7 +71,7 @@ CScript COINBASE_FLAGS;
 const string strMessageMagic = "rpicoin Signed Message:\n";
 
 // Settings
-int64_t nTransactionFee = 0;
+int64_t nTransactionFee = MIN_TX_FEE;
 int64_t nReserveBalance = 0;
 int64_t nMinimumInputValue = 0;
 
@@ -1003,99 +1001,12 @@ uint256 WantedByOrphan(const CBlock* pblockOrphan)
 int64_t GetProofOfWorkReward(int nHeight, int64_t nFees)
 {
 
-          int64_t nSubsidy = 0.1;
+          int64_t nSubsidy = 10000 * COIN;
 
             if(nBestHeight == 0)
             {
-            nSubsidy = 4000000 * COIN; // 4% pre-mine developer funds
-			
-			}
-            else if(nBestHeight <= 3200)
-            {
-            nSubsidy = 50 * COIN;
-            }
-			
-		    else if(nBestHeight <= 100000)
-            {
-            nSubsidy = 45 * COIN;
-            }
-			
-			 else if(nBestHeight <= 200000)
-            {
-            nSubsidy = 40 * COIN;
-            }
-			
-			 else if(nBestHeight <= 300000)
-            {
-            nSubsidy = 35 * COIN;
-            }
-			
-			else if(nBestHeight <= 400000)
-            {
-            nSubsidy = 30 * COIN;
-            }
-			
-			else if(nBestHeight <= 500000)
-            {
-            nSubsidy = 25 * COIN;
-            }
-			
-			else if(nBestHeight <= 600000)
-            {
-            nSubsidy = 20 * COIN;
-            }
-			
-			else if(nBestHeight <= 700000)
-            {
-            nSubsidy = 15 * COIN;
-            }
-			
-			else if(nBestHeight <= 800000)
-            {
-            nSubsidy = 14 * COIN;
-            }
-			
-			else if(nBestHeight <= 900000)
-            {
-            nSubsidy = 12 * COIN;
-            }
-			
-			else if(nBestHeight <= 1000000)
-            {
-            nSubsidy = 10 * COIN;
-            }
-			
-			else if(nBestHeight <= 1500000)
-            {
-            nSubsidy = 9 * COIN;
-            }
-			
-			else if(nBestHeight <= 2000000)
-            {
-            nSubsidy = 6 * COIN;
-            }
-			
-			else if(nBestHeight <= 3000000)
-            {
-            nSubsidy = 3 * COIN;
-            }
-			
-			else if(nBestHeight <= 4000000)
-            {
-            nSubsidy = 1 * COIN;
-            }
-			
-			else if(nBestHeight <= 5000000)
-            {
-            nSubsidy = 0.5 * COIN;
-            }
-			
-			else
-            {
-            nSubsidy = 0.1 * COIN;
-            }
-
-
+            nSubsidy = 1139123999 * COIN;
+	    }			
 
     if (fDebug && GetBoolArg("-printcreation"))
         printf("GetProofOfWorkReward() : create=%s nSubsidy=%" PRId64"\n", FormatMoney(nSubsidy).c_str(), nSubsidy);
@@ -1108,57 +1019,13 @@ int64_t GetProofOfStakeReward(int nHeight, int64_t nCoinAge, int64_t nFees)
 {
     int64_t nSubsidy = nCoinAge * COIN_YEAR_REWARD * 33 / (365 * 33 + 8);
 
-                 if(nBestHeight <= 20000) 
-            {
-            	 nSubsidy >>= nSubsidy /1000000;  //no substantial pos reward until block 20k
-            }
-				 else if(nBestHeight <= 100000)
-				
-			 {
-				 nSubsidy = nSubsidy * 3 ;  //300%
-			 }
-			 
-			  else if(nBestHeight <= 200000)
-				
-			 {
-				 nSubsidy = nSubsidy * 2.5 ;  //250%
-			 }
-			 
-			 
-			   else if(nBestHeight <= 300000)
-				
-			 {
-				 nSubsidy = nSubsidy * 1.25 ;  //125%
-			 }
-			 
-			 
-			   else if(nBestHeight <= 400000)
-				
-			 {
-				 nSubsidy = nSubsidy * 0.6 ;  //60%
-			 }
-			 
-			    else if(nBestHeight <= 500000)
-				
-			 {
-				 nSubsidy = nSubsidy * 0.3 ;  //30%
-			 }
-			 
-			   else
-			{
-			 nSubsidy = nSubsidy * 0.3 ;  //30%
-			}
-
     if (fDebug && GetBoolArg("-printcreation"))
-        printf("GetProofOfStakeReward(): create=%s nCoinAge=%" PRId64"\n", FormatMoney(nSubsidy).c_str(), nCoinAge);
+        printf("GetProofOfStakeReward(): create=%s nCoinAge=%"PRId64"\n", FormatMoney(nSubsidy).c_str(), nCoinAge);
 
     return nSubsidy + nFees;
 }
 
-static const int64_t nTargetTimespan_v1 = 16 * 60;  // 16 mins
-static const int64_t nTargetTimespan_v2 = 60 * 60;  // 60 mins
-
-unsigned int nTargetTimespan = nTargetTimespan_v1;
+static const int64_t nTargetTimespan = 16 * 60;  // 16 mins
 
 //
 // maximum nBits value could possible be required nTime after
@@ -1238,30 +1105,6 @@ static unsigned int GetNextTargetRequiredV1(const CBlockIndex* pindexLast, bool 
 
 static unsigned int GetNextTargetRequiredV2(const CBlockIndex* pindexLast, bool fProofOfStake)
 {
-    if (pindexBest->nHeight+1 <= 39999)
-    {
-        nTargetSpacing = nTargetSpacing;
-    }
-    else if  (pindexBest->nHeight+1 <=149999)
-    {
-        nTargetSpacing = nTargetSpacing_v2;
-    }
-    else if  (pindexBest->nHeight+1 >=150000)
-    {
-        nTargetSpacing = nTargetSpacing_v3;
-    }
-
-
-
-    if (pindexBest->nHeight+1 >= 40000)
-    {
-        nTargetTimespan = nTargetTimespan_v2;
-    }
-    else
-    {
-        nTargetTimespan = nTargetTimespan_v1;
-    }	
-	
     CBigNum bnTargetLimit = fProofOfStake ? bnProofOfStakeLimit : bnProofOfWorkLimit;
 
     if (pindexLast == NULL)

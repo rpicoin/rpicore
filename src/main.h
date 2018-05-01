@@ -28,17 +28,14 @@ class CNode;
 
 class CTxMemPool;
 
-static const int LAST_POW_BLOCK_V1 = 10000;
-static const int POW_RE_ENABLE = 0;
-// static const int LAST_POW_BLOCK = 9999999999;
+//static const int POW_RE_ENABLE = 0;
 
-static const unsigned int FORK_TIME = 1508493860; // Reject v0.3 clients
-static const unsigned int FORK_TIME_2 = 1508493960; //  Reject all older clients
+static const int LAST_POW_BLOCK = 10000; 
 
 /** The maximum allowed size for a serialized block, in bytes (network rule) */
-static const unsigned int MAX_BLOCK_SIZE = 5000000;
+static const unsigned int MAX_BLOCK_SIZE = 1000000;
 /** The maximum size for mined blocks */
-static const unsigned int MAX_BLOCK_SIZE_GEN = MAX_BLOCK_SIZE/4;
+static const unsigned int MAX_BLOCK_SIZE_GEN = MAX_BLOCK_SIZE/2;
 /** The maximum size for transactions we're willing to relay/mine **/
 static const unsigned int MAX_STANDARD_TX_SIZE = MAX_BLOCK_SIZE_GEN/5;
 /** The maximum allowed number of signature check operations in a block (network rule) */
@@ -48,11 +45,11 @@ static const unsigned int MAX_ORPHAN_TRANSACTIONS = MAX_BLOCK_SIZE/100;
 /** The maximum number of entries in an 'inv' protocol message */
 static const unsigned int MAX_INV_SZ = 50000;
 /** Fees smaller than this (in satoshi) are considered zero fee (for transaction creation) */
-static const int64_t MIN_TX_FEE = 1000; // 0.00001 sat fee
+static const int64_t MIN_TX_FEE = 10000; // 0.0001 sat fee
 /** Fees smaller than this (in satoshi) are considered zero fee (for relaying) */
 static const int64_t MIN_RELAY_TX_FEE = MIN_TX_FEE;
 /** No amount larger than this (in satoshi) is valid */
-static const int64_t MAX_MONEY = 100000000 * COIN;
+static const int64_t MAX_MONEY = 5999785631 * COIN;
 inline bool MoneyRange(int64_t nValue) { return (nValue >= 0 && nValue <= MAX_MONEY); }
 /** Threshold for nLockTime: below this value it is interpreted as block number, otherwise as UNIX timestamp. */
 static const unsigned int LOCKTIME_THRESHOLD = 500000000; // Tue Nov  5 00:53:20 1985 UTC
