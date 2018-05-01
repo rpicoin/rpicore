@@ -24,7 +24,7 @@ Type: PoW + POS
 
 Address letter: R
 
-RPC port: 21327
+RPC port: 31030
 
 premine: 3%
 

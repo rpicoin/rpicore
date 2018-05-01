@@ -48,7 +48,7 @@ static const unsigned int MAX_ORPHAN_TRANSACTIONS = MAX_BLOCK_SIZE/100;
 /** The maximum number of entries in an 'inv' protocol message */
 static const unsigned int MAX_INV_SZ = 50000;
 /** Fees smaller than this (in satoshi) are considered zero fee (for transaction creation) */
-static const int64_t MIN_TX_FEE = 0;
+static const int64_t MIN_TX_FEE = 1000; // 0.00001 sat fee
 /** Fees smaller than this (in satoshi) are considered zero fee (for relaying) */
 static const int64_t MIN_RELAY_TX_FEE = MIN_TX_FEE;
 /** No amount larger than this (in satoshi) is valid */
@@ -57,7 +57,7 @@ inline bool MoneyRange(int64_t nValue) { return (nValue >= 0 && nValue <= MAX_MO
 /** Threshold for nLockTime: below this value it is interpreted as block number, otherwise as UNIX timestamp. */
 static const unsigned int LOCKTIME_THRESHOLD = 500000000; // Tue Nov  5 00:53:20 1985 UTC
 
-static const int64_t COIN_YEAR_REWARD = 100 * CENT;
+static const int64_t COIN_YEAR_REWARD = 30 * CENT;
 
 static const uint256 hashGenesisBlock("0x000009007a0cfbee1189b7ae01024e00aa61892ca65978b940680f1786e80803");
 static const uint256 hashGenesisBlockTestNet("0x0000b835cdf1886061ab2636ce378807c7a1e3f727ca94fa9f16d3fe22e01a9b");
