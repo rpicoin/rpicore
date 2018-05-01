@@ -1,33 +1,33 @@
-![alt text](https://i.imgur.com/QW7p8Vu.jpg)
+# RPICoin [RPI]
+Scrypt Algo PoW/PoS (Hybdrid) CryptoCurrency
+[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0)
 
+![logo](https://i.imgur.com/QW7p8Vu.jpg)
+
+Intro
+==========================
 https://rpicoin.com
 
-Instant, Secure, No fee & Rewarding Cryptocurrency For Everyone
+RPICoin is an Secure, Fast and Energy efficient Hybdrid cryptocurrency.
+Ticker: RPI
 
-Instant Transactions - Send and receive payments and confirm within seconds
+RPICoin has a 4% Premine (4.000.000 RPI) used for bounties, development and marketing.
+The development funds will not be used for staking purposes, the dev wallet will be marked on the blockexplorer.
 
-Zero Fees - Improve your savings with RPICoin zero transaction fees
+Specifications
+==========================
+* Max number of coins: 100.000.000 RPI
+* Block time: 25 seconds 
+* Min stake age: 2 hours
+* Maturity: 6 blocks
+* RPC Port: 31030
+* Type: PoW + PoS (Hybdrid)
+* Algo: Scrypt
+* Address Letter: R
+* Premine: 4%
+* Fee: 0.00001 RPI 
 
-Secure - Have complete ownership and control over your finances.
+Links
+===========================
+* Official Website(https://www.rpicoin.com/)<br>
 
-Staking - Forget power-hungry mining rigs – stake and earn interest
-
-Community Driven - As a Rpicoin owner, you’re part of a powerful support network
-
-Crowdsale
-
-specifications
-
-Algo: Scrypt
-
-Type: PoW + POS
-
-Address letter: R
-
-RPC port: 31030
-
-premine: 3%
-
-Max supply: 500m
-
-Block time: 15s
