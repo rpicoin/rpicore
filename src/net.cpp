@@ -3,7 +3,6 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "irc.h"
 #include "db.h"
 #include "net.h"
 #include "init.h"
@@ -345,7 +344,6 @@ bool GetMyExternalIP2(const CService& addrConnect, const char* pszGet, const cha
     return error("GetMyExternalIP() : connection closed");
 }
 
-// We now get our external IP from the IRC server first and only use this as a backup
 bool GetMyExternalIP(CNetAddr& ipRet)
 {
     CService addrConnect;
@@ -1450,25 +1448,25 @@ void ThreadOpenConnections2(void* parg)
         if (fShutdown)
             return;
 
-        // Add seed nodes if IRC isn't working
-        if (addrman.size()==0 && (GetTime() - nStart > 60) && !fTestNet)
-        {
-            std::vector<CAddress> vAdd;
-            for (unsigned int i = 0; i < ARRAYLEN(pnSeed); i++)
-            {
-                // It'll only connect to one or two seed nodes because once it connects,
+//        // Add seed nodes if IRC isn't working
+//        if (addrman.size()==0 && (GetTime() - nStart > 60) && !fTestNet)
+//        {
+//            std::vector<CAddress> vAdd;
+//            for (unsigned int i = 0; i < ARRAYLEN(pnSeed); i++)
+//            {
+//                // It'll only connect to one or two seed nodes because once it connects,
                 // it'll get a pile of addresses with newer timestamps.
                 // Seed nodes are given a random 'last seen time' of between one and two
                 // weeks ago.
-                const int64_t nOneWeek = 7*24*60*60;
-                struct in_addr ip;
-                memcpy(&ip, &pnSeed[i], sizeof(ip));
-                CAddress addr(CService(ip, GetDefaultPort()));
-                addr.nTime = GetTime()-GetRand(nOneWeek)-nOneWeek;
-                vAdd.push_back(addr);
-            }
-            addrman.Add(vAdd, CNetAddr("127.0.0.1"));
-        }
+//                const int64_t nOneWeek = 7*24*60*60;
+//                struct in_addr ip;
+//                memcpy(&ip, &pnSeed[i], sizeof(ip));
+//                CAddress addr(CService(ip, GetDefaultPort()));
+//                addr.nTime = GetTime()-GetRand(nOneWeek)-nOneWeek;
+//                vAdd.push_back(addr);
+//            }
+//            addrman.Add(vAdd, CNetAddr("127.0.0.1"));
+//        }
 
         //
         // Choose an address to connect to based on most recently seen
@@ -1935,10 +1933,6 @@ void StartNode(void* parg)
     // Map ports with UPnP
     if (fUseUPnP)
         MapPort();
-
-    // Get addresses from IRC and advertise ours
-    if (!NewThread(ThreadIRCSeed, NULL))
-        printf("Error: NewThread(ThreadIRCSeed) failed\n");
 
     // Send and receive from sockets, accept connections
     if (!NewThread(ThreadSocketHandler, NULL))
