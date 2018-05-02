@@ -18,14 +18,14 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "rpicoin"
-            VALUE "FileDescription",    "rpicoin-Qt (OSS GUI client for rpicoin)"
+            VALUE "CompanyName",        "Rpicoin"
+            VALUE "FileDescription",    "Rpicoin-Qt (OSS GUI client for Rpicoin)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
             VALUE "InternalName",       "rpicoin-qt"
-            VALUE "LegalCopyright",     "2009-2014 The Bitcoin developers, 2012-2014 The NovaCoin & PPCoin developers, 2017 The rpicoin developers"
+            VALUE "LegalCopyright",     "2009-2014 The Bitcoin developers, 2012-2014 The NovaCoin & PPCoin developers, 2014-2017 The Blackcoin developers, 2017 The Rpicoin developers."
             VALUE "LegalTrademarks1",   "Distributed under the MIT/X11 software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php."
             VALUE "OriginalFilename",   "rpicoin-qt.exe"
-            VALUE "ProductName",        "rpicoin-Qt"
+            VALUE "ProductName",        "Rpicoin-Qt"
             VALUE "ProductVersion",     VER_PRODUCTVERSION_STR
         END
     END

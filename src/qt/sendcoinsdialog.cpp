@@ -1,7 +1,6 @@
 #include "sendcoinsdialog.h"
 #include "ui_sendcoinsdialog.h"
 
-#include "init.h"
 #include "walletmodel.h"
 #include "addresstablemodel.h"
 #include "addressbookpage.h"
@@ -13,11 +12,11 @@
 #include "guiutil.h"
 #include "askpassphrasedialog.h"
 
+#include "base58.h"
 #include "coincontrol.h"
 #include "coincontroldialog.h"
 
 #include <QMessageBox>
-#include <QLocale>
 #include <QTextDocument>
 #include <QScrollBar>
 #include <QClipboard>
@@ -37,7 +36,7 @@ SendCoinsDialog::SendCoinsDialog(QWidget *parent) :
 
 #if QT_VERSION >= 0x040700
     /* Do not move this to the XML file, Qt before 4.7 will choke on it */
-    ui->lineEditCoinControlChange->setPlaceholderText(tr("Enter a rpicoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)"));
+    ui->lineEditCoinControlChange->setPlaceholderText(tr("Enter a Rpicoin address (e.g. WiyoBkzfbHKt79GxCVwSpHoEyxbL1X49XZ)"));
 #endif
 
     addEntry();
@@ -57,7 +56,6 @@ SendCoinsDialog::SendCoinsDialog(QWidget *parent) :
     QAction *clipboardFeeAction = new QAction(tr("Copy fee"), this);
     QAction *clipboardAfterFeeAction = new QAction(tr("Copy after fee"), this);
     QAction *clipboardBytesAction = new QAction(tr("Copy bytes"), this);
-    QAction *clipboardPriorityAction = new QAction(tr("Copy priority"), this);
     QAction *clipboardLowOutputAction = new QAction(tr("Copy low output"), this);
     QAction *clipboardChangeAction = new QAction(tr("Copy change"), this);
     connect(clipboardQuantityAction, SIGNAL(triggered()), this, SLOT(coinControlClipboardQuantity()));
@@ -65,7 +63,6 @@ SendCoinsDialog::SendCoinsDialog(QWidget *parent) :
     connect(clipboardFeeAction, SIGNAL(triggered()), this, SLOT(coinControlClipboardFee()));
     connect(clipboardAfterFeeAction, SIGNAL(triggered()), this, SLOT(coinControlClipboardAfterFee()));
     connect(clipboardBytesAction, SIGNAL(triggered()), this, SLOT(coinControlClipboardBytes()));
-    connect(clipboardPriorityAction, SIGNAL(triggered()), this, SLOT(coinControlClipboardPriority()));
     connect(clipboardLowOutputAction, SIGNAL(triggered()), this, SLOT(coinControlClipboardLowOutput()));
     connect(clipboardChangeAction, SIGNAL(triggered()), this, SLOT(coinControlClipboardChange()));
     ui->labelCoinControlQuantity->addAction(clipboardQuantityAction);
@@ -73,7 +70,6 @@ SendCoinsDialog::SendCoinsDialog(QWidget *parent) :
     ui->labelCoinControlFee->addAction(clipboardFeeAction);
     ui->labelCoinControlAfterFee->addAction(clipboardAfterFeeAction);
     ui->labelCoinControlBytes->addAction(clipboardBytesAction);
-    ui->labelCoinControlPriority->addAction(clipboardPriorityAction);
     ui->labelCoinControlLowOutput->addAction(clipboardLowOutputAction);
     ui->labelCoinControlChange->addAction(clipboardChangeAction);
 
@@ -84,16 +80,17 @@ void SendCoinsDialog::setModel(WalletModel *model)
 {
     this->model = model;
 
-    for(int i = 0; i < ui->entries->count(); ++i)
-    {
-        SendCoinsEntry *entry = qobject_cast<SendCoinsEntry*>(ui->entries->itemAt(i)->widget());
-        if(entry)
-        {
-            entry->setModel(model);
-        }
-    }
     if(model && model->getOptionsModel())
     {
+        for(int i = 0; i < ui->entries->count(); ++i)
+        {
+            SendCoinsEntry *entry = qobject_cast<SendCoinsEntry*>(ui->entries->itemAt(i)->widget());
+            if(entry)
+            {
+                entry->setModel(model);
+            }
+        }
+
         setBalance(model->getBalance(), model->getStake(), model->getUnconfirmedBalance(), model->getImmatureBalance());
         connect(model, SIGNAL(balanceChanged(qint64, qint64, qint64, qint64)), this, SLOT(setBalance(qint64, qint64, qint64, qint64)));
         connect(model->getOptionsModel(), SIGNAL(displayUnitChanged(int)), this, SLOT(updateDisplayUnit()));
@@ -114,11 +111,11 @@ SendCoinsDialog::~SendCoinsDialog()
 
 void SendCoinsDialog::on_sendButton_clicked()
 {
+    if(!model || !model->getOptionsModel())
+        return;
+
     QList<SendCoinsRecipient> recipients;
     bool valid = true;
-
-    if(!model)
-        return;
 
     for(int i = 0; i < ui->entries->count(); ++i)
     {
@@ -145,7 +142,7 @@ void SendCoinsDialog::on_sendButton_clicked()
     QStringList formatted;
     foreach(const SendCoinsRecipient &rcp, recipients)
     {
-        formatted.append(tr("<b>%1</b> to %2 (%3)").arg(BitcoinUnits::formatWithUnit(BitcoinUnits::BTC, rcp.amount), Qt::escape(rcp.label), rcp.address));
+        formatted.append(tr("<b>%1</b> to %2 (%3)").arg(BitcoinUnits::formatWithUnit(model->getOptionsModel()->getDisplayUnit(), rcp.amount), Qt::escape(rcp.label), rcp.address));
     }
 
     fNewRecipientAllowed = false;
@@ -196,7 +193,7 @@ void SendCoinsDialog::on_sendButton_clicked()
     case WalletModel::AmountWithFeeExceedsBalance:
         QMessageBox::warning(this, tr("Send Coins"),
             tr("The total exceeds your balance when the %1 transaction fee is included.").
-            arg(BitcoinUnits::formatWithUnit(BitcoinUnits::BTC, sendstatus.fee)),
+            arg(BitcoinUnits::formatWithUnit(model->getOptionsModel()->getDisplayUnit(), sendstatus.fee)),
             QMessageBox::Ok, QMessageBox::Ok);
         break;
     case WalletModel::DuplicateAddress:
@@ -206,7 +203,7 @@ void SendCoinsDialog::on_sendButton_clicked()
         break;
     case WalletModel::TransactionCreationFailed:
         QMessageBox::warning(this, tr("Send Coins"),
-            tr("Error: Transaction creation failed."),
+            tr("Error: Transaction creation failed!"),
             QMessageBox::Ok, QMessageBox::Ok);
         break;
     case WalletModel::TransactionCommitFailed:
@@ -351,20 +348,16 @@ void SendCoinsDialog::setBalance(qint64 balance, qint64 stake, qint64 unconfirme
     Q_UNUSED(stake);
     Q_UNUSED(unconfirmedBalance);
     Q_UNUSED(immatureBalance);
-    if(!model || !model->getOptionsModel())
-        return;
 
-    int unit = model->getOptionsModel()->getDisplayUnit();
-    ui->labelBalance->setText(BitcoinUnits::formatWithUnit(unit, balance));
+    if(model && model->getOptionsModel())
+    {
+        ui->labelBalance->setText(BitcoinUnits::formatWithUnit(model->getOptionsModel()->getDisplayUnit(), balance));
+    }
 }
 
 void SendCoinsDialog::updateDisplayUnit()
 {
-    if(model && model->getOptionsModel())
-    {
-        // Update labelBalance with the current balance and the current unit
-        ui->labelBalance->setText(BitcoinUnits::formatWithUnit(model->getOptionsModel()->getDisplayUnit(), model->getBalance()));
-    }
+    setBalance(model->getBalance(), 0, 0, 0);
 }
 
 // Coin Control: copy label "Quantity" to clipboard
@@ -395,12 +388,6 @@ void SendCoinsDialog::coinControlClipboardAfterFee()
 void SendCoinsDialog::coinControlClipboardBytes()
 {
     QApplication::clipboard()->setText(ui->labelCoinControlBytes->text());
-}
-
-// Coin Control: copy label "Priority" to clipboard
-void SendCoinsDialog::coinControlClipboardPriority()
-{
-    QApplication::clipboard()->setText(ui->labelCoinControlPriority->text());
 }
 
 // Coin Control: copy label "Low output" to clipboard
@@ -462,7 +449,7 @@ void SendCoinsDialog::coinControlChangeEdited(const QString & text)
         else if (!CBitcoinAddress(text.toStdString()).IsValid())
         {
             ui->labelCoinControlChangeLabel->setStyleSheet("QLabel{color:red;}");
-            ui->labelCoinControlChangeLabel->setText(tr("WARNING: Invalid rpicoin address"));
+            ui->labelCoinControlChangeLabel->setText(tr("WARNING: Invalid Rpicoin address"));
         }
         else
         {

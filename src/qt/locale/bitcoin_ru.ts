@@ -3,37 +3,31 @@
     <name>AboutDialog</name>
     <message>
         <location filename="../forms/aboutdialog.ui" line="+14"/>
-        <source>About rpicoin</source>
-        <translation>О rpicoin</translation>
+        <source>About Rpicoin</source>
+        <translation>О Rpicoin</translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>&lt;b&gt;rpicoin&lt;/b&gt; version</source>
-        <translation>&lt;b&gt;rpicoin&lt;/b&gt; версия</translation>
+        <source>&lt;b&gt;Rpicoin&lt;/b&gt; version</source>
+        <translation>&lt;b&gt;Rpicoin&lt;/b&gt; версия</translation>
     </message>
     <message>
         <location line="+41"/>
-        <source>Copyright © 2009-2014 The Bitcoin developers
+        <source>Copyright © 2009-2017 The Bitcoin developers
 Copyright © 2012-2014 The NovaCoin developers
-Copyright © 2014 The rpicoin developers</source>
-        <translation>Все права защищены © 2009-2014 Разработчики Bitcoin
-Все права защищены © 2012-2014 Разработчики NovaCoin
-Все права защищены © 2014 Разработчики rpicoin</translation>
+Copyright © 2014-2017 The Blackcoin developers
+Copyright © 2017 The Rpicoin developers</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location line="+15"/>
         <source>
 This is experimental software.
 
-Distributed under the MIT/X11 software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php.
+Distributed under the MIT/X11 software license, see the accompanying file COPYING or &lt;a href=&quot;http://www.opensource.org/licenses/mit-license.php&quot;&gt;http://www.opensource.org/licenses/mit-license.php&lt;/a&gt;.
 
-This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit (http://www.openssl.org/) and cryptographic software written by Eric Young (eay@cryptsoft.com) and UPnP software written by Thomas Bernard.</source>
-        <translation>
-Это экспериментальная программа.
-
-Распространяется на правах лицензии MIT/X11, см. файл license.txt или http://www.opensource.org/licenses/mit-license.php.
-
-Этот продукт включает ПО, разработанное OpenSSL Project для использования в OpenSSL Toolkit (http://www.openssl.org/) и криптографическое ПО, написанное Eric Young (eay@cryptsoft.com) и ПО для работы с UPnP, написанное Thomas Bernard.</translation>
+This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit (&lt;a href=&quot;https://www.openssl.org/&quot;&gt;https://www.openssl.org/&lt;/a&gt;) and cryptographic software written by Eric Young (&lt;a href=&quot;mailto:eay@cryptsoft.com&quot;&gt;eay@cryptsoft.com&lt;/a&gt;) and UPnP software written by Thomas Bernard.</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -49,39 +43,39 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Для того, чтобы изменить адрес или метку давжды кликните по изменяемому объекту</translation>
     </message>
     <message>
-        <location line="+27"/>
+        <location line="+24"/>
         <source>Create a new address</source>
         <translation>Создать новый адрес</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+10"/>
         <source>Copy the currently selected address to the system clipboard</source>
         <translation>Копировать текущий выделенный адрес в буфер обмена</translation>
     </message>
     <message>
-        <location line="-11"/>
+        <location line="-7"/>
         <source>&amp;New Address</source>
         <translation>&amp;Новый адрес</translation>
     </message>
     <message>
-        <location line="-46"/>
-        <source>These are your rpicoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
+        <location line="-43"/>
+        <source>These are your Rpicoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
         <translation>Это Ваши адреса для получения платежей. Вы можете дать разные адреса отправителям, чтобы отслеживать, кто именно вам платит.</translation>
     </message>
     <message>
-        <location line="+60"/>
+        <location line="+53"/>
         <source>&amp;Copy Address</source>
         <translation>&amp;Копировать адрес</translation>
     </message>
     <message>
-        <location line="+11"/>
+        <location line="+7"/>
         <source>Show &amp;QR Code</source>
         <translation>Показать &amp;QR код</translation>
     </message>
     <message>
-        <location line="+11"/>
-        <source>Sign a message to prove you own a rpicoin address</source>
-        <translation>Подписать сообщение, чтобы доказать владение адресом rpicoin</translation>
+        <location line="+7"/>
+        <source>Sign a message to prove you own a Rpicoin address</source>
+        <translation>Подписать сообщение, чтобы доказать владение адресом Rpicoin</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -89,14 +83,14 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>&amp;Подписать сообщение</translation>
     </message>
     <message>
-        <location line="+25"/>
+        <location line="+17"/>
         <source>Delete the currently selected address from the list</source>
         <translation>Удалить выбранный адрес из списка</translation>
     </message>
     <message>
-        <location line="-14"/>
-        <source>Verify a message to ensure it was signed with a specified rpicoin address</source>
-        <translation>Проверить сообщение, чтобы убедиться, что оно было подписано указанным адресом rpicoin</translation>
+        <location line="-10"/>
+        <source>Verify a message to ensure it was signed with a specified Rpicoin address</source>
+        <translation>Проверить сообщение, чтобы убедиться, что оно было подписано указанным адресом Rpicoin</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -104,22 +98,22 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>&amp;Проверить сообщение</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+10"/>
         <source>&amp;Delete</source>
         <translation>&amp;Удалить</translation>
     </message>
     <message>
-        <location filename="../addressbookpage.cpp" line="+65"/>
+        <location filename="../addressbookpage.cpp" line="+66"/>
         <source>Copy &amp;Label</source>
         <translation>Копировать &amp;метку</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+1"/>
         <source>&amp;Edit</source>
         <translation>&amp;Правка</translation>
     </message>
     <message>
-        <location line="+250"/>
+        <location line="+248"/>
         <source>Export Address Book Data</source>
         <translation>Экспортировать адресную книгу</translation>
     </message>
@@ -142,7 +136,7 @@ This product includes software developed by the OpenSSL Project for use in the O
 <context>
     <name>AddressTableModel</name>
     <message>
-        <location filename="../addresstablemodel.cpp" line="+144"/>
+        <location filename="../addresstablemodel.cpp" line="+145"/>
         <source>Label</source>
         <translation>Метка</translation>
     </message>
@@ -190,12 +184,7 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Только для участия в доле</translation>
     </message>
     <message>
-        <location filename="../askpassphrasedialog.cpp" line="+35"/>
-        <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;10 or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
-        <translation>Введите новый пароль для бумажника. &lt;br/&gt; Пожалуйста, используйте фразы из &lt;b&gt;10 или более случайных символов,&lt;/b&gt; или &lt;b&gt;восьми и более слов.&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location filename="../askpassphrasedialog.cpp" line="+38"/>
         <source>Encrypt wallet</source>
         <translation>Зашифровать бумажник</translation>
     </message>
@@ -230,7 +219,7 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Введите старый и новый пароль для бумажника.</translation>
     </message>
     <message>
-        <location line="+46"/>
+        <location line="+45"/>
         <source>Confirm wallet encryption</source>
         <translation>Подтвердите шифрование бумажника</translation>
     </message>
@@ -262,8 +251,13 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Бумажник зашифрован</translation>
     </message>
     <message>
-        <location line="-58"/>
-        <source>rpicoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
+        <location line="-140"/>
+        <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;ten or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+82"/>
+        <source>Rpicoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
         <translation>Сейчас программа закроется для завершения процесса шифрования. Помните, что шифрование вашего бумажника не может полностью защитить ваши монеты от кражи с помощью инфицирования вашего компьютера вредоносным ПО.</translation>
     </message>
     <message>
@@ -311,22 +305,12 @@ This product includes software developed by the OpenSSL Project for use in the O
 <context>
     <name>BitcoinGUI</name>
     <message>
-        <location filename="../bitcoingui.cpp" line="+280"/>
+        <location filename="../bitcoingui.cpp" line="+297"/>
         <source>Sign &amp;message...</source>
         <translation>&amp;Подписать сообщение</translation>
     </message>
     <message>
-        <location line="+242"/>
-        <source>Synchronizing with network...</source>
-        <translation>Синхронизация с сетью...</translation>
-    </message>
-    <message>
-        <location line="-308"/>
-        <source>&amp;Overview</source>
-        <translation>О&amp;бзор</translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="-64"/>
         <source>Show general overview of wallet</source>
         <translation>Показать общий обзор действий с бумажником</translation>
     </message>
@@ -351,22 +335,12 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Изменить список сохранённых адресов и меток к ним</translation>
     </message>
     <message>
-        <location line="-13"/>
-        <source>&amp;Receive coins</source>
-        <translation>&amp;Получение монет</translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="-18"/>
         <source>Show the list of addresses for receiving payments</source>
         <translation>Показать список адресов для получения платежей</translation>
     </message>
     <message>
-        <location line="-7"/>
-        <source>&amp;Send coins</source>
-        <translation>Отп&amp;равка монет</translation>
-    </message>
-    <message>
-        <location line="+35"/>
+        <location line="+34"/>
         <source>E&amp;xit</source>
         <translation>В&amp;ыход</translation>
     </message>
@@ -377,8 +351,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+4"/>
-        <source>Show information about rpicoin</source>
-        <translation>Показать информацию о rpicoin&apos;е</translation>
+        <source>Show information about Rpicoin</source>
+        <translation>Показать информацию о Rpicoin&apos;е</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -401,7 +375,7 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>&amp;Зашифровать бумажник</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+2"/>
         <source>&amp;Backup Wallet...</source>
         <translation>&amp;Сделать резервную копию бумажника</translation>
     </message>
@@ -410,43 +384,33 @@ This product includes software developed by the OpenSSL Project for use in the O
         <source>&amp;Change Passphrase...</source>
         <translation>&amp;Изменить пароль</translation>
     </message>
-    <message numerus="yes">
-        <location line="+250"/>
-        <source>~%n block(s) remaining</source>
-        <translation><numerusform>остался ~%n блок</numerusform><numerusform>осталось ~%n блоков</numerusform><numerusform>осталось ~%n блоков</numerusform></translation>
-    </message>
     <message>
-        <location line="+6"/>
-        <source>Downloaded %1 of %2 blocks of transaction history (%3% done).</source>
-        <translation>Загружено %1 из %2 блоков истории операций (%3% завершено).</translation>
-    </message>
-    <message>
-        <location line="-247"/>
+        <location line="+9"/>
         <source>&amp;Export...</source>
         <translation>&amp;Экспорт...</translation>
     </message>
     <message>
-        <location line="-62"/>
-        <source>Send coins to a rpicoin address</source>
-        <translation>Отправить монеты на указанный адрес rpicoin</translation>
+        <location line="-55"/>
+        <source>Send coins to a Rpicoin address</source>
+        <translation>Отправить монеты на указанный адрес Rpicoin</translation>
     </message>
     <message>
-        <location line="+45"/>
-        <source>Modify configuration options for rpicoin</source>
-        <translation>Изменить параметры конфигурации rpicoin</translation>
+        <location line="+39"/>
+        <source>Modify configuration options for Rpicoin</source>
+        <translation>Изменить параметры конфигурации Rpicoin</translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="+17"/>
         <source>Export the data in the current tab to a file</source>
         <translation>Экспортировать данные из вкладки в файл</translation>
     </message>
     <message>
-        <location line="-14"/>
+        <location line="-13"/>
         <source>Encrypt or decrypt wallet</source>
         <translation>Зашифровать или расшифровать бумажник</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+2"/>
         <source>Backup wallet to another location</source>
         <translation>Сделать резервную копию бумажника в другом месте</translation>
     </message>
@@ -471,19 +435,20 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>&amp;Проверить сообщение...</translation>
     </message>
     <message>
-        <location line="-200"/>
-        <source>rpicoin</source>
-        <translation>rpicoin</translation>
+        <location line="-214"/>
+        <location line="+555"/>
+        <source>Rpicoin</source>
+        <translation>Rpicoin</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="-555"/>
         <source>Wallet</source>
         <translation>Бумажник</translation>
     </message>
     <message>
-        <location line="+178"/>
-        <source>&amp;About rpicoin</source>
-        <translation>&amp;О rpicoin</translation>
+        <location line="+193"/>
+        <source>&amp;About Rpicoin</source>
+        <translation>&amp;О Rpicoin</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -491,7 +456,7 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>&amp;Показать / Скрыть</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+8"/>
         <source>Unlock wallet</source>
         <translation>Разблокировать бумажник</translation>
     </message>
@@ -506,7 +471,7 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Заблокировать бумажник</translation>
     </message>
     <message>
-        <location line="+34"/>
+        <location line="+32"/>
         <source>&amp;File</source>
         <translation>&amp;Файл</translation>
     </message>
@@ -521,39 +486,29 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>&amp;Помощь</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+17"/>
         <source>Tabs toolbar</source>
         <translation>Панель вкладок</translation>
     </message>
     <message>
-        <location line="+8"/>
-        <source>Actions toolbar</source>
-        <translation>Панель действий</translation>
-    </message>
-    <message>
-        <location line="+13"/>
+        <location line="+46"/>
         <location line="+9"/>
         <source>[testnet]</source>
         <translation>[тестовая сеть]</translation>
     </message>
     <message>
         <location line="+0"/>
-        <location line="+60"/>
-        <source>rpicoin client</source>
-        <translation>rpicoin клиент</translation>
+        <location line="+58"/>
+        <source>Rpicoin client</source>
+        <translation>Rpicoin клиент</translation>
     </message>
     <message numerus="yes">
         <location line="+70"/>
-        <source>%n active connection(s) to rpicoin network</source>
-        <translation><numerusform>%n активное соединение с сетью</numerusform><numerusform>%n активных соединений с сетью</numerusform><numerusform>%n активных соединений с сетью</numerusform></translation>
+        <source>%n active connection(s) to Rpicoin network</source>
+        <translation><numerusform>%n активное соединение с сетью</numerusform><numerusform>%n активных соединений с сетью</numerusform><numerusform>%n активных соединений с сетью</numerusform><numerusform>%n активных соединений с сетью</numerusform></translation>
     </message>
     <message>
-        <location line="+40"/>
-        <source>Downloaded %1 blocks of transaction history.</source>
-        <translation>Загружено %1 блоков истории транзакций.</translation>
-    </message>
-    <message>
-        <location line="+413"/>
+        <location line="+488"/>
         <source>Staking.&lt;br&gt;Your weight is %1&lt;br&gt;Network weight is %2&lt;br&gt;Expected time to earn reward is %3</source>
         <translation>Участвуем в доле.&lt;br&gt;Ваш вес %1&lt;br&gt;Вес сети %2&lt;br&gt;Ожидаемое время получения награды %3</translation>
     </message>
@@ -574,56 +529,41 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+2"/>
-        <source>Not staking because you don&apos;t have mature coins</source>
+        <source>Not staking because you don&apos;t have mature coins (&#126;100 confirms)</source>
         <translation>Не участвуем в доле, так как нет зрелых монет</translation>
     </message>
-    <message numerus="yes">
-        <location line="-403"/>
-        <source>%n second(s) ago</source>
-        <translation><numerusform>%n секунду назад</numerusform><numerusform>%n секунды назад</numerusform><numerusform>%n секунд назад</numerusform></translation>
-    </message>
     <message>
-        <location line="-284"/>
-        <source>&amp;Unlock Wallet...</source>
-        <translation>&amp;Разблокировать бумажник</translation>
-    </message>
-    <message numerus="yes">
-        <location line="+288"/>
-        <source>%n minute(s) ago</source>
-        <translation><numerusform>%n минуту назад</numerusform><numerusform>%n минуты назад</numerusform><numerusform>%n минут назад</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <location line="+4"/>
-        <source>%n hour(s) ago</source>
-        <translation><numerusform>%n час назад</numerusform><numerusform>%n часа назад</numerusform><numerusform>%n часов назад</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <location line="+4"/>
-        <source>%n day(s) ago</source>
-        <translation><numerusform>%n день назад</numerusform><numerusform>%n дня назад</numerusform><numerusform>%n дней назад</numerusform></translation>
+        <location line="-812"/>
+        <source>&amp;Dashboard</source>
+        <translation>&amp;Обзор</translation>
     </message>
     <message>
         <location line="+6"/>
+        <source>&amp;Receive</source>
+        <translation>&amp;Получение</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>&amp;Send</source>
+        <translation>Отп&amp;равка</translation>
+    </message>
+    <message>
+        <location line="+49"/>
+        <source>&amp;Unlock Wallet...</source>
+        <translation>&amp;Разблокировать бумажник</translation>
+    </message>
+    <message>
+        <location line="+277"/>
         <source>Up to date</source>
         <translation>Синхронизировано</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location line="+43"/>
         <source>Catching up...</source>
         <translation>Синхронизируется...</translation>
     </message>
     <message>
-        <location line="+10"/>
-        <source>Last received block was generated %1.</source>
-        <translation>Последний полученный блок был сгенерирован %1.</translation>
-    </message>
-    <message>
-        <location line="+59"/>
-        <source>This transaction is over the size limit.  You can still send it for a fee of %1, which goes to the nodes that process your transaction and helps to support the network.  Do you want to pay the fee?</source>
-        <translation>Данная транзакция превышает предельно допустимый размер.  Но Вы можете всё равно совершить её, добавив комиссию в %1, которая отправится тем узлам, которые обработают Вашу транзакцию, и поможет поддержать сеть.  Вы хотите добавить комиссию?</translation>
-    </message>
-    <message>
-        <location line="+5"/>
+        <location line="+113"/>
         <source>Confirm transaction fee</source>
         <translation>Подтвердите комиссию</translation>
     </message>
@@ -659,21 +599,26 @@ Address: %4
     <message>
         <location line="-15"/>
         <location line="+15"/>
-        <source>URI can not be parsed! This can be caused by an invalid rpicoin address or malformed URI parameters.</source>
-        <translation>Не удалось обработать URI! Это может быть связано с неверным адресом rpicoin или неправильными параметрами URI.</translation>
+        <source>URI can not be parsed! This can be caused by an invalid Rpicoin address or malformed URI parameters.</source>
+        <translation>Не удалось обработать URI! Это может быть связано с неверным адресом Rpicoin или неправильными параметрами URI.</translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="+9"/>
+        <source>Wallet is &lt;b&gt;not encrypted&lt;/b&gt;</source>
+        <translation>Бумажник &lt;b&gt;не зашифрован&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <location line="+8"/>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</source>
         <translation>Бумажник &lt;b&gt;зашифрован&lt;/b&gt; и в настоящее время &lt;b&gt;разблокирован&lt;/b&gt;</translation>
     </message>
     <message>
-        <location line="+10"/>
+        <location line="+8"/>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>Бумажник &lt;b&gt;зашифрован&lt;/b&gt; и в настоящее время &lt;b&gt;заблокирован&lt;/b&gt;</translation>
     </message>
     <message>
-        <location line="+25"/>
+        <location line="+24"/>
         <source>Backup Wallet</source>
         <translation>Сделать резервную копию бумажника</translation>
     </message>
@@ -693,40 +638,98 @@ Address: %4
         <translation>При попытке сохранения данных бумажника в новое место произошла ошибка.</translation>
     </message>
     <message numerus="yes">
-        <location line="+76"/>
+        <location line="+91"/>
         <source>%n second(s)</source>
-        <translation><numerusform>%n секунда</numerusform><numerusform>%n секунды</numerusform><numerusform>%n секунд</numerusform></translation>
+        <translation><numerusform>%n секунда</numerusform><numerusform>%n секунды</numerusform><numerusform>%n секунд</numerusform><numerusform>%n секунд</numerusform></translation>
     </message>
     <message numerus="yes">
         <location line="+4"/>
         <source>%n minute(s)</source>
-        <translation><numerusform>%n минута</numerusform><numerusform>%n минуты</numerusform><numerusform>%n минут</numerusform></translation>
+        <translation><numerusform>%n минута</numerusform><numerusform>%n минуты</numerusform><numerusform>%n минут</numerusform><numerusform>%n минут</numerusform></translation>
     </message>
     <message numerus="yes">
-        <location line="+4"/>
+        <location line="-429"/>
+        <location line="+433"/>
         <source>%n hour(s)</source>
-        <translation><numerusform>%n час</numerusform><numerusform>%n часа</numerusform><numerusform>%n часов</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <location line="+4"/>
-        <source>%n day(s)</source>
-        <translation><numerusform>%n день</numerusform><numerusform>%n дня</numerusform><numerusform>%n дней</numerusform></translation>
+        <translation><numerusform>%n час</numerusform><numerusform>%n часа</numerusform><numerusform>%n часов</numerusform><numerusform>%n часов</numerusform></translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="-456"/>
+        <source>Processed %1 blocks of transaction history.</source>
+        <translation>Обработано %1 блоков истории транзакций.</translation>
+    </message>
+    <message numerus="yes">
+        <location line="+27"/>
+        <location line="+433"/>
+        <source>%n day(s)</source>
+        <translation><numerusform>%n день</numerusform><numerusform>%n дня</numerusform><numerusform>%n дней</numerusform><numerusform>%n дней</numerusform></translation>
+    </message>
+    <message numerus="yes">
+        <location line="-429"/>
+        <location line="+6"/>
+        <source>%n week(s)</source>
+        <translation type="unfinished"><numerusform></numerusform><numerusform></numerusform><numerusform></numerusform><numerusform></numerusform></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>%1 and %2</source>
+        <translation type="unfinished"/>
+    </message>
+    <message numerus="yes">
+        <location line="+0"/>
+        <source>%n year(s)</source>
+        <translation type="unfinished"><numerusform></numerusform><numerusform></numerusform><numerusform></numerusform><numerusform></numerusform></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>%1 behind</source>
+        <translation>%1 позади</translation>
+    </message>
+    <message>
+        <location line="+15"/>
+        <source>Last received block was generated %1 ago.</source>
+        <translation>Последний полученный блок был сгенерирован %1 назад.</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Transactions after this will not yet be visible.</source>
+        <translation>Транзакции после него пока не будут видны.</translation>
+    </message>
+    <message>
+        <location line="+23"/>
+        <source>Error</source>
+        <translation>Ошибка</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Warning</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Information</source>
+        <translation>Информация</translation>
+    </message>
+    <message>
+        <location line="+69"/>
+        <source>This transaction is over the size limit. You can still send it for a fee of %1, which goes to the nodes that process your transaction and helps to support the network. Do you want to pay the fee?</source>
+        <translation>Данная транзакция превышает предельно допустимый размер.  Но Вы можете всё равно совершить её, добавив комиссию в %1, которая отправится тем узлам, которые обработают Вашу транзакцию, и поможет поддержать сеть.  Вы хотите добавить комиссию?</translation>
+    </message>
+    <message>
+        <location line="+324"/>
         <source>Not staking</source>
         <translation>Не участвуем в доле</translation>
     </message>
     <message>
-        <location filename="../bitcoin.cpp" line="+109"/>
-        <source>A fatal error occurred. rpicoin can no longer continue safely and will quit.</source>
-        <translation>Произошла неисправимая ошибка. rpicoin не может безопасно продолжать работу и будет закрыт.</translation>
+        <location filename="../bitcoin.cpp" line="+104"/>
+        <source>A fatal error occurred. Rpicoin can no longer continue safely and will quit.</source>
+        <translation>Произошла неисправимая ошибка. Rpicoin не может безопасно продолжать работу и будет закрыт.</translation>
     </message>
 </context>
 <context>
     <name>ClientModel</name>
     <message>
-        <location filename="../clientmodel.cpp" line="+90"/>
+        <location filename="../clientmodel.cpp" line="+119"/>
         <source>Network Alert</source>
         <translation>Сетевая Тревога</translation>
     </message>
@@ -754,11 +757,6 @@ Address: %4
         <translation>Сумма:</translation>
     </message>
     <message>
-        <location line="+32"/>
-        <source>Priority:</source>
-        <translation>Приоритет:</translation>
-    </message>
-    <message>
         <location line="+48"/>
         <source>Fee:</source>
         <translation>Комиссия:</translation>
@@ -769,7 +767,7 @@ Address: %4
         <translation>Мелкие входы:</translation>
     </message>
     <message>
-        <location filename="../coincontroldialog.cpp" line="+551"/>
+        <location filename="../coincontroldialog.cpp" line="+493"/>
         <source>no</source>
         <translation>нет</translation>
     </message>
@@ -834,7 +832,7 @@ Address: %4
         <translation>Приоритет</translation>
     </message>
     <message>
-        <location filename="../coincontroldialog.cpp" line="-515"/>
+        <location filename="../coincontroldialog.cpp" line="-456"/>
         <source>Copy address</source>
         <translation>Копировать адрес</translation>
     </message>
@@ -876,11 +874,6 @@ Address: %4
     </message>
     <message>
         <location line="+1"/>
-        <source>Copy priority</source>
-        <translation>Копировать приоритет</translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Copy low output</source>
         <translation type="unfinished"/>
     </message>
@@ -890,42 +883,7 @@ Address: %4
         <translation>Копировать сдачу</translation>
     </message>
     <message>
-        <location line="+317"/>
-        <source>RPIest</source>
-        <translation>наивысший</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>RPI</source>
-        <translation>высокий</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>medium-RPI</source>
-        <translation>выше среднего</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>medium</source>
-        <translation>средний</translation>
-    </message>
-    <message>
-        <location line="+4"/>
-        <source>low-medium</source>
-        <translation>ниже среднего</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>low</source>
-        <translation>низкий</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>lowest</source>
-        <translation>наименьший</translation>
-    </message>
-    <message>
-        <location line="+155"/>
+        <location line="+423"/>
         <source>DUST</source>
         <translation type="unfinished"/>
     </message>
@@ -935,21 +893,12 @@ Address: %4
         <translation>да</translation>
     </message>
     <message>
-        <location line="+10"/>
+        <location line="+9"/>
         <source>This label turns red, if the transaction size is bigger than 10000 bytes.
 
  This means a fee of at least %1 per kb is required.
 
  Can vary +/- 1 Byte per input.</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Transactions with RPIer priority get more likely into a block.
-
-This label turns red, if the priority is smaller than &quot;medium&quot;.
-
- This means a fee of at least %1 per kb is required.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -969,8 +918,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+37"/>
-        <location line="+66"/>
+        <location line="+35"/>
+        <location line="+58"/>
         <source>(no label)</source>
         <translation>(нет метки)</translation>
     </message>
@@ -1013,7 +962,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>Адрес, связанный с данной записью.</translation>
     </message>
     <message>
-        <location filename="../editaddressdialog.cpp" line="+20"/>
+        <location filename="../editaddressdialog.cpp" line="+21"/>
         <source>New receiving address</source>
         <translation>Новый адрес для получения</translation>
     </message>
@@ -1039,8 +988,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="-5"/>
-        <source>The entered address &quot;%1&quot; is not a valid rpicoin address.</source>
-        <translation>Введённый адрес &quot;%1&quot; не является правильным rpicoin-адресом.</translation>
+        <source>The entered address &quot;%1&quot; is not a valid Rpicoin address.</source>
+        <translation>Введённый адрес &quot;%1&quot; не является правильным Rpicoin-адресом.</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1056,10 +1005,10 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
 <context>
     <name>GUIUtil::HelpMessageBox</name>
     <message>
-        <location filename="../guiutil.cpp" line="+420"/>
+        <location filename="../guiutil.cpp" line="+426"/>
         <location line="+12"/>
-        <source>rpicoin-Qt</source>
-        <translation>rpicoin-Qt</translation>
+        <source>Rpicoin-Qt</source>
+        <translation>Rpicoin-Qt</translation>
     </message>
     <message>
         <location line="-12"/>
@@ -1131,23 +1080,13 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+31"/>
-        <source>Automatically start rpicoin after logging in to the system.</source>
-        <translation>Автоматически запускать rpicoin после входа в систему</translation>
+        <source>Automatically start Rpicoin after logging in to the system.</source>
+        <translation>Автоматически запускать Rpicoin после входа в систему</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Start rpicoin on system login</source>
-        <translation>&amp;Запускать rpicoin при входе в систему</translation>
-    </message>
-    <message>
-        <location line="+7"/>
-        <source>Detach block and address databases at shutdown. This means they can be moved to another data directory, but it slows down shutdown. The wallet is always detached.</source>
-        <translation>Отключить базы данных блоков и адресов при выходе. Это означает, что их можно будет переместить в другой каталог данных, но завершение работы будет медленнее. Бумажник всегда отключается.</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>&amp;Detach databases at shutdown</source>
-        <translation>&amp;Отключать базы данных при выходе</translation>
+        <source>&amp;Start Rpicoin on system login</source>
+        <translation>&amp;Запускать Rpicoin при входе в систему</translation>
     </message>
     <message>
         <location line="+21"/>
@@ -1156,8 +1095,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+6"/>
-        <source>Automatically open the rpicoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Автоматически открыть порт для rpicoin-клиента на роутере. Работает только если Ваш роутер поддерживает UPnP, и данная функция включена.</translation>
+        <source>Automatically open the Rpicoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Автоматически открыть порт для Rpicoin-клиента на роутере. Работает только если Ваш роутер поддерживает UPnP, и данная функция включена.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1165,17 +1104,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>Пробросить порт через &amp;UPnP</translation>
     </message>
     <message>
-        <location line="+7"/>
-        <source>Connect to the rpicoin network through a SOCKS proxy (e.g. when connecting through Tor).</source>
-        <translation>Подключаться к сети rpicoin через прокси SOCKS (например, при подключении через Tor).</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>&amp;Connect through SOCKS proxy:</source>
-        <translation>&amp;Подключаться через SOCKS прокси:</translation>
-    </message>
-    <message>
-        <location line="+9"/>
+        <location line="+19"/>
         <source>Proxy &amp;IP:</source>
         <translation>&amp;IP Прокси: </translation>
     </message>
@@ -1195,17 +1124,17 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>Порт прокси-сервера (например, 9050)</translation>
     </message>
     <message>
-        <location line="+7"/>
-        <source>SOCKS &amp;Version:</source>
-        <translation>&amp;Версия SOCKS:</translation>
+        <location line="-57"/>
+        <source>Connect to the Rpicoin network through a SOCKS5 proxy (e.g. when connecting through Tor).</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+13"/>
-        <source>SOCKS version of the proxy (e.g. 5)</source>
-        <translation>Версия SOCKS-прокси (например, 5)</translation>
+        <location line="+3"/>
+        <source>&amp;Connect through SOCKS5 proxy:</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+36"/>
+        <location line="+90"/>
         <source>&amp;Window</source>
         <translation>&amp;Окно</translation>
     </message>
@@ -1241,8 +1170,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+13"/>
-        <source>The user interface language can be set here. This setting will take effect after restarting rpicoin.</source>
-        <translation>Здесь можно выбрать язык интерфейса. Настройки вступят в силу после перезапуска rpicoin.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting Rpicoin.</source>
+        <translation>Здесь можно выбрать язык интерфейса. Настройки вступят в силу после перезапуска Rpicoin.</translation>
     </message>
     <message>
         <location line="+11"/>
@@ -1256,16 +1185,6 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+9"/>
-        <source>Whether to show rpicoin addresses in the transaction list or not.</source>
-        <translation>Показывать ли адреса rpicoin в списке транзакций.</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>&amp;Display addresses in transaction list</source>
-        <translation>&amp;Показывать адреса в списке транзакций</translation>
-    </message>
-    <message>
-        <location line="+7"/>
         <source>Whether to show coin control features or not.</source>
         <translation>Выключает и включает отображение панели выбора входов.</translation>
     </message>
@@ -1273,6 +1192,11 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <location line="+3"/>
         <source>Display coin &amp;control features (experts only!)</source>
         <translation>Управление &amp;входами (только для продвинутых пользователей!)</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Use black visual theme (requires restart)</source>
+        <translation>Использовать чёрную тему оформления (требуется перезапуск)</translation>
     </message>
     <message>
         <location line="+71"/>
@@ -1290,12 +1214,12 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>&amp;Применить</translation>
     </message>
     <message>
-        <location filename="../optionsdialog.cpp" line="+55"/>
+        <location filename="../optionsdialog.cpp" line="+47"/>
         <source>default</source>
         <translation>по умолчанию</translation>
     </message>
     <message>
-        <location line="+149"/>
+        <location line="+147"/>
         <location line="+9"/>
         <source>Warning</source>
         <translation>Внимание</translation>
@@ -1303,8 +1227,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location line="-9"/>
         <location line="+9"/>
-        <source>This setting will take effect after restarting rpicoin.</source>
-        <translation>Эта настройка вступит в силу после перезапуска rpicoin</translation>
+        <source>This setting will take effect after restarting Rpicoin.</source>
+        <translation>Эта настройка вступит в силу после перезапуска Rpicoin</translation>
     </message>
     <message>
         <location line="+29"/>
@@ -1320,23 +1244,23 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>Форма</translation>
     </message>
     <message>
-        <location line="+33"/>
-        <location line="+231"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the rpicoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>Отображаемая информация может быть устаревшей. Ваш бумажник автоматически синхронизируется с сетью rpicoin после подключения, но этот процесс пока не завершён.</translation>
+        <location line="+46"/>
+        <location line="+247"/>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Rpicoin network after a connection is established, but this process has not completed yet.</source>
+        <translation>Отображаемая информация может быть устаревшей. Ваш бумажник автоматически синхронизируется с сетью Rpicoin после подключения, но этот процесс пока не завершён.</translation>
     </message>
     <message>
-        <location line="-160"/>
+        <location line="-173"/>
         <source>Stake:</source>
         <translation>Доля:</translation>
     </message>
     <message>
-        <location line="+29"/>
+        <location line="+32"/>
         <source>Unconfirmed:</source>
         <translation>Не подтверждено:</translation>
     </message>
     <message>
-        <location line="-107"/>
+        <location line="-113"/>
         <source>Wallet</source>
         <translation>Бумажник</translation>
     </message>
@@ -1351,7 +1275,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>Баланс, доступный в настоящее время</translation>
     </message>
     <message>
-        <location line="+71"/>
+        <location line="+80"/>
         <source>Immature:</source>
         <translation>Незрелые:</translation>
     </message>
@@ -1361,7 +1285,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>Баланс добытых монет, который ещё не созрел</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+23"/>
         <source>Total:</source>
         <translation>Итого:</translation>
     </message>
@@ -1371,25 +1295,33 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>Ваш суммарный баланс</translation>
     </message>
     <message>
-        <location line="+46"/>
+        <location line="+50"/>
         <source>&lt;b&gt;Recent transactions&lt;/b&gt;</source>
         <translation>&lt;b&gt;Последние транзакции&lt;/b&gt;</translation>
     </message>
     <message>
-        <location line="-108"/>
+        <location line="-118"/>
         <source>Total of transactions that have yet to be confirmed, and do not yet count toward the current balance</source>
         <translation>Общая сумма всех транзакций, которые до сих пор не подтверждены, и до сих пор не учитываются в текущем балансе</translation>
     </message>
     <message>
-        <location line="-29"/>
+        <location line="-32"/>
         <source>Total of coins that was staked, and do not yet count toward the current balance</source>
         <translation>Общая сумма всех монет, используемых для Proof-of-Stake, и не учитывающихся на балансе</translation>
     </message>
     <message>
-        <location filename="../overviewpage.cpp" line="+113"/>
+        <location filename="../overviewpage.cpp" line="+116"/>
         <location line="+1"/>
         <source>out of sync</source>
         <translation>не синхронизировано</translation>
+    </message>
+</context>
+<context>
+    <name>PaymentServer</name>
+    <message>
+        <location filename="../paymentserver.cpp" line="+107"/>
+        <source>Cannot start Rpicoin: click-to-pay handler</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1466,13 +1398,11 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <location line="+36"/>
         <location line="+53"/>
         <location line="+23"/>
-        <location line="+23"/>
-        <location filename="../rpcconsole.cpp" line="+348"/>
         <source>N/A</source>
         <translation>Н/Д</translation>
     </message>
     <message>
-        <location line="-217"/>
+        <location line="-194"/>
         <source>Client version</source>
         <translation>Версия клиента</translation>
     </message>
@@ -1517,12 +1447,34 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>Текущее число блоков</translation>
     </message>
     <message>
-        <location line="+23"/>
-        <source>Estimated total blocks</source>
-        <translation>Расчётное число блоков</translation>
+        <location line="+197"/>
+        <source>&amp;Network Traffic</source>
+        <translation>Сетевой &amp;трафик</translation>
     </message>
     <message>
-        <location line="+23"/>
+        <location line="+52"/>
+        <source>&amp;Clear</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+13"/>
+        <source>Totals</source>
+        <translation>Всего</translation>
+    </message>
+    <message>
+        <location line="+64"/>
+        <location filename="../rpcconsole.cpp" line="+352"/>
+        <source>In:</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+80"/>
+        <location filename="../rpcconsole.cpp" line="+1"/>
+        <source>Out:</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="-383"/>
         <source>Last block time</source>
         <translation>Время последнего блока</translation>
     </message>
@@ -1538,8 +1490,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+7"/>
-        <source>Show the rpicoin-Qt help message to get a list with possible rpicoin command-line options.</source>
-        <translation>Показать помощь по rpicoin-Qt, чтобы получить список доступных параметров командной строки.</translation>
+        <source>Show the Rpicoin-Qt help message to get a list with possible Rpicoin command-line options.</source>
+        <translation>Показать помощь по Rpicoin-Qt, чтобы получить список доступных параметров командной строки.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1552,29 +1504,29 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>Консоль</translation>
     </message>
     <message>
-        <location line="-260"/>
+        <location line="-237"/>
         <source>Build date</source>
         <translation>Дата сборки</translation>
     </message>
     <message>
         <location line="-104"/>
-        <source>rpicoin - Debug window</source>
-        <translation>rpicoin - Окно отладки</translation>
+        <source>Rpicoin - Debug window</source>
+        <translation>Rpicoin - Окно отладки</translation>
     </message>
     <message>
         <location line="+25"/>
-        <source>rpicoin Core</source>
-        <translation>Ядро rpicoin</translation>
+        <source>Rpicoin Core</source>
+        <translation>Ядро Rpicoin</translation>
     </message>
     <message>
-        <location line="+279"/>
+        <location line="+256"/>
         <source>Debug log file</source>
         <translation>Отладочный лог-файл</translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Open the rpicoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Открыть отладочный лог-файл rpicoin из текущего каталога данных. Это может занять несколько секунд для больших лог-файлов.</translation>
+        <source>Open the Rpicoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Открыть отладочный лог-файл Rpicoin из текущего каталога данных. Это может занять несколько секунд для больших лог-файлов.</translation>
     </message>
     <message>
         <location line="+102"/>
@@ -1582,9 +1534,9 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>Очистить консоль</translation>
     </message>
     <message>
-        <location filename="../rpcconsole.cpp" line="-33"/>
-        <source>Welcome to the rpicoin RPC console.</source>
-        <translation>Добро пожаловать в RPC-консоль rpicoin.</translation>
+        <location filename="../rpcconsole.cpp" line="-28"/>
+        <source>Welcome to the Rpicoin RPC console.</source>
+        <translation>Добро пожаловать в RPC-консоль Rpicoin.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -1596,12 +1548,47 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <source>Type &lt;b&gt;help&lt;/b&gt; for an overview of available commands.</source>
         <translation>Напишите &lt;b&gt;help&lt;/b&gt; для просмотра доступных команд.</translation>
     </message>
+    <message>
+        <location line="+134"/>
+        <source>%1 B</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>%1 KB</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>%1 MB</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>%1 GB</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>%1 m</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>%1 h</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>%1 h %2 m</source>
+        <translation type="unfinished"/>
+    </message>
 </context>
 <context>
     <name>SendCoinsDialog</name>
     <message>
         <location filename="../forms/sendcoinsdialog.ui" line="+14"/>
-        <location filename="../sendcoinsdialog.cpp" line="+182"/>
+        <location filename="../sendcoinsdialog.cpp" line="+179"/>
         <location line="+5"/>
         <location line="+5"/>
         <location line="+5"/>
@@ -1653,25 +1640,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>Сумма:</translation>
     </message>
     <message>
-        <location line="+22"/>
-        <location line="+86"/>
-        <location line="+86"/>
-        <location line="+32"/>
-        <source>0.00 BC</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="-191"/>
-        <source>Priority:</source>
-        <translation>Приоритет:</translation>
-    </message>
-    <message>
-        <location line="+19"/>
-        <source>medium</source>
-        <translation>средний</translation>
-    </message>
-    <message>
-        <location line="+32"/>
+        <location line="+54"/>
         <source>Fee:</source>
         <translation>Комиссия:</translation>
     </message>
@@ -1693,7 +1662,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location line="+35"/>
         <source>Change</source>
-        <translation type="unfinished"/>
+        <translation>Сдача</translation>
     </message>
     <message>
         <location line="+50"/>
@@ -1711,7 +1680,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>&amp;Добавить получателя</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+16"/>
         <source>Remove all transaction fields</source>
         <translation>Удалить все поля транзакции</translation>
     </message>
@@ -1721,17 +1690,12 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>Очистить &amp;всё</translation>
     </message>
     <message>
-        <location line="+28"/>
+        <location line="+24"/>
         <source>Balance:</source>
         <translation>Баланс:</translation>
     </message>
     <message>
-        <location line="+16"/>
-        <source>123.456 BC</source>
-        <translation>123.456 BC</translation>
-    </message>
-    <message>
-        <location line="+31"/>
+        <location line="+47"/>
         <source>Confirm the send action</source>
         <translation>Подтвердить отправку</translation>
     </message>
@@ -1741,9 +1705,9 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>&amp;Отправить</translation>
     </message>
     <message>
-        <location filename="../sendcoinsdialog.cpp" line="-173"/>
-        <source>Enter a rpicoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
-        <translation>Введите rpicoin-адрес (например B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
+        <location filename="../sendcoinsdialog.cpp" line="-171"/>
+        <source>Enter a Rpicoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <translation>Введите Rpicoin-адрес (например B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -1772,11 +1736,6 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+1"/>
-        <source>Copy priority</source>
-        <translation>Копировать приоритет</translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Copy low output</source>
         <translation type="unfinished"/>
     </message>
@@ -1786,7 +1745,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>Копировать сдачу</translation>
     </message>
     <message>
-        <location line="+86"/>
+        <location line="+85"/>
         <source>&lt;b&gt;%1&lt;/b&gt; to %2 (%3)</source>
         <translation>&lt;b&gt;%1&lt;/b&gt; адресату %2 (%3)</translation>
     </message>
@@ -1832,8 +1791,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+5"/>
-        <source>Error: Transaction creation failed.</source>
-        <translation>Ошибка: не удалось создать транзакцию.</translation>
+        <source>Error: Transaction creation failed!</source>
+        <translation>Ошибка: не удалось создать транзакцию!</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -1841,8 +1800,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>Ошибка: В транзакции отказано.  Такое может произойти, если некоторые монеты уже были потрачены, например, если Вы используете одну копию файла wallet.dat, а монеты были потрачены из другой копии, но не были отмечены как потраченные в этой.</translation>
     </message>
     <message>
-        <location line="+251"/>
-        <source>WARNING: Invalid rpicoin address</source>
+        <location line="+241"/>
+        <source>WARNING: Invalid Rpicoin address</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1874,23 +1833,23 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>Полу&amp;чатель:</translation>
     </message>
     <message>
-        <location line="+24"/>
-        <location filename="../sendcoinsentry.cpp" line="+25"/>
+        <location line="+34"/>
+        <source>The address to send the payment to (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <translation>Адрес получателя платежа (например B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
+    </message>
+    <message>
+        <location line="+60"/>
+        <location filename="../sendcoinsentry.cpp" line="+26"/>
         <source>Enter a label for this address to add it to your address book</source>
         <translation>Введите метку для данного адреса (для добавления в адресную книгу)</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="-78"/>
         <source>&amp;Label:</source>
         <translation>&amp;Метка:</translation>
     </message>
     <message>
-        <location line="+18"/>
-        <source>The address to send the payment to  (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
-        <translation>Адрес получателя платежа (например B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
-    </message>
-    <message>
-        <location line="+10"/>
+        <location line="+28"/>
         <source>Choose address from address book</source>
         <translation>Выберите адрес из адресной книги</translation>
     </message>
@@ -1916,8 +1875,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location filename="../sendcoinsentry.cpp" line="+1"/>
-        <source>Enter a rpicoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
-        <translation>Введите rpicoin-адрес (например B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
+        <source>Enter a Rpicoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <translation>Введите Rpicoin-адрес (например B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
     </message>
 </context>
 <context>
@@ -1977,8 +1936,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this rpicoin address</source>
-        <translation>Подписать сообщение, чтобы доказать владение адресом rpicoin</translation>
+        <source>Sign the message to prove you own this Rpicoin address</source>
+        <translation>Подписать сообщение, чтобы доказать владение адресом Rpicoin</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -2009,8 +1968,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+40"/>
-        <source>Verify the message to ensure it was signed with the specified rpicoin address</source>
-        <translation>Проверить сообщение, чтобы убедиться, что оно было подписано указанным адресом rpicoin</translation>
+        <source>Verify the message to ensure it was signed with the specified Rpicoin address</source>
+        <translation>Проверить сообщение, чтобы убедиться, что оно было подписано указанным адресом Rpicoin</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -2020,8 +1979,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location filename="../signverifymessagedialog.cpp" line="+27"/>
         <location line="+3"/>
-        <source>Enter a rpicoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
-        <translation>Введите адрес rpicoin (напр. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
+        <source>Enter a Rpicoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <translation>Введите адрес Rpicoin (напр. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
     </message>
     <message>
         <location line="-2"/>
@@ -2030,11 +1989,11 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+3"/>
-        <source>Enter rpicoin signature</source>
-        <translation>Введите подпись rpicoin</translation>
+        <source>Enter Rpicoin signature</source>
+        <translation>Введите подпись Rpicoin</translation>
     </message>
     <message>
-        <location line="+82"/>
+        <location line="+85"/>
         <location line="+81"/>
         <source>The entered address is invalid.</source>
         <translation>Введённый адрес неверен</translation>
@@ -2101,19 +2060,22 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
 </context>
 <context>
+    <name>TrafficGraphWidget</name>
+    <message>
+        <location filename="../trafficgraphwidget.cpp" line="+75"/>
+        <source>KB/s</source>
+        <translation type="unfinished"/>
+    </message>
+</context>
+<context>
     <name>TransactionDesc</name>
     <message>
-        <location filename="../transactiondesc.cpp" line="+19"/>
+        <location filename="../transactiondesc.cpp" line="+25"/>
         <source>Open until %1</source>
         <translation>Открыто до %1</translation>
     </message>
-    <message numerus="yes">
-        <location line="-2"/>
-        <source>Open for %n block(s)</source>
-        <translation><numerusform>Открыто для %n блока</numerusform><numerusform>Открыто для %n блоков</numerusform><numerusform>Открыто для %n блоков</numerusform></translation>
-    </message>
     <message>
-        <location line="+8"/>
+        <location line="+6"/>
         <source>conflicted</source>
         <translation>конфликт</translation>
     </message>
@@ -2133,14 +2095,14 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>%1 подтверждений</translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="+17"/>
         <source>Status</source>
         <translation>Статус</translation>
     </message>
     <message numerus="yes">
         <location line="+7"/>
         <source>, broadcast through %n node(s)</source>
-        <translation><numerusform>, разослано через %n узел</numerusform><numerusform>, разослано через %n узла</numerusform><numerusform>, разослано через %n узлов</numerusform></translation>
+        <translation><numerusform>, разослано через %n узел</numerusform><numerusform>, разослано через %n узла</numerusform><numerusform>, разослано через %n узлов</numerusform><numerusform>, разослано через %n узлов</numerusform></translation>
     </message>
     <message>
         <location line="+4"/>
@@ -2159,19 +2121,19 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+5"/>
-        <location line="+17"/>
+        <location line="+13"/>
         <source>From</source>
         <translation>От</translation>
     </message>
     <message>
         <location line="+1"/>
-        <location line="+22"/>
+        <location line="+19"/>
         <location line="+58"/>
         <source>To</source>
         <translation>Для</translation>
     </message>
     <message>
-        <location line="-77"/>
+        <location line="-74"/>
         <location line="+2"/>
         <source>own address</source>
         <translation>свой адрес</translation>
@@ -2182,7 +2144,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>метка</translation>
     </message>
     <message>
-        <location line="+37"/>
+        <location line="+34"/>
         <location line="+12"/>
         <location line="+45"/>
         <location line="+17"/>
@@ -2193,7 +2155,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message numerus="yes">
         <location line="-102"/>
         <source>matures in %n more block(s)</source>
-        <translation><numerusform>будет доступно через %n блок</numerusform><numerusform>будет доступно через %n блока</numerusform><numerusform>будет доступно через %n блоков</numerusform></translation>
+        <translation><numerusform>будет доступно через %n блок</numerusform><numerusform>будет доступно через %n блока</numerusform><numerusform>будет доступно через %n блоков</numerusform><numerusform>будет доступно через %n блоков</numerusform></translation>
     </message>
     <message>
         <location line="+2"/>
@@ -2235,8 +2197,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+3"/>
-        <source>Generated coins must mature 5 blocks before they can be spent. When you generated this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to &quot;not accepted&quot; and it won&apos;t be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
-        <translation>Сгенерированные монеты должны подождать 5 блоков, прежде чем они могут быть потрачены. Когда Вы сгенерировали этот блок, он был отправлен в сеть для добавления в цепочку блоков. Если данная процедура не удастся, статус изменится на «не подтверждено», и монеты будут недействительны. Это иногда происходит в случае, если другой узел сгенерирует блок на несколько секунд раньше вас.</translation>
+        <source>Generated coins must mature 510 blocks before they can be spent. When you generated this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to &quot;not accepted&quot; and it won&apos;t be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
+        <translation>Сгенерированные монеты должны подождать 510 блоков, прежде чем они могут быть потрачены. Когда Вы сгенерировали этот блок, он был отправлен в сеть для добавления в цепочку блоков. Если данная процедура не удастся, статус изменится на «не подтверждено», и монеты будут недействительны. Это иногда происходит в случае, если другой узел сгенерирует блок на несколько секунд раньше вас.</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -2254,7 +2216,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>Входы</translation>
     </message>
     <message>
-        <location line="+23"/>
+        <location line="+21"/>
         <source>Amount</source>
         <translation>Количество</translation>
     </message>
@@ -2269,12 +2231,17 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>ложь</translation>
     </message>
     <message>
-        <location line="-211"/>
+        <location line="-202"/>
         <source>, has not been successfully broadcast yet</source>
         <translation>, ещё не было успешно разослано</translation>
     </message>
+    <message numerus="yes">
+        <location line="-36"/>
+        <source>Open for %n more block(s)</source>
+        <translation><numerusform>Открыто для ещё %n блока</numerusform><numerusform>Открыто для ещё %n блоков</numerusform><numerusform>Открыто для ещё %n блоков</numerusform><numerusform>Открыто для ещё %n блоков</numerusform></translation>
+    </message>
     <message>
-        <location line="+35"/>
+        <location line="+67"/>
         <source>unknown</source>
         <translation>неизвестно</translation>
     </message>
@@ -2295,7 +2262,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
 <context>
     <name>TransactionTableModel</name>
     <message>
-        <location filename="../transactiontablemodel.cpp" line="+226"/>
+        <location filename="../transactiontablemodel.cpp" line="+231"/>
         <source>Date</source>
         <translation>Дата</translation>
     </message>
@@ -2315,7 +2282,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>Количество</translation>
     </message>
     <message>
-        <location line="+60"/>
+        <location line="+52"/>
         <source>Open until %1</source>
         <translation>Открыто до %1</translation>
     </message>
@@ -2327,7 +2294,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message numerus="yes">
         <location line="-15"/>
         <source>Open for %n more block(s)</source>
-        <translation><numerusform>Открыто для ещё %n блока</numerusform><numerusform>Открыто для ещё %n блоков</numerusform><numerusform>Открыто для ещё %n блоков</numerusform></translation>
+        <translation><numerusform>Открыто для ещё %n блока</numerusform><numerusform>Открыто для ещё %n блоков</numerusform><numerusform>Открыто для ещё %n блоков</numerusform><numerusform>Открыто для ещё %n блоков</numerusform></translation>
     </message>
     <message>
         <location line="+6"/>
@@ -2395,7 +2362,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>[не доступно]</translation>
     </message>
     <message>
-        <location line="+190"/>
+        <location line="+194"/>
         <source>Transaction status. Hover over this field to show number of confirmations.</source>
         <translation>Статус транзакции. Подведите курсор к нужному полю для того, чтобы увидеть количество подтверждений.</translation>
     </message>
@@ -2423,13 +2390,13 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
 <context>
     <name>TransactionView</name>
     <message>
-        <location filename="../transactionview.cpp" line="+55"/>
-        <location line="+16"/>
+        <location filename="../transactionview.cpp" line="+54"/>
+        <location line="+17"/>
         <source>All</source>
         <translation>Все</translation>
     </message>
     <message>
-        <location line="-15"/>
+        <location line="-16"/>
         <source>Today</source>
         <translation>Сегодня</translation>
     </message>
@@ -2459,7 +2426,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>Промежуток...</translation>
     </message>
     <message>
-        <location line="+11"/>
+        <location line="+12"/>
         <source>Received with</source>
         <translation>Получено на</translation>
     </message>
@@ -2524,7 +2491,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>Показать подробности транзакции</translation>
     </message>
     <message>
-        <location line="+144"/>
+        <location line="+138"/>
         <source>Export Transaction Data</source>
         <translation>Экспортировать данные транзакций</translation>
     </message>
@@ -2592,7 +2559,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
 <context>
     <name>WalletModel</name>
     <message>
-        <location filename="../walletmodel.cpp" line="+206"/>
+        <location filename="../walletmodel.cpp" line="+212"/>
         <source>Sending...</source>
         <translation>Отправка....</translation>
     </message>
@@ -2600,8 +2567,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
 <context>
     <name>bitcoin-core</name>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="+33"/>
-        <source>rpicoin version</source>
+        <location filename="../bitcoinstrings.cpp" line="+8"/>
+        <source>Rpicoin version</source>
         <translation>Версия</translation>
     </message>
     <message>
@@ -2626,14 +2593,14 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>Получить помощь по команде</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+1"/>
         <source>Options:</source>
         <translation>Опции:</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Specify configuration file (default: rpicoin.conf)</source>
-        <translation>Указать конфигурационный файл (по умолчанию: rpicoin.conf)</translation>
+        <source>Specify configuration file (default: Rpicoin.conf)</source>
+        <translation>Указать конфигурационный файл (по умолчанию: Rpicoin.conf)</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2651,7 +2618,22 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>Укажите каталог данных</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+163"/>
+        <source>%s, you must set a rpcpassword in the configuration file:
+%s
+It is recommended you use the following random password:
+rpcuser=Rpicoinrpc
+rpcpassword=%s
+(you do not need to remember this password)
+The username and password MUST NOT be the same.
+If the file does not exist, create it with owner-readable-only file permissions.
+It is also recommended to set alertnotify so you are notified of problems;
+for example: alertnotify=echo %%s | mail -s &quot;Rpicoin Alert&quot; admin@foo.com
+</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="-161"/>
         <source>Set database cache size in megabytes (default: 25)</source>
         <translation>Установить размер кэша базы данных в мегабайтах (по умолчанию: 25)</translation>
     </message>
@@ -2661,9 +2643,9 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>Установить размер лога базы данных в мегабайтах (по умолчанию: 100)</translation>
     </message>
     <message>
-        <location line="+6"/>
-        <source>Listen for connections on &lt;port&gt; (default: 23185 or testnet: 33185)</source>
-        <translation>Принимать входящие подключения на &lt;port&gt; (по умолчанию: 23185 или 33185 в тестовой сети)</translation>
+        <location line="+5"/>
+        <source>Listen for connections on &lt;port&gt; (default: 18000 or testnet: 18002)</source>
+        <translation>Принимать входящие подключения на &lt;port&gt; (по умолчанию: 18000 или 18002 в тестовой сети)</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2681,17 +2663,22 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>Укажите ваш собственный публичный адрес</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+4"/>
         <source>Bind to given address. Use [host]:port notation for IPv6</source>
         <translation>Привязаться (bind) к указанному адресу. Используйте запись вида [хост]:порт для IPv6</translation>
     </message>
     <message>
-        <location line="+2"/>
-        <source>Stake your coins to support network and gain reward (default: 1)</source>
+        <location line="+1"/>
+        <source>Query for peer addresses via DNS lookup, if low on addresses (default: 1 unless -connect)</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+3"/>
+        <source>Always query for peer addresses via DNS lookup (default: 0)</source>
+        <translation>Всегда запрашивать адреса пиров с помощью DNS (по умолчанию: 0)</translation>
+    </message>
+    <message>
+        <location line="+4"/>
         <source>Threshold for disconnecting misbehaving peers (default: 100)</source>
         <translation>Порог для отключения неправильно ведущих себя узлов (по умолчанию: 100)</translation>
     </message>
@@ -2701,57 +2688,22 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>Число секунд блокирования неправильно ведущих себя узлов (по умолчанию: 86400)</translation>
     </message>
     <message>
-        <location line="-44"/>
+        <location line="+153"/>
         <source>An error occurred while setting up the RPC port %u for listening on IPv4: %s</source>
         <translation>Произошла ошибка при открытии RPC-порта %u для прослушивания на IPv4: %s</translation>
     </message>
     <message>
-        <location line="+51"/>
-        <source>Detach block and address databases. Increases shutdown time (default: 0)</source>
-        <translation>Отключить базы данных блоков и адресов. Увеличивает время завершения работы (по умолчанию: 0)</translation>
+        <location line="-126"/>
+        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 18001 or testnet: 18003)</source>
+        <translation>Прослушивать подключения JSON-RPC на &lt;порту&gt; (по умолчанию: 18001 или для testnet: 18003)</translation>
     </message>
     <message>
-        <location line="+109"/>
-        <source>Error: The transaction was rejected.  This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
-        <translation>Ошибка: В транзакции отказано.  Такое может произойти, если некоторые монеты уже были потрачены, например, если Вы используете одну копию файла wallet.dat, а монеты были потрачены из другой копии, но не были отмечены как потраченные в этой.</translation>
-    </message>
-    <message>
-        <location line="-5"/>
-        <source>Error: This transaction requires a transaction fee of at least %s because of its amount, complexity, or use of recently received funds  </source>
-        <translation>Ошибка: эта транзакция требует комиссию в размере как минимум %s из-за её объёма, сложности или использования недавно полученных средств  </translation>
-    </message>
-    <message>
-        <location line="-87"/>
-        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 23186 or testnet: 33186)</source>
-        <translation>Прослушивать подключения JSON-RPC на &lt;порту&gt; (по умолчанию: 23186 или для testnet: 33186)</translation>
-    </message>
-    <message>
-        <location line="-11"/>
+        <location line="-16"/>
         <source>Accept command line and JSON-RPC commands</source>
         <translation>Принимать командную строку и команды JSON-RPC</translation>
     </message>
     <message>
-        <location line="+101"/>
-        <source>Error: Transaction creation failed  </source>
-        <translation>Ошибка: Создание транзакции не удалось  </translation>
-    </message>
-    <message>
-        <location line="-5"/>
-        <source>Error: Wallet locked, unable to create transaction  </source>
-        <translation>Ошибка: бумажник заблокирован, невозможно создать транзакцию  </translation>
-    </message>
-    <message>
-        <location line="-8"/>
-        <source>Importing blockchain data file.</source>
-        <translation>Импортируется файл цепи блоков.</translation>
-    </message>
-    <message>
         <location line="+1"/>
-        <source>Importing bootstrap blockchain data file.</source>
-        <translation>Импортируется bootstrap-файл цепи блоков.</translation>
-    </message>
-    <message>
-        <location line="-88"/>
         <source>Run in the background as a daemon and accept commands</source>
         <translation>Запускаться в фоне как демон и принимать команды</translation>
     </message>
@@ -2761,57 +2713,47 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>Использовать тестовую сеть</translation>
     </message>
     <message>
-        <location line="-24"/>
+        <location line="-23"/>
         <source>Accept connections from outside (default: 1 if no -proxy or -connect)</source>
         <translation>Принимать подключения извне (по умолчанию: 1, если не используется -proxy или -connect)</translation>
     </message>
     <message>
-        <location line="-38"/>
+        <location line="+160"/>
         <source>An error occurred while setting up the RPC port %u for listening on IPv6, falling back to IPv4: %s</source>
         <translation>Произошла ошибка при открытии на прослушивание IPv6 RCP-порта %u, возвращаемся к IPv4: %s</translation>
     </message>
     <message>
-        <location line="+117"/>
-        <source>Error initializing database environment %s! To recover, BACKUP THAT DIRECTORY, then remove everything from it except for wallet.dat.</source>
-        <translation>Ошибка инициализации окружения БД %s! Для восстановления СДЕЛАЙТЕ РЕЗЕРВНУЮ КОПИЮ этой директории, затем удалите из нее все, кроме wallet.dat.</translation>
-    </message>
-    <message>
-        <location line="-20"/>
-        <source>Set maximum size of RPI-priority/low-fee transactions in bytes (default: 27000)</source>
-        <translation>Максимальный размер высокоприоритетных/низкокомиссионных транзакций в байтах (по умолчанию: 27000)</translation>
-    </message>
-    <message>
-        <location line="+11"/>
-        <source>Warning: -paytxfee is set very RPI! This is the transaction fee you will pay if you send a transaction.</source>
+        <location line="-84"/>
+        <source>Warning: -paytxfee is set very high! This is the transaction fee you will pay if you send a transaction.</source>
         <translation>Внимание: установлено очень большое значение -paytxfee. Это комиссия, которую вы заплатите при проведении транзакции.</translation>
     </message>
     <message>
-        <location line="+61"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong rpicoin will not work properly.</source>
-        <translation>Внимание: убедитесь, что дата и время на Вашем компьютере выставлены верно. Если Ваши часы идут неправильно, rpicoin будет работать некорректно.</translation>
+        <location line="+46"/>
+        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong Rpicoin will not work properly.</source>
+        <translation>Внимание: убедитесь, что дата и время на Вашем компьютере выставлены верно. Если Ваши часы идут неправильно, Rpicoin будет работать некорректно.</translation>
     </message>
     <message>
-        <location line="-31"/>
+        <location line="-19"/>
         <source>Warning: error reading wallet.dat! All keys read correctly, but transaction data or address book entries might be missing or incorrect.</source>
         <translation>Внимание: ошибка чтения wallet.dat! Все ключи восстановлены, но записи в адресной книге и истории транзакций могут быть некорректными.</translation>
     </message>
     <message>
-        <location line="-18"/>
+        <location line="-16"/>
         <source>Warning: wallet.dat corrupt, data salvaged! Original wallet.dat saved as wallet.{timestamp}.bak in %s; if your balance or transactions are incorrect you should restore from a backup.</source>
         <translation>Внимание: wallet.dat был поврежден, данные восстановлены! Оригинальный wallet.dat сохранен как wallet.{timestamp}.bak в %s;, если ваши транзакции или баланс отображаются неправильно, следует восстановить его из данной копии.</translation>
     </message>
     <message>
-        <location line="-30"/>
+        <location line="-31"/>
         <source>Attempt to recover private keys from a corrupt wallet.dat</source>
         <translation>Попытка восстановления ключей из поврежденного wallet.dat</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+5"/>
         <source>Block creation options:</source>
         <translation>Параметры создания блоков:</translation>
     </message>
     <message>
-        <location line="-62"/>
+        <location line="-66"/>
         <source>Connect only to the specified node(s)</source>
         <translation>Подключаться только к указанному узлу(ам)</translation>
     </message>
@@ -2821,22 +2763,12 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>Определить свой IP (по умолчанию: 1 при прослушивании и если не используется -externalip)</translation>
     </message>
     <message>
-        <location line="+94"/>
+        <location line="+97"/>
         <source>Failed to listen on any port. Use -listen=0 if you want this.</source>
         <translation>Не удалось начать прослушивание на порту. Используйте -listen=0 если вас это устраивает.</translation>
     </message>
     <message>
-        <location line="-90"/>
-        <source>Find peers using DNS lookup (default: 1)</source>
-        <translation>Искать узлы с помощью DNS (по умолчанию: 1)</translation>
-    </message>
-    <message>
-        <location line="+5"/>
-        <source>Sync checkpoints policy (default: strict)</source>
-        <translation>Политика синхронизированных меток (по умолчанию: strict)</translation>
-    </message>
-    <message>
-        <location line="+83"/>
+        <location line="-2"/>
         <source>Invalid -tor address: &apos;%s&apos;</source>
         <translation>Неверный адрес -tor: &apos;%s&apos;</translation>
     </message>
@@ -2846,7 +2778,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="-82"/>
+        <location line="-85"/>
         <source>Maximum per-connection receive buffer, &lt;n&gt;*1000 bytes (default: 5000)</source>
         <translation>Максимальный размер буфера приёма на соединение, &lt;n&gt;*1000 байт (по умолчанию: 5000)</translation>
     </message>
@@ -2861,43 +2793,23 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>Подключаться только к узлам из сети &lt;net&gt; (IPv4, IPv6 или Tor)</translation>
     </message>
     <message>
-        <location line="+28"/>
-        <source>Output extra debugging information. Implies all other -debug* options</source>
-        <translation>Выводить больше отладочной информации. Включает все остальные опции -debug*</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Output extra network debugging information</source>
-        <translation>Выводить дополнительную сетевую отладочную информацию</translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+30"/>
         <source>Prepend debug output with timestamp</source>
         <translation>Дописывать отметки времени к отладочному выводу</translation>
     </message>
     <message>
-        <location line="+35"/>
+        <location line="+36"/>
         <source>SSL options: (see the Bitcoin Wiki for SSL setup instructions)</source>
         <translation>
 Параметры SSL: (см. Bitcoin Wiki для инструкций по настройке SSL)</translation>
     </message>
     <message>
-        <location line="-74"/>
-        <source>Select the version of socks proxy to use (4-5, default: 5)</source>
-        <translation>Выберите версию SOCKS-прокси (4-5, по умолчанию: 5)</translation>
-    </message>
-    <message>
-        <location line="+41"/>
+        <location line="-34"/>
         <source>Send trace/debug info to console instead of debug.log file</source>
         <translation>Выводить информацию трассировки/отладки на консоль вместо файла debug.log</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Send trace/debug info to debugger</source>
-        <translation>Отправлять информацию трассировки/отладки в отладчик</translation>
-    </message>
-    <message>
-        <location line="+28"/>
+        <location line="+33"/>
         <source>Set maximum block size in bytes (default: 250000)</source>
         <translation>Максимальный размер блока в байтах (по умолчанию: 250000)</translation>
     </message>
@@ -2907,23 +2819,17 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>Минимальный размер блока в байтах (по умолчанию: 0)</translation>
     </message>
     <message>
-        <location line="-29"/>
+        <location line="-33"/>
         <source>Shrink debug.log file on client startup (default: 1 when no -debug)</source>
         <translation>Сжимать файл debug.log при запуске клиента (по умолчанию: 1, если нет -debug)</translation>
     </message>
     <message>
-        <location line="-42"/>
+        <location line="-41"/>
         <source>Specify connection timeout in milliseconds (default: 5000)</source>
         <translation>Таймаут соединения в миллисекундах (по умолчанию: 5000)</translation>
     </message>
     <message>
-        <location line="+109"/>
-        <source>Unable to sign checkpoint, wrong checkpointkey?
-</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="-80"/>
+        <location line="+28"/>
         <source>Use UPnP to map the listening port (default: 0)</source>
         <translation>Использовать UPnP для проброса порта (по умолчанию: 0)</translation>
     </message>
@@ -2938,72 +2844,97 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>Использовать прокси для скрытых сервисов (по умолчанию: тот же, что и в -proxy)</translation>
     </message>
     <message>
-        <location line="+42"/>
+        <location line="+45"/>
         <source>Username for JSON-RPC connections</source>
         <translation>Имя для подключений JSON-RPC</translation>
     </message>
     <message>
-        <location line="+47"/>
+        <location line="+50"/>
         <source>Verifying database integrity...</source>
         <translation>Проверка целостности базы данных...</translation>
     </message>
     <message>
-        <location line="+57"/>
-        <source>WARNING: syncronized checkpoint violation detected, but skipped!</source>
+        <location line="+43"/>
+        <source>Error: Wallet locked, unable to create transaction!</source>
+        <translation>Ошибка: бумажник заблокирован, невозможно создать транзакцию!</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Error: This transaction requires a transaction fee of at least %s because of its amount, complexity, or use of recently received funds!</source>
+        <translation>Ошибка: эта транзакция требует комиссию в размере как минимум %s из-за её объёма, сложности или использования недавно полученных средств!</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Error: Transaction creation failed!</source>
+        <translation>Ошибка: не удалось создать транзакцию!</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Error: The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
+        <translation>Ошибка: В транзакции отказано!  Такое может произойти, если некоторые монеты уже были потрачены, например, если Вы используете одну копию файла wallet.dat, а монеты были потрачены из другой копии, но не были отмечены как потраченные в этой.</translation>
+    </message>
+    <message>
+        <location line="-15"/>
+        <source>Warning</source>
         <translation type="unfinished"/>
     </message>
     <message>
         <location line="+1"/>
-        <source>Warning: Disk space is low!</source>
-        <translation>Внимание: мало места на диске!</translation>
+        <source>Information</source>
+        <translation>Информация</translation>
     </message>
     <message>
-        <location line="-2"/>
+        <location line="-7"/>
         <source>Warning: This version is obsolete, upgrade required!</source>
         <translation>Внимание: эта версия устарела, требуется обновление!</translation>
     </message>
     <message>
-        <location line="-48"/>
+        <location line="-23"/>
         <source>wallet.dat corrupt, salvage failed</source>
         <translation>wallet.dat поврежден, восстановление не удалось</translation>
     </message>
     <message>
-        <location line="-54"/>
+        <location line="-55"/>
         <source>Password for JSON-RPC connections</source>
         <translation>Пароль для подключений JSON-RPC</translation>
     </message>
     <message>
-        <location line="-84"/>
-        <source>%s, you must set a rpcpassword in the configuration file:
- %s
-It is recommended you use the following random password:
-rpcuser=rpicoinrpc
-rpcpassword=%s
-(you do not need to remember this password)
-The username and password MUST NOT be the same.
-If the file does not exist, create it with owner-readable-only file permissions.
-It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s &quot;rpicoin Alert&quot; admin@foo.com
-</source>
+        <location line="-47"/>
+        <source>Connect through SOCKS5 proxy</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+51"/>
-        <source>Find peers using internet relay chat (default: 0)</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+5"/>
+        <location line="+17"/>
         <source>Sync time with other nodes. Disable if time on your system is precise e.g. syncing with NTP (default: 1)</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+15"/>
+        <location line="+12"/>
         <source>When creating transactions, ignore inputs with value less than this (default: 0.01)</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+16"/>
+        <location line="+6"/>
+        <source>Output debugging information (default: 0, supplying &lt;category&gt; is optional)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>If &lt;category&gt; is not supplied, output all debugging information.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>&lt;category&gt; can be:</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Enter regression test mode, which uses a special chain in which blocks can be solved instantly. This is intended for regression testing tools and app development.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+8"/>
         <source>Allow JSON-RPC connections from specified IP address</source>
         <translation>Разрешить подключения JSON-RPC с указанного IP</translation>
     </message>
@@ -3011,6 +2942,16 @@ for example: alertnotify=echo %%s | mail -s &quot;rpicoin Alert&quot; admin@foo.
         <location line="+1"/>
         <source>Send commands to node running on &lt;ip&gt; (default: 127.0.0.1)</source>
         <translation>Посылать команды узлу, запущенному на &lt;ip&gt; (по умолчанию: 127.0.0.1)</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Wait for RPC server to start</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Set the number of threads to service RPC calls (default: 4)</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location line="+1"/>
@@ -3029,11 +2970,6 @@ for example: alertnotify=echo %%s | mail -s &quot;rpicoin Alert&quot; admin@foo.
     </message>
     <message>
         <location line="+1"/>
-        <source>Enforce transaction scripts to use canonical PUSH operators (default: 1)</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+2"/>
         <source>Execute command when a relevant alert is received (%s in cmd is replaced by message)</source>
         <translation type="unfinished"/>
     </message>
@@ -3053,22 +2989,22 @@ for example: alertnotify=echo %%s | mail -s &quot;rpicoin Alert&quot; admin@foo.
         <translation>Перепроверить цепь блоков на предмет отсутствующих в бумажнике транзакций</translation>
     </message>
     <message>
-        <location line="+2"/>
-        <source>How many blocks to check at startup (default: 2500, 0 = all)</source>
-        <translation>Сколько блоков проверять при запуске (по умолчанию: 2500, 0 = все)</translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+3"/>
         <source>How thorough the block verification is (0-6, default: 1)</source>
         <translation>Насколько тщательно проверять блоки (0-6, по умолчанию: 1)</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Imports blocks from external blk000?.dat file</source>
-        <translation>Импортировать блоки из внешнего файла blk000?.dat</translation>
+        <source>Imports blocks from external wsp000?.dat file</source>
+        <translation>Импортировать блоки из внешнего файла wsp000?.dat</translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+1"/>
+        <source>Keep at most &lt;n&gt; MiB of unconnectable blocks in memory (default: %u)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+5"/>
         <source>Use OpenSSL (https) for JSON-RPC connections</source>
         <translation>Использовать OpenSSL (https) для подключений JSON-RPC</translation>
     </message>
@@ -3083,79 +3019,74 @@ for example: alertnotify=echo %%s | mail -s &quot;rpicoin Alert&quot; admin@foo.
         <translation>Приватный ключ сервера (по умолчанию: server.pem)</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Acceptable ciphers (default: TLSv1+RPI:!SSLv2:!aNULL:!eNULL:!AH:!3DES:@STRENGTH)</source>
-        <translation>Разрешённые алгоритмы (по умолчанию: TLSv1+RPI:!SSLv2:!aNULL:!eNULL:!AH:!3DES:@STRENGTH)</translation>
+        <location line="+5"/>
+        <source>Error: Unsupported argument -socks found. Setting SOCKS version isn&apos;t possible anymore, only SOCKS5 proxies are supported.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+53"/>
+        <location line="+8"/>
+        <source>Initialization sanity check failed. Rpicoin is shutting down.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+20"/>
+        <source>Error loading block database</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+29"/>
         <source>Error: Wallet unlocked for staking only, unable to create transaction.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+18"/>
-        <source>WARNING: Invalid checkpoint found! Displayed transactions may not be correct! You may need to upgrade, or notify developers.</source>
+        <location line="-14"/>
+        <source>Error: Disk space is low!</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="-158"/>
+        <location line="+1"/>
+        <source>This is a pre-release test build - use at your own risk - do not use for mining or merchant applications</source>
+        <translation>Это пре-релизная тестовая сборка - используйте на свой страх и риск - не используйте для добычи или торговых приложений</translation>
+    </message>
+    <message>
+        <location line="-135"/>
         <source>This help message</source>
         <translation>Эта справка</translation>
     </message>
     <message>
-        <location line="+95"/>
+        <location line="+100"/>
         <source>Wallet %s resides outside data directory %s.</source>
         <translation>Кошелек %s находится вне рабочей директории %s.</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Cannot obtain a lock on data directory %s.  rpicoin is probably already running.</source>
-        <translation>Невозможно установить блокировку на рабочую директорию %s.  Возможно, бумажник уже запущен.</translation>
-    </message>
-    <message>
-        <location line="-98"/>
-        <source>rpicoin</source>
-        <translation>rpicoin</translation>
-    </message>
-    <message>
-        <location line="+140"/>
+        <location line="+46"/>
         <source>Unable to bind to %s on this computer (bind returned error %d, %s)</source>
         <translation>Невозможно привязаться к %s на этом компьютере (bind вернул ошибку %d, %s)</translation>
     </message>
     <message>
-        <location line="-130"/>
-        <source>Connect through socks proxy</source>
-        <translation>Подключаться через socks прокси</translation>
-    </message>
-    <message>
-        <location line="+3"/>
+        <location line="-136"/>
         <source>Allow DNS lookups for -addnode, -seednode and -connect</source>
         <translation>Разрешить поиск в DNS для -addnode, -seednode и -connect</translation>
     </message>
     <message>
-        <location line="+122"/>
+        <location line="+121"/>
         <source>Loading addresses...</source>
         <translation>Загрузка адресов...</translation>
     </message>
     <message>
-        <location line="-15"/>
-        <source>Error loading blkindex.dat</source>
-        <translation>Ошибка чтения blkindex.dat</translation>
-    </message>
-    <message>
-        <location line="+2"/>
+        <location line="-10"/>
         <source>Error loading wallet.dat: Wallet corrupted</source>
         <translation>Ошибка загрузки wallet.dat: Бумажник поврежден</translation>
     </message>
     <message>
         <location line="+4"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of rpicoin</source>
-        <translation>Ошибка загрузки wallet.dat: бумажник требует более новую версию rpicoin</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of Rpicoin</source>
+        <translation>Ошибка загрузки wallet.dat: бумажник требует более новую версию Rpicoin</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Wallet needed to be rewritten: restart rpicoin to complete</source>
-        <translation>Необходимо перезаписать бумажник, перезапустите rpicoin для завершения операции</translation>
+        <source>Wallet needed to be rewritten: restart Rpicoin to complete</source>
+        <translation>Необходимо перезаписать бумажник, перезапустите Rpicoin для завершения операции</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -3163,7 +3094,7 @@ for example: alertnotify=echo %%s | mail -s &quot;rpicoin Alert&quot; admin@foo.
         <translation>Ошибка при загрузке wallet.dat</translation>
     </message>
     <message>
-        <location line="-16"/>
+        <location line="-15"/>
         <source>Invalid -proxy address: &apos;%s&apos;</source>
         <translation>Неверный адрес -proxy: &apos;%s&apos;</translation>
     </message>
@@ -3173,12 +3104,7 @@ for example: alertnotify=echo %%s | mail -s &quot;rpicoin Alert&quot; admin@foo.
         <translation>В параметре -onlynet указана неизвестная сеть: &apos;%s&apos;</translation>
     </message>
     <message>
-        <location line="-1"/>
-        <source>Unknown -socks proxy version requested: %i</source>
-        <translation>В параметре -socks запрошена неизвестная версия: %i</translation>
-    </message>
-    <message>
-        <location line="+4"/>
+        <location line="+3"/>
         <source>Cannot resolve -bind address: &apos;%s&apos;</source>
         <translation>Не удаётся разрешить адрес в параметре -bind: &apos;%s&apos;</translation>
     </message>
@@ -3188,17 +3114,12 @@ for example: alertnotify=echo %%s | mail -s &quot;rpicoin Alert&quot; admin@foo.
         <translation>Не удаётся разрешить адрес в параметре -externalip: &apos;%s&apos;</translation>
     </message>
     <message>
-        <location line="-24"/>
+        <location line="-22"/>
         <source>Invalid amount for -paytxfee=&lt;amount&gt;: &apos;%s&apos;</source>
         <translation>Неверное количество в параметре -paytxfee=&lt;кол-во&gt;: &apos;%s&apos;</translation>
     </message>
     <message>
-        <location line="+44"/>
-        <source>Error: could not start node</source>
-        <translation>Ошибка: не удалось запустить узел</translation>
-    </message>
-    <message>
-        <location line="+11"/>
+        <location line="+59"/>
         <source>Sending...</source>
         <translation>Отправка...</translation>
     </message>
@@ -3213,32 +3134,57 @@ for example: alertnotify=echo %%s | mail -s &quot;rpicoin Alert&quot; admin@foo.
         <translation>Недостаточно монет</translation>
     </message>
     <message>
-        <location line="-34"/>
+        <location line="-41"/>
         <source>Loading block index...</source>
         <translation>Загрузка индекса блоков...</translation>
     </message>
     <message>
-        <location line="-103"/>
+        <location line="-105"/>
         <source>Add a node to connect to and attempt to keep the connection open</source>
         <translation>Добавить узел для подключения и пытаться поддерживать соединение открытым</translation>
     </message>
     <message>
-        <location line="+122"/>
-        <source>Unable to bind to %s on this computer. rpicoin is probably already running.</source>
-        <translation>Невозможно привязаться к %s на этом компьютере.  Возможно, rpicoin уже работает.</translation>
+        <location line="+131"/>
+        <source>Unable to bind to %s on this computer. Rpicoin is probably already running.</source>
+        <translation>Невозможно привязаться к %s на этом компьютере.  Возможно, Rpicoin уже работает.</translation>
     </message>
     <message>
-        <location line="-97"/>
+        <location line="-108"/>
         <source>Fee per KB to add to transactions you send</source>
         <translation>Комиссия на килобайт, добавляемая к вашим транзакциям</translation>
     </message>
     <message>
-        <location line="+55"/>
+        <location line="+40"/>
+        <source>How many blocks to check at startup (default: 500, 0 = all)</source>
+        <translation>Сколько блоков проверять при запуске (по умолчанию: 500, 0 = все)</translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>Acceptable ciphers (default: TLSv1.2+HIGH:TLSv1+HIGH:!SSLv2:!aNULL:!eNULL:!3DES:@STRENGTH)</source>
+        <translation>Разрешённые алгоритмы (по умолчанию: TLSv1.2+HIGH:TLSv1+HIGH:!SSLv2:!aNULL:!eNULL:!3DES:@STRENGTH)</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Warning: Deprecated argument -debugnet ignored, use -debug=net</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+8"/>
         <source>Invalid amount for -mininput=&lt;amount&gt;: &apos;%s&apos;</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+25"/>
+        <location line="+3"/>
+        <source>Cannot obtain a lock on data directory %s. Rpicoin is probably already running.</source>
+        <translation>Невозможно установить блокировку на рабочую директорию %s.  Возможно, бумажник уже запущен.</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Error initializing wallet database environment %s!</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+15"/>
         <source>Loading wallet...</source>
         <translation>Загрузка бумажника...</translation>
     </message>
@@ -3246,11 +3192,6 @@ for example: alertnotify=echo %%s | mail -s &quot;rpicoin Alert&quot; admin@foo.
         <location line="+8"/>
         <source>Cannot downgrade wallet</source>
         <translation>Не удаётся понизить версию бумажника</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Cannot initialize keypool</source>
-        <translation>Не удаётся инициализировать массив ключей</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -3263,22 +3204,22 @@ for example: alertnotify=echo %%s | mail -s &quot;rpicoin Alert&quot; admin@foo.
         <translation>Сканирование...</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+2"/>
         <source>Done loading</source>
         <translation>Загрузка завершена</translation>
     </message>
     <message>
-        <location line="-167"/>
+        <location line="+33"/>
         <source>To use the %s option</source>
         <translation>Чтобы использовать опцию %s</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="-27"/>
         <source>Error</source>
         <translation>Ошибка</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+22"/>
         <source>You must set rpcpassword=&lt;password&gt; in the configuration file:
 %s
 If the file does not exist, create it with owner-readable-only file permissions.</source>

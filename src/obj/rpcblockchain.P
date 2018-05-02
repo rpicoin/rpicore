@@ -1,26 +1,16 @@
-obj/rpcblockchain.o: rpcblockchain.cpp main.h bignum.h serialize.h \
- allocators.h version.h clientversion.h uint256.h sync.h threadsafety.h \
- net.h mruset.h netbase.h compat.h protocol.h addrman.h util.h script.h \
- keystore.h crypter.h key.h scrypt.h zerocoin/Zerocoin.h \
- zerocoin/../serialize.h zerocoin/../bignum.h zerocoin/../util.h \
- zerocoin/Params.h zerocoin/Coin.h zerocoin/Commitment.h \
- zerocoin/Accumulator.h zerocoin/AccumulatorProofOfKnowledge.h \
- zerocoin/CoinSpend.h zerocoin/SerialNumberSignatureOfKnowledge.h \
- zerocoin/SpendMetaData.h zerocoin/../uint256.h \
- zerocoin/ParamGeneration.h bitcoinrpc.h \
- json/json_spirit_reader_template.h json/json_spirit_value.h \
- json/json_spirit_error_position.h json/json_spirit_writer_template.h \
- json/json_spirit_utils.h checkpoints.h
-rpcblockchain.cpp main.h bignum.h serialize.h :
- allocators.h version.h clientversion.h uint256.h sync.h threadsafety.h :
- net.h mruset.h netbase.h compat.h protocol.h addrman.h util.h script.h :
- keystore.h crypter.h key.h scrypt.h zerocoin/Zerocoin.h :
- zerocoin/../serialize.h zerocoin/../bignum.h zerocoin/../util.h :
- zerocoin/Params.h zerocoin/Coin.h zerocoin/Commitment.h :
- zerocoin/Accumulator.h zerocoin/AccumulatorProofOfKnowledge.h :
- zerocoin/CoinSpend.h zerocoin/SerialNumberSignatureOfKnowledge.h :
- zerocoin/SpendMetaData.h zerocoin/../uint256.h :
- zerocoin/ParamGeneration.h bitcoinrpc.h :
- json/json_spirit_reader_template.h json/json_spirit_value.h :
- json/json_spirit_error_position.h json/json_spirit_writer_template.h :
- json/json_spirit_utils.h checkpoints.h :
+obj/rpcblockchain.o: rpcblockchain.cpp rpcserver.h uint256.h \
+ rpcprotocol.h compat.h json/json_spirit_reader_template.h \
+ json/json_spirit_value.h json/json_spirit_error_position.h \
+ json/json_spirit_utils.h json/json_spirit_writer_template.h main.h \
+ core.h serialize.h allocators.h version.h clientversion.h util.h \
+ tinyformat.h script.h keystore.h key.h hash.h sync.h threadsafety.h \
+ bignum.h txmempool.h net.h mruset.h netbase.h protocol.h chainparams.h \
+ addrman.h timedata.h scrypt.h kernel.h checkpoints.h
+rpcblockchain.cpp rpcserver.h uint256.h :
+ rpcprotocol.h compat.h json/json_spirit_reader_template.h :
+ json/json_spirit_value.h json/json_spirit_error_position.h :
+ json/json_spirit_utils.h json/json_spirit_writer_template.h main.h :
+ core.h serialize.h allocators.h version.h clientversion.h util.h :
+ tinyformat.h script.h keystore.h key.h hash.h sync.h threadsafety.h :
+ bignum.h txmempool.h net.h mruset.h netbase.h protocol.h chainparams.h :
+ addrman.h timedata.h scrypt.h kernel.h checkpoints.h :

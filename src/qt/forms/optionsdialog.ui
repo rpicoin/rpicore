@@ -23,7 +23,7 @@
       <enum>QTabWidget::North</enum>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>3</number>
      </property>
      <widget class="QWidget" name="tabMain">
       <attribute name="title">
@@ -125,10 +125,10 @@
        <item>
         <widget class="QCheckBox" name="bitcoinAtStartup">
          <property name="toolTip">
-          <string>Automatically start rpicoin after logging in to the system.</string>
+          <string>Automatically start Rpicoin after logging in to the system.</string>
          </property>
          <property name="text">
-          <string>&amp;Start rpicoin on system login</string>
+          <string>&amp;Start Rpicoin on system login</string>
          </property>
         </widget>
        </item>
@@ -155,7 +155,7 @@
        <item>
         <widget class="QCheckBox" name="mapPortUpnp">
          <property name="toolTip">
-          <string>Automatically open the rpicoin client port on the router. This only works when your router supports UPnP and it is enabled.</string>
+          <string>Automatically open the Rpicoin client port on the router. This only works when your router supports UPnP and it is enabled.</string>
          </property>
          <property name="text">
           <string>Map port using &amp;UPnP</string>
@@ -165,10 +165,10 @@
        <item>
         <widget class="QCheckBox" name="connectSocks">
          <property name="toolTip">
-          <string>Connect to the rpicoin network through a SOCKS proxy (e.g. when connecting through Tor).</string>
+          <string>Connect to the Rpicoin network through a SOCKS5 proxy (e.g. when connecting through Tor).</string>
          </property>
          <property name="text">
-          <string>&amp;Connect through SOCKS proxy:</string>
+          <string>&amp;Connect through SOCKS5 proxy:</string>
          </property>
         </widget>
        </item>
@@ -223,26 +223,6 @@
            </property>
            <property name="toolTip">
             <string>Port of the proxy (e.g. 9050)</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="socksVersionLabel">
-           <property name="text">
-            <string>SOCKS &amp;Version:</string>
-           </property>
-           <property name="textFormat">
-            <enum>Qt::PlainText</enum>
-           </property>
-           <property name="buddy">
-            <cstring>socksVersion</cstring>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QValueComboBox" name="socksVersion">
-           <property name="toolTip">
-            <string>SOCKS version of the proxy (e.g. 5)</string>
            </property>
           </widget>
          </item>
@@ -339,7 +319,7 @@
          <item>
           <widget class="QValueComboBox" name="lang">
            <property name="toolTip">
-            <string>The user interface language can be set here. This setting will take effect after restarting rpicoin.</string>
+            <string>The user interface language can be set here. This setting will take effect after restarting Rpicoin.</string>
            </property>
           </widget>
          </item>
@@ -370,22 +350,19 @@
         </layout>
        </item>
        <item>
-        <widget class="QCheckBox" name="displayAddresses">
-         <property name="toolTip">
-          <string>Whether to show rpicoin addresses in the transaction list or not.</string>
-         </property>
-         <property name="text">
-          <string>&amp;Display addresses in transaction list</string>
-         </property>
-        </widget>
-       </item>
-       <item>
         <widget class="QCheckBox" name="coinControlFeatures">
          <property name="toolTip">
           <string>Whether to show coin control features or not.</string>
          </property>
          <property name="text">
           <string>Display coin &amp;control features (experts only!)</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="useBlackTheme">
+         <property name="text">
+          <string>Use black visual theme (requires restart)</string>
          </property>
         </widget>
        </item>

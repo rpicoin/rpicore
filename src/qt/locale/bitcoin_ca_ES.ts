@@ -3,32 +3,31 @@
     <name>AboutDialog</name>
     <message>
         <location filename="../forms/aboutdialog.ui" line="+14"/>
-        <source>About rpicoin</source>
-        <translation>Sobre rpicoin</translation>
+        <source>About Rpicoin</source>
+        <translation>Sobre Rpicoin</translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>&lt;b&gt;rpicoin&lt;/b&gt; version</source>
-        <translation>versió &lt;b&gt;rpicoin&lt;/b&gt;</translation>
+        <source>&lt;b&gt;Rpicoin&lt;/b&gt; version</source>
+        <translation>versió &lt;b&gt;Rpicoin&lt;/b&gt;</translation>
     </message>
     <message>
         <location line="+41"/>
-        <source>Copyright © 2009-2014 The Bitcoin developers
+        <source>Copyright © 2009-2017 The Bitcoin developers
 Copyright © 2012-2014 The NovaCoin developers
-Copyright © 2014 The rpicoin developers</source>
-        <translation>Copyright © 2009-2014 The Bitcoin developers
-Copyright © 2012-2014 The NovaCoin developers
-Copyright © 2014 The rpicoin developers</translation>
+Copyright © 2014-2017 The Blackcoin developers
+Copyright © 2017 The Rpicoin developers</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location line="+15"/>
         <source>
 This is experimental software.
 
-Distributed under the MIT/X11 software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php.
+Distributed under the MIT/X11 software license, see the accompanying file COPYING or &lt;a href=&quot;http://www.opensource.org/licenses/mit-license.php&quot;&gt;http://www.opensource.org/licenses/mit-license.php&lt;/a&gt;.
 
-This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit (http://www.openssl.org/) and cryptographic software written by Eric Young (eay@cryptsoft.com) and UPnP software written by Thomas Bernard.</source>
-        <translation>\n Aquest és software experimental.\n\n Distribuït sota llicència de software MIT/11, veure l&apos;arxiu COPYING o http://www.opensource.org/licenses/mit-license.php.\n\nAquest producte inclou software desarrollat pel projecte OpenSSL per a l&apos;ús de OppenSSL Toolkit (http://www.openssl.org/) i de software criptogràfic escrit per l&apos;Eric Young (eay@cryptsoft.com) i software UPnP escrit per en Thomas Bernard.</translation>
+This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit (&lt;a href=&quot;https://www.openssl.org/&quot;&gt;https://www.openssl.org/&lt;/a&gt;) and cryptographic software written by Eric Young (&lt;a href=&quot;mailto:eay@cryptsoft.com&quot;&gt;eay@cryptsoft.com&lt;/a&gt;) and UPnP software written by Thomas Bernard.</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -44,39 +43,39 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Feu doble clic per editar l&apos;adreça o l&apos;etiqueta</translation>
     </message>
     <message>
-        <location line="+27"/>
+        <location line="+24"/>
         <source>Create a new address</source>
         <translation>Crear una nova adreça</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+10"/>
         <source>Copy the currently selected address to the system clipboard</source>
         <translation>Copiar l&apos;adreça seleccionada al porta-retalls del sistema</translation>
     </message>
     <message>
-        <location line="-11"/>
+        <location line="-7"/>
         <source>&amp;New Address</source>
         <translation>&amp;Nova adreça</translation>
     </message>
     <message>
-        <location line="-46"/>
-        <source>These are your rpicoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
-        <translation>Aquestes són les teves adreces de rpicoin per rebre els pagaments. És possible que vulgueu donar una diferent a cada remitent per a poder realitzar un seguiment de qui li está pagant.</translation>
+        <location line="-43"/>
+        <source>These are your Rpicoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
+        <translation>Aquestes són les teves adreces de Rpicoin per rebre els pagaments. És possible que vulgueu donar una diferent a cada remitent per a poder realitzar un seguiment de qui li está pagant.</translation>
     </message>
     <message>
-        <location line="+60"/>
+        <location line="+53"/>
         <source>&amp;Copy Address</source>
         <translation>&amp;Copiar adreça</translation>
     </message>
     <message>
-        <location line="+11"/>
+        <location line="+7"/>
         <source>Show &amp;QR Code</source>
         <translation>Mostra el códi &amp;QR</translation>
     </message>
     <message>
-        <location line="+11"/>
-        <source>Sign a message to prove you own a rpicoin address</source>
-        <translation>Signar un missatge per demostrar que és propietari d&apos;una adreça rpicoin</translation>
+        <location line="+7"/>
+        <source>Sign a message to prove you own a Rpicoin address</source>
+        <translation>Signar un missatge per demostrar que és propietari d&apos;una adreça Rpicoin</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -84,14 +83,14 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Signar &amp;Message</translation>
     </message>
     <message>
-        <location line="+25"/>
+        <location line="+17"/>
         <source>Delete the currently selected address from the list</source>
         <translation>Esborrar l&apos;adreça sel·leccionada</translation>
     </message>
     <message>
-        <location line="-14"/>
-        <source>Verify a message to ensure it was signed with a specified rpicoin address</source>
-        <translation>Comproveu el missatge per assegurar-se que es va signar amb una adreça rpicoin especificada.</translation>
+        <location line="-10"/>
+        <source>Verify a message to ensure it was signed with a specified Rpicoin address</source>
+        <translation>Comproveu el missatge per assegurar-se que es va signar amb una adreça Rpicoin especificada.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -99,22 +98,22 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>&amp;Verificar el missatge</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+10"/>
         <source>&amp;Delete</source>
         <translation>&amp;Esborrar</translation>
     </message>
     <message>
-        <location filename="../addressbookpage.cpp" line="+65"/>
+        <location filename="../addressbookpage.cpp" line="+66"/>
         <source>Copy &amp;Label</source>
         <translation>Copiar &amp;Etiqueta</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+1"/>
         <source>&amp;Edit</source>
         <translation>&amp;Editar</translation>
     </message>
     <message>
-        <location line="+250"/>
+        <location line="+248"/>
         <source>Export Address Book Data</source>
         <translation>Exportar dades de la llibreta d&apos;adreces </translation>
     </message>
@@ -137,7 +136,7 @@ This product includes software developed by the OpenSSL Project for use in the O
 <context>
     <name>AddressTableModel</name>
     <message>
-        <location filename="../addresstablemodel.cpp" line="+144"/>
+        <location filename="../addresstablemodel.cpp" line="+145"/>
         <source>Label</source>
         <translation>Etiqueta</translation>
     </message>
@@ -185,12 +184,7 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Només per a fer &quot;stake&quot;</translation>
     </message>
     <message>
-        <location filename="../askpassphrasedialog.cpp" line="+35"/>
-        <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;10 or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
-        <translation>Introdueixi la nova contrasenya al moneder&lt;br/&gt;Si us plau useu una contrasenya de &lt;b&gt;10 o més caracters aleatoris&lt;/b&gt;, o &lt;b&gt;vuit o més paraules&lt;/b&gt;.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location filename="../askpassphrasedialog.cpp" line="+38"/>
         <source>Encrypt wallet</source>
         <translation>Xifrar el moneder</translation>
     </message>
@@ -225,7 +219,7 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Introdueixi tant l&apos;antiga com la nova contrasenya de moneder.</translation>
     </message>
     <message>
-        <location line="+46"/>
+        <location line="+45"/>
         <source>Confirm wallet encryption</source>
         <translation>Confirmar l&apos;encriptació del moneder</translation>
     </message>
@@ -257,9 +251,14 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Moneder encriptat</translation>
     </message>
     <message>
-        <location line="-58"/>
-        <source>rpicoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
-        <translation>rpicoin tancarà ara per acabar el procés de xifrat. Recordeu que l&apos;encriptació del seu moneder no pot protegir completament les seves monedes de ser robades pel malware que pugui infectar al seu equip.</translation>
+        <location line="-140"/>
+        <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;ten or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+82"/>
+        <source>Rpicoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
+        <translation>Rpicoin tancarà ara per acabar el procés de xifrat. Recordeu que l&apos;encriptació del seu moneder no pot protegir completament les seves monedes de ser robades pel malware que pugui infectar al seu equip.</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -306,22 +305,12 @@ This product includes software developed by the OpenSSL Project for use in the O
 <context>
     <name>BitcoinGUI</name>
     <message>
-        <location filename="../bitcoingui.cpp" line="+280"/>
+        <location filename="../bitcoingui.cpp" line="+297"/>
         <source>Sign &amp;message...</source>
         <translation>Signar &amp;missatge...</translation>
     </message>
     <message>
-        <location line="+242"/>
-        <source>Synchronizing with network...</source>
-        <translation>Sincronitzant amb la xarxa ...</translation>
-    </message>
-    <message>
-        <location line="-308"/>
-        <source>&amp;Overview</source>
-        <translation>&amp;Panorama general</translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="-64"/>
         <source>Show general overview of wallet</source>
         <translation>Mostra panorama general del moneder</translation>
     </message>
@@ -346,22 +335,12 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Edició de la llista d&apos;adreces i etiquetes emmagatzemades</translation>
     </message>
     <message>
-        <location line="-13"/>
-        <source>&amp;Receive coins</source>
-        <translation>&amp;Rebre monedes</translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="-18"/>
         <source>Show the list of addresses for receiving payments</source>
         <translation>Mostra la llista d&apos;adreces per rebre pagaments</translation>
     </message>
     <message>
-        <location line="-7"/>
-        <source>&amp;Send coins</source>
-        <translation>&amp;Enviar monedes</translation>
-    </message>
-    <message>
-        <location line="+35"/>
+        <location line="+34"/>
         <source>E&amp;xit</source>
         <translation>S&amp;ortir</translation>
     </message>
@@ -372,8 +351,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+4"/>
-        <source>Show information about rpicoin</source>
-        <translation>Mostra informació sobre rpicoin</translation>
+        <source>Show information about Rpicoin</source>
+        <translation>Mostra informació sobre Rpicoin</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -396,7 +375,7 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>&amp;Xifrar moneder</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+2"/>
         <source>&amp;Backup Wallet...</source>
         <translation>&amp;Realitzar copia de seguretat del moneder...</translation>
     </message>
@@ -405,43 +384,33 @@ This product includes software developed by the OpenSSL Project for use in the O
         <source>&amp;Change Passphrase...</source>
         <translation>&amp;Canviar contrasenya...</translation>
     </message>
-    <message numerus="yes">
-        <location line="+250"/>
-        <source>~%n block(s) remaining</source>
-        <translation><numerusform>~%n bloc restant</numerusform><numerusform>~%n blocs restants</numerusform></translation>
-    </message>
     <message>
-        <location line="+6"/>
-        <source>Downloaded %1 of %2 blocks of transaction history (%3% done).</source>
-        <translation>Descarregats %1 de %2 blocs d&apos;historial de transaccions (%3% completat).</translation>
-    </message>
-    <message>
-        <location line="-247"/>
+        <location line="+9"/>
         <source>&amp;Export...</source>
         <translation>&amp;Exportar...</translation>
     </message>
     <message>
-        <location line="-62"/>
-        <source>Send coins to a rpicoin address</source>
-        <translation>Enviar monedes a una adreça rpicoin</translation>
+        <location line="-55"/>
+        <source>Send coins to a Rpicoin address</source>
+        <translation>Enviar monedes a una adreça Rpicoin</translation>
     </message>
     <message>
-        <location line="+45"/>
-        <source>Modify configuration options for rpicoin</source>
-        <translation>Modificar les opcions de configuració per a rpicoin</translation>
+        <location line="+39"/>
+        <source>Modify configuration options for Rpicoin</source>
+        <translation>Modificar les opcions de configuració per a Rpicoin</translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="+17"/>
         <source>Export the data in the current tab to a file</source>
         <translation>Exportar les dades de la pestanya actual a un arxiu</translation>
     </message>
     <message>
-        <location line="-14"/>
+        <location line="-13"/>
         <source>Encrypt or decrypt wallet</source>
         <translation>Xifrar o desxifrar moneder</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+2"/>
         <source>Backup wallet to another location</source>
         <translation>Realitzar còpia de seguretat del moneder a un altre directori</translation>
     </message>
@@ -466,19 +435,20 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>&amp;Verifica el missatge..</translation>
     </message>
     <message>
-        <location line="-200"/>
-        <source>rpicoin</source>
-        <translation>rpicoin</translation>
+        <location line="-214"/>
+        <location line="+555"/>
+        <source>Rpicoin</source>
+        <translation>Rpicoin</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="-555"/>
         <source>Wallet</source>
         <translation>Moneder</translation>
     </message>
     <message>
-        <location line="+178"/>
-        <source>&amp;About rpicoin</source>
-        <translation>&amp;Sobre rpicoin</translation>
+        <location line="+193"/>
+        <source>&amp;About Rpicoin</source>
+        <translation>&amp;Sobre Rpicoin</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -486,7 +456,7 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>&amp;Mostrar / Amagar</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+8"/>
         <source>Unlock wallet</source>
         <translation>Desbloquejar el moneder</translation>
     </message>
@@ -501,7 +471,7 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Bloquejar moneder</translation>
     </message>
     <message>
-        <location line="+34"/>
+        <location line="+32"/>
         <source>&amp;File</source>
         <translation>&amp;Arxiu</translation>
     </message>
@@ -516,39 +486,29 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>&amp;Ajuda</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+17"/>
         <source>Tabs toolbar</source>
         <translation>Barra d&apos;eines de seccions</translation>
     </message>
     <message>
-        <location line="+8"/>
-        <source>Actions toolbar</source>
-        <translation>Barra d&apos;eines d&apos;accions</translation>
-    </message>
-    <message>
-        <location line="+13"/>
+        <location line="+46"/>
         <location line="+9"/>
         <source>[testnet]</source>
         <translation>[testnet]</translation>
     </message>
     <message>
         <location line="+0"/>
-        <location line="+60"/>
-        <source>rpicoin client</source>
-        <translation>Client rpicoin</translation>
+        <location line="+58"/>
+        <source>Rpicoin client</source>
+        <translation>Client Rpicoin</translation>
     </message>
     <message numerus="yes">
         <location line="+70"/>
-        <source>%n active connection(s) to rpicoin network</source>
-        <translation><numerusform>%n conexió activa a la xarxa rpicoin</numerusform><numerusform>%n conexions actives a la xarxa rpicoin</numerusform></translation>
+        <source>%n active connection(s) to Rpicoin network</source>
+        <translation><numerusform>%n conexió activa a la xarxa Rpicoin</numerusform><numerusform>%n conexions actives a la xarxa Rpicoin</numerusform></translation>
     </message>
     <message>
-        <location line="+40"/>
-        <source>Downloaded %1 blocks of transaction history.</source>
-        <translation>Descarregats %1 blocs d&apos;historial de transaccions</translation>
-    </message>
-    <message>
-        <location line="+413"/>
+        <location line="+488"/>
         <source>Staking.&lt;br&gt;Your weight is %1&lt;br&gt;Network weight is %2&lt;br&gt;Expected time to earn reward is %3</source>
         <translation>Fent &quot;stake&quot;.&lt;br&gt;El teu pes és %1&lt;br&gt;El pes de la xarxa és %2&lt;br&gt;El temps estimat per a guanyar una recompensa és 3%</translation>
     </message>
@@ -569,56 +529,41 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+2"/>
-        <source>Not staking because you don&apos;t have mature coins</source>
+        <source>Not staking because you don&apos;t have mature coins (&#126;100 confirms)</source>
         <translation>No s&apos;està fent &quot;stake&quot; perquè no tens monedes madures</translation>
     </message>
-    <message numerus="yes">
-        <location line="-403"/>
-        <source>%n second(s) ago</source>
-        <translation><numerusform>fa %n segon</numerusform><numerusform>fa %n segons</numerusform></translation>
-    </message>
     <message>
-        <location line="-284"/>
-        <source>&amp;Unlock Wallet...</source>
-        <translation>&amp;Desbloquejar moneder</translation>
-    </message>
-    <message numerus="yes">
-        <location line="+288"/>
-        <source>%n minute(s) ago</source>
-        <translation><numerusform>fa %n minut</numerusform><numerusform>fa %n minuts</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <location line="+4"/>
-        <source>%n hour(s) ago</source>
-        <translation><numerusform>fa %n hora</numerusform><numerusform>fa %n hores</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <location line="+4"/>
-        <source>%n day(s) ago</source>
-        <translation><numerusform>fa %n dia</numerusform><numerusform>fa %n dies</numerusform></translation>
+        <location line="-812"/>
+        <source>&amp;Dashboard</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location line="+6"/>
+        <source>&amp;Receive</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>&amp;Send</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+49"/>
+        <source>&amp;Unlock Wallet...</source>
+        <translation>&amp;Desbloquejar moneder</translation>
+    </message>
+    <message>
+        <location line="+277"/>
         <source>Up to date</source>
         <translation>Al dia</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location line="+43"/>
         <source>Catching up...</source>
         <translation>Posar-se al dia ...</translation>
     </message>
     <message>
-        <location line="+10"/>
-        <source>Last received block was generated %1.</source>
-        <translation>El darrer bloc rebut s&apos;ha generat %1.</translation>
-    </message>
-    <message>
-        <location line="+59"/>
-        <source>This transaction is over the size limit.  You can still send it for a fee of %1, which goes to the nodes that process your transaction and helps to support the network.  Do you want to pay the fee?</source>
-        <translation>Aquesta transacció es troba sobre el límit de mida. Encara pot enviar-la amb una comisió de 1%, aquesta va als nodes que processen la seva transacció i ajuda a mantenir la xarxa. Vol pagar la quota?</translation>
-    </message>
-    <message>
-        <location line="+5"/>
+        <location line="+113"/>
         <source>Confirm transaction fee</source>
         <translation>Confirmeu comisió</translation>
     </message>
@@ -650,21 +595,26 @@ Address: %4
     <message>
         <location line="-15"/>
         <location line="+15"/>
-        <source>URI can not be parsed! This can be caused by an invalid rpicoin address or malformed URI parameters.</source>
-        <translation>l&apos;URI no es pot analitzar! Això pot ser causat per una adreça rpicoin no vàlida o paràmetres URI malformats.</translation>
+        <source>URI can not be parsed! This can be caused by an invalid Rpicoin address or malformed URI parameters.</source>
+        <translation>l&apos;URI no es pot analitzar! Això pot ser causat per una adreça Rpicoin no vàlida o paràmetres URI malformats.</translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="+9"/>
+        <source>Wallet is &lt;b&gt;not encrypted&lt;/b&gt;</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+8"/>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</source>
         <translation>El moneder està &lt;b&gt;encriptat&lt;/b&gt; i actualment &lt;b&gt;desbloquejat&lt;/b&gt;</translation>
     </message>
     <message>
-        <location line="+10"/>
+        <location line="+8"/>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>El moneder està &lt;b&gt;encriptat&lt;/b&gt; i actualment &lt;b&gt;bloquejat&lt;/b&gt;</translation>
     </message>
     <message>
-        <location line="+25"/>
+        <location line="+24"/>
         <source>Backup Wallet</source>
         <translation>Realitzar còpia de seguretat del moneder</translation>
     </message>
@@ -684,7 +634,7 @@ Address: %4
         <translation>Hi ha un error al tractar de salvar les dades del seu moneder a la nova ubicació.</translation>
     </message>
     <message numerus="yes">
-        <location line="+76"/>
+        <location line="+91"/>
         <source>%n second(s)</source>
         <translation><numerusform>%n segon</numerusform><numerusform>%n segons</numerusform></translation>
     </message>
@@ -694,30 +644,88 @@ Address: %4
         <translation><numerusform>%n minut</numerusform><numerusform>%n minuts</numerusform></translation>
     </message>
     <message numerus="yes">
-        <location line="+4"/>
+        <location line="-429"/>
+        <location line="+433"/>
         <source>%n hour(s)</source>
         <translation><numerusform>%n hora</numerusform><numerusform>%n hores</numerusform></translation>
     </message>
+    <message>
+        <location line="-456"/>
+        <source>Processed %1 blocks of transaction history.</source>
+        <translation type="unfinished"/>
+    </message>
     <message numerus="yes">
-        <location line="+4"/>
+        <location line="+27"/>
+        <location line="+433"/>
         <source>%n day(s)</source>
         <translation><numerusform>%n dia</numerusform><numerusform>%n dies</numerusform></translation>
     </message>
+    <message numerus="yes">
+        <location line="-429"/>
+        <location line="+6"/>
+        <source>%n week(s)</source>
+        <translation type="unfinished"><numerusform></numerusform><numerusform></numerusform></translation>
+    </message>
     <message>
-        <location line="+18"/>
+        <location line="+0"/>
+        <source>%1 and %2</source>
+        <translation type="unfinished"/>
+    </message>
+    <message numerus="yes">
+        <location line="+0"/>
+        <source>%n year(s)</source>
+        <translation type="unfinished"><numerusform></numerusform><numerusform></numerusform></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>%1 behind</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+15"/>
+        <source>Last received block was generated %1 ago.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Transactions after this will not yet be visible.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+23"/>
+        <source>Error</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Warning</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Information</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+69"/>
+        <source>This transaction is over the size limit. You can still send it for a fee of %1, which goes to the nodes that process your transaction and helps to support the network. Do you want to pay the fee?</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+324"/>
         <source>Not staking</source>
         <translation>No s&apos;està fent &quot;stake&quot; </translation>
     </message>
     <message>
-        <location filename="../bitcoin.cpp" line="+109"/>
-        <source>A fatal error occurred. rpicoin can no longer continue safely and will quit.</source>
-        <translation>S&apos;ha produït un error fatal. rpicoin ja no pot continuar de forma segura i es tancarà.</translation>
+        <location filename="../bitcoin.cpp" line="+104"/>
+        <source>A fatal error occurred. Rpicoin can no longer continue safely and will quit.</source>
+        <translation>S&apos;ha produït un error fatal. Rpicoin ja no pot continuar de forma segura i es tancarà.</translation>
     </message>
 </context>
 <context>
     <name>ClientModel</name>
     <message>
-        <location filename="../clientmodel.cpp" line="+90"/>
+        <location filename="../clientmodel.cpp" line="+119"/>
         <source>Network Alert</source>
         <translation>Alerta de xarxa</translation>
     </message>
@@ -745,11 +753,6 @@ Address: %4
         <translation>Quantitat:</translation>
     </message>
     <message>
-        <location line="+32"/>
-        <source>Priority:</source>
-        <translation>Prioritat:</translation>
-    </message>
-    <message>
         <location line="+48"/>
         <source>Fee:</source>
         <translation>Quota:</translation>
@@ -760,7 +763,7 @@ Address: %4
         <translation>Sortida baixa:</translation>
     </message>
     <message>
-        <location filename="../coincontroldialog.cpp" line="+551"/>
+        <location filename="../coincontroldialog.cpp" line="+493"/>
         <source>no</source>
         <translation>no</translation>
     </message>
@@ -825,7 +828,7 @@ Address: %4
         <translation>Prioritat</translation>
     </message>
     <message>
-        <location filename="../coincontroldialog.cpp" line="-515"/>
+        <location filename="../coincontroldialog.cpp" line="-456"/>
         <source>Copy address</source>
         <translation>Copiar adreça </translation>
     </message>
@@ -867,11 +870,6 @@ Address: %4
     </message>
     <message>
         <location line="+1"/>
-        <source>Copy priority</source>
-        <translation>Copiar prioritat</translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Copy low output</source>
         <translation>Copiar sortida baixa</translation>
     </message>
@@ -881,42 +879,7 @@ Address: %4
         <translation>Copiar canvi</translation>
     </message>
     <message>
-        <location line="+317"/>
-        <source>RPIest</source>
-        <translation>El més alt</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>RPI</source>
-        <translation>Alt</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>medium-RPI</source>
-        <translation>mig-alt</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>medium</source>
-        <translation>mig</translation>
-    </message>
-    <message>
-        <location line="+4"/>
-        <source>low-medium</source>
-        <translation>baix-mig</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>low</source>
-        <translation>baix</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>lowest</source>
-        <translation>el més baix</translation>
-    </message>
-    <message>
-        <location line="+155"/>
+        <location line="+423"/>
         <source>DUST</source>
         <translation>POLS</translation>
     </message>
@@ -926,7 +889,7 @@ Address: %4
         <translation>si</translation>
     </message>
     <message>
-        <location line="+10"/>
+        <location line="+9"/>
         <source>This label turns red, if the transaction size is bigger than 10000 bytes.
 
  This means a fee of at least %1 per kb is required.
@@ -937,19 +900,6 @@ Address: %4
 En aquest cas es requereix una comisió d&apos;almenys el 1% per kb. 
 
 Pot variar + / - 1 Byte per entrada.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Transactions with RPIer priority get more likely into a block.
-
-This label turns red, if the priority is smaller than &quot;medium&quot;.
-
- This means a fee of at least %1 per kb is required.</source>
-        <translation>Les operacions amb més prioritat entren mes facilment a un bloc. 
-
-Aquesta etiqueta es torna vermella, si la prioritat és menor que &quot;mitja&quot;.
-
-En aquest cas es requereix una comisió d&apos;almenys el 1% per kb.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -974,8 +924,8 @@ Les quantitats inferiors a 0.546 vegades la quota mínima del relé es mostren c
 En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
     </message>
     <message>
-        <location line="+37"/>
-        <location line="+66"/>
+        <location line="+35"/>
+        <location line="+58"/>
         <source>(no label)</source>
         <translation>(sense etiqueta)</translation>
     </message>
@@ -1018,7 +968,7 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
         <translation>La direcció associada amb aquesta entrada de la llibreta d&apos;adreces. Només pot ser modificada per a l&apos;enviament d&apos;adreces.</translation>
     </message>
     <message>
-        <location filename="../editaddressdialog.cpp" line="+20"/>
+        <location filename="../editaddressdialog.cpp" line="+21"/>
         <source>New receiving address</source>
         <translation>Nova adreça de recepció.</translation>
     </message>
@@ -1044,8 +994,8 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
     </message>
     <message>
         <location line="-5"/>
-        <source>The entered address &quot;%1&quot; is not a valid rpicoin address.</source>
-        <translation>La direcció introduïda &quot;%1&quot; no és una adreça rpicoin vàlida.</translation>
+        <source>The entered address &quot;%1&quot; is not a valid Rpicoin address.</source>
+        <translation>La direcció introduïda &quot;%1&quot; no és una adreça Rpicoin vàlida.</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1061,10 +1011,10 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
 <context>
     <name>GUIUtil::HelpMessageBox</name>
     <message>
-        <location filename="../guiutil.cpp" line="+420"/>
+        <location filename="../guiutil.cpp" line="+426"/>
         <location line="+12"/>
-        <source>rpicoin-Qt</source>
-        <translation>rpicoin-Qt</translation>
+        <source>Rpicoin-Qt</source>
+        <translation>Rpicoin-Qt</translation>
     </message>
     <message>
         <location line="-12"/>
@@ -1136,23 +1086,13 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
     </message>
     <message>
         <location line="+31"/>
-        <source>Automatically start rpicoin after logging in to the system.</source>
-        <translation>Inicia automàticament rpicoin després d&apos;entrar en el sistema.</translation>
+        <source>Automatically start Rpicoin after logging in to the system.</source>
+        <translation>Inicia automàticament Rpicoin després d&apos;entrar en el sistema.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Start rpicoin on system login</source>
-        <translation>&amp;Iniciar rpicoin amb l&apos;inici de sessió</translation>
-    </message>
-    <message>
-        <location line="+7"/>
-        <source>Detach block and address databases at shutdown. This means they can be moved to another data directory, but it slows down shutdown. The wallet is always detached.</source>
-        <translation>Separeu el bloc i les bases de dades d&apos;adreces en apagar l&apos;equip. En aquest cas es pot moure a un altre directori de dades, però alenteix l&apos;apagada. El moneder està sempre separat.</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>&amp;Detach databases at shutdown</source>
-        <translation>&amp;Separar bases de dades a l&apos;apagar l&apos;equip</translation>
+        <source>&amp;Start Rpicoin on system login</source>
+        <translation>&amp;Iniciar Rpicoin amb l&apos;inici de sessió</translation>
     </message>
     <message>
         <location line="+21"/>
@@ -1161,8 +1101,8 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
     </message>
     <message>
         <location line="+6"/>
-        <source>Automatically open the rpicoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Obrir automàticament el port de client rpicoin en el router. Això només funciona quan el router és compatible amb UPnP i està habilitat.</translation>
+        <source>Automatically open the Rpicoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Obrir automàticament el port de client Rpicoin en el router. Això només funciona quan el router és compatible amb UPnP i està habilitat.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1170,17 +1110,7 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
         <translation>Obrir ports amb &amp;UPnP</translation>
     </message>
     <message>
-        <location line="+7"/>
-        <source>Connect to the rpicoin network through a SOCKS proxy (e.g. when connecting through Tor).</source>
-        <translation>Connecteu-vos a la xarxa rpicoin través d&apos;un proxy SOCKS (per exemple, quan es connecta a través de Tor).</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>&amp;Connect through SOCKS proxy:</source>
-        <translation>&amp;Conectar a través d&apos;un proxy SOCKS:</translation>
-    </message>
-    <message>
-        <location line="+9"/>
+        <location line="+19"/>
         <source>Proxy &amp;IP:</source>
         <translation>&amp;IP del proxy:</translation>
     </message>
@@ -1200,17 +1130,17 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
         <translation>Port del proxy (per exemple 9050)</translation>
     </message>
     <message>
-        <location line="+7"/>
-        <source>SOCKS &amp;Version:</source>
-        <translation>&amp;Versió de SOCKS:</translation>
+        <location line="-57"/>
+        <source>Connect to the Rpicoin network through a SOCKS5 proxy (e.g. when connecting through Tor).</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+13"/>
-        <source>SOCKS version of the proxy (e.g. 5)</source>
-        <translation>Versió SOCKS del proxy (per exemple 5)</translation>
+        <location line="+3"/>
+        <source>&amp;Connect through SOCKS5 proxy:</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+36"/>
+        <location line="+90"/>
         <source>&amp;Window</source>
         <translation>&amp;Finestra</translation>
     </message>
@@ -1246,8 +1176,8 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
     </message>
     <message>
         <location line="+13"/>
-        <source>The user interface language can be set here. This setting will take effect after restarting rpicoin.</source>
-        <translation>L&apos;idioma de la interfície d&apos;usuari es pot configurar aquí. Aquesta configuració s&apos;aplicarà després de reiniciar rpicoin.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting Rpicoin.</source>
+        <translation>L&apos;idioma de la interfície d&apos;usuari es pot configurar aquí. Aquesta configuració s&apos;aplicarà després de reiniciar Rpicoin.</translation>
     </message>
     <message>
         <location line="+11"/>
@@ -1261,16 +1191,6 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
     </message>
     <message>
         <location line="+9"/>
-        <source>Whether to show rpicoin addresses in the transaction list or not.</source>
-        <translation>Per mostrar rpicoin adreces a la llista de transaccions o no.</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>&amp;Display addresses in transaction list</source>
-        <translation>&amp;Mostrar adreces al llistat de transaccions</translation>
-    </message>
-    <message>
-        <location line="+7"/>
         <source>Whether to show coin control features or not.</source>
         <translation>Per mostrar les característiques de control de la moneda o no.</translation>
     </message>
@@ -1278,6 +1198,11 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
         <location line="+3"/>
         <source>Display coin &amp;control features (experts only!)</source>
         <translation>Mostrar controls i característiques de la moneda (només per a experts!)</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Use black visual theme (requires restart)</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location line="+71"/>
@@ -1295,12 +1220,12 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
         <translation>&amp;Aplicar</translation>
     </message>
     <message>
-        <location filename="../optionsdialog.cpp" line="+55"/>
+        <location filename="../optionsdialog.cpp" line="+47"/>
         <source>default</source>
         <translation>Per defecte</translation>
     </message>
     <message>
-        <location line="+149"/>
+        <location line="+147"/>
         <location line="+9"/>
         <source>Warning</source>
         <translation>Avís</translation>
@@ -1308,8 +1233,8 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
     <message>
         <location line="-9"/>
         <location line="+9"/>
-        <source>This setting will take effect after restarting rpicoin.</source>
-        <translation>Aquesta configuració s&apos;aplicarà després de reiniciar rpicoin.</translation>
+        <source>This setting will take effect after restarting Rpicoin.</source>
+        <translation>Aquesta configuració s&apos;aplicarà després de reiniciar Rpicoin.</translation>
     </message>
     <message>
         <location line="+29"/>
@@ -1325,23 +1250,23 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
         <translation>Formulari</translation>
     </message>
     <message>
-        <location line="+33"/>
-        <location line="+231"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the rpicoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>La informació mostrada pot estar fora de data. El seu moneder es sincronitza automàticament amb la xarxa rpicoin després d&apos;establir una connexió, però aquest procés no s&apos;ha completat encara.</translation>
+        <location line="+46"/>
+        <location line="+247"/>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Rpicoin network after a connection is established, but this process has not completed yet.</source>
+        <translation>La informació mostrada pot estar fora de data. El seu moneder es sincronitza automàticament amb la xarxa Rpicoin després d&apos;establir una connexió, però aquest procés no s&apos;ha completat encara.</translation>
     </message>
     <message>
-        <location line="-160"/>
+        <location line="-173"/>
         <source>Stake:</source>
         <translation>En &quot;stake&quot;:</translation>
     </message>
     <message>
-        <location line="+29"/>
+        <location line="+32"/>
         <source>Unconfirmed:</source>
         <translation>Sense confirmar:</translation>
     </message>
     <message>
-        <location line="-107"/>
+        <location line="-113"/>
         <source>Wallet</source>
         <translation>Moneder</translation>
     </message>
@@ -1356,7 +1281,7 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
         <translation>El balanç de saldo actual disponible</translation>
     </message>
     <message>
-        <location line="+71"/>
+        <location line="+80"/>
         <source>Immature:</source>
         <translation>Immatur:</translation>
     </message>
@@ -1366,7 +1291,7 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
         <translation>Balanç minat que encara no ha madurat</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+23"/>
         <source>Total:</source>
         <translation>Total:</translation>
     </message>
@@ -1376,25 +1301,33 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
         <translation>El seu balanç total</translation>
     </message>
     <message>
-        <location line="+46"/>
+        <location line="+50"/>
         <source>&lt;b&gt;Recent transactions&lt;/b&gt;</source>
         <translation>&lt;b&gt;Transaccions recents&lt;/b&gt;</translation>
     </message>
     <message>
-        <location line="-108"/>
+        <location line="-118"/>
         <source>Total of transactions that have yet to be confirmed, and do not yet count toward the current balance</source>
         <translation>Total de transaccions que encara no s&apos;han confirmat, i encara no compten per al balanç actual</translation>
     </message>
     <message>
-        <location line="-29"/>
+        <location line="-32"/>
         <source>Total of coins that was staked, and do not yet count toward the current balance</source>
         <translation>Total de les monedes que s&apos;han posat a fer &quot;stake&quot; (en joc, aposta), i encara no compten per al balanç actual</translation>
     </message>
     <message>
-        <location filename="../overviewpage.cpp" line="+113"/>
+        <location filename="../overviewpage.cpp" line="+116"/>
         <location line="+1"/>
         <source>out of sync</source>
         <translation>Fora de sincronia</translation>
+    </message>
+</context>
+<context>
+    <name>PaymentServer</name>
+    <message>
+        <location filename="../paymentserver.cpp" line="+107"/>
+        <source>Cannot start Rpicoin: click-to-pay handler</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1471,13 +1404,11 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
         <location line="+36"/>
         <location line="+53"/>
         <location line="+23"/>
-        <location line="+23"/>
-        <location filename="../rpcconsole.cpp" line="+348"/>
         <source>N/A</source>
         <translation>N/A</translation>
     </message>
     <message>
-        <location line="-217"/>
+        <location line="-194"/>
         <source>Client version</source>
         <translation>Versió del client</translation>
     </message>
@@ -1522,12 +1453,34 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
         <translation>Nombre de blocs actuals</translation>
     </message>
     <message>
-        <location line="+23"/>
-        <source>Estimated total blocks</source>
-        <translation>Total estimat de blocs</translation>
+        <location line="+197"/>
+        <source>&amp;Network Traffic</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+23"/>
+        <location line="+52"/>
+        <source>&amp;Clear</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+13"/>
+        <source>Totals</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+64"/>
+        <location filename="../rpcconsole.cpp" line="+352"/>
+        <source>In:</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+80"/>
+        <location filename="../rpcconsole.cpp" line="+1"/>
+        <source>Out:</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="-383"/>
         <source>Last block time</source>
         <translation>Últim temps de bloc</translation>
     </message>
@@ -1543,8 +1496,8 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Show the rpicoin-Qt help message to get a list with possible rpicoin command-line options.</source>
-        <translation>Mostra el missatge d&apos;ajuda de rpicoin-Qt per obtenir una llista amb les possibles opcions de línia d&apos;ordres rpicoin.</translation>
+        <source>Show the Rpicoin-Qt help message to get a list with possible Rpicoin command-line options.</source>
+        <translation>Mostra el missatge d&apos;ajuda de Rpicoin-Qt per obtenir una llista amb les possibles opcions de línia d&apos;ordres Rpicoin.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1557,29 +1510,29 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
         <translation>&amp;Consola</translation>
     </message>
     <message>
-        <location line="-260"/>
+        <location line="-237"/>
         <source>Build date</source>
         <translation>Data de compilació</translation>
     </message>
     <message>
         <location line="-104"/>
-        <source>rpicoin - Debug window</source>
-        <translation>rpicoin - Finestra Depuració</translation>
+        <source>Rpicoin - Debug window</source>
+        <translation>Rpicoin - Finestra Depuració</translation>
     </message>
     <message>
         <location line="+25"/>
-        <source>rpicoin Core</source>
-        <translation>Nucli rpicoin</translation>
+        <source>Rpicoin Core</source>
+        <translation>Nucli Rpicoin</translation>
     </message>
     <message>
-        <location line="+279"/>
+        <location line="+256"/>
         <source>Debug log file</source>
         <translation>Dietàri de depuració</translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Open the rpicoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Obriu el fitxer de registre de depuració rpicoin des del directori de dades actual. Això pot trigar uns segons en els arxius de registre de grans dimensions.</translation>
+        <source>Open the Rpicoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Obriu el fitxer de registre de depuració Rpicoin des del directori de dades actual. Això pot trigar uns segons en els arxius de registre de grans dimensions.</translation>
     </message>
     <message>
         <location line="+102"/>
@@ -1587,9 +1540,9 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
         <translation>Netejar consola</translation>
     </message>
     <message>
-        <location filename="../rpcconsole.cpp" line="-33"/>
-        <source>Welcome to the rpicoin RPC console.</source>
-        <translation>Benvingut a la consola RPC de rpicoin.</translation>
+        <location filename="../rpcconsole.cpp" line="-28"/>
+        <source>Welcome to the Rpicoin RPC console.</source>
+        <translation>Benvingut a la consola RPC de Rpicoin.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -1601,12 +1554,47 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
         <source>Type &lt;b&gt;help&lt;/b&gt; for an overview of available commands.</source>
         <translation>Escriu &lt;b&gt;help&lt;\b&gt; per a obtenir una llistat de les ordres disponibles.</translation>
     </message>
+    <message>
+        <location line="+134"/>
+        <source>%1 B</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>%1 KB</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>%1 MB</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>%1 GB</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>%1 m</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>%1 h</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>%1 h %2 m</source>
+        <translation type="unfinished"/>
+    </message>
 </context>
 <context>
     <name>SendCoinsDialog</name>
     <message>
         <location filename="../forms/sendcoinsdialog.ui" line="+14"/>
-        <location filename="../sendcoinsdialog.cpp" line="+182"/>
+        <location filename="../sendcoinsdialog.cpp" line="+179"/>
         <location line="+5"/>
         <location line="+5"/>
         <location line="+5"/>
@@ -1658,25 +1646,7 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
         <translation>Quantitat:</translation>
     </message>
     <message>
-        <location line="+22"/>
-        <location line="+86"/>
-        <location line="+86"/>
-        <location line="+32"/>
-        <source>0.00 BC</source>
-        <translation>123.456 BC {0.00 ?}</translation>
-    </message>
-    <message>
-        <location line="-191"/>
-        <source>Priority:</source>
-        <translation>Prioritat:</translation>
-    </message>
-    <message>
-        <location line="+19"/>
-        <source>medium</source>
-        <translation>mig</translation>
-    </message>
-    <message>
-        <location line="+32"/>
+        <location line="+54"/>
         <source>Fee:</source>
         <translation>Quota:</translation>
     </message>
@@ -1716,7 +1686,7 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
         <translation>Afegir &amp;Destinatari</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+16"/>
         <source>Remove all transaction fields</source>
         <translation>Traieu tots els camps de transacció</translation>
     </message>
@@ -1726,17 +1696,12 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
         <translation>Esborrar &amp;Tot</translation>
     </message>
     <message>
-        <location line="+28"/>
+        <location line="+24"/>
         <source>Balance:</source>
         <translation>Balanç:</translation>
     </message>
     <message>
-        <location line="+16"/>
-        <source>123.456 BC</source>
-        <translation>123.456 BC</translation>
-    </message>
-    <message>
-        <location line="+31"/>
+        <location line="+47"/>
         <source>Confirm the send action</source>
         <translation>Confirmi l&apos;acció d&apos;enviament</translation>
     </message>
@@ -1746,9 +1711,9 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
         <translation>E&amp;nviar</translation>
     </message>
     <message>
-        <location filename="../sendcoinsdialog.cpp" line="-173"/>
-        <source>Enter a rpicoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
-        <translation>Introdueix una adreça rpicoin (p.ex. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
+        <location filename="../sendcoinsdialog.cpp" line="-171"/>
+        <source>Enter a Rpicoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <translation>Introdueix una adreça Rpicoin (p.ex. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -1777,11 +1742,6 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Copy priority</source>
-        <translation>Copiar prioritat</translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Copy low output</source>
         <translation>Copiar sortida baixa</translation>
     </message>
@@ -1791,7 +1751,7 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
         <translation>Copiar canvi</translation>
     </message>
     <message>
-        <location line="+86"/>
+        <location line="+85"/>
         <source>&lt;b&gt;%1&lt;/b&gt; to %2 (%3)</source>
         <translation>&lt;b&gt;%1&lt;/b&gt; a %2 (%3)</translation>
     </message>
@@ -1837,8 +1797,8 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
     </message>
     <message>
         <location line="+5"/>
-        <source>Error: Transaction creation failed.</source>
-        <translation>Error: La creació de transacció ha fallat.</translation>
+        <source>Error: Transaction creation failed!</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location line="+5"/>
@@ -1846,9 +1806,9 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
         <translation>Error: La transacció ha sigut rebutjada. Això pot passar si algunes de les monedes al moneder ja s&apos;han gastat, per exemple, si vostè utilitza una còpia del wallet.dat i les monedes han estat gastades a la cópia pero no s&apos;han marcat com a gastades aqui.</translation>
     </message>
     <message>
-        <location line="+251"/>
-        <source>WARNING: Invalid rpicoin address</source>
-        <translation>ADVERTÈNCIA: Direcció rpicoin invàlida</translation>
+        <location line="+241"/>
+        <source>WARNING: Invalid Rpicoin address</source>
+        <translation>ADVERTÈNCIA: Direcció Rpicoin invàlida</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -1879,23 +1839,23 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
         <translation>Pagar &amp;A:</translation>
     </message>
     <message>
-        <location line="+24"/>
-        <location filename="../sendcoinsentry.cpp" line="+25"/>
+        <location line="+34"/>
+        <source>The address to send the payment to (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+60"/>
+        <location filename="../sendcoinsentry.cpp" line="+26"/>
         <source>Enter a label for this address to add it to your address book</source>
         <translation>Introdueixi una etiquera per a aquesta adreça per afegir-la a la llibreta d&apos;adreces</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="-78"/>
         <source>&amp;Label:</source>
         <translation>&amp;Etiqueta:</translation>
     </message>
     <message>
-        <location line="+18"/>
-        <source>The address to send the payment to  (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
-        <translation>L&apos;adreça per a enviar el pagament (per exemple: B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
-    </message>
-    <message>
-        <location line="+10"/>
+        <location line="+28"/>
         <source>Choose address from address book</source>
         <translation>Trieu la direcció de la llibreta d&apos;adreces</translation>
     </message>
@@ -1921,8 +1881,8 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
     </message>
     <message>
         <location filename="../sendcoinsentry.cpp" line="+1"/>
-        <source>Enter a rpicoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
-        <translation>Introdueix una adreça rpicoin (p.ex. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
+        <source>Enter a Rpicoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <translation>Introdueix una adreça Rpicoin (p.ex. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
     </message>
 </context>
 <context>
@@ -1982,8 +1942,8 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this rpicoin address</source>
-        <translation>Signar un missatge per demostrar que és propietari d&apos;aquesta adreça rpicoin</translation>
+        <source>Sign the message to prove you own this Rpicoin address</source>
+        <translation>Signar un missatge per demostrar que és propietari d&apos;aquesta adreça Rpicoin</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -2014,8 +1974,8 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
     </message>
     <message>
         <location line="+40"/>
-        <source>Verify the message to ensure it was signed with the specified rpicoin address</source>
-        <translation>Comproveu el missatge per assegurar-se que es va signar amb l&apos;adreça rpicoin especificada.</translation>
+        <source>Verify the message to ensure it was signed with the specified Rpicoin address</source>
+        <translation>Comproveu el missatge per assegurar-se que es va signar amb l&apos;adreça Rpicoin especificada.</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -2025,8 +1985,8 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
     <message>
         <location filename="../signverifymessagedialog.cpp" line="+27"/>
         <location line="+3"/>
-        <source>Enter a rpicoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
-        <translation>Introdueix una adreça rpicoin (p.ex. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
+        <source>Enter a Rpicoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <translation>Introdueix una adreça Rpicoin (p.ex. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
     </message>
     <message>
         <location line="-2"/>
@@ -2035,11 +1995,11 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Enter rpicoin signature</source>
-        <translation>Introduïu la signatura rpicoin</translation>
+        <source>Enter Rpicoin signature</source>
+        <translation>Introduïu la signatura Rpicoin</translation>
     </message>
     <message>
-        <location line="+82"/>
+        <location line="+85"/>
         <location line="+81"/>
         <source>The entered address is invalid.</source>
         <translation>L&apos;adreça intoduïda és invàlida.</translation>
@@ -2106,19 +2066,22 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
     </message>
 </context>
 <context>
+    <name>TrafficGraphWidget</name>
+    <message>
+        <location filename="../trafficgraphwidget.cpp" line="+75"/>
+        <source>KB/s</source>
+        <translation type="unfinished"/>
+    </message>
+</context>
+<context>
     <name>TransactionDesc</name>
     <message>
-        <location filename="../transactiondesc.cpp" line="+19"/>
+        <location filename="../transactiondesc.cpp" line="+25"/>
         <source>Open until %1</source>
         <translation>Obert fins %1</translation>
     </message>
-    <message numerus="yes">
-        <location line="-2"/>
-        <source>Open for %n block(s)</source>
-        <translation><numerusform>Obert per a %n bloc</numerusform><numerusform>Obert per a %n blocs</numerusform></translation>
-    </message>
     <message>
-        <location line="+8"/>
+        <location line="+6"/>
         <source>conflicted</source>
         <translation>conflicte</translation>
     </message>
@@ -2138,7 +2101,7 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
         <translation>%1 confrimacions</translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="+17"/>
         <source>Status</source>
         <translation>Estat</translation>
     </message>
@@ -2164,19 +2127,19 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
     </message>
     <message>
         <location line="+5"/>
-        <location line="+17"/>
+        <location line="+13"/>
         <source>From</source>
         <translation>Des de</translation>
     </message>
     <message>
         <location line="+1"/>
-        <location line="+22"/>
+        <location line="+19"/>
         <location line="+58"/>
         <source>To</source>
         <translation>A</translation>
     </message>
     <message>
-        <location line="-77"/>
+        <location line="-74"/>
         <location line="+2"/>
         <source>own address</source>
         <translation>Adreça pròpia</translation>
@@ -2187,7 +2150,7 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
         <translation>etiqueta</translation>
     </message>
     <message>
-        <location line="+37"/>
+        <location line="+34"/>
         <location line="+12"/>
         <location line="+45"/>
         <location line="+17"/>
@@ -2240,8 +2203,8 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Generated coins must mature 5 blocks before they can be spent. When you generated this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to &quot;not accepted&quot; and it won&apos;t be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
-        <translation>Les monedes generades han de madurar 5 blocs abans per a poder estar disponibles. En generar aquest bloc, que va ser transmès a la xarxa per ser afegit a la cadena de bloc. Si no aconsegueix entrar a la cadena, el seu estat canviarà a &quot;no acceptat&quot; i no es podrà gastar. Això pot succeir de tant en tant si un altre node genera un bloc a pocs segons del seu.</translation>
+        <source>Generated coins must mature 510 blocks before they can be spent. When you generated this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to &quot;not accepted&quot; and it won&apos;t be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
+        <translation>Les monedes generades han de madurar 510 blocs abans per a poder estar disponibles. En generar aquest bloc, que va ser transmès a la xarxa per ser afegit a la cadena de bloc. Si no aconsegueix entrar a la cadena, el seu estat canviarà a &quot;no acceptat&quot; i no es podrà gastar. Això pot succeir de tant en tant si un altre node genera un bloc a pocs segons del seu.</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -2259,7 +2222,7 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
         <translation>Entrades</translation>
     </message>
     <message>
-        <location line="+23"/>
+        <location line="+21"/>
         <source>Amount</source>
         <translation>Quantitat</translation>
     </message>
@@ -2274,12 +2237,17 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
         <translation>fals</translation>
     </message>
     <message>
-        <location line="-211"/>
+        <location line="-202"/>
         <source>, has not been successfully broadcast yet</source>
         <translation>, encara no ha estat emès correctement</translation>
     </message>
+    <message numerus="yes">
+        <location line="-36"/>
+        <source>Open for %n more block(s)</source>
+        <translation type="unfinished"><numerusform></numerusform><numerusform></numerusform></translation>
+    </message>
     <message>
-        <location line="+35"/>
+        <location line="+67"/>
         <source>unknown</source>
         <translation>desconegut</translation>
     </message>
@@ -2300,7 +2268,7 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
 <context>
     <name>TransactionTableModel</name>
     <message>
-        <location filename="../transactiontablemodel.cpp" line="+226"/>
+        <location filename="../transactiontablemodel.cpp" line="+231"/>
         <source>Date</source>
         <translation>Data</translation>
     </message>
@@ -2320,7 +2288,7 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
         <translation>Quantitat</translation>
     </message>
     <message>
-        <location line="+60"/>
+        <location line="+52"/>
         <source>Open until %1</source>
         <translation>Obert fins %1</translation>
     </message>
@@ -2400,7 +2368,7 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
         <translation>(n/a)</translation>
     </message>
     <message>
-        <location line="+190"/>
+        <location line="+194"/>
         <source>Transaction status. Hover over this field to show number of confirmations.</source>
         <translation>Estat de la transacció. Desplaça&apos;t per aquí sobre per mostrar el nombre de confirmacions.</translation>
     </message>
@@ -2428,13 +2396,13 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
 <context>
     <name>TransactionView</name>
     <message>
-        <location filename="../transactionview.cpp" line="+55"/>
-        <location line="+16"/>
+        <location filename="../transactionview.cpp" line="+54"/>
+        <location line="+17"/>
         <source>All</source>
         <translation>Tot</translation>
     </message>
     <message>
-        <location line="-15"/>
+        <location line="-16"/>
         <source>Today</source>
         <translation>Avui</translation>
     </message>
@@ -2464,7 +2432,7 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
         <translation>Rang...</translation>
     </message>
     <message>
-        <location line="+11"/>
+        <location line="+12"/>
         <source>Received with</source>
         <translation>Rebut desde</translation>
     </message>
@@ -2529,7 +2497,7 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
         <translation>Mostra detalls de la transacció</translation>
     </message>
     <message>
-        <location line="+144"/>
+        <location line="+138"/>
         <source>Export Transaction Data</source>
         <translation>Exportació de dades de transaccions</translation>
     </message>
@@ -2597,7 +2565,7 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
 <context>
     <name>WalletModel</name>
     <message>
-        <location filename="../walletmodel.cpp" line="+206"/>
+        <location filename="../walletmodel.cpp" line="+212"/>
         <source>Sending...</source>
         <translation>Enviant...</translation>
     </message>
@@ -2605,9 +2573,9 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
 <context>
     <name>bitcoin-core</name>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="+33"/>
-        <source>rpicoin version</source>
-        <translation>versió rpicoin</translation>
+        <location filename="../bitcoinstrings.cpp" line="+8"/>
+        <source>Rpicoin version</source>
+        <translation>versió Rpicoin</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2630,14 +2598,14 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
         <translation>Obtenir ajuda per a un ordre.</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+1"/>
         <source>Options:</source>
         <translation>Opcions:</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Specify configuration file (default: rpicoin.conf)</source>
-        <translation>Especifiqueu el fitxer de configuració (per defecte: rpicoin.conf)</translation>
+        <source>Specify configuration file (default: Rpicoin.conf)</source>
+        <translation>Especifiqueu el fitxer de configuració (per defecte: Rpicoin.conf)</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2655,7 +2623,22 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
         <translation>Especificar directori de dades</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+163"/>
+        <source>%s, you must set a rpcpassword in the configuration file:
+%s
+It is recommended you use the following random password:
+rpcuser=Rpicoinrpc
+rpcpassword=%s
+(you do not need to remember this password)
+The username and password MUST NOT be the same.
+If the file does not exist, create it with owner-readable-only file permissions.
+It is also recommended to set alertnotify so you are notified of problems;
+for example: alertnotify=echo %%s | mail -s &quot;Rpicoin Alert&quot; admin@foo.com
+</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="-161"/>
         <source>Set database cache size in megabytes (default: 25)</source>
         <translation>Establir tamany de la memoria cau en megabytes (per defecte: 25)</translation>
     </message>
@@ -2665,9 +2648,9 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
         <translation>Configurar la mida del registre en disc de la base de dades en megabytes (per defecte: 100)</translation>
     </message>
     <message>
-        <location line="+6"/>
-        <source>Listen for connections on &lt;port&gt; (default: 23185 or testnet: 33185)</source>
-        <translation>Escoltar connexions en &lt;port&gt; (per defecte: 23185 o testnet: 33185)</translation>
+        <location line="+5"/>
+        <source>Listen for connections on &lt;port&gt; (default: 18000 or testnet: 18002)</source>
+        <translation>Escoltar connexions en &lt;port&gt; (per defecte: 18000 o testnet: 18002)</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2685,17 +2668,22 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
         <translation>Especificar la teva adreça pública</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+4"/>
         <source>Bind to given address. Use [host]:port notation for IPv6</source>
         <translation>Enllaçar a l&apos;adreça donada. Utilitzeu la notació [host]:port per a IPv6</translation>
     </message>
     <message>
-        <location line="+2"/>
-        <source>Stake your coins to support network and gain reward (default: 1)</source>
-        <translation>Posa les teves monedes a fer &quot;stake&quot; per donar suport a la xarxa i obtenir una recompensa (per defecte: 1)</translation>
+        <location line="+1"/>
+        <source>Query for peer addresses via DNS lookup, if low on addresses (default: 1 unless -connect)</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+3"/>
+        <source>Always query for peer addresses via DNS lookup (default: 0)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+4"/>
         <source>Threshold for disconnecting misbehaving peers (default: 100)</source>
         <translation>Límit per a desconectar connexions errònies (per defecte: 100)</translation>
     </message>
@@ -2705,57 +2693,22 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
         <translation>Nombre de segons abans de reconectar amb connexions errònies (per defecte: 86400)</translation>
     </message>
     <message>
-        <location line="-44"/>
+        <location line="+153"/>
         <source>An error occurred while setting up the RPC port %u for listening on IPv4: %s</source>
         <translation>Ha sorgit un error al configurar el port RPC %u escoltant a IPv4: %s</translation>
     </message>
     <message>
-        <location line="+51"/>
-        <source>Detach block and address databases. Increases shutdown time (default: 0)</source>
-        <translation>Separeu el bloc i les bases de dades d&apos;adreces. Augmenta el temps d&apos;apagada (per defecte: 0)</translation>
+        <location line="-126"/>
+        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 18001 or testnet: 18003)</source>
+        <translation>Escoltar connexions JSON-RPC al port &lt;port&gt; (per defecte: 18001 o testnet: 18003)</translation>
     </message>
     <message>
-        <location line="+109"/>
-        <source>Error: The transaction was rejected.  This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
-        <translation>Error: La transacció ha sigut rebutjada. Això pot passar si algunes de les monedes al moneder ja s&apos;han gastat, per exemple, si vostè utilitza una còpia del wallet.dat i les monedes han estat gastades a la cópia pero no s&apos;han marcat com a gastades aqui.</translation>
-    </message>
-    <message>
-        <location line="-5"/>
-        <source>Error: This transaction requires a transaction fee of at least %s because of its amount, complexity, or use of recently received funds  </source>
-        <translation>Error: Aquesta transacció requereix una comisió d&apos;almenys %s degut a la seva quantitat, complexitat, o l&apos;ús dels fons rebuts recentment</translation>
-    </message>
-    <message>
-        <location line="-87"/>
-        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 23186 or testnet: 33186)</source>
-        <translation>Escoltar connexions JSON-RPC al port &lt;port&gt; (per defecte: 23186 o testnet: 33186)</translation>
-    </message>
-    <message>
-        <location line="-11"/>
+        <location line="-16"/>
         <source>Accept command line and JSON-RPC commands</source>
         <translation>Acceptar línia d&apos;ordres i ordres JSON-RPC </translation>
     </message>
     <message>
-        <location line="+101"/>
-        <source>Error: Transaction creation failed  </source>
-        <translation>Error: La creació de transacció ha fallat.</translation>
-    </message>
-    <message>
-        <location line="-5"/>
-        <source>Error: Wallet locked, unable to create transaction  </source>
-        <translation>Error: Moneder bloquejat, no es pot de crear la transacció</translation>
-    </message>
-    <message>
-        <location line="-8"/>
-        <source>Importing blockchain data file.</source>
-        <translation>Important fitxer de dades de la cadena de blocs</translation>
-    </message>
-    <message>
         <location line="+1"/>
-        <source>Importing bootstrap blockchain data file.</source>
-        <translation>Important fitxer de dades d&apos;arrencada de la cadena de blocs</translation>
-    </message>
-    <message>
-        <location line="-88"/>
         <source>Run in the background as a daemon and accept commands</source>
         <translation>Executar en segon pla com a programa dimoni i acceptar ordres</translation>
     </message>
@@ -2765,57 +2718,47 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
         <translation>Usar la xarxa de prova</translation>
     </message>
     <message>
-        <location line="-24"/>
+        <location line="-23"/>
         <source>Accept connections from outside (default: 1 if no -proxy or -connect)</source>
         <translation>Aceptar connexions d&apos;afora (per defecte: 1 si no -proxy o -connect)</translation>
     </message>
     <message>
-        <location line="-38"/>
+        <location line="+160"/>
         <source>An error occurred while setting up the RPC port %u for listening on IPv6, falling back to IPv4: %s</source>
         <translation>Ha sorgit un error al configurar el port RPC %u escoltant a IPv6, retrocedint a IPv4: %s</translation>
     </message>
     <message>
-        <location line="+117"/>
-        <source>Error initializing database environment %s! To recover, BACKUP THAT DIRECTORY, then remove everything from it except for wallet.dat.</source>
-        <translation>Error en inicialitzar l&apos;entorn de base de dades %s! Per recuperar, FACI UNA COPIA DE SEGURETAT D&apos;AQUEST DIRECTORI, a continuació, retiri tot d&apos;ella excepte l&apos;arxiu wallet.dat.</translation>
-    </message>
-    <message>
-        <location line="-20"/>
-        <source>Set maximum size of RPI-priority/low-fee transactions in bytes (default: 27000)</source>
-        <translation>Establir la grandària màxima de les transaccions alta-prioritat/baixa-comisió en bytes (per defecte: 27000)</translation>
-    </message>
-    <message>
-        <location line="+11"/>
-        <source>Warning: -paytxfee is set very RPI! This is the transaction fee you will pay if you send a transaction.</source>
+        <location line="-84"/>
+        <source>Warning: -paytxfee is set very high! This is the transaction fee you will pay if you send a transaction.</source>
         <translation>Advertència: el -paytxfee és molt elevat! Aquesta és la comissió de transacció que pagaràs quan enviis una transacció.</translation>
     </message>
     <message>
-        <location line="+61"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong rpicoin will not work properly.</source>
-        <translation>Avís: Comproveu que la data i hora de l&apos;equip siguin correctes! Si el seu rellotge és erroni rpicoin no funcionarà correctament.</translation>
+        <location line="+46"/>
+        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong Rpicoin will not work properly.</source>
+        <translation>Avís: Comproveu que la data i hora de l&apos;equip siguin correctes! Si el seu rellotge és erroni Rpicoin no funcionarà correctament.</translation>
     </message>
     <message>
-        <location line="-31"/>
+        <location line="-19"/>
         <source>Warning: error reading wallet.dat! All keys read correctly, but transaction data or address book entries might be missing or incorrect.</source>
         <translation>Advertència: Error llegint l&apos;arxiu wallet.dat!! Totes les claus es llegeixen correctament, però hi ha dades de transaccions o entrades del llibre d&apos;adreces absents o bé son incorrectes.</translation>
     </message>
     <message>
-        <location line="-18"/>
+        <location line="-16"/>
         <source>Warning: wallet.dat corrupt, data salvaged! Original wallet.dat saved as wallet.{timestamp}.bak in %s; if your balance or transactions are incorrect you should restore from a backup.</source>
         <translation>Advertència: L&apos;arxiu wallet.dat és corrupte, dades rescatades! L&apos;arxiu wallet.dat original ha estat desat com wallet.{estampa_temporal}.bak al directori %s; si el teu balanç o transaccions son incorrectes hauries de restaurar-lo de un backup.</translation>
     </message>
     <message>
-        <location line="-30"/>
+        <location line="-31"/>
         <source>Attempt to recover private keys from a corrupt wallet.dat</source>
         <translation>Intentar recuperar les claus privades d&apos;un arxiu wallet.dat corrupte</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+5"/>
         <source>Block creation options:</source>
         <translation>Opcions de la creació de blocs:</translation>
     </message>
     <message>
-        <location line="-62"/>
+        <location line="-66"/>
         <source>Connect only to the specified node(s)</source>
         <translation>Connectar només al(s) node(s) especificats</translation>
     </message>
@@ -2825,22 +2768,12 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
         <translation>Descobrir la pròpia adreça IP (per defecte: 1 quan escoltant i no -externalip)</translation>
     </message>
     <message>
-        <location line="+94"/>
+        <location line="+97"/>
         <source>Failed to listen on any port. Use -listen=0 if you want this.</source>
         <translation>Error al escoltar a qualsevol port. Utilitza -listen=0 si vols això.</translation>
     </message>
     <message>
-        <location line="-90"/>
-        <source>Find peers using DNS lookup (default: 1)</source>
-        <translation>Trobar companys utilitzant la recerca de DNS (per defecte: 1)</translation>
-    </message>
-    <message>
-        <location line="+5"/>
-        <source>Sync checkpoints policy (default: strict)</source>
-        <translation>Política dels punts de control de sincronització (per defecte: estricta)</translation>
-    </message>
-    <message>
-        <location line="+83"/>
+        <location line="-2"/>
         <source>Invalid -tor address: &apos;%s&apos;</source>
         <translation>Adreça -tor invalida: &apos;%s&apos;</translation>
     </message>
@@ -2850,7 +2783,7 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
         <translation>Quantitat invalida per a -reservebalance=&lt;amount&gt;</translation>
     </message>
     <message>
-        <location line="-82"/>
+        <location line="-85"/>
         <source>Maximum per-connection receive buffer, &lt;n&gt;*1000 bytes (default: 5000)</source>
         <translation>Mida màxima del buffer de recepció per a cada connexió, &lt;n&gt;*1000 bytes (default: 5000)</translation>
     </message>
@@ -2865,42 +2798,22 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
         <translation>Només connectar als nodes de la xarxa &lt;net&gt; (IPv4, IPv6 o Tor)</translation>
     </message>
     <message>
-        <location line="+28"/>
-        <source>Output extra debugging information. Implies all other -debug* options</source>
-        <translation>Sortida d&apos;informació de depuració extra. Implica totes les opcions de depuracó -debug*</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Output extra network debugging information</source>
-        <translation>Sortida d&apos;informació de depuració de xarxa addicional</translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+30"/>
         <source>Prepend debug output with timestamp</source>
         <translation>Anteposar marca de temps a la sortida de depuració</translation>
     </message>
     <message>
-        <location line="+35"/>
+        <location line="+36"/>
         <source>SSL options: (see the Bitcoin Wiki for SSL setup instructions)</source>
         <translation>Opcions SSL: (veure la Wiki de Bitcoin per a instruccions de configuració SSL)</translation>
     </message>
     <message>
-        <location line="-74"/>
-        <source>Select the version of socks proxy to use (4-5, default: 5)</source>
-        <translation>Seleccioneu la versió de proxy socks per utilitzar (4-5, per defecte: 5)</translation>
-    </message>
-    <message>
-        <location line="+41"/>
+        <location line="-34"/>
         <source>Send trace/debug info to console instead of debug.log file</source>
         <translation>Enviar informació de traça/depuració a la consola en comptes del arxiu debug.log</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Send trace/debug info to debugger</source>
-        <translation>Enviar informació de traça/depuració al depurador</translation>
-    </message>
-    <message>
-        <location line="+28"/>
+        <location line="+33"/>
         <source>Set maximum block size in bytes (default: 250000)</source>
         <translation>Establir una mida máxima de bloc en bytes (per defecte: 250000)</translation>
     </message>
@@ -2910,24 +2823,17 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
         <translation>Establir una mida mínima de bloc en bytes (per defecte: 0)</translation>
     </message>
     <message>
-        <location line="-29"/>
+        <location line="-33"/>
         <source>Shrink debug.log file on client startup (default: 1 when no -debug)</source>
         <translation>Reduir l&apos;arxiu debug.log al iniciar el client (per defecte 1 quan no -debug)</translation>
     </message>
     <message>
-        <location line="-42"/>
+        <location line="-41"/>
         <source>Specify connection timeout in milliseconds (default: 5000)</source>
         <translation>Especificar el temps limit per a un intent de connexió en milisegons (per defecte: 5000)</translation>
     </message>
     <message>
-        <location line="+109"/>
-        <source>Unable to sign checkpoint, wrong checkpointkey?
-</source>
-        <translation>No es pot signar el punt de control, la clau del punt de control esta malament?
-</translation>
-    </message>
-    <message>
-        <location line="-80"/>
+        <location line="+28"/>
         <source>Use UPnP to map the listening port (default: 0)</source>
         <translation>Utilitza UPnP per a mapejar els ports d&apos;escolta (per defecte: 0)</translation>
     </message>
@@ -2942,82 +2848,97 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
         <translation>Utilitza proxy per arribar als serveis ocults de Tor (per defecte: la mateixa que -proxy)</translation>
     </message>
     <message>
-        <location line="+42"/>
+        <location line="+45"/>
         <source>Username for JSON-RPC connections</source>
         <translation>Nom d&apos;usuari per a connexions JSON-RPC</translation>
     </message>
     <message>
-        <location line="+47"/>
+        <location line="+50"/>
         <source>Verifying database integrity...</source>
         <translation>Comprovant la integritat de la base de dades ...</translation>
     </message>
     <message>
-        <location line="+57"/>
-        <source>WARNING: syncronized checkpoint violation detected, but skipped!</source>
-        <translation>ADVERTÈNCIA: violació de punt de control sincronitzat detectada, es saltarà!</translation>
+        <location line="+43"/>
+        <source>Error: Wallet locked, unable to create transaction!</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Error: This transaction requires a transaction fee of at least %s because of its amount, complexity, or use of recently received funds!</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Error: Transaction creation failed!</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Error: The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="-15"/>
+        <source>Warning</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location line="+1"/>
-        <source>Warning: Disk space is low!</source>
-        <translation>Avís: L&apos;espai en disc és baix!</translation>
+        <source>Information</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location line="-2"/>
+        <location line="-7"/>
         <source>Warning: This version is obsolete, upgrade required!</source>
         <translation>Advertència: Aquetsa versió està obsoleta, és necessari actualitzar!</translation>
     </message>
     <message>
-        <location line="-48"/>
+        <location line="-23"/>
         <source>wallet.dat corrupt, salvage failed</source>
         <translation>L&apos;arxiu wallet.data és corrupte, el rescat de les dades ha fallat</translation>
     </message>
     <message>
-        <location line="-54"/>
+        <location line="-55"/>
         <source>Password for JSON-RPC connections</source>
         <translation>Contrasenya per a connexions JSON-RPC</translation>
     </message>
     <message>
-        <location line="-84"/>
-        <source>%s, you must set a rpcpassword in the configuration file:
- %s
-It is recommended you use the following random password:
-rpcuser=rpicoinrpc
-rpcpassword=%s
-(you do not need to remember this password)
-The username and password MUST NOT be the same.
-If the file does not exist, create it with owner-readable-only file permissions.
-It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s &quot;rpicoin Alert&quot; admin@foo.com
-</source>
-        <translation>%s, ha d&apos;establir un rpcpassword al fitxer de configuració:
-%s
-Es recomana utilitzar la següent contrasenya aleatòria:
-rpcuser=rpicoinrpc
-rpcpassword=%s
-(No cal recordar aquesta contrasenya)
-El nom d&apos;usuari i contrasenya NO HA DE SER el mateix.
-Si no hi ha l&apos;arxiu, s&apos;ha de crear amb els permisos de només lectura per al propietari.
-També es recomana establir alertnotify per a que se li notifiquin els problemes;
-per exemple: alertnotify=echo %%s | mail -s &quot;rpicoin Alert&quot; admin@foo.com
-</translation>
+        <location line="-47"/>
+        <source>Connect through SOCKS5 proxy</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+51"/>
-        <source>Find peers using internet relay chat (default: 0)</source>
-        <translation>Trobar companys utilitzant l&apos;IRC (per defecte: 1) {0)?}</translation>
-    </message>
-    <message>
-        <location line="+5"/>
+        <location line="+17"/>
         <source>Sync time with other nodes. Disable if time on your system is precise e.g. syncing with NTP (default: 1)</source>
         <translation>Sincronitzar el temps amb altres nodes. Desactivar si el temps al seu sistema és precís, per exemple, si fa ús de sincronització amb NTP (per defecte: 1)</translation>
     </message>
     <message>
-        <location line="+15"/>
+        <location line="+12"/>
         <source>When creating transactions, ignore inputs with value less than this (default: 0.01)</source>
         <translation>En crear transaccions, ignorar les entrades amb valor inferior a aquesta (per defecte: 0.01)</translation>
     </message>
     <message>
-        <location line="+16"/>
+        <location line="+6"/>
+        <source>Output debugging information (default: 0, supplying &lt;category&gt; is optional)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>If &lt;category&gt; is not supplied, output all debugging information.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>&lt;category&gt; can be:</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Enter regression test mode, which uses a special chain in which blocks can be solved instantly. This is intended for regression testing tools and app development.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+8"/>
         <source>Allow JSON-RPC connections from specified IP address</source>
         <translation>Permetre connexions JSON-RPC d&apos;adreces IP específiques</translation>
     </message>
@@ -3025,6 +2946,16 @@ per exemple: alertnotify=echo %%s | mail -s &quot;rpicoin Alert&quot; admin@foo.
         <location line="+1"/>
         <source>Send commands to node running on &lt;ip&gt; (default: 127.0.0.1)</source>
         <translation>Enviar ordre al node en execució a &lt;ip&gt; (per defecte: 127.0.0.1)</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Wait for RPC server to start</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Set the number of threads to service RPC calls (default: 4)</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location line="+1"/>
@@ -3043,11 +2974,6 @@ per exemple: alertnotify=echo %%s | mail -s &quot;rpicoin Alert&quot; admin@foo.
     </message>
     <message>
         <location line="+1"/>
-        <source>Enforce transaction scripts to use canonical PUSH operators (default: 1)</source>
-        <translation>Fer complir als scripts de transaccions d&apos;utilitzar operadors PUSH canòniques (per defecte: 1)</translation>
-    </message>
-    <message>
-        <location line="+2"/>
         <source>Execute command when a relevant alert is received (%s in cmd is replaced by message)</source>
         <translation>
 Executar una ordre quan es rep un avís rellevant (%s en cmd es substitueix per missatge)</translation>
@@ -3068,22 +2994,22 @@ Executar una ordre quan es rep un avís rellevant (%s en cmd es substitueix per 
         <translation>Re-escanejar cadena de blocs en cerca de transaccions de moneder perdudes</translation>
     </message>
     <message>
-        <location line="+2"/>
-        <source>How many blocks to check at startup (default: 2500, 0 = all)</source>
-        <translation>Quants blocs s&apos;han de confirmar a l&apos;inici (per defecte: 2500, 0 = tots)</translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+3"/>
         <source>How thorough the block verification is (0-6, default: 1)</source>
         <translation>Com és de minuciosa la verificació del bloc (0-6, per defecte: 1)</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Imports blocks from external blk000?.dat file</source>
-        <translation>Importar blocs desde l&apos;arxiu extern blk000?.dat</translation>
+        <source>Imports blocks from external wsp000?.dat file</source>
+        <translation>Importar blocs desde l&apos;arxiu extern wsp000?.dat</translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+1"/>
+        <source>Keep at most &lt;n&gt; MiB of unconnectable blocks in memory (default: %u)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+5"/>
         <source>Use OpenSSL (https) for JSON-RPC connections</source>
         <translation>Utilitzar OpenSSL (https) per a connexions JSON-RPC</translation>
     </message>
@@ -3098,79 +3024,74 @@ Executar una ordre quan es rep un avís rellevant (%s en cmd es substitueix per 
         <translation>Clau privada del servidor (per defecte: server.pem)</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Acceptable ciphers (default: TLSv1+RPI:!SSLv2:!aNULL:!eNULL:!AH:!3DES:@STRENGTH)</source>
-        <translation>Xifres acceptables (per defecte: TLSv1+RPI:!SSLv2:!aNULL:!eNULL:!AH:!3DES:@STRENGTH)</translation>
+        <location line="+5"/>
+        <source>Error: Unsupported argument -socks found. Setting SOCKS version isn&apos;t possible anymore, only SOCKS5 proxies are supported.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+53"/>
+        <location line="+8"/>
+        <source>Initialization sanity check failed. Rpicoin is shutting down.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+20"/>
+        <source>Error loading block database</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+29"/>
         <source>Error: Wallet unlocked for staking only, unable to create transaction.</source>
         <translation>Error: Cartera bloquejada nomès per a fer &quot;stake&quot;, no es pot de crear la transacció</translation>
     </message>
     <message>
-        <location line="+18"/>
-        <source>WARNING: Invalid checkpoint found! Displayed transactions may not be correct! You may need to upgrade, or notify developers.</source>
-        <translation>ADVERTÈNCIA: Punt de control invàlid! Les transaccions mostrades podríen no ser correctes! Podria ser necessari actualitzar o notificar-ho als desenvolupadors.</translation>
+        <location line="-14"/>
+        <source>Error: Disk space is low!</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location line="-158"/>
+        <location line="+1"/>
+        <source>This is a pre-release test build - use at your own risk - do not use for mining or merchant applications</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="-135"/>
         <source>This help message</source>
         <translation>Aquest misatge d&apos;ajuda</translation>
     </message>
     <message>
-        <location line="+95"/>
+        <location line="+100"/>
         <source>Wallet %s resides outside data directory %s.</source>
         <translation>El moneder %s resideix fora del directori de dades %s.</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Cannot obtain a lock on data directory %s.  rpicoin is probably already running.</source>
-        <translation>No es pot obtenir un bloqueig en el directori de dades %s. rpicoin probablement ja estigui en funcionament.</translation>
-    </message>
-    <message>
-        <location line="-98"/>
-        <source>rpicoin</source>
-        <translation>rpicoin</translation>
-    </message>
-    <message>
-        <location line="+140"/>
+        <location line="+46"/>
         <source>Unable to bind to %s on this computer (bind returned error %d, %s)</source>
         <translation>Impossible d&apos;unir %s a aquest ordinador (s&apos;ha retornat l&apos;error %d, %s)</translation>
     </message>
     <message>
-        <location line="-130"/>
-        <source>Connect through socks proxy</source>
-        <translation>Conectar a través d&apos;un proxy SOCKS</translation>
-    </message>
-    <message>
-        <location line="+3"/>
+        <location line="-136"/>
         <source>Allow DNS lookups for -addnode, -seednode and -connect</source>
         <translation>Permetre consultes DNS per a -addnode, -seednode i -connect</translation>
     </message>
     <message>
-        <location line="+122"/>
+        <location line="+121"/>
         <source>Loading addresses...</source>
         <translation>Carregant adreces...</translation>
     </message>
     <message>
-        <location line="-15"/>
-        <source>Error loading blkindex.dat</source>
-        <translation>Error carregant blkindex.dat</translation>
-    </message>
-    <message>
-        <location line="+2"/>
+        <location line="-10"/>
         <source>Error loading wallet.dat: Wallet corrupted</source>
         <translation>Error carregant wallet.dat: Moneder corrupte</translation>
     </message>
     <message>
         <location line="+4"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of rpicoin</source>
-        <translation>Error en carregar wallet.dat: El moneder requereix la versió més recent de rpicoin</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of Rpicoin</source>
+        <translation>Error en carregar wallet.dat: El moneder requereix la versió més recent de Rpicoin</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Wallet needed to be rewritten: restart rpicoin to complete</source>
-        <translation>El moneder necessita ser reescrita: reiniciar rpicoin per completar</translation>
+        <source>Wallet needed to be rewritten: restart Rpicoin to complete</source>
+        <translation>El moneder necessita ser reescrita: reiniciar Rpicoin per completar</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -3178,7 +3099,7 @@ Executar una ordre quan es rep un avís rellevant (%s en cmd es substitueix per 
         <translation>Error carregant wallet.dat</translation>
     </message>
     <message>
-        <location line="-16"/>
+        <location line="-15"/>
         <source>Invalid -proxy address: &apos;%s&apos;</source>
         <translation>Adreça -proxy invalida: &apos;%s&apos;</translation>
     </message>
@@ -3188,12 +3109,7 @@ Executar una ordre quan es rep un avís rellevant (%s en cmd es substitueix per 
         <translation>Xarxa desconeguda especificada a -onlynet: &apos;%s&apos;</translation>
     </message>
     <message>
-        <location line="-1"/>
-        <source>Unknown -socks proxy version requested: %i</source>
-        <translation>S&apos;ha demanat una versió desconeguda de -socks proxy: %i</translation>
-    </message>
-    <message>
-        <location line="+4"/>
+        <location line="+3"/>
         <source>Cannot resolve -bind address: &apos;%s&apos;</source>
         <translation>No es pot resoldre l&apos;adreça -bind: &apos;%s&apos;</translation>
     </message>
@@ -3203,17 +3119,12 @@ Executar una ordre quan es rep un avís rellevant (%s en cmd es substitueix per 
         <translation>No es pot resoldre l&apos;adreça -externalip: &apos;%s&apos;</translation>
     </message>
     <message>
-        <location line="-24"/>
+        <location line="-22"/>
         <source>Invalid amount for -paytxfee=&lt;amount&gt;: &apos;%s&apos;</source>
         <translation>Quantitat invalida per a -paytxfee=&lt;amount&gt;: &apos;%s&apos;</translation>
     </message>
     <message>
-        <location line="+44"/>
-        <source>Error: could not start node</source>
-        <translation>Error: no s&apos;ha pogut iniciar el node</translation>
-    </message>
-    <message>
-        <location line="+11"/>
+        <location line="+59"/>
         <source>Sending...</source>
         <translation>Enviant...</translation>
     </message>
@@ -3228,32 +3139,57 @@ Executar una ordre quan es rep un avís rellevant (%s en cmd es substitueix per 
         <translation>Balanç insuficient</translation>
     </message>
     <message>
-        <location line="-34"/>
+        <location line="-41"/>
         <source>Loading block index...</source>
         <translation>Carregant índex de blocs...</translation>
     </message>
     <message>
-        <location line="-103"/>
+        <location line="-105"/>
         <source>Add a node to connect to and attempt to keep the connection open</source>
         <translation>Afegir un node per a connectar&apos;s-hi i intentar mantenir la connexió oberta</translation>
     </message>
     <message>
-        <location line="+122"/>
-        <source>Unable to bind to %s on this computer. rpicoin is probably already running.</source>
-        <translation>No es pot enllaçar a %s en aquest equip. rpicoin probablement ja estigui en funcionament.</translation>
+        <location line="+131"/>
+        <source>Unable to bind to %s on this computer. Rpicoin is probably already running.</source>
+        <translation>No es pot enllaçar a %s en aquest equip. Rpicoin probablement ja estigui en funcionament.</translation>
     </message>
     <message>
-        <location line="-97"/>
+        <location line="-108"/>
         <source>Fee per KB to add to transactions you send</source>
         <translation>Comisió per KB per a afegir a les transaccions que enviï</translation>
     </message>
     <message>
-        <location line="+55"/>
+        <location line="+40"/>
+        <source>How many blocks to check at startup (default: 500, 0 = all)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>Acceptable ciphers (default: TLSv1.2+HIGH:TLSv1+HIGH:!SSLv2:!aNULL:!eNULL:!3DES:@STRENGTH)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Warning: Deprecated argument -debugnet ignored, use -debug=net</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+8"/>
         <source>Invalid amount for -mininput=&lt;amount&gt;: &apos;%s&apos;</source>
         <translation>Quantitat invalida per a -mininput=&lt;amount&gt;: &apos;%s&apos;</translation>
     </message>
     <message>
-        <location line="+25"/>
+        <location line="+3"/>
+        <source>Cannot obtain a lock on data directory %s. Rpicoin is probably already running.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Error initializing wallet database environment %s!</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+15"/>
         <source>Loading wallet...</source>
         <translation>Carregant moneder...</translation>
     </message>
@@ -3261,11 +3197,6 @@ Executar una ordre quan es rep un avís rellevant (%s en cmd es substitueix per 
         <location line="+8"/>
         <source>Cannot downgrade wallet</source>
         <translation>No es pot reduir la versió del moneder</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Cannot initialize keypool</source>
-        <translation>No es pot inicialitzar el keypool</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -3278,22 +3209,22 @@ Executar una ordre quan es rep un avís rellevant (%s en cmd es substitueix per 
         <translation>Re-escanejant...</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+2"/>
         <source>Done loading</source>
         <translation>Càrrega acabada</translation>
     </message>
     <message>
-        <location line="-167"/>
+        <location line="+33"/>
         <source>To use the %s option</source>
         <translation>Utilitza la opció %s</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="-27"/>
         <source>Error</source>
         <translation>Error</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+22"/>
         <source>You must set rpcpassword=&lt;password&gt; in the configuration file:
 %s
 If the file does not exist, create it with owner-readable-only file permissions.</source>

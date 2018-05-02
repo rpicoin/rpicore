@@ -45,9 +45,9 @@ QString BitcoinUnits::description(int unit)
 {
     switch(unit)
     {
-    case BTC: return QString("rpicoins");
-    case mBTC: return QString("Milli-rpicoins (1 / 1,000)");
-    case uBTC: return QString("Micro-rpicoins (1 / 1,000,000)");
+    case BTC: return QString("Rpicoins");
+    case mBTC: return QString("Milli-Rpicoins (1 / 1,000)");
+    case uBTC: return QString("Micro-Rpicoins (1 / 1,000,000)");
     default: return QString("???");
     }
 }

@@ -1,11 +1,14 @@
+#include <QApplication>
+
 #include "guiutil.h"
+
 #include "bitcoinaddressvalidator.h"
 #include "walletmodel.h"
 #include "bitcoinunits.h"
+
 #include "util.h"
 #include "init.h"
 
-#include <QString>
 #include <QDateTime>
 #include <QDoubleValidator>
 #include <QFont>
@@ -13,7 +16,6 @@
 #include <QUrl>
 #include <QTextDocument> // For Qt::escape
 #include <QAbstractItemView>
-#include <QApplication>
 #include <QClipboard>
 #include <QFileDialog>
 #include <QDesktopServices>
@@ -82,7 +84,7 @@ void setupAmountWidget(QLineEdit *widget, QWidget *parent)
 bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out)
 {
     // NovaCoin: check prefix
-    if(uri.scheme() != QString("rpicoin"))
+    if(uri.scheme() != QString("Rpicoin"))
         return false;
 
     SendCoinsRecipient rv;
@@ -127,13 +129,13 @@ bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out)
 
 bool parseBitcoinURI(QString uri, SendCoinsRecipient *out)
 {
-    // Convert rpicoin:// to rpicoin:
+    // Convert Rpicoin:// to Rpicoin:
     //
     //    Cannot handle this later, because bitcoin:// will cause Qt to see the part after // as host,
     //    which will lower-case it (and thus invalidate the address).
-    if(uri.startsWith("rpicoin://"))
+    if(uri.startsWith("Rpicoin://"))
     {
-        uri.replace(0, 12, "rpicoin:");
+        uri.replace(0, 12, "Rpicoin:");
     }
     QUrl uriInstance(uri);
     return parseBitcoinURI(uriInstance, out);
@@ -277,7 +279,7 @@ bool ToolTipToRichTextFilter::eventFilter(QObject *obj, QEvent *evt)
 #ifdef WIN32
 boost::filesystem::path static StartupShortcutPath()
 {
-    return GetSpecialFolderPath(CSIDL_STARTUP) / "rpicoin.lnk";
+    return GetSpecialFolderPath(CSIDL_STARTUP) / "Rpicoin.lnk";
 }
 
 bool GetStartOnSystemStartup()
@@ -359,7 +361,7 @@ boost::filesystem::path static GetAutostartDir()
 
 boost::filesystem::path static GetAutostartFilePath()
 {
-    return GetAutostartDir() / "rpicoin.desktop";
+    return GetAutostartDir() / "Rpicoin.desktop";
 }
 
 bool GetStartOnSystemStartup()
@@ -400,7 +402,7 @@ bool SetStartOnSystemStartup(bool fAutoStart)
         // Write a bitcoin.desktop file to the autostart directory:
         optionFile << "[Desktop Entry]\n";
         optionFile << "Type=Application\n";
-        optionFile << "Name=rpicoin\n";
+        optionFile << "Name=Rpicoin\n";
         optionFile << "Exec=" << pszExePath << " -min\n";
         optionFile << "Terminal=false\n";
         optionFile << "Hidden=false\n";
@@ -421,10 +423,10 @@ bool SetStartOnSystemStartup(bool fAutoStart) { return false; }
 HelpMessageBox::HelpMessageBox(QWidget *parent) :
     QMessageBox(parent)
 {
-    header = tr("rpicoin-Qt") + " " + tr("version") + " " +
+    header = tr("Rpicoin-Qt") + " " + tr("version") + " " +
         QString::fromStdString(FormatFullVersion()) + "\n\n" +
         tr("Usage:") + "\n" +
-        "  rpicoin-qt [" + tr("command-line options") + "]                     " + "\n";
+        "  Rpicoin-qt [" + tr("command-line options") + "]                     " + "\n";
 
     coreOptions = QString::fromStdString(HelpMessage());
 
@@ -433,7 +435,7 @@ HelpMessageBox::HelpMessageBox(QWidget *parent) :
         "  -min                   " + tr("Start minimized") + "\n" +
         "  -splash                " + tr("Show splash screen on startup (default: 1)") + "\n";
 
-    setWindowTitle(tr("rpicoin-Qt"));
+    setWindowTitle(tr("Rpicoin-Qt"));
     setTextFormat(Qt::PlainText);
     // setMinimumWidth is ignored for QMessageBox so put in non-breaking spaces to make it wider.
     setText(header + QString(QChar(0x2003)).repeated(50));
@@ -456,6 +458,48 @@ void HelpMessageBox::showOrPrint()
         // On other operating systems, print help text to console
         printToConsole();
 #endif
+}
+
+/*
+Donker: #2d3245
+Groen: #2ebb89
+Licht-blauw: #4a5d97
+Blauw: #2e3e70
+Vaal-blauw: #3d4664
+*/
+
+void SetBlackThemeQSS(QApplication& app)
+{
+    app.setStyleSheet("QWidget        { background: #3d4664; color: #2ebb89; }"
+                      "QFrame         { border: none; }"
+                      "QComboBox      { color: #ffffff; }"
+                      "QComboBox QAbstractItemView::item { color: #ffffff; }"
+                      "QPushButton    { background: #2ebb89; color: #ffffff; }"
+                      "QDoubleSpinBox { background: #3d4664; color: #ffffff; border-color: #2ebb89; }"
+                      "QLineEdit      { background: #3d4664; color: #ffffff; border-color: #2ebb89; }"
+                      "QTextEdit      { background: #3d4664; color: #ffffff; }"
+                      "QPlainTextEdit { background: #3d4664; color: #ffffff; }"
+                      "QMenuBar       { background: #3d4664; color: #2ebb89; }"
+                      "QMenu          { background: #2d3245; color: #ffffff; }"
+                      "QMenu::item:selected { background-color: #2ebb89; }"
+                      "QLabel         { color: #ffffff; }"
+                      "QLabel         { color: #ffffff; }"
+                      "QScrollBar     { color: #ffffff; }"
+                      "QCheckBox      { color: #2ebb89; }"
+                      "QRadioButton   { color: #2ebb89; }"
+                      "QTabBar::tab   { color: #2ebb89; border: 1px solid #2ebb89; border-bottom: none; padding: 5px; }"
+                      "QTabBar::tab:selected  { background: #3d4664; }"
+                      "QTabBar::tab:!selected { background: #3d4664; margin-top: 2px; }"
+                      "QTabWidget::pane { border: 1px solid #3d4664; }"
+                      "QToolButton    { background: #2d3245; color: #ffffff; border: none; margin: 5px; padding: 8px; border-left-style: solid; border-left-width: 3px; border-left-color: #2d3245; }"
+                      "QToolButton:checked { background: #2d3245; color: #2ebb89; border: none; border-left-style: solid; border-left-width: 3px; border-left-color: #2ebb89; }"
+                      "QProgressBar   { color: #ffffff; border-color: #2ebb89; border-width: 2px; border-style: solid; }"
+                      "QProgressBar::chunk { background: #2ebb89; }"
+                      "QTreeView::item { background: #3d4664; color: #2ebb89; }"
+                      "QTreeView::item:selected { background-color: #ffffff; }"
+                      "QTableView     { background: #3d4664; color: #ffffff; gridline-color: #2ebb89; }"
+                      "QHeaderView::section { background: #3d4664; color: #ffffff; }"
+                      "QToolBar       { background: #2d3245; color: #ffffff; border: none; }");
 }
 
 } // namespace GUIUtil

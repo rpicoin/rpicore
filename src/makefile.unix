@@ -1,8 +1,10 @@
 # Copyright (c) 2009-2010 Satoshi Nakamoto
+# Copyright (c) 2017 The Rpicoin developers
 # Distributed under the MIT/X11 software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 USE_UPNP:=0
+USE_WALLET:=1
 
 LINK:=$(CXX)
 ARCH:=$(system lscpu | head -n 1 | awk '{print $2}')
@@ -106,25 +108,26 @@ OBJS= \
     obj/addrman.o \
     obj/crypter.o \
     obj/key.o \
-    obj/db.o \
     obj/init.o \
+    obj/bitcoind.o \
     obj/keystore.o \
-    obj/miner.o \
+    obj/core.o \
     obj/main.o \
     obj/net.o \
     obj/protocol.o \
-    obj/bitcoinrpc.o \
-    obj/rpcdump.o \
+    obj/rpcclient.o \
+    obj/rpcprotocol.o \
+    obj/rpcserver.o \
+    obj/rpcmisc.o \
     obj/rpcnet.o \
-    obj/rpcmining.o \
-    obj/rpcwallet.o \
     obj/rpcblockchain.o \
     obj/rpcrawtransaction.o \
+    obj/timedata.o \
     obj/script.o \
     obj/sync.o \
+    obj/txmempool.o \
     obj/util.o \
-    obj/wallet.o \
-    obj/walletdb.o \
+    obj/hash.o \
     obj/noui.o \
     obj/kernel.o \
     obj/pbkdf2.o \
@@ -132,18 +135,21 @@ OBJS= \
     obj/scrypt-arm.o \
     obj/scrypt-x86.o \
     obj/scrypt-x86_64.o \
-    obj/zerocoin/Accumulator.o \
-    obj/zerocoin/AccumulatorProofOfKnowledge.o \
-    obj/zerocoin/Coin.o \
-    obj/zerocoin/CoinSpend.o \
-    obj/zerocoin/Commitment.o \
-    obj/zerocoin/ParamGeneration.o \
-    obj/zerocoin/Params.o \
-    obj/zerocoin/SerialNumberSignatureOfKnowledge.o \
-    obj/zerocoin/SpendMetaData.o \
-    obj/zerocoin/ZeroTest.o
+    obj/chainparams.o
 
-all: Rpicoind
+ifeq (${USE_WALLET}, 1)
+    DEFS += -DENABLE_WALLET
+    OBJS += \
+        obj/db.o \
+        obj/miner.o \
+        obj/rpcdump.o \
+        obj/rpcmining.o \
+        obj/rpcwallet.o \
+        obj/wallet.o \
+        obj/walletdb.o
+endif
+
+all: rpicoind
 
 LIBS += $(CURDIR)/leveldb/libleveldb.a $(CURDIR)/leveldb/libmemenv.a
 DEFS += $(addprefix -I,$(CURDIR)/leveldb/include)
@@ -177,22 +183,13 @@ obj/%.o: %.cpp
 	      -e '/^$$/ d' -e 's/$$/ :/' < $(@:%.o=%.d) >> $(@:%.o=%.P); \
 	  rm -f $(@:%.o=%.d)
 
-obj/zerocoin/%.o: zerocoin/%.cpp
-	$(CXX) -c $(xCXXFLAGS) -MMD -MF $(@:%.o=%.d) -o $@ $<
-	@cp $(@:%.o=%.d) $(@:%.o=%.P); \
-	  sed -e 's/#.*//' -e 's/^[^:]*: *//' -e 's/ *\\$$//' \
-	      -e '/^$$/ d' -e 's/$$/ :/' < $(@:%.o=%.d) >> $(@:%.o=%.P); \
-	  rm -f $(@:%.o=%.d)
-
-Rpicoind: $(OBJS:obj/%=obj/%)
+rpicoind: $(OBJS:obj/%=obj/%)
 	$(LINK) $(xCXXFLAGS) -o $@ $^ $(xLDFLAGS) $(LIBS)
 
 clean:
-	-rm -f Rpicoind
+	-rm -f rpicoind
 	-rm -f obj/*.o
-	-rm -f obj/zerocoin/*.o
 	-rm -f obj/*.P
-	-rm -f obj/zerocoin/*.P
 	-rm -f obj/build.h
 
 FORCE:

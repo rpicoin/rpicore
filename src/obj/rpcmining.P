@@ -1,38 +1,28 @@
-obj/rpcmining.o: rpcmining.cpp main.h bignum.h serialize.h allocators.h \
- version.h clientversion.h uint256.h sync.h threadsafety.h net.h mruset.h \
- netbase.h compat.h protocol.h addrman.h util.h script.h keystore.h \
- crypter.h key.h scrypt.h zerocoin/Zerocoin.h zerocoin/../serialize.h \
- zerocoin/../bignum.h zerocoin/../util.h zerocoin/Params.h \
- zerocoin/Coin.h zerocoin/Commitment.h zerocoin/Accumulator.h \
- zerocoin/AccumulatorProofOfKnowledge.h zerocoin/CoinSpend.h \
- zerocoin/SerialNumberSignatureOfKnowledge.h zerocoin/SpendMetaData.h \
- zerocoin/../uint256.h zerocoin/ParamGeneration.h db.h txdb.h \
- txdb-leveldb.h /root/rpicoin/src/leveldb/include/leveldb/db.h \
- /root/rpicoin/src/leveldb/include/leveldb/iterator.h \
- /root/rpicoin/src/leveldb/include/leveldb/slice.h \
- /root/rpicoin/src/leveldb/include/leveldb/status.h \
- /root/rpicoin/src/leveldb/include/leveldb/options.h \
- /root/rpicoin/src/leveldb/include/leveldb/write_batch.h init.h wallet.h \
- ui_interface.h walletdb.h base58.h miner.h bitcoinrpc.h \
- json/json_spirit_reader_template.h json/json_spirit_value.h \
- json/json_spirit_error_position.h json/json_spirit_writer_template.h \
- json/json_spirit_utils.h checkpoints.h
-rpcmining.cpp main.h bignum.h serialize.h allocators.h :
- version.h clientversion.h uint256.h sync.h threadsafety.h net.h mruset.h :
- netbase.h compat.h protocol.h addrman.h util.h script.h keystore.h :
- crypter.h key.h scrypt.h zerocoin/Zerocoin.h zerocoin/../serialize.h :
- zerocoin/../bignum.h zerocoin/../util.h zerocoin/Params.h :
- zerocoin/Coin.h zerocoin/Commitment.h zerocoin/Accumulator.h :
- zerocoin/AccumulatorProofOfKnowledge.h zerocoin/CoinSpend.h :
- zerocoin/SerialNumberSignatureOfKnowledge.h zerocoin/SpendMetaData.h :
- zerocoin/../uint256.h zerocoin/ParamGeneration.h db.h txdb.h :
- txdb-leveldb.h /root/rpicoin/src/leveldb/include/leveldb/db.h :
- /root/rpicoin/src/leveldb/include/leveldb/iterator.h :
- /root/rpicoin/src/leveldb/include/leveldb/slice.h :
- /root/rpicoin/src/leveldb/include/leveldb/status.h :
- /root/rpicoin/src/leveldb/include/leveldb/options.h :
- /root/rpicoin/src/leveldb/include/leveldb/write_batch.h init.h wallet.h :
- ui_interface.h walletdb.h base58.h miner.h bitcoinrpc.h :
- json/json_spirit_reader_template.h json/json_spirit_value.h :
- json/json_spirit_error_position.h json/json_spirit_writer_template.h :
- json/json_spirit_utils.h checkpoints.h :
+obj/rpcmining.o: rpcmining.cpp rpcserver.h uint256.h rpcprotocol.h \
+ compat.h json/json_spirit_reader_template.h json/json_spirit_value.h \
+ json/json_spirit_error_position.h json/json_spirit_utils.h \
+ json/json_spirit_writer_template.h chainparams.h bignum.h serialize.h \
+ allocators.h version.h clientversion.h util.h tinyformat.h main.h core.h \
+ script.h keystore.h key.h hash.h sync.h threadsafety.h txmempool.h net.h \
+ mruset.h netbase.h protocol.h addrman.h timedata.h scrypt.h db.h txdb.h \
+ txdb-leveldb.h /root/WSP/core/src/leveldb/include/leveldb/db.h \
+ /root/WSP/core/src/leveldb/include/leveldb/iterator.h \
+ /root/WSP/core/src/leveldb/include/leveldb/slice.h \
+ /root/WSP/core/src/leveldb/include/leveldb/status.h \
+ /root/WSP/core/src/leveldb/include/leveldb/options.h \
+ /root/WSP/core/src/leveldb/include/leveldb/write_batch.h init.h wallet.h \
+ walletdb.h crypter.h ui_interface.h miner.h kernel.h
+rpcmining.cpp rpcserver.h uint256.h rpcprotocol.h :
+ compat.h json/json_spirit_reader_template.h json/json_spirit_value.h :
+ json/json_spirit_error_position.h json/json_spirit_utils.h :
+ json/json_spirit_writer_template.h chainparams.h bignum.h serialize.h :
+ allocators.h version.h clientversion.h util.h tinyformat.h main.h core.h :
+ script.h keystore.h key.h hash.h sync.h threadsafety.h txmempool.h net.h :
+ mruset.h netbase.h protocol.h addrman.h timedata.h scrypt.h db.h txdb.h :
+ txdb-leveldb.h /root/WSP/core/src/leveldb/include/leveldb/db.h :
+ /root/WSP/core/src/leveldb/include/leveldb/iterator.h :
+ /root/WSP/core/src/leveldb/include/leveldb/slice.h :
+ /root/WSP/core/src/leveldb/include/leveldb/status.h :
+ /root/WSP/core/src/leveldb/include/leveldb/options.h :
+ /root/WSP/core/src/leveldb/include/leveldb/write_batch.h init.h wallet.h :
+ walletdb.h crypter.h ui_interface.h miner.h kernel.h :

@@ -10,19 +10,11 @@
 #ifndef __INCLUDED_PROTOCOL_H__
 #define __INCLUDED_PROTOCOL_H__
 
+#include "chainparams.h"
 #include "serialize.h"
 #include "netbase.h"
 #include <string>
 #include "uint256.h"
-
-extern bool fTestNet;
-static inline unsigned short GetDefaultPort(const bool testnet = fTestNet)
-{
-    return testnet ? 31035 : 31045;
-}
-
-
-extern unsigned char pchMessageStart[4];
 
 /** Message header.
  * (4) message start.
@@ -50,7 +42,6 @@ class CMessageHeader
     // TODO: make private (improves encapsulation)
     public:
         enum {
-            MESSAGE_START_SIZE=sizeof(::pchMessageStart),
             COMMAND_SIZE=12,
             MESSAGE_SIZE_SIZE=sizeof(int),
             CHECKSUM_SIZE=sizeof(int),
@@ -95,7 +86,6 @@ class CAddress : public CService
              READWRITE(*pip);
             )
 
-        void print() const;
 
     // TODO: make private (improves encapsulation)
     public:
@@ -127,7 +117,6 @@ class CInv
         bool IsKnownType() const;
         const char* GetCommand() const;
         std::string ToString() const;
-        void print() const;
 
     // TODO: make private (improves encapsulation)
     public:

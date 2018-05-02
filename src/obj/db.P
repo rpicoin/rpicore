@@ -1,18 +1,6 @@
-obj/db.o: db.cpp db.h main.h bignum.h serialize.h allocators.h version.h \
- clientversion.h uint256.h sync.h threadsafety.h net.h mruset.h netbase.h \
- compat.h protocol.h addrman.h util.h script.h keystore.h crypter.h key.h \
- scrypt.h zerocoin/Zerocoin.h zerocoin/../serialize.h \
- zerocoin/../bignum.h zerocoin/../util.h zerocoin/Params.h \
- zerocoin/Coin.h zerocoin/Commitment.h zerocoin/Accumulator.h \
- zerocoin/AccumulatorProofOfKnowledge.h zerocoin/CoinSpend.h \
- zerocoin/SerialNumberSignatureOfKnowledge.h zerocoin/SpendMetaData.h \
- zerocoin/../uint256.h zerocoin/ParamGeneration.h ui_interface.h
-db.cpp db.h main.h bignum.h serialize.h allocators.h version.h :
- clientversion.h uint256.h sync.h threadsafety.h net.h mruset.h netbase.h :
- compat.h protocol.h addrman.h util.h script.h keystore.h crypter.h key.h :
- scrypt.h zerocoin/Zerocoin.h zerocoin/../serialize.h :
- zerocoin/../bignum.h zerocoin/../util.h zerocoin/Params.h :
- zerocoin/Coin.h zerocoin/Commitment.h zerocoin/Accumulator.h :
- zerocoin/AccumulatorProofOfKnowledge.h zerocoin/CoinSpend.h :
- zerocoin/SerialNumberSignatureOfKnowledge.h zerocoin/SpendMetaData.h :
- zerocoin/../uint256.h zerocoin/ParamGeneration.h ui_interface.h :
+obj/db.o: db.cpp db.h serialize.h allocators.h version.h clientversion.h \
+ sync.h threadsafety.h addrman.h netbase.h compat.h protocol.h \
+ chainparams.h bignum.h uint256.h util.h tinyformat.h timedata.h hash.h
+db.cpp db.h serialize.h allocators.h version.h clientversion.h :
+ sync.h threadsafety.h addrman.h netbase.h compat.h protocol.h :
+ chainparams.h bignum.h uint256.h util.h tinyformat.h timedata.h hash.h :

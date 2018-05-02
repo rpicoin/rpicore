@@ -3,19 +3,20 @@
     <name>AboutDialog</name>
     <message>
         <location filename="../forms/aboutdialog.ui" line="+14"/>
-        <source>About rpicoin</source>
+        <source>About Rpicoin</source>
         <translation>關于黑幣</translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>&lt;b&gt;rpicoin&lt;/b&gt; version</source>
+        <source>&lt;b&gt;Rpicoin&lt;/b&gt; version</source>
         <translation>&lt;b&gt;黑幣客戶端&lt;/b&gt; 版本</translation>
     </message>
     <message>
         <location line="+41"/>
-        <source>Copyright © 2009-2014 The Bitcoin developers
+        <source>Copyright © 2009-2017 The Bitcoin developers
 Copyright © 2012-2014 The NovaCoin developers
-Copyright © 2014 The rpicoin developers</source>
+Copyright © 2014-2017 The Blackcoin developers
+Copyright © 2017 The Rpicoin developers</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -23,17 +24,10 @@ Copyright © 2014 The rpicoin developers</source>
         <source>
 This is experimental software.
 
-Distributed under the MIT/X11 software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php.
+Distributed under the MIT/X11 software license, see the accompanying file COPYING or &lt;a href=&quot;http://www.opensource.org/licenses/mit-license.php&quot;&gt;http://www.opensource.org/licenses/mit-license.php&lt;/a&gt;.
 
-This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit (http://www.openssl.org/) and cryptographic software written by Eric Young (eay@cryptsoft.com) and UPnP software written by Thomas Bernard.</source>
-        <translation>
-位元幣，原名是 Bitcoin, 又叫做比特幣。
-
-這是一套實驗性的軟體。
-
-這套軟體是依據 MIT/X11 軟體授權條款散布，詳情請見附帶的 COPYING 檔案，或是以下網站: http://www.opensource.org/licenses/mit-license.php.
-
-此產品也包含了由 OpenSSL Project 所開發的 OpenSSL Toolkit (http://www.openssl.org/) 軟體，和由 Eric Young (eay@cryptsoft.com) 撰寫的加解密軟體，以及由 Thomas Bernard 所撰寫的 UPnP 軟體。</translation>
+This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit (&lt;a href=&quot;https://www.openssl.org/&quot;&gt;https://www.openssl.org/&lt;/a&gt;) and cryptographic software written by Eric Young (&lt;a href=&quot;mailto:eay@cryptsoft.com&quot;&gt;eay@cryptsoft.com&lt;/a&gt;) and UPnP software written by Thomas Bernard.</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -49,38 +43,38 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>按兩下來編輯位址或標記</translation>
     </message>
     <message>
-        <location line="+27"/>
+        <location line="+24"/>
         <source>Create a new address</source>
         <translation>製造新的位址</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+10"/>
         <source>Copy the currently selected address to the system clipboard</source>
         <translation>複製目前選擇的位址到系統剪貼簿</translation>
     </message>
     <message>
-        <location line="-11"/>
+        <location line="-7"/>
         <source>&amp;New Address</source>
         <translation>新建地址(&amp;N)</translation>
     </message>
     <message>
-        <location line="-46"/>
-        <source>These are your rpicoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
+        <location line="-43"/>
+        <source>These are your Rpicoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
         <translation>這是您用來接收支付的黑幣地址列表。爲不同的支付方建立不同的地址以便于了解支付來源。</translation>
     </message>
     <message>
-        <location line="+60"/>
+        <location line="+53"/>
         <source>&amp;Copy Address</source>
         <translation>複製地址(&amp;C)</translation>
     </message>
     <message>
-        <location line="+11"/>
+        <location line="+7"/>
         <source>Show &amp;QR Code</source>
         <translation>顯示二維碼(&amp;Q)</translation>
     </message>
     <message>
-        <location line="+11"/>
-        <source>Sign a message to prove you own a rpicoin address</source>
+        <location line="+7"/>
+        <source>Sign a message to prove you own a Rpicoin address</source>
         <translation>對信息進行簽名以證明您對該黑幣地址的所有權</translation>
     </message>
     <message>
@@ -89,13 +83,13 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>簽署訊息(&amp;M)</translation>
     </message>
     <message>
-        <location line="+25"/>
+        <location line="+17"/>
         <source>Delete the currently selected address from the list</source>
         <translation>把目前選擇的位址從列表中刪掉</translation>
     </message>
     <message>
-        <location line="-14"/>
-        <source>Verify a message to ensure it was signed with a specified rpicoin address</source>
+        <location line="-10"/>
+        <source>Verify a message to ensure it was signed with a specified Rpicoin address</source>
         <translation>驗證信息以保證其經過指定黑幣地址的簽名</translation>
     </message>
     <message>
@@ -104,22 +98,22 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>驗證訊息(&amp;V)</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+10"/>
         <source>&amp;Delete</source>
         <translation>刪掉(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../addressbookpage.cpp" line="+65"/>
+        <location filename="../addressbookpage.cpp" line="+66"/>
         <source>Copy &amp;Label</source>
         <translation>複製標記</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+1"/>
         <source>&amp;Edit</source>
         <translation>編輯</translation>
     </message>
     <message>
-        <location line="+250"/>
+        <location line="+248"/>
         <source>Export Address Book Data</source>
         <translation>導出地址簿數據</translation>
     </message>
@@ -142,7 +136,7 @@ This product includes software developed by the OpenSSL Project for use in the O
 <context>
     <name>AddressTableModel</name>
     <message>
-        <location filename="../addresstablemodel.cpp" line="+144"/>
+        <location filename="../addresstablemodel.cpp" line="+145"/>
         <source>Label</source>
         <translation>標記</translation>
     </message>
@@ -190,12 +184,7 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>仅用于权益增值</translation>
     </message>
     <message>
-        <location filename="../askpassphrasedialog.cpp" line="+35"/>
-        <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;10 or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
-        <translation>請輸入錢包的新密碼。&lt;br/&gt;建議用&lt;b&gt;10 個以上的任意字元&lt;/b&gt;，或是&lt;b&gt;8 個以上的單字&lt;/b&gt;。</translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location filename="../askpassphrasedialog.cpp" line="+38"/>
         <source>Encrypt wallet</source>
         <translation>加密錢包</translation>
     </message>
@@ -230,7 +219,7 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>請輸入錢包的舊密碼及新密碼。</translation>
     </message>
     <message>
-        <location line="+46"/>
+        <location line="+45"/>
         <source>Confirm wallet encryption</source>
         <translation>確認錢包加密</translation>
     </message>
@@ -262,8 +251,13 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>錢包已加密</translation>
     </message>
     <message>
-        <location line="-58"/>
-        <source>rpicoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
+        <location line="-140"/>
+        <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;ten or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+82"/>
+        <source>Rpicoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
         <translation>黑幣客戶端即將關閉以完成加密過程。請記住，加密錢包並不能完全防止您的電子貨幣被入侵您計算機的木馬軟件盜竊。</translation>
     </message>
     <message>
@@ -311,22 +305,12 @@ This product includes software developed by the OpenSSL Project for use in the O
 <context>
     <name>BitcoinGUI</name>
     <message>
-        <location filename="../bitcoingui.cpp" line="+280"/>
+        <location filename="../bitcoingui.cpp" line="+297"/>
         <source>Sign &amp;message...</source>
         <translation>簽署訊息...</translation>
     </message>
     <message>
-        <location line="+242"/>
-        <source>Synchronizing with network...</source>
-        <translation>正在跟網路進行同步...</translation>
-    </message>
-    <message>
-        <location line="-308"/>
-        <source>&amp;Overview</source>
-        <translation>總覽</translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="-64"/>
         <source>Show general overview of wallet</source>
         <translation>顯示錢包一般總覽</translation>
     </message>
@@ -351,22 +335,12 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>管理已儲存的地址和標簽</translation>
     </message>
     <message>
-        <location line="-13"/>
-        <source>&amp;Receive coins</source>
-        <translation>接收黑幣(&amp;R) </translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="-18"/>
         <source>Show the list of addresses for receiving payments</source>
         <translation>顯示用于接收支付的地址列表 </translation>
     </message>
     <message>
-        <location line="-7"/>
-        <source>&amp;Send coins</source>
-        <translation>發送黑幣(&amp;S) </translation>
-    </message>
-    <message>
-        <location line="+35"/>
+        <location line="+34"/>
         <source>E&amp;xit</source>
         <translation>結束</translation>
     </message>
@@ -377,7 +351,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+4"/>
-        <source>Show information about rpicoin</source>
+        <source>Show information about Rpicoin</source>
         <translation>關于黑幣 </translation>
     </message>
     <message>
@@ -401,7 +375,7 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>加密錢包...</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+2"/>
         <source>&amp;Backup Wallet...</source>
         <translation>備份錢包...</translation>
     </message>
@@ -410,43 +384,33 @@ This product includes software developed by the OpenSSL Project for use in the O
         <source>&amp;Change Passphrase...</source>
         <translation>改變密碼...</translation>
     </message>
-    <message numerus="yes">
-        <location line="+250"/>
-        <source>~%n block(s) remaining</source>
-        <translation><numerusform>~%n 個區塊未完成</numerusform></translation>
-    </message>
     <message>
-        <location line="+6"/>
-        <source>Downloaded %1 of %2 blocks of transaction history (%3% done).</source>
-        <translation>交易記錄已下載%3% (%1 / %2 個區塊)</translation>
-    </message>
-    <message>
-        <location line="-247"/>
+        <location line="+9"/>
         <source>&amp;Export...</source>
         <translation>導出(&amp;E)</translation>
     </message>
     <message>
-        <location line="-62"/>
-        <source>Send coins to a rpicoin address</source>
+        <location line="-55"/>
+        <source>Send coins to a Rpicoin address</source>
         <translation>向指定的地址發送黑幣</translation>
     </message>
     <message>
-        <location line="+45"/>
-        <source>Modify configuration options for rpicoin</source>
+        <location line="+39"/>
+        <source>Modify configuration options for Rpicoin</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="+17"/>
         <source>Export the data in the current tab to a file</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="-14"/>
+        <location line="-13"/>
         <source>Encrypt or decrypt wallet</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+2"/>
         <source>Backup wallet to another location</source>
         <translation>把錢包備份到其它地方</translation>
     </message>
@@ -471,18 +435,19 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>驗證訊息...</translation>
     </message>
     <message>
-        <location line="-200"/>
-        <source>rpicoin</source>
+        <location line="-214"/>
+        <location line="+555"/>
+        <source>Rpicoin</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="-555"/>
         <source>Wallet</source>
         <translation>錢包</translation>
     </message>
     <message>
-        <location line="+178"/>
-        <source>&amp;About rpicoin</source>
+        <location line="+193"/>
+        <source>&amp;About Rpicoin</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -491,7 +456,7 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>顯示或隱藏</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+8"/>
         <source>Unlock wallet</source>
         <translation type="unfinished"/>
     </message>
@@ -506,7 +471,7 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+34"/>
+        <location line="+32"/>
         <source>&amp;File</source>
         <translation>檔案</translation>
     </message>
@@ -521,39 +486,29 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>說明</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+17"/>
         <source>Tabs toolbar</source>
         <translation>分頁工具列</translation>
     </message>
     <message>
-        <location line="+8"/>
-        <source>Actions toolbar</source>
-        <translation>分頁工具欄</translation>
-    </message>
-    <message>
-        <location line="+13"/>
+        <location line="+46"/>
         <location line="+9"/>
         <source>[testnet]</source>
         <translation>[測試網絡]</translation>
     </message>
     <message>
         <location line="+0"/>
-        <location line="+60"/>
-        <source>rpicoin client</source>
+        <location line="+58"/>
+        <source>Rpicoin client</source>
         <translation>黑幣客戶端</translation>
     </message>
     <message numerus="yes">
         <location line="+70"/>
-        <source>%n active connection(s) to rpicoin network</source>
+        <source>%n active connection(s) to Rpicoin network</source>
         <translation><numerusform>與黑幣網絡建立了 %n 個連接</numerusform></translation>
     </message>
     <message>
-        <location line="+40"/>
-        <source>Downloaded %1 blocks of transaction history.</source>
-        <translation>已下載 %1 個區塊的交易記錄</translation>
-    </message>
-    <message>
-        <location line="+413"/>
+        <location line="+488"/>
         <source>Staking.&lt;br&gt;Your weight is %1&lt;br&gt;Network weight is %2&lt;br&gt;Expected time to earn reward is %3</source>
         <translation>權益增值中 &lt;br&gt;您的權重爲 %1 &lt;br&gt;網絡總權重爲 %2&lt;br&gt;預計將在 %3 之後獲得收益</translation>
     </message>
@@ -574,56 +529,41 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+2"/>
-        <source>Not staking because you don&apos;t have mature coins</source>
+        <source>Not staking because you don&apos;t have mature coins (&#126;100 confirms)</source>
         <translation type="unfinished"/>
-    </message>
-    <message numerus="yes">
-        <location line="-403"/>
-        <source>%n second(s) ago</source>
-        <translation type="unfinished"><numerusform></numerusform></translation>
     </message>
     <message>
-        <location line="-284"/>
-        <source>&amp;Unlock Wallet...</source>
+        <location line="-812"/>
+        <source>&amp;Dashboard</source>
         <translation type="unfinished"/>
-    </message>
-    <message numerus="yes">
-        <location line="+288"/>
-        <source>%n minute(s) ago</source>
-        <translation type="unfinished"><numerusform></numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <location line="+4"/>
-        <source>%n hour(s) ago</source>
-        <translation type="unfinished"><numerusform></numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <location line="+4"/>
-        <source>%n day(s) ago</source>
-        <translation type="unfinished"><numerusform></numerusform></translation>
     </message>
     <message>
         <location line="+6"/>
+        <source>&amp;Receive</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>&amp;Send</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+49"/>
+        <source>&amp;Unlock Wallet...</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+277"/>
         <source>Up to date</source>
         <translation>最新狀態</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location line="+43"/>
         <source>Catching up...</source>
         <translation>正在趕進度...</translation>
     </message>
     <message>
-        <location line="+10"/>
-        <source>Last received block was generated %1.</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+59"/>
-        <source>This transaction is over the size limit.  You can still send it for a fee of %1, which goes to the nodes that process your transaction and helps to support the network.  Do you want to pay the fee?</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+5"/>
+        <location line="+113"/>
         <source>Confirm transaction fee</source>
         <translation type="unfinished"/>
     </message>
@@ -659,21 +599,26 @@ Address: %4
     <message>
         <location line="-15"/>
         <location line="+15"/>
-        <source>URI can not be parsed! This can be caused by an invalid rpicoin address or malformed URI parameters.</source>
+        <source>URI can not be parsed! This can be caused by an invalid Rpicoin address or malformed URI parameters.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="+9"/>
+        <source>Wallet is &lt;b&gt;not encrypted&lt;/b&gt;</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+8"/>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</source>
         <translation>錢包&lt;b&gt;已加密&lt;/b&gt;並且&lt;b&gt;解鎖中&lt;/b&gt;</translation>
     </message>
     <message>
-        <location line="+10"/>
+        <location line="+8"/>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>錢包&lt;b&gt;已加密&lt;/b&gt;並且&lt;b&gt;上鎖中&lt;/b&gt;</translation>
     </message>
     <message>
-        <location line="+25"/>
+        <location line="+24"/>
         <source>Backup Wallet</source>
         <translation type="unfinished"/>
     </message>
@@ -693,7 +638,7 @@ Address: %4
         <translation type="unfinished"/>
     </message>
     <message numerus="yes">
-        <location line="+76"/>
+        <location line="+91"/>
         <source>%n second(s)</source>
         <translation type="unfinished"><numerusform></numerusform></translation>
     </message>
@@ -703,30 +648,88 @@ Address: %4
         <translation type="unfinished"><numerusform></numerusform></translation>
     </message>
     <message numerus="yes">
-        <location line="+4"/>
+        <location line="-429"/>
+        <location line="+433"/>
         <source>%n hour(s)</source>
         <translation><numerusform>%n 個小時</numerusform></translation>
     </message>
+    <message>
+        <location line="-456"/>
+        <source>Processed %1 blocks of transaction history.</source>
+        <translation type="unfinished"/>
+    </message>
     <message numerus="yes">
-        <location line="+4"/>
+        <location line="+27"/>
+        <location line="+433"/>
         <source>%n day(s)</source>
         <translation><numerusform>%n 天</numerusform></translation>
     </message>
+    <message numerus="yes">
+        <location line="-429"/>
+        <location line="+6"/>
+        <source>%n week(s)</source>
+        <translation type="unfinished"><numerusform></numerusform></translation>
+    </message>
     <message>
-        <location line="+18"/>
+        <location line="+0"/>
+        <source>%1 and %2</source>
+        <translation type="unfinished"/>
+    </message>
+    <message numerus="yes">
+        <location line="+0"/>
+        <source>%n year(s)</source>
+        <translation type="unfinished"><numerusform></numerusform></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>%1 behind</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+15"/>
+        <source>Last received block was generated %1 ago.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Transactions after this will not yet be visible.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+23"/>
+        <source>Error</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Warning</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Information</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+69"/>
+        <source>This transaction is over the size limit. You can still send it for a fee of %1, which goes to the nodes that process your transaction and helps to support the network. Do you want to pay the fee?</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+324"/>
         <source>Not staking</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../bitcoin.cpp" line="+109"/>
-        <source>A fatal error occurred. rpicoin can no longer continue safely and will quit.</source>
+        <location filename="../bitcoin.cpp" line="+104"/>
+        <source>A fatal error occurred. Rpicoin can no longer continue safely and will quit.</source>
         <translation type="unfinished"/>
     </message>
 </context>
 <context>
     <name>ClientModel</name>
     <message>
-        <location filename="../clientmodel.cpp" line="+90"/>
+        <location filename="../clientmodel.cpp" line="+119"/>
         <source>Network Alert</source>
         <translation>網路警報</translation>
     </message>
@@ -754,11 +757,6 @@ Address: %4
         <translation>金額:</translation>
     </message>
     <message>
-        <location line="+32"/>
-        <source>Priority:</source>
-        <translation>優先度:</translation>
-    </message>
-    <message>
         <location line="+48"/>
         <source>Fee:</source>
         <translation>手續費:</translation>
@@ -769,7 +767,7 @@ Address: %4
         <translation>低輸出:</translation>
     </message>
     <message>
-        <location filename="../coincontroldialog.cpp" line="+551"/>
+        <location filename="../coincontroldialog.cpp" line="+493"/>
         <source>no</source>
         <translation>否</translation>
     </message>
@@ -834,7 +832,7 @@ Address: %4
         <translation>優先度</translation>
     </message>
     <message>
-        <location filename="../coincontroldialog.cpp" line="-515"/>
+        <location filename="../coincontroldialog.cpp" line="-456"/>
         <source>Copy address</source>
         <translation>複製位址</translation>
     </message>
@@ -876,11 +874,6 @@ Address: %4
     </message>
     <message>
         <location line="+1"/>
-        <source>Copy priority</source>
-        <translation>複製優先度</translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Copy low output</source>
         <translation>複製低輸出</translation>
     </message>
@@ -890,42 +883,7 @@ Address: %4
         <translation>複製找零金額</translation>
     </message>
     <message>
-        <location line="+317"/>
-        <source>RPIest</source>
-        <translation>最高</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>RPI</source>
-        <translation>高</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>medium-RPI</source>
-        <translation>中高</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>medium</source>
-        <translation>中等</translation>
-    </message>
-    <message>
-        <location line="+4"/>
-        <source>low-medium</source>
-        <translation>中低</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>low</source>
-        <translation>低</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>lowest</source>
-        <translation>最低</translation>
-    </message>
-    <message>
-        <location line="+155"/>
+        <location line="+423"/>
         <source>DUST</source>
         <translation type="unfinished"/>
     </message>
@@ -935,21 +893,12 @@ Address: %4
         <translation>是</translation>
     </message>
     <message>
-        <location line="+10"/>
+        <location line="+9"/>
         <source>This label turns red, if the transaction size is bigger than 10000 bytes.
 
  This means a fee of at least %1 per kb is required.
 
  Can vary +/- 1 Byte per input.</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Transactions with RPIer priority get more likely into a block.
-
-This label turns red, if the priority is smaller than &quot;medium&quot;.
-
- This means a fee of at least %1 per kb is required.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -969,8 +918,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+37"/>
-        <location line="+66"/>
+        <location line="+35"/>
+        <location line="+58"/>
         <source>(no label)</source>
         <translation>(無標記)</translation>
     </message>
@@ -1013,7 +962,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../editaddressdialog.cpp" line="+20"/>
+        <location filename="../editaddressdialog.cpp" line="+21"/>
         <source>New receiving address</source>
         <translation>造新的收款位址</translation>
     </message>
@@ -1039,7 +988,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="-5"/>
-        <source>The entered address &quot;%1&quot; is not a valid rpicoin address.</source>
+        <source>The entered address &quot;%1&quot; is not a valid Rpicoin address.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1056,9 +1005,9 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
 <context>
     <name>GUIUtil::HelpMessageBox</name>
     <message>
-        <location filename="../guiutil.cpp" line="+420"/>
+        <location filename="../guiutil.cpp" line="+426"/>
         <location line="+12"/>
-        <source>rpicoin-Qt</source>
+        <source>Rpicoin-Qt</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1131,22 +1080,12 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+31"/>
-        <source>Automatically start rpicoin after logging in to the system.</source>
+        <source>Automatically start Rpicoin after logging in to the system.</source>
         <translation type="unfinished"/>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Start rpicoin on system login</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+7"/>
-        <source>Detach block and address databases at shutdown. This means they can be moved to another data directory, but it slows down shutdown. The wallet is always detached.</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>&amp;Detach databases at shutdown</source>
+        <source>&amp;Start Rpicoin on system login</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1156,7 +1095,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+6"/>
-        <source>Automatically open the rpicoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <source>Automatically open the Rpicoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1165,17 +1104,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>用 &amp;UPnP 設定通訊埠對應</translation>
     </message>
     <message>
-        <location line="+7"/>
-        <source>Connect to the rpicoin network through a SOCKS proxy (e.g. when connecting through Tor).</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>&amp;Connect through SOCKS proxy:</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+9"/>
+        <location line="+19"/>
         <source>Proxy &amp;IP:</source>
         <translation>代理位址:</translation>
     </message>
@@ -1195,17 +1124,17 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>代理伺服器的通訊埠(像是 9050)</translation>
     </message>
     <message>
-        <location line="+7"/>
-        <source>SOCKS &amp;Version:</source>
-        <translation>SOCKS 版本:</translation>
+        <location line="-57"/>
+        <source>Connect to the Rpicoin network through a SOCKS5 proxy (e.g. when connecting through Tor).</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+13"/>
-        <source>SOCKS version of the proxy (e.g. 5)</source>
-        <translation>代理伺服器的 SOCKS 協定版本(像是 5)</translation>
+        <location line="+3"/>
+        <source>&amp;Connect through SOCKS5 proxy:</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+36"/>
+        <location line="+90"/>
         <source>&amp;Window</source>
         <translation>視窗</translation>
     </message>
@@ -1241,7 +1170,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+13"/>
-        <source>The user interface language can be set here. This setting will take effect after restarting rpicoin.</source>
+        <source>The user interface language can be set here. This setting will take effect after restarting Rpicoin.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1256,22 +1185,17 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+9"/>
-        <source>Whether to show rpicoin addresses in the transaction list or not.</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>&amp;Display addresses in transaction list</source>
-        <translation>在交易列表顯示位址</translation>
-    </message>
-    <message>
-        <location line="+7"/>
         <source>Whether to show coin control features or not.</source>
         <translation>是否要顯示錢幣控制功能。</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Display coin &amp;control features (experts only!)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Use black visual theme (requires restart)</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1290,12 +1214,12 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../optionsdialog.cpp" line="+55"/>
+        <location filename="../optionsdialog.cpp" line="+47"/>
         <source>default</source>
         <translation>預設值</translation>
     </message>
     <message>
-        <location line="+149"/>
+        <location line="+147"/>
         <location line="+9"/>
         <source>Warning</source>
         <translation type="unfinished"/>
@@ -1303,7 +1227,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location line="-9"/>
         <location line="+9"/>
-        <source>This setting will take effect after restarting rpicoin.</source>
+        <source>This setting will take effect after restarting Rpicoin.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1320,23 +1244,23 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>表單</translation>
     </message>
     <message>
-        <location line="+33"/>
-        <location line="+231"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the rpicoin network after a connection is established, but this process has not completed yet.</source>
+        <location line="+46"/>
+        <location line="+247"/>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Rpicoin network after a connection is established, but this process has not completed yet.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="-160"/>
+        <location line="-173"/>
         <source>Stake:</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+29"/>
+        <location line="+32"/>
         <source>Unconfirmed:</source>
         <translation>未確定金額:</translation>
     </message>
     <message>
-        <location line="-107"/>
+        <location line="-113"/>
         <source>Wallet</source>
         <translation>錢包</translation>
     </message>
@@ -1351,7 +1275,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>目前可用餘額</translation>
     </message>
     <message>
-        <location line="+71"/>
+        <location line="+80"/>
         <source>Immature:</source>
         <translation>未成熟金額:</translation>
     </message>
@@ -1361,7 +1285,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>還沒成熟的開採金額</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+23"/>
         <source>Total:</source>
         <translation>總金額:</translation>
     </message>
@@ -1371,25 +1295,33 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>目前全部餘額</translation>
     </message>
     <message>
-        <location line="+46"/>
+        <location line="+50"/>
         <source>&lt;b&gt;Recent transactions&lt;/b&gt;</source>
         <translation>&lt;b&gt;最近交易&lt;/b&gt;</translation>
     </message>
     <message>
-        <location line="-108"/>
+        <location line="-118"/>
         <source>Total of transactions that have yet to be confirmed, and do not yet count toward the current balance</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="-29"/>
+        <location line="-32"/>
         <source>Total of coins that was staked, and do not yet count toward the current balance</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../overviewpage.cpp" line="+113"/>
+        <location filename="../overviewpage.cpp" line="+116"/>
         <location line="+1"/>
         <source>out of sync</source>
         <translation>還沒同步</translation>
+    </message>
+</context>
+<context>
+    <name>PaymentServer</name>
+    <message>
+        <location filename="../paymentserver.cpp" line="+107"/>
+        <source>Cannot start Rpicoin: click-to-pay handler</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1466,13 +1398,11 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <location line="+36"/>
         <location line="+53"/>
         <location line="+23"/>
-        <location line="+23"/>
-        <location filename="../rpcconsole.cpp" line="+348"/>
         <source>N/A</source>
         <translation>未知</translation>
     </message>
     <message>
-        <location line="-217"/>
+        <location line="-194"/>
         <source>Client version</source>
         <translation>客戶端軟體版本</translation>
     </message>
@@ -1517,12 +1447,34 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>目前區塊數</translation>
     </message>
     <message>
-        <location line="+23"/>
-        <source>Estimated total blocks</source>
-        <translation>估計總區塊數</translation>
+        <location line="+197"/>
+        <source>&amp;Network Traffic</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+23"/>
+        <location line="+52"/>
+        <source>&amp;Clear</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+13"/>
+        <source>Totals</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+64"/>
+        <location filename="../rpcconsole.cpp" line="+352"/>
+        <source>In:</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+80"/>
+        <location filename="../rpcconsole.cpp" line="+1"/>
+        <source>Out:</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="-383"/>
         <source>Last block time</source>
         <translation>最近區塊時間</translation>
     </message>
@@ -1538,7 +1490,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+7"/>
-        <source>Show the rpicoin-Qt help message to get a list with possible rpicoin command-line options.</source>
+        <source>Show the Rpicoin-Qt help message to get a list with possible Rpicoin command-line options.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1552,28 +1504,28 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>主控台</translation>
     </message>
     <message>
-        <location line="-260"/>
+        <location line="-237"/>
         <source>Build date</source>
         <translation>建置日期</translation>
     </message>
     <message>
         <location line="-104"/>
-        <source>rpicoin - Debug window</source>
+        <source>Rpicoin - Debug window</source>
         <translation type="unfinished"/>
     </message>
     <message>
         <location line="+25"/>
-        <source>rpicoin Core</source>
+        <source>Rpicoin Core</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+279"/>
+        <location line="+256"/>
         <source>Debug log file</source>
         <translation>除錯紀錄檔</translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Open the rpicoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <source>Open the Rpicoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1582,8 +1534,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>清主控台</translation>
     </message>
     <message>
-        <location filename="../rpcconsole.cpp" line="-33"/>
-        <source>Welcome to the rpicoin RPC console.</source>
+        <location filename="../rpcconsole.cpp" line="-28"/>
+        <source>Welcome to the Rpicoin RPC console.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1596,12 +1548,47 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <source>Type &lt;b&gt;help&lt;/b&gt; for an overview of available commands.</source>
         <translation>請打 &lt;b&gt;help&lt;/b&gt; 來看可用指令的簡介。</translation>
     </message>
+    <message>
+        <location line="+134"/>
+        <source>%1 B</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>%1 KB</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>%1 MB</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>%1 GB</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>%1 m</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>%1 h</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>%1 h %2 m</source>
+        <translation type="unfinished"/>
+    </message>
 </context>
 <context>
     <name>SendCoinsDialog</name>
     <message>
         <location filename="../forms/sendcoinsdialog.ui" line="+14"/>
-        <location filename="../sendcoinsdialog.cpp" line="+182"/>
+        <location filename="../sendcoinsdialog.cpp" line="+179"/>
         <location line="+5"/>
         <location line="+5"/>
         <location line="+5"/>
@@ -1653,25 +1640,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>金額:</translation>
     </message>
     <message>
-        <location line="+22"/>
-        <location line="+86"/>
-        <location line="+86"/>
-        <location line="+32"/>
-        <source>0.00 BC</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="-191"/>
-        <source>Priority:</source>
-        <translation>優先度:</translation>
-    </message>
-    <message>
-        <location line="+19"/>
-        <source>medium</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+32"/>
+        <location line="+54"/>
         <source>Fee:</source>
         <translation>手續費:</translation>
     </message>
@@ -1711,7 +1680,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>增加收款人</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+16"/>
         <source>Remove all transaction fields</source>
         <translation type="unfinished"/>
     </message>
@@ -1721,17 +1690,12 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>全部清掉</translation>
     </message>
     <message>
-        <location line="+28"/>
+        <location line="+24"/>
         <source>Balance:</source>
         <translation>餘額:</translation>
     </message>
     <message>
-        <location line="+16"/>
-        <source>123.456 BC</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+31"/>
+        <location line="+47"/>
         <source>Confirm the send action</source>
         <translation>確認付款動作</translation>
     </message>
@@ -1741,8 +1705,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>付款</translation>
     </message>
     <message>
-        <location filename="../sendcoinsdialog.cpp" line="-173"/>
-        <source>Enter a rpicoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <location filename="../sendcoinsdialog.cpp" line="-171"/>
+        <source>Enter a Rpicoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1772,11 +1736,6 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+1"/>
-        <source>Copy priority</source>
-        <translation>複製優先度</translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Copy low output</source>
         <translation>複製低輸出</translation>
     </message>
@@ -1786,7 +1745,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>複製找零金額</translation>
     </message>
     <message>
-        <location line="+86"/>
+        <location line="+85"/>
         <source>&lt;b&gt;%1&lt;/b&gt; to %2 (%3)</source>
         <translation type="unfinished"/>
     </message>
@@ -1832,7 +1791,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+5"/>
-        <source>Error: Transaction creation failed.</source>
+        <source>Error: Transaction creation failed!</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1841,8 +1800,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+251"/>
-        <source>WARNING: Invalid rpicoin address</source>
+        <location line="+241"/>
+        <source>WARNING: Invalid Rpicoin address</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1874,23 +1833,23 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>付給:</translation>
     </message>
     <message>
-        <location line="+24"/>
-        <location filename="../sendcoinsentry.cpp" line="+25"/>
+        <location line="+34"/>
+        <source>The address to send the payment to (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+60"/>
+        <location filename="../sendcoinsentry.cpp" line="+26"/>
         <source>Enter a label for this address to add it to your address book</source>
         <translation>請輸入這個位址的標記來把它加進位址簿中</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="-78"/>
         <source>&amp;Label:</source>
         <translation>標記:</translation>
     </message>
     <message>
-        <location line="+18"/>
-        <source>The address to send the payment to  (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+10"/>
+        <location line="+28"/>
         <source>Choose address from address book</source>
         <translation type="unfinished"/>
     </message>
@@ -1916,7 +1875,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location filename="../sendcoinsentry.cpp" line="+1"/>
-        <source>Enter a rpicoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <source>Enter a Rpicoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -1977,7 +1936,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this rpicoin address</source>
+        <source>Sign the message to prove you own this Rpicoin address</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -2009,7 +1968,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+40"/>
-        <source>Verify the message to ensure it was signed with the specified rpicoin address</source>
+        <source>Verify the message to ensure it was signed with the specified Rpicoin address</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -2020,7 +1979,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location filename="../signverifymessagedialog.cpp" line="+27"/>
         <location line="+3"/>
-        <source>Enter a rpicoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <source>Enter a Rpicoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -2030,11 +1989,11 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+3"/>
-        <source>Enter rpicoin signature</source>
+        <source>Enter Rpicoin signature</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+82"/>
+        <location line="+85"/>
         <location line="+81"/>
         <source>The entered address is invalid.</source>
         <translation>輸入的位址無效。</translation>
@@ -2101,19 +2060,22 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
 </context>
 <context>
+    <name>TrafficGraphWidget</name>
+    <message>
+        <location filename="../trafficgraphwidget.cpp" line="+75"/>
+        <source>KB/s</source>
+        <translation type="unfinished"/>
+    </message>
+</context>
+<context>
     <name>TransactionDesc</name>
     <message>
-        <location filename="../transactiondesc.cpp" line="+19"/>
+        <location filename="../transactiondesc.cpp" line="+25"/>
         <source>Open until %1</source>
         <translation>要到 %1 才確定</translation>
     </message>
-    <message numerus="yes">
-        <location line="-2"/>
-        <source>Open for %n block(s)</source>
-        <translation type="unfinished"><numerusform></numerusform></translation>
-    </message>
     <message>
-        <location line="+8"/>
+        <location line="+6"/>
         <source>conflicted</source>
         <translation type="unfinished"/>
     </message>
@@ -2133,7 +2095,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>%1 次確認</translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="+17"/>
         <source>Status</source>
         <translation>狀態</translation>
     </message>
@@ -2159,19 +2121,19 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+5"/>
-        <location line="+17"/>
+        <location line="+13"/>
         <source>From</source>
         <translation>來源</translation>
     </message>
     <message>
         <location line="+1"/>
-        <location line="+22"/>
+        <location line="+19"/>
         <location line="+58"/>
         <source>To</source>
         <translation>目的</translation>
     </message>
     <message>
-        <location line="-77"/>
+        <location line="-74"/>
         <location line="+2"/>
         <source>own address</source>
         <translation>自己的位址</translation>
@@ -2182,7 +2144,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>標記</translation>
     </message>
     <message>
-        <location line="+37"/>
+        <location line="+34"/>
         <location line="+12"/>
         <location line="+45"/>
         <location line="+17"/>
@@ -2235,7 +2197,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+3"/>
-        <source>Generated coins must mature 5 blocks before they can be spent. When you generated this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to &quot;not accepted&quot; and it won&apos;t be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
+        <source>Generated coins must mature 510 blocks before they can be spent. When you generated this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to &quot;not accepted&quot; and it won&apos;t be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -2254,7 +2216,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>輸入</translation>
     </message>
     <message>
-        <location line="+23"/>
+        <location line="+21"/>
         <source>Amount</source>
         <translation>金額</translation>
     </message>
@@ -2269,12 +2231,17 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>否</translation>
     </message>
     <message>
-        <location line="-211"/>
+        <location line="-202"/>
         <source>, has not been successfully broadcast yet</source>
         <translation>，還沒成功公告出去</translation>
     </message>
+    <message numerus="yes">
+        <location line="-36"/>
+        <source>Open for %n more block(s)</source>
+        <translation type="unfinished"><numerusform></numerusform></translation>
+    </message>
     <message>
-        <location line="+35"/>
+        <location line="+67"/>
         <source>unknown</source>
         <translation>未知</translation>
     </message>
@@ -2295,7 +2262,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
 <context>
     <name>TransactionTableModel</name>
     <message>
-        <location filename="../transactiontablemodel.cpp" line="+226"/>
+        <location filename="../transactiontablemodel.cpp" line="+231"/>
         <source>Date</source>
         <translation>日期</translation>
     </message>
@@ -2315,7 +2282,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>金額</translation>
     </message>
     <message>
-        <location line="+60"/>
+        <location line="+52"/>
         <source>Open until %1</source>
         <translation>要到 %1 才確定</translation>
     </message>
@@ -2395,7 +2362,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>(不適用)</translation>
     </message>
     <message>
-        <location line="+190"/>
+        <location line="+194"/>
         <source>Transaction status. Hover over this field to show number of confirmations.</source>
         <translation>交易狀態。把游標停在欄位上會顯示確認次數。</translation>
     </message>
@@ -2423,13 +2390,13 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
 <context>
     <name>TransactionView</name>
     <message>
-        <location filename="../transactionview.cpp" line="+55"/>
-        <location line="+16"/>
+        <location filename="../transactionview.cpp" line="+54"/>
+        <location line="+17"/>
         <source>All</source>
         <translation>全部</translation>
     </message>
     <message>
-        <location line="-15"/>
+        <location line="-16"/>
         <source>Today</source>
         <translation>今天</translation>
     </message>
@@ -2459,7 +2426,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>指定範圍...</translation>
     </message>
     <message>
-        <location line="+11"/>
+        <location line="+12"/>
         <source>Received with</source>
         <translation>收款</translation>
     </message>
@@ -2524,7 +2491,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>顯示交易明細</translation>
     </message>
     <message>
-        <location line="+144"/>
+        <location line="+138"/>
         <source>Export Transaction Data</source>
         <translation type="unfinished"/>
     </message>
@@ -2592,7 +2559,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
 <context>
     <name>WalletModel</name>
     <message>
-        <location filename="../walletmodel.cpp" line="+206"/>
+        <location filename="../walletmodel.cpp" line="+212"/>
         <source>Sending...</source>
         <translation type="unfinished"/>
     </message>
@@ -2600,8 +2567,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
 <context>
     <name>bitcoin-core</name>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="+33"/>
-        <source>rpicoin version</source>
+        <location filename="../bitcoinstrings.cpp" line="+8"/>
+        <source>Rpicoin version</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -2625,13 +2592,13 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>取得指令說明</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+1"/>
         <source>Options:</source>
         <translation>選項:</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Specify configuration file (default: rpicoin.conf)</source>
+        <source>Specify configuration file (default: Rpicoin.conf)</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -2650,7 +2617,22 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>指定資料目錄</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+163"/>
+        <source>%s, you must set a rpcpassword in the configuration file:
+%s
+It is recommended you use the following random password:
+rpcuser=Rpicoinrpc
+rpcpassword=%s
+(you do not need to remember this password)
+The username and password MUST NOT be the same.
+If the file does not exist, create it with owner-readable-only file permissions.
+It is also recommended to set alertnotify so you are notified of problems;
+for example: alertnotify=echo %%s | mail -s &quot;Rpicoin Alert&quot; admin@foo.com
+</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="-161"/>
         <source>Set database cache size in megabytes (default: 25)</source>
         <translation>設定資料庫快取大小成多少百萬位元組(MB；預設值: 25)</translation>
     </message>
@@ -2660,8 +2642,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+6"/>
-        <source>Listen for connections on &lt;port&gt; (default: 23185 or testnet: 33185)</source>
+        <location line="+5"/>
+        <source>Listen for connections on &lt;port&gt; (default: 18000 or testnet: 18002)</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -2680,17 +2662,22 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>指定自己的公開位址</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+4"/>
         <source>Bind to given address. Use [host]:port notation for IPv6</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+2"/>
-        <source>Stake your coins to support network and gain reward (default: 1)</source>
+        <location line="+1"/>
+        <source>Query for peer addresses via DNS lookup, if low on addresses (default: 1 unless -connect)</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+3"/>
+        <source>Always query for peer addresses via DNS lookup (default: 0)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+4"/>
         <source>Threshold for disconnecting misbehaving peers (default: 100)</source>
         <translation>把異常節點斷線的臨界值(預設值: 100)</translation>
     </message>
@@ -2700,58 +2687,23 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>拒絕跟異常節點連線的秒數(預設值: 86400)</translation>
     </message>
     <message>
-        <location line="-44"/>
+        <location line="+153"/>
         <source>An error occurred while setting up the RPC port %u for listening on IPv4: %s</source>
         <translation>設定在 IPv4 網路上以通訊埠 %u 聽取 RPC 連線時發生錯誤: %s</translation>
     </message>
     <message>
-        <location line="+51"/>
-        <source>Detach block and address databases. Increases shutdown time (default: 0)</source>
+        <location line="-126"/>
+        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 18001 or testnet: 18003)</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+109"/>
-        <source>Error: The transaction was rejected.  This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="-5"/>
-        <source>Error: This transaction requires a transaction fee of at least %s because of its amount, complexity, or use of recently received funds  </source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="-87"/>
-        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 23186 or testnet: 33186)</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="-11"/>
+        <location line="-16"/>
         <source>Accept command line and JSON-RPC commands</source>
         <translation>接受指令列和 JSON-RPC 指令
 </translation>
     </message>
     <message>
-        <location line="+101"/>
-        <source>Error: Transaction creation failed  </source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="-5"/>
-        <source>Error: Wallet locked, unable to create transaction  </source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="-8"/>
-        <source>Importing blockchain data file.</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
         <location line="+1"/>
-        <source>Importing bootstrap blockchain data file.</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="-88"/>
         <source>Run in the background as a daemon and accept commands</source>
         <translation>用護靈模式在背後執行並接受指令</translation>
     </message>
@@ -2761,57 +2713,47 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>使用測試網路</translation>
     </message>
     <message>
-        <location line="-24"/>
+        <location line="-23"/>
         <source>Accept connections from outside (default: 1 if no -proxy or -connect)</source>
         <translation>是否接受外來連線(預設值: 當沒有 -proxy 或 -connect 時為 1)</translation>
     </message>
     <message>
-        <location line="-38"/>
+        <location line="+160"/>
         <source>An error occurred while setting up the RPC port %u for listening on IPv6, falling back to IPv4: %s</source>
         <translation>設定在 IPv6 網路上以通訊埠 %u 聽候 RPC 連線失敗，退而改用 IPv4 網路: %s</translation>
     </message>
     <message>
-        <location line="+117"/>
-        <source>Error initializing database environment %s! To recover, BACKUP THAT DIRECTORY, then remove everything from it except for wallet.dat.</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="-20"/>
-        <source>Set maximum size of RPI-priority/low-fee transactions in bytes (default: 27000)</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+11"/>
-        <source>Warning: -paytxfee is set very RPI! This is the transaction fee you will pay if you send a transaction.</source>
+        <location line="-84"/>
+        <source>Warning: -paytxfee is set very high! This is the transaction fee you will pay if you send a transaction.</source>
         <translation>警告: -paytxfee 設定了很高的金額！這可是你交易付款所要付的手續費。</translation>
     </message>
     <message>
-        <location line="+61"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong rpicoin will not work properly.</source>
+        <location line="+46"/>
+        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong Rpicoin will not work properly.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="-31"/>
+        <location line="-19"/>
         <source>Warning: error reading wallet.dat! All keys read correctly, but transaction data or address book entries might be missing or incorrect.</source>
         <translation>警告: 讀取錢包檔 wallet.dat 時發生錯誤！所有的密鑰都正確讀取了，但是交易資料或位址簿資料可能會缺少或不正確。</translation>
     </message>
     <message>
-        <location line="-18"/>
+        <location line="-16"/>
         <source>Warning: wallet.dat corrupt, data salvaged! Original wallet.dat saved as wallet.{timestamp}.bak in %s; if your balance or transactions are incorrect you should restore from a backup.</source>
         <translation>警告: 錢包檔 wallet.dat 壞掉，但資料被拯救回來了！原來的 wallet.dat 會改儲存在 %s, 檔名是 wallet.{timestamp}.bak. 如果餘額或交易資料有誤，你應該要用備份資料復原回來。</translation>
     </message>
     <message>
-        <location line="-30"/>
+        <location line="-31"/>
         <source>Attempt to recover private keys from a corrupt wallet.dat</source>
         <translation>嘗試從壞掉的錢包檔 wallet.dat 復原密鑰</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+5"/>
         <source>Block creation options:</source>
         <translation>區塊製造選項:</translation>
     </message>
     <message>
-        <location line="-62"/>
+        <location line="-66"/>
         <source>Connect only to the specified node(s)</source>
         <translation>只連線到指定節點(可多個)</translation>
     </message>
@@ -2821,22 +2763,12 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>找出自己的網際網路位址(預設值: 當有聽候連線且沒有 -externalip 時為 1)</translation>
     </message>
     <message>
-        <location line="+94"/>
+        <location line="+97"/>
         <source>Failed to listen on any port. Use -listen=0 if you want this.</source>
         <translation>在任意的通訊埠聽候失敗。如果你希望這樣的話，可以設定 -listen=0.</translation>
     </message>
     <message>
-        <location line="-90"/>
-        <source>Find peers using DNS lookup (default: 1)</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+5"/>
-        <source>Sync checkpoints policy (default: strict)</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+83"/>
+        <location line="-2"/>
         <source>Invalid -tor address: &apos;%s&apos;</source>
         <translation type="unfinished"/>
     </message>
@@ -2846,7 +2778,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="-82"/>
+        <location line="-85"/>
         <source>Maximum per-connection receive buffer, &lt;n&gt;*1000 bytes (default: 5000)</source>
         <translation>每個連線的接收緩衝區大小上限為 &lt;n&gt;*1000 個位元組(預設值: 5000)</translation>
     </message>
@@ -2861,42 +2793,22 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>只和 &lt;net&gt; 網路上的節點連線(IPv4, IPv6, 或 Tor)</translation>
     </message>
     <message>
-        <location line="+28"/>
-        <source>Output extra debugging information. Implies all other -debug* options</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Output extra network debugging information</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+30"/>
         <source>Prepend debug output with timestamp</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+35"/>
+        <location line="+36"/>
         <source>SSL options: (see the Bitcoin Wiki for SSL setup instructions)</source>
         <translation>SSL 選項: (SSL 設定程序請見 Bitcoin Wiki)</translation>
     </message>
     <message>
-        <location line="-74"/>
-        <source>Select the version of socks proxy to use (4-5, default: 5)</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+41"/>
+        <location line="-34"/>
         <source>Send trace/debug info to console instead of debug.log file</source>
         <translation>在終端機顯示追蹤或除錯資訊，而不是寫到檔案 debug.log 中</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Send trace/debug info to debugger</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+28"/>
+        <location line="+33"/>
         <source>Set maximum block size in bytes (default: 250000)</source>
         <translation type="unfinished"/>
     </message>
@@ -2906,23 +2818,17 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>設定區塊大小下限成多少位元組(預設值: 0)</translation>
     </message>
     <message>
-        <location line="-29"/>
+        <location line="-33"/>
         <source>Shrink debug.log file on client startup (default: 1 when no -debug)</source>
         <translation>客戶端軟體啓動時把 debug.log 檔縮小(預設值: 當沒有 -debug 時為 1)</translation>
     </message>
     <message>
-        <location line="-42"/>
+        <location line="-41"/>
         <source>Specify connection timeout in milliseconds (default: 5000)</source>
         <translation>指定連線在幾毫秒後逾時(預設值: 5000)</translation>
     </message>
     <message>
-        <location line="+109"/>
-        <source>Unable to sign checkpoint, wrong checkpointkey?
-</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="-80"/>
+        <location line="+28"/>
         <source>Use UPnP to map the listening port (default: 0)</source>
         <translation>是否要使用通用即插即用(UPnP)協定，來設定聽候連線的通訊埠的對應(預設值: 0)</translation>
     </message>
@@ -2937,72 +2843,97 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+42"/>
+        <location line="+45"/>
         <source>Username for JSON-RPC connections</source>
         <translation>JSON-RPC 連線使用者名稱</translation>
     </message>
     <message>
-        <location line="+47"/>
+        <location line="+50"/>
         <source>Verifying database integrity...</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+57"/>
-        <source>WARNING: syncronized checkpoint violation detected, but skipped!</source>
+        <location line="+43"/>
+        <source>Error: Wallet locked, unable to create transaction!</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Error: This transaction requires a transaction fee of at least %s because of its amount, complexity, or use of recently received funds!</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Error: Transaction creation failed!</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Error: The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="-15"/>
+        <source>Warning</source>
         <translation type="unfinished"/>
     </message>
     <message>
         <location line="+1"/>
-        <source>Warning: Disk space is low!</source>
+        <source>Information</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="-2"/>
+        <location line="-7"/>
         <source>Warning: This version is obsolete, upgrade required!</source>
         <translation>警告: 這個版本已經被淘汰了，必須要升級！</translation>
     </message>
     <message>
-        <location line="-48"/>
+        <location line="-23"/>
         <source>wallet.dat corrupt, salvage failed</source>
         <translation>錢包檔 weallet.dat 壞掉了，拯救失敗</translation>
     </message>
     <message>
-        <location line="-54"/>
+        <location line="-55"/>
         <source>Password for JSON-RPC connections</source>
         <translation>JSON-RPC 連線密碼</translation>
     </message>
     <message>
-        <location line="-84"/>
-        <source>%s, you must set a rpcpassword in the configuration file:
- %s
-It is recommended you use the following random password:
-rpcuser=rpicoinrpc
-rpcpassword=%s
-(you do not need to remember this password)
-The username and password MUST NOT be the same.
-If the file does not exist, create it with owner-readable-only file permissions.
-It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s &quot;rpicoin Alert&quot; admin@foo.com
-</source>
+        <location line="-47"/>
+        <source>Connect through SOCKS5 proxy</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+51"/>
-        <source>Find peers using internet relay chat (default: 0)</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+5"/>
+        <location line="+17"/>
         <source>Sync time with other nodes. Disable if time on your system is precise e.g. syncing with NTP (default: 1)</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+15"/>
+        <location line="+12"/>
         <source>When creating transactions, ignore inputs with value less than this (default: 0.01)</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+16"/>
+        <location line="+6"/>
+        <source>Output debugging information (default: 0, supplying &lt;category&gt; is optional)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>If &lt;category&gt; is not supplied, output all debugging information.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>&lt;category&gt; can be:</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Enter regression test mode, which uses a special chain in which blocks can be solved instantly. This is intended for regression testing tools and app development.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+8"/>
         <source>Allow JSON-RPC connections from specified IP address</source>
         <translation>允許指定的來源 IP 位址進行 JSON-RPC 連線</translation>
     </message>
@@ -3010,6 +2941,16 @@ for example: alertnotify=echo %%s | mail -s &quot;rpicoin Alert&quot; admin@foo.
         <location line="+1"/>
         <source>Send commands to node running on &lt;ip&gt; (default: 127.0.0.1)</source>
         <translation>傳送指令給在 &lt;ip&gt; 的節點(預設值: 127.0.0.1)</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Wait for RPC server to start</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Set the number of threads to service RPC calls (default: 4)</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location line="+1"/>
@@ -3028,11 +2969,6 @@ for example: alertnotify=echo %%s | mail -s &quot;rpicoin Alert&quot; admin@foo.
     </message>
     <message>
         <location line="+1"/>
-        <source>Enforce transaction scripts to use canonical PUSH operators (default: 1)</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+2"/>
         <source>Execute command when a relevant alert is received (%s in cmd is replaced by message)</source>
         <translation type="unfinished"/>
     </message>
@@ -3052,22 +2988,22 @@ for example: alertnotify=echo %%s | mail -s &quot;rpicoin Alert&quot; admin@foo.
         <translation>重新掃描區塊鏈，來尋找錢包可能漏掉的交易。</translation>
     </message>
     <message>
-        <location line="+2"/>
-        <source>How many blocks to check at startup (default: 2500, 0 = all)</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+3"/>
         <source>How thorough the block verification is (0-6, default: 1)</source>
         <translation type="unfinished"/>
     </message>
     <message>
         <location line="+1"/>
-        <source>Imports blocks from external blk000?.dat file</source>
+        <source>Imports blocks from external wsp000?.dat file</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+1"/>
+        <source>Keep at most &lt;n&gt; MiB of unconnectable blocks in memory (default: %u)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+5"/>
         <source>Use OpenSSL (https) for JSON-RPC connections</source>
         <translation>在 JSON-RPC 連線使用 OpenSSL (https)</translation>
     </message>
@@ -3082,78 +3018,73 @@ for example: alertnotify=echo %%s | mail -s &quot;rpicoin Alert&quot; admin@foo.
         <translation>伺服器私鑰檔(預設值: server.pem)</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Acceptable ciphers (default: TLSv1+RPI:!SSLv2:!aNULL:!eNULL:!AH:!3DES:@STRENGTH)</source>
+        <location line="+5"/>
+        <source>Error: Unsupported argument -socks found. Setting SOCKS version isn&apos;t possible anymore, only SOCKS5 proxies are supported.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+53"/>
+        <location line="+8"/>
+        <source>Initialization sanity check failed. Rpicoin is shutting down.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+20"/>
+        <source>Error loading block database</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+29"/>
         <source>Error: Wallet unlocked for staking only, unable to create transaction.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+18"/>
-        <source>WARNING: Invalid checkpoint found! Displayed transactions may not be correct! You may need to upgrade, or notify developers.</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="-158"/>
-        <source>This help message</source>
-        <translation>這些說明訊息</translation>
-    </message>
-    <message>
-        <location line="+95"/>
-        <source>Wallet %s resides outside data directory %s.</source>
+        <location line="-14"/>
+        <source>Error: Disk space is low!</source>
         <translation type="unfinished"/>
     </message>
     <message>
         <location line="+1"/>
-        <source>Cannot obtain a lock on data directory %s.  rpicoin is probably already running.</source>
+        <source>This is a pre-release test build - use at your own risk - do not use for mining or merchant applications</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="-98"/>
-        <source>rpicoin</source>
+        <location line="-135"/>
+        <source>This help message</source>
+        <translation>這些說明訊息</translation>
+    </message>
+    <message>
+        <location line="+100"/>
+        <source>Wallet %s resides outside data directory %s.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+140"/>
+        <location line="+46"/>
         <source>Unable to bind to %s on this computer (bind returned error %d, %s)</source>
         <translation>沒辦法和這台電腦上的 %s 繫結(回傳錯誤 %d, %s)</translation>
     </message>
     <message>
-        <location line="-130"/>
-        <source>Connect through socks proxy</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+3"/>
+        <location line="-136"/>
         <source>Allow DNS lookups for -addnode, -seednode and -connect</source>
         <translation>允許對 -addnode, -seednode, -connect 的參數使用域名查詢 </translation>
     </message>
     <message>
-        <location line="+122"/>
+        <location line="+121"/>
         <source>Loading addresses...</source>
         <translation>正在載入位址資料...</translation>
     </message>
     <message>
-        <location line="-15"/>
-        <source>Error loading blkindex.dat</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+2"/>
+        <location line="-10"/>
         <source>Error loading wallet.dat: Wallet corrupted</source>
         <translation>載入檔案 wallet.dat 時發生錯誤: 錢包損毀了</translation>
     </message>
     <message>
         <location line="+4"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of rpicoin</source>
+        <source>Error loading wallet.dat: Wallet requires newer version of Rpicoin</source>
         <translation type="unfinished"/>
     </message>
     <message>
         <location line="+1"/>
-        <source>Wallet needed to be rewritten: restart rpicoin to complete</source>
+        <source>Wallet needed to be rewritten: restart Rpicoin to complete</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -3162,7 +3093,7 @@ for example: alertnotify=echo %%s | mail -s &quot;rpicoin Alert&quot; admin@foo.
         <translation>載入錢包檔 wallet.dat 時發生錯誤</translation>
     </message>
     <message>
-        <location line="-16"/>
+        <location line="-15"/>
         <source>Invalid -proxy address: &apos;%s&apos;</source>
         <translation>無效的 -proxy 位址: &apos;%s&apos;</translation>
     </message>
@@ -3172,12 +3103,7 @@ for example: alertnotify=echo %%s | mail -s &quot;rpicoin Alert&quot; admin@foo.
         <translation>在 -onlynet 指定了不明的網路別: &apos;%s&apos;</translation>
     </message>
     <message>
-        <location line="-1"/>
-        <source>Unknown -socks proxy version requested: %i</source>
-        <translation>在 -socks 指定了不明的代理協定版本: %i</translation>
-    </message>
-    <message>
-        <location line="+4"/>
+        <location line="+3"/>
         <source>Cannot resolve -bind address: &apos;%s&apos;</source>
         <translation>沒辦法解析 -bind 位址: &apos;%s&apos;</translation>
     </message>
@@ -3187,17 +3113,12 @@ for example: alertnotify=echo %%s | mail -s &quot;rpicoin Alert&quot; admin@foo.
         <translation>沒辦法解析 -externalip 位址: &apos;%s&apos;</translation>
     </message>
     <message>
-        <location line="-24"/>
+        <location line="-22"/>
         <source>Invalid amount for -paytxfee=&lt;amount&gt;: &apos;%s&apos;</source>
         <translation>設定 -paytxfee=&lt;金額&gt; 的金額無效: &apos;%s&apos;</translation>
     </message>
     <message>
-        <location line="+44"/>
-        <source>Error: could not start node</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+11"/>
+        <location line="+59"/>
         <source>Sending...</source>
         <translation type="unfinished"/>
     </message>
@@ -3212,32 +3133,57 @@ for example: alertnotify=echo %%s | mail -s &quot;rpicoin Alert&quot; admin@foo.
         <translation>累積金額不足</translation>
     </message>
     <message>
-        <location line="-34"/>
+        <location line="-41"/>
         <source>Loading block index...</source>
         <translation>正在載入區塊索引...</translation>
     </message>
     <message>
-        <location line="-103"/>
+        <location line="-105"/>
         <source>Add a node to connect to and attempt to keep the connection open</source>
         <translation>增加一個要連線的節線，並試著保持對它的連線暢通</translation>
     </message>
     <message>
-        <location line="+122"/>
-        <source>Unable to bind to %s on this computer. rpicoin is probably already running.</source>
+        <location line="+131"/>
+        <source>Unable to bind to %s on this computer. Rpicoin is probably already running.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="-97"/>
+        <location line="-108"/>
         <source>Fee per KB to add to transactions you send</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+55"/>
+        <location line="+40"/>
+        <source>How many blocks to check at startup (default: 500, 0 = all)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>Acceptable ciphers (default: TLSv1.2+HIGH:TLSv1+HIGH:!SSLv2:!aNULL:!eNULL:!3DES:@STRENGTH)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Warning: Deprecated argument -debugnet ignored, use -debug=net</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+8"/>
         <source>Invalid amount for -mininput=&lt;amount&gt;: &apos;%s&apos;</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+25"/>
+        <location line="+3"/>
+        <source>Cannot obtain a lock on data directory %s. Rpicoin is probably already running.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Error initializing wallet database environment %s!</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+15"/>
         <source>Loading wallet...</source>
         <translation>正在載入錢包資料...</translation>
     </message>
@@ -3245,11 +3191,6 @@ for example: alertnotify=echo %%s | mail -s &quot;rpicoin Alert&quot; admin@foo.
         <location line="+8"/>
         <source>Cannot downgrade wallet</source>
         <translation>沒辦法把錢包格式降級</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Cannot initialize keypool</source>
-        <translation type="unfinished"/>
     </message>
     <message>
         <location line="+1"/>
@@ -3262,22 +3203,22 @@ for example: alertnotify=echo %%s | mail -s &quot;rpicoin Alert&quot; admin@foo.
         <translation>正在重新掃描...</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+2"/>
         <source>Done loading</source>
         <translation>載入完成</translation>
     </message>
     <message>
-        <location line="-167"/>
+        <location line="+33"/>
         <source>To use the %s option</source>
         <translation>為了要使用 %s 選項</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="-27"/>
         <source>Error</source>
         <translation>錯誤</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+22"/>
         <source>You must set rpcpassword=&lt;password&gt; in the configuration file:
 %s
 If the file does not exist, create it with owner-readable-only file permissions.</source>

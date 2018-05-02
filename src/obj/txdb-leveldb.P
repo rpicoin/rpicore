@@ -1,40 +1,30 @@
 obj/txdb-leveldb.o: txdb-leveldb.cpp \
- /root/rpicoin/src/leveldb/include/leveldb/env.h \
- /root/rpicoin/src/leveldb/include/leveldb/status.h \
- /root/rpicoin/src/leveldb/include/leveldb/slice.h \
- /root/rpicoin/src/leveldb/include/leveldb/cache.h \
- /root/rpicoin/src/leveldb/include/leveldb/filter_policy.h \
- /root/rpicoin/src/leveldb/helpers/memenv/memenv.h kernel.h main.h \
- bignum.h serialize.h allocators.h version.h clientversion.h uint256.h \
- sync.h threadsafety.h net.h mruset.h netbase.h compat.h protocol.h \
- addrman.h util.h script.h keystore.h crypter.h key.h scrypt.h \
- zerocoin/Zerocoin.h zerocoin/../serialize.h zerocoin/../bignum.h \
- zerocoin/../util.h zerocoin/Params.h zerocoin/Coin.h \
- zerocoin/Commitment.h zerocoin/Accumulator.h \
- zerocoin/AccumulatorProofOfKnowledge.h zerocoin/CoinSpend.h \
- zerocoin/SerialNumberSignatureOfKnowledge.h zerocoin/SpendMetaData.h \
- zerocoin/../uint256.h zerocoin/ParamGeneration.h checkpoints.h txdb.h \
- txdb-leveldb.h /root/rpicoin/src/leveldb/include/leveldb/db.h \
- /root/rpicoin/src/leveldb/include/leveldb/iterator.h \
- /root/rpicoin/src/leveldb/include/leveldb/options.h \
- /root/rpicoin/src/leveldb/include/leveldb/write_batch.h
+ /root/WSP/core/src/leveldb/include/leveldb/env.h \
+ /root/WSP/core/src/leveldb/include/leveldb/status.h \
+ /root/WSP/core/src/leveldb/include/leveldb/slice.h \
+ /root/WSP/core/src/leveldb/include/leveldb/cache.h \
+ /root/WSP/core/src/leveldb/include/leveldb/filter_policy.h \
+ /root/WSP/core/src/leveldb/helpers/memenv/memenv.h kernel.h main.h \
+ core.h uint256.h serialize.h allocators.h version.h clientversion.h \
+ util.h tinyformat.h script.h keystore.h key.h hash.h sync.h \
+ threadsafety.h bignum.h txmempool.h net.h mruset.h netbase.h compat.h \
+ protocol.h chainparams.h addrman.h timedata.h scrypt.h txdb.h \
+ txdb-leveldb.h /root/WSP/core/src/leveldb/include/leveldb/db.h \
+ /root/WSP/core/src/leveldb/include/leveldb/iterator.h \
+ /root/WSP/core/src/leveldb/include/leveldb/options.h \
+ /root/WSP/core/src/leveldb/include/leveldb/write_batch.h
 txdb-leveldb.cpp :
- /root/rpicoin/src/leveldb/include/leveldb/env.h :
- /root/rpicoin/src/leveldb/include/leveldb/status.h :
- /root/rpicoin/src/leveldb/include/leveldb/slice.h :
- /root/rpicoin/src/leveldb/include/leveldb/cache.h :
- /root/rpicoin/src/leveldb/include/leveldb/filter_policy.h :
- /root/rpicoin/src/leveldb/helpers/memenv/memenv.h kernel.h main.h :
- bignum.h serialize.h allocators.h version.h clientversion.h uint256.h :
- sync.h threadsafety.h net.h mruset.h netbase.h compat.h protocol.h :
- addrman.h util.h script.h keystore.h crypter.h key.h scrypt.h :
- zerocoin/Zerocoin.h zerocoin/../serialize.h zerocoin/../bignum.h :
- zerocoin/../util.h zerocoin/Params.h zerocoin/Coin.h :
- zerocoin/Commitment.h zerocoin/Accumulator.h :
- zerocoin/AccumulatorProofOfKnowledge.h zerocoin/CoinSpend.h :
- zerocoin/SerialNumberSignatureOfKnowledge.h zerocoin/SpendMetaData.h :
- zerocoin/../uint256.h zerocoin/ParamGeneration.h checkpoints.h txdb.h :
- txdb-leveldb.h /root/rpicoin/src/leveldb/include/leveldb/db.h :
- /root/rpicoin/src/leveldb/include/leveldb/iterator.h :
- /root/rpicoin/src/leveldb/include/leveldb/options.h :
- /root/rpicoin/src/leveldb/include/leveldb/write_batch.h :
+ /root/WSP/core/src/leveldb/include/leveldb/env.h :
+ /root/WSP/core/src/leveldb/include/leveldb/status.h :
+ /root/WSP/core/src/leveldb/include/leveldb/slice.h :
+ /root/WSP/core/src/leveldb/include/leveldb/cache.h :
+ /root/WSP/core/src/leveldb/include/leveldb/filter_policy.h :
+ /root/WSP/core/src/leveldb/helpers/memenv/memenv.h kernel.h main.h :
+ core.h uint256.h serialize.h allocators.h version.h clientversion.h :
+ util.h tinyformat.h script.h keystore.h key.h hash.h sync.h :
+ threadsafety.h bignum.h txmempool.h net.h mruset.h netbase.h compat.h :
+ protocol.h chainparams.h addrman.h timedata.h scrypt.h txdb.h :
+ txdb-leveldb.h /root/WSP/core/src/leveldb/include/leveldb/db.h :
+ /root/WSP/core/src/leveldb/include/leveldb/iterator.h :
+ /root/WSP/core/src/leveldb/include/leveldb/options.h :
+ /root/WSP/core/src/leveldb/include/leveldb/write_batch.h :

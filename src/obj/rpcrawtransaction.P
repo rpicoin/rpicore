@@ -1,40 +1,30 @@
-obj/rpcrawtransaction.o: rpcrawtransaction.cpp base58.h bignum.h \
- serialize.h allocators.h version.h clientversion.h uint256.h key.h \
- util.h netbase.h compat.h script.h keystore.h crypter.h sync.h \
- threadsafety.h bitcoinrpc.h json/json_spirit_reader_template.h \
- json/json_spirit_value.h json/json_spirit_error_position.h \
- json/json_spirit_writer_template.h json/json_spirit_utils.h \
- checkpoints.h net.h mruset.h protocol.h addrman.h txdb.h txdb-leveldb.h \
- main.h scrypt.h zerocoin/Zerocoin.h zerocoin/../serialize.h \
- zerocoin/../bignum.h zerocoin/../util.h zerocoin/Params.h \
- zerocoin/Coin.h zerocoin/Commitment.h zerocoin/Accumulator.h \
- zerocoin/AccumulatorProofOfKnowledge.h zerocoin/CoinSpend.h \
- zerocoin/SerialNumberSignatureOfKnowledge.h zerocoin/SpendMetaData.h \
- zerocoin/../uint256.h zerocoin/ParamGeneration.h \
- /root/rpicoin/src/leveldb/include/leveldb/db.h \
- /root/rpicoin/src/leveldb/include/leveldb/iterator.h \
- /root/rpicoin/src/leveldb/include/leveldb/slice.h \
- /root/rpicoin/src/leveldb/include/leveldb/status.h \
- /root/rpicoin/src/leveldb/include/leveldb/options.h \
- /root/rpicoin/src/leveldb/include/leveldb/write_batch.h init.h wallet.h \
- ui_interface.h walletdb.h db.h
-rpcrawtransaction.cpp base58.h bignum.h :
- serialize.h allocators.h version.h clientversion.h uint256.h key.h :
- util.h netbase.h compat.h script.h keystore.h crypter.h sync.h :
- threadsafety.h bitcoinrpc.h json/json_spirit_reader_template.h :
- json/json_spirit_value.h json/json_spirit_error_position.h :
- json/json_spirit_writer_template.h json/json_spirit_utils.h :
- checkpoints.h net.h mruset.h protocol.h addrman.h txdb.h txdb-leveldb.h :
- main.h scrypt.h zerocoin/Zerocoin.h zerocoin/../serialize.h :
- zerocoin/../bignum.h zerocoin/../util.h zerocoin/Params.h :
- zerocoin/Coin.h zerocoin/Commitment.h zerocoin/Accumulator.h :
- zerocoin/AccumulatorProofOfKnowledge.h zerocoin/CoinSpend.h :
- zerocoin/SerialNumberSignatureOfKnowledge.h zerocoin/SpendMetaData.h :
- zerocoin/../uint256.h zerocoin/ParamGeneration.h :
- /root/rpicoin/src/leveldb/include/leveldb/db.h :
- /root/rpicoin/src/leveldb/include/leveldb/iterator.h :
- /root/rpicoin/src/leveldb/include/leveldb/slice.h :
- /root/rpicoin/src/leveldb/include/leveldb/status.h :
- /root/rpicoin/src/leveldb/include/leveldb/options.h :
- /root/rpicoin/src/leveldb/include/leveldb/write_batch.h init.h wallet.h :
- ui_interface.h walletdb.h db.h :
+obj/rpcrawtransaction.o: rpcrawtransaction.cpp base58.h chainparams.h \
+ bignum.h serialize.h allocators.h version.h clientversion.h uint256.h \
+ util.h tinyformat.h key.h hash.h script.h keystore.h sync.h \
+ threadsafety.h rpcserver.h rpcprotocol.h compat.h \
+ json/json_spirit_reader_template.h json/json_spirit_value.h \
+ json/json_spirit_error_position.h json/json_spirit_utils.h \
+ json/json_spirit_writer_template.h txdb.h txdb-leveldb.h main.h core.h \
+ txmempool.h net.h mruset.h netbase.h protocol.h addrman.h timedata.h \
+ scrypt.h /root/WSP/core/src/leveldb/include/leveldb/db.h \
+ /root/WSP/core/src/leveldb/include/leveldb/iterator.h \
+ /root/WSP/core/src/leveldb/include/leveldb/slice.h \
+ /root/WSP/core/src/leveldb/include/leveldb/status.h \
+ /root/WSP/core/src/leveldb/include/leveldb/options.h \
+ /root/WSP/core/src/leveldb/include/leveldb/write_batch.h init.h wallet.h \
+ walletdb.h db.h crypter.h ui_interface.h
+rpcrawtransaction.cpp base58.h chainparams.h :
+ bignum.h serialize.h allocators.h version.h clientversion.h uint256.h :
+ util.h tinyformat.h key.h hash.h script.h keystore.h sync.h :
+ threadsafety.h rpcserver.h rpcprotocol.h compat.h :
+ json/json_spirit_reader_template.h json/json_spirit_value.h :
+ json/json_spirit_error_position.h json/json_spirit_utils.h :
+ json/json_spirit_writer_template.h txdb.h txdb-leveldb.h main.h core.h :
+ txmempool.h net.h mruset.h netbase.h protocol.h addrman.h timedata.h :
+ scrypt.h /root/WSP/core/src/leveldb/include/leveldb/db.h :
+ /root/WSP/core/src/leveldb/include/leveldb/iterator.h :
+ /root/WSP/core/src/leveldb/include/leveldb/slice.h :
+ /root/WSP/core/src/leveldb/include/leveldb/status.h :
+ /root/WSP/core/src/leveldb/include/leveldb/options.h :
+ /root/WSP/core/src/leveldb/include/leveldb/write_batch.h init.h wallet.h :
+ walletdb.h db.h crypter.h ui_interface.h :

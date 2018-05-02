@@ -1,5 +1,6 @@
-RPITCoin 0.4.4 BETA
+Wispr 0.1.0 BETA
 
+Copyright (c) 2017 Wispr Developers
 Copyright (c) 2013 NovaCoin Developers
 Copyright (c) 2011-2013 PPCoin Developers
 Distributed under the MIT/X11 software license, see the accompanying
@@ -11,7 +12,7 @@ cryptographic software written by Eric Young (eay@cryptsoft.com).
 
 Intro
 -----
-RPITCoin is a free open source project derived from Bitcoin, with
+Wispr is a free open source project derived from Bitcoin, with
 the goal of providing a long-term energy-efficient scrypt-based crypto-currency.
 Built on the foundation of Bitcoin, PPCoin and NovaCoin, innovations such as proof-of-stake and scrypt
 help further advance the field of crypto-currency.

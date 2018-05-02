@@ -1,8 +1,10 @@
 # Copyright (c) 2009-2010 Satoshi Nakamoto
+# Copyright (c) 2017 The Rpicoin developers
 # Distributed under the MIT/X11 software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 USE_UPNP:=0
+USE_WALLET:=1
 
 INCLUDEPATHS= \
  -I"C:\boost-1.50.0-mgw" \
@@ -26,7 +28,7 @@ LIBS= \
 
 DEFS=-DWIN32 -D_WINDOWS -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE
 DEBUGFLAGS=-g
-CFLAGS=-mthreads -O3 -msse2 -w -Wall -Wextra -Wno-ignored-qualifiers -Wformat -Wformat-security -Wno-unused-parameter $(DEBUGFLAGS) $(DEFS) $(INCLUDEPATHS)
+CFLAGS=-mthreads -O2 -msse2 -w -Wall -Wextra -Wno-ignored-qualifiers -Wformat -Wformat-security -Wno-unused-parameter $(DEBUGFLAGS) $(DEFS) $(INCLUDEPATHS)
 LDFLAGS=-Wl,--dynamicbase -Wl,--nxcompat
 
 TESTDEFS = -DTEST_DATA_DIR=$(abspath test/data)
@@ -38,7 +40,7 @@ ifneq (${USE_UPNP}, -)
  INCLUDEPATHS += -I"C:\miniupnpc-1.6-mgw"
  LIBPATHS += -L"C:\miniupnpc-1.6-mgw"
  LIBS += -l miniupnpc -l iphlpapi
- DEFS += -DSTATICLIB -DUSE_UPNP=$(USE_UPNP)
+ DEFS += -DMINIUPNP_STATICLIB -DSTATICLIB -DUSE_UPNP=$(USE_UPNP)
 endif
 
 LIBS += -l kernel32 -l user32 -l gdi32 -l comdlg32 -l winspool -l winmm -l shell32 -l comctl32 -l ole32 -l oleaut32 -l uuid -l rpcrt4 -l advapi32 -l ws2_32 -l mswsock -l shlwapi
@@ -54,43 +56,47 @@ OBJS= \
     obj/addrman.o \
     obj/crypter.o \
     obj/key.o \
-    obj/db.o \
     obj/init.o \
+    obj/bitcoind.o \
     obj/keystore.o \
+    obj/core.o \
     obj/main.o \
-    obj/miner.o \
     obj/net.o \
     obj/protocol.o \
-    obj/bitcoinrpc.o \
-    obj/rpcdump.o \
+    obj/rpcclient.o \
+    obj/rpcprotocol.o \
+    obj/rpcserver.o \
+    obj/rpcmisc.o \
     obj/rpcnet.o \
-    obj/rpcmining.o \
-    obj/rpcwallet.o \
     obj/rpcblockchain.o \
     obj/rpcrawtransaction.o \
+    obj/timedata.o \
     obj/script.o \
     obj/sync.o \
+    obj/txmempool.o \
     obj/util.o \
-    obj/wallet.o \
-    obj/walletdb.o \
+    obj/hash.o \
     obj/noui.o \
     obj/kernel.o \
     obj/pbkdf2.o \
     obj/scrypt.o \
     obj/scrypt-x86.o \
     obj/scrypt-x86_64.o \
-    obj/zerocoin/Accumulator.o \
-    obj/zerocoin/AccumulatorProofOfKnowledge.o \
-    obj/zerocoin/Coin.o \
-    obj/zerocoin/CoinSpend.o \
-    obj/zerocoin/Commitment.o \
-    obj/zerocoin/ParamGeneration.o \
-    obj/zerocoin/Params.o \
-    obj/zerocoin/SerialNumberSignatureOfKnowledge.o \
-    obj/zerocoin/SpendMetaData.o \
-    obj/zerocoin/ZeroTest.o
+    obj/chainparams.o
 
-all: Rpicoind.exe
+ifeq (${USE_WALLET}, 1)
+    DEFS += -DENABLE_WALLET
+    OBJS += \
+        obj/db.o \
+        obj/miner.o \
+        obj/rpcdump.o \
+        obj/rpcmining.o \
+        obj/rpcwallet.o \
+        obj/wallet.o \
+        obj/walletdb.o
+endif
+
+all: rpicoind.exe
 
 LIBS += $(CURDIR)/leveldb/libleveldb.a $(CURDIR)/leveldb/libmemenv.a
 DEFS += $(addprefix -I,$(CURDIR)/leveldb/include)
@@ -103,21 +109,17 @@ obj/txdb-leveldb.o: leveldb/libleveldb.a
 obj/%.o: %.cpp $(HEADERS)
 	g++ -c $(CFLAGS) -o $@ $<
 
-obj/zerocoin/%.o: zerocoin/%.cpp
-	g++ -c $(CFLAGS) -o $@ $<
-
 obj/scrypt-x86.o: scrypt-x86.S
 	$(CXX) -c $(xCXXFLAGS) -MMD -o $@ $<
 
 obj/scrypt-x86_64.o: scrypt-x86_64.S
 	$(CXX) -c $(xCXXFLAGS) -MMD -o $@ $<
 
-Rpicoind.exe: $(OBJS:obj/%=obj/%)
+rpicoind.exe: $(OBJS:obj/%=obj/%)
 	g++ $(CFLAGS) $(LDFLAGS) -o $@ $(LIBPATHS) $^ $(LIBS)
 
 clean:
-	-del /Q Rpicoind
+	-del /Q rpicoind
 	-del /Q obj\*
-	-del /Q obj\zerocoin\*
 
 FORCE:

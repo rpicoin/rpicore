@@ -69,7 +69,6 @@ class CNetAddr
         bool GetInAddr(struct in_addr* pipv4Addr) const;
         std::vector<unsigned char> GetGroup() const;
         int GetReachabilityFrom(const CNetAddr *paddrPartner = NULL) const;
-        void print() const;
 
         CNetAddr(const struct in6_addr& pipv6Addr);
         bool GetIn6Addr(struct in6_addr* pipv6Addr) const;
@@ -111,7 +110,6 @@ class CService : public CNetAddr
         std::string ToString() const;
         std::string ToStringPort() const;
         std::string ToStringIPPort() const;
-        void print() const;
 
         CService(const struct in6_addr& ipv6Addr, unsigned short port);
         CService(const struct sockaddr_in6& addr);
@@ -127,20 +125,20 @@ class CService : public CNetAddr
             )
 };
 
-typedef std::pair<CService, int> proxyType;
+typedef CService proxyType;
 
 enum Network ParseNetwork(std::string net);
 void SplitHostPort(std::string in, int &portOut, std::string &hostOut);
-bool SetProxy(enum Network net, CService addrProxy, int nSocksVersion = 5);
+bool SetProxy(enum Network net, CService addrProxy);
 bool GetProxy(enum Network net, proxyType &proxyInfoOut);
 bool IsProxy(const CNetAddr &addr);
-bool SetNameProxy(CService addrProxy, int nSocksVersion = 5);
+bool SetNameProxy(CService addrProxy);
 bool HaveNameProxy();
 bool LookupHost(const char *pszName, std::vector<CNetAddr>& vIP, unsigned int nMaxSolutions = 0, bool fAllowLookup = true);
 bool Lookup(const char *pszName, CService& addr, int portDefault = 0, bool fAllowLookup = true);
 bool Lookup(const char *pszName, std::vector<CService>& vAddr, int portDefault = 0, bool fAllowLookup = true, unsigned int nMaxSolutions = 0);
 bool LookupNumeric(const char *pszName, CService& addr, int portDefault = 0);
-bool ConnectSocket(const CService &addr, SOCKET& hSocketRet, int nTimeout = nConnectTimeout);
-bool ConnectSocketByName(CService &addr, SOCKET& hSocketRet, const char *pszDest, int portDefault = 0, int nTimeout = nConnectTimeout);
+bool ConnectSocket(const CService &addr, SOCKET& hSocketRet, int nTimeout, bool *outProxyConnectionFailed = 0);
+bool ConnectSocketByName(CService &addr, SOCKET& hSocketRet, const char *pszDest, int portDefault, int nTimeout, bool *outProxyConnectionFailed = 0);
 
 #endif
