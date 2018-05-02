@@ -28,7 +28,7 @@ class CNode;
 
 class CTxMemPool;
 
-static const int POW_RE_ENABLE = 0;
+//static const int POW_RE_ENABLE = 0;
 
 static const int LAST_POW_BLOCK = 5; 
 
