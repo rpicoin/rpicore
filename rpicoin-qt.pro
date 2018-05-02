@@ -1,5 +1,5 @@
 TEMPLATE = app
-TARGET = wispr-qt
+TARGET = rpicoin-qt
 VERSION = 0.1.0
 INCLUDEPATH += src src/json src/qt
 QT += network
