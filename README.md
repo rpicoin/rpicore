@@ -11,6 +11,7 @@ https://rpicoin.com
 RPICoin is an Secure, Fast and Energy efficient Hybdrid cryptocurrency.
 Ticker: RPI
 
+
 RPICoin has a 4% Premine (4.000.000 RPI) used for bounties, development and marketing.
 The development funds will not be used for staking purposes, the dev wallet will be marked on the blockexplorer.
 
