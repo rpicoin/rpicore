@@ -1,4 +1,4 @@
 obj/version.o: version.cpp version.h clientversion.h \
- /root/WSP/core/src/obj/build.h
+ /root/WSP/rpicore/src/obj/build.h
 version.cpp version.h clientversion.h :
- /root/WSP/core/src/obj/build.h :
+ /root/WSP/rpicore/src/obj/build.h :
