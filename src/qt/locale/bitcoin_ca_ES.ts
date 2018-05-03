@@ -3000,8 +3000,8 @@ Executar una ordre quan es rep un avís rellevant (%s en cmd es substitueix per 
     </message>
     <message>
         <location line="+1"/>
-        <source>Imports blocks from external wsp000?.dat file</source>
-        <translation>Importar blocs desde l&apos;arxiu extern wsp000?.dat</translation>
+        <source>Imports blocks from external rpi000?.dat file</source>
+        <translation>Importar blocs desde l&apos;arxiu extern rpi000?.dat</translation>
     </message>
     <message>
         <location line="+1"/>

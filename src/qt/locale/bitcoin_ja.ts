@@ -3002,8 +3002,8 @@ for example: alertnotify=echo %%s | mail -s &quot;Rpicoin Alert&quot; admin@foo.
     </message>
     <message>
         <location line="+1"/>
-        <source>Imports blocks from external wsp000?.dat file</source>
-        <translation>外部 wsp000?.dat ファイルからブロックを読み込む。</translation>
+        <source>Imports blocks from external rpi000?.dat file</source>
+        <translation>外部 rpi000?.dat ファイルからブロックを読み込む。</translation>
     </message>
     <message>
         <location line="+1"/>

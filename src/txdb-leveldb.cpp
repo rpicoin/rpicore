@@ -45,7 +45,7 @@ static void init_blockindex(leveldb::Options& options, bool fRemoveOld = false, 
 
         while (true)
         {
-            filesystem::path strBlockFile = GetDataDir() / strprintf("wsp%04u.dat", nFile);
+            filesystem::path strBlockFile = GetDataDir() / strprintf("rpi%04u.dat", nFile);
 
             // Break if no such file
             if( !filesystem::exists( strBlockFile ) )

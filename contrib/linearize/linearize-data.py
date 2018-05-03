@@ -43,9 +43,9 @@ def wordreverse(in_buf):
 	out_words.reverse()
 	return ''.join(out_words)
 
-def calc_hdr_hash(wsp_hdr):
+def calc_hdr_hash(rpi_hdr):
 	hash1 = hashlib.sha256()
-	hash1.update(wsp_hdr)
+	hash1.update(rpi_hdr)
 	hash1_o = hash1.digest()
 
 	hash2 = hashlib.sha256()
@@ -54,52 +54,52 @@ def calc_hdr_hash(wsp_hdr):
 
 	return hash2_o
 
-def calc_hash_str(wsp_hdr):
-	hash = calc_hdr_hash(wsp_hdr)
+def calc_hash_str(rpi_hdr):
+	hash = calc_hdr_hash(rpi_hdr)
 	hash = bufreverse(hash)
 	hash = wordreverse(hash)
 	hash_str = hash.encode('hex')
 	return hash_str
 
-def calc_scrypt_hash_str(wsp_hdr):
-	hash = ltc_scrypt.getPoWHash(wsp_hdr)
+def calc_scrypt_hash_str(rpi_hdr):
+	hash = ltc_scrypt.getPoWHash(rpi_hdr)
 	hash = bufreverse(hash)
 	hash = wordreverse(hash)
 	hash_str = hash.encode('hex')
 	return hash_str
 
-def get_wsp_dt(wsp_hdr):
-	members = struct.unpack("<I", wsp_hdr[68:68+4])
+def get_rpi_dt(rpi_hdr):
+	members = struct.unpack("<I", rpi_hdr[68:68+4])
 	nTime = members[0]
 	dt = datetime.datetime.fromtimestamp(nTime)
 	dt_ym = datetime.datetime(dt.year, dt.month, 1)
 	return (dt_ym, nTime)
 
 def get_block_hashes(settings):
-	wspindex = []
+	rpiindex = []
 	f = open(settings['hashlist'], "r")
 	for line in f:
 		line = line.rstrip()
-		wspindex.append(line)
+		rpiindex.append(line)
 
-	print("Read " + str(len(wspindex)) + " hashes")
+	print("Read " + str(len(rpiindex)) + " hashes")
 
-	return wspindex
+	return rpiindex
 
-def mkblockset(wspindex):
-	wspmap = {}
-	for hash in wspindex:
-		wspmap[hash] = True
-	return wspmap
+def mkblockset(rpiindex):
+	rpimap = {}
+	for hash in rpiindex:
+		rpimap[hash] = True
+	return rpimap
 
-def copydata(settings, wspindex, wspset):
+def copydata(settings, rpiindex, rpiset):
 	inFn = 1
 	inF = None
 	outFn = 0
 	outsz = 0
 	outF = None
 	outFname = None
-	wspCount = 0
+	rpiCount = 0
 
 	lastDate = datetime.datetime(2000, 1, 1)
 	highTS = 1408893517 - 315360000
@@ -116,7 +116,7 @@ def copydata(settings, wspindex, wspset):
 
 	while True:
 		if not inF:
-			fname = "%s/wsp%04d.dat" % (settings['input'], inFn)
+			fname = "%s/rpi%04d.dat" % (settings['input'], inFn)
 			print("Input file" + fname)
 			try:
 				inF = open(fname, "rb")
@@ -139,21 +139,21 @@ def copydata(settings, wspindex, wspset):
 		su = struct.unpack("<I", inLenLE)
 		inLen = su[0]
 		rawblock = inF.read(inLen)
-		wsp_hdr = rawblock[:80]
+		rpi_hdr = rawblock[:80]
 
 		hash_str = 0
-		if wspCount > 319000:
-			hash_str = calc_hash_str(wsp_hdr)
+		if rpiCount > 319000:
+			hash_str = calc_hash_str(rpi_hdr)
 		else:
-			hash_str = calc_scrypt_hash_str(wsp_hdr)
+			hash_str = calc_scrypt_hash_str(rpi_hdr)
 
-		if not hash_str in wspset:
+		if not hash_str in rpiset:
 			print("Skipping unknown block " + hash_str)
 			continue
 
-		if wspindex[wspCount] != hash_str:
+		if rpiindex[rpiCount] != hash_str:
 			print("Out of order block.")
-			print("Expected " + wspindex[wspCount])
+			print("Expected " + rpiindex[rpiCount])
 			print("Got " + hash_str)
 			sys.exit(1)
 
@@ -166,10 +166,10 @@ def copydata(settings, wspindex, wspset):
 			outFn = outFn + 1
 			outsz = 0
 
-		(wspDate, wspTS) = get_wsp_dt(wsp_hdr)
-		if timestampSplit and (wspDate > lastDate):
-			print("New month " + wspDate.strftime("%Y-%m") + " @ " + hash_str)
-			lastDate = wspDate
+		(rpiDate, rpiTS) = get_rpi_dt(rpi_hdr)
+		if timestampSplit and (rpiDate > lastDate):
+			print("New month " + rpiDate.strftime("%Y-%m") + " @ " + hash_str)
+			lastDate = rpiDate
 			if outF:
 				outF.close()
 				if setFileTime:
@@ -183,7 +183,7 @@ def copydata(settings, wspindex, wspset):
 			if fileOutput:
 				outFname = settings['output_file']
 			else:
-				outFname = "%s/wsp%05d.dat" % (settings['output'], outFn)
+				outFname = "%s/rpi%05d.dat" % (settings['output'], outFn)
 			print("Output file" + outFname)
 			outF = open(outFname, "wb")
 
@@ -191,12 +191,12 @@ def copydata(settings, wspindex, wspset):
 		outF.write(rawblock)
 		outsz = outsz + inLen + 8
 
-		wspCount = wspCount + 1
-		if wspTS > highTS:
-			highTS = wspTS
+		rpiCount = rpiCount + 1
+		if rpiTS > highTS:
+			highTS = rpiTS
 
-		if (wspCount % 1000) == 0:
-			print("Wrote " + str(wspCount) + " blocks")
+		if (rpiCount % 1000) == 0:
+			print("Wrote " + str(rpiCount) + " blocks")
 
 if __name__ == '__main__':
 	if len(sys.argv) != 2:
@@ -239,12 +239,12 @@ if __name__ == '__main__':
 		print("Missing output file / directory")
 		sys.exit(1)
 
-	wspindex = get_block_hashes(settings)
-	wspset = mkblockset(wspindex)
+	rpiindex = get_block_hashes(settings)
+	rpiset = mkblockset(rpiindex)
 
-	if not "000001faef25dec4fbcf906e6242621df2c183bf232f263d0ba5b101911e4563" in wspset:
+	if not "000001faef25dec4fbcf906e6242621df2c183bf232f263d0ba5b101911e4563" in rpiset:
 		print("not found")
 	else:
-		copydata(settings, wspindex, wspset)
+		copydata(settings, rpiindex, rpiset)
 
 

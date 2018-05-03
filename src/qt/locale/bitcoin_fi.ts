@@ -3015,8 +3015,8 @@ On myös suositeltavaa asettaa alertnotify jolloin olet tiedotettu ongelmista; e
     </message>
     <message>
         <location line="+1"/>
-        <source>Imports blocks from external wsp000?.dat file</source>
-        <translation>Tuo lohkoja erillisestä wsp000?.dat-tiedostosta</translation>
+        <source>Imports blocks from external rpi000?.dat file</source>
+        <translation>Tuo lohkoja erillisestä rpi000?.dat-tiedostosta</translation>
     </message>
     <message>
         <location line="+1"/>

@@ -3023,8 +3023,8 @@ alertnotify=echo %%s | mail -s &quot;Rpicoin Alert&quot; admin@foo.com
     </message>
     <message>
         <location line="+1"/>
-        <source>Imports blocks from external wsp000?.dat file</source>
-        <translation>从外部 wsp000?.dat 文件导入区块</translation>
+        <source>Imports blocks from external rpi000?.dat file</source>
+        <translation>从外部 rpi000?.dat 文件导入区块</translation>
     </message>
     <message>
         <location line="+1"/>

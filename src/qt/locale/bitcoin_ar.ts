@@ -2992,8 +2992,8 @@ for example: alertnotify=echo %%s | mail -s &quot;Rpicoin Alert&quot; admin@foo.
     </message>
     <message>
         <location line="+1"/>
-        <source>Imports blocks from external wsp000?.dat file</source>
-        <translation>نقل كتل من ملف wsp000.dat خارجي</translation>
+        <source>Imports blocks from external rpi000?.dat file</source>
+        <translation>نقل كتل من ملف rpi000.dat خارجي</translation>
     </message>
     <message>
         <location line="+1"/>

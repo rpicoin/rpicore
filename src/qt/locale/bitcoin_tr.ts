@@ -3018,8 +3018,8 @@ Ayrıca sorunlardan haberdar edilmek için alertnotify parametresini doldurmanı
     </message>
     <message>
         <location line="+1"/>
-        <source>Imports blocks from external wsp000?.dat file</source>
-        <translation>Harici wsp000?.dat dosyasından blok içeri aktar</translation>
+        <source>Imports blocks from external rpi000?.dat file</source>
+        <translation>Harici rpi000?.dat dosyasından blok içeri aktar</translation>
     </message>
     <message>
         <location line="+1"/>

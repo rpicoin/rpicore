@@ -2359,7 +2359,7 @@ bool CheckDiskSpace(uint64_t nAdditionalBytes)
 
 static filesystem::path BlockFilePath(unsigned int nFile)
 {
-    string strBlockFn = strprintf("wsp%04u.dat", nFile);
+    string strBlockFn = strprintf("rpi%04u.dat", nFile);
     return GetDataDir() / strBlockFn;
 }
 
@@ -2524,15 +2524,15 @@ bool LoadExternalBlockFile(FILE* fileIn)
     int nLoaded = 0;
     {
         try {
-            CAutoFile wspdat(fileIn, SER_DISK, CLIENT_VERSION);
+            CAutoFile rpidat(fileIn, SER_DISK, CLIENT_VERSION);
             unsigned int nPos = 0;
-            while (nPos != (unsigned int)-1 && wspdat.good())
+            while (nPos != (unsigned int)-1 && rpidat.good())
             {
                 boost::this_thread::interruption_point();
                 unsigned char pchData[65536];
                 do {
-                    fseek(wspdat, nPos, SEEK_SET);
-                    int nRead = fread(pchData, 1, sizeof(pchData), wspdat);
+                    fseek(rpidat, nPos, SEEK_SET);
+                    int nRead = fread(pchData, 1, sizeof(pchData), rpidat);
                     if (nRead <= 8)
                     {
                         nPos = (unsigned int)-1;
@@ -2554,13 +2554,13 @@ bool LoadExternalBlockFile(FILE* fileIn)
                 } while(true);
                 if (nPos == (unsigned int)-1)
                     break;
-                fseek(wspdat, nPos, SEEK_SET);
+                fseek(rpidat, nPos, SEEK_SET);
                 unsigned int nSize;
-                wspdat >> nSize;
+                rpidat >> nSize;
                 if (nSize > 0 && nSize <= MAX_BLOCK_SIZE)
                 {
                     CBlock block;
-                    wspdat >> block;
+                    rpidat >> block;
                     LOCK(cs_main);
                     if (ProcessBlock(NULL,&block))
                     {
@@ -2594,7 +2594,7 @@ struct CImportingNow
 
 void ThreadImport(std::vector<boost::filesystem::path> vImportFiles)
 {
-    RenameThread("rpicoin-loadwsp");
+    RenameThread("rpicoin-loadrpi");
 
     CImportingNow imp;
 

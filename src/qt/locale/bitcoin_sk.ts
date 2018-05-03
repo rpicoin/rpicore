@@ -3017,8 +3017,8 @@ napríklad: alertnotify=echo %%s | mail -s &quot;Rpicoin upozornenie&quot; admin
     </message>
     <message>
         <location line="+1"/>
-        <source>Imports blocks from external wsp000?.dat file</source>
-        <translation>Importovať bloky z externého wsp000?.dat súbora</translation>
+        <source>Imports blocks from external rpi000?.dat file</source>
+        <translation>Importovať bloky z externého rpi000?.dat súbora</translation>
     </message>
     <message>
         <location line="+1"/>
