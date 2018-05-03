@@ -16,7 +16,7 @@ The development funds will not be used for staking purposes, the dev wallet will
 
 Specifications
 ==========================
-* Max number of coins: 100.000.000 RPI
+* Max number of coins:  RPI
 * Block time: 25 seconds 
 * Min stake age: 2 hours
 * Maturity: 6 blocks
