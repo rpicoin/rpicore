@@ -3,36 +3,37 @@
     <name>AboutDialog</name>
     <message>
         <location filename="../forms/aboutdialog.ui" line="+14"/>
-        <source>About Rpicoin</source>
-        <translation>O Rpicoin</translation>
+        <source>About rpicoin</source>
+        <translation>O rpicoine</translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>&lt;b&gt;Rpicoin&lt;/b&gt; version</source>
-        <translation>Verzia &lt;b&gt;Rpicoin&lt;/b&gt;</translation>
+        <source>&lt;b&gt;rpicoin&lt;/b&gt; version</source>
+        <translation>verzia &lt;b&gt;rpicoinu&lt;/b&gt;</translation>
     </message>
     <message>
         <location line="+41"/>
-        <source>Copyright © 2009-2017 The Bitcoin developers
+        <source>Copyright © 2009-2014 The Bitcoin developers
 Copyright © 2012-2014 The NovaCoin developers
-Copyright © 2014-2017 The Blackcoin developers
-Copyright © 2017 The Rpicoin developers</source>
-        <translation type="unfinished"/>
+Copyright © 2014 The rpicoin developers</source>
+        <translation>Copyright © 2009-2014 The Bitcoin developers
+Copyright © 2012-2014 The NovaCoin developers
+Copyright © 2014 The rpicoin developers</translation>
     </message>
     <message>
         <location line="+15"/>
         <source>
 This is experimental software.
 
-Distributed under the MIT/X11 software license, see the accompanying file COPYING or &lt;a href=&quot;http://www.opensource.org/licenses/mit-license.php&quot;&gt;http://www.opensource.org/licenses/mit-license.php&lt;/a&gt;.
+Distributed under the MIT/X11 software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit (&lt;a href=&quot;https://www.openssl.org/&quot;&gt;https://www.openssl.org/&lt;/a&gt;) and cryptographic software written by Eric Young (&lt;a href=&quot;mailto:eay@cryptsoft.com&quot;&gt;eay@cryptsoft.com&lt;/a&gt;) and UPnP software written by Thomas Bernard.</source>
+This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit (http://www.openssl.org/) and cryptographic software written by Eric Young (eay@cryptsoft.com) and UPnP software written by Thomas Bernard.</source>
         <translation>
 Toto je experimentálny softvér. 
 
-Distribuovaný pod softvérovou licenciou MIT/X11, viď priložený súbor COPYING alebo &lt;a href=&quot;http://www.opensource.org/licenses/mit-license.php&quot;&gt;http://www.opensource.org/licenses/mit-license.php&lt;/a&gt;. 
+Distribuovaný pod softvérovou licenciou MIT/X11, viď priložený súbor COPYING alebo http://www.opensource.org/licenses/mit-license.php. 
 
-Tento produkt obsahuje softvér vyvinutý projektom OpenSSL Project pre použitie v sade OpenSSL Toolkit  (&lt;a href=&quot;https://www.openssl.org/&quot;&gt;https://www.openssl.org/&lt;/a&gt;), šifrovací softvér, ktorý napísal Eric Young (&lt;a href=&quot;mailto:eay@cryptsoft.com&quot;&gt;eay@cryptsoft.com&lt;/a&gt;) a UPnP softvér ktorý napísal Thomas Bernard.</translation>
+Tento produkt obsahuje softvér vyvinutý projektom OpenSSL Project pre použitie v sade OpenSSL Toolkit (http://www.openssl.org/) a šifrovací softvér, ktorý napísal Eric Young (eay@cryptsoft.com) a UPnP softvér ktorý napísaný Thomas Bernard.</translation>
     </message>
 </context>
 <context>
@@ -48,39 +49,39 @@ Tento produkt obsahuje softvér vyvinutý projektom OpenSSL Project pre použiti
         <translation>Dvojklikom editovať adresu alebo popis</translation>
     </message>
     <message>
-        <location line="+24"/>
+        <location line="+27"/>
         <source>Create a new address</source>
         <translation>Vytvoriť novú adresu</translation>
     </message>
     <message>
-        <location line="+10"/>
+        <location line="+14"/>
         <source>Copy the currently selected address to the system clipboard</source>
         <translation>Kopírovať práve zvolenú adresu do systémovej schránky</translation>
     </message>
     <message>
-        <location line="-7"/>
+        <location line="-11"/>
         <source>&amp;New Address</source>
         <translation>&amp;Nová adresa</translation>
     </message>
     <message>
-        <location line="-43"/>
-        <source>These are your Rpicoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
-        <translation>Toto sú vaše Rpicoin adresy pre príjem platieb. Možno budete chcieť dať inú každému odosielateľovi, aby ste mohli sledovať, kto Vám platí.</translation>
+        <location line="-46"/>
+        <source>These are your rpicoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
+        <translation>Toto sú vaše rpicoin adresy pre príjem platieb. Možno budete chcieť dať inú každému odosielateľovi, aby ste mohli sledovať, kto Vám platí.</translation>
     </message>
     <message>
-        <location line="+53"/>
+        <location line="+60"/>
         <source>&amp;Copy Address</source>
         <translation>&amp;Kopírovať adresu</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location line="+11"/>
         <source>Show &amp;QR Code</source>
         <translation>Ukáž &amp;QR kód</translation>
     </message>
     <message>
-        <location line="+7"/>
-        <source>Sign a message to prove you own a Rpicoin address</source>
-        <translation>Podpísať správu ako dôkaz, že vlastníte túto Rpicoin adresu</translation>
+        <location line="+11"/>
+        <source>Sign a message to prove you own a rpicoin address</source>
+        <translation>Podpísať správu ako dôkaz, že vlastníte túto rpicoin adresu</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -88,14 +89,14 @@ Tento produkt obsahuje softvér vyvinutý projektom OpenSSL Project pre použiti
         <translation>Podpísať &amp;správu</translation>
     </message>
     <message>
-        <location line="+17"/>
+        <location line="+25"/>
         <source>Delete the currently selected address from the list</source>
         <translation>Vymazať aktuálne vybranú adresu zo zoznamu</translation>
     </message>
     <message>
-        <location line="-10"/>
-        <source>Verify a message to ensure it was signed with a specified Rpicoin address</source>
-        <translation>Overte správu, aby ste zabezpečili, že bola podpísaná s určitou Rpicoin adresou</translation>
+        <location line="-14"/>
+        <source>Verify a message to ensure it was signed with a specified rpicoin address</source>
+        <translation>Overte správu, aby ste zabezpečili, že bola podpísaná s určitou rpicoin adresou</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -103,22 +104,22 @@ Tento produkt obsahuje softvér vyvinutý projektom OpenSSL Project pre použiti
         <translation>&amp;Overte správu</translation>
     </message>
     <message>
-        <location line="+10"/>
+        <location line="+14"/>
         <source>&amp;Delete</source>
         <translation>&amp;Zmazať</translation>
     </message>
     <message>
-        <location filename="../addressbookpage.cpp" line="+66"/>
+        <location filename="../addressbookpage.cpp" line="+65"/>
         <source>Copy &amp;Label</source>
-        <translation>Kopírovať &amp;popis</translation>
+        <translation>Kopírovať &amp;Popis</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>&amp;Edit</source>
         <translation>&amp;Upraviť</translation>
     </message>
     <message>
-        <location line="+248"/>
+        <location line="+250"/>
         <source>Export Address Book Data</source>
         <translation>Exportovať dáta z adresára</translation>
     </message>
@@ -141,7 +142,7 @@ Tento produkt obsahuje softvér vyvinutý projektom OpenSSL Project pre použiti
 <context>
     <name>AddressTableModel</name>
     <message>
-        <location filename="../addresstablemodel.cpp" line="+145"/>
+        <location filename="../addresstablemodel.cpp" line="+144"/>
         <source>Label</source>
         <translation>Popis</translation>
     </message>
@@ -189,7 +190,12 @@ Tento produkt obsahuje softvér vyvinutý projektom OpenSSL Project pre použiti
         <translation>Len pre stávkovanie</translation>
     </message>
     <message>
-        <location filename="../askpassphrasedialog.cpp" line="+38"/>
+        <location filename="../askpassphrasedialog.cpp" line="+35"/>
+        <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;10 or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
+        <translation>Zadajte nové heslo k peňaženke.&lt;br/&gt;Prosím použite heslo s dĺžkou aspon &lt;b&gt;10 a viac náhodných znakov&lt;/b&gt;, alebo &lt;b&gt;8 a viac slov&lt;/b&gt;.</translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source>Encrypt wallet</source>
         <translation>Zašifrovať peňaženku</translation>
     </message>
@@ -224,7 +230,7 @@ Tento produkt obsahuje softvér vyvinutý projektom OpenSSL Project pre použiti
         <translation>Zadajte staré a nové heslo k peňaženke.</translation>
     </message>
     <message>
-        <location line="+45"/>
+        <location line="+46"/>
         <source>Confirm wallet encryption</source>
         <translation>Potvrďte zašifrovanie peňaženky</translation>
     </message>
@@ -256,14 +262,9 @@ Tento produkt obsahuje softvér vyvinutý projektom OpenSSL Project pre použiti
         <translation>Peňaženka zašifrovaná</translation>
     </message>
     <message>
-        <location line="-140"/>
-        <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;ten or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
-        <translation>Zadajte nové heslo k peňaženke.&lt;br/&gt;Prosím použite heslo s dĺžkou &lt;b&gt;desať alebo viac náhodných znakov&lt;/b&gt;, prípadne &lt;b&gt;osem alebo viac slov&lt;/b&gt;.</translation>
-    </message>
-    <message>
-        <location line="+82"/>
-        <source>Rpicoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
-        <translation>Rpicoin sa teraz zavrie aby dokončil proces zašifrovania. Nezabudnite, že zašifrovanie vašej peňaženky nemôže plne chrániť vaše mince pred krádežou malwarom, ktorý napadol váš počítač.</translation>
+        <location line="-58"/>
+        <source>rpicoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
+        <translation>rpicoin sa teraz zavrie aby dokončil proces zašifrovania. Nezabudnite, že zašifrovanie vašej peňaženky nemôže plne chrániť vaše mince pred krádežou malwarom napadnutím vašeho počítača.</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -310,12 +311,22 @@ Tento produkt obsahuje softvér vyvinutý projektom OpenSSL Project pre použiti
 <context>
     <name>BitcoinGUI</name>
     <message>
-        <location filename="../bitcoingui.cpp" line="+297"/>
+        <location filename="../bitcoingui.cpp" line="+280"/>
         <source>Sign &amp;message...</source>
         <translation>Podpísať &amp;správu...</translation>
     </message>
     <message>
-        <location line="-64"/>
+        <location line="+242"/>
+        <source>Synchronizing with network...</source>
+        <translation>Synchronizácia so sieťou...</translation>
+    </message>
+    <message>
+        <location line="-308"/>
+        <source>&amp;Overview</source>
+        <translation>&amp;Prehľad</translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source>Show general overview of wallet</source>
         <translation>Zobraziť celkový prehľad o peňaženke</translation>
     </message>
@@ -340,12 +351,22 @@ Tento produkt obsahuje softvér vyvinutý projektom OpenSSL Project pre použiti
         <translation>Úprava zoznamu uložených adries a popisov</translation>
     </message>
     <message>
-        <location line="-18"/>
+        <location line="-13"/>
+        <source>&amp;Receive coins</source>
+        <translation>&amp;Prijať mince</translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source>Show the list of addresses for receiving payments</source>
         <translation>Zobraziť zoznam adries pre príjem platieb</translation>
     </message>
     <message>
-        <location line="+34"/>
+        <location line="-7"/>
+        <source>&amp;Send coins</source>
+        <translation>&amp;Poslať mince</translation>
+    </message>
+    <message>
+        <location line="+35"/>
         <source>E&amp;xit</source>
         <translation>&amp;Ukončiť</translation>
     </message>
@@ -356,8 +377,8 @@ Tento produkt obsahuje softvér vyvinutý projektom OpenSSL Project pre použiti
     </message>
     <message>
         <location line="+4"/>
-        <source>Show information about Rpicoin</source>
-        <translation>Zobraziť informácie o Rpicoin</translation>
+        <source>Show information about rpicoin</source>
+        <translation>Zobraziť informácie o rpicoin</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -380,7 +401,7 @@ Tento produkt obsahuje softvér vyvinutý projektom OpenSSL Project pre použiti
         <translation>&amp;Zašifrovať peňaženku...</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+3"/>
         <source>&amp;Backup Wallet...</source>
         <translation>&amp;Zálohovať peňaženku...</translation>
     </message>
@@ -389,33 +410,43 @@ Tento produkt obsahuje softvér vyvinutý projektom OpenSSL Project pre použiti
         <source>&amp;Change Passphrase...</source>
         <translation>&amp;Zmena hesla...</translation>
     </message>
+    <message numerus="yes">
+        <location line="+250"/>
+        <source>~%n block(s) remaining</source>
+        <translation><numerusform>~%n blok zostáva</numerusform><numerusform>~%n blokov zostáva</numerusform><numerusform>Zostáva ~%n blokov</numerusform></translation>
+    </message>
     <message>
-        <location line="+9"/>
+        <location line="+6"/>
+        <source>Downloaded %1 of %2 blocks of transaction history (%3% done).</source>
+        <translation>Stiahnutých %1 z %2 blokov transakčnej histórie (%3% hotových).</translation>
+    </message>
+    <message>
+        <location line="-247"/>
         <source>&amp;Export...</source>
         <translation>&amp;Export...</translation>
     </message>
     <message>
-        <location line="-55"/>
-        <source>Send coins to a Rpicoin address</source>
-        <translation>Poslať mince na Rpicoin adresu</translation>
+        <location line="-62"/>
+        <source>Send coins to a rpicoin address</source>
+        <translation>Poslať mince na rpicoin adresu</translation>
     </message>
     <message>
-        <location line="+39"/>
-        <source>Modify configuration options for Rpicoin</source>
-        <translation>Upraviť možnosti konfigurácie pre Rpicoin</translation>
+        <location line="+45"/>
+        <source>Modify configuration options for rpicoin</source>
+        <translation>Upraviť možnosti konfigurácie pre rpicoin</translation>
     </message>
     <message>
-        <location line="+17"/>
+        <location line="+18"/>
         <source>Export the data in the current tab to a file</source>
         <translation>Exportovať dáta v aktuálnej karte do súboru</translation>
     </message>
     <message>
-        <location line="-13"/>
+        <location line="-14"/>
         <source>Encrypt or decrypt wallet</source>
         <translation>Zašifrovať alebo dešifrovať peňaženku</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+3"/>
         <source>Backup wallet to another location</source>
         <translation>Zálohovať peňaženku na iné miesto</translation>
     </message>
@@ -440,20 +471,19 @@ Tento produkt obsahuje softvér vyvinutý projektom OpenSSL Project pre použiti
         <translation>Overiť správu</translation>
     </message>
     <message>
-        <location line="-214"/>
-        <location line="+555"/>
-        <source>Rpicoin</source>
-        <translation>Rpicoin</translation>
+        <location line="-200"/>
+        <source>rpicoin</source>
+        <translation>rpicoin</translation>
     </message>
     <message>
-        <location line="-555"/>
+        <location line="+0"/>
         <source>Wallet</source>
         <translation>Peňaženka</translation>
     </message>
     <message>
-        <location line="+193"/>
-        <source>&amp;About Rpicoin</source>
-        <translation>&amp;O Rpicoin</translation>
+        <location line="+178"/>
+        <source>&amp;About rpicoin</source>
+        <translation>&amp;O rpicoin</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -461,7 +491,7 @@ Tento produkt obsahuje softvér vyvinutý projektom OpenSSL Project pre použiti
         <translation>Zobraziť / skryť</translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+9"/>
         <source>Unlock wallet</source>
         <translation>Odomknúť peňaženku</translation>
     </message>
@@ -476,7 +506,7 @@ Tento produkt obsahuje softvér vyvinutý projektom OpenSSL Project pre použiti
         <translation>Zamknúť peňaženku</translation>
     </message>
     <message>
-        <location line="+32"/>
+        <location line="+34"/>
         <source>&amp;File</source>
         <translation>&amp;Súbor</translation>
     </message>
@@ -491,29 +521,39 @@ Tento produkt obsahuje softvér vyvinutý projektom OpenSSL Project pre použiti
         <translation>&amp;Pomoc</translation>
     </message>
     <message>
-        <location line="+17"/>
+        <location line="+9"/>
         <source>Tabs toolbar</source>
         <translation>Lišta záložiek</translation>
     </message>
     <message>
-        <location line="+46"/>
+        <location line="+8"/>
+        <source>Actions toolbar</source>
+        <translation>Lišta činností</translation>
+    </message>
+    <message>
+        <location line="+13"/>
         <location line="+9"/>
         <source>[testnet]</source>
         <translation>[testovacia sieť]</translation>
     </message>
     <message>
         <location line="+0"/>
-        <location line="+58"/>
-        <source>Rpicoin client</source>
-        <translation>Rpicoin klient</translation>
+        <location line="+60"/>
+        <source>rpicoin client</source>
+        <translation>rpicoin klient</translation>
     </message>
     <message numerus="yes">
         <location line="+70"/>
-        <source>%n active connection(s) to Rpicoin network</source>
-        <translation><numerusform>%n aktívne spojenie s Rpicoin sieťov</numerusform><numerusform>%n aktívnych spojení s Rpicoin sieťov</numerusform><numerusform>%n aktívnych spojení s Rpicoin sieťou</numerusform></translation>
+        <source>%n active connection(s) to rpicoin network</source>
+        <translation><numerusform>%n aktívne spojenie s rpicoin sieťov</numerusform><numerusform>%n aktívnych spojení s rpicoin sieťov</numerusform><numerusform>%n aktívnych spojení s rpicoin sieťou</numerusform></translation>
     </message>
     <message>
-        <location line="+488"/>
+        <location line="+40"/>
+        <source>Downloaded %1 blocks of transaction history.</source>
+        <translation>Stiahnutých %1 blokov z transakčnej histórie.</translation>
+    </message>
+    <message>
+        <location line="+413"/>
         <source>Staking.&lt;br&gt;Your weight is %1&lt;br&gt;Network weight is %2&lt;br&gt;Expected time to earn reward is %3</source>
         <translation>Stávkovanie.&lt;br&gt;Vaša váha je %1&lt;br&gt;Váha siete je %2&lt;br&gt;Odhadovaný čas pre získanie odmeny je %3</translation>
     </message>
@@ -534,41 +574,56 @@ Tento produkt obsahuje softvér vyvinutý projektom OpenSSL Project pre použiti
     </message>
     <message>
         <location line="+2"/>
-        <source>Not staking because you don&apos;t have mature coins (&#126;100 confirms)</source>
-        <translation>Nestávkujem pretože nemáte dozreté mince</translation>
+        <source>Not staking because you don&apos;t have mature coins</source>
+        <translation>Nestávkujem pretože nemáte odležané mince</translation>
+    </message>
+    <message numerus="yes">
+        <location line="-403"/>
+        <source>%n second(s) ago</source>
+        <translation><numerusform>pred %n sekundou</numerusform><numerusform>pred %n sekundami</numerusform><numerusform>pred %n sekundami</numerusform></translation>
     </message>
     <message>
-        <location line="-812"/>
-        <source>&amp;Dashboard</source>
-        <translation>&amp;Dashboard</translation>
-    </message>
-    <message>
-        <location line="+6"/>
-        <source>&amp;Receive</source>
-        <translation>&amp;Prijať</translation>
-    </message>
-    <message>
-        <location line="+6"/>
-        <source>&amp;Send</source>
-        <translation>&amp;Poslať</translation>
-    </message>
-    <message>
-        <location line="+49"/>
+        <location line="-284"/>
         <source>&amp;Unlock Wallet...</source>
         <translation>&amp;Odomknúť peňaženku...</translation>
     </message>
-    <message>
-        <location line="+277"/>
-        <source>Up to date</source>
-        <translation>Aktualizované</translation>
+    <message numerus="yes">
+        <location line="+288"/>
+        <source>%n minute(s) ago</source>
+        <translation><numerusform>pred %n minutou</numerusform><numerusform>pred %n minutami</numerusform><numerusform>pred %n minutami</numerusform></translation>
+    </message>
+    <message numerus="yes">
+        <location line="+4"/>
+        <source>%n hour(s) ago</source>
+        <translation><numerusform>pred %n hodinou</numerusform><numerusform>pred %n hodinami</numerusform><numerusform>pred %n hodinami</numerusform></translation>
+    </message>
+    <message numerus="yes">
+        <location line="+4"/>
+        <source>%n day(s) ago</source>
+        <translation><numerusform>pred %n dňom</numerusform><numerusform>pred %n dňami</numerusform><numerusform>pred %n dňami</numerusform></translation>
     </message>
     <message>
-        <location line="+43"/>
+        <location line="+6"/>
+        <source>Up to date</source>
+        <translation>Aktualizovaný</translation>
+    </message>
+    <message>
+        <location line="+7"/>
         <source>Catching up...</source>
         <translation>Sťahujem...</translation>
     </message>
     <message>
-        <location line="+113"/>
+        <location line="+10"/>
+        <source>Last received block was generated %1.</source>
+        <translation>Posledný prijatý blok bol vytvorený %1.</translation>
+    </message>
+    <message>
+        <location line="+59"/>
+        <source>This transaction is over the size limit.  You can still send it for a fee of %1, which goes to the nodes that process your transaction and helps to support the network.  Do you want to pay the fee?</source>
+        <translation>Táto transakcia je nad veľkostný limit. Stále ju môžete poslať za poplatok %1, ktorý ide uzlom spracujúcim vaše transakcie, čím pomáhate podporovať sieť. Chcete zaplatiť poplatok?</translation>
+    </message>
+    <message>
+        <location line="+5"/>
         <source>Confirm transaction fee</source>
         <translation>Potvrďte transakčný poplatok</translation>
     </message>
@@ -603,26 +658,21 @@ Adresa: %4</translation>
     <message>
         <location line="-15"/>
         <location line="+15"/>
-        <source>URI can not be parsed! This can be caused by an invalid Rpicoin address or malformed URI parameters.</source>
-        <translation>URI nemožno analyzovať! Toto môže byť spôsobené neplatnou Rpicoin adresu alebo chybnými URI parametrami.</translation>
+        <source>URI can not be parsed! This can be caused by an invalid rpicoin address or malformed URI parameters.</source>
+        <translation>URI nemožno analyzovať! Toto môže byť spôsobené neplatnou rpicoin adresu alebo chybnými URI parametrami.</translation>
     </message>
     <message>
-        <location line="+9"/>
-        <source>Wallet is &lt;b&gt;not encrypted&lt;/b&gt;</source>
-        <translation>Peňaženka &lt;b&gt;nie je zašifrovaná&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <location line="+8"/>
+        <location line="+18"/>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</source>
         <translation>Peňaženka je &lt;b&gt;zašifrovaná&lt;/b&gt; a momentálne &lt;b&gt;odomknutá&lt;/b&gt;</translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+10"/>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>Peňaženka je &lt;b&gt;zašifrovaná&lt;/b&gt; a momentálne &lt;b&gt;zamknutá&lt;/b&gt;</translation>
     </message>
     <message>
-        <location line="+24"/>
+        <location line="+25"/>
         <source>Backup Wallet</source>
         <translation>Zálohovanie peňaženky</translation>
     </message>
@@ -642,7 +692,7 @@ Adresa: %4</translation>
         <translation>Došlo k chybe pri pokuse o uloženie dát peňaženky do nového umiestnenia.</translation>
     </message>
     <message numerus="yes">
-        <location line="+91"/>
+        <location line="+76"/>
         <source>%n second(s)</source>
         <translation><numerusform>%n sekunda</numerusform><numerusform>%n sekúnd</numerusform><numerusform>%n sekúnd</numerusform></translation>
     </message>
@@ -652,88 +702,30 @@ Adresa: %4</translation>
         <translation><numerusform>%n minúta</numerusform><numerusform>%n minút</numerusform><numerusform>%n minút</numerusform></translation>
     </message>
     <message numerus="yes">
-        <location line="-429"/>
-        <location line="+433"/>
+        <location line="+4"/>
         <source>%n hour(s)</source>
         <translation><numerusform>%n hodina</numerusform><numerusform>%n hodiny</numerusform><numerusform>%n hodín</numerusform></translation>
     </message>
-    <message>
-        <location line="-456"/>
-        <source>Processed %1 blocks of transaction history.</source>
-        <translation>Spracovaných %1 blokov transakčnej histórie.</translation>
-    </message>
     <message numerus="yes">
-        <location line="+27"/>
-        <location line="+433"/>
+        <location line="+4"/>
         <source>%n day(s)</source>
         <translation><numerusform>%n deň</numerusform><numerusform>%n dni</numerusform><numerusform>%n dní</numerusform></translation>
     </message>
-    <message numerus="yes">
-        <location line="-429"/>
-        <location line="+6"/>
-        <source>%n week(s)</source>
-        <translation><numerusform>%n týždeň</numerusform><numerusform>%n týždne</numerusform><numerusform>%n týždňov</numerusform></translation>
-    </message>
     <message>
-        <location line="+0"/>
-        <source>%1 and %2</source>
-        <translation>%1 a %2</translation>
-    </message>
-    <message numerus="yes">
-        <location line="+0"/>
-        <source>%n year(s)</source>
-        <translation><numerusform>%n rok</numerusform><numerusform>%n roky</numerusform><numerusform>%n rokov</numerusform></translation>
-    </message>
-    <message>
-        <location line="+5"/>
-        <source>%1 behind</source>
-        <translation>%1 pozadu</translation>
-    </message>
-    <message>
-        <location line="+15"/>
-        <source>Last received block was generated %1 ago.</source>
-        <translation>Posledný prijatý blok bol vytvorený pred %1.</translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Transactions after this will not yet be visible.</source>
-        <translation>Transakcie po tejto ešte nebudú viditeľné</translation>
-    </message>
-    <message>
-        <location line="+23"/>
-        <source>Error</source>
-        <translation>Chyba</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Warning</source>
-        <translation>Varovanie</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Information</source>
-        <translation>Informácia</translation>
-    </message>
-    <message>
-        <location line="+69"/>
-        <source>This transaction is over the size limit. You can still send it for a fee of %1, which goes to the nodes that process your transaction and helps to support the network. Do you want to pay the fee?</source>
-        <translation>Táto transakcia je nad veľkostný limit. Stále ju môžete poslať za poplatok %1, ktorý ide uzlom spracujúcim vaše transakcie, čím pomáhate podporovať sieť. Chcete zaplatiť poplatok?</translation>
-    </message>
-    <message>
-        <location line="+324"/>
+        <location line="+18"/>
         <source>Not staking</source>
         <translation>Nestávkuje sa</translation>
     </message>
     <message>
-        <location filename="../bitcoin.cpp" line="+104"/>
-        <source>A fatal error occurred. Rpicoin can no longer continue safely and will quit.</source>
-        <translation>Došlo k závažnej chybe. Rpicoin už nemôže pokračovať bezpečne a bude ukončený.</translation>
+        <location filename="../bitcoin.cpp" line="+109"/>
+        <source>A fatal error occurred. rpicoin can no longer continue safely and will quit.</source>
+        <translation>Došlo k závažnej chybe. rpicoin už nemôže pokračovať bezpečne a bude ukončený.</translation>
     </message>
 </context>
 <context>
     <name>ClientModel</name>
     <message>
-        <location filename="../clientmodel.cpp" line="+119"/>
+        <location filename="../clientmodel.cpp" line="+90"/>
         <source>Network Alert</source>
         <translation>Výstraha siete</translation>
     </message>
@@ -761,6 +753,11 @@ Adresa: %4</translation>
         <translation>Suma:</translation>
     </message>
     <message>
+        <location line="+32"/>
+        <source>Priority:</source>
+        <translation>Priorita:</translation>
+    </message>
+    <message>
         <location line="+48"/>
         <source>Fee:</source>
         <translation>Poplatok:</translation>
@@ -771,7 +768,7 @@ Adresa: %4</translation>
         <translation>Nízky výstup:</translation>
     </message>
     <message>
-        <location filename="../coincontroldialog.cpp" line="+493"/>
+        <location filename="../coincontroldialog.cpp" line="+551"/>
         <source>no</source>
         <translation>nie</translation>
     </message>
@@ -788,7 +785,7 @@ Adresa: %4</translation>
     <message>
         <location line="+69"/>
         <source>(un)select all</source>
-        <translation>(Ne)označiť všetko</translation>
+        <translation>(ne)označiť všetko</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -836,7 +833,7 @@ Adresa: %4</translation>
         <translation>Priorita</translation>
     </message>
     <message>
-        <location filename="../coincontroldialog.cpp" line="-456"/>
+        <location filename="../coincontroldialog.cpp" line="-515"/>
         <source>Copy address</source>
         <translation>Kopírovať adresu</translation>
     </message>
@@ -878,6 +875,11 @@ Adresa: %4</translation>
     </message>
     <message>
         <location line="+1"/>
+        <source>Copy priority</source>
+        <translation>Kopírovať prioritu</translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source>Copy low output</source>
         <translation>Kopírovať nízky výstup</translation>
     </message>
@@ -887,7 +889,42 @@ Adresa: %4</translation>
         <translation>Kopírovať zmenu</translation>
     </message>
     <message>
-        <location line="+423"/>
+        <location line="+317"/>
+        <source>RPIest</source>
+        <translation>najvyššie</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>RPI</source>
+        <translation>vysoké</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>medium-RPI</source>
+        <translation>stredne vysoké</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>medium</source>
+        <translation>stredné</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>low-medium</source>
+        <translation>stredne nízke</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>low</source>
+        <translation>nízke</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>lowest</source>
+        <translation>najnižšie</translation>
+    </message>
+    <message>
+        <location line="+155"/>
         <source>DUST</source>
         <translation>PRACH</translation>
     </message>
@@ -897,7 +934,7 @@ Adresa: %4</translation>
         <translation>áno</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+10"/>
         <source>This label turns red, if the transaction size is bigger than 10000 bytes.
 
  This means a fee of at least %1 per kb is required.
@@ -908,6 +945,19 @@ Adresa: %4</translation>
  To znamená, že je potrebný poplatok vo výške najmenej %1 za kb.
 
 Môže sa líšiť +/- 1 bajt za vstup.</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Transactions with RPIer priority get more likely into a block.
+
+This label turns red, if the priority is smaller than &quot;medium&quot;.
+
+ This means a fee of at least %1 per kb is required.</source>
+        <translation>Transakcie s vyššou prioritou sa dostanú s väčšou pravdepodobnosťou do bloku.
+
+Tento popis sčervenie, ak je priorita menšia ako &quot;stredná&quot;.
+
+To znamená, že je nutný poplatok vo výške aspoň %1 za kb.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -932,8 +982,8 @@ Sumy nižšie ako 0,546 násobok minimálneho poplatku sú zobrazené ako PRACH.
 To znamená, že je potrebný poplatok aspoň %2.</translation>
     </message>
     <message>
-        <location line="+35"/>
-        <location line="+58"/>
+        <location line="+37"/>
+        <location line="+66"/>
         <source>(no label)</source>
         <translation>(bez popisu)</translation>
     </message>
@@ -976,7 +1026,7 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
         <translation>Adresa spojená s položkou v tomto adresári. Toto môže byť zmenené iba pre odosielané adresy.</translation>
     </message>
     <message>
-        <location filename="../editaddressdialog.cpp" line="+21"/>
+        <location filename="../editaddressdialog.cpp" line="+20"/>
         <source>New receiving address</source>
         <translation>Nová adresa pre prijímanie</translation>
     </message>
@@ -1002,8 +1052,8 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
     </message>
     <message>
         <location line="-5"/>
-        <source>The entered address &quot;%1&quot; is not a valid Rpicoin address.</source>
-        <translation>Zadaná adresa &quot;%1&quot; nie je platnou Rpicoin adresou.</translation>
+        <source>The entered address &quot;%1&quot; is not a valid rpicoin address.</source>
+        <translation>Zadaná adresa &quot;%1&quot; nie je platnou rpicoin adresou.</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1019,10 +1069,10 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
 <context>
     <name>GUIUtil::HelpMessageBox</name>
     <message>
-        <location filename="../guiutil.cpp" line="+426"/>
+        <location filename="../guiutil.cpp" line="+420"/>
         <location line="+12"/>
-        <source>Rpicoin-Qt</source>
-        <translation>Rpicoin-Qt</translation>
+        <source>rpicoin-Qt</source>
+        <translation>rpicoin-Qt</translation>
     </message>
     <message>
         <location line="-12"/>
@@ -1094,13 +1144,23 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
     </message>
     <message>
         <location line="+31"/>
-        <source>Automatically start Rpicoin after logging in to the system.</source>
-        <translation>Automaticky spustiť Rpicoin po prihlásení sa do systému.</translation>
+        <source>Automatically start rpicoin after logging in to the system.</source>
+        <translation>Automaticky spustiť rpicoin po prihlásení sa do systému.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Start Rpicoin on system login</source>
-        <translation>&amp;Spustiť Rpicoin pri prihlásení do systému</translation>
+        <source>&amp;Start rpicoin on system login</source>
+        <translation>&amp;Spustiť rpicoin pri prihlásení do systému</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Detach block and address databases at shutdown. This means they can be moved to another data directory, but it slows down shutdown. The wallet is always detached.</source>
+        <translation>Odpojiť blok a databázy z adresami pri vypnutí počítača. To znamená, že môžu byť presunuté do iného adresára dát, ale to spomaľuje vypnutie. Peňaženka je vždy odpojená.</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>&amp;Detach databases at shutdown</source>
+        <translation>&amp;Odpojiť databázy pri vypnutí</translation>
     </message>
     <message>
         <location line="+21"/>
@@ -1109,8 +1169,8 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
     </message>
     <message>
         <location line="+6"/>
-        <source>Automatically open the Rpicoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Automaticky otvoriť port klienta Rpicoin na routeri. To funguje iba vtedy, ak váš router podporuje UPnP a je povolené.</translation>
+        <source>Automatically open the rpicoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Automaticky otvoriť port klienta rpicoin na routeri. To funguje iba vtedy, ak váš router podporuje UPnP a je povolené.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1118,7 +1178,17 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
         <translation>Mapovať port pomocou &amp;UPnP</translation>
     </message>
     <message>
-        <location line="+19"/>
+        <location line="+7"/>
+        <source>Connect to the rpicoin network through a SOCKS proxy (e.g. when connecting through Tor).</source>
+        <translation>Pripojenie k sieti rpicoin cez SOCKS proxy server (napr. pri pripojení cez Tor).</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>&amp;Connect through SOCKS proxy:</source>
+        <translation>&amp;Pripojenie cez SOCKS proxy server:</translation>
+    </message>
+    <message>
+        <location line="+9"/>
         <source>Proxy &amp;IP:</source>
         <translation>Proxy &amp;IP:</translation>
     </message>
@@ -1138,17 +1208,17 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
         <translation>Port proxy (napr. 9050)</translation>
     </message>
     <message>
-        <location line="-57"/>
-        <source>Connect to the Rpicoin network through a SOCKS5 proxy (e.g. when connecting through Tor).</source>
-        <translation>Pripojiť k sieti Rpicoin cez SOCKS5 proxy (napr. pri pripojení cez Tor).</translation>
+        <location line="+7"/>
+        <source>SOCKS &amp;Version:</source>
+        <translation>Verzia SOCKS:</translation>
     </message>
     <message>
-        <location line="+3"/>
-        <source>&amp;Connect through SOCKS5 proxy:</source>
-        <translation>&amp;Pripojenie cez SOCKS5 proxy:</translation>
+        <location line="+13"/>
+        <source>SOCKS version of the proxy (e.g. 5)</source>
+        <translation>SOCKS verzia proxy (napr. 5)</translation>
     </message>
     <message>
-        <location line="+90"/>
+        <location line="+36"/>
         <source>&amp;Window</source>
         <translation>Okno</translation>
     </message>
@@ -1175,7 +1245,7 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
     <message>
         <location line="+21"/>
         <source>&amp;Display</source>
-        <translation>&amp;Zobraznie</translation>
+        <translation>&amp;Displej</translation>
     </message>
     <message>
         <location line="+8"/>
@@ -1184,8 +1254,8 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
     </message>
     <message>
         <location line="+13"/>
-        <source>The user interface language can be set here. This setting will take effect after restarting Rpicoin.</source>
-        <translation>Tu môžete nastaviť jazyk používateľského rozhrania. Toto nastavenie sa prejaví až po reštartovaní Rpicoin.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting rpicoin.</source>
+        <translation>Tu môžete nastaviť jazyk používateľského rozhrania. Toto nastavenie sa prejaví až po reštartovaní rpicoin.</translation>
     </message>
     <message>
         <location line="+11"/>
@@ -1199,18 +1269,23 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
     </message>
     <message>
         <location line="+9"/>
+        <source>Whether to show rpicoin addresses in the transaction list or not.</source>
+        <translation>Či chcete zobraziť rpicoin adresy v zozname transakcií alebo nie.</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>&amp;Display addresses in transaction list</source>
+        <translation>&amp;Zobraziť adresy v zozname transakcií</translation>
+    </message>
+    <message>
+        <location line="+7"/>
         <source>Whether to show coin control features or not.</source>
-        <translation>Či sa majú zobraziť funkcie kontroly mincí alebo nie.</translation>
+        <translation>Či sa majú zobraziť coin control features alebo nie.</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Display coin &amp;control features (experts only!)</source>
-        <translation>Zobraziť funkcie &amp;kontroly mincí (len pre odborníkov!)</translation>
-    </message>
-    <message>
-        <location line="+7"/>
-        <source>Use black visual theme (requires restart)</source>
-        <translation>Použiť čiernu vizuálnu tému (vyžaduje reštart)</translation>
+        <translation>Zobraziť coin &amp;control features (len pre odborníkov!)</translation>
     </message>
     <message>
         <location line="+71"/>
@@ -1228,12 +1303,12 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
         <translation>&amp;Použiť</translation>
     </message>
     <message>
-        <location filename="../optionsdialog.cpp" line="+47"/>
+        <location filename="../optionsdialog.cpp" line="+55"/>
         <source>default</source>
         <translation>predvolené</translation>
     </message>
     <message>
-        <location line="+147"/>
+        <location line="+149"/>
         <location line="+9"/>
         <source>Warning</source>
         <translation>Upozornenie</translation>
@@ -1241,8 +1316,8 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
     <message>
         <location line="-9"/>
         <location line="+9"/>
-        <source>This setting will take effect after restarting Rpicoin.</source>
-        <translation>Toto nastavenie sa prejaví až po reštartovaní Rpicoin.</translation>
+        <source>This setting will take effect after restarting rpicoin.</source>
+        <translation>Toto nastavenie sa prejaví až po reštartovaní rpicoin.</translation>
     </message>
     <message>
         <location line="+29"/>
@@ -1258,23 +1333,23 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
         <translation>Forma</translation>
     </message>
     <message>
-        <location line="+46"/>
-        <location line="+247"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Rpicoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>Zobrazené informácie môžu byť zastaralé. Vaša peňaženka sa automaticky synchronizuje so sieťou Rpicoin po nadviazaní spojenia, ale tento proces nie je ešte dokončený.</translation>
+        <location line="+33"/>
+        <location line="+231"/>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the rpicoin network after a connection is established, but this process has not completed yet.</source>
+        <translation>Zobrazené informácie môžu byť zastaralé. Vaša peňaženka sa automaticky synchronizuje so sieťou rpicoin po nadviazaní spojenia, ale tento proces nie je ešte dokončený.</translation>
     </message>
     <message>
-        <location line="-173"/>
+        <location line="-160"/>
         <source>Stake:</source>
         <translation>V stávke:</translation>
     </message>
     <message>
-        <location line="+32"/>
+        <location line="+29"/>
         <source>Unconfirmed:</source>
         <translation>Nepotvrdené:</translation>
     </message>
     <message>
-        <location line="-113"/>
+        <location line="-107"/>
         <source>Wallet</source>
         <translation>Peňaženka</translation>
     </message>
@@ -1289,7 +1364,7 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
         <translation>Váš aktuálny použiteľný zostatok</translation>
     </message>
     <message>
-        <location line="+80"/>
+        <location line="+71"/>
         <source>Immature:</source>
         <translation>Nezrelé:</translation>
     </message>
@@ -1299,7 +1374,7 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
         <translation>Vyťažený zostatok, ktorý nebol ešte dozretý</translation>
     </message>
     <message>
-        <location line="+23"/>
+        <location line="+20"/>
         <source>Total:</source>
         <translation>Celkovo:</translation>
     </message>
@@ -1309,33 +1384,25 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
         <translation>Váš súčasný celkový zostatok</translation>
     </message>
     <message>
-        <location line="+50"/>
+        <location line="+46"/>
         <source>&lt;b&gt;Recent transactions&lt;/b&gt;</source>
         <translation>&lt;b&gt;Nedávne transakcie&lt;/b&gt;</translation>
     </message>
     <message>
-        <location line="-118"/>
+        <location line="-108"/>
         <source>Total of transactions that have yet to be confirmed, and do not yet count toward the current balance</source>
         <translation>Súčet transakcií, ktoré neboli ešte potvrdené, a ešte nezapočítané do aktuálneho zostatku</translation>
     </message>
     <message>
-        <location line="-32"/>
+        <location line="-29"/>
         <source>Total of coins that was staked, and do not yet count toward the current balance</source>
         <translation>Súčet mincí, ktoré sú v stávke a ešte neboli započítané do aktuálneho zostatku</translation>
     </message>
     <message>
-        <location filename="../overviewpage.cpp" line="+116"/>
+        <location filename="../overviewpage.cpp" line="+113"/>
         <location line="+1"/>
         <source>out of sync</source>
         <translation>nezosynchronizované</translation>
-    </message>
-</context>
-<context>
-    <name>PaymentServer</name>
-    <message>
-        <location filename="../paymentserver.cpp" line="+107"/>
-        <source>Cannot start Rpicoin: click-to-pay handler</source>
-        <translation>Rpicoin sa nedá spustiť: click-to-pay handler</translation>
     </message>
 </context>
 <context>
@@ -1412,11 +1479,13 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
         <location line="+36"/>
         <location line="+53"/>
         <location line="+23"/>
+        <location line="+23"/>
+        <location filename="../rpcconsole.cpp" line="+348"/>
         <source>N/A</source>
         <translation>nie je k dispozícii</translation>
     </message>
     <message>
-        <location line="-194"/>
+        <location line="-217"/>
         <source>Client version</source>
         <translation>Verzia klienta</translation>
     </message>
@@ -1461,34 +1530,12 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
         <translation>Aktuálny počet blokov</translation>
     </message>
     <message>
-        <location line="+197"/>
-        <source>&amp;Network Traffic</source>
-        <translation>&amp;Sieťové prenosy</translation>
+        <location line="+23"/>
+        <source>Estimated total blocks</source>
+        <translation>Očakávaných blokov celkovo</translation>
     </message>
     <message>
-        <location line="+52"/>
-        <source>&amp;Clear</source>
-        <translation>Vymazať</translation>
-    </message>
-    <message>
-        <location line="+13"/>
-        <source>Totals</source>
-        <translation>Súčty</translation>
-    </message>
-    <message>
-        <location line="+64"/>
-        <location filename="../rpcconsole.cpp" line="+352"/>
-        <source>In:</source>
-        <translation>Vstup:</translation>
-    </message>
-    <message>
-        <location line="+80"/>
-        <location filename="../rpcconsole.cpp" line="+1"/>
-        <source>Out:</source>
-        <translation>Výstup:</translation>
-    </message>
-    <message>
-        <location line="-383"/>
+        <location line="+23"/>
         <source>Last block time</source>
         <translation>Čas posledného bloku</translation>
     </message>
@@ -1504,8 +1551,8 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Show the Rpicoin-Qt help message to get a list with possible Rpicoin command-line options.</source>
-        <translation>Zobraziť Rpicoin-Qt nápovedu k získaniu zoznamu pre možnosti  príkazového riadku Rpicoin.</translation>
+        <source>Show the rpicoin-Qt help message to get a list with possible rpicoin command-line options.</source>
+        <translation>Zobraziť rpicoin-Qt nápovedu k získaniu zoznamu pre možnosti  príkazového riadku rpicoin.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1518,29 +1565,29 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
         <translation>&amp;Konzola</translation>
     </message>
     <message>
-        <location line="-237"/>
+        <location line="-260"/>
         <source>Build date</source>
         <translation>Dátum zostavenia</translation>
     </message>
     <message>
         <location line="-104"/>
-        <source>Rpicoin - Debug window</source>
-        <translation>Rpicoin - Ladiace okno</translation>
+        <source>rpicoin - Debug window</source>
+        <translation>rpicoin - Ladiace okno</translation>
     </message>
     <message>
         <location line="+25"/>
-        <source>Rpicoin Core</source>
-        <translation>Jadro Rpicoin</translation>
+        <source>rpicoin Core</source>
+        <translation>Jadro rpicoin</translation>
     </message>
     <message>
-        <location line="+256"/>
+        <location line="+279"/>
         <source>Debug log file</source>
         <translation>Súbor denníka ladenia</translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Open the Rpicoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Otvorte Rpicoin súbor denníku ladenia z aktuálneho adresára dát. To môže trvať niekoľko sekúnd pre veľké súbory denníka.</translation>
+        <source>Open the rpicoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Otvorte rpicoin súbor denníku ladenia z aktuálneho adresára dát. To môže trvať niekoľko sekúnd pre veľké súbory denníka.</translation>
     </message>
     <message>
         <location line="+102"/>
@@ -1548,9 +1595,9 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
         <translation>Vymazať konzolu</translation>
     </message>
     <message>
-        <location filename="../rpcconsole.cpp" line="-28"/>
-        <source>Welcome to the Rpicoin RPC console.</source>
-        <translation>Vitajte v konzole Rpicoin RPC.</translation>
+        <location filename="../rpcconsole.cpp" line="-33"/>
+        <source>Welcome to the rpicoin RPC console.</source>
+        <translation>Vitajte v konzole rpicoin RPC.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -1562,47 +1609,12 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
         <source>Type &lt;b&gt;help&lt;/b&gt; for an overview of available commands.</source>
         <translation>Zadajte &lt;b&gt;help&lt;/b&gt; pre prehľad dostupných príkazov.</translation>
     </message>
-    <message>
-        <location line="+134"/>
-        <source>%1 B</source>
-        <translation>%1 B</translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>%1 KB</source>
-        <translation>%1 KB</translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>%1 MB</source>
-        <translation>%1 MB</translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>%1 GB</source>
-        <translation>%1 GB</translation>
-    </message>
-    <message>
-        <location line="+7"/>
-        <source>%1 m</source>
-        <translation>%1 m</translation>
-    </message>
-    <message>
-        <location line="+5"/>
-        <source>%1 h</source>
-        <translation>%1 h</translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>%1 h %2 m</source>
-        <translation>%1 h %2 m</translation>
-    </message>
 </context>
 <context>
     <name>SendCoinsDialog</name>
     <message>
         <location filename="../forms/sendcoinsdialog.ui" line="+14"/>
-        <location filename="../sendcoinsdialog.cpp" line="+179"/>
+        <location filename="../sendcoinsdialog.cpp" line="+182"/>
         <location line="+5"/>
         <location line="+5"/>
         <location line="+5"/>
@@ -1615,7 +1627,7 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
     <message>
         <location line="+76"/>
         <source>Coin Control Features</source>
-        <translation>Funkcie kontroly mincí</translation>
+        <translation>Coin Control Features</translation>
     </message>
     <message>
         <location line="+20"/>
@@ -1654,7 +1666,25 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
         <translation>Suma:</translation>
     </message>
     <message>
-        <location line="+54"/>
+        <location line="+22"/>
+        <location line="+86"/>
+        <location line="+86"/>
+        <location line="+32"/>
+        <source>0.00 BC</source>
+        <translation>123.456 BC {0.00 ?}</translation>
+    </message>
+    <message>
+        <location line="-191"/>
+        <source>Priority:</source>
+        <translation>Priorita:</translation>
+    </message>
+    <message>
+        <location line="+19"/>
+        <source>medium</source>
+        <translation>stredne</translation>
+    </message>
+    <message>
+        <location line="+32"/>
         <source>Fee:</source>
         <translation>Poplatok:</translation>
     </message>
@@ -1694,7 +1724,7 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
         <translation>&amp;Pridať príjemcu</translation>
     </message>
     <message>
-        <location line="+16"/>
+        <location line="+20"/>
         <source>Remove all transaction fields</source>
         <translation>Odstráňte všetky transakčné polia</translation>
     </message>
@@ -1704,12 +1734,17 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
         <translation>Zmazať &amp;všetko</translation>
     </message>
     <message>
-        <location line="+24"/>
+        <location line="+28"/>
         <source>Balance:</source>
         <translation>Zostatok:</translation>
     </message>
     <message>
-        <location line="+47"/>
+        <location line="+16"/>
+        <source>123.456 BC</source>
+        <translation>123.456 BC</translation>
+    </message>
+    <message>
+        <location line="+31"/>
         <source>Confirm the send action</source>
         <translation>Potvrďte odoslanie</translation>
     </message>
@@ -1719,9 +1754,9 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
         <translation>&amp;Odoslať</translation>
     </message>
     <message>
-        <location filename="../sendcoinsdialog.cpp" line="-171"/>
-        <source>Enter a Rpicoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
-        <translation>Zadajte Rpicoin adresu (napr. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
+        <location filename="../sendcoinsdialog.cpp" line="-173"/>
+        <source>Enter a rpicoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <translation>Zadajte rpicoin adresu (napr. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -1750,6 +1785,11 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
     </message>
     <message>
         <location line="+1"/>
+        <source>Copy priority</source>
+        <translation>Kopírovať prioritu</translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source>Copy low output</source>
         <translation>Kopírovať nízky výstup</translation>
     </message>
@@ -1759,7 +1799,7 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
         <translation>Kopírovať zmenu</translation>
     </message>
     <message>
-        <location line="+85"/>
+        <location line="+86"/>
         <source>&lt;b&gt;%1&lt;/b&gt; to %2 (%3)</source>
         <translation>&lt;b&gt;%1&lt;/b&gt; do %2 (%3)</translation>
     </message>
@@ -1805,8 +1845,8 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
     </message>
     <message>
         <location line="+5"/>
-        <source>Error: Transaction creation failed!</source>
-        <translation>Chyba: Vytvorenie transakcie zlyhalo!</translation>
+        <source>Error: Transaction creation failed.</source>
+        <translation>Chyba: Vytvorenie transakcie zlyhalo.</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -1814,9 +1854,9 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
         <translation>Chyba: Transakcia bola zamietnutá. To môže nastať, ak niektoré z mincí vo vašej peňaženke sa už použili, ako napríklad, ak ste použili kópiu wallet.dat a mince boli použité v kópii, ale neboli označené tu ako použité.</translation>
     </message>
     <message>
-        <location line="+241"/>
-        <source>WARNING: Invalid Rpicoin address</source>
-        <translation>UPOZORNENIE: Neplatná Rpicoin adresa</translation>
+        <location line="+251"/>
+        <source>WARNING: Invalid rpicoin address</source>
+        <translation>UPOZORNENIE: Neplatná rpicoin adresa</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -1847,23 +1887,23 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
         <translation>Zapla&amp;tiť:</translation>
     </message>
     <message>
-        <location line="+34"/>
-        <source>The address to send the payment to (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
-        <translation>Adresa pre poslanie platby (napr. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
-    </message>
-    <message>
-        <location line="+60"/>
-        <location filename="../sendcoinsentry.cpp" line="+26"/>
+        <location line="+24"/>
+        <location filename="../sendcoinsentry.cpp" line="+25"/>
         <source>Enter a label for this address to add it to your address book</source>
         <translation>Vložte popis pre túto adresu aby sa pridala do adresára</translation>
     </message>
     <message>
-        <location line="-78"/>
+        <location line="+9"/>
         <source>&amp;Label:</source>
         <translation>&amp;Popis:</translation>
     </message>
     <message>
-        <location line="+28"/>
+        <location line="+18"/>
+        <source>The address to send the payment to  (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <translation>Adresa pre poslanie platby (napr. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
+    </message>
+    <message>
+        <location line="+10"/>
         <source>Choose address from address book</source>
         <translation>Vybrať adresu z adresára</translation>
     </message>
@@ -1889,8 +1929,8 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
     </message>
     <message>
         <location filename="../sendcoinsentry.cpp" line="+1"/>
-        <source>Enter a Rpicoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
-        <translation>Zadajte Rpicoin adresu (napr. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
+        <source>Enter a rpicoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <translation>Zadajte rpicoin adresu (napr. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
     </message>
 </context>
 <context>
@@ -1950,8 +1990,8 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this Rpicoin address</source>
-        <translation>Podpísať správu ako dôkaz, že vlastníte túto Rpicoin adresu</translation>
+        <source>Sign the message to prove you own this rpicoin address</source>
+        <translation>Podpísať správu ako dôkaz, že vlastníte túto rpicoin adresu</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -1982,8 +2022,8 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
     </message>
     <message>
         <location line="+40"/>
-        <source>Verify the message to ensure it was signed with the specified Rpicoin address</source>
-        <translation>Overte správu, aby ste sa ubezpečili, že bola podpísaná s danou Rpicoin adresou</translation>
+        <source>Verify the message to ensure it was signed with the specified rpicoin address</source>
+        <translation>Overte správu, aby ste sa ubezpečili, že bola podpísaná s danou rpicoin adresou</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -1993,8 +2033,8 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
     <message>
         <location filename="../signverifymessagedialog.cpp" line="+27"/>
         <location line="+3"/>
-        <source>Enter a Rpicoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
-        <translation>Zadajte Rpicoin adresu (napr. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
+        <source>Enter a rpicoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <translation>Zadajte rpicoin adresu (napr. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
     </message>
     <message>
         <location line="-2"/>
@@ -2003,11 +2043,11 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Enter Rpicoin signature</source>
-        <translation>Zadajte Rpicoin podpis</translation>
+        <source>Enter rpicoin signature</source>
+        <translation>Zadajte rpicoin podpis</translation>
     </message>
     <message>
-        <location line="+85"/>
+        <location line="+82"/>
         <location line="+81"/>
         <source>The entered address is invalid.</source>
         <translation>Zadaná adresa je neplatná.</translation>
@@ -2074,22 +2114,19 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
     </message>
 </context>
 <context>
-    <name>TrafficGraphWidget</name>
-    <message>
-        <location filename="../trafficgraphwidget.cpp" line="+75"/>
-        <source>KB/s</source>
-        <translation>KB/s</translation>
-    </message>
-</context>
-<context>
     <name>TransactionDesc</name>
     <message>
-        <location filename="../transactiondesc.cpp" line="+25"/>
+        <location filename="../transactiondesc.cpp" line="+19"/>
         <source>Open until %1</source>
         <translation>Otvorené do %1</translation>
     </message>
+    <message numerus="yes">
+        <location line="-2"/>
+        <source>Open for %n block(s)</source>
+        <translation><numerusform>Otvoriť pre %n blok</numerusform><numerusform>Otvoriť pre %n blokov</numerusform><numerusform>Otvoriť pre %n blokov</numerusform></translation>
+    </message>
     <message>
-        <location line="+6"/>
+        <location line="+8"/>
         <source>conflicted</source>
         <translation>v rozpore</translation>
     </message>
@@ -2109,7 +2146,7 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
         <translation>%1 potvrdení</translation>
     </message>
     <message>
-        <location line="+17"/>
+        <location line="+18"/>
         <source>Status</source>
         <translation>Stav</translation>
     </message>
@@ -2135,19 +2172,19 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
     </message>
     <message>
         <location line="+5"/>
-        <location line="+13"/>
+        <location line="+17"/>
         <source>From</source>
         <translation>Od</translation>
     </message>
     <message>
         <location line="+1"/>
-        <location line="+19"/>
+        <location line="+22"/>
         <location line="+58"/>
         <source>To</source>
         <translation>Pre</translation>
     </message>
     <message>
-        <location line="-74"/>
+        <location line="-77"/>
         <location line="+2"/>
         <source>own address</source>
         <translation>vlastná adresa</translation>
@@ -2158,7 +2195,7 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
         <translation>popis</translation>
     </message>
     <message>
-        <location line="+34"/>
+        <location line="+37"/>
         <location line="+12"/>
         <location line="+45"/>
         <location line="+17"/>
@@ -2211,8 +2248,8 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Generated coins must mature 510 blocks before they can be spent. When you generated this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to &quot;not accepted&quot; and it won&apos;t be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
-        <translation>Generované mince musia zrieť 510 blokov pred tým, než môžu byť použité. Keď sa vygeneroval tento blok, bol vysielaný do siete, kde má byť pridaný do reťazca blokov. Ak sa nepodarí dostať ho do reťazca blokov, jeho stav sa zmení na &quot;Neprijatý&quot;, a nebude použiteľný. Toto sa môže občas stať, ak iný uzol generuje blok v priebehu niekoľkých sekúnd pred Vami.</translation>
+        <source>Generated coins must mature 5 blocks before they can be spent. When you generated this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to &quot;not accepted&quot; and it won&apos;t be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
+        <translation>Generované mince musia zrieť 5 blokov pred tým, než môžu byť použité. Keď sa vygeneroval tento blok, bol vysielaný do siete, kde má byť pridaný do reťazca blokov. Ak sa nepodarí dostať ho do reťazca blokov, jeho stav sa zmení na &quot;Neprijatý&quot;, a nebude použiteľný. Toto sa môže občas stať, ak iný uzol generuje blok v priebehu niekoľkých sekúnd pred Vami.</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -2230,7 +2267,7 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
         <translation>Vstupy</translation>
     </message>
     <message>
-        <location line="+21"/>
+        <location line="+23"/>
         <source>Amount</source>
         <translation>Suma</translation>
     </message>
@@ -2245,17 +2282,12 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
         <translation>nepravda</translation>
     </message>
     <message>
-        <location line="-202"/>
+        <location line="-211"/>
         <source>, has not been successfully broadcast yet</source>
         <translation>, ešte nebola úspešne odoslaná</translation>
     </message>
-    <message numerus="yes">
-        <location line="-36"/>
-        <source>Open for %n more block(s)</source>
-        <translation><numerusform>Otvorené pre %n ďalší blok</numerusform><numerusform>Otvorené pre %n ďalšie bloky</numerusform><numerusform>Otvorené pre %n ďalších blokov</numerusform></translation>
-    </message>
     <message>
-        <location line="+67"/>
+        <location line="+35"/>
         <source>unknown</source>
         <translation>neznámy</translation>
     </message>
@@ -2276,7 +2308,7 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
 <context>
     <name>TransactionTableModel</name>
     <message>
-        <location filename="../transactiontablemodel.cpp" line="+231"/>
+        <location filename="../transactiontablemodel.cpp" line="+226"/>
         <source>Date</source>
         <translation>Dátum</translation>
     </message>
@@ -2296,7 +2328,7 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
         <translation>Hodnota</translation>
     </message>
     <message>
-        <location line="+52"/>
+        <location line="+60"/>
         <source>Open until %1</source>
         <translation>Otvorené do %1</translation>
     </message>
@@ -2376,7 +2408,7 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
         <translation>(n/a)</translation>
     </message>
     <message>
-        <location line="+194"/>
+        <location line="+190"/>
         <source>Transaction status. Hover over this field to show number of confirmations.</source>
         <translation>Status transakcie. Presuňte myš nad toto pole a zobrazí sa počet potvrdení.</translation>
     </message>
@@ -2404,13 +2436,13 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
 <context>
     <name>TransactionView</name>
     <message>
-        <location filename="../transactionview.cpp" line="+54"/>
-        <location line="+17"/>
+        <location filename="../transactionview.cpp" line="+55"/>
+        <location line="+16"/>
         <source>All</source>
         <translation>Všetko</translation>
     </message>
     <message>
-        <location line="-16"/>
+        <location line="-15"/>
         <source>Today</source>
         <translation>Dnes</translation>
     </message>
@@ -2440,7 +2472,7 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
         <translation>Rozsah...</translation>
     </message>
     <message>
-        <location line="+12"/>
+        <location line="+11"/>
         <source>Received with</source>
         <translation>Prijaté s</translation>
     </message>
@@ -2452,7 +2484,7 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
     <message>
         <location line="+2"/>
         <source>To yourself</source>
-        <translation>Sebe samému</translation>
+        <translation>Samému sebe</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2505,7 +2537,7 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
         <translation>Zobraziť podrobnosti transakcie</translation>
     </message>
     <message>
-        <location line="+138"/>
+        <location line="+144"/>
         <source>Export Transaction Data</source>
         <translation>Export transakčných údajov</translation>
     </message>
@@ -2573,7 +2605,7 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
 <context>
     <name>WalletModel</name>
     <message>
-        <location filename="../walletmodel.cpp" line="+212"/>
+        <location filename="../walletmodel.cpp" line="+206"/>
         <source>Sending...</source>
         <translation>Posielam...</translation>
     </message>
@@ -2581,9 +2613,9 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
 <context>
     <name>bitcoin-core</name>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="+8"/>
-        <source>Rpicoin version</source>
-        <translation>Verzia Rpicoin</translation>
+        <location filename="../bitcoinstrings.cpp" line="+33"/>
+        <source>rpicoin version</source>
+        <translation>rpicoin verzia</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2606,14 +2638,14 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
         <translation>Získať pomoc pre príkaz</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>Options:</source>
         <translation>Možnosti:</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Specify configuration file (default: Rpicoin.conf)</source>
-        <translation>Zadajte konfiguračný súbor (predvolené: Rpicoin.conf)</translation>
+        <source>Specify configuration file (default: rpicoin.conf)</source>
+        <translation>Zadajte konfiguračný súbor (predvolené: rpicoin.conf)</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2631,32 +2663,7 @@ To znamená, že je potrebný poplatok aspoň %2.</translation>
         <translation>Zadajte priečinok s dátami</translation>
     </message>
     <message>
-        <location line="+163"/>
-        <source>%s, you must set a rpcpassword in the configuration file:
-%s
-It is recommended you use the following random password:
-rpcuser=Rpicoinrpc
-rpcpassword=%s
-(you do not need to remember this password)
-The username and password MUST NOT be the same.
-If the file does not exist, create it with owner-readable-only file permissions.
-It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s &quot;Rpicoin Alert&quot; admin@foo.com
-</source>
-        <translation>%s, musíte nastaviť rpcpassword v konfiguračnom súbore:
-%s
-Doporučuje sa použiť nasledovné náhodne heslo:
-rpcuser=Rpicoinrpc
-rpcpassword=%s
-(toto heslo si nemusíte pamätať)
-Užívateľské meno a heslo NESMIE byť rovnaké.
-Ak súbor neexistuje, vytvorte ho s právami &quot;môže čítať iba vlastník&quot;.
-Odporúča sa tiež nastaviť &quot;alertnotify&quot;, takže budete upozornení na problémy,
-napríklad: alertnotify=echo %%s | mail -s &quot;Rpicoin upozornenie&quot; admin@foo.com
-</translation>
-    </message>
-    <message>
-        <location line="-161"/>
+        <location line="+2"/>
         <source>Set database cache size in megabytes (default: 25)</source>
         <translation>Nastaviť veľkosť vyrovnávajúcej pamäte pre databázu v megabytoch (predvolené: 25)</translation>
     </message>
@@ -2666,9 +2673,9 @@ napríklad: alertnotify=echo %%s | mail -s &quot;Rpicoin upozornenie&quot; admin
         <translation>Nastaviť veľkosť databázového denníka na disku v MB (predvolené: 100)</translation>
     </message>
     <message>
-        <location line="+5"/>
-        <source>Listen for connections on &lt;port&gt; (default: 18000 or testnet: 18002)</source>
-        <translation>Počúvať pripojenia na &lt;port&gt; (predvolené: 18000 alebo testovacia sieť: 18002)</translation>
+        <location line="+6"/>
+        <source>Listen for connections on &lt;port&gt; (default: 23185 or testnet: 33185)</source>
+        <translation>Počúvať pripojenia na &lt;port&gt; (predvolené: 23185 alebo testovacia sieť: 33185)</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2686,22 +2693,17 @@ napríklad: alertnotify=echo %%s | mail -s &quot;Rpicoin upozornenie&quot; admin
         <translation>Určite vašu vlastnú verejnú adresu</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+5"/>
         <source>Bind to given address. Use [host]:port notation for IPv6</source>
         <translation>Spojiť do danej adresy. Použite [host]:port zápis pre IPv6</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Query for peer addresses via DNS lookup, if low on addresses (default: 1 unless -connect)</source>
-        <translation>Dotaz na partnerské adresy pomocou vyhľadávania DNS v prípade nedostatku adries (predvolené: 1, pokiaľ -connect)</translation>
+        <location line="+2"/>
+        <source>Stake your coins to support network and gain reward (default: 1)</source>
+        <translation>Nechajte stávkovať vaše mince pre podporu siete a získajte odmenu (predvolené: 1)</translation>
     </message>
     <message>
-        <location line="+3"/>
-        <source>Always query for peer addresses via DNS lookup (default: 0)</source>
-        <translation>Vždy sa pýtať na partnerské adresy pomocou vyhľadávania DNS (predvolené: 0)</translation>
-    </message>
-    <message>
-        <location line="+4"/>
+        <location line="+5"/>
         <source>Threshold for disconnecting misbehaving peers (default: 100)</source>
         <translation>Hranica pre odpojenie zle sa správajúcich peerov (predvolené: 100)</translation>
     </message>
@@ -2711,22 +2713,57 @@ napríklad: alertnotify=echo %%s | mail -s &quot;Rpicoin upozornenie&quot; admin
         <translation>Počet sekúnd kedy sa zabráni zle sa správajúcim peerom znovupripojenie (predvolené: 86400)</translation>
     </message>
     <message>
-        <location line="+153"/>
+        <location line="-44"/>
         <source>An error occurred while setting up the RPC port %u for listening on IPv4: %s</source>
         <translation>Pri nastavovaní portu RPC %u pre počúvanie na IPv4 došlo k chybe: %s</translation>
     </message>
     <message>
-        <location line="-126"/>
-        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 18001 or testnet: 18003)</source>
-        <translation>Počúvajte pre JSON-RPC spojenie na &lt;port&gt; (predvolené: 18001 alebo testovacia sieť: 18003)</translation>
+        <location line="+51"/>
+        <source>Detach block and address databases. Increases shutdown time (default: 0)</source>
+        <translation>Odpojiť blok a databázy adries. Zvyšuje vypínací čas (predvolené: 0)</translation>
     </message>
     <message>
-        <location line="-16"/>
+        <location line="+109"/>
+        <source>Error: The transaction was rejected.  This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
+        <translation>Chyba: Transakcia bola zamietnutá. To môže nastať, ak niektoré z mincí vo vašej peňaženke sa už použili, ako napríklad, ak ste použili kópiu wallet.dat a mince boli použité v kópii, ale neboli označené ako použité tu.</translation>
+    </message>
+    <message>
+        <location line="-5"/>
+        <source>Error: This transaction requires a transaction fee of at least %s because of its amount, complexity, or use of recently received funds  </source>
+        <translation>Chyba: Táto operácia vyžaduje transakčný poplatok vo výške aspoň %s, pretože jeho množstvo, zložitosť, alebo použitím nedávno prijatých finančných prostriedkov</translation>
+    </message>
+    <message>
+        <location line="-87"/>
+        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 23186 or testnet: 33186)</source>
+        <translation>Počúvajte pre JSON-RPC spojenie na &lt;port&gt; (predvolené: 23186 alebo testovaciasieť: 33186)</translation>
+    </message>
+    <message>
+        <location line="-11"/>
         <source>Accept command line and JSON-RPC commands</source>
         <translation>Prijímať príkazy z príkazového riadku a JSON-RPC</translation>
     </message>
     <message>
+        <location line="+101"/>
+        <source>Error: Transaction creation failed  </source>
+        <translation>Chyba: Vytvorenie transakcie zlyhalo</translation>
+    </message>
+    <message>
+        <location line="-5"/>
+        <source>Error: Wallet locked, unable to create transaction  </source>
+        <translation>Chyba: Peňaženka je zamknutá, nie je možné vytvoriť transakciu</translation>
+    </message>
+    <message>
+        <location line="-8"/>
+        <source>Importing blockchain data file.</source>
+        <translation>Importovanie dátového súboru reťazca blokov.</translation>
+    </message>
+    <message>
         <location line="+1"/>
+        <source>Importing bootstrap blockchain data file.</source>
+        <translation>Import zavádzacej časti blockchain dátového súbora.</translation>
+    </message>
+    <message>
+        <location line="-88"/>
         <source>Run in the background as a daemon and accept commands</source>
         <translation>Bežať na pozadí ako démon a prijímať príkazy</translation>
     </message>
@@ -2736,47 +2773,57 @@ napríklad: alertnotify=echo %%s | mail -s &quot;Rpicoin upozornenie&quot; admin
         <translation>Použiť testovaciu sieť</translation>
     </message>
     <message>
-        <location line="-23"/>
+        <location line="-24"/>
         <source>Accept connections from outside (default: 1 if no -proxy or -connect)</source>
         <translation>Prijímať pripojenie z vonka (predvolené: 1, ak nie -proxy alebo -connect)</translation>
     </message>
     <message>
-        <location line="+160"/>
+        <location line="-38"/>
         <source>An error occurred while setting up the RPC port %u for listening on IPv6, falling back to IPv4: %s</source>
         <translation>Pri nastavovaní portu RPC %u pre počúvanie na IPv6, spadne späť do IPv4 došlo k chybe: %s</translation>
     </message>
     <message>
-        <location line="-84"/>
-        <source>Warning: -paytxfee is set very high! This is the transaction fee you will pay if you send a transaction.</source>
+        <location line="+117"/>
+        <source>Error initializing database environment %s! To recover, BACKUP THAT DIRECTORY, then remove everything from it except for wallet.dat.</source>
+        <translation>Chyba pri inicializácii databázy prostredie %s! Ak chcete obnoviť, ZÁLOHUJTE TENTO ADRESÁR, potom všetko z neho odstránte okrem wallet.dat.</translation>
+    </message>
+    <message>
+        <location line="-20"/>
+        <source>Set maximum size of RPI-priority/low-fee transactions in bytes (default: 27000)</source>
+        <translation>Nastavte maximálnu veľkosť RPI-priority/low-fee transakcií v bajtoch (predvolené: 27000)</translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>Warning: -paytxfee is set very RPI! This is the transaction fee you will pay if you send a transaction.</source>
         <translation>Upozornenie: -paytxfee je nastavené veľmi vysoko. Toto sú transakčné poplatky ktoré zaplatíte ak odošlete transakciu.</translation>
     </message>
     <message>
-        <location line="+46"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong Rpicoin will not work properly.</source>
-        <translation>Upozornenie: Skontrolujte, že dátum a čas počítača sú správne! Ak je Váš čas nesprávny Rpicoin nebude pracovať správne.</translation>
+        <location line="+61"/>
+        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong rpicoin will not work properly.</source>
+        <translation>Upozornenie: Skontrolujte, že dátum a čas počítača sú správne! Ak je Váš čas nesprávny rpicoin nebude pracovať správne.</translation>
     </message>
     <message>
-        <location line="-19"/>
+        <location line="-31"/>
         <source>Warning: error reading wallet.dat! All keys read correctly, but transaction data or address book entries might be missing or incorrect.</source>
         <translation>Upozornenie: Chyba pri čítaní wallet.dat! Všetky kľúče načítané správne, ale transakčné dáta alebo položky adresára môže chýbať alebo byť nesprávne.</translation>
     </message>
     <message>
-        <location line="-16"/>
+        <location line="-18"/>
         <source>Warning: wallet.dat corrupt, data salvaged! Original wallet.dat saved as wallet.{timestamp}.bak in %s; if your balance or transactions are incorrect you should restore from a backup.</source>
         <translation>Upozornenie: wallet.dat poškodený, údaje zachránené! Pôvodný wallet.dat bol uložený ako wallet.{timestamp}.bak v %s; ak váš zostatok alebo transakcie nie sú správne, mali by ste obnoviť zo zálohy.</translation>
     </message>
     <message>
-        <location line="-31"/>
+        <location line="-30"/>
         <source>Attempt to recover private keys from a corrupt wallet.dat</source>
         <translation>Pokus obnoviť súkromné kľúče z poškodeného wallet.dat</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+4"/>
         <source>Block creation options:</source>
-        <translation>Možnosti vytvorenia bloku:</translation>
+        <translation>Voľby vytvorenia bloku:</translation>
     </message>
     <message>
-        <location line="-66"/>
+        <location line="-62"/>
         <source>Connect only to the specified node(s)</source>
         <translation>Pripojiť sa len k určenému uzlu(om)</translation>
     </message>
@@ -2786,12 +2833,22 @@ napríklad: alertnotify=echo %%s | mail -s &quot;Rpicoin upozornenie&quot; admin
         <translation>Objavte vlastnú IP adresa (predvolené: 1 pri počúvaní a nie -externalip)</translation>
     </message>
     <message>
-        <location line="+97"/>
+        <location line="+94"/>
         <source>Failed to listen on any port. Use -listen=0 if you want this.</source>
         <translation>Nepodarilo sa počúvať žiadnom porte. Použite -listen=0 ak to chcete.</translation>
     </message>
     <message>
-        <location line="-2"/>
+        <location line="-90"/>
+        <source>Find peers using DNS lookup (default: 1)</source>
+        <translation>Nájsť peerov pomocou vyhľadávania DNS (predvolené: 1)</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Sync checkpoints policy (default: strict)</source>
+        <translation>Sync checkpoints policy (predvolené: strict)</translation>
+    </message>
+    <message>
+        <location line="+83"/>
         <source>Invalid -tor address: &apos;%s&apos;</source>
         <translation>Neplatná -tor adresa: &apos;%s&apos;</translation>
     </message>
@@ -2801,7 +2858,7 @@ napríklad: alertnotify=echo %%s | mail -s &quot;Rpicoin upozornenie&quot; admin
         <translation>Neplatná suma pre -reservebalance=&lt;množstvo&gt;</translation>
     </message>
     <message>
-        <location line="-85"/>
+        <location line="-82"/>
         <source>Maximum per-connection receive buffer, &lt;n&gt;*1000 bytes (default: 5000)</source>
         <translation>Maximum pre-pripojenie prijímacej vyrovnávacej pamäti, &lt;n&gt;*1000 bajtov (predvolené: 5000)</translation>
     </message>
@@ -2816,22 +2873,42 @@ napríklad: alertnotify=echo %%s | mail -s &quot;Rpicoin upozornenie&quot; admin
         <translation>Pripojiť len k uzlom siete &lt;net&gt; (IPv4, IPv6 alebo Tor)</translation>
     </message>
     <message>
-        <location line="+30"/>
+        <location line="+28"/>
+        <source>Output extra debugging information. Implies all other -debug* options</source>
+        <translation>Výstupné ďalšie informácie o ladení. Znamená všetky -debug* možnosti</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Output extra network debugging information</source>
+        <translation>Výstupné ďalšie sieťové informácie o ladení</translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source>Prepend debug output with timestamp</source>
         <translation>Pred debug výstup s časovou pečiatkou</translation>
     </message>
     <message>
-        <location line="+36"/>
+        <location line="+35"/>
         <source>SSL options: (see the Bitcoin Wiki for SSL setup instructions)</source>
         <translation>SSL možnosť: (pozrite Bitcoin Wiki pre návod na nastavenie SSL)</translation>
     </message>
     <message>
-        <location line="-34"/>
-        <source>Send trace/debug info to console instead of debug.log file</source>
-        <translation>Odoslať trace/debug informácie na konzolu namiesto debug.info súboru</translation>
+        <location line="-74"/>
+        <source>Select the version of socks proxy to use (4-5, default: 5)</source>
+        <translation>Vyberte verziu SOCKS proxy pre používanie (4-5, predvolené: 5)</translation>
     </message>
     <message>
-        <location line="+33"/>
+        <location line="+41"/>
+        <source>Send trace/debug info to console instead of debug.log file</source>
+        <translation>Odoslať trace/debug informácie na konzolu namiesto debug.info žurnálu</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Send trace/debug info to debugger</source>
+        <translation>Poslať stopy/ladiace informácie do debuggera</translation>
+    </message>
+    <message>
+        <location line="+28"/>
         <source>Set maximum block size in bytes (default: 250000)</source>
         <translation>Nastavte maximálnu veľkosť bloku v bajtoch (predvolené: 250000)</translation>
     </message>
@@ -2841,17 +2918,24 @@ napríklad: alertnotify=echo %%s | mail -s &quot;Rpicoin upozornenie&quot; admin
         <translation>Nastavte minimálnu veľkosť bloku v bajtoch (predvolené: 0)</translation>
     </message>
     <message>
-        <location line="-33"/>
+        <location line="-29"/>
         <source>Shrink debug.log file on client startup (default: 1 when no -debug)</source>
         <translation>Stlačiť debug.log súbor na spustenie klienta (predvolené: 1, keď nie -debug)</translation>
     </message>
     <message>
-        <location line="-41"/>
+        <location line="-42"/>
         <source>Specify connection timeout in milliseconds (default: 5000)</source>
         <translation>Určiť aut spojenia v milisekundách (predvolené: 5000)</translation>
     </message>
     <message>
-        <location line="+28"/>
+        <location line="+109"/>
+        <source>Unable to sign checkpoint, wrong checkpointkey?
+</source>
+        <translation>Nemožno podpísať kontrolný bod, zlý checkpointkey?
+</translation>
+    </message>
+    <message>
+        <location line="-80"/>
         <source>Use UPnP to map the listening port (default: 0)</source>
         <translation>Skúsiť použiť UPnP pre mapovanie počúvajúceho portu (default: 0)</translation>
     </message>
@@ -2866,97 +2950,81 @@ napríklad: alertnotify=echo %%s | mail -s &quot;Rpicoin upozornenie&quot; admin
         <translation>Použiť proxy server k získaniu Tor skrytých služieb (predvolené: rovnaká ako -proxy)</translation>
     </message>
     <message>
-        <location line="+45"/>
+        <location line="+42"/>
         <source>Username for JSON-RPC connections</source>
         <translation>Užívateľské meno pre JSON-RPC spojenia</translation>
     </message>
     <message>
-        <location line="+50"/>
+        <location line="+47"/>
         <source>Verifying database integrity...</source>
         <translation>Overenie integrity databázy ...</translation>
     </message>
     <message>
-        <location line="+43"/>
-        <source>Error: Wallet locked, unable to create transaction!</source>
-        <translation>Chyba: Peňaženka je zamknutá, nie je možné vytvoriť transakciu!</translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Error: This transaction requires a transaction fee of at least %s because of its amount, complexity, or use of recently received funds!</source>
-        <translation>Chyba: Táto operácia vyžaduje transakčný poplatok vo výške aspoň %s, kvôli jej množstvu, zložitosti, alebo použitím nedávno prijatých finančných prostriedkov!</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Error: Transaction creation failed!</source>
-        <translation>Chyba: Vytvorenie transakcie zlyhalo!</translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Error: The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
-        <translation>Chyba: Transakcia bola zamietnutá! Toto môže nastať, ak niektoré z mincí vo vašej peňaženke sa už použili, ako napríklad, ak ste použili kópiu wallet.dat a mince boli použité v kópii, ale neboli označené ako použité tu.</translation>
-    </message>
-    <message>
-        <location line="-15"/>
-        <source>Warning</source>
-        <translation>Varovanie</translation>
+        <location line="+57"/>
+        <source>WARNING: syncronized checkpoint violation detected, but skipped!</source>
+        <translation>UPOZORNENIE: detekovaný synchronizovaný porušený checkpoint, ale preskočený!</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Information</source>
-        <translation>Informácia</translation>
+        <source>Warning: Disk space is low!</source>
+        <translation>Upozornenie: Nedostatok miesta na disku!</translation>
     </message>
     <message>
-        <location line="-7"/>
+        <location line="-2"/>
         <source>Warning: This version is obsolete, upgrade required!</source>
         <translation>Upozornenie: Táto verzia je zastaraná, vyžaduje sa aktualizácia!</translation>
     </message>
     <message>
-        <location line="-23"/>
+        <location line="-48"/>
         <source>wallet.dat corrupt, salvage failed</source>
         <translation>wallet.dat je poškodený, záchrana zlyhala</translation>
     </message>
     <message>
-        <location line="-55"/>
+        <location line="-54"/>
         <source>Password for JSON-RPC connections</source>
         <translation>Heslo pre JSON-rPC spojenia</translation>
     </message>
     <message>
-        <location line="-47"/>
-        <source>Connect through SOCKS5 proxy</source>
-        <translation>Pripojenie cez SOCKS5 proxy</translation>
+        <location line="-84"/>
+        <source>%s, you must set a rpcpassword in the configuration file:
+ %s
+It is recommended you use the following random password:
+rpcuser=rpicoinrpc
+rpcpassword=%s
+(you do not need to remember this password)
+The username and password MUST NOT be the same.
+If the file does not exist, create it with owner-readable-only file permissions.
+It is also recommended to set alertnotify so you are notified of problems;
+for example: alertnotify=echo %%s | mail -s &quot;rpicoin Alert&quot; admin@foo.com
+</source>
+        <translation>%s, musíte nastaviť rpcpassword v konfiguračnom súbore:
+ %s
+Je odporúčané použiť nasledujúce náhodné heslo:
+rpcuser=rpicoinrpc
+rpcpassword=%s
+(Nemusíte si pamätať toto heslo)
+Užívateľské meno a heslo nesmú byť rovnaké. 
+Ak súbor neexistuje, vytvorte ho s oprávneniami súborov vlastníkov iba na čítatanie.
+Odporúča sa tiež nastaviť alertnotify, takže budete upozornení na problémy;
+napríklad: alertnotify=echo %%s | mail -s &quot;rpicoin Alert&quot; admin@foo.com</translation>
     </message>
     <message>
-        <location line="+17"/>
+        <location line="+51"/>
+        <source>Find peers using internet relay chat (default: 0)</source>
+        <translation>Nájsť peerov pomocou Internet Relay Chat (predvolené: 1)  {0)?}</translation>
+    </message>
+    <message>
+        <location line="+5"/>
         <source>Sync time with other nodes. Disable if time on your system is precise e.g. syncing with NTP (default: 1)</source>
         <translation>Synchronizácia času s ostatnými uzlami. Zakázať ak čas na vašom systéme je presný, napr synchronizáciu s NTP (predvolené: 1)</translation>
     </message>
     <message>
-        <location line="+12"/>
+        <location line="+15"/>
         <source>When creating transactions, ignore inputs with value less than this (default: 0.01)</source>
         <translation>Pri vytváraní transakcií, ignorovať vstupy s hodnotou nižšou než táto (predvolené: 0.01)</translation>
     </message>
     <message>
-        <location line="+6"/>
-        <source>Output debugging information (default: 0, supplying &lt;category&gt; is optional)</source>
-        <translation>Výstupné informácie o ladení. (predvolené: 0, zadanie &lt;category&gt; je nepovinné)</translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>If &lt;category&gt; is not supplied, output all debugging information.</source>
-        <translation>Ak nie je zadaná &lt;category&gt;, vypíš všetky ladiace informácie</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>&lt;category&gt; can be:</source>
-        <translation>&lt;category&gt; môže byť:</translation>
-    </message>
-    <message>
-        <location line="+4"/>
-        <source>Enter regression test mode, which uses a special chain in which blocks can be solved instantly. This is intended for regression testing tools and app development.</source>
-        <translation>Vstúpte do režimu testovania regresiou, ktorá používa špeciálny reťazec, v ktorom môžu byť bloky vyriešiť okamžite. Tento je určený pre regresné testovanie nástrojov a vývoja aplikácie.</translation>
-    </message>
-    <message>
-        <location line="+8"/>
+        <location line="+16"/>
         <source>Allow JSON-RPC connections from specified IP address</source>
         <translation>Povoliť JSON-RPC spojenia z určenej IP adresy.</translation>
     </message>
@@ -2964,16 +3032,6 @@ napríklad: alertnotify=echo %%s | mail -s &quot;Rpicoin upozornenie&quot; admin
         <location line="+1"/>
         <source>Send commands to node running on &lt;ip&gt; (default: 127.0.0.1)</source>
         <translation>Poslať príkaz nóde bežiacej na &lt;ip&gt; (predvolené: 127.0.0.1)</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Wait for RPC server to start</source>
-        <translation>Pred spustením počkať na RPC server</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Set the number of threads to service RPC calls (default: 4)</source>
-        <translation>Nastavte počet vlákien pre obsluhu RPC volaní (predvolené: 4)</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2992,6 +3050,11 @@ napríklad: alertnotify=echo %%s | mail -s &quot;Rpicoin upozornenie&quot; admin
     </message>
     <message>
         <location line="+1"/>
+        <source>Enforce transaction scripts to use canonical PUSH operators (default: 1)</source>
+        <translation>Presadzovať transakčné skripty k používaniu kanonických PUSH operátorov (predvolené: 1)</translation>
+    </message>
+    <message>
+        <location line="+2"/>
         <source>Execute command when a relevant alert is received (%s in cmd is replaced by message)</source>
         <translation>Spustiť príkaz, keď je prijaté príslušné upozornenie (%s v cmd je nahradený správou)</translation>
     </message>
@@ -3011,22 +3074,22 @@ napríklad: alertnotify=echo %%s | mail -s &quot;Rpicoin upozornenie&quot; admin
         <translation>Znovu skenovať reťaz blokov pre chýbajúce transakcie</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+2"/>
+        <source>How many blocks to check at startup (default: 2500, 0 = all)</source>
+        <translation>Koľko blokov na kontrolu pri štarte (predvolené: 2500, 0 = všetky)</translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source>How thorough the block verification is (0-6, default: 1)</source>
         <translation>Ako dôkladné overenie bloku je (0-6, predvolené: 1)</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Imports blocks from external rpi000?.dat file</source>
-        <translation>Importovať bloky z externého rpi000?.dat súbora</translation>
+        <source>Imports blocks from external blk000?.dat file</source>
+        <translation>Importovať bloky z externého blk000?.dat súbora</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Keep at most &lt;n&gt; MiB of unconnectable blocks in memory (default: %u)</source>
-        <translation>Uchovávať najviac &lt;n&gt; MiB nepripojiteľných blokov v pamäti (predvolené: %u)</translation>
-    </message>
-    <message>
-        <location line="+5"/>
+        <location line="+8"/>
         <source>Use OpenSSL (https) for JSON-RPC connections</source>
         <translation>Použiť OpenSSL (https) pre JSON-RPC spojenia</translation>
     </message>
@@ -3041,74 +3104,79 @@ napríklad: alertnotify=echo %%s | mail -s &quot;Rpicoin upozornenie&quot; admin
         <translation>Súkromný kľúč servra (predvolené: server.pem)</translation>
     </message>
     <message>
-        <location line="+5"/>
-        <source>Error: Unsupported argument -socks found. Setting SOCKS version isn&apos;t possible anymore, only SOCKS5 proxies are supported.</source>
-        <translation>Chyba: Nájdený nepodporovaný argument -socks. Nastavenie SOCKS verzie nie je už možné, podporované sú už iba proxy SOCKS5.</translation>
-    </message>
-    <message>
-        <location line="+8"/>
-        <source>Initialization sanity check failed. Rpicoin is shutting down.</source>
-        <translation>Úvodné kontrolné testy zlyhali. Rpicoin sa teraz zatvori.</translation>
-    </message>
-    <message>
-        <location line="+20"/>
-        <source>Error loading block database</source>
-        <translation>Chyba pri načítaní databáze blokov</translation>
-    </message>
-    <message>
-        <location line="+29"/>
-        <source>Error: Wallet unlocked for staking only, unable to create transaction.</source>
-        <translation>Chyba: Peňaženka je odomknutá len pre stávkovanie, nemožné vytvoriť transakciu.</translation>
-    </message>
-    <message>
-        <location line="-14"/>
-        <source>Error: Disk space is low!</source>
-        <translation>Chyba: Nedostatok miesta na disku!</translation>
-    </message>
-    <message>
         <location line="+1"/>
-        <source>This is a pre-release test build - use at your own risk - do not use for mining or merchant applications</source>
-        <translation>Toto je predbežná testovacia zostava - používate na vlastné riziko - nepoužívajte na ťaženie alebo obchodné aplikácie</translation>
+        <source>Acceptable ciphers (default: TLSv1+RPI:!SSLv2:!aNULL:!eNULL:!AH:!3DES:@STRENGTH)</source>
+        <translation>Akceptovateľné ciphers (predvolené: TLSv1+RPI:!SSLv2:!aNULL:!eNULL:!AH:!3DES:@STRENGTH)</translation>
     </message>
     <message>
-        <location line="-135"/>
+        <location line="+53"/>
+        <source>Error: Wallet unlocked for staking only, unable to create transaction.</source>
+        <translation>Chyba: Peňaženka odomknuté len pre stávkovanie, nemožné vytvoriť transakciu.</translation>
+    </message>
+    <message>
+        <location line="+18"/>
+        <source>WARNING: Invalid checkpoint found! Displayed transactions may not be correct! You may need to upgrade, or notify developers.</source>
+        <translation>UPOZORNENIE: Neplatný checkpoint nájdený! Uvedené transakcie nemusia byť správne! Možno budete musieť upgradovať, alebo upozorniť vývojárov.</translation>
+    </message>
+    <message>
+        <location line="-158"/>
         <source>This help message</source>
         <translation>Táto pomocná správa</translation>
     </message>
     <message>
-        <location line="+100"/>
+        <location line="+95"/>
         <source>Wallet %s resides outside data directory %s.</source>
-        <translation>Peňaženka %s je umiestnená mimo dátový adresár %s.</translation>
+        <translation>Peňaženka %s bydlisko mimo dátový adresár %s.</translation>
     </message>
     <message>
-        <location line="+46"/>
+        <location line="+1"/>
+        <source>Cannot obtain a lock on data directory %s.  rpicoin is probably already running.</source>
+        <translation>Nemožno získať zámok na dátový adresár %s. rpicoin už pravdepodobne beží.</translation>
+    </message>
+    <message>
+        <location line="-98"/>
+        <source>rpicoin</source>
+        <translation>rpicoin</translation>
+    </message>
+    <message>
+        <location line="+140"/>
         <source>Unable to bind to %s on this computer (bind returned error %d, %s)</source>
         <translation>Nemôžem sa pripojiť k %s na tomto počítači (bind vrátil chybu %d, %s)</translation>
     </message>
     <message>
-        <location line="-136"/>
+        <location line="-130"/>
+        <source>Connect through socks proxy</source>
+        <translation>Pripojenie cez SOCKS proxy</translation>
+    </message>
+    <message>
+        <location line="+3"/>
         <source>Allow DNS lookups for -addnode, -seednode and -connect</source>
-        <translation>Povoliť vyhľadávania DNS pre -addnode, -seenode a -connect</translation>
+        <translation>Povoliť vyhľadávanie DNS pre pridanie nódy a spojenie</translation>
     </message>
     <message>
-        <location line="+121"/>
+        <location line="+122"/>
         <source>Loading addresses...</source>
-        <translation>Načítavajú sa adresy...</translation>
+        <translation>Načítavanie adries...</translation>
     </message>
     <message>
-        <location line="-10"/>
+        <location line="-15"/>
+        <source>Error loading blkindex.dat</source>
+        <translation>Chyba pri načítaní blkindex.dat</translation>
+    </message>
+    <message>
+        <location line="+2"/>
         <source>Error loading wallet.dat: Wallet corrupted</source>
         <translation>Chyba načítania wallet.dat: Peňaženka je poškodená</translation>
     </message>
     <message>
         <location line="+4"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of Rpicoin</source>
-        <translation>Chyba pri načítaní wallet.dat: Peňaženka vyžaduje novšiu verziu Rpicoin</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of rpicoin</source>
+        <translation>Chyba pri načítaní wallet.dat: Peňaženka vyžaduje novšiu verziu rpicoin</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Wallet needed to be rewritten: restart Rpicoin to complete</source>
-        <translation>Peňaženka potrebuje byť prepísaná: reštartujte Rpicoin k dokončeniu</translation>
+        <source>Wallet needed to be rewritten: restart rpicoin to complete</source>
+        <translation>Peňaženka potrebuje byť prepísaná: reštartujte rpicoin k dokončeniu</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -3116,32 +3184,42 @@ napríklad: alertnotify=echo %%s | mail -s &quot;Rpicoin upozornenie&quot; admin
         <translation>Chyba načítania wallet.dat</translation>
     </message>
     <message>
-        <location line="-15"/>
+        <location line="-16"/>
         <source>Invalid -proxy address: &apos;%s&apos;</source>
         <translation>Neplatná adresa proxy: &apos;%s&apos;</translation>
     </message>
     <message>
         <location line="-1"/>
         <source>Unknown network specified in -onlynet: &apos;%s&apos;</source>
-        <translation>Špecifikovaná neznáma sieť v -onlynet: &apos;%s&apos;</translation>
+        <translation>Neznámy siete je uvedené v -onlynet: &apos;%s&apos;</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="-1"/>
+        <source>Unknown -socks proxy version requested: %i</source>
+        <translation>Neznáma požadovaná SOCKS proxy verzia:% i</translation>
+    </message>
+    <message>
+        <location line="+4"/>
         <source>Cannot resolve -bind address: &apos;%s&apos;</source>
-        <translation>Nedá sa vyriešiť -bind adresa: &apos;%s&apos;</translation>
+        <translation>Nemožno rozložiť -bind adresu: &apos;%s&apos;</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Cannot resolve -externalip address: &apos;%s&apos;</source>
-        <translation>Nemožno vyriešiť -externalip adresu: &apos;%s&apos;</translation>
+        <translation>Nemožno rozložiť -externalip adresu: &apos;%s&apos;</translation>
     </message>
     <message>
-        <location line="-22"/>
+        <location line="-24"/>
         <source>Invalid amount for -paytxfee=&lt;amount&gt;: &apos;%s&apos;</source>
         <translation>Neplatná suma pre -paytxfee=&lt;amount&gt;: &apos;%s&apos;</translation>
     </message>
     <message>
-        <location line="+59"/>
+        <location line="+44"/>
+        <source>Error: could not start node</source>
+        <translation>Chyba: nemožno spustiť uzol</translation>
+    </message>
+    <message>
+        <location line="+11"/>
         <source>Sending...</source>
         <translation>Posielam...</translation>
     </message>
@@ -3156,57 +3234,32 @@ napríklad: alertnotify=echo %%s | mail -s &quot;Rpicoin upozornenie&quot; admin
         <translation>Nedostatok prostriedkov</translation>
     </message>
     <message>
-        <location line="-41"/>
+        <location line="-34"/>
         <source>Loading block index...</source>
-        <translation>Načítava sa zoznam blokov...</translation>
+        <translation>Načítavanie zoznamu blokov...</translation>
     </message>
     <message>
-        <location line="-105"/>
+        <location line="-103"/>
         <source>Add a node to connect to and attempt to keep the connection open</source>
-        <translation>Pridať uzol pre pripojenie a pokúsiť sa udržať otvorené pripojenie</translation>
+        <translation>Pridať nód na pripojenie a pokus o udržanie pripojenia otvoreného</translation>
     </message>
     <message>
-        <location line="+131"/>
-        <source>Unable to bind to %s on this computer. Rpicoin is probably already running.</source>
-        <translation>Nemôžem sa pripojiť na %s na tomto počítači. Rpicoin je pravdepodobne už beží.</translation>
+        <location line="+122"/>
+        <source>Unable to bind to %s on this computer. rpicoin is probably already running.</source>
+        <translation>Nemôžem sa pripojiť na %s na tomto počítači. rpicoin je pravdepodobne už beží.</translation>
     </message>
     <message>
-        <location line="-108"/>
+        <location line="-97"/>
         <source>Fee per KB to add to transactions you send</source>
         <translation>Poplatok za KB pridať do transakcií, ktoré odosielate</translation>
     </message>
     <message>
-        <location line="+40"/>
-        <source>How many blocks to check at startup (default: 500, 0 = all)</source>
-        <translation>Koľko blokov skontrolovať pri štarte (predvolené: 2500, 0 = všetky) {500, 0 ?}</translation>
-    </message>
-    <message>
-        <location line="+11"/>
-        <source>Acceptable ciphers (default: TLSv1.2+HIGH:TLSv1+HIGH:!SSLv2:!aNULL:!eNULL:!3DES:@STRENGTH)</source>
-        <translation>Akceptovateľné šifry (predvolené: TLSv1.2+HIGH:TLSv1+HIGH:!SSLv2:!aNULL:!eNULL:!3DES:@STRENGTH)</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Warning: Deprecated argument -debugnet ignored, use -debug=net</source>
-        <translation>Upozornenie: Zastaraný argument -debugnet bol ignorovaný, použite -debug=net</translation>
-    </message>
-    <message>
-        <location line="+8"/>
+        <location line="+55"/>
         <source>Invalid amount for -mininput=&lt;amount&gt;: &apos;%s&apos;</source>
         <translation>Neplatná suma pre -mininput=&lt;amount&gt;: &apos;%s&apos;</translation>
     </message>
     <message>
-        <location line="+3"/>
-        <source>Cannot obtain a lock on data directory %s. Rpicoin is probably already running.</source>
-        <translation>Nedá sa zamknúť dátová zložka %s. Rpicoin je pravdepodobne už spustený</translation>
-    </message>
-    <message>
-        <location line="+4"/>
-        <source>Error initializing wallet database environment %s!</source>
-        <translation>Chyba pri inicializácii databázového prostredia peňaženky %s!</translation>
-    </message>
-    <message>
-        <location line="+15"/>
+        <location line="+25"/>
         <source>Loading wallet...</source>
         <translation>Načítavam peňaženku...</translation>
     </message>
@@ -3217,8 +3270,13 @@ napríklad: alertnotify=echo %%s | mail -s &quot;Rpicoin upozornenie&quot; admin
     </message>
     <message>
         <location line="+1"/>
+        <source>Cannot initialize keypool</source>
+        <translation>Nemožno inicializovať keypool</translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source>Cannot write default address</source>
-        <translation>Nie je možné zapísať predvolenú adresu</translation>
+        <translation>Nie je možné zapísať predvolenú adresu.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -3226,22 +3284,22 @@ napríklad: alertnotify=echo %%s | mail -s &quot;Rpicoin upozornenie&quot; admin
         <translation>Nové prehľadávanie...</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+5"/>
         <source>Done loading</source>
         <translation>Dokončené načítavanie</translation>
     </message>
     <message>
-        <location line="+33"/>
+        <location line="-167"/>
         <source>To use the %s option</source>
-        <translation>Použiť možnosť %s</translation>
+        <translation>Použiť %s možnosť.</translation>
     </message>
     <message>
-        <location line="-27"/>
+        <location line="+14"/>
         <source>Error</source>
         <translation>Chyba</translation>
     </message>
     <message>
-        <location line="+22"/>
+        <location line="+6"/>
         <source>You must set rpcpassword=&lt;password&gt; in the configuration file:
 %s
 If the file does not exist, create it with owner-readable-only file permissions.</source>

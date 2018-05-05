@@ -1,5 +1,4 @@
 #include "transactiontablemodel.h"
-
 #include "guiutil.h"
 #include "transactionrecord.h"
 #include "guiconstants.h"
@@ -12,11 +11,12 @@
 #include "wallet.h"
 #include "ui_interface.h"
 
+#include <QLocale>
 #include <QList>
 #include <QColor>
 #include <QIcon>
 #include <QDateTime>
-#include <QDebug>
+#include <QtAlgorithms>
 
 // Amount column is right-aligned it contains numbers
 static int column_alignments[] = {
@@ -48,12 +48,11 @@ struct TxLessThan
 class TransactionTablePriv
 {
 public:
-    TransactionTablePriv(CWallet *wallet, TransactionTableModel *parent) :
-        wallet(wallet),
-        parent(parent)
+    TransactionTablePriv(CWallet *wallet, TransactionTableModel *parent):
+            wallet(wallet),
+            parent(parent)
     {
     }
-
     CWallet *wallet;
     TransactionTableModel *parent;
 
@@ -67,7 +66,7 @@ public:
      */
     void refreshWallet()
     {
-        qDebug() << "TransactionTablePriv::refreshWallet";
+        OutputDebugStringF("refreshWallet\n");
         cachedWallet.clear();
         {
             LOCK2(cs_main, wallet->cs_wallet);
@@ -86,7 +85,7 @@ public:
      */
     void updateWallet(const uint256 &hash, int status)
     {
-        qDebug() << "TransactionTablePriv::updateWallet : " + QString::fromStdString(hash.ToString()) + " " + QString::number(status);
+        OutputDebugStringF("updateWallet %s %i\n", hash.ToString().c_str(), status);
         {
             LOCK2(cs_main, wallet->cs_wallet);
 
@@ -114,21 +113,20 @@ public:
                     status = CT_DELETED; /* In model, but want to hide, treat as deleted */
             }
 
-            qDebug() << "   inWallet=" + QString::number(inWallet) + " inModel=" + QString::number(inModel) +
-                        " Index=" + QString::number(lowerIndex) + "-" + QString::number(upperIndex) +
-                        " showTransaction=" + QString::number(showTransaction) + " derivedStatus=" + QString::number(status);
+            OutputDebugStringF("   inWallet=%i inModel=%i Index=%i-%i showTransaction=%i derivedStatus=%i\n",
+                     inWallet, inModel, lowerIndex, upperIndex, showTransaction, status);
 
             switch(status)
             {
             case CT_NEW:
                 if(inModel)
                 {
-                    qDebug() << "TransactionTablePriv::updateWallet : Warning: Got CT_NEW, but transaction is already in model";
+                    OutputDebugStringF("Warning: updateWallet: Got CT_NEW, but transaction is already in model\n");
                     break;
                 }
                 if(!inWallet)
                 {
-                    qDebug() << "TransactionTablePriv::updateWallet : Warning: Got CT_NEW, but transaction is not in wallet";
+                    OutputDebugStringF("Warning: updateWallet: Got CT_NEW, but transaction is not in wallet\n");
                     break;
                 }
                 if(showTransaction)
@@ -152,7 +150,7 @@ public:
             case CT_DELETED:
                 if(!inModel)
                 {
-                    qDebug() << "TransactionTablePriv::updateWallet : Warning: Got CT_DELETED, but transaction is not in model";
+                    OutputDebugStringF("Warning: updateWallet: Got CT_DELETED, but transaction is not in model\n");
                     break;
                 }
                 // Removed -- remove entire transaction from table
@@ -208,18 +206,19 @@ public:
         }
     }
 
-    QString describe(TransactionRecord *rec, int unit)
+    QString describe(TransactionRecord *rec)
     {
         {
             LOCK2(cs_main, wallet->cs_wallet);
             std::map<uint256, CWalletTx>::iterator mi = wallet->mapWallet.find(rec->hash);
             if(mi != wallet->mapWallet.end())
             {
-                return TransactionDesc::toHTML(wallet, mi->second, rec, unit);
+                return TransactionDesc::toHTML(wallet, mi->second);
             }
         }
         return QString("");
     }
+
 };
 
 TransactionTableModel::TransactionTableModel(CWallet* wallet, WalletModel *parent):
@@ -334,7 +333,7 @@ QString TransactionTableModel::lookupAddress(const std::string &address, bool to
     {
         description += label + QString(" ");
     }
-    if(label.isEmpty() || tooltip)
+    if(label.isEmpty() || walletModel->getOptionsModel()->getDisplayAddresses() || tooltip)
     {
         description += QString("(") + QString::fromStdString(address) + QString(")");
     }
@@ -366,15 +365,15 @@ QVariant TransactionTableModel::txAddressDecoration(const TransactionRecord *wtx
     switch(wtx->type)
     {
     case TransactionRecord::Generated:
-        return QIcon(fUseBlackTheme ? ":/icons/rpicoin/tx_mined" : ":/icons/tx_mined");
+        return QIcon(":/icons/tx_mined");
     case TransactionRecord::RecvWithAddress:
     case TransactionRecord::RecvFromOther:
-        return QIcon(fUseBlackTheme ? ":/icons/rpicoin/tx_input" : ":/icons/tx_input");
+        return QIcon(":/icons/tx_input");
     case TransactionRecord::SendToAddress:
     case TransactionRecord::SendToOther:
-        return QIcon(fUseBlackTheme ? ":/icons/rpicoin/tx_output" : ":/icons/tx_output");
+        return QIcon(":/icons/tx_output");
     default:
-        return QIcon(fUseBlackTheme ? ":/icons/rpicoin/tx_inout" : ":/icons/tx_inout");
+        return QIcon(":/icons/tx_inout");
     }
     return QVariant();
 }
@@ -538,10 +537,6 @@ QVariant TransactionTableModel::data(const QModelIndex &index, int role) const
         {
             return COLOR_NEGATIVE;
         }
-        if(index.column() == Amount && rec->type != TransactionRecord::Generated && (rec->credit+rec->debit) > 0)
-        {
-            return fUseBlackTheme ? QColor(0, 255, 0) : QColor(0, 128, 0);
-        }
         if(index.column() == ToAddress)
         {
             return addressColor(rec);
@@ -552,7 +547,7 @@ QVariant TransactionTableModel::data(const QModelIndex &index, int role) const
     case DateRole:
         return QDateTime::fromTime_t(static_cast<uint>(rec->time));
     case LongDescriptionRole:
-        return priv->describe(rec, walletModel->getOptionsModel()->getDisplayUnit());
+        return priv->describe(rec);
     case AddressRole:
         return QString::fromStdString(rec->address);
     case LabelRole:
@@ -560,7 +555,7 @@ QVariant TransactionTableModel::data(const QModelIndex &index, int role) const
     case AmountRole:
         return rec->credit + rec->debit;
     case TxIDRole:
-        return rec->getTxID();
+        return QString::fromStdString(rec->getTxID());
     case ConfirmedRole:
         return rec->status.countsForBalance;
     case FormattedAmountRole:

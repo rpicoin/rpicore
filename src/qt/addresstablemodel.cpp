@@ -1,5 +1,4 @@
 #include "addresstablemodel.h"
-
 #include "guiutil.h"
 #include "walletmodel.h"
 
@@ -7,7 +6,7 @@
 #include "base58.h"
 
 #include <QFont>
-#include <QDebug>
+#include <QColor>
 
 const QString AddressTableModel::Send = "S";
 const QString AddressTableModel::Receive = "R";
@@ -91,7 +90,7 @@ public:
         case CT_NEW:
             if(inModel)
             {
-                qDebug() << "AddressTablePriv::updateEntry : Warning: Got CT_NEW, but entry is already in model";
+                OutputDebugStringF("Warning: AddressTablePriv::updateEntry: Got CT_NEW, but entry is already in model\n");
                 break;
             }
             parent->beginInsertRows(QModelIndex(), lowerIndex, lowerIndex);
@@ -101,7 +100,7 @@ public:
         case CT_UPDATED:
             if(!inModel)
             {
-                qDebug() << "AddressTablePriv::updateEntry : Warning: Got CT_UPDATED, but entry is not in model";
+                OutputDebugStringF("Warning: AddressTablePriv::updateEntry: Got CT_UPDATED, but entry is not in model\n");
                 break;
             }
             lower->type = newEntryType;
@@ -111,7 +110,7 @@ public:
         case CT_DELETED:
             if(!inModel)
             {
-                qDebug() << "AddressTablePriv::updateEntry : Warning: Got CT_DELETED, but entry is not in model";
+                OutputDebugStringF("Warning: AddressTablePriv::updateEntry: Got CT_DELETED, but entry is not in model\n");
                 break;
             }
             parent->beginRemoveRows(QModelIndex(), lowerIndex, upperIndex-1);
@@ -346,21 +345,18 @@ QString AddressTableModel::addRow(const QString &type, const QString &label, con
     else if(type == Receive)
     {
         // Generate a new address to associate with given label
-        CPubKey newKey;
-        if(!wallet->GetKeyFromPool(newKey))
+        WalletModel::UnlockContext ctx(walletModel->requestUnlock());
+        if(!ctx.isValid())
         {
-            WalletModel::UnlockContext ctx(walletModel->requestUnlock());
-            if(!ctx.isValid())
-            {
-                // Unlock wallet failed or was cancelled
-                editStatus = WALLET_UNLOCK_FAILURE;
-                return QString();
-            }
-            if(!wallet->GetKeyFromPool(newKey))
-            {
-                editStatus = KEY_GENERATION_FAILURE;
-                return QString();
-            }
+            // Unlock wallet failed or was cancelled
+            editStatus = WALLET_UNLOCK_FAILURE;
+            return QString();
+        }
+        CPubKey newKey;
+        if(!wallet->GetKeyFromPool(newKey, true))
+        {
+            editStatus = KEY_GENERATION_FAILURE;
+            return QString();
         }
         strAddress = CBitcoinAddress(newKey.GetID()).ToString();
     }

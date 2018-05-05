@@ -1,12 +1,8 @@
 #include "qvaluecombobox.h"
 
-#include <QStyledItemDelegate>
-
 QValueComboBox::QValueComboBox(QWidget *parent) :
         QComboBox(parent), role(Qt::UserRole)
 {
-    setItemDelegate(new QStyledItemDelegate());
-
     connect(this, SIGNAL(currentIndexChanged(int)), this, SLOT(handleSelectionChanged(int)));
 }
 

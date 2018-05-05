@@ -1,14 +1,18 @@
 #include "bitcoinamountfield.h"
-
 #include "qvaluecombobox.h"
 #include "bitcoinunits.h"
+
 #include "guiconstants.h"
 
+#include <QLabel>
+#include <QLineEdit>
+#include <QRegExpValidator>
 #include <QHBoxLayout>
 #include <QKeyEvent>
 #include <QDoubleSpinBox>
+#include <QComboBox>
 #include <QApplication>
-#include <qmath.h> // for qPow()
+#include <qmath.h>
 
 BitcoinAmountField::BitcoinAmountField(QWidget *parent):
         QWidget(parent), amount(0), currentUnit(-1)

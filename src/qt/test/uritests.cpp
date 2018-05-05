@@ -4,6 +4,15 @@
 
 #include <QUrl>
 
+/*
+struct SendCoinsRecipient
+{
+    QString address;
+    QString label;
+    qint64 amount;
+};
+*/
+
 void URITests::uriTests()
 {
     SendCoinsRecipient rv;

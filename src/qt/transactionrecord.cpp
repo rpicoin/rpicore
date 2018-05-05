@@ -1,8 +1,7 @@
 #include "transactionrecord.h"
 
-#include "base58.h"
-#include "timedata.h"
 #include "wallet.h"
+#include "base58.h"
 
 /* Return positive answer if transaction should be shown in list.
  */
@@ -245,13 +244,8 @@ bool TransactionRecord::statusUpdateNeeded()
     return status.cur_num_blocks != nBestHeight;
 }
 
-QString TransactionRecord::getTxID() const
+std::string TransactionRecord::getTxID()
 {
-    return formatSubTxId(hash, idx);
-}
-
-QString TransactionRecord::formatSubTxId(const uint256 &hash, int vout)
-{
-    return QString::fromStdString(hash.ToString() + strprintf("-%03d", vout));
+    return hash.ToString() + strprintf("-%03d", idx);
 }
 

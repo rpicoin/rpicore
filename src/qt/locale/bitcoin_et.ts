@@ -3,20 +3,19 @@
     <name>AboutDialog</name>
     <message>
         <location filename="../forms/aboutdialog.ui" line="+14"/>
-        <source>About Rpicoin</source>
-        <translation>Info Rpicoin&apos;i kohta</translation>
+        <source>About rpicoin</source>
+        <translation>Info rpicoin&apos;i kohta</translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>&lt;b&gt;Rpicoin&lt;/b&gt; version</source>
-        <translation>&lt;b&gt;Rpicoin&lt;/b&gt;&apos;i versioon</translation>
+        <source>&lt;b&gt;rpicoin&lt;/b&gt; version</source>
+        <translation>&lt;b&gt;rpicoin&lt;/b&gt;&apos;i versioon</translation>
     </message>
     <message>
         <location line="+41"/>
-        <source>Copyright © 2009-2017 The Bitcoin developers
+        <source>Copyright © 2009-2014 The Bitcoin developers
 Copyright © 2012-2014 The NovaCoin developers
-Copyright © 2014-2017 The Blackcoin developers
-Copyright © 2017 The Rpicoin developers</source>
+Copyright © 2014 The rpicoin developers</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -24,10 +23,15 @@ Copyright © 2017 The Rpicoin developers</source>
         <source>
 This is experimental software.
 
-Distributed under the MIT/X11 software license, see the accompanying file COPYING or &lt;a href=&quot;http://www.opensource.org/licenses/mit-license.php&quot;&gt;http://www.opensource.org/licenses/mit-license.php&lt;/a&gt;.
+Distributed under the MIT/X11 software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit (&lt;a href=&quot;https://www.openssl.org/&quot;&gt;https://www.openssl.org/&lt;/a&gt;) and cryptographic software written by Eric Young (&lt;a href=&quot;mailto:eay@cryptsoft.com&quot;&gt;eay@cryptsoft.com&lt;/a&gt;) and UPnP software written by Thomas Bernard.</source>
-        <translation type="unfinished"/>
+This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit (http://www.openssl.org/) and cryptographic software written by Eric Young (eay@cryptsoft.com) and UPnP software written by Thomas Bernard.</source>
+        <translation>⏎
+See on eksperimentaalne tarkvara.⏎
+⏎
+Levitatud MIT/X11 tarkvara litsentsi all, vaata kaasasolevat faili COPYING või http://www.opensource.org/licenses/mit-license.php⏎
+⏎
+Toode sisaldab OpenSSL Projekti all toodetud tarkvara, mis on kasutamiseks OpenSSL Toolkitis (http://www.openssl.org/) ja Eric Young&apos;i poolt loodud krüptograafilist tarkvara (eay@cryptsoft.com) ning Thomas Bernard&apos;i loodud UPnP tarkvara.</translation>
     </message>
 </context>
 <context>
@@ -43,39 +47,39 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Tee topeltklõps aadressi või märgise muutmiseks</translation>
     </message>
     <message>
-        <location line="+24"/>
+        <location line="+27"/>
         <source>Create a new address</source>
         <translation>Loo uus aadress</translation>
     </message>
     <message>
-        <location line="+10"/>
+        <location line="+14"/>
         <source>Copy the currently selected address to the system clipboard</source>
         <translation>Kopeeri valitud aadress vahemällu</translation>
     </message>
     <message>
-        <location line="-7"/>
+        <location line="-11"/>
         <source>&amp;New Address</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="-43"/>
-        <source>These are your Rpicoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
-        <translation>Need on Sinu Rpicoin&apos;i aadressid maksete vastuvõtmiseks. Soovi korral saad anda igale saatjale eraldi aadressi, et hõlpsamini omada ülevaadet, et kellelt mündid laekuvad.</translation>
+        <location line="-46"/>
+        <source>These are your rpicoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
+        <translation>Need on Sinu rpicoin&apos;i aadressid maksete vastuvõtmiseks. Soovi korral saad anda igale saatjale eraldi aadressi, et hõlpsamini omada ülevaadet, et kellelt mündid laekuvad.</translation>
     </message>
     <message>
-        <location line="+53"/>
+        <location line="+60"/>
         <source>&amp;Copy Address</source>
         <translation>&amp;Aadressi kopeerimine</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location line="+11"/>
         <source>Show &amp;QR Code</source>
         <translation>Näita &amp;QR koodi.</translation>
     </message>
     <message>
-        <location line="+7"/>
-        <source>Sign a message to prove you own a Rpicoin address</source>
-        <translation>Allkirjasta sõnum Rpicoin&apos;i aadressi omamise tõestamiseks.</translation>
+        <location line="+11"/>
+        <source>Sign a message to prove you own a rpicoin address</source>
+        <translation>Allkirjasta sõnum rpicoin&apos;i aadressi omamise tõestamiseks.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -83,13 +87,13 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+17"/>
+        <location line="+25"/>
         <source>Delete the currently selected address from the list</source>
         <translation>Kustuta märgistatud aadress loetelust</translation>
     </message>
     <message>
-        <location line="-10"/>
-        <source>Verify a message to ensure it was signed with a specified Rpicoin address</source>
+        <location line="-14"/>
+        <source>Verify a message to ensure it was signed with a specified rpicoin address</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -98,22 +102,22 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+10"/>
+        <location line="+14"/>
         <source>&amp;Delete</source>
         <translation>&amp;Kustuta</translation>
     </message>
     <message>
-        <location filename="../addressbookpage.cpp" line="+66"/>
+        <location filename="../addressbookpage.cpp" line="+65"/>
         <source>Copy &amp;Label</source>
         <translation>&amp;Märgise kopeerimine</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>&amp;Edit</source>
         <translation>&amp;Muuda</translation>
     </message>
     <message>
-        <location line="+248"/>
+        <location line="+250"/>
         <source>Export Address Book Data</source>
         <translation type="unfinished"/>
     </message>
@@ -136,7 +140,7 @@ This product includes software developed by the OpenSSL Project for use in the O
 <context>
     <name>AddressTableModel</name>
     <message>
-        <location filename="../addresstablemodel.cpp" line="+145"/>
+        <location filename="../addresstablemodel.cpp" line="+144"/>
         <source>Label</source>
         <translation>Silt</translation>
     </message>
@@ -184,7 +188,12 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../askpassphrasedialog.cpp" line="+38"/>
+        <location filename="../askpassphrasedialog.cpp" line="+35"/>
+        <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;10 or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
+        <translation>Sisesta rahakotile uus salafraas.&lt;br/&gt;Palun kasuta salafraasina &lt;b&gt;vähemalt 10 tähte/numbrit/sümbolit&lt;/b&gt;, või &lt;b&gt;vähemalt 8 sõna&lt;/b&gt;.</translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source>Encrypt wallet</source>
         <translation>Krüpteeri rahakott</translation>
     </message>
@@ -219,7 +228,7 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Sisesta rahakoti vana ning uus salafraas.</translation>
     </message>
     <message>
-        <location line="+45"/>
+        <location line="+46"/>
         <source>Confirm wallet encryption</source>
         <translation>Kinnita rahakoti krüpteering</translation>
     </message>
@@ -251,13 +260,8 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Rahakott krüpteeritud</translation>
     </message>
     <message>
-        <location line="-140"/>
-        <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;ten or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+82"/>
-        <source>Rpicoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
+        <location line="-58"/>
+        <source>rpicoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -305,12 +309,22 @@ This product includes software developed by the OpenSSL Project for use in the O
 <context>
     <name>BitcoinGUI</name>
     <message>
-        <location filename="../bitcoingui.cpp" line="+297"/>
+        <location filename="../bitcoingui.cpp" line="+280"/>
         <source>Sign &amp;message...</source>
         <translation>Signeeri &amp;sõnum</translation>
     </message>
     <message>
-        <location line="-64"/>
+        <location line="+242"/>
+        <source>Synchronizing with network...</source>
+        <translation>Võrgusünkimine...</translation>
+    </message>
+    <message>
+        <location line="-308"/>
+        <source>&amp;Overview</source>
+        <translation>&amp;Ülevaade</translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source>Show general overview of wallet</source>
         <translation>Kuva rahakoti üld-ülevaade</translation>
     </message>
@@ -335,12 +349,22 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="-18"/>
+        <location line="-13"/>
+        <source>&amp;Receive coins</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+1"/>
         <source>Show the list of addresses for receiving payments</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+34"/>
+        <location line="-7"/>
+        <source>&amp;Send coins</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+35"/>
         <source>E&amp;xit</source>
         <translation>V&amp;älju</translation>
     </message>
@@ -351,7 +375,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+4"/>
-        <source>Show information about Rpicoin</source>
+        <source>Show information about rpicoin</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -375,7 +399,7 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>&amp;Krüpteeri Rahakott</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+3"/>
         <source>&amp;Backup Wallet...</source>
         <translation>&amp;Varunda Rahakott</translation>
     </message>
@@ -384,33 +408,43 @@ This product includes software developed by the OpenSSL Project for use in the O
         <source>&amp;Change Passphrase...</source>
         <translation>&amp;Salafraasi muutmine</translation>
     </message>
+    <message numerus="yes">
+        <location line="+250"/>
+        <source>~%n block(s) remaining</source>
+        <translation type="unfinished"><numerusform></numerusform><numerusform></numerusform></translation>
+    </message>
     <message>
-        <location line="+9"/>
+        <location line="+6"/>
+        <source>Downloaded %1 of %2 blocks of transaction history (%3% done).</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="-247"/>
         <source>&amp;Export...</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="-55"/>
-        <source>Send coins to a Rpicoin address</source>
+        <location line="-62"/>
+        <source>Send coins to a rpicoin address</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+39"/>
-        <source>Modify configuration options for Rpicoin</source>
+        <location line="+45"/>
+        <source>Modify configuration options for rpicoin</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+17"/>
+        <location line="+18"/>
         <source>Export the data in the current tab to a file</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="-13"/>
+        <location line="-14"/>
         <source>Encrypt or decrypt wallet</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+3"/>
         <source>Backup wallet to another location</source>
         <translation>Varunda rahakott teise asukohta</translation>
     </message>
@@ -435,19 +469,18 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>&amp;Kontrolli sõnumit...</translation>
     </message>
     <message>
-        <location line="-214"/>
-        <location line="+555"/>
-        <source>Rpicoin</source>
+        <location line="-200"/>
+        <source>rpicoin</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="-555"/>
+        <location line="+0"/>
         <source>Wallet</source>
         <translation>Rahakott</translation>
     </message>
     <message>
-        <location line="+193"/>
-        <source>&amp;About Rpicoin</source>
+        <location line="+178"/>
+        <source>&amp;About rpicoin</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -456,7 +489,7 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>&amp;Näita / Peida</translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+9"/>
         <source>Unlock wallet</source>
         <translation type="unfinished"/>
     </message>
@@ -471,7 +504,7 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+32"/>
+        <location line="+34"/>
         <source>&amp;File</source>
         <translation>&amp;Fail</translation>
     </message>
@@ -486,29 +519,39 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>&amp;Abi</translation>
     </message>
     <message>
-        <location line="+17"/>
+        <location line="+9"/>
         <source>Tabs toolbar</source>
         <translation>Vahelehe tööriistariba</translation>
     </message>
     <message>
-        <location line="+46"/>
+        <location line="+8"/>
+        <source>Actions toolbar</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+13"/>
         <location line="+9"/>
         <source>[testnet]</source>
         <translation>[testnet]</translation>
     </message>
     <message>
         <location line="+0"/>
-        <location line="+58"/>
-        <source>Rpicoin client</source>
+        <location line="+60"/>
+        <source>rpicoin client</source>
         <translation type="unfinished"/>
     </message>
     <message numerus="yes">
         <location line="+70"/>
-        <source>%n active connection(s) to Rpicoin network</source>
+        <source>%n active connection(s) to rpicoin network</source>
         <translation type="unfinished"><numerusform></numerusform><numerusform></numerusform></translation>
     </message>
     <message>
-        <location line="+488"/>
+        <location line="+40"/>
+        <source>Downloaded %1 blocks of transaction history.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+413"/>
         <source>Staking.&lt;br&gt;Your weight is %1&lt;br&gt;Network weight is %2&lt;br&gt;Expected time to earn reward is %3</source>
         <translation type="unfinished"/>
     </message>
@@ -529,41 +572,56 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+2"/>
-        <source>Not staking because you don&apos;t have mature coins (&#126;100 confirms)</source>
+        <source>Not staking because you don&apos;t have mature coins</source>
         <translation type="unfinished"/>
     </message>
-    <message>
-        <location line="-812"/>
-        <source>&amp;Dashboard</source>
-        <translation type="unfinished"/>
+    <message numerus="yes">
+        <location line="-403"/>
+        <source>%n second(s) ago</source>
+        <translation type="unfinished"><numerusform></numerusform><numerusform></numerusform></translation>
     </message>
     <message>
-        <location line="+6"/>
-        <source>&amp;Receive</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+6"/>
-        <source>&amp;Send</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+49"/>
+        <location line="-284"/>
         <source>&amp;Unlock Wallet...</source>
         <translation type="unfinished"/>
     </message>
+    <message numerus="yes">
+        <location line="+288"/>
+        <source>%n minute(s) ago</source>
+        <translation type="unfinished"><numerusform></numerusform><numerusform></numerusform></translation>
+    </message>
+    <message numerus="yes">
+        <location line="+4"/>
+        <source>%n hour(s) ago</source>
+        <translation type="unfinished"><numerusform></numerusform><numerusform></numerusform></translation>
+    </message>
+    <message numerus="yes">
+        <location line="+4"/>
+        <source>%n day(s) ago</source>
+        <translation type="unfinished"><numerusform></numerusform><numerusform></numerusform></translation>
+    </message>
     <message>
-        <location line="+277"/>
+        <location line="+6"/>
         <source>Up to date</source>
         <translation>Ajakohane</translation>
     </message>
     <message>
-        <location line="+43"/>
+        <location line="+7"/>
         <source>Catching up...</source>
         <translation>Jõuan...</translation>
     </message>
     <message>
-        <location line="+113"/>
+        <location line="+10"/>
+        <source>Last received block was generated %1.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+59"/>
+        <source>This transaction is over the size limit.  You can still send it for a fee of %1, which goes to the nodes that process your transaction and helps to support the network.  Do you want to pay the fee?</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+5"/>
         <source>Confirm transaction fee</source>
         <translation type="unfinished"/>
     </message>
@@ -598,26 +656,21 @@ Aadress: %4⏎</translation>
     <message>
         <location line="-15"/>
         <location line="+15"/>
-        <source>URI can not be parsed! This can be caused by an invalid Rpicoin address or malformed URI parameters.</source>
+        <source>URI can not be parsed! This can be caused by an invalid rpicoin address or malformed URI parameters.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+9"/>
-        <source>Wallet is &lt;b&gt;not encrypted&lt;/b&gt;</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+8"/>
+        <location line="+18"/>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</source>
         <translation>Rahakott on &lt;b&gt;krüpteeritud&lt;/b&gt; ning hetkel &lt;b&gt;avatud&lt;/b&gt;</translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+10"/>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>Rahakott on &lt;b&gt;krüpteeritud&lt;/b&gt; ning hetkel &lt;b&gt;suletud&lt;/b&gt;</translation>
     </message>
     <message>
-        <location line="+24"/>
+        <location line="+25"/>
         <source>Backup Wallet</source>
         <translation type="unfinished"/>
     </message>
@@ -637,7 +690,7 @@ Aadress: %4⏎</translation>
         <translation type="unfinished"/>
     </message>
     <message numerus="yes">
-        <location line="+91"/>
+        <location line="+76"/>
         <source>%n second(s)</source>
         <translation type="unfinished"><numerusform></numerusform><numerusform></numerusform></translation>
     </message>
@@ -647,88 +700,30 @@ Aadress: %4⏎</translation>
         <translation type="unfinished"><numerusform></numerusform><numerusform></numerusform></translation>
     </message>
     <message numerus="yes">
-        <location line="-429"/>
-        <location line="+433"/>
+        <location line="+4"/>
         <source>%n hour(s)</source>
         <translation><numerusform>%n tund</numerusform><numerusform>%n tundi</numerusform></translation>
     </message>
-    <message>
-        <location line="-456"/>
-        <source>Processed %1 blocks of transaction history.</source>
-        <translation type="unfinished"/>
-    </message>
     <message numerus="yes">
-        <location line="+27"/>
-        <location line="+433"/>
+        <location line="+4"/>
         <source>%n day(s)</source>
         <translation><numerusform>%n päev</numerusform><numerusform>%n päeva</numerusform></translation>
     </message>
-    <message numerus="yes">
-        <location line="-429"/>
-        <location line="+6"/>
-        <source>%n week(s)</source>
-        <translation type="unfinished"><numerusform></numerusform><numerusform></numerusform></translation>
-    </message>
     <message>
-        <location line="+0"/>
-        <source>%1 and %2</source>
-        <translation type="unfinished"/>
-    </message>
-    <message numerus="yes">
-        <location line="+0"/>
-        <source>%n year(s)</source>
-        <translation type="unfinished"><numerusform></numerusform><numerusform></numerusform></translation>
-    </message>
-    <message>
-        <location line="+5"/>
-        <source>%1 behind</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+15"/>
-        <source>Last received block was generated %1 ago.</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Transactions after this will not yet be visible.</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+23"/>
-        <source>Error</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Warning</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Information</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+69"/>
-        <source>This transaction is over the size limit. You can still send it for a fee of %1, which goes to the nodes that process your transaction and helps to support the network. Do you want to pay the fee?</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+324"/>
+        <location line="+18"/>
         <source>Not staking</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../bitcoin.cpp" line="+104"/>
-        <source>A fatal error occurred. Rpicoin can no longer continue safely and will quit.</source>
+        <location filename="../bitcoin.cpp" line="+109"/>
+        <source>A fatal error occurred. rpicoin can no longer continue safely and will quit.</source>
         <translation type="unfinished"/>
     </message>
 </context>
 <context>
     <name>ClientModel</name>
     <message>
-        <location filename="../clientmodel.cpp" line="+119"/>
+        <location filename="../clientmodel.cpp" line="+90"/>
         <source>Network Alert</source>
         <translation>Võrgu Häire</translation>
     </message>
@@ -756,6 +751,11 @@ Aadress: %4⏎</translation>
         <translation>Summa:</translation>
     </message>
     <message>
+        <location line="+32"/>
+        <source>Priority:</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
         <location line="+48"/>
         <source>Fee:</source>
         <translation type="unfinished"/>
@@ -766,7 +766,7 @@ Aadress: %4⏎</translation>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../coincontroldialog.cpp" line="+493"/>
+        <location filename="../coincontroldialog.cpp" line="+551"/>
         <source>no</source>
         <translation type="unfinished"/>
     </message>
@@ -831,7 +831,7 @@ Aadress: %4⏎</translation>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../coincontroldialog.cpp" line="-456"/>
+        <location filename="../coincontroldialog.cpp" line="-515"/>
         <source>Copy address</source>
         <translation>Aadressi kopeerimine</translation>
     </message>
@@ -873,6 +873,11 @@ Aadress: %4⏎</translation>
     </message>
     <message>
         <location line="+1"/>
+        <source>Copy priority</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+1"/>
         <source>Copy low output</source>
         <translation type="unfinished"/>
     </message>
@@ -882,7 +887,42 @@ Aadress: %4⏎</translation>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+423"/>
+        <location line="+317"/>
+        <source>RPIest</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>RPI</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>medium-RPI</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>medium</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>low-medium</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>low</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>lowest</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+155"/>
         <source>DUST</source>
         <translation type="unfinished"/>
     </message>
@@ -892,12 +932,21 @@ Aadress: %4⏎</translation>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+10"/>
         <source>This label turns red, if the transaction size is bigger than 10000 bytes.
 
  This means a fee of at least %1 per kb is required.
 
  Can vary +/- 1 Byte per input.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Transactions with RPIer priority get more likely into a block.
+
+This label turns red, if the priority is smaller than &quot;medium&quot;.
+
+ This means a fee of at least %1 per kb is required.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -917,8 +966,8 @@ Aadress: %4⏎</translation>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+35"/>
-        <location line="+58"/>
+        <location line="+37"/>
+        <location line="+66"/>
         <source>(no label)</source>
         <translation>(silti pole)</translation>
     </message>
@@ -961,7 +1010,7 @@ Aadress: %4⏎</translation>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../editaddressdialog.cpp" line="+21"/>
+        <location filename="../editaddressdialog.cpp" line="+20"/>
         <source>New receiving address</source>
         <translation>Uus sissetulev aadress</translation>
     </message>
@@ -987,7 +1036,7 @@ Aadress: %4⏎</translation>
     </message>
     <message>
         <location line="-5"/>
-        <source>The entered address &quot;%1&quot; is not a valid Rpicoin address.</source>
+        <source>The entered address &quot;%1&quot; is not a valid rpicoin address.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1004,9 +1053,9 @@ Aadress: %4⏎</translation>
 <context>
     <name>GUIUtil::HelpMessageBox</name>
     <message>
-        <location filename="../guiutil.cpp" line="+426"/>
+        <location filename="../guiutil.cpp" line="+420"/>
         <location line="+12"/>
-        <source>Rpicoin-Qt</source>
+        <source>rpicoin-Qt</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1079,12 +1128,22 @@ Aadress: %4⏎</translation>
     </message>
     <message>
         <location line="+31"/>
-        <source>Automatically start Rpicoin after logging in to the system.</source>
+        <source>Automatically start rpicoin after logging in to the system.</source>
         <translation type="unfinished"/>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Start Rpicoin on system login</source>
+        <source>&amp;Start rpicoin on system login</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Detach block and address databases at shutdown. This means they can be moved to another data directory, but it slows down shutdown. The wallet is always detached.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>&amp;Detach databases at shutdown</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1094,7 +1153,7 @@ Aadress: %4⏎</translation>
     </message>
     <message>
         <location line="+6"/>
-        <source>Automatically open the Rpicoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <source>Automatically open the rpicoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1103,7 +1162,17 @@ Aadress: %4⏎</translation>
         <translation>Suuna port &amp;UPnP kaudu</translation>
     </message>
     <message>
-        <location line="+19"/>
+        <location line="+7"/>
+        <source>Connect to the rpicoin network through a SOCKS proxy (e.g. when connecting through Tor).</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>&amp;Connect through SOCKS proxy:</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+9"/>
         <source>Proxy &amp;IP:</source>
         <translation>Proxi &amp;IP:</translation>
     </message>
@@ -1123,17 +1192,17 @@ Aadress: %4⏎</translation>
         <translation>Proxi port (nt 9050)</translation>
     </message>
     <message>
-        <location line="-57"/>
-        <source>Connect to the Rpicoin network through a SOCKS5 proxy (e.g. when connecting through Tor).</source>
-        <translation type="unfinished"/>
+        <location line="+7"/>
+        <source>SOCKS &amp;Version:</source>
+        <translation>Turva proxi SOCKS &amp;Version:</translation>
     </message>
     <message>
-        <location line="+3"/>
-        <source>&amp;Connect through SOCKS5 proxy:</source>
-        <translation type="unfinished"/>
+        <location line="+13"/>
+        <source>SOCKS version of the proxy (e.g. 5)</source>
+        <translation>Turva proxi SOCKS versioon (nt 5)</translation>
     </message>
     <message>
-        <location line="+90"/>
+        <location line="+36"/>
         <source>&amp;Window</source>
         <translation>&amp;Aken</translation>
     </message>
@@ -1169,7 +1238,7 @@ Aadress: %4⏎</translation>
     </message>
     <message>
         <location line="+13"/>
-        <source>The user interface language can be set here. This setting will take effect after restarting Rpicoin.</source>
+        <source>The user interface language can be set here. This setting will take effect after restarting rpicoin.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1184,17 +1253,22 @@ Aadress: %4⏎</translation>
     </message>
     <message>
         <location line="+9"/>
+        <source>Whether to show rpicoin addresses in the transaction list or not.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>&amp;Display addresses in transaction list</source>
+        <translation>Tehingute loetelu &amp;Display aadress</translation>
+    </message>
+    <message>
+        <location line="+7"/>
         <source>Whether to show coin control features or not.</source>
         <translation type="unfinished"/>
     </message>
     <message>
         <location line="+3"/>
         <source>Display coin &amp;control features (experts only!)</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+7"/>
-        <source>Use black visual theme (requires restart)</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1213,12 +1287,12 @@ Aadress: %4⏎</translation>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../optionsdialog.cpp" line="+47"/>
+        <location filename="../optionsdialog.cpp" line="+55"/>
         <source>default</source>
         <translation>vaikeväärtus</translation>
     </message>
     <message>
-        <location line="+147"/>
+        <location line="+149"/>
         <location line="+9"/>
         <source>Warning</source>
         <translation type="unfinished"/>
@@ -1226,7 +1300,7 @@ Aadress: %4⏎</translation>
     <message>
         <location line="-9"/>
         <location line="+9"/>
-        <source>This setting will take effect after restarting Rpicoin.</source>
+        <source>This setting will take effect after restarting rpicoin.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1243,23 +1317,23 @@ Aadress: %4⏎</translation>
         <translation>Vorm</translation>
     </message>
     <message>
-        <location line="+46"/>
-        <location line="+247"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Rpicoin network after a connection is established, but this process has not completed yet.</source>
+        <location line="+33"/>
+        <location line="+231"/>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the rpicoin network after a connection is established, but this process has not completed yet.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="-173"/>
+        <location line="-160"/>
         <source>Stake:</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+32"/>
+        <location line="+29"/>
         <source>Unconfirmed:</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="-113"/>
+        <location line="-107"/>
         <source>Wallet</source>
         <translation>Rahakott</translation>
     </message>
@@ -1274,7 +1348,7 @@ Aadress: %4⏎</translation>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+80"/>
+        <location line="+71"/>
         <source>Immature:</source>
         <translation>Ebaküps:</translation>
     </message>
@@ -1284,7 +1358,7 @@ Aadress: %4⏎</translation>
         <translation>Mitte aegunud mine&apos;itud jääk</translation>
     </message>
     <message>
-        <location line="+23"/>
+        <location line="+20"/>
         <source>Total:</source>
         <translation type="unfinished"/>
     </message>
@@ -1294,33 +1368,25 @@ Aadress: %4⏎</translation>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+50"/>
+        <location line="+46"/>
         <source>&lt;b&gt;Recent transactions&lt;/b&gt;</source>
         <translation>&lt;b&gt;Uuesti saadetud tehingud&lt;/b&gt;</translation>
     </message>
     <message>
-        <location line="-118"/>
+        <location line="-108"/>
         <source>Total of transactions that have yet to be confirmed, and do not yet count toward the current balance</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="-32"/>
+        <location line="-29"/>
         <source>Total of coins that was staked, and do not yet count toward the current balance</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../overviewpage.cpp" line="+116"/>
+        <location filename="../overviewpage.cpp" line="+113"/>
         <location line="+1"/>
         <source>out of sync</source>
         <translation>sünkimata</translation>
-    </message>
-</context>
-<context>
-    <name>PaymentServer</name>
-    <message>
-        <location filename="../paymentserver.cpp" line="+107"/>
-        <source>Cannot start Rpicoin: click-to-pay handler</source>
-        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1397,11 +1463,13 @@ Aadress: %4⏎</translation>
         <location line="+36"/>
         <location line="+53"/>
         <location line="+23"/>
+        <location line="+23"/>
+        <location filename="../rpcconsole.cpp" line="+348"/>
         <source>N/A</source>
         <translation>N/A</translation>
     </message>
     <message>
-        <location line="-194"/>
+        <location line="-217"/>
         <source>Client version</source>
         <translation>Kliendi versioon</translation>
     </message>
@@ -1446,34 +1514,12 @@ Aadress: %4⏎</translation>
         <translation>Plokkide hetkearv</translation>
     </message>
     <message>
-        <location line="+197"/>
-        <source>&amp;Network Traffic</source>
-        <translation type="unfinished"/>
+        <location line="+23"/>
+        <source>Estimated total blocks</source>
+        <translation>Ligikaudne plokkide kogus</translation>
     </message>
     <message>
-        <location line="+52"/>
-        <source>&amp;Clear</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+13"/>
-        <source>Totals</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+64"/>
-        <location filename="../rpcconsole.cpp" line="+352"/>
-        <source>In:</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+80"/>
-        <location filename="../rpcconsole.cpp" line="+1"/>
-        <source>Out:</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="-383"/>
+        <location line="+23"/>
         <source>Last block time</source>
         <translation>Viimane ploki aeg</translation>
     </message>
@@ -1489,7 +1535,7 @@ Aadress: %4⏎</translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Show the Rpicoin-Qt help message to get a list with possible Rpicoin command-line options.</source>
+        <source>Show the rpicoin-Qt help message to get a list with possible rpicoin command-line options.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1503,28 +1549,28 @@ Aadress: %4⏎</translation>
         <translation>&amp;Konsool</translation>
     </message>
     <message>
-        <location line="-237"/>
+        <location line="-260"/>
         <source>Build date</source>
         <translation>Valmistusaeg</translation>
     </message>
     <message>
         <location line="-104"/>
-        <source>Rpicoin - Debug window</source>
+        <source>rpicoin - Debug window</source>
         <translation type="unfinished"/>
     </message>
     <message>
         <location line="+25"/>
-        <source>Rpicoin Core</source>
+        <source>rpicoin Core</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+256"/>
+        <location line="+279"/>
         <source>Debug log file</source>
         <translation>Debugimise logifail</translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Open the Rpicoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <source>Open the rpicoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1533,8 +1579,8 @@ Aadress: %4⏎</translation>
         <translation>Puhasta konsool</translation>
     </message>
     <message>
-        <location filename="../rpcconsole.cpp" line="-28"/>
-        <source>Welcome to the Rpicoin RPC console.</source>
+        <location filename="../rpcconsole.cpp" line="-33"/>
+        <source>Welcome to the rpicoin RPC console.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1547,47 +1593,12 @@ Aadress: %4⏎</translation>
         <source>Type &lt;b&gt;help&lt;/b&gt; for an overview of available commands.</source>
         <translation>Ülevaateks võimalikest käsklustest trüki &lt;b&gt;help&lt;/b&gt;.</translation>
     </message>
-    <message>
-        <location line="+134"/>
-        <source>%1 B</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>%1 KB</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>%1 MB</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>%1 GB</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+7"/>
-        <source>%1 m</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+5"/>
-        <source>%1 h</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>%1 h %2 m</source>
-        <translation type="unfinished"/>
-    </message>
 </context>
 <context>
     <name>SendCoinsDialog</name>
     <message>
         <location filename="../forms/sendcoinsdialog.ui" line="+14"/>
-        <location filename="../sendcoinsdialog.cpp" line="+179"/>
+        <location filename="../sendcoinsdialog.cpp" line="+182"/>
         <location line="+5"/>
         <location line="+5"/>
         <location line="+5"/>
@@ -1639,7 +1650,25 @@ Aadress: %4⏎</translation>
         <translation>Summa:</translation>
     </message>
     <message>
-        <location line="+54"/>
+        <location line="+22"/>
+        <location line="+86"/>
+        <location line="+86"/>
+        <location line="+32"/>
+        <source>0.00 BC</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="-191"/>
+        <source>Priority:</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+19"/>
+        <source>medium</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+32"/>
         <source>Fee:</source>
         <translation type="unfinished"/>
     </message>
@@ -1679,7 +1708,7 @@ Aadress: %4⏎</translation>
         <translation>Lisa &amp;Saaja</translation>
     </message>
     <message>
-        <location line="+16"/>
+        <location line="+20"/>
         <source>Remove all transaction fields</source>
         <translation type="unfinished"/>
     </message>
@@ -1689,12 +1718,17 @@ Aadress: %4⏎</translation>
         <translation>Puhasta &amp;Kõik</translation>
     </message>
     <message>
-        <location line="+24"/>
+        <location line="+28"/>
         <source>Balance:</source>
         <translation>Jääk:</translation>
     </message>
     <message>
-        <location line="+47"/>
+        <location line="+16"/>
+        <source>123.456 BC</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+31"/>
         <source>Confirm the send action</source>
         <translation>Saatmise kinnitamine</translation>
     </message>
@@ -1704,8 +1738,8 @@ Aadress: %4⏎</translation>
         <translation>S&amp;aada</translation>
     </message>
     <message>
-        <location filename="../sendcoinsdialog.cpp" line="-171"/>
-        <source>Enter a Rpicoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <location filename="../sendcoinsdialog.cpp" line="-173"/>
+        <source>Enter a rpicoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1735,6 +1769,11 @@ Aadress: %4⏎</translation>
     </message>
     <message>
         <location line="+1"/>
+        <source>Copy priority</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+1"/>
         <source>Copy low output</source>
         <translation type="unfinished"/>
     </message>
@@ -1744,7 +1783,7 @@ Aadress: %4⏎</translation>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+85"/>
+        <location line="+86"/>
         <source>&lt;b&gt;%1&lt;/b&gt; to %2 (%3)</source>
         <translation type="unfinished"/>
     </message>
@@ -1790,7 +1829,7 @@ Aadress: %4⏎</translation>
     </message>
     <message>
         <location line="+5"/>
-        <source>Error: Transaction creation failed!</source>
+        <source>Error: Transaction creation failed.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1799,8 +1838,8 @@ Aadress: %4⏎</translation>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+241"/>
-        <source>WARNING: Invalid Rpicoin address</source>
+        <location line="+251"/>
+        <source>WARNING: Invalid rpicoin address</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1832,23 +1871,23 @@ Aadress: %4⏎</translation>
         <translation>Maksa &amp;:</translation>
     </message>
     <message>
-        <location line="+34"/>
-        <source>The address to send the payment to (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+60"/>
-        <location filename="../sendcoinsentry.cpp" line="+26"/>
+        <location line="+24"/>
+        <location filename="../sendcoinsentry.cpp" line="+25"/>
         <source>Enter a label for this address to add it to your address book</source>
         <translation>Aadressiraamatusse sisestamiseks märgista aadress</translation>
     </message>
     <message>
-        <location line="-78"/>
+        <location line="+9"/>
         <source>&amp;Label:</source>
         <translation>&amp;Märgis</translation>
     </message>
     <message>
-        <location line="+28"/>
+        <location line="+18"/>
+        <source>The address to send the payment to  (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+10"/>
         <source>Choose address from address book</source>
         <translation type="unfinished"/>
     </message>
@@ -1874,7 +1913,7 @@ Aadress: %4⏎</translation>
     </message>
     <message>
         <location filename="../sendcoinsentry.cpp" line="+1"/>
-        <source>Enter a Rpicoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <source>Enter a rpicoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -1935,7 +1974,7 @@ Aadress: %4⏎</translation>
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this Rpicoin address</source>
+        <source>Sign the message to prove you own this rpicoin address</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1967,7 +2006,7 @@ Aadress: %4⏎</translation>
     </message>
     <message>
         <location line="+40"/>
-        <source>Verify the message to ensure it was signed with the specified Rpicoin address</source>
+        <source>Verify the message to ensure it was signed with the specified rpicoin address</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1978,7 +2017,7 @@ Aadress: %4⏎</translation>
     <message>
         <location filename="../signverifymessagedialog.cpp" line="+27"/>
         <location line="+3"/>
-        <source>Enter a Rpicoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <source>Enter a rpicoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1988,11 +2027,11 @@ Aadress: %4⏎</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Enter Rpicoin signature</source>
+        <source>Enter rpicoin signature</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+85"/>
+        <location line="+82"/>
         <location line="+81"/>
         <source>The entered address is invalid.</source>
         <translation>Sisestatud aadress ei kehti.</translation>
@@ -2059,22 +2098,19 @@ Aadress: %4⏎</translation>
     </message>
 </context>
 <context>
-    <name>TrafficGraphWidget</name>
-    <message>
-        <location filename="../trafficgraphwidget.cpp" line="+75"/>
-        <source>KB/s</source>
-        <translation type="unfinished"/>
-    </message>
-</context>
-<context>
     <name>TransactionDesc</name>
     <message>
-        <location filename="../transactiondesc.cpp" line="+25"/>
+        <location filename="../transactiondesc.cpp" line="+19"/>
         <source>Open until %1</source>
         <translation>Avatud kuni %1</translation>
     </message>
+    <message numerus="yes">
+        <location line="-2"/>
+        <source>Open for %n block(s)</source>
+        <translation type="unfinished"><numerusform></numerusform><numerusform></numerusform></translation>
+    </message>
     <message>
-        <location line="+6"/>
+        <location line="+8"/>
         <source>conflicted</source>
         <translation type="unfinished"/>
     </message>
@@ -2094,7 +2130,7 @@ Aadress: %4⏎</translation>
         <translation>%1 kinnitust</translation>
     </message>
     <message>
-        <location line="+17"/>
+        <location line="+18"/>
         <source>Status</source>
         <translation>Staatus</translation>
     </message>
@@ -2120,19 +2156,19 @@ Aadress: %4⏎</translation>
     </message>
     <message>
         <location line="+5"/>
-        <location line="+13"/>
+        <location line="+17"/>
         <source>From</source>
         <translation>Saatja</translation>
     </message>
     <message>
         <location line="+1"/>
-        <location line="+19"/>
+        <location line="+22"/>
         <location line="+58"/>
         <source>To</source>
         <translation>Saaja</translation>
     </message>
     <message>
-        <location line="-74"/>
+        <location line="-77"/>
         <location line="+2"/>
         <source>own address</source>
         <translation>oma aadress</translation>
@@ -2143,7 +2179,7 @@ Aadress: %4⏎</translation>
         <translation>märgis</translation>
     </message>
     <message>
-        <location line="+34"/>
+        <location line="+37"/>
         <location line="+12"/>
         <location line="+45"/>
         <location line="+17"/>
@@ -2196,7 +2232,7 @@ Aadress: %4⏎</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Generated coins must mature 510 blocks before they can be spent. When you generated this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to &quot;not accepted&quot; and it won&apos;t be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
+        <source>Generated coins must mature 5 blocks before they can be spent. When you generated this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to &quot;not accepted&quot; and it won&apos;t be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -2215,7 +2251,7 @@ Aadress: %4⏎</translation>
         <translation>Sisendid</translation>
     </message>
     <message>
-        <location line="+21"/>
+        <location line="+23"/>
         <source>Amount</source>
         <translation>Kogus</translation>
     </message>
@@ -2230,17 +2266,12 @@ Aadress: %4⏎</translation>
         <translation>vale</translation>
     </message>
     <message>
-        <location line="-202"/>
+        <location line="-211"/>
         <source>, has not been successfully broadcast yet</source>
         <translation>, veel esitlemata</translation>
     </message>
-    <message numerus="yes">
-        <location line="-36"/>
-        <source>Open for %n more block(s)</source>
-        <translation type="unfinished"><numerusform></numerusform><numerusform></numerusform></translation>
-    </message>
     <message>
-        <location line="+67"/>
+        <location line="+35"/>
         <source>unknown</source>
         <translation>tundmatu</translation>
     </message>
@@ -2261,7 +2292,7 @@ Aadress: %4⏎</translation>
 <context>
     <name>TransactionTableModel</name>
     <message>
-        <location filename="../transactiontablemodel.cpp" line="+231"/>
+        <location filename="../transactiontablemodel.cpp" line="+226"/>
         <source>Date</source>
         <translation>Kuupäev</translation>
     </message>
@@ -2281,7 +2312,7 @@ Aadress: %4⏎</translation>
         <translation>Kogus</translation>
     </message>
     <message>
-        <location line="+52"/>
+        <location line="+60"/>
         <source>Open until %1</source>
         <translation>Avatud kuni %1</translation>
     </message>
@@ -2361,7 +2392,7 @@ Aadress: %4⏎</translation>
         <translation>(n/a)</translation>
     </message>
     <message>
-        <location line="+194"/>
+        <location line="+190"/>
         <source>Transaction status. Hover over this field to show number of confirmations.</source>
         <translation>Tehingu staatus. Kinnituste arvu kuvamiseks liigu hiire noolega selle peale.</translation>
     </message>
@@ -2389,13 +2420,13 @@ Aadress: %4⏎</translation>
 <context>
     <name>TransactionView</name>
     <message>
-        <location filename="../transactionview.cpp" line="+54"/>
-        <location line="+17"/>
+        <location filename="../transactionview.cpp" line="+55"/>
+        <location line="+16"/>
         <source>All</source>
         <translation>Kõik</translation>
     </message>
     <message>
-        <location line="-16"/>
+        <location line="-15"/>
         <source>Today</source>
         <translation>Täna</translation>
     </message>
@@ -2425,7 +2456,7 @@ Aadress: %4⏎</translation>
         <translation>Ulatus...</translation>
     </message>
     <message>
-        <location line="+12"/>
+        <location line="+11"/>
         <source>Received with</source>
         <translation>Saadud koos</translation>
     </message>
@@ -2490,7 +2521,7 @@ Aadress: %4⏎</translation>
         <translation>Kuva tehingu detailid</translation>
     </message>
     <message>
-        <location line="+138"/>
+        <location line="+144"/>
         <source>Export Transaction Data</source>
         <translation type="unfinished"/>
     </message>
@@ -2558,7 +2589,7 @@ Aadress: %4⏎</translation>
 <context>
     <name>WalletModel</name>
     <message>
-        <location filename="../walletmodel.cpp" line="+212"/>
+        <location filename="../walletmodel.cpp" line="+206"/>
         <source>Sending...</source>
         <translation type="unfinished"/>
     </message>
@@ -2566,8 +2597,8 @@ Aadress: %4⏎</translation>
 <context>
     <name>bitcoin-core</name>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="+8"/>
-        <source>Rpicoin version</source>
+        <location filename="../bitcoinstrings.cpp" line="+33"/>
+        <source>rpicoin version</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -2591,13 +2622,13 @@ Aadress: %4⏎</translation>
         <translation>Käskluste abiinfo</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>Options:</source>
         <translation>Valikud:</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Specify configuration file (default: Rpicoin.conf)</source>
+        <source>Specify configuration file (default: rpicoin.conf)</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -2616,22 +2647,7 @@ Aadress: %4⏎</translation>
         <translation>Täpsusta andmekataloog</translation>
     </message>
     <message>
-        <location line="+163"/>
-        <source>%s, you must set a rpcpassword in the configuration file:
-%s
-It is recommended you use the following random password:
-rpcuser=Rpicoinrpc
-rpcpassword=%s
-(you do not need to remember this password)
-The username and password MUST NOT be the same.
-If the file does not exist, create it with owner-readable-only file permissions.
-It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s &quot;Rpicoin Alert&quot; admin@foo.com
-</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="-161"/>
+        <location line="+2"/>
         <source>Set database cache size in megabytes (default: 25)</source>
         <translation>Sea andmebaasi vahemälu suurus MB (vaikeväärtus: 25)</translation>
     </message>
@@ -2641,8 +2657,8 @@ for example: alertnotify=echo %%s | mail -s &quot;Rpicoin Alert&quot; admin@foo.
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+5"/>
-        <source>Listen for connections on &lt;port&gt; (default: 18000 or testnet: 18002)</source>
+        <location line="+6"/>
+        <source>Listen for connections on &lt;port&gt; (default: 23185 or testnet: 33185)</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -2661,22 +2677,17 @@ for example: alertnotify=echo %%s | mail -s &quot;Rpicoin Alert&quot; admin@foo.
         <translation>Täpsusta enda avalik aadress</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+5"/>
         <source>Bind to given address. Use [host]:port notation for IPv6</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Query for peer addresses via DNS lookup, if low on addresses (default: 1 unless -connect)</source>
+        <location line="+2"/>
+        <source>Stake your coins to support network and gain reward (default: 1)</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+3"/>
-        <source>Always query for peer addresses via DNS lookup (default: 0)</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+4"/>
+        <location line="+5"/>
         <source>Threshold for disconnecting misbehaving peers (default: 100)</source>
         <translation>Ulakate peeride valulävi (vaikeväärtus: 100)</translation>
     </message>
@@ -2686,22 +2697,57 @@ for example: alertnotify=echo %%s | mail -s &quot;Rpicoin Alert&quot; admin@foo.
         <translation>Mitme sekundi pärast ulakad peerid tagasi võivad tulla (vaikeväärtus: 86400)</translation>
     </message>
     <message>
-        <location line="+153"/>
+        <location line="-44"/>
         <source>An error occurred while setting up the RPC port %u for listening on IPv4: %s</source>
         <translation>RPC pordi %u kuulamiseks seadistamisel ilmnes viga IPv4&apos;l: %s</translation>
     </message>
     <message>
-        <location line="-126"/>
-        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 18001 or testnet: 18003)</source>
+        <location line="+51"/>
+        <source>Detach block and address databases. Increases shutdown time (default: 0)</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="-16"/>
+        <location line="+109"/>
+        <source>Error: The transaction was rejected.  This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="-5"/>
+        <source>Error: This transaction requires a transaction fee of at least %s because of its amount, complexity, or use of recently received funds  </source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="-87"/>
+        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 23186 or testnet: 33186)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="-11"/>
         <source>Accept command line and JSON-RPC commands</source>
         <translation>Luba käsurea ning JSON-RPC käsklusi</translation>
     </message>
     <message>
+        <location line="+101"/>
+        <source>Error: Transaction creation failed  </source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="-5"/>
+        <source>Error: Wallet locked, unable to create transaction  </source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="-8"/>
+        <source>Importing blockchain data file.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
         <location line="+1"/>
+        <source>Importing bootstrap blockchain data file.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="-88"/>
         <source>Run in the background as a daemon and accept commands</source>
         <translation>Tööta taustal ning aktsepteeri käsklusi</translation>
     </message>
@@ -2711,47 +2757,57 @@ for example: alertnotify=echo %%s | mail -s &quot;Rpicoin Alert&quot; admin@foo.
         <translation>Testvõrgu kasutamine</translation>
     </message>
     <message>
-        <location line="-23"/>
+        <location line="-24"/>
         <source>Accept connections from outside (default: 1 if no -proxy or -connect)</source>
         <translation>Luba välisühendusi (vaikeväärtus: 1 kui puudub -proxy või -connect)</translation>
     </message>
     <message>
-        <location line="+160"/>
+        <location line="-38"/>
         <source>An error occurred while setting up the RPC port %u for listening on IPv6, falling back to IPv4: %s</source>
         <translation>RPC pordi %u kuulamiseks seadistamisel ilmnes viga IPv6&apos;l, lülitumine tagasi IPv4&apos;le : %s</translation>
     </message>
     <message>
-        <location line="-84"/>
-        <source>Warning: -paytxfee is set very high! This is the transaction fee you will pay if you send a transaction.</source>
-        <translation>Hoiatus: -paytxfee on seatud väga kõrgeks! See on sinu poolt makstav tehingu lisatasu.</translation>
-    </message>
-    <message>
-        <location line="+46"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong Rpicoin will not work properly.</source>
+        <location line="+117"/>
+        <source>Error initializing database environment %s! To recover, BACKUP THAT DIRECTORY, then remove everything from it except for wallet.dat.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="-19"/>
+        <location line="-20"/>
+        <source>Set maximum size of RPI-priority/low-fee transactions in bytes (default: 27000)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>Warning: -paytxfee is set very RPI! This is the transaction fee you will pay if you send a transaction.</source>
+        <translation>Hoiatus: -paytxfee on seatud väga kõrgeks! See on sinu poolt makstav tehingu lisatasu.</translation>
+    </message>
+    <message>
+        <location line="+61"/>
+        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong rpicoin will not work properly.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="-31"/>
         <source>Warning: error reading wallet.dat! All keys read correctly, but transaction data or address book entries might be missing or incorrect.</source>
         <translation>Hoiatus: ilmnes tõrge wallet.dat faili lugemisel! Võtmed on terved, kuid tehingu andmed või aadressiraamatu kirjed võivad olla kadunud või vigased.</translation>
     </message>
     <message>
-        <location line="-16"/>
+        <location line="-18"/>
         <source>Warning: wallet.dat corrupt, data salvaged! Original wallet.dat saved as wallet.{timestamp}.bak in %s; if your balance or transactions are incorrect you should restore from a backup.</source>
         <translation>Hoiatus: toimus wallet.dat faili andmete päästmine! Originaal wallet.dat nimetati kaustas %s ümber wallet.{ajatempel}.bak&apos;iks, jäägi või tehingute ebakõlade puhul tuleks teha backup&apos;ist taastamine.</translation>
     </message>
     <message>
-        <location line="-31"/>
+        <location line="-30"/>
         <source>Attempt to recover private keys from a corrupt wallet.dat</source>
         <translation>Püüa vigasest wallet.dat failist taastada turvavõtmed</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+4"/>
         <source>Block creation options:</source>
         <translation>Blokeeri loomise valikud:</translation>
     </message>
     <message>
-        <location line="-66"/>
+        <location line="-62"/>
         <source>Connect only to the specified node(s)</source>
         <translation>Ühendu ainult määratud node&apos;i(de)ga</translation>
     </message>
@@ -2761,12 +2817,22 @@ for example: alertnotify=echo %%s | mail -s &quot;Rpicoin Alert&quot; admin@foo.
         <translation>Leia oma IP aadress (vaikeväärtus: 1, kui kuulatakse ning puudub -externalip)</translation>
     </message>
     <message>
-        <location line="+97"/>
+        <location line="+94"/>
         <source>Failed to listen on any port. Use -listen=0 if you want this.</source>
         <translation>Pordi kuulamine nurjus. Soovikorral kasuta -listen=0.</translation>
     </message>
     <message>
-        <location line="-2"/>
+        <location line="-90"/>
+        <source>Find peers using DNS lookup (default: 1)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Sync checkpoints policy (default: strict)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+83"/>
         <source>Invalid -tor address: &apos;%s&apos;</source>
         <translation type="unfinished"/>
     </message>
@@ -2776,7 +2842,7 @@ for example: alertnotify=echo %%s | mail -s &quot;Rpicoin Alert&quot; admin@foo.
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="-85"/>
+        <location line="-82"/>
         <source>Maximum per-connection receive buffer, &lt;n&gt;*1000 bytes (default: 5000)</source>
         <translation>Maksimaalne saamise puhver -connection kohta , &lt;n&gt;*1000 baiti (vaikeväärtus: 5000)</translation>
     </message>
@@ -2791,22 +2857,42 @@ for example: alertnotify=echo %%s | mail -s &quot;Rpicoin Alert&quot; admin@foo.
         <translation>Ühenda ainult node&apos;idega &lt;net&gt; võrgus (IPv4, IPv6 või Tor)</translation>
     </message>
     <message>
-        <location line="+30"/>
+        <location line="+28"/>
+        <source>Output extra debugging information. Implies all other -debug* options</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Output extra network debugging information</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+1"/>
         <source>Prepend debug output with timestamp</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+36"/>
+        <location line="+35"/>
         <source>SSL options: (see the Bitcoin Wiki for SSL setup instructions)</source>
         <translation>SSL valikud: (vaata Bitcoini Wikist või SSL sätete juhendist)</translation>
     </message>
     <message>
-        <location line="-34"/>
+        <location line="-74"/>
+        <source>Select the version of socks proxy to use (4-5, default: 5)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+41"/>
         <source>Send trace/debug info to console instead of debug.log file</source>
         <translation>Saada jälitus/debug, debug.log faili asemel, konsooli</translation>
     </message>
     <message>
-        <location line="+33"/>
+        <location line="+1"/>
+        <source>Send trace/debug info to debugger</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+28"/>
         <source>Set maximum block size in bytes (default: 250000)</source>
         <translation type="unfinished"/>
     </message>
@@ -2816,17 +2902,23 @@ for example: alertnotify=echo %%s | mail -s &quot;Rpicoin Alert&quot; admin@foo.
         <translation>Sea minimaalne bloki suurus baitides (vaikeväärtus: 0)</translation>
     </message>
     <message>
-        <location line="-33"/>
+        <location line="-29"/>
         <source>Shrink debug.log file on client startup (default: 1 when no -debug)</source>
         <translation>Kahanda programmi käivitamisel debug.log faili (vaikeväärtus: 1, kui ei ole -debug)</translation>
     </message>
     <message>
-        <location line="-41"/>
+        <location line="-42"/>
         <source>Specify connection timeout in milliseconds (default: 5000)</source>
         <translation>Sea ühenduse timeout millisekundites (vaikeväärtus: 5000)</translation>
     </message>
     <message>
-        <location line="+28"/>
+        <location line="+109"/>
+        <source>Unable to sign checkpoint, wrong checkpointkey?
+</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="-80"/>
         <source>Use UPnP to map the listening port (default: 0)</source>
         <translation>Kasuta kuulatava pordi määramiseks UPnP ühendust (vaikeväärtus: 0)</translation>
     </message>
@@ -2841,97 +2933,72 @@ for example: alertnotify=echo %%s | mail -s &quot;Rpicoin Alert&quot; admin@foo.
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+45"/>
+        <location line="+42"/>
         <source>Username for JSON-RPC connections</source>
         <translation>JSON-RPC ühenduste kasutajatunnus</translation>
     </message>
     <message>
-        <location line="+50"/>
+        <location line="+47"/>
         <source>Verifying database integrity...</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+43"/>
-        <source>Error: Wallet locked, unable to create transaction!</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Error: This transaction requires a transaction fee of at least %s because of its amount, complexity, or use of recently received funds!</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Error: Transaction creation failed!</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Error: The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="-15"/>
-        <source>Warning</source>
+        <location line="+57"/>
+        <source>WARNING: syncronized checkpoint violation detected, but skipped!</source>
         <translation type="unfinished"/>
     </message>
     <message>
         <location line="+1"/>
-        <source>Information</source>
+        <source>Warning: Disk space is low!</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="-7"/>
+        <location line="-2"/>
         <source>Warning: This version is obsolete, upgrade required!</source>
         <translation>Hoiatus: versioon on aegunud, uuendus on nõutav!</translation>
     </message>
     <message>
-        <location line="-23"/>
+        <location line="-48"/>
         <source>wallet.dat corrupt, salvage failed</source>
         <translation>wallet.dat fail on katki, päästmine ebaõnnestus</translation>
     </message>
     <message>
-        <location line="-55"/>
+        <location line="-54"/>
         <source>Password for JSON-RPC connections</source>
         <translation>JSON-RPC ühenduste salasõna</translation>
     </message>
     <message>
-        <location line="-47"/>
-        <source>Connect through SOCKS5 proxy</source>
+        <location line="-84"/>
+        <source>%s, you must set a rpcpassword in the configuration file:
+ %s
+It is recommended you use the following random password:
+rpcuser=rpicoinrpc
+rpcpassword=%s
+(you do not need to remember this password)
+The username and password MUST NOT be the same.
+If the file does not exist, create it with owner-readable-only file permissions.
+It is also recommended to set alertnotify so you are notified of problems;
+for example: alertnotify=echo %%s | mail -s &quot;rpicoin Alert&quot; admin@foo.com
+</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+17"/>
+        <location line="+51"/>
+        <source>Find peers using internet relay chat (default: 0)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+5"/>
         <source>Sync time with other nodes. Disable if time on your system is precise e.g. syncing with NTP (default: 1)</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+12"/>
+        <location line="+15"/>
         <source>When creating transactions, ignore inputs with value less than this (default: 0.01)</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+6"/>
-        <source>Output debugging information (default: 0, supplying &lt;category&gt; is optional)</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>If &lt;category&gt; is not supplied, output all debugging information.</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>&lt;category&gt; can be:</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+4"/>
-        <source>Enter regression test mode, which uses a special chain in which blocks can be solved instantly. This is intended for regression testing tools and app development.</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+8"/>
+        <location line="+16"/>
         <source>Allow JSON-RPC connections from specified IP address</source>
         <translation>JSON-RPC ühenduste lubamine kindla IP pealt</translation>
     </message>
@@ -2939,16 +3006,6 @@ for example: alertnotify=echo %%s | mail -s &quot;Rpicoin Alert&quot; admin@foo.
         <location line="+1"/>
         <source>Send commands to node running on &lt;ip&gt; (default: 127.0.0.1)</source>
         <translation>Saada käsklusi node&apos;ile IP&apos;ga &lt;ip&gt; (vaikeväärtus: 127.0.0.1)</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Wait for RPC server to start</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Set the number of threads to service RPC calls (default: 4)</source>
-        <translation type="unfinished"/>
     </message>
     <message>
         <location line="+1"/>
@@ -2967,6 +3024,11 @@ for example: alertnotify=echo %%s | mail -s &quot;Rpicoin Alert&quot; admin@foo.
     </message>
     <message>
         <location line="+1"/>
+        <source>Enforce transaction scripts to use canonical PUSH operators (default: 1)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+2"/>
         <source>Execute command when a relevant alert is received (%s in cmd is replaced by message)</source>
         <translation type="unfinished"/>
     </message>
@@ -2986,22 +3048,22 @@ for example: alertnotify=echo %%s | mail -s &quot;Rpicoin Alert&quot; admin@foo.
         <translation>Otsi ploki jadast rahakoti kadunud tehinguid</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+2"/>
+        <source>How many blocks to check at startup (default: 2500, 0 = all)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+1"/>
         <source>How thorough the block verification is (0-6, default: 1)</source>
         <translation type="unfinished"/>
     </message>
     <message>
         <location line="+1"/>
-        <source>Imports blocks from external rpi000?.dat file</source>
+        <source>Imports blocks from external blk000?.dat file</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Keep at most &lt;n&gt; MiB of unconnectable blocks in memory (default: %u)</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+5"/>
+        <location line="+8"/>
         <source>Use OpenSSL (https) for JSON-RPC connections</source>
         <translation>Kasuta JSON-RPC ühenduste jaoks OpenSSL&apos;i (https)</translation>
     </message>
@@ -3016,74 +3078,79 @@ for example: alertnotify=echo %%s | mail -s &quot;Rpicoin Alert&quot; admin@foo.
         <translation>Serveri privaatvõti (vaikeväärtus: server.pem)</translation>
     </message>
     <message>
-        <location line="+5"/>
-        <source>Error: Unsupported argument -socks found. Setting SOCKS version isn&apos;t possible anymore, only SOCKS5 proxies are supported.</source>
+        <location line="+1"/>
+        <source>Acceptable ciphers (default: TLSv1+RPI:!SSLv2:!aNULL:!eNULL:!AH:!3DES:@STRENGTH)</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+8"/>
-        <source>Initialization sanity check failed. Rpicoin is shutting down.</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+20"/>
-        <source>Error loading block database</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+29"/>
+        <location line="+53"/>
         <source>Error: Wallet unlocked for staking only, unable to create transaction.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="-14"/>
-        <source>Error: Disk space is low!</source>
+        <location line="+18"/>
+        <source>WARNING: Invalid checkpoint found! Displayed transactions may not be correct! You may need to upgrade, or notify developers.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+1"/>
-        <source>This is a pre-release test build - use at your own risk - do not use for mining or merchant applications</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="-135"/>
+        <location line="-158"/>
         <source>This help message</source>
         <translation>Käesolev abitekst</translation>
     </message>
     <message>
-        <location line="+100"/>
+        <location line="+95"/>
         <source>Wallet %s resides outside data directory %s.</source>
         <translation>Rahakott %s paikenb väljaspool kataloogi %s.</translation>
     </message>
     <message>
-        <location line="+46"/>
+        <location line="+1"/>
+        <source>Cannot obtain a lock on data directory %s.  rpicoin is probably already running.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="-98"/>
+        <source>rpicoin</source>
+        <translation>rpicoin</translation>
+    </message>
+    <message>
+        <location line="+140"/>
         <source>Unable to bind to %s on this computer (bind returned error %d, %s)</source>
         <translation>Selle arvutiga ei ole võimalik siduda %s külge (katse nurjus %d, %s tõttu)</translation>
     </message>
     <message>
-        <location line="-136"/>
+        <location line="-130"/>
+        <source>Connect through socks proxy</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+3"/>
         <source>Allow DNS lookups for -addnode, -seednode and -connect</source>
         <translation>-addnode, -seednode ja -connect tohivad kasutada DNS lookup&apos;i</translation>
     </message>
     <message>
-        <location line="+121"/>
+        <location line="+122"/>
         <source>Loading addresses...</source>
         <translation>Aadresside laadimine...</translation>
     </message>
     <message>
-        <location line="-10"/>
+        <location line="-15"/>
+        <source>Error loading blkindex.dat</source>
+        <translation>Viga faili blkindex.dat laadimisel</translation>
+    </message>
+    <message>
+        <location line="+2"/>
         <source>Error loading wallet.dat: Wallet corrupted</source>
         <translation>Viga wallet.dat käivitamisel. Vigane rahakkott</translation>
     </message>
     <message>
         <location line="+4"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of Rpicoin</source>
-        <translation>Viga faili wallet.dat laadimisel: rahakott vajab Rpicoin&apos;i uuemat versiooni.</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of rpicoin</source>
+        <translation>Viga faili wallet.dat laadimisel: rahakott vajab rpicoin&apos;i uuemat versiooni.</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Wallet needed to be rewritten: restart Rpicoin to complete</source>
-        <translation>Rahakott on vaja üle kirjutada: käivita Rpicoin uuesti toimingu lõpetamiseks</translation>
+        <source>Wallet needed to be rewritten: restart rpicoin to complete</source>
+        <translation>Rahakott on vaja üle kirjutada: käivita rpicoin uuesti toimingu lõpetamiseks</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -3091,7 +3158,7 @@ for example: alertnotify=echo %%s | mail -s &quot;Rpicoin Alert&quot; admin@foo.
         <translation>Viga wallet.dat käivitamisel</translation>
     </message>
     <message>
-        <location line="-15"/>
+        <location line="-16"/>
         <source>Invalid -proxy address: &apos;%s&apos;</source>
         <translation>Vigane -proxi aadress: &apos;%s&apos;</translation>
     </message>
@@ -3101,7 +3168,12 @@ for example: alertnotify=echo %%s | mail -s &quot;Rpicoin Alert&quot; admin@foo.
         <translation>Kirjeldatud tundmatu võrgustik -onlynet&apos;is: &apos;%s&apos;</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="-1"/>
+        <source>Unknown -socks proxy version requested: %i</source>
+        <translation>Küsitud tundmatu -socks proxi versioon: %i</translation>
+    </message>
+    <message>
+        <location line="+4"/>
         <source>Cannot resolve -bind address: &apos;%s&apos;</source>
         <translation>Tundmatu -bind aadress: &apos;%s&apos;</translation>
     </message>
@@ -3111,12 +3183,17 @@ for example: alertnotify=echo %%s | mail -s &quot;Rpicoin Alert&quot; admin@foo.
         <translation>Tundmatu -externalip aadress: &apos;%s&apos;</translation>
     </message>
     <message>
-        <location line="-22"/>
+        <location line="-24"/>
         <source>Invalid amount for -paytxfee=&lt;amount&gt;: &apos;%s&apos;</source>
         <translation>-paytxfee=&lt;amount&gt; jaoks vigane kogus: &apos;%s&apos;</translation>
     </message>
     <message>
-        <location line="+59"/>
+        <location line="+44"/>
+        <source>Error: could not start node</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location line="+11"/>
         <source>Sending...</source>
         <translation>Saatmine...</translation>
     </message>
@@ -3131,57 +3208,32 @@ for example: alertnotify=echo %%s | mail -s &quot;Rpicoin Alert&quot; admin@foo.
         <translation>Liiga suur summa</translation>
     </message>
     <message>
-        <location line="-41"/>
+        <location line="-34"/>
         <source>Loading block index...</source>
         <translation>Klotside indeksi laadimine...</translation>
     </message>
     <message>
-        <location line="-105"/>
+        <location line="-103"/>
         <source>Add a node to connect to and attempt to keep the connection open</source>
         <translation>Lisa node ning hoia ühendus avatud</translation>
     </message>
     <message>
-        <location line="+131"/>
-        <source>Unable to bind to %s on this computer. Rpicoin is probably already running.</source>
+        <location line="+122"/>
+        <source>Unable to bind to %s on this computer. rpicoin is probably already running.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="-108"/>
+        <location line="-97"/>
         <source>Fee per KB to add to transactions you send</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+40"/>
-        <source>How many blocks to check at startup (default: 500, 0 = all)</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+11"/>
-        <source>Acceptable ciphers (default: TLSv1.2+HIGH:TLSv1+HIGH:!SSLv2:!aNULL:!eNULL:!3DES:@STRENGTH)</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Warning: Deprecated argument -debugnet ignored, use -debug=net</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+8"/>
+        <location line="+55"/>
         <source>Invalid amount for -mininput=&lt;amount&gt;: &apos;%s&apos;</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location line="+3"/>
-        <source>Cannot obtain a lock on data directory %s. Rpicoin is probably already running.</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+4"/>
-        <source>Error initializing wallet database environment %s!</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location line="+15"/>
+        <location line="+25"/>
         <source>Loading wallet...</source>
         <translation>Rahakoti laadimine...</translation>
     </message>
@@ -3189,6 +3241,11 @@ for example: alertnotify=echo %%s | mail -s &quot;Rpicoin Alert&quot; admin@foo.
         <location line="+8"/>
         <source>Cannot downgrade wallet</source>
         <translation>Rahakoti vanandamine ebaõnnestus</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Cannot initialize keypool</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location line="+1"/>
@@ -3201,22 +3258,22 @@ for example: alertnotify=echo %%s | mail -s &quot;Rpicoin Alert&quot; admin@foo.
         <translation>Üleskaneerimine...</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+5"/>
         <source>Done loading</source>
         <translation>Laetud</translation>
     </message>
     <message>
-        <location line="+33"/>
+        <location line="-167"/>
         <source>To use the %s option</source>
         <translation>%s valiku kasutamine</translation>
     </message>
     <message>
-        <location line="-27"/>
+        <location line="+14"/>
         <source>Error</source>
         <translation>Tõrge</translation>
     </message>
     <message>
-        <location line="+22"/>
+        <location line="+6"/>
         <source>You must set rpcpassword=&lt;password&gt; in the configuration file:
 %s
 If the file does not exist, create it with owner-readable-only file permissions.</source>

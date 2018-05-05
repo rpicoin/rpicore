@@ -58,6 +58,8 @@ MacDockIconHandler::MacDockIconHandler() : QObject()
     this->setMainWindow(NULL);
 #if QT_VERSION < 0x050000
     qt_mac_set_dock_menu(this->m_dockMenu);
+#elif QT_VERSION >= 0x050200
+    this->m_dockMenu->setAsDockMenu();
 #endif
     [pool release];
 }
@@ -83,7 +85,7 @@ void MacDockIconHandler::setIcon(const QIcon &icon)
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     NSImage *image = nil;
     if (icon.isNull())
-        image = [[NSImage imageNamed:@"NSApplicationIcon"] retain];
+        image = [[NSImage imagenamed:@"NSApplicationIcon"] retain];
     else {
         // generate NSImage from QIcon and use this as dock icon.
         QSize size = icon.actualSize(QSize(128, 128));
@@ -102,7 +104,7 @@ void MacDockIconHandler::setIcon(const QIcon &icon)
 
         if(!image) {
             // if testnet image could not be created, load std. app icon
-            image = [[NSImage imageNamed:@"NSApplicationIcon"] retain];
+            image = [[NSImage imagenamed:@"NSApplicationIcon"] retain];
         }
     }
 

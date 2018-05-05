@@ -4,7 +4,6 @@
 #include "uint256.h"
 
 #include <QList>
-#include <QString>
 
 class CWallet;
 class CWalletTx;
@@ -15,8 +14,8 @@ class TransactionStatus
 {
 public:
     TransactionStatus():
-        countsForBalance(false), sortKey(""),
-        matures_in(0), status(Offline), depth(0), open_for(0), cur_num_blocks(-1)
+            countsForBalance(false), sortKey(""),
+            matures_in(0), status(Offline), depth(0), open_for(0), cur_num_blocks(-1)
     { }
 
     enum Status {
@@ -75,7 +74,7 @@ public:
     };
 
     /** Number of confirmation recommended for accepting a transaction */
-    static const int RecommendedNumConfirmations = 10;
+    static const int RecommendedNumConfirmations = 5;
 
     TransactionRecord():
             hash(), time(0), type(Other), address(""), debit(0), credit(0), idx(0)
@@ -118,10 +117,7 @@ public:
     TransactionStatus status;
 
     /** Return the unique identifier for this transaction (part) */
-    QString getTxID() const;
-
-    /** Format subtransaction id */
-    static QString formatSubTxId(const uint256 &hash, int vout);
+    std::string getTxID();
 
     /** Update status from core wallet tx.
      */

@@ -19,9 +19,13 @@ class RPCConsole;
 
 QT_BEGIN_NAMESPACE
 class QLabel;
+class QLineEdit;
+class QTableView;
+class QAbstractItemModel;
 class QModelIndex;
 class QProgressBar;
 class QStackedWidget;
+class QUrl;
 QT_END_NAMESPACE
 
 /**
@@ -31,7 +35,6 @@ QT_END_NAMESPACE
 class BitcoinGUI : public QMainWindow
 {
     Q_OBJECT
-
 public:
     explicit BitcoinGUI(QWidget *parent = 0);
     ~BitcoinGUI();
@@ -56,9 +59,7 @@ private:
     ClientModel *clientModel;
     WalletModel *walletModel;
 
-    QToolBar *toolbar;
-
-    QStackedWidget *centralStackedWidget;
+    QStackedWidget *centralWidget;
 
     OverviewPage *overviewPage;
     QWidget *transactionsPage;
@@ -101,8 +102,6 @@ private:
     RPCConsole *rpcConsole;
 
     QMovie *syncIconMovie;
-    /** Keep track of previous number of blocks, to detect progress */
-    int prevBlocks;
 
     uint64_t nWeight;
 
@@ -119,21 +118,15 @@ public slots:
     /** Set number of connections shown in the UI */
     void setNumConnections(int count);
     /** Set number of blocks shown in the UI */
-    void setNumBlocks(int count);
+    void setNumBlocks(int count, int nTotalBlocks);
     /** Set the encryption status as shown in the UI.
        @param[in] status            current encryption status
        @see WalletModel::EncryptionStatus
     */
     void setEncryptionStatus(int status);
 
-    /** Notify the user of an event from the core network or transaction handling code.
-       @param[in] title     the message box / notification title
-       @param[in] message   the displayed text
-       @param[in] modal     true to use a message box, false to use a notification
-       @param[in] style     style definitions (icon and used buttons - buttons only for message boxes)
-                            @see CClientUIInterface::MessageBoxFlags
-    */
-    void message(const QString &title, const QString &message, bool modal, unsigned int style);
+    /** Notify the user of an error in the network or transaction handling code. */
+    void error(const QString &title, const QString &message, bool modal);
     /** Asks the user whether to pay the transaction fee or to cancel the transaction.
        It is currently not possible to pass a return value to another thread through
        BlockingQueuedConnection, so an indirected pointer is used.
@@ -176,7 +169,7 @@ private slots:
     */
     void incomingTransaction(const QModelIndex & parent, int start, int end);
     /** Encrypt the wallet */
-    void encryptWallet();
+    void encryptWallet(bool status);
     /** Backup the wallet */
     void backupWallet();
     /** Change encrypted wallet passphrase */
@@ -193,9 +186,6 @@ private slots:
 
     void updateWeight();
     void updateStakingIcon();
-
-    /** called by a timer to check if fRequestShutdown has been set **/
-    void detectShutdown();
 };
 
-#endif // BITCOINGUI_H
+#endif
