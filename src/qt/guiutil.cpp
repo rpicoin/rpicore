@@ -461,45 +461,45 @@ void HelpMessageBox::showOrPrint()
 }
 
 /*
-Donker: #2d3245
-Groen: #2ebb89
-Licht-blauw: #4a5d97
-Blauw: #2e3e70
-Vaal-blauw: #3d4664
+Donker: #2d3245 383435
+Groen: #2ebb89 c95353
+Licht-blauw: #4a5d97 ffffff
+Blauw: #2e3e70 000000
+Vaal-blauw: #3d4664 000000
 */
 
 void SetBlackThemeQSS(QApplication& app)
 {
-    app.setStyleSheet("QWidget        { background: #3d4664; color: #2ebb89; }"
+    app.setStyleSheet("QWidget        { background: #383435; color: #c95353; }"
                       "QFrame         { border: none; }"
                       "QComboBox      { color: #ffffff; }"
                       "QComboBox QAbstractItemView::item { color: #ffffff; }"
-                      "QPushButton    { background: #2ebb89; color: #ffffff; }"
-                      "QDoubleSpinBox { background: #3d4664; color: #ffffff; border-color: #2ebb89; }"
-                      "QLineEdit      { background: #3d4664; color: #ffffff; border-color: #2ebb89; }"
-                      "QTextEdit      { background: #3d4664; color: #ffffff; }"
-                      "QPlainTextEdit { background: #3d4664; color: #ffffff; }"
-                      "QMenuBar       { background: #3d4664; color: #2ebb89; }"
-                      "QMenu          { background: #2d3245; color: #ffffff; }"
-                      "QMenu::item:selected { background-color: #2ebb89; }"
+                      "QPushButton    { background: #ffffff; color: #c95353; }"
+                      "QDoubleSpinBox { background: #ffffff; color: #000000; border-color: #c95353; }"
+                      "QLineEdit      { background: #ffffff; color: #000000; border-color: #c95353; }"
+                      "QTextEdit      { background: #ffffff; color: #000000; }"
+                      "QPlainTextEdit { background: #ffffff; color: #000000; }"
+                      "QMenuBar       { background: #383435; color: #c95353; }"
+                      "QMenu          { background: #ffffff; color: #000000; }"
+                      "QMenu::item:selected { background-color: #c95353; }"
                       "QLabel         { color: #ffffff; }"
                       "QLabel         { color: #ffffff; }"
                       "QScrollBar     { color: #ffffff; }"
-                      "QCheckBox      { color: #2ebb89; }"
-                      "QRadioButton   { color: #2ebb89; }"
-                      "QTabBar::tab   { color: #2ebb89; border: 1px solid #2ebb89; border-bottom: none; padding: 5px; }"
-                      "QTabBar::tab:selected  { background: #3d4664; }"
-                      "QTabBar::tab:!selected { background: #3d4664; margin-top: 2px; }"
-                      "QTabWidget::pane { border: 1px solid #3d4664; }"
-                      "QToolButton    { background: #2d3245; color: #ffffff; border: none; margin: 5px; padding: 8px; border-left-style: solid; border-left-width: 3px; border-left-color: #2d3245; }"
-                      "QToolButton:checked { background: #2d3245; color: #2ebb89; border: none; border-left-style: solid; border-left-width: 3px; border-left-color: #2ebb89; }"
-                      "QProgressBar   { color: #ffffff; border-color: #2ebb89; border-width: 2px; border-style: solid; }"
-                      "QProgressBar::chunk { background: #2ebb89; }"
-                      "QTreeView::item { background: #3d4664; color: #2ebb89; }"
+                      "QCheckBox      { color: #ffffff; }"
+                      "QRadioButton   { color: #ffffff; }"
+                      "QTabBar::tab   { color: #000000; border: 1px solid #ffffff; border-bottom: none; padding: 5px; }"
+                      "QTabBar::tab:selected  { background: #ffffff; }"
+                      "QTabBar::tab:!selected { background: #ffffff; margin-top: 2px; }"
+                      "QTabWidget::pane { border: 1px solid #ffffff; }"
+                      "QToolButton    { background: #000000; color: #ffffff; border: none; margin: 5px; padding: 8px; border-left-style: solid; border-left-width: 3px; border-left-color: #000000; }"
+                      "QToolButton:checked { background: #000000; color: #c95353; border: none; border-left-style: solid; border-left-width: 3px; border-left-color: #c95353; }"
+                      "QProgressBar   { color: #ffffff; border-color: #ffffff; border-width: 2px; border-style: solid; }"
+                      "QProgressBar::chunk { background: #c95353; }"
+                      "QTreeView::item { background: #000000; color: #c95353; }"
                       "QTreeView::item:selected { background-color: #ffffff; }"
-                      "QTableView     { background: #3d4664; color: #ffffff; gridline-color: #2ebb89; }"
-                      "QHeaderView::section { background: #3d4664; color: #ffffff; }"
-                      "QToolBar       { background: #2d3245; color: #ffffff; border: none; }");
+                      "QTableView     { background: #ffffff; color: #000000; gridline-color: #2ebb89; }"
+                      "QHeaderView::section { background: #ffffff; color: #000000; }"
+                      "QToolBar       { background: #000000; color: #ffffff; border: none; }");
 }
 
 } // namespace GUIUtil

@@ -352,7 +352,7 @@ static QWidget* makeToolBarSpacer()
 {
     QWidget* spacer = new QWidget();
     spacer->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Expanding);
-    spacer->setStyleSheet("QWidget { background: #2d3245; }");
+    spacer->setStyleSheet("QWidget { background: #000000; }");
     return spacer;
 }
 
@@ -368,7 +368,7 @@ void BitcoinGUI::createToolBars()
         QWidget* header = new QWidget();
         header->setMinimumSize(200, 200);
         header->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
-        header->setStyleSheet("QWidget { background-color: #2d3245; background-repeat: no-repeat; background-image: url(:/images/header); }");
+        header->setStyleSheet("QWidget { background-color: #000000; background-repeat: no-repeat; background-image: url(:/images/header); }");
 		toolbar->addWidget(header);
         toolbar->addWidget(makeToolBarSpacer());
     }
