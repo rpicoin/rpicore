@@ -133,7 +133,7 @@ public:
 
         convertSeed6(vFixedSeeds, pnSeed6_main, ARRAYLEN(pnSeed6_main));
 
-        nLastPOWBlock = 350;
+        nLastPOWBlock = 100;
     }
 
     virtual const CBlock& GenesisBlock() const { return genesis; }
@@ -233,7 +233,7 @@ public:
 
         convertSeed6(vFixedSeeds, pnSeed6_test, ARRAYLEN(pnSeed6_test));
 
-        nLastPOWBlock = 350;
+        nLastPOWBlock = 100;
     }
 
     virtual const CBlock& GenesisBlock() const { return genesis; }
