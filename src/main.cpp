@@ -42,11 +42,11 @@ set<pair<COutPoint, unsigned int> > setStakeSeen;
 
 CBigNum bnProofOfStakeLimit(~uint256(0) >> 48);
 
-int nStakeMinConfirmations = 30;
+int nStakeMinConfirmations = 60;
 unsigned int nStakeMinAge = 1 * 60 * 60; // 1 hours
 unsigned int nModifierInterval = 10 * 60; // time to elapse before new modifier is computed
 
-int nCoinbaseMaturity = 20;
+int nCoinbaseMaturity = 10;
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
 
@@ -977,6 +977,15 @@ int64_t GetProofOfWorkReward(int64_t nFees)
 
 // miner's coin stake reward
 
+int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, int64_t nFees)
+{
+    int64_t nSubsidy;
+    nSubsidy = COIN * 300;
+    LogPrint("creation", "GetProofOfStakeReward(): create=%s nCoinAge=%d\n", FormatMoney(nSubsidy), nCoinAge);
+
+    return nSubsidy + nFees;
+}
+
 //int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, int64_t nFees)
 //{
 //    int64_t nSubsidy;
@@ -1012,38 +1021,38 @@ int64_t GetProofOfWorkReward(int64_t nFees)
 //static const int64_t nTargetTimespan = 24 * 60 * 60; // 24 hours
 const int64_t nTargetSpacing = 60; // 1 minute
 
-int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, int64_t nFees)
-{
+//int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, int64_t nFees)
+//{
    
 
-int64_t nSubsidy;
+//int64_t nSubsidy;
     
-    nSubsidy = nCoinAge * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 5 ;
+//    nSubsidy = nCoinAge * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 5 ;
 
 
-if(nBestHeight <= 70)
-            {
-            	nSubsidy = nCoinAge * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 5 ; //120%
-            }
-            else if(nBestHeight <= 100)
-            {
-            	nSubsidy = nCoinAge * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 5 ; //600%
-            }
-
-	    else if (nBestHeight <= 500)
-           {
-            	nSubsidy = nCoinAge * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 20 ; //2400%
-            }
-
-	    else
-            {
-            nSubsidy = nCoinAge * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 5;  //120%
-            }
-
-    LogPrint("creation", "GetProofOfStakeReward(): create=%s nCoinAge=%d\n", FormatMoney(nSubsidy), nCoinAge);
-
-    return nSubsidy + nFees;
-}
+//if(nBestHeight <= 70)
+//            {
+//            	nSubsidy = nCoinAge * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 5 ; //120%
+//            }
+//            else if(nBestHeight <= 100)
+//            {
+//            	nSubsidy = nCoinAge * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 5 ; //600%
+//            }
+//
+//	    else if (nBestHeight <= 500)
+//           {
+ //           	nSubsidy = nCoinAge * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 20 ; //2400%
+  //          }
+//
+//	    else
+//            {
+ //           nSubsidy = nCoinAge * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 5;  //120%
+//            }
+//
+//    LogPrint("creation", "GetProofOfStakeReward(): create=%s nCoinAge=%d\n", FormatMoney(nSubsidy), nCoinAge);
+//
+ //   return nSubsidy + nFees;
+//}
 
 //static const int64_t nTargetTimespan = 7 * 24 * 60 * 60; // 7 days
 
