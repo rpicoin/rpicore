@@ -42,11 +42,11 @@ set<pair<COutPoint, unsigned int> > setStakeSeen;
 
 CBigNum bnProofOfStakeLimit(~uint256(0) >> 48);
 
-int nStakeMinConfirmations = 100;
-unsigned int nStakeMinAge = 1 * 60 * 60; // 8 hours
+int nStakeMinConfirmations = 30;
+unsigned int nStakeMinAge = 10 * 60 * 60; // 8 hours
 unsigned int nModifierInterval = 10 * 60; // time to elapse before new modifier is computed
 
-int nCoinbaseMaturity = 5;
+int nCoinbaseMaturity = 20;
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
 
@@ -976,10 +976,25 @@ int64_t GetProofOfWorkReward(int64_t nFees)
 }
 
 // miner's coin stake reward
+
+//int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, int64_t nFees)
+//{
+//    int64_t nSubsidy;
+//    if (IsProtocolV3(pindexPrev->nTime))
+//        nSubsidy = COIN * 3 / 2;
+//    else
+//        nSubsidy = nCoinAge * COIN_YEAR_REWARD * 33 / (365 * 33 + 8);
+//
+//    LogPrint("creation", "GetProofOfStakeReward(): create=%s nCoinAge=%d\n", FormatMoney(nSubsidy), nCoinAge);
+//
+//    return nSubsidy + nFees;
+//}
+
+// NEED TO BE REMOVED
 int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, int64_t nFees)
 {
     int64_t nSubsidy;
-    nSubsidy = COIN * 1000;
+    nSubsidy = COIN * 33.0 / (365 * 33 + 8);
     LogPrint("creation", "GetProofOfStakeReward(): create=%s nCoinAge=%d\n", FormatMoney(nSubsidy), nCoinAge);
 
     return nSubsidy + nFees;
