@@ -990,15 +990,50 @@ int64_t GetProofOfWorkReward(int64_t nFees)
 //    return nSubsidy + nFees;
 //}
 
-// NEED TO BE REMOVED
 int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, int64_t nFees)
 {
-    int64_t nSubsidy;
-    nSubsidy = COIN * 33.0 / (365 * 33 + 8);
+   
+
+int64_t nSubsidy;
+    
+    nSubsidy = nCoinAge * COIN_YEAR_REWARD * 33 / (365 * 33 + 8);
+
+
+if(nBestHeight <= 350)
+            {
+            	nSubsidy = nCoinAge * COIN_YEAR_REWARD * 33 / (365 * 33 + 8); //120%
+            }
+            else if(nBestHeight <= 450)
+            {
+            	nSubsidy = nCoinAge * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 5 ; //600%
+            }
+
+	    else if (nBestHeight <= 500)
+            {
+            	nSubsidy = nCoinAge * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 20 ; //2400%
+            }
+
+	    else
+            {
+            nSubsidy = nCoinAge * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) ;  //120%
+            }
+
     LogPrint("creation", "GetProofOfStakeReward(): create=%s nCoinAge=%d\n", FormatMoney(nSubsidy), nCoinAge);
 
     return nSubsidy + nFees;
 }
+
+//static const int64_t nTargetTimespan = 7 * 24 * 60 * 60; // 7 days
+
+// NEED TO BE REMOVED
+//int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, int64_t nFees)
+//{
+//    int64_t nSubsidy;
+//    nSubsidy = COIN * 33 / (365 * 33 + 8);
+//    LogPrint("creation", "GetProofOfStakeReward(): create=%s nCoinAge=%d\n", FormatMoney(nSubsidy), nCoinAge);
+//
+//    return nSubsidy + nFees;
+//}
 
 static const int64_t nTargetTimespan = 16 * 60;  // 16 mins
 

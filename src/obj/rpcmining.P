@@ -5,12 +5,12 @@ obj/rpcmining.o: rpcmining.cpp rpcserver.h uint256.h rpcprotocol.h \
  allocators.h version.h clientversion.h util.h tinyformat.h main.h core.h \
  script.h keystore.h key.h hash.h sync.h threadsafety.h txmempool.h net.h \
  mruset.h netbase.h protocol.h addrman.h timedata.h scrypt.h db.h txdb.h \
- txdb-leveldb.h /root/WSP/rpicore/src/leveldb/include/leveldb/db.h \
- /root/WSP/rpicore/src/leveldb/include/leveldb/iterator.h \
- /root/WSP/rpicore/src/leveldb/include/leveldb/slice.h \
- /root/WSP/rpicore/src/leveldb/include/leveldb/status.h \
- /root/WSP/rpicore/src/leveldb/include/leveldb/options.h \
- /root/WSP/rpicore/src/leveldb/include/leveldb/write_batch.h init.h \
+ txdb-leveldb.h /root/Desktop/rpicore/src/leveldb/include/leveldb/db.h \
+ /root/Desktop/rpicore/src/leveldb/include/leveldb/iterator.h \
+ /root/Desktop/rpicore/src/leveldb/include/leveldb/slice.h \
+ /root/Desktop/rpicore/src/leveldb/include/leveldb/status.h \
+ /root/Desktop/rpicore/src/leveldb/include/leveldb/options.h \
+ /root/Desktop/rpicore/src/leveldb/include/leveldb/write_batch.h init.h \
  wallet.h walletdb.h crypter.h ui_interface.h miner.h kernel.h
 rpcmining.cpp rpcserver.h uint256.h rpcprotocol.h :
  compat.h json/json_spirit_reader_template.h json/json_spirit_value.h :
@@ -19,10 +19,10 @@ rpcmining.cpp rpcserver.h uint256.h rpcprotocol.h :
  allocators.h version.h clientversion.h util.h tinyformat.h main.h core.h :
  script.h keystore.h key.h hash.h sync.h threadsafety.h txmempool.h net.h :
  mruset.h netbase.h protocol.h addrman.h timedata.h scrypt.h db.h txdb.h :
- txdb-leveldb.h /root/WSP/rpicore/src/leveldb/include/leveldb/db.h :
- /root/WSP/rpicore/src/leveldb/include/leveldb/iterator.h :
- /root/WSP/rpicore/src/leveldb/include/leveldb/slice.h :
- /root/WSP/rpicore/src/leveldb/include/leveldb/status.h :
- /root/WSP/rpicore/src/leveldb/include/leveldb/options.h :
- /root/WSP/rpicore/src/leveldb/include/leveldb/write_batch.h init.h :
+ txdb-leveldb.h /root/Desktop/rpicore/src/leveldb/include/leveldb/db.h :
+ /root/Desktop/rpicore/src/leveldb/include/leveldb/iterator.h :
+ /root/Desktop/rpicore/src/leveldb/include/leveldb/slice.h :
+ /root/Desktop/rpicore/src/leveldb/include/leveldb/status.h :
+ /root/Desktop/rpicore/src/leveldb/include/leveldb/options.h :
+ /root/Desktop/rpicore/src/leveldb/include/leveldb/write_batch.h init.h :
  wallet.h walletdb.h crypter.h ui_interface.h miner.h kernel.h :
