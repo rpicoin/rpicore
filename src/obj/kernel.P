@@ -3,20 +3,20 @@ obj/kernel.o: kernel.cpp kernel.h main.h core.h uint256.h serialize.h \
  keystore.h key.h hash.h sync.h threadsafety.h bignum.h txmempool.h net.h \
  mruset.h netbase.h compat.h protocol.h chainparams.h addrman.h \
  timedata.h scrypt.h txdb.h txdb-leveldb.h \
- /root/Desktop/rpicore/src/leveldb/include/leveldb/db.h \
- /root/Desktop/rpicore/src/leveldb/include/leveldb/iterator.h \
- /root/Desktop/rpicore/src/leveldb/include/leveldb/slice.h \
- /root/Desktop/rpicore/src/leveldb/include/leveldb/status.h \
- /root/Desktop/rpicore/src/leveldb/include/leveldb/options.h \
- /root/Desktop/rpicore/src/leveldb/include/leveldb/write_batch.h
+ /root/WSP/rpicore/src/leveldb/include/leveldb/db.h \
+ /root/WSP/rpicore/src/leveldb/include/leveldb/iterator.h \
+ /root/WSP/rpicore/src/leveldb/include/leveldb/slice.h \
+ /root/WSP/rpicore/src/leveldb/include/leveldb/status.h \
+ /root/WSP/rpicore/src/leveldb/include/leveldb/options.h \
+ /root/WSP/rpicore/src/leveldb/include/leveldb/write_batch.h
 kernel.cpp kernel.h main.h core.h uint256.h serialize.h :
  allocators.h version.h clientversion.h util.h tinyformat.h script.h :
  keystore.h key.h hash.h sync.h threadsafety.h bignum.h txmempool.h net.h :
  mruset.h netbase.h compat.h protocol.h chainparams.h addrman.h :
  timedata.h scrypt.h txdb.h txdb-leveldb.h :
- /root/Desktop/rpicore/src/leveldb/include/leveldb/db.h :
- /root/Desktop/rpicore/src/leveldb/include/leveldb/iterator.h :
- /root/Desktop/rpicore/src/leveldb/include/leveldb/slice.h :
- /root/Desktop/rpicore/src/leveldb/include/leveldb/status.h :
- /root/Desktop/rpicore/src/leveldb/include/leveldb/options.h :
- /root/Desktop/rpicore/src/leveldb/include/leveldb/write_batch.h :
+ /root/WSP/rpicore/src/leveldb/include/leveldb/db.h :
+ /root/WSP/rpicore/src/leveldb/include/leveldb/iterator.h :
+ /root/WSP/rpicore/src/leveldb/include/leveldb/slice.h :
+ /root/WSP/rpicore/src/leveldb/include/leveldb/status.h :
+ /root/WSP/rpicore/src/leveldb/include/leveldb/options.h :
+ /root/WSP/rpicore/src/leveldb/include/leveldb/write_batch.h :
