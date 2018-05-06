@@ -11,21 +11,20 @@ https://rpicoin.com
 RPICoin is an Secure, Fast and Energy efficient Hybdrid cryptocurrency.
 Ticker: RPI
 
-
-RPICoin has a 4% Premine (4.000.000 RPI) used for bounties, development and marketing.
-The development funds will not be used for staking purposes, the dev wallet will be marked on the blockexplorer.
+RPICoin has a 15% Premine which will be used for bounties, development and marketing.
+*Also the biggest part will be used for give- aways towards the community! 
 
 Specifications
 ==========================
-* Max number of coins:  RPI
+* Max number of coins: 5999991337 RPI
 * Block time: 25 seconds 
-* Min stake age: 2 hours
-* Maturity: 6 blocks
+* Min stake age: 4 hours
+* Maturity: 10 blocks
 * RPC Port: 31030
-* Type: PoW + PoS (Hybdrid)
+* Type: Proof-of-Stake (PoS))
 * Algo: Scrypt
 * Address Letter: R
-* Premine: 4%
+* Premine: 15%
 * Fee: 0.00001 RPI 
 
 Links
