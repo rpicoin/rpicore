@@ -968,7 +968,7 @@ static CBigNum GetProofOfStakeLimit(int nHeight)
 // miner's coin base reward
 int64_t GetProofOfWorkReward(int64_t nFees)
 {
-    int64_t nSubsidy = 758088 * COIN;
+    int64_t nSubsidy = 2571336 * COIN; //premine 15% 
 
     LogPrint("creation", "GetProofOfWorkReward() : create=%s nSubsidy=%d\n", FormatMoney(nSubsidy), nSubsidy);
 
