@@ -272,14 +272,14 @@ public:
 class CBitcoinAddress : public CBase58Data
 {
 public:
-public:
-    enum
-    {
-        PUBKEY_ADDRESS = 60,  // address begin with 'R'
-        SCRIPT_ADDRESS = 75, 
-        PUBKEY_ADDRESS_TEST = 123,
-        SCRIPT_ADDRESS_TEST = 137,
-}; 
+//public:
+//    enum
+//    {
+//        PUBKEY_ADDRESS = 60,  // address begin with 'R'
+//        SCRIPT_ADDRESS = 75, 
+//        PUBKEY_ADDRESS_TEST = 123,
+//        SCRIPT_ADDRESS_TEST = 137,
+//}; 
 
    bool Set(const CKeyID &id) {
         SetData(Params().Base58Prefix(CChainParams::PUBKEY_ADDRESS), &id, 20);
@@ -423,7 +423,7 @@ public:
     CBitcoinExtKeyBase() {}
 };
 
-typedef CBitcoinExtKeyBase<CExtKey, 74, CChainParams::EXT_SECRET_KEY> CBitcoinExtKey;
+	typedef CBitcoinExtKeyBase<CExtKey, 74, CChainParams::EXT_SECRET_KEY> CBitcoinExtKey;
 typedef CBitcoinExtKeyBase<CExtPubKey, 74, CChainParams::EXT_PUBLIC_KEY> CBitcoinExtPubKey;
 
 #endif // BITCOIN_BASE58_H
