@@ -1,0 +1,9 @@
+Building Wispr
+
+See doc/readme-qt.rst for instructions on building Wispr QT,
+the intended-for-end-users, nice-graphical-interface, reference
+implementation of Wispr.
+
+See doc/build-*.txt for instructions on building wisprd,
+the intended-for-services, no-graphical-interface, reference
+implementation of Wispr.
