@@ -24,10 +24,11 @@ Specifications
 * Type: Proof-of-Stake (PoS))
 * Algo: Scrypt
 * Address Letter: R
-* Premine: 15%
+* Premine: 10%
 * Fee: 0.00001 RPI 
 
 Links
 ===========================
 * Official Website(https://www.rpicoin.com/)<br>
-* 
+* Block Explorer(https://explorer.rpicoin.com/<br>
+* Telegram(https://t.me/rpicoin</br>
