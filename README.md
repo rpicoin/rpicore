@@ -1,5 +1,5 @@
 # RPICoin [RPI]
-Scrypt Algo PoW/PoS (Hybdrid) CryptoCurrency
+Scrypt Algo PoS 3.0 CryptoCurrency
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0)
 
 ![logo](https://i.imgur.com/QW7p8Vu.jpg)
@@ -21,7 +21,7 @@ Specifications
 * Min stake age: 4 hours
 * Maturity: 10 blocks
 * RPC Port: 31030
-* Type: Proof-of-Stake (PoS))
+* Type: Proof-of-Stake (PoS 3.0)
 * Algo: Scrypt
 * Address Letter: R
 * Premine: 10%
