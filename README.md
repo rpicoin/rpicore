@@ -30,5 +30,5 @@ Specifications
 Links
 ===========================
 * Official Website(https://www.rpicoin.com/)<br>
-* Block Explorer(https://explorer.rpicoin.com/<br>
-* Telegram(https://t.me/rpicoin</br>
+* Block Explorer(https://explorer.rpicoin.com/)<br>
+* Telegram(https://t.me/rpicoin/)</br>
