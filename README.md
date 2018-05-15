@@ -27,6 +27,15 @@ Specifications
 * Premine: 10%
 * Fee: 0.00001 RPI 
 
+Installation (Raspberry PI)
+==========================
+Download the latest Raspberry build from https://github.com/rpicoin/rpicore/releases.
+
+1. unzip rpicoin_PI_build_0.1.0_Raspberry.zip
+2. cd rpicoin
+3. ./rpicoin-qt
+4. Wait for it to start syncing
+
 Links
 ===========================
 * Official Website(https://www.rpicoin.com/)<br>
