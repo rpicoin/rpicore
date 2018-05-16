@@ -29,13 +29,12 @@ Specifications
 
 Installation (Raspberry PI)
 ==========================
-Download the latest Raspberry build from https://github.com/rpicoin/rpicore/releases.
+note: if curl is missing - sudo apt-get install curl
 
-1. unzip rpicoin_PI_build_0.1.0_Raspberry.zip
-2. cd rpicoin
-3. sudo chmod +x rpicoin-qt
-4. ./rpicoin-qt
-5. Wait for it to start syncing
+`curl https://rpicoin.com/install.sh | sudo bash`
+
+
+
 
 Links
 ===========================
