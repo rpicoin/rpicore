@@ -50,5 +50,5 @@ Links
 Exchanges
 ===========================
 * Crypto-Bridge.org(https://wallet.crypto-bridge.org/market/BRIDGE.RPI_BRIDGE.BTC)<br>
-* Stocks.Exchange Explorer(https://app.stocks.exchange/en/basic-trade/pair/BTC/RPI/)<br>
+* Stocks.Exchange (https://app.stocks.exchange/en/basic-trade/pair/BTC/RPI/)<br>
 * Altilly.com(https://www.altilly.com/market/RPI_BTC)<br>
