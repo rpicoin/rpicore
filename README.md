@@ -8,11 +8,11 @@ Intro
 ==========================
 https://rpicoin.com
 
-RPICoin is an Secure, Fast and Energy efficient Hybdrid cryptocurrency.
+RPICoin is an Secure, Fast and Energy efficient (100%) PoS cryptocurrency.
 Ticker: RPI
 
 RPICoin has a 10% Premine which will be used for bounties, development and marketing.
-*Also 50% of the premine will be used for give- aways towards the community! 
+*Note: 50% of the premine will be used for give- aways towards the community! 
 
 Specifications
 ==========================
@@ -44,4 +44,4 @@ Links
 * Discord(https://discord.gg/stbw6xw)<br>
 * Reddit(https://www.reddit.com/r/RPICoin)<br>
 * Medium(https://medium.com/@rpicoin)<br>
-* Bitcointalk ANN(https://bitcointalk.org/index.php?topic=3781096.0)</br>
+* Bitcointalk ANN(https://bitcointalk.org/index.php?topic=4587007)</br>
