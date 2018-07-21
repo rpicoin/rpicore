@@ -1,3 +1,7 @@
+Copyright (c) 2018 RPICoin Developers
+Copyright (c) 2017 Wispr Developers
+Copyright (c) 2013 NovaCoin Developers
+Copyright (c) 2011-2013 PPCoin Developers
 Copyright (c) 2009-2012 Bitcoin Developers
 Distributed under the MIT/X11 software license, see the accompanying
 file license.txt or http://www.opensource.org/licenses/mit-license.php.
@@ -7,7 +11,7 @@ cryptographic software written by Eric Young (eay@cryptsoft.com) and UPnP
 software written by Thomas Bernard.
 
 
-See readme-qt.rst for instructions on building Wispr QT, the
+See readme-qt.rst for instructions on building RPI QT, the
 graphical user interface.
 
 WINDOWS BUILD NOTES
@@ -76,9 +80,9 @@ make -f Makefile.mingw
 mkdir miniupnpc
 cp *.h miniupnpc/
 
-Wispr
+Rpicoin
 -------
 DOS prompt:
-cd \wispr\src
+cd \rpicoin\src
 mingw32-make -f makefile.mingw
-strip wisprd.exe
+strip rpicoind.exe
