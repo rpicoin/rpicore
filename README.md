@@ -45,3 +45,10 @@ Links
 * Reddit(https://www.reddit.com/r/RPICoin)<br>
 * Medium(https://medium.com/@rpicoin)<br>
 * Bitcointalk ANN(https://bitcointalk.org/index.php?topic=4587007)</br>
+
+
+Exchanges
+===========================
+* Crypto-Bridge.org(https://wallet.crypto-bridge.org/market/BRIDGE.RPI_BRIDGE.BTC)<br>
+* Stocks.Exchange Explorer(https://app.stocks.exchange/en/basic-trade/pair/BTC/RPI/)<br>
+* Altilly.com(https://www.altilly.com/market/RPI_BTC)<br>
