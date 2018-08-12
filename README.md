@@ -33,8 +33,9 @@ note: if curl is missing - sudo apt-get install curl
 
 `curl https://rpicoin.com/install.sh | sudo bash`
 
-
-
+WIKI
+===========================
+* RPICoin WIKI page (https://wiki.rpicoin.com/)<br>
 
 Links
 ===========================
