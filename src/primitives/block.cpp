@@ -12,14 +12,24 @@
 #include "tinyformat.h"
 #include "utilstrencodings.h"
 #include "util.h"
+#include "crypto/scrypt.h"
+
 
 uint256 CBlockHeader::GetHash() const
 {
-    if(nVersion < 4)
-        return HashQuark(BEGIN(nVersion), END(nNonce));
-
-    return Hash(BEGIN(nVersion), END(nAccumulatorCheckpoint));
+    if(nVersion > 7){
+        return Hash(BEGIN(nVersion), END(nAccumulatorCheckpoint));
+    } else if ( nVersion == 7 ) {
+        return  Hash(BEGIN(nVersion), END(nNonce));
+    } else {
+        return GetPoWHash();
+    }
 }
+uint256 CBlockHeader::GetPoWHash() const
+{
+    return scrypt_blockhash(CVOIDBEGIN(nVersion));
+}
+
 
 uint256 CBlock::BuildMerkleTree(bool* fMutated) const
 {

@@ -92,6 +92,7 @@ public:
     {
         return (nSequence == std::numeric_limits<uint32_t>::max());
     }
+    uint256 GetHash() const;
 
     friend bool operator==(const CTxIn& a, const CTxIn& b)
     {
@@ -160,13 +161,13 @@ public:
 
     bool IsDust(CFeeRate minRelayTxFee) const
     {
-        // "Dust" is defined in terms of CTransaction::minRelayTxFee, which has units upiv-per-kilobyte.
+        // "Dust" is defined in terms of CTransaction::minRelayTxFee, which has units uwsp-per-kilobyte.
         // If you'd pay more than 1/3 in fees to spend something, then we consider it dust.
         // A typical txout is 34 bytes big, and will need a CTxIn of at least 148 bytes to spend
-        // i.e. total is 148 + 32 = 182 bytes. Default -minrelaytxfee is 10000 upiv per kB
-        // and that means that fee per txout is 182 * 10000 / 1000 = 1820 upiv.
-        // So dust is a txout less than 1820 *3 = 5460 upiv
-        // with default -minrelaytxfee = minRelayTxFee = 10000 upiv per kB.
+        // i.e. total is 148 + 32 = 182 bytes. Default -minrelaytxfee is 10000 uwsp per kB
+        // and that means that fee per txout is 182 * 10000 / 1000 = 1820 uwsp.
+        // So dust is a txout less than 1820 *3 = 5460 uwsp
+        // with default -minrelaytxfee = minRelayTxFee = 10000 uwsp per kB.
         size_t nSize = GetSerializeSize(SER_DISK,0)+148u;
         return (nValue < 3*minRelayTxFee.GetFee(nSize));
     }
@@ -212,10 +213,10 @@ public:
     // and bypass the constness. This is safe, as they update the entire
     // structure, including the hash.
     const int32_t nVersion;
+    unsigned int nTime;
     std::vector<CTxIn> vin;
     std::vector<CTxOut> vout;
     const uint32_t nLockTime;
-    //const unsigned int nTime;
 
     /** Construct a CTransaction that qualifies as IsNull() */
     CTransaction();
@@ -231,6 +232,7 @@ public:
     inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
         READWRITE(*const_cast<int32_t*>(&this->nVersion));
         nVersion = this->nVersion;
+        READWRITE(*const_cast<unsigned int*>(&nTime));
         READWRITE(*const_cast<std::vector<CTxIn>*>(&vin));
         READWRITE(*const_cast<std::vector<CTxOut>*>(&vout));
         READWRITE(*const_cast<uint32_t*>(&nLockTime));
@@ -309,9 +311,10 @@ public:
 struct CMutableTransaction
 {
     int32_t nVersion;
-    std::vector<CTxIn> vin;
-    std::vector<CTxOut> vout;
+    std::vector <CTxIn> vin;
+    std::vector <CTxOut> vout;
     uint32_t nLockTime;
+    unsigned int nTime;
 
     CMutableTransaction();
     CMutableTransaction(const CTransaction& tx);
@@ -325,6 +328,7 @@ struct CMutableTransaction
         READWRITE(vin);
         READWRITE(vout);
         READWRITE(nLockTime);
+        READWRITE(nTime);
     }
 
     /** Compute the hash of this CMutableTransaction. This is computed on the

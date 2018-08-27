@@ -13,6 +13,7 @@
 #include "tinyformat.h"
 #include "utilstrencodings.h"
 #include "transaction.h"
+#include "timedata.h"
 
 #include <boost/foreach.hpp>
 
@@ -47,18 +48,20 @@ CTxIn::CTxIn(uint256 hashPrevTx, uint32_t nOut, CScript scriptSigIn, uint32_t nS
     nSequence = nSequenceIn;
 }
 
-std::string CTxIn::ToString() const
-{
+std::string CTxIn::ToString() const {
     std::string str;
     str += "CTxIn(";
     str += prevout.ToString();
+    str += strprintf(", hash=%s", GetHash().ToString());
+    str += strprintf(", prevPubKey=%s", prevPubKey.ToString());
+    str += strprintf(", nSequence=%u", nSequence);
     if (prevout.IsNull())
-        if(scriptSig.IsZerocoinSpend())
+        if (scriptSig.IsZerocoinSpend())
             str += strprintf(", zerocoinspend %s...", HexStr(scriptSig).substr(0, 25));
         else
             str += strprintf(", coinbase %s", HexStr(scriptSig));
     else
-        str += strprintf(", scriptSig=%s", scriptSig.ToString().substr(0,24));
+        str += strprintf(", scriptSig=%s", scriptSig.ToString());
     if (nSequence != std::numeric_limits<unsigned int>::max())
         str += strprintf(", nSequence=%u", nSequence);
     str += ")";
@@ -84,14 +87,22 @@ uint256 CTxOut::GetHash() const
 {
     return SerializeHash(*this);
 }
+uint256 CTxIn::GetHash() const {
+    return SerializeHash(*this);
+}
 
 std::string CTxOut::ToString() const
 {
-    return strprintf("CTxOut(nValue=%d.%08d, scriptPubKey=%s)", nValue / COIN, nValue % COIN, scriptPubKey.ToString().substr(0,30));
+    return strprintf("CTxOut(nValue=%d.%08d, scriptPubKey=%s, nRounds=%u, hash=%s)",
+                     nValue / COIN,
+                     nValue % COIN,
+                     scriptPubKey.ToString(),
+                     nRounds,
+                     GetHash().ToString());
 }
 
-CMutableTransaction::CMutableTransaction() : nVersion(CTransaction::CURRENT_VERSION), nLockTime(0) {}
-CMutableTransaction::CMutableTransaction(const CTransaction& tx) : nVersion(tx.nVersion), vin(tx.vin), vout(tx.vout), nLockTime(tx.nLockTime) {}
+CMutableTransaction::CMutableTransaction() : nVersion(CTransaction::CURRENT_VERSION), nLockTime(0), nTime(GetAdjustedTime()) {}
+CMutableTransaction::CMutableTransaction(const CTransaction& tx) : nVersion(tx.nVersion), vin(tx.vin), vout(tx.vout), nLockTime(tx.nLockTime), nTime(tx.nTime) {}
 
 uint256 CMutableTransaction::GetHash() const
 {
@@ -118,18 +129,19 @@ void CTransaction::UpdateHash() const
     *const_cast<uint256*>(&hash) = SerializeHash(*this);
 }
 
-CTransaction::CTransaction() : hash(), nVersion(CTransaction::CURRENT_VERSION), vin(), vout(), nLockTime(0) { }
+CTransaction::CTransaction() : hash(), nVersion(CTransaction::CURRENT_VERSION), vin(), vout(), nLockTime(0), nTime(GetAdjustedTime()) { }
 
-CTransaction::CTransaction(const CMutableTransaction &tx) : nVersion(tx.nVersion), vin(tx.vin), vout(tx.vout), nLockTime(tx.nLockTime) {
+CTransaction::CTransaction(const CMutableTransaction &tx) : nVersion(tx.nVersion), vin(tx.vin), vout(tx.vout), nLockTime(tx.nLockTime), nTime(tx.nTime) {
     UpdateHash();
 }
 
-CTransaction& CTransaction::operator=(const CTransaction &tx) {
-    *const_cast<int*>(&nVersion) = tx.nVersion;
-    *const_cast<std::vector<CTxIn>*>(&vin) = tx.vin;
-    *const_cast<std::vector<CTxOut>*>(&vout) = tx.vout;
-    *const_cast<unsigned int*>(&nLockTime) = tx.nLockTime;
-    *const_cast<uint256*>(&hash) = tx.hash;
+CTransaction &CTransaction::operator=(const CTransaction &tx) {
+    *const_cast<int32_t *>(&nVersion) = tx.nVersion;
+    *const_cast<unsigned int *>(&nTime) = tx.nTime;
+    *const_cast<std::vector <CTxIn> *>(&vin) = tx.vin;
+    *const_cast<std::vector <CTxOut> *>(&vout) = tx.vout;
+    *const_cast<uint32_t *>(&nLockTime) = tx.nLockTime;
+    *const_cast<uint256 *>(&hash) = tx.hash;
     return *this;
 }
 
@@ -151,7 +163,7 @@ CAmount CTransaction::GetValueOut() const
     CAmount nValueOut = 0;
     for (std::vector<CTxOut>::const_iterator it(vout.begin()); it != vout.end(); ++it)
     {
-        // PIVX: previously MoneyRange() was called here. This has been replaced with negative check and boundary wrap check.
+        // WISPR: previously MoneyRange() was called here. This has been replaced with negative check and boundary wrap check.
         if (it->nValue < 0)
             throw std::runtime_error("CTransaction::GetValueOut() : value out of range : less than 0");
 
@@ -249,12 +261,13 @@ unsigned int CTransaction::CalculateModifiedSize(unsigned int nTxSize) const
 std::string CTransaction::ToString() const
 {
     std::string str;
-    str += strprintf("CTransaction(hash=%s, ver=%d, vin.size=%u, vout.size=%u, nLockTime=%u)\n",
-        GetHash().ToString().substr(0,10),
-        nVersion,
-        vin.size(),
-        vout.size(),
-        nLockTime);
+    str += strprintf("CTransaction(hash=%s, ver=%d, vin.size=%u, vout.size=%u, nLockTime=%u, nTime=%u)\n",
+                     GetHash().ToString(),
+                     nVersion,
+                     vin.size(),
+                     vout.size(),
+                     nLockTime,
+                     nTime);
     for (unsigned int i = 0; i < vin.size(); i++)
         str += "    " + vin[i].ToString() + "\n";
     for (unsigned int i = 0; i < vout.size(); i++)

@@ -63,33 +63,33 @@ struct CDiskBlockPos {
 
 enum BlockStatus {
     //! Unused.
-    BLOCK_VALID_UNKNOWN = 0,
+            BLOCK_VALID_UNKNOWN = 0,
 
     //! Parsed, version ok, hash satisfies claimed PoW, 1 <= vtx count <= max, timestamp not in future
-    BLOCK_VALID_HEADER = 1,
+            BLOCK_VALID_HEADER = 1,
 
     //! All parent headers found, difficulty matches, timestamp >= median previous, checkpoint. Implies all parents
     //! are also at least TREE.
-    BLOCK_VALID_TREE = 2,
+            BLOCK_VALID_TREE = 2,
 
     /**
      * Only first tx is coinbase, 2 <= coinbase input script length <= 100, transactions valid, no duplicate txids,
      * sigops, size, merkle root. Implies all parents are at least TREE but not necessarily TRANSACTIONS. When all
      * parent blocks also have TRANSACTIONS, CBlockIndex::nChainTx will be set.
      */
-    BLOCK_VALID_TRANSACTIONS = 3,
+            BLOCK_VALID_TRANSACTIONS = 3,
 
     //! Outputs do not overspend inputs, no double spends, coinbase output ok, immature coinbase spends, BIP30.
     //! Implies all parents are also at least CHAIN.
-    BLOCK_VALID_CHAIN = 4,
+            BLOCK_VALID_CHAIN = 4,
 
     //! Scripts & signatures ok. Implies all parents are also at least SCRIPTS.
-    BLOCK_VALID_SCRIPTS = 5,
+            BLOCK_VALID_SCRIPTS = 5,
 
     //! All validity bits.
-    BLOCK_VALID_MASK = BLOCK_VALID_HEADER | BLOCK_VALID_TREE | BLOCK_VALID_TRANSACTIONS |
-                       BLOCK_VALID_CHAIN |
-                       BLOCK_VALID_SCRIPTS,
+            BLOCK_VALID_MASK = BLOCK_VALID_HEADER | BLOCK_VALID_TREE | BLOCK_VALID_TRANSACTIONS |
+                               BLOCK_VALID_CHAIN |
+                               BLOCK_VALID_SCRIPTS,
 
     BLOCK_HAVE_DATA = 8,  //! full block available in blk*.dat
     BLOCK_HAVE_UNDO = 16, //! undo data available in rev*.dat
@@ -160,6 +160,7 @@ public:
     // proof-of-stake specific fields
     uint256 GetBlockTrust() const;
     uint64_t nStakeModifier;             // hash modifier for proof-of-stake
+    uint256 bnStakeModifierV2;
     unsigned int nStakeModifierChecksum; // checksum of index; in-memeory only
     COutPoint prevoutStake;
     unsigned int nStakeTime;
@@ -177,11 +178,11 @@ public:
 
     //! (memory only) Sequential id assigned to distinguish order in which blocks are received.
     uint32_t nSequenceId;
-    
+
     //! zerocoin specific fields
     std::map<libzerocoin::CoinDenomination, int64_t> mapZerocoinSupply;
     std::vector<libzerocoin::CoinDenomination> vMintDenominationsInBlock;
-    
+
     void SetNull()
     {
         phashBlock = NULL;
@@ -201,6 +202,7 @@ public:
         nMoneySupply = 0;
         nFlags = 0;
         nStakeModifier = 0;
+        bnStakeModifierV2 = 0;
         nStakeModifierChecksum = 0;
         prevoutStake.SetNull();
         nStakeTime = 0;
@@ -232,7 +234,7 @@ public:
         nTime = block.nTime;
         nBits = block.nBits;
         nNonce = block.nNonce;
-        if(block.nVersion > 3)
+        if(block.nVersion > 7)
             nAccumulatorCheckpoint = block.nAccumulatorCheckpoint;
 
         //Proof of Stake
@@ -253,7 +255,7 @@ public:
             nStakeTime = 0;
         }
     }
-    
+
 
     CDiskBlockPos GetBlockPos() const
     {
@@ -312,7 +314,10 @@ public:
     {
         return (int64_t)nTime;
     }
-
+    int64_t GetPastTimeLimit() const
+    {
+        return GetBlockTime();
+    }
     enum { nMedianTimeSpan = 11 };
 
     int64_t GetMedianTimePast() const
@@ -375,17 +380,17 @@ public:
 
     /**
      * Returns true if there are nRequired or more blocks of minVersion or above
-     * in the last Params().ToCheckBlockUpgradeMajority() blocks, starting at pstart 
+     * in the last Params().ToCheckBlockUpgradeMajority() blocks, starting at pstart
      * and going backwards.
      */
     static bool IsSuperMajority(int minVersion, const CBlockIndex* pstart, unsigned int nRequired);
 
     std::string ToString() const
     {
-        return strprintf("CBlockIndex(pprev=%p, nHeight=%d, merkle=%s, hashBlock=%s)",
-            pprev, nHeight,
-            hashMerkleRoot.ToString(),
-            GetBlockHash().ToString());
+        return strprintf("CBlockIndex(pprev=%p, nHeight=%d, merkle=%s, hashBlock=%s, nBits=%s)",
+                         pprev, nHeight,
+                         hashMerkleRoot.ToString(),
+                         GetBlockHash().ToString(), nBits);
     }
 
     //! Check whether this block index entry is valid up to the passed validity level.
@@ -460,13 +465,15 @@ public:
         READWRITE(nMoneySupply);
         READWRITE(nFlags);
         READWRITE(nStakeModifier);
+        READWRITE(bnStakeModifierV2);
+
         if (IsProofOfStake()) {
             READWRITE(prevoutStake);
             READWRITE(nStakeTime);
         } else {
             const_cast<CDiskBlockIndex*>(this)->prevoutStake.SetNull();
             const_cast<CDiskBlockIndex*>(this)->nStakeTime = 0;
-            const_cast<CDiskBlockIndex*>(this)->hashProofOfStake = uint256();
+//            const_cast<CDiskBlockIndex*>(this)->hashProofOfStake = GetProofOfWorkHash();
         }
 
         // block header
@@ -477,7 +484,7 @@ public:
         READWRITE(nTime);
         READWRITE(nBits);
         READWRITE(nNonce);
-        if(this->nVersion > 3) {
+        if(this->nVersion > 7) {
             READWRITE(nAccumulatorCheckpoint);
             READWRITE(mapZerocoinSupply);
             READWRITE(vMintDenominationsInBlock);
@@ -498,14 +505,26 @@ public:
         return block.GetHash();
     }
 
+    uint256 GetProofOfWorkHash() const
+    {
+        CBlockHeader block;
+        block.nVersion = nVersion;
+        block.hashPrevBlock = hashPrev;
+        block.hashMerkleRoot = hashMerkleRoot;
+        block.nTime = nTime;
+        block.nBits = nBits;
+        block.nNonce = nNonce;
+        block.nAccumulatorCheckpoint = nAccumulatorCheckpoint;
+        return block.GetPoWHash();
+    }
 
     std::string ToString() const
     {
         std::string str = "CDiskBlockIndex(";
         str += CBlockIndex::ToString();
         str += strprintf("\n                hashBlock=%s, hashPrev=%s)",
-            GetBlockHash().ToString(),
-            hashPrev.ToString());
+                         GetBlockHash().ToString(),
+                         hashPrev.ToString());
         return str;
     }
 };

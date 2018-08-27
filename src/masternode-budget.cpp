@@ -59,8 +59,8 @@ bool IsBudgetCollateralValid(uint256 nTxCollateralHash, uint256 nExpectedHash, s
         }
         if (fBudgetFinalization) {
             // Collateral for budget finalization
-            // Note: there are still old valid budgets out there, but the check for the new 5 PIV finalization collateral
-            //       will also cover the old 50 PIV finalization collateral.
+            // Note: there are still old valid budgets out there, but the check for the new 5 WSP finalization collateral
+            //       will also cover the old 50 WSP finalization collateral.
             LogPrint("mnbudget", "Final Budget: o.scriptPubKey(%s) == findScript(%s) ?\n", o.scriptPubKey.ToString(), findScript.ToString());
             if (o.scriptPubKey == findScript) {
                 LogPrint("mnbudget", "Final Budget: o.nValue(%ld) >= BUDGET_FEE_TX(%ld) ?\n", o.nValue, BUDGET_FEE_TX);
@@ -941,7 +941,7 @@ CAmount CBudgetManager::GetTotalBudget(int nHeight)
         nSubsidy = 15 * COIN;
     } else if (nHeight <= 647999 && nHeight >= 604800) {
         nSubsidy = 10 * COIN;
-    } else if (nHeight >= Params().Zerocoin_Block_V2_Start()) {
+    } else if (nHeight >= Params().NEW_PROTOCOLS_STARTHEIGHT()) {
         nSubsidy = 10 * COIN;
     } else {
         nSubsidy = 5 * COIN;

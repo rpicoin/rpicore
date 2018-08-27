@@ -17,7 +17,7 @@ OpenURIDialog::OpenURIDialog(QWidget* parent) : QDialog(parent, Qt::WindowSystem
 {
     ui->setupUi(this);
 #if QT_VERSION >= 0x040700
-    ui->uriEdit->setPlaceholderText("pivx:");
+    ui->uriEdit->setPlaceholderText("wispr:");
 #endif
 }
 
@@ -48,5 +48,5 @@ void OpenURIDialog::on_selectFileButton_clicked()
     if (filename.isEmpty())
         return;
     QUrl fileUri = QUrl::fromLocalFile(filename);
-    ui->uriEdit->setText("pivx:?r=" + QUrl::toPercentEncoding(fileUri.toString()));
+    ui->uriEdit->setText("wispr:?r=" + QUrl::toPercentEncoding(fileUri.toString()));
 }

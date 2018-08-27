@@ -180,7 +180,7 @@ bool CBlockTreeDB::WriteTxIndex(const std::vector<std::pair<uint256, CDiskTxPos>
 {
     CLevelDBBatch batch;
     for (std::vector<std::pair<uint256, CDiskTxPos> >::const_iterator it = vect.begin(); it != vect.end(); it++)
-        batch.Write(make_pair('t', it->first), it->second);
+    batch.Write(make_pair('t', it->first), it->second);
     return WriteBatch(batch);
 }
 
@@ -257,12 +257,13 @@ bool CBlockTreeDB::LoadBlockIndexGuts()
                 pindexNew->nMoneySupply = diskindex.nMoneySupply;
                 pindexNew->nFlags = diskindex.nFlags;
                 pindexNew->nStakeModifier = diskindex.nStakeModifier;
+                pindexNew->bnStakeModifierV2 = diskindex.bnStakeModifierV2;
                 pindexNew->prevoutStake = diskindex.prevoutStake;
                 pindexNew->nStakeTime = diskindex.nStakeTime;
                 pindexNew->hashProofOfStake = diskindex.hashProofOfStake;
 
-                if (pindexNew->nHeight <= Params().LAST_POW_BLOCK()) {
-                    if (!CheckProofOfWork(pindexNew->GetBlockHash(), pindexNew->nBits))
+                if (pindexNew->IsProofOfWork()) {
+                    if (!CheckProofOfWork(pindexNew->GetBlockHeader().GetPoWHash(), pindexNew->nBits))
                         return error("LoadBlockIndex() : CheckProofOfWork failed: %s", pindexNew->ToString());
                 }
                 // ppcoin: build setStakeSeen
@@ -271,8 +272,8 @@ bool CBlockTreeDB::LoadBlockIndexGuts()
 
                 //populate accumulator checksum map in memory
                 if(pindexNew->nAccumulatorCheckpoint != 0 && pindexNew->nAccumulatorCheckpoint != nPreviousCheckpoint) {
-                    //Don't load any checkpoints that exist before v2 zpiv. The accumulator is invalid for v1 and not used.
-                    if (pindexNew->nHeight >= Params().Zerocoin_Block_V2_Start())
+                    //Don't load any checkpoints that exist before v2 zwsp. The accumulator is invalid for v1 and not used.
+                    if (pindexNew->nHeight >= Params().Zerocoin_StartHeight())
                         LoadAccumulatorValuesFromDB(pindexNew->nAccumulatorCheckpoint);
 
                     nPreviousCheckpoint = pindexNew->nAccumulatorCheckpoint;

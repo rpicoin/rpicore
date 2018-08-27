@@ -10,7 +10,7 @@
 #include "init.h"
 #include "spork.h"
 #include "accumulatorcheckpoints.h"
-#include "zpivchain.h"
+#include "zwspchain.h"
 
 using namespace libzerocoin;
 
@@ -37,7 +37,7 @@ uint32_t GetChecksum(const CBigNum &bnValue)
 // Find the first occurance of a certain accumulator checksum. Return 0 if not found.
 int GetChecksumHeight(uint32_t nChecksum, CoinDenomination denomination)
 {
-    CBlockIndex* pindex = chainActive[Params().Zerocoin_StartHeight()];
+    CBlockIndex* pindex = chainActive[Params().NEW_PROTOCOLS_STARTHEIGHT()];
     if (!pindex)
         return 0;
 
@@ -86,7 +86,7 @@ bool GetAccumulatorValueFromDB(uint256 nCheckpoint, CoinDenomination denom, CBig
 void AddAccumulatorChecksum(const uint32_t nChecksum, const CBigNum &bnValue)
 {
     //Since accumulators are switching at v2, stop databasing v1 because its useless. Only focus on v2.
-    if (chainActive.Height() >= Params().Zerocoin_Block_V2_Start()) {
+    if (chainActive.Height() >= Params().NEW_PROTOCOLS_STARTHEIGHT()) {
         zerocoinDB->WriteAccumulatorValue(nChecksum, bnValue);
         mapAccumulatorValues.insert(make_pair(nChecksum, bnValue));
     }
@@ -183,29 +183,29 @@ bool EraseCheckpoints(int nStartHeight, int nEndHeight)
 
 bool InitializeAccumulators(const int nHeight, int& nHeightCheckpoint, AccumulatorMap& mapAccumulators)
 {
-    if (nHeight < Params().Zerocoin_StartHeight())
+    if (nHeight < Params().NEW_PROTOCOLS_STARTHEIGHT())
         return error("%s: height is below zerocoin activated", __func__);
 
     //On a specific block, a recalculation of the accumulators will be forced
-    if (nHeight == Params().Zerocoin_Block_RecalculateAccumulators()) {
-        mapAccumulators.Reset();
-        if (!mapAccumulators.Load(chainActive[Params().Zerocoin_Block_LastGoodCheckpoint()]->nAccumulatorCheckpoint))
-            return error("%s: failed to reset to previous checkpoint when recalculating accumulators", __func__);
-
+//    if (nHeight == Params().NEW_PROTOCOLS_STARTHEIGHT()) {
+//        mapAccumulators.Reset();
+//        if (!mapAccumulators.Load(chainActive[Params().Zerocoin_Block_LastGoodCheckpoint()]->nAccumulatorCheckpoint))
+//            return error("%s: failed to reset to previous checkpoint when recalculating accumulators", __func__);
+//
         // Erase the checkpoints from the period of time that bad mints were being made
-        if (!EraseCheckpoints(Params().Zerocoin_Block_LastGoodCheckpoint() + 1, nHeight))
-            return error("%s : failed to erase Checkpoints while recalculating checkpoints", __func__);
+//        if (!EraseCheckpoints(Params().Zerocoin_Block_LastGoodCheckpoint() + 1, nHeight))
+//            return error("%s : failed to erase Checkpoints while recalculating checkpoints", __func__);
+//
+//        nHeightCheckpoint = Params().Zerocoin_Block_LastGoodCheckpoint();
+//        return true;
+//    }
 
-        nHeightCheckpoint = Params().Zerocoin_Block_LastGoodCheckpoint();
-        return true;
-    }
-
-    if (nHeight >= Params().Zerocoin_Block_V2_Start()) {
+    if (nHeight >= Params().NEW_PROTOCOLS_STARTHEIGHT()) {
         //after v2_start, accumulators need to use v2 params
         mapAccumulators.Reset(Params().Zerocoin_Params(false));
 
         // 20 after v2 start is when the new checkpoints will be in the block, so don't need to load hard checkpoints
-        if (nHeight <= Params().Zerocoin_Block_V2_Start() + 20) {
+        if (nHeight <= Params().NEW_PROTOCOLS_STARTHEIGHT() + 20) {
             //Load hard coded checkpointed value
             AccumulatorCheckpoints::Checkpoint checkpoint = AccumulatorCheckpoints::GetClosestCheckpoint(nHeight,
                                                                                                          nHeightCheckpoint);
@@ -231,7 +231,7 @@ bool InitializeAccumulators(const int nHeight, int& nHeightCheckpoint, Accumulat
 //Get checkpoint value for a specific block height
 bool CalculateAccumulatorCheckpoint(int nHeight, uint256& nCheckpoint, AccumulatorMap& mapAccumulators)
 {
-    if (nHeight < Params().Zerocoin_Block_V2_Start()) {
+    if (nHeight < Params().NEW_PROTOCOLS_STARTHEIGHT()) {
         nCheckpoint = 0;
         return true;
     }
@@ -249,7 +249,7 @@ bool CalculateAccumulatorCheckpoint(int nHeight, uint256& nCheckpoint, Accumulat
         return error("%s: failed to initialize accumulators", __func__);
 
     //Whether this should filter out invalid/fraudulent outpoints
-    bool fFilterInvalid = nHeight >= Params().Zerocoin_Block_RecalculateAccumulators();
+    bool fFilterInvalid = nHeight >= Params().NEW_PROTOCOLS_STARTHEIGHT();
 
     //Accumulate all coins over the last ten blocks that havent been accumulated (height - 20 through height - 11)
     int nTotalMintsFound = 0;
@@ -261,7 +261,7 @@ bool CalculateAccumulatorCheckpoint(int nHeight, uint256& nCheckpoint, Accumulat
             return false;
 
         //make sure this block is eligible for accumulation
-        if (pindex->nHeight < Params().Zerocoin_StartHeight()) {
+        if (pindex->nHeight < Params().NEW_PROTOCOLS_STARTHEIGHT()) {
             pindex = chainActive[pindex->nHeight + 1];
             continue;
         }
@@ -298,14 +298,14 @@ bool CalculateAccumulatorCheckpoint(int nHeight, uint256& nCheckpoint, Accumulat
 
 bool InvalidCheckpointRange(int nHeight)
 {
-    return nHeight > Params().Zerocoin_Block_LastGoodCheckpoint() && nHeight < Params().Zerocoin_Block_RecalculateAccumulators();
+    return false;
 }
 
 bool ValidateAccumulatorCheckpoint(const CBlock& block, CBlockIndex* pindex, AccumulatorMap& mapAccumulators)
 {
     //V1 accumulators are completely phased out by the time this code hits the public and begins generating new checkpoints
-    //It is VERY IMPORTANT that when this is being run and height < v2_start, then zPIV need to be disabled at the same time!!
-    if (pindex->nHeight < Params().Zerocoin_Block_V2_Start() || fVerifyingBlocks)
+    //It is VERY IMPORTANT that when this is being run and height < v2_start, then zWSP need to be disabled at the same time!!
+    if (pindex->nHeight < Params().NEW_PROTOCOLS_STARTHEIGHT() || fVerifyingBlocks)
         return true;
 
     if (pindex->nHeight % 10 == 0) {
@@ -394,7 +394,7 @@ bool GetAccumulatorValue(int& nHeight, const libzerocoin::CoinDenomination denom
 
     //Every situation except for about 20 blocks should use this method
     uint256 nCheckpointBeforeMint = chainActive[nHeight]->nAccumulatorCheckpoint;
-    if (nHeight > Params().Zerocoin_Block_V2_Start() + 20)
+    if (nHeight > Params().NEW_PROTOCOLS_STARTHEIGHT() + 20)
         return GetAccumulatorValueFromDB(nCheckpointBeforeMint, denom, bnAccValue);
 
     int nHeightCheckpoint = 0;
@@ -403,7 +403,7 @@ bool GetAccumulatorValue(int& nHeight, const libzerocoin::CoinDenomination denom
         //Start at the first zerocoin
         libzerocoin::Accumulator accumulator(Params().Zerocoin_Params(false), denom);
         bnAccValue = accumulator.getValue();
-        nHeight = Params().Zerocoin_StartHeight() + 10;
+        nHeight = Params().NEW_PROTOCOLS_STARTHEIGHT() + 10;
         return true;
     }
 
@@ -496,7 +496,7 @@ bool GenerateAccumulatorWitness(const PublicCoin &coin, Accumulator& accumulator
 
         nMintsAdded += AddBlockMintsToAccumulator(coin, nHeightMintAdded, pindex, &witnessAccumulator, true);
 
-        // 10 blocks were accumulated twice when zPIV v2 was activated
+        // 10 blocks were accumulated twice when zWSP v2 was activated
         if (pindex->nHeight == 1050010 && !fDoubleCounted) {
             pindex = chainActive[1050000];
             fDoubleCounted = true;
@@ -535,7 +535,7 @@ map<CoinDenomination, int> GetMintMaturityHeight()
     int nMinimumMaturityHeight = nConfirmedHeight - (nConfirmedHeight % 10);
     CBlockIndex* pindex = chainActive[nConfirmedHeight];
 
-    while (pindex && pindex->nHeight > Params().Zerocoin_StartHeight()) {
+    while (pindex && pindex->nHeight > Params().NEW_PROTOCOLS_STARTHEIGHT()) {
         bool isFinished = true;
         for (auto denom : libzerocoin::zerocoinDenomList) {
             //If the denom has not already had a mint added to it, then see if it has a mint added on this block

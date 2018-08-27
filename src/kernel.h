@@ -9,9 +9,12 @@
 #include "stakeinput.h"
 
 
+// To decrease granularity of timestamp
+// Supposed to be 2^n-1
+static const int STAKE_TIMESTAMP_MASK = 15;
 // MODIFIER_INTERVAL: time to elapse before new modifier is computed
-static const unsigned int MODIFIER_INTERVAL = 60;
-static const unsigned int MODIFIER_INTERVAL_TESTNET = 60;
+static const unsigned int MODIFIER_INTERVAL = 10 * 60;
+static const unsigned int MODIFIER_INTERVAL_TESTNET = 10 * 60;
 extern unsigned int nModifierInterval;
 extern unsigned int getIntervalVersion(bool fTestNet);
 
@@ -21,10 +24,15 @@ static const int MODIFIER_INTERVAL_RATIO = 3;
 
 // Compute the hash modifier for proof-of-stake
 bool GetKernelStakeModifier(uint256 hashBlockFrom, uint64_t& nStakeModifier, int& nStakeModifierHeight, int64_t& nStakeModifierTime, bool fPrintProofOfStake);
+uint256 ComputeStakeModifier(const CBlockIndex* pindexPrev, const uint256& kernel);
 bool ComputeNextStakeModifier(const CBlockIndex* pindexPrev, uint64_t& nStakeModifier, bool& fGeneratedStakeModifier);
-
-bool CheckStake(const CDataStream& ssUniqueID, CAmount nValueIn, const uint64_t nStakeModifier, const uint256& bnTarget, unsigned int nTimeBlockFrom, unsigned int& nTimeTx, uint256& hashProofOfStake);
+inline unsigned int GetTargetSpacing() { return 64; }
+bool CheckStakeV2(const CDataStream& ssUniqueID, CAmount nValueIn, const uint64_t nStakeModifier, const uint256& bnTarget, unsigned int nTimeBlockFrom, unsigned int& nTimeTx, uint256& hashProofOfStake);
+bool CheckStakeV1(unsigned int nTxPrevTime, const COutPoint &prevout,
+                  unsigned int nTimeTx, uint256 &hashProofOfStake, int64_t nValueIn, CBlockIndex *pindexPrev,
+                  unsigned int nBits, bool fDebug);
 bool stakeTargetHit(uint256 hashProofOfStake, int64_t nValueIn, uint256 bnTargetPerCoinDay);
+bool stakeTargetHitOld(uint256 hashProofOfStake, uint256 bnTargetPerCoinDay);
 bool Stake(CStakeInput* stakeInput, unsigned int nBits, unsigned int nTimeBlockFrom, unsigned int& nTimeTx, uint256& hashProofOfStake);
 
 // Check kernel hash target and coinstake signature

@@ -11,6 +11,8 @@
 #include "keystore.h"
 #include "serialize.h"
 #include "uint256.h"
+#include <boost/foreach.hpp>
+
 
 /** The maximum allowed size for a serialized block, in bytes (network rule) */
 static const unsigned int MAX_BLOCK_SIZE_CURRENT = 2000000;
@@ -27,7 +29,7 @@ class CBlockHeader
 {
 public:
     // header
-    static const int32_t CURRENT_VERSION=4;
+    static const int32_t CURRENT_VERSION=7;
     int32_t nVersion;
     uint256 hashPrevBlock;
     uint256 hashMerkleRoot;
@@ -54,7 +56,7 @@ public:
         READWRITE(nNonce);
 
         //zerocoin active, header changes to include accumulator checksum
-        if(nVersion > 3)
+        if(nVersion > 7)
             READWRITE(nAccumulatorCheckpoint);
     }
 
@@ -75,6 +77,8 @@ public:
     }
 
     uint256 GetHash() const;
+    uint256 GetPoWHash() const;
+//    uint256 GetHashForType(fProofOfStake) const;
 
     int64_t GetBlockTime() const
     {
@@ -113,8 +117,8 @@ public:
     inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
         READWRITE(*(CBlockHeader*)this);
         READWRITE(vtx);
-	if(vtx.size() > 1 && vtx[1].IsCoinStake())
-		READWRITE(vchBlockSig);
+        READWRITE(vchBlockSig);
+//	if(vtx.size() > 1 && vtx[1].IsCoinStake())
     }
 
     void SetNull()
@@ -150,13 +154,21 @@ public:
         return !IsProofOfStake();
     }
 
+    // ppcoin: get max transaction timestamp
+    int64_t GetMaxTransactionTime() const
+    {
+        int64_t maxTransactionTime = 0;
+        BOOST_FOREACH(const CTransaction& tx, vtx)
+        maxTransactionTime = std::max(maxTransactionTime, (int64_t)tx.nTime);
+        return maxTransactionTime;
+    }
+
     bool IsZerocoinStake() const;
 
     std::pair<COutPoint, unsigned int> GetProofOfStake() const
     {
         return IsProofOfStake()? std::make_pair(vtx[1].vin[0].prevout, nTime) : std::make_pair(COutPoint(), (unsigned int)0);
     }
-
     // Build the in-memory merkle tree for this block and return the merkle root.
     // If non-NULL, *mutated is set to whether mutation was detected in the merkle
     // tree (a duplication of transactions in the block leading to an identical

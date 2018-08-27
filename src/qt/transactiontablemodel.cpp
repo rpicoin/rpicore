@@ -344,9 +344,9 @@ QString TransactionTableModel::formatTxType(const TransactionRecord* wtx) const
     case TransactionRecord::SendToSelf:
         return tr("Payment to yourself");
     case TransactionRecord::StakeMint:
-        return tr("PIV Stake");
-    case TransactionRecord::StakeZPIV:
-        return tr("zPIV Stake");
+        return tr("WSP Stake");
+    case TransactionRecord::StakeZWSP:
+        return tr("zWSP Stake");
     case TransactionRecord::Generated:
         return tr("Mined");
     case TransactionRecord::ObfuscationDenominate:
@@ -360,15 +360,15 @@ QString TransactionTableModel::formatTxType(const TransactionRecord* wtx) const
     case TransactionRecord::Obfuscated:
         return tr("Obfuscated");
     case TransactionRecord::ZerocoinMint:
-        return tr("Converted PIV to zPIV");
+        return tr("Converted WSP to zWSP");
     case TransactionRecord::ZerocoinSpend:
-        return tr("Spent zPIV");
+        return tr("Spent zWSP");
     case TransactionRecord::RecvFromZerocoinSpend:
-        return tr("Received PIV from zPIV");
-    case TransactionRecord::ZerocoinSpend_Change_zPiv:
-        return tr("Minted Change as zPIV from zPIV Spend");
+        return tr("Received WSP from zWSP");
+    case TransactionRecord::ZerocoinSpend_Change_zWsp:
+        return tr("Minted Change as zWSP from zWSP Spend");
     case TransactionRecord::ZerocoinSpend_FromMe:
-        return tr("Converted zPIV to PIV");
+        return tr("Converted zWSP to WSP");
 
     default:
         return QString();
@@ -380,7 +380,7 @@ QVariant TransactionTableModel::txAddressDecoration(const TransactionRecord* wtx
     switch (wtx->type) {
     case TransactionRecord::Generated:
     case TransactionRecord::StakeMint:
-    case TransactionRecord::StakeZPIV:
+    case TransactionRecord::StakeZWSP:
     case TransactionRecord::MNReward:
         return QIcon(":/icons/tx_mined");
     case TransactionRecord::RecvWithObfuscation:
@@ -423,10 +423,10 @@ QString TransactionTableModel::formatTxToAddress(const TransactionRecord* wtx, b
     case TransactionRecord::SendToOther:
         return QString::fromStdString(wtx->address) + watchAddress;
     case TransactionRecord::ZerocoinMint:
-    case TransactionRecord::ZerocoinSpend_Change_zPiv:
-        return tr("Anonymous (zPIV Transaction)");
-    case TransactionRecord::StakeZPIV:
-        return tr("Anonymous (zPIV Stake)");
+    case TransactionRecord::ZerocoinSpend_Change_zWsp:
+        return tr("Anonymous (zWSP Transaction)");
+    case TransactionRecord::StakeZWSP:
+        return tr("Anonymous (zWSP Stake)");
     case TransactionRecord::SendToSelf:
     default:
         return tr("(n/a)") + watchAddress;

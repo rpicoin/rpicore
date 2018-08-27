@@ -9,7 +9,7 @@
 #define BITCOIN_MAIN_H
 
 #if defined(HAVE_CONFIG_H)
-#include "config/pivx-config.h"
+#include "config/wispr-config.h"
 #endif
 
 #include "amount.h"
@@ -237,7 +237,7 @@ bool DisconnectBlocksAndReprocess(int blocks);
 
 // ***TODO***
 double ConvertBitsToDouble(unsigned int nBits);
-int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCount, bool isZPIVStake);
+int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCount, bool isZWSPStake);
 unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHeader* pblock, bool fProofOfStake);
 
 bool ActivateBestChain(CValidationState& state, CBlock* pblock = NULL, bool fAlreadyChecked = false);
@@ -359,9 +359,9 @@ bool IsTransactionInChain(const uint256& txId, int& nHeightTx, CTransaction& tx)
 bool IsTransactionInChain(const uint256& txId, int& nHeightTx);
 bool IsBlockHashInChain(const uint256& hashBlock);
 bool ValidOutPoint(const COutPoint out, int nHeight);
-void RecalculateZPIVSpent();
-void RecalculateZPIVMinted();
-bool RecalculatePIVSupply(int nHeightStart);
+void RecalculateZWSPSpent();
+void RecalculateZWSPMinted();
+bool RecalculateWSPSupply(int nHeightStart);
 bool ReindexAccumulators(list<uint256>& listMissingCheckpoints, string& strError);
 
 
