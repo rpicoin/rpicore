@@ -136,6 +136,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
     pblocktemplate->vTxFees.push_back(-1);   // updated at end
     pblocktemplate->vTxSigOps.push_back(-1); // updated at end
     unsigned int nTxNewTime = 0;
+
     // ppcoin: if coinstake available add coinstake tx
     static int64_t nLastCoinStakeSearchTime = GetAdjustedTime(); // only initialized at startup
 
@@ -143,14 +144,16 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
         boost::this_thread::interruption_point();
         CBlockIndex* pindexPrev = chainActive.Tip();
         pblock->nTime = GetAdjustedTime();
-        if(pblock->nVersion > 7){
+        if(fZerocoinActive){
             pblock->nBits = GetNextWorkRequired(pindexPrev, pblock);
         }else{
             pblock->nBits = GetNextTargetRequired(pindexPrev, fProofOfStake);
         }
+//        pblock->nBits = GetNextWorkRequired(pindexPrev, pblock);
         CMutableTransaction txCoinStake;
+//        txCoinStake.nTime = GetAdjustedTime();
         txCoinStake.nTime &= ~STAKE_TIMESTAMP_MASK;
-        int64_t nSearchTime = pblock->nTime; // search to current time
+        int64_t nSearchTime = txCoinStake.nTime; // search to current time
         bool fStakeFound = false;
         if (nSearchTime >= nLastCoinStakeSearchTime) {
             nTxNewTime &= ~STAKE_TIMESTAMP_MASK;
@@ -164,7 +167,6 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
             nLastCoinStakeSearchInterval = nSearchTime - nLastCoinStakeSearchTime;
             nLastCoinStakeSearchTime = nSearchTime;
         }
-
         if (!fStakeFound)
             return NULL;
     }
@@ -456,6 +458,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
         LogPrintf("CreateNewBlock(): total size %u\n", nBlockSize);
 
         // Compute final coinbase transaction.
+//        printf("CreateNewBlock(): compute final ccoinbase transaction\n");
         pblock->vtx[0].vin[0].scriptSig = CScript() << nHeight << OP_0;
         if (!fProofOfStake) {
             pblock->vtx[0] = txNew;
@@ -464,7 +467,9 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
 
         if(pblock->nVersion < 8 && fProofOfStake){
             pblock->vtx[1].nTime= pblock->nTime = pblock->vtx[0].nTime = nTxNewTime;
+            LogPrintf("old block time, %u , t1: %u, t2: %u, calculated: %u\n", pblock->nTime, pblock->vtx[0].nTime, pblock->vtx[1].nTime, nTxNewTime);
         }
+
         // Fill in header
         pblock->hashPrevBlock = pindexPrev->GetBlockHash();
         if (!fProofOfStake)
@@ -479,6 +484,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
 
         //Calculate the accumulator checkpoint only if the previous cached checkpoint need to be updated
         uint256 nCheckpoint;
+
         if(nHeight > 10) {
             uint256 hashBlockLastAccumulated = chainActive[nHeight - (nHeight % 10) - 10]->GetBlockHash();
             if (nHeight >= pCheckpointCache.first || pCheckpointCache.second.first != hashBlockLastAccumulated) {
@@ -499,10 +505,9 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
                 }
             }
         }
+//        printf("CreateNewBlock(): add checkpoint from cache\n");
         pblock->nAccumulatorCheckpoint = pCheckpointCache.second.second;
         pblocktemplate->vTxSigOps[0] = GetLegacySigOpCount(pblock->vtx[0]);
-
-        pblock->nTime = max(pindexPrev->GetPastTimeLimit() + 1, pblock->GetMaxTransactionTime());
 
         CValidationState state;
         if(!pblock->IsProofOfWork() && !GetBoolArg("-testnet", false)) {
@@ -512,13 +517,11 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
                 return NULL;
             }
         }
-
 //        if (pblock->IsZerocoinStake()) {
 //            CWalletTx wtx(pwalletMain, pblock->vtx[1]);
 //            pwalletMain->AddToWallet(wtx);
 //        }
     }
-
     return pblocktemplate.release();
 }
 
