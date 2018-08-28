@@ -802,7 +802,7 @@ bool EvalScript(vector<vector<unsigned char> >& stack, const CScript& script, un
 
                     if (!CheckSignatureEncoding(vchSig, flags, serror) || !CheckPubKeyEncoding(vchPubKey, flags, serror)) {
                         //serror is set
-                        LogPrintf("ERROR: EvalScript() : CheckSignatureEncoding or CheckPubKeyEncoding Failed.\n", nIn);
+                        LogPrintf("ERROR: EvalScript() : CheckSignatureEncoding or CheckPubKeyEncoding Failed.\n");
                         return false;
                     }
                     bool fSuccess = checker.CheckSig(vchSig, vchPubKey, scriptCode);
