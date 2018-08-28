@@ -11,6 +11,7 @@
 #include "crypto/sha1.h"
 #include "crypto/sha256.h"
 #include "pubkey.h"
+#include "util.h"
 #include "script/script.h"
 #include "uint256.h"
 
@@ -801,6 +802,7 @@ bool EvalScript(vector<vector<unsigned char> >& stack, const CScript& script, un
 
                     if (!CheckSignatureEncoding(vchSig, flags, serror) || !CheckPubKeyEncoding(vchPubKey, flags, serror)) {
                         //serror is set
+                        LogPrintf("ERROR: EvalScript() : CheckSignatureEncoding or CheckPubKeyEncoding Failed.\n", nIn);
                         return false;
                     }
                     bool fSuccess = checker.CheckSig(vchSig, vchPubKey, scriptCode);
