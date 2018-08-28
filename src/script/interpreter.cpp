@@ -1038,7 +1038,7 @@ uint256 SignatureHash(const CScript& scriptCode, const CTransaction& txTo, unsig
 {
     if (nIn >= txTo.vin.size())
     {
-        LogPrintf("ERROR: SignatureHash() : nIn=%d out of range\n", nIn);
+//        LogPrintf("ERROR: SignatureHash() : nIn=%d out of range\n", nIn);
         return 1;
     }
     CTransaction txTmp(txTo);
@@ -1069,7 +1069,7 @@ uint256 SignatureHash(const CScript& scriptCode, const CTransaction& txTo, unsig
         unsigned int nOut = nIn;
         if (nOut >= txTmp.vout.size())
         {
-            LogPrintf("ERROR: SignatureHash() : nOut=%d out of range\n", nOut);
+//            LogPrintf("ERROR: SignatureHash() : nOut=%d out of range\n", nOut);
             return 1;
         }
         txTmp.vout.resize(nOut+1);
