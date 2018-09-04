@@ -29,7 +29,17 @@ using namespace std;
 using namespace boost::algorithm;
 
 // In script_tests.cpp
-extern UniValue read_json(const std::string& jsondata);
+UniValue read_json(const std::string& jsondata)
+{
+    UniValue v;
+
+    if (!v.read(jsondata) || !v.isArray())
+    {
+        BOOST_ERROR("Parse error.");
+        return UniValue(UniValue::VARR);
+    }
+    return v.get_array();
+}
 
 static std::map<string, unsigned int> mapFlagNames = boost::assign::map_list_of
     (string("NONE"), (unsigned int)SCRIPT_VERIFY_NONE)
