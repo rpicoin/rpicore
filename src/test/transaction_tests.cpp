@@ -29,17 +29,8 @@ using namespace std;
 using namespace boost::algorithm;
 
 // In script_tests.cpp
-UniValue read_data(const std::string& jsondata)
-{
-    UniValue v;
+extern UniValue read_json(const std::string& jsondata);
 
-    if (!v.read(jsondata) || !v.isArray())
-    {
-        BOOST_ERROR("Parse error.");
-        return UniValue(UniValue::VARR);
-    }
-    return v.get_array();
-}
 static std::map<string, unsigned int> mapFlagNames = boost::assign::map_list_of
     (string("NONE"), (unsigned int)SCRIPT_VERIFY_NONE)
     (string("P2SH"), (unsigned int)SCRIPT_VERIFY_P2SH)
@@ -97,7 +88,7 @@ BOOST_AUTO_TEST_CASE(tx_valid)
     // ... where all scripts are stringified scripts.
     //
     // verifyFlags is a comma separated list of script verification flags to apply, or "NONE"
-    UniValue tests = read_data(std::string(json_tests::tx_valid, json_tests::tx_valid + sizeof(json_tests::tx_valid)));
+    UniValue tests = read_json(std::string(json_tests::tx_valid, json_tests::tx_valid + sizeof(json_tests::tx_valid)));
 
     ScriptError err;
     for (unsigned int idx = 0; idx < tests.size(); idx++) {
@@ -172,7 +163,7 @@ BOOST_AUTO_TEST_CASE(tx_invalid)
     // ... where all scripts are stringified scripts.
     //
     // verifyFlags is a comma separated list of script verification flags to apply, or "NONE"
-    UniValue tests = read_data(std::string(json_tests::tx_invalid, json_tests::tx_invalid + sizeof(json_tests::tx_invalid)));
+    UniValue tests = read_json(std::string(json_tests::tx_invalid, json_tests::tx_invalid + sizeof(json_tests::tx_invalid)));
 
     ScriptError err;
     for (unsigned int idx = 0; idx < tests.size(); idx++) {
