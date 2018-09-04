@@ -1142,8 +1142,10 @@ bool TransactionSignatureChecker::CheckSig(const vector<unsigned char>& vchSigIn
 
     uint256 sighash = SignatureHash(scriptCode, *txTo, nIn, nHashType);
 
-    if (!VerifySignature(vchSig, pubkey, sighash))
+    if (!VerifySignature(vchSig, pubkey, sighash)){
+        LogPrintf("ERROR: TransactionSignatureChecker::CheckSig : VerifySignature Failed.\n");
         return false;
+    }
 
     return true;
 }
