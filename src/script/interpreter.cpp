@@ -802,7 +802,7 @@ bool EvalScript(vector<vector<unsigned char> >& stack, const CScript& script, un
 
                     if (!CheckSignatureEncoding(vchSig, flags, serror) || !CheckPubKeyEncoding(vchPubKey, flags, serror)) {
                         //serror is set
-                        LogPrintf("ERROR: EvalScript() : CheckSignatureEncoding or CheckPubKeyEncoding Failed.\n");
+                        printf("ERROR: EvalScript() : CheckSignatureEncoding or CheckPubKeyEncoding Failed.\n");
                         return false;
                     }
                     bool fSuccess = checker.CheckSig(vchSig, vchPubKey, scriptCode);
@@ -812,10 +812,12 @@ bool EvalScript(vector<vector<unsigned char> >& stack, const CScript& script, un
                     stack.push_back(fSuccess ? vchTrue : vchFalse);
                     if (opcode == OP_CHECKSIGVERIFY)
                     {
-                        if (fSuccess)
+                        if (fSuccess) {
+                            printf("EvalScript() : CheckSig success.\n");
                             popstack(stack);
-                        else
+                        }else {
                             return set_error(serror, SCRIPT_ERR_CHECKSIGVERIFY);
+                        }
                     }
                 }
                 break;
