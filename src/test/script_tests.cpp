@@ -65,6 +65,7 @@ CMutableTransaction BuildCreditingTransaction(const CScript& scriptPubKey)
     CMutableTransaction txCredit;
     txCredit.nVersion = 1;
     txCredit.nLockTime = 0;
+    txCredit.nTime = 0;
     txCredit.vin.resize(1);
     txCredit.vout.resize(1);
     txCredit.vin[0].prevout.SetNull();
@@ -81,6 +82,7 @@ CMutableTransaction BuildSpendingTransaction(const CScript& scriptSig, const CMu
     CMutableTransaction txSpend;
     txSpend.nVersion = 1;
     txSpend.nLockTime = 0;
+    txSpend.nTime = 0;
     txSpend.vin.resize(1);
     txSpend.vout.resize(1);
     txSpend.vin[0].prevout.hash = txCredit.GetHash();
