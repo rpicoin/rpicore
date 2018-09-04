@@ -197,11 +197,14 @@ bool static CheckSignatureEncoding(const valtype &vchSig, unsigned int flags, Sc
         return true;
     }
     if ((flags & (SCRIPT_VERIFY_DERSIG | SCRIPT_VERIFY_LOW_S | SCRIPT_VERIFY_STRICTENC)) != 0 && !IsValidSignatureEncoding(vchSig)) {
+        printf("ERROR: CheckSignatureEncoding() : IsValidSignatureEncoding Failed.\n");
         return set_error(serror, SCRIPT_ERR_SIG_DER);
     } else if ((flags & SCRIPT_VERIFY_LOW_S) != 0 && !IsLowDERSignature(vchSig, serror)) {
+        printf("ERROR: CheckSignatureEncoding() : IsLowDERSignature Failed.\n");
         // serror is set
         return false;
     } else if ((flags & SCRIPT_VERIFY_STRICTENC) != 0 && !IsDefinedHashtypeSignature(vchSig)) {
+        printf("ERROR: CheckSignatureEncoding() : IsDefinedHashtypeSignature Failed.\n");
         return set_error(serror, SCRIPT_ERR_SIG_HASHTYPE);
     }
     return true;
@@ -209,6 +212,7 @@ bool static CheckSignatureEncoding(const valtype &vchSig, unsigned int flags, Sc
 
 bool static CheckPubKeyEncoding(const valtype &vchSig, unsigned int flags, ScriptError* serror) {
     if ((flags & SCRIPT_VERIFY_STRICTENC) != 0 && !IsCompressedOrUncompressedPubKey(vchSig)) {
+        printf("ERROR: CheckPubKeyEncoding() : IsCompressedOrUncompressedPubKey Failed.\n");
         return set_error(serror, SCRIPT_ERR_PUBKEYTYPE);
     }
     return true;
