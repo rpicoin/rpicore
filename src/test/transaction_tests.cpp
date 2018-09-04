@@ -235,6 +235,7 @@ BOOST_AUTO_TEST_CASE(basic_transaction_tests)
                 vector<unsigned char> vch(ch, ch + sizeof(ch) -1);
                 CDataStream stream(vch, SER_DISK, CLIENT_VERSION);
                 CMutableTransaction tx;
+                tx.nTime = 0;
                 stream >> tx;
                 CValidationState state;
                 BOOST_CHECK_MESSAGE(CheckTransaction(tx, false, false, state) && state.IsValid(), "Simple deserialized transaction should be valid.");
