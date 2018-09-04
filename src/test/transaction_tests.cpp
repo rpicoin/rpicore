@@ -265,6 +265,7 @@ SetupDummyInputs(CBasicKeyStore& keystoreRet, CCoinsViewCache& coinsRet)
     }
 
     // Create some dummy input transactions
+    dummyTransactions[0].nTime = 0;
     dummyTransactions[0].vout.resize(2);
     dummyTransactions[0].vout[0].nValue = 11*CENT;
     dummyTransactions[0].vout[0].scriptPubKey << ToByteVector(key[0].GetPubKey()) << OP_CHECKSIG;
@@ -272,6 +273,7 @@ SetupDummyInputs(CBasicKeyStore& keystoreRet, CCoinsViewCache& coinsRet)
     dummyTransactions[0].vout[1].scriptPubKey << ToByteVector(key[1].GetPubKey()) << OP_CHECKSIG;
     coinsRet.ModifyCoins(dummyTransactions[0].GetHash())->FromTx(dummyTransactions[0], 0);
 
+    dummyTransactions[1].nTime = 0;
     dummyTransactions[1].vout.resize(2);
     dummyTransactions[1].vout[0].nValue = 21*CENT;
     dummyTransactions[1].vout[0].scriptPubKey = GetScriptForDestination(key[2].GetPubKey().GetID());
@@ -325,6 +327,7 @@ BOOST_AUTO_TEST_CASE(test_IsStandard)
     std::vector<CMutableTransaction> dummyTransactions = SetupDummyInputs(keystore, coins);
 
     CMutableTransaction t;
+    t.nTime = 0;
     t.vin.resize(1);
     t.vin[0].prevout.hash = dummyTransactions[0].GetHash();
     t.vin[0].prevout.n = 1;
