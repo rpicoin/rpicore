@@ -65,7 +65,7 @@ LogTestResult(string testName, bool (*testPtr)())
 
 	bool testResult = testPtr();
 
-	if (testResult == true) {
+	if (testResult) {
 		cout << "\t" << colorGreen << "[PASS]"  << colorNormal << endl;
 		gSuccessfulTests++;
 	} else {
