@@ -1,0 +1,1020 @@
+version: 2
+
+# A reusable "run" snippet which enables the continued logging of memoryusage
+# to a file on disk which can be saved to build artifacts for later analysis.
+run_log_mem_use: &run_log_mem_use
+  background: true
+  name: Setup Memory Logging
+  command: |
+    # Log memory usage throughout entire build.
+    MEMUSELOG=/tmp/memuse.txt /bin/bash -c '\
+        while true; do\
+          ps -u $USER -e -o pid,%cpu,%mem,rss:10,vsz:10,command:20 \
+            --sort=-%mem >> $MEMUSELOG; \
+          echo "----------" >> $MEMUSELOG; \
+          sleep 1; \
+        done'
+# This environment is set to every job (and the initial build).
+build_machine_environment: &build_machine_environment
+    machine: true
+    environment:
+     srcdir: .
+     MAKEJOBS: -j3
+     CHECK_DOC: 0
+     CHECK_LOGPRINT: 0
+     BOOST_TEST_RANDOM: 1255
+     CCACHE_SIZE: 100M
+     CCACHE_TEMPDIR: /tmp/.ccache-temp
+     CCACHE_COMPRESS: 1
+     BASE_OUTDIR: /home/circleci/project/out
+     OUTDIR: /home/circleci/project/out/x86_64-unknown-linux-gnu
+     SDK_URL: https://bitcoincore.org/depends-sources/sdks
+     WINEDEBUG: fixme-all
+     HOST: x86_64-unknown-linux-gnu
+     PACKAGES: bc python3-zmq
+     DEP_OPTS: NO_QT=1 NO_UPNP=1 DEBUG=1
+     PYZMQ: true
+     RUN_TESTS: true
+     GOAL: install
+     BITCOIN_CONFIG: --enable-zmq --enable-glibc-back-compat --enable-reduce-exports CPPFLAGS=-DDEBUG_LOCKORDER
+     BITCOIN_CONFIG_ALL: --disable-dependency-tracking --prefix=/home/circleci/project/depends/x86_64-unknown-linux-gnu --bindir=/home/circleci/project/out/x86_64-unknown-linux-gnu/bin --libdir=/home/circleci/project/out/x86_64-unknown-linux-gnu/lib
+
+jobs:
+  Build:
+    <<: *build_machine_environment
+    steps:
+      - run:
+          <<: *run_log_mem_use
+      - checkout
+      - run:
+          name: Set PATH
+          command: export PATH=$(echo $PATH | tr ':' "\n" | sed '/\/opt\/python/d' | tr "\n" ":" | sed "s|::|:|g")
+      - run:
+          name: Update apt repo
+          command: pip install pyzmq --user
+      - run:
+          name: Update apt repo
+          command: sudo apt-get update
+      - run:
+          name: Install packages
+          command: sudo apt-get install --no-install-recommends --no-upgrade -qq $PACKAGES
+      - run:
+          name: Unset
+          command: unset CC; unset CXX
+      - run:
+          name: Mkdir
+          command: mkdir -p depends/SDKs depends/sdk-sources && ls
+      - run:
+          name: Make libraries
+          command: make $MAKEJOBS -C depends HOST=$HOST $DEP_OPTS
+      - run:
+          name: Get outdir
+          command: echo $OUTDIR
+      - run:
+          name: Set config params
+          command: BITCOIN_CONFIG_ALL="--disable-dependency-tracking --prefix=/home/circleci/project/depends/$HOST --bindir=$OUTDIR/bin --libdir=$OUTDIR/lib"
+      - run:
+          name: set Cache
+          command: depends/$HOST/native/bin/ccache --max-size=$CCACHE_SIZE
+      - run:
+          name: Autogen
+          command: test -n "$USE_SHELL" && eval '"$USE_SHELL" -c "./autogen.sh"' || ./autogen.sh
+      - run:
+          name: Configure
+          command: ./configure --cache-file=config.cache $BITCOIN_CONFIG_ALL $BITCOIN_CONFIG || ( cat config.log && false)
+      - run:
+          name: Make directories
+          command: make distdir PACKAGE=bitcoin VERSION=$HOST
+      - run:
+          name: Enter directory
+          command: cd bitcoin-$HOST
+      - run:
+          name: Configure
+          command: ./configure --cache-file=../config.cache $BITCOIN_CONFIG_ALL $BITCOIN_CONFIG || ( cat config.log && false)
+      - run:
+          name: Compile
+          command: make install -s -j3 || ( echo "Build failure. Verbose build follows." && make $GOAL V=1 ; false )
+      - run:
+          name: Check if univalue is compiled
+          command: cd ./src/univalue && ls && cd test && ls
+      - run:
+          name: export libraries
+          command: export LD_LIBRARY_PATH=/home/circleci/project/depends/$HOST/lib
+      - run:
+          name: Check
+          command: make check -s -j3 || ( echo "Build failure. Verbose build follows." && make $GOAL V=1 ; false )
+      - run:
+          name: Check if univalue is compiled
+          command: cd ./src/univalue && ls && cd test && ls
+      - persist_to_workspace:
+          root: .
+          paths:
+              - ./src
+              - ./qa
+      - store_artifacts:
+          path: /tmp/core_dumps
+      - store_artifacts:
+          path: /tmp/memuse.txt
+
+  Test libsecp256k1:
+    <<: *build_machine_environment
+    steps:
+      - run:
+          <<: *run_log_mem_use
+      - attach_workspace:
+          at: .
+      - run:
+          name: Run libsecp256k1 Tests
+          command: ./src/secp256k1/tests
+      - store_test_results:
+          path: ./tmp/results
+      - store_artifacts:
+          path: ./tmp/results
+      - store_artifacts:
+          path: /tmp/core_dumps
+      - store_artifacts:
+          path: /tmp/memuse.txt
+
+  Test univalue:
+    <<: *build_machine_environment
+    steps:
+      - run:
+          <<: *run_log_mem_use
+      - attach_workspace:
+          at: .
+      - run:
+          name: Run Object Tests
+          command: ./src/univalue/test/object
+      - run:
+          name: Run No_Nul Tests
+          command: ./src/univalue/test/no_nul
+      - run:
+          name: Run Univalue Tests
+          command: cd ./src/univalue && sudo test/unitester
+      - store_test_results:
+          path: ./tmp/results
+      - store_artifacts:
+          path: ./tmp/results
+      - store_artifacts:
+          path: /tmp/core_dumps
+      - store_artifacts:
+          path: /tmp/memuse.txt
+
+  Test qt:
+    <<: *build_machine_environment
+    steps:
+      - run:
+          <<: *run_log_mem_use
+      - attach_workspace:
+          at: .
+      - run:
+          name: Run Qt Tests
+          command: ./src/qt/test/test_wispr-qt
+      - store_test_results:
+          path: ./tmp/results
+      - store_artifacts:
+          path: ./tmp/results
+      - store_artifacts:
+          path: /tmp/core_dumps
+      - store_artifacts:
+          path: /tmp/memuse.txt
+
+  Test btc util:
+    <<: *build_machine_environment
+    steps:
+      - run:
+          <<: *run_log_mem_use
+      - attach_workspace:
+          at: .
+      - run:
+          name: Run BTC Util Tests
+          command: cd ./src && test/bitcoin-util-test.py
+      - store_test_results:
+          path: ./tmp/results
+      - store_artifacts:
+          path: ./tmp/results
+      - store_artifacts:
+          path: /tmp/core_dumps
+      - store_artifacts:
+          path: /tmp/memuse.txt
+
+  Test uint256:
+    <<: *build_machine_environment
+    steps:
+      - run:
+          <<: *run_log_mem_use
+      - attach_workspace:
+          at: .
+      - run:
+          name: Run Wispr Tests
+          command: src/test/test_wispr --run_test="uint256_tests"
+      - store_test_results:
+          path: ./tmp/results
+      - store_artifacts:
+          path: ./tmp/results
+      - store_artifacts:
+          path: /tmp/core_dumps
+      - store_artifacts:
+          path: /tmp/memuse.txt
+
+  Test keys:
+    <<: *build_machine_environment
+    steps:
+      - run:
+          <<: *run_log_mem_use
+      - attach_workspace:
+          at: .
+      - run:
+          name: Run Wispr Tests
+          command: src/test/test_wispr --run_test="key_tests"
+      - store_test_results:
+          path: ./tmp/results
+      - store_artifacts:
+          path: ./tmp/results
+      - store_artifacts:
+          path: /tmp/core_dumps
+      - store_artifacts:
+          path: /tmp/memuse.txt
+
+  Test Checkpoints:
+    <<: *build_machine_environment
+    steps:
+      - run:
+          <<: *run_log_mem_use
+      - attach_workspace:
+          at: .
+      - run:
+          name: Run Wispr Tests
+          command: src/test/test_wispr --run_test="Checkpoints_tests"
+      - store_test_results:
+          path: ./tmp/results
+      - store_artifacts:
+          path: ./tmp/results
+      - store_artifacts:
+          path: /tmp/core_dumps
+      - store_artifacts:
+          path: /tmp/memuse.txt
+
+  Test Allocator:
+    <<: *build_machine_environment
+    steps:
+      - run:
+          <<: *run_log_mem_use
+      - attach_workspace:
+          at: .
+      - run:
+          name: Run Wispr Tests
+          command: src/test/test_wispr --run_test="allocator_tests"
+      - store_test_results:
+          path: ./tmp/results
+      - store_artifacts:
+          path: ./tmp/results
+      - store_artifacts:
+          path: /tmp/core_dumps
+      - store_artifacts:
+          path: /tmp/memuse.txt
+
+  Test Netbase:
+    <<: *build_machine_environment
+    steps:
+      - run:
+          <<: *run_log_mem_use
+      - attach_workspace:
+          at: .
+      - run:
+          name: Run Wispr Tests
+          command: src/test/test_wispr --run_test="netbase_tests"
+      - store_test_results:
+          path: ./tmp/results
+      - store_artifacts:
+          path: ./tmp/results
+      - store_artifacts:
+          path: /tmp/core_dumps
+      - store_artifacts:
+          path: /tmp/memuse.txt
+
+  Test libzerocoin:
+    <<: *build_machine_environment
+    steps:
+      - run:
+          <<: *run_log_mem_use
+      - attach_workspace:
+          at: .
+      - run:
+          name: Run Wispr Tests
+          command: src/test/test_wispr --run_test="libzerocoin"
+      - store_test_results:
+          path: ./tmp/results
+      - store_artifacts:
+          path: ./tmp/results
+      - store_artifacts:
+          path: /tmp/core_dumps
+      - store_artifacts:
+          path: /tmp/memuse.txt
+
+  Test sigopcount:
+    <<: *build_machine_environment
+    steps:
+      - run:
+          <<: *run_log_mem_use
+      - attach_workspace:
+          at: .
+      - run:
+          name: Run Wispr Tests
+          command: src/test/test_wispr --run_test="sigopcount_tests"
+      - store_test_results:
+          path: ./tmp/results
+      - store_artifacts:
+          path: ./tmp/results
+      - store_artifacts:
+          path: /tmp/core_dumps
+      - store_artifacts:
+          path: /tmp/memuse.txt
+
+  Test budget:
+    <<: *build_machine_environment
+    steps:
+      - run:
+          <<: *run_log_mem_use
+      - attach_workspace:
+          at: .
+      - run:
+          name: Run Wispr Tests
+          command: src/test/test_wispr --run_test="budget_tests"
+      - store_test_results:
+          path: ./tmp/results
+      - store_artifacts:
+          path: ./tmp/results
+      - store_artifacts:
+          path: /tmp/core_dumps
+      - store_artifacts:
+          path: /tmp/memuse.txt
+
+  Test zerocoin denom:
+    <<: *build_machine_environment
+    steps:
+      - run:
+          <<: *run_log_mem_use
+      - attach_workspace:
+          at: .
+      - run:
+          name: Run Wispr Tests
+          command: src/test/test_wispr --run_test="zerocoin_denom_tests"
+      - store_test_results:
+          path: ./tmp/results
+      - store_artifacts:
+          path: ./tmp/results
+      - store_artifacts:
+          path: /tmp/core_dumps
+      - store_artifacts:
+          path: /tmp/memuse.txt
+
+  Test mempool:
+    <<: *build_machine_environment
+    steps:
+      - run:
+          <<: *run_log_mem_use
+      - attach_workspace:
+          at: .
+      - run:
+          name: Run Wispr Tests
+          command: src/test/test_wispr --run_test="mempool_tests"
+      - store_test_results:
+          path: ./tmp/results
+      - store_artifacts:
+          path: ./tmp/results
+      - store_artifacts:
+          path: /tmp/core_dumps
+      - store_artifacts:
+          path: /tmp/memuse.txt
+
+  Test multisig:
+    <<: *build_machine_environment
+    steps:
+      - run:
+          <<: *run_log_mem_use
+      - attach_workspace:
+          at: .
+      - run:
+          name: Run Wispr Tests
+          command: src/test/test_wispr --run_test="multisig_tests"
+      - store_test_results:
+          path: ./tmp/results
+      - store_artifacts:
+          path: ./tmp/results
+      - store_artifacts:
+          path: /tmp/core_dumps
+      - store_artifacts:
+          path: /tmp/memuse.txt
+
+  Test crypto:
+    <<: *build_machine_environment
+    steps:
+      - run:
+          <<: *run_log_mem_use
+      - attach_workspace:
+          at: .
+      - run:
+          name: Run Wispr Tests
+          command: src/test/test_wispr --run_test="crypto_tests"
+      - store_test_results:
+          path: ./tmp/results
+      - store_artifacts:
+          path: ./tmp/results
+      - store_artifacts:
+          path: /tmp/core_dumps
+      - store_artifacts:
+          path: /tmp/memuse.txt
+
+  Test sanity:
+    <<: *build_machine_environment
+    steps:
+      - run:
+          <<: *run_log_mem_use
+      - attach_workspace:
+          at: .
+      - run:
+          name: Run Wispr Tests
+          command: src/test/test_wispr --run_test="sanity_tests"
+      - store_test_results:
+          path: ./tmp/results
+      - store_artifacts:
+          path: ./tmp/results
+      - store_artifacts:
+          path: /tmp/core_dumps
+      - store_artifacts:
+          path: /tmp/memuse.txt
+
+  Test CheckBlock:
+    <<: *build_machine_environment
+    steps:
+      - run:
+          <<: *run_log_mem_use
+      - attach_workspace:
+          at: .
+      - run:
+          name: Run Wispr Tests
+          command: src/test/test_wispr --run_test="CheckBlock_tests"
+      - store_test_results:
+          path: ./tmp/results
+      - store_artifacts:
+          path: ./tmp/results
+      - store_artifacts:
+          path: /tmp/core_dumps
+      - store_artifacts:
+          path: /tmp/memuse.txt
+
+  Test coins:
+    <<: *build_machine_environment
+    steps:
+      - run:
+          <<: *run_log_mem_use
+      - attach_workspace:
+          at: .
+      - run:
+          name: Run Wispr Tests
+          command: src/test/test_wispr --run_test="coins_tests"
+      - store_test_results:
+          path: ./tmp/results
+      - store_artifacts:
+          path: ./tmp/results
+      - store_artifacts:
+          path: /tmp/core_dumps
+      - store_artifacts:
+          path: /tmp/memuse.txt
+  Test compress:
+    <<: *build_machine_environment
+    steps:
+      - run:
+          <<: *run_log_mem_use
+      - attach_workspace:
+          at: .
+      - run:
+          name: Run Wispr Tests
+          command: src/test/test_wispr --run_test="compress_tests"
+      - store_test_results:
+          path: ./tmp/results
+      - store_artifacts:
+          path: ./tmp/results
+      - store_artifacts:
+          path: /tmp/core_dumps
+      - store_artifacts:
+          path: /tmp/memuse.txt
+
+  Test mruset:
+    <<: *build_machine_environment
+    steps:
+      - run:
+          <<: *run_log_mem_use
+      - attach_workspace:
+          at: .
+      - run:
+          name: Run Wispr Tests
+          command: src/test/test_wispr --run_test="mruset_tests"
+      - store_test_results:
+          path: ./tmp/results
+      - store_artifacts:
+          path: ./tmp/results
+      - store_artifacts:
+          path: /tmp/core_dumps
+      - store_artifacts:
+          path: /tmp/memuse.txt
+  Test pmt:
+    <<: *build_machine_environment
+    steps:
+      - run:
+          <<: *run_log_mem_use
+      - attach_workspace:
+          at: .
+      - run:
+          name: Run Wispr Tests
+          command: src/test/test_wispr --run_test="pmt_tests"
+      - store_test_results:
+          path: ./tmp/results
+      - store_artifacts:
+          path: ./tmp/results
+      - store_artifacts:
+          path: /tmp/core_dumps
+      - store_artifacts:
+          path: /tmp/memuse.txt
+  Test rpc:
+    <<: *build_machine_environment
+    steps:
+      - run:
+          <<: *run_log_mem_use
+      - attach_workspace:
+          at: .
+      - run:
+          name: Run Wispr Tests
+          command: src/test/test_wispr --run_test="rpc_tests"
+      - store_test_results:
+          path: ./tmp/results
+      - store_artifacts:
+          path: ./tmp/results
+      - store_artifacts:
+          path: /tmp/core_dumps
+      - store_artifacts:
+          path: /tmp/memuse.txt
+
+  Test zerocoin implementation:
+    <<: *build_machine_environment
+    steps:
+      - run:
+          <<: *run_log_mem_use
+      - attach_workspace:
+          at: .
+      - run:
+          name: Run Wispr Tests
+          command: src/test/test_wispr --run_test="zerocoin_implementation_tests"
+      - store_test_results:
+          path: ./tmp/results
+      - store_artifacts:
+          path: ./tmp/results
+      - store_artifacts:
+          path: /tmp/core_dumps
+      - store_artifacts:
+          path: /tmp/memuse.txt
+
+  Test accounting:
+    <<: *build_machine_environment
+    steps:
+      - run:
+          <<: *run_log_mem_use
+      - attach_workspace:
+          at: .
+      - run:
+          name: Run Wispr Tests
+          command: src/test/test_wispr --run_test="accounting_tests"
+      - store_test_results:
+          path: ./tmp/results
+      - store_artifacts:
+          path: ./tmp/results
+      - store_artifacts:
+          path: /tmp/core_dumps
+      - store_artifacts:
+          path: /tmp/memuse.txt
+
+  Test rpc wallet:
+    <<: *build_machine_environment
+    steps:
+      - run:
+          <<: *run_log_mem_use
+      - attach_workspace:
+          at: .
+      - run:
+          name: Run Wispr Tests
+          command: src/test/test_wispr --run_test="rpc_wallet_tests"
+      - store_test_results:
+          path: ./tmp/results
+      - store_artifacts:
+          path: ./tmp/results
+      - store_artifacts:
+          path: /tmp/core_dumps
+      - store_artifacts:
+          path: /tmp/memuse.txt
+
+  Test util:
+    <<: *build_machine_environment
+    steps:
+      - run:
+          <<: *run_log_mem_use
+      - attach_workspace:
+          at: .
+      - run:
+          name: Run Wispr Tests
+          command: src/test/test_wispr --run_test="util_tests"
+      - store_test_results:
+          path: ./tmp/results
+      - store_artifacts:
+          path: ./tmp/results
+      - store_artifacts:
+          path: /tmp/core_dumps
+      - store_artifacts:
+          path: /tmp/memuse.txt
+
+  Test benchmark zerocoin:
+    <<: *build_machine_environment
+    steps:
+      - run:
+          <<: *run_log_mem_use
+      - attach_workspace:
+          at: .
+      - run:
+          name: Run Wispr Tests
+          command: src/test/test_wispr --run_test="benchmark_zerocoin"
+      - store_test_results:
+          path: ./tmp/results
+      - store_artifacts:
+          path: ./tmp/results
+      - store_artifacts:
+          path: /tmp/core_dumps
+      - store_artifacts:
+          path: /tmp/memuse.txt
+
+  Test tutorial libzerocoin:
+    <<: *build_machine_environment
+    steps:
+      - run:
+          <<: *run_log_mem_use
+      - attach_workspace:
+          at: .
+      - run:
+          name: Run Wispr Tests
+          command: src/test/test_wispr --run_test="tutorial_libzerocoin"
+      - store_test_results:
+          path: ./tmp/results
+      - store_artifacts:
+          path: ./tmp/results
+      - store_artifacts:
+          path: /tmp/core_dumps
+      - store_artifacts:
+          path: /tmp/memuse.txt
+
+  Test wallet:
+    <<: *build_machine_environment
+    steps:
+      - run:
+          <<: *run_log_mem_use
+      - attach_workspace:
+          at: .
+      - run:
+          name: Run Wispr Tests
+          command: src/test/test_wispr --run_test="wallet_tests"
+      - store_test_results:
+          path: ./tmp/results
+      - store_artifacts:
+          path: ./tmp/results
+      - store_artifacts:
+          path: /tmp/core_dumps
+      - store_artifacts:
+          path: /tmp/memuse.txt
+
+  Test sighash:
+    <<: *build_machine_environment
+    steps:
+      - run:
+          <<: *run_log_mem_use
+      - attach_workspace:
+          at: .
+      - run:
+          name: Run Wispr Tests
+          command: src/test/test_wispr --run_test="sighash_tests"
+      - store_test_results:
+          path: ./tmp/results
+      - store_artifacts:
+          path: ./tmp/results
+      - store_artifacts:
+          path: /tmp/core_dumps
+      - store_artifacts:
+          path: /tmp/memuse.txt
+
+  Test skiplist:
+    <<: *build_machine_environment
+    steps:
+      - run:
+          <<: *run_log_mem_use
+      - attach_workspace:
+          at: .
+      - run:
+          name: Run Wispr Tests
+          command: src/test/test_wispr --run_test="skiplist_tests"
+      - store_test_results:
+          path: ./tmp/results
+      - store_artifacts:
+          path: ./tmp/results
+      - store_artifacts:
+          path: /tmp/core_dumps
+      - store_artifacts:
+          path: /tmp/memuse.txt
+
+  Test script:
+    <<: *build_machine_environment
+    steps:
+      - run:
+          <<: *run_log_mem_use
+      - attach_workspace:
+          at: .
+      - run:
+          name: Run Wispr Tests
+          command: src/test/test_wispr --run_test="script_tests"
+      - store_test_results:
+          path: ./tmp/results
+      - store_artifacts:
+          path: ./tmp/results
+      - store_artifacts:
+          path: /tmp/core_dumps
+      - store_artifacts:
+          path: /tmp/memuse.txt
+
+  Test scriptnum:
+    <<: *build_machine_environment
+    steps:
+      - run:
+          <<: *run_log_mem_use
+      - attach_workspace:
+          at: .
+      - run:
+          name: Run Wispr Tests
+          command: src/test/test_wispr --run_test="scriptnum_tests"
+      - store_test_results:
+          path: ./tmp/results
+      - store_artifacts:
+          path: ./tmp/results
+      - store_artifacts:
+          path: /tmp/core_dumps
+      - store_artifacts:
+          path: /tmp/memuse.txt
+
+  Test serialize:
+    <<: *build_machine_environment
+    steps:
+      - run:
+          <<: *run_log_mem_use
+      - attach_workspace:
+          at: .
+      - run:
+          name: Run Wispr Tests
+          command: src/test/test_wispr --run_test="serialize_tests"
+      - store_test_results:
+          path: ./tmp/results
+      - store_artifacts:
+          path: ./tmp/results
+      - store_artifacts:
+          path: /tmp/core_dumps
+      - store_artifacts:
+          path: /tmp/memuse.txt
+
+  Test base32:
+    <<: *build_machine_environment
+    steps:
+      - run:
+          <<: *run_log_mem_use
+      - attach_workspace:
+          at: .
+      - run:
+          name: Run Wispr Tests
+          command: src/test/test_wispr --run_test="base32_tests"
+      - store_test_results:
+          path: ./tmp/results
+      - store_artifacts:
+          path: ./tmp/results
+      - store_artifacts:
+          path: /tmp/core_dumps
+      - store_artifacts:
+          path: /tmp/memuse.txt
+  Test base58:
+    <<: *build_machine_environment
+    steps:
+      - run:
+          <<: *run_log_mem_use
+      - attach_workspace:
+          at: .
+      - run:
+          name: Run Wispr Tests
+          command: src/test/test_wispr --run_test="base58_tests"
+      - store_test_results:
+          path: ./tmp/results
+      - store_artifacts:
+          path: ./tmp/results
+      - store_artifacts:
+          path: /tmp/core_dumps
+      - store_artifacts:
+          path: /tmp/memuse.txt
+  Test base64:
+    <<: *build_machine_environment
+    steps:
+      - run:
+          <<: *run_log_mem_use
+      - attach_workspace:
+          at: .
+      - run:
+          name: Run Wispr Tests
+          command: src/test/test_wispr --run_test="base64_tests"
+      - store_test_results:
+          path: ./tmp/results
+      - store_artifacts:
+          path: ./tmp/results
+      - store_artifacts:
+          path: /tmp/core_dumps
+      - store_artifacts:
+          path: /tmp/memuse.txt
+
+  Test transaction:
+    <<: *build_machine_environment
+    steps:
+      - run:
+          <<: *run_log_mem_use
+      - attach_workspace:
+          at: .
+      - run:
+          name: Run Wispr Tests
+          command: src/test/test_wispr --run_test="transaction_tests"
+      - store_test_results:
+          path: ./tmp/results
+      - store_artifacts:
+          path: ./tmp/results
+      - store_artifacts:
+          path: /tmp/core_dumps
+      - store_artifacts:
+          path: /tmp/memuse.txt
+
+  Test univalues:
+    <<: *build_machine_environment
+    steps:
+      - run:
+          <<: *run_log_mem_use
+      - attach_workspace:
+          at: .
+      - run:
+          name: Run Wispr Tests
+          command: src/test/test_wispr --run_test="univalue_tests"
+      - store_test_results:
+          path: ./tmp/results
+      - store_artifacts:
+          path: ./tmp/results
+      - store_artifacts:
+          path: /tmp/core_dumps
+      - store_artifacts:
+          path: /tmp/memuse.txt
+
+#  Test rpctests:
+#    <<: *build_machine_environment
+#    steps:
+#      - run:
+#          <<: *run_log_mem_use
+#      - attach_workspace:
+#          at: .
+#      - run:
+#          name: Run Wispr Tests
+#          command: qa/pull-tester/rpc-tests.py --coverage
+#      - store_test_results:
+#          path: ./tmp/results
+#      - store_artifacts:
+#          path: ./tmp/results
+#      - store_artifacts:
+#          path: /tmp/core_dumps
+#      - store_artifacts:
+#          path: /tmp/memuse.txt
+workflows:
+  version: 2
+  Build and Test:
+    jobs:
+      - Build
+      - Test univalue:
+          requires:
+            - Build
+      - Test libsecp256k1:
+          requires:
+            - Build
+      - Test qt:
+          requires:
+            - Build
+      - Test btc util:
+          requires:
+            - Build
+      - Test uint256:
+          requires:
+            - Build
+      - Test keys:
+          requires:
+            - Build
+      - Test Checkpoints:
+          requires:
+            - Build
+      - Test Allocator:
+          requires:
+            - Build
+      - Test Netbase:
+          requires:
+            - Build
+      - Test libzerocoin:
+          requires:
+            - Build
+      - Test sigopcount:
+          requires:
+            - Build
+      - Test budget:
+          requires:
+            - Build
+      - Test zerocoin denom:
+          requires:
+            - Build
+      - Test mempool:
+          requires:
+            - Build
+      - Test multisig:
+          requires:
+            - Build
+      - Test sanity:
+          requires:
+            - Build
+      - Test crypto:
+          requires:
+            - Build
+      - Test CheckBlock:
+          requires:
+            - Build
+      - Test coins:
+          requires:
+            - Build
+      - Test compress:
+          requires:
+            - Build
+      - Test rpc:
+          requires:
+            - Build
+      - Test zerocoin implementation:
+          requires:
+            - Build
+      - Test accounting:
+          requires:
+            - Build
+      - Test rpc wallet:
+          requires:
+            - Build
+      - Test util:
+          requires:
+            - Build
+      - Test benchmark zerocoin:
+          requires:
+            - Build
+      - Test tutorial libzerocoin:
+          requires:
+            - Build
+      - Test wallet:
+          requires:
+            - Build
+      - Test sighash:
+          requires:
+            - Build
+      - Test mruset:
+          requires:
+            - Build
+      - Test pmt:
+          requires:
+            - Build
+      - Test skiplist:
+          requires:
+            - Build
+      - Test script:
+          requires:
+            - Build
+      - Test scriptnum:
+          requires:
+            - Build
+      - Test serialize:
+          requires:
+            - Build
+      - Test transaction:
+          requires:
+            - Build
+      - Test univalues:
+          requires:
+            - Build
+#      - Test rpctests:
+#          requires:
+#            - Build
+
+#      - Clean Up:
+#          requires:
+#            - Isolated Tests
