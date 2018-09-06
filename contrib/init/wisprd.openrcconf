@@ -1,0 +1,26 @@
+# /etc/conf.d/wisprd: config file for /etc/init.d/wisprd
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/wispr/wispr.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/wisprd"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/wisprd.pid"
+
+# Where to write wisprd data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/wisprd"
+
+# User and group to own wisprd process
+#BITCOIND_USER="wispr"
+#BITCOIND_GROUP="wispr"
+
+# Path to wisprd executable
+#BITCOIND_BIN="/usr/bin/wisprd"
+
+# Nice value to run wisprd under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""

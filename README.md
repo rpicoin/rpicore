@@ -1,41 +1,56 @@
-Wispr Core integration/staging repository
+WISPR Core integration/staging repository
 =====================================
 
-Wispr is an experimental cryptocurrency which aims to bring a blockchain-backed secure messaging system, along with several other state-of-the-art blockchain features, as announced in our roadmap.<br>
-Forked off of [Blackcoin](https://github.com/CoinBlack/blackcoin), it's a fully Proof-of-Stake cryptocurrency with a fair reward system that encourages every type of user to stake and make the network more secure and efficient.
+[![Build Status](https://travis-ci.org/WisprProject/core.svg?branch=master)](https://travis-ci.org/WisprProject/core) [![GitHub version](https://badge.fury.io/gh/WisprProject%2FWISPR.svg)](https://badge.fury.io/gh/WisprProject%2FWISPR)
 
-For more info, visit us at [wispr.tech](http://wispr.tech) or check out our ANN thread at [BitcoinTalk](https://bitcointalk.org/index.php?topic=2561885).
+WISPR is an open source crypto-currency focused on fast private transactions with low transaction fees & environmental footprint.  It utilizes a custom Proof of Stake protocol for securing its network and uses an innovative variable seesaw reward mechanism that dynamically balances 90% of its block reward size between masternodes and staking nodes and 10% dedicated for budget proposals. The goal of WISPR is to achieve a decentralized sustainable crypto currency with near instant full-time private transactions, fair governance and community intelligence.
+- Anonymized transactions using the [_Zerocoin Protocol_](http://www.wispr.tech/zwsp).
+- Fast transactions featuring guaranteed zero confirmation transactions, we call it _SwiftX_.
+- Decentralized blockchain voting utilizing Masternode technology to form a DAO. The blockchain will distribute monthly treasury funds based on successful proposals submitted by the community and voted on by the DAO.
+
+More information at [wispr.tech](http://www.wispr.tech) Visit our ANN thread at [BitcoinTalk](http://www.bitcointalk.org/index.php?topic=1262920)
 
 ### Coin Specs
-
 <table>
-<tr><td>P2P Port</td><td>17000</td></tr>
-<tr><td>RPC Port</td><td>17001</td></tr>
-<tr><td>PoW Algo</td><td>Scrypt*</td></tr>
-<tr><td>PoS Algo</td><td>PoS 3.0</td></tr>
-<tr><td>Annual Inflation Rate</td><td>25%</td></tr>
-<tr><td>Max Reorganization Depth</td><td>500 blocks</td></tr>
+<tr><td>Algo</td><td>Quark</td></tr>
 <tr><td>Block Time</td><td>60 Seconds</td></tr>
-<tr><td>Block Reward</td><td>5 WSP + tx Fees paid to miners</td></tr>
-<tr><td>Min Tx Fee</td><td>0.0001 WSP</td></tr>
 <tr><td>Difficulty Retargeting</td><td>Every Block</td></tr>
-<tr><td>Coin Maturity</td><td>100 blocks</td></tr>
-<tr><td>Confirmations</td><td>10</td></tr>
-<tr><td>Stake Confirmations</td><td>100</td></tr>
-<tr><td>Max Coin Supply</td><td>120,000,000 WSP</td></tr>
-<tr><td>Premine</td><td>25,125,000 WSP*</td></tr>
+<tr><td>Max Coin Supply (PoW Phase)</td><td>43,199,500 WSP</td></tr>
+<tr><td>Max Coin Supply (PoS Phase)</td><td>Infinite</td></tr>
+<tr><td>Premine</td><td>60,000 WSP*</td></tr>
 </table>
 
-### Premine
-The initial coins were premined in a private PoW phase up to block 450. Each block held 125,000 coins and some blocks were PoS in order to make a total of 25,000,000 WSP. Due to mining calculations an extra 125,000 WSP was mined and later [burned](https://explorer.wispr.tech/tx/ccabff166654a078da5cda2aa758e1f801f14e8886c8b2fcc9e2d32126755fb9).<br>
-To find out how the premine was distributed, check our [ANN thread](https://bitcointalk.org/index.php?topic=2561885). 
+*60,000 WSP Premine was burned in block [279917](http://www.presstab.pw/phpexplorer/WISPR/block.php?blockhash=206d9cfe859798a0b0898ab00d7300be94de0f5469bb446cecb41c3e173a57e0)
 
-### Building Wispr
-Check out <b>/doc</b> for specific OS build instructions.
+### Reward Distribution
 
-### Contributing
-Everyone is encouraged to contribute. This project generally follows [Bitcoin Core's development process](https://github.com/bitcoin/bitcoin/blob/master/CONTRIBUTING.md), with more specific information coming soon about workflow.
+<table>
+<th colspan=4>Genesis Block</th>
+<tr><th>Block Height</th><th>Reward Amount</th><th>Notes</th></tr>
+<tr><td>1</td><td>60,000 WSP</td><td>Initial Pre-mine, burnt in block <a href="http://www.presstab.pw/phpexplorer/WISPR/block.php?blockhash=206d9cfe859798a0b0898ab00d7300be94de0f5469bb446cecb41c3e173a57e0">279917</a></td></tr>
+</table>
 
-### Join our community
-Want to get in touch or need any help? Come say hi to us on our active social platforms!<br>
-[Telegram](https://t.me/wisprchat) | [Discord](https://discord.gg/c7dvEXt) | [Twitter](http://twitter.com/WisprTech/) | [Facebook](https://facebook.com/WisprTech) | [Official Website](https://wispr.tech/)
+### PoW Rewards Breakdown
+
+<table>
+<th>Block Height</th><th>Masternodes</th><th>Miner</th><th>Budget</th>
+<tr><td>2-43200</td><td>20% (50 WSP)</td><td>80% (200 WSP)</td><td>N/A</td></tr>
+<tr><td>43201-151200</td><td>20% (50 WSP)</td><td>70% (200 WSP)</td><td>10% (25 WSP)</td></tr>
+<tr><td>151201-259200</td><td>45% (22.5 WSP)</td><td>45% (22.5 WSP)</td><td>10% (5 WSP)</td></tr>
+</table>
+
+### PoS Rewards Breakdown
+
+<table>
+<th>Phase</th><th>Block Height</th><th>Reward</th><th>Masternodes & Stakers</th><th>Budget</th>
+<tr><td>Phase 1</td><td>259201-302399</td><td>50 WSP</td><td>90% (45 WSP)</td><td>10% (5 WSP)</td></tr>
+<tr><td>Phase 2</td><td>302400-345599</td><td>45 WSP</td><td>90% (40.5 WSP)</td><td>10% (4.5 WSP)</td></tr>
+<tr><td>Phase 3</td><td>345600-388799</td><td>40 WSP</td><td>90% (36 WSP)</td><td>10% (4 WSP)</td></tr>
+<tr><td>Phase 4</td><td>388800-431999</td><td>35 WSP</td><td>90% (31.5 WSP)</td><td>10% (3.5 WSP)</td></tr>
+<tr><td>Phase 5</td><td>432000-475199</td><td>30 WSP</td><td>90% (27 WSP)</td><td>10% (3 WSP)</td></tr>
+<tr><td>Phase 6</td><td>475200-518399</td><td>25 WSP</td><td>90% (22.5 WSP)</td><td>10% (2.5 WSP)</td></tr>
+<tr><td>Phase 7</td><td>518400-561599</td><td>20 WSP</td><td>90% (18 WSP)</td><td>10% (2 WSP)</td></tr>
+<tr><td>Phase 8</td><td>561600-604799</td><td>15 WSP</td><td>90% (13.5 WSP)</td><td>10% (1.5 WSP)</td></tr>
+<tr><td>Phase 9</td><td>604800-647999</td><td>10 WSP</td><td>90% (9 WSP)</td><td>10% (1 WSP)</td></tr>
+<tr><td>Phase X</td><td>648000-Infinite</td><td>5 WSP</td><td>90% (4.5 WSP)</td><td>10% (0.5 WSP)</td></tr>
+</table>
