@@ -211,7 +211,7 @@ BOOST_AUTO_TEST_CASE(tx_invalid)
                 CTransaction tx;
                 unsigned int nTime = 0;
                 tx.nTime = nTime;
-                std::cout << stream.str()<<'\n';
+                printf("Transaction stream: %s\n", stream.str());
                 BOOST_TEST_CHECKPOINT("Stream transaction");
                 stream << nTime;
                 stream >> tx;
