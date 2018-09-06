@@ -185,12 +185,14 @@ BOOST_AUTO_TEST_CASE(tx_invalid)
                     const UniValue& input = inputs[inpIdx];
                     if (!input.isArray())
                     {
+                        printf("Input size is not an array\n");
                         fValid = false;
                         break;
                     }
                     UniValue vinput = input.get_array();
                     if (vinput.size() != 3)
                     {
+                        printf("Input size is not 3\n");
                         fValid = false;
                         break;
                     }
