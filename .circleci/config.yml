@@ -100,12 +100,6 @@ jobs:
       - run:
           name: export libraries
           command: export LD_LIBRARY_PATH=/home/circleci/project/depends/$HOST/lib
-      - run:
-          name: Check
-          command: make check -s -j3 || ( echo "Build failure. Verbose build follows." && make $GOAL V=1 ; false )
-      - run:
-          name: Check if univalue is compiled
-          command: cd ./src/univalue && ls && cd test && ls
       - persist_to_workspace:
           root: .
           paths:
@@ -115,6 +109,25 @@ jobs:
           path: /tmp/core_dumps
       - store_artifacts:
           path: /tmp/memuse.txt
+
+  Tests:
+    <<: *build_machine_environment
+    steps:
+    - run:
+        <<: *run_log_mem_use
+    - attach_workspace:
+        at: .
+    - run:
+        name: Check
+        command: make check -s -j3 || ( echo "Build failure. Verbose build follows." && export TESTS_FAILED=true ; false )
+    - store_test_results:
+        path: ./tmp/results
+    - store_artifacts:
+        path: ./tmp/results
+    - store_artifacts:
+        path: /tmp/core_dumps
+    - store_artifacts:
+        path: /tmp/memuse.txt
 
   Test libsecp256k1:
     <<: *build_machine_environment
@@ -900,120 +913,158 @@ workflows:
   Build and Test:
     jobs:
       - Build
+      - Tests:
+          requires:
+          - Build
       - Test univalue:
           requires:
-            - Build
+            - Tests
+            - $TESTS_FAILED
       - Test libsecp256k1:
           requires:
-            - Build
+            - Tests
+            - $TESTS_FAILED
 #      - Test qt:
 #          requires:
-#            - Build
+#            - Tests
 #      - Test btc util:
 #          requires:
-#            - Build
+#            - Tests
       - Test uint256:
           requires:
-            - Build
+            - Tests
+            - $TESTS_FAILED
       - Test keys:
           requires:
-            - Build
+            - Tests
+            - $TESTS_FAILED
       - Test Checkpoints:
           requires:
-            - Build
+            - Tests
+            - $TESTS_FAILED
       - Test Allocator:
           requires:
-            - Build
+            - Tests
+            - $TESTS_FAILED
       - Test Netbase:
           requires:
-            - Build
+            - Tests
+            - $TESTS_FAILED
       - Test libzerocoin:
           requires:
-            - Build
+            - Tests
+            - $TESTS_FAILED
       - Test sigopcount:
           requires:
-            - Build
+            - Tests
+            - $TESTS_FAILED
       - Test budget:
           requires:
-            - Build
+            - Tests
+            - $TESTS_FAILED
       - Test zerocoin denom:
           requires:
-            - Build
+            - Tests
+            - $TESTS_FAILED
       - Test mempool:
           requires:
-            - Build
+            - Tests
+            - $TESTS_FAILED
       - Test multisig:
           requires:
-            - Build
+            - Tests
+            - $TESTS_FAILED
       - Test sanity:
           requires:
-            - Build
+            - Tests
+            - $TESTS_FAILED
       - Test crypto:
           requires:
-            - Build
+            - Tests
+            - $TESTS_FAILED
       - Test CheckBlock:
           requires:
-            - Build
+            - Tests
+            - $TESTS_FAILED
       - Test coins:
           requires:
-            - Build
+            - Tests
+            - $TESTS_FAILED
       - Test compress:
           requires:
-            - Build
+            - Tests
+            - $TESTS_FAILED
       - Test rpc:
           requires:
-            - Build
+            - Tests
+            - $TESTS_FAILED
       - Test zerocoin implementation:
           requires:
-            - Build
+            - Tests
+            - $TESTS_FAILED
       - Test accounting:
           requires:
-            - Build
+            - Tests
+            - $TESTS_FAILED
       - Test rpc wallet:
           requires:
-            - Build
+            - Tests
+            - $TESTS_FAILED
       - Test util:
           requires:
-            - Build
+            - Tests
+            - $TESTS_FAILED
       - Test benchmark zerocoin:
           requires:
-            - Build
+            - Tests
+            - $TESTS_FAILED
       - Test tutorial libzerocoin:
           requires:
-            - Build
+            - Tests
+            - $TESTS_FAILED
       - Test wallet:
           requires:
-            - Build
+            - Tests
+            - $TESTS_FAILED
       - Test sighash:
           requires:
-            - Build
+            - Tests
+            - $TESTS_FAILED
       - Test mruset:
           requires:
-            - Build
+            - Tests
+            - $TESTS_FAILED
       - Test pmt:
           requires:
-            - Build
+            - Tests
+            - $TESTS_FAILED
       - Test skiplist:
           requires:
-            - Build
+            - Tests
+            - $TESTS_FAILED
       - Test script:
           requires:
-            - Build
+            - Tests
+            - $TESTS_FAILED
       - Test scriptnum:
           requires:
-            - Build
+            - Tests
+            - $TESTS_FAILED
       - Test serialize:
           requires:
-            - Build
+            - Tests
+            - $TESTS_FAILED
       - Test transaction:
           requires:
-            - Build
+            - Tests
+            - $TESTS_FAILED
       - Test univalues:
           requires:
-            - Build
-      - Test rpctests:
-          requires:
-            - Build
+            - Tests
+            - $TESTS_FAILED
+#      - Test rpctests:
+#          requires:
+#            - Tests
 
 #      - Clean Up:
 #          requires:
