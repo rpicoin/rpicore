@@ -173,6 +173,7 @@ BOOST_AUTO_TEST_CASE(tx_invalid)
             {
                 if (test.size() != 4 || !test[1].isStr() || !test[2].isStr())
                 {
+                    BOOST_TEST_CHECKPOINT("Bad size or string");
                     BOOST_ERROR("Bad test: " << strTest);
                     continue;
                 }
@@ -198,6 +199,7 @@ BOOST_AUTO_TEST_CASE(tx_invalid)
                 }
                 if (!fValid)
                 {
+                    BOOST_TEST_CHECKPOINT("Bad transaction scheme");
                     BOOST_ERROR("Bad test: " << strTest);
                     continue;
                 }
@@ -205,7 +207,6 @@ BOOST_AUTO_TEST_CASE(tx_invalid)
                 string transaction = test[1].get_str();
                 CDataStream stream(ParseHex(transaction), SER_NETWORK, PROTOCOL_VERSION);
                 CTransaction tx;
-                tx.nTime = 0;
                 BOOST_TEST_CHECKPOINT("Stream transaction");
                 stream >> tx;
 
@@ -216,6 +217,7 @@ BOOST_AUTO_TEST_CASE(tx_invalid)
                 {
                     if (!mapprevOutScriptPubKeys.count(tx.vin[i].prevout))
                     {
+                        BOOST_TEST_CHECKPOINT("Not a prevout");
                         BOOST_ERROR("Bad test: " << strTest);
                         break;
                     }
