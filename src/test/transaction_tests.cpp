@@ -173,7 +173,6 @@ BOOST_AUTO_TEST_CASE(tx_invalid)
             {
                 if (test.size() != 3 || !test[1].isStr() || !test[2].isStr())
                 {
-                    printf("Bad size or string\n");
                     BOOST_ERROR("Bad test: " << strTest);
                     continue;
                 }
@@ -185,14 +184,12 @@ BOOST_AUTO_TEST_CASE(tx_invalid)
                     const UniValue& input = inputs[inpIdx];
                     if (!input.isArray())
                     {
-                        printf("Input size is not an array\n");
                         fValid = false;
                         break;
                     }
                     UniValue vinput = input.get_array();
                     if (vinput.size() != 3)
                     {
-                        printf("Input size is not 3\n");
                         fValid = false;
                         break;
                     }
@@ -201,7 +198,6 @@ BOOST_AUTO_TEST_CASE(tx_invalid)
                 }
                 if (!fValid)
                 {
-                    printf("Bad transaction scheme\n");
                     BOOST_ERROR("Bad test: " << strTest);
                     continue;
                 }
@@ -211,7 +207,6 @@ BOOST_AUTO_TEST_CASE(tx_invalid)
                 CTransaction tx;
                 unsigned int nTime = 0;
                 tx.nTime = nTime;
-                printf("Transaction stream: %s\n", stream.str());
                 BOOST_TEST_CHECKPOINT("Stream transaction");
                 stream << nTime;
                 stream >> tx;
@@ -223,7 +218,6 @@ BOOST_AUTO_TEST_CASE(tx_invalid)
                 {
                     if (!mapprevOutScriptPubKeys.count(tx.vin[i].prevout))
                     {
-                        printf("Not a prevout\n");
                         BOOST_ERROR("Bad test: " << strTest);
                         break;
                     }
