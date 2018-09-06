@@ -103,8 +103,9 @@ jobs:
       - persist_to_workspace:
           root: .
           paths:
-              - ./src
-              - ./qa
+#              - ./src
+#              - ./qa
+              - .
       - store_artifacts:
           path: /tmp/core_dumps
       - store_artifacts:
