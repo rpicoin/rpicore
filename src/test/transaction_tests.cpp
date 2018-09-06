@@ -171,7 +171,7 @@ BOOST_AUTO_TEST_CASE(tx_invalid)
             string strTest = test.write();
             if (test[0].isArray())
             {
-                if (test.size() != 3 || !test[2].isStr() || !test[3].isStr())
+                if (test.size() != 3 || !test[1].isStr() || !test[2].isStr())
                 {
                     printf("Bad size or string\n");
                     BOOST_ERROR("Bad test: " << strTest);
