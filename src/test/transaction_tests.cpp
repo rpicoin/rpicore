@@ -190,9 +190,9 @@ BOOST_AUTO_TEST_CASE(tx_invalid)
                         break;
                     }
                     UniValue vinput = input.get_array();
-                    if (vinput.size() != 4)
+                    if (vinput.size() != 3)
                     {
-                        printf("Input size is not 4\n");
+                        printf("Input size is not 3\n");
                         fValid = false;
                         break;
                     }
