@@ -210,6 +210,7 @@ BOOST_AUTO_TEST_CASE(tx_invalid)
                 CDataStream stream(ParseHex(transaction), SER_NETWORK, PROTOCOL_VERSION);
                 CTransaction tx;
                 unsigned int nTime = 0;
+                tx.nTime = nTime;
                 BOOST_TEST_CHECKPOINT("Stream transaction");
                 stream << nTime;
                 stream >> tx;
