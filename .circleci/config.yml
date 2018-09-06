@@ -160,43 +160,43 @@ jobs:
       - store_artifacts:
           path: /tmp/memuse.txt
 
-  Test qt:
-    <<: *build_machine_environment
-    steps:
-      - run:
-          <<: *run_log_mem_use
-      - attach_workspace:
-          at: .
-      - run:
-          name: Run Qt Tests
-          command: ./src/qt/test/test_wispr-qt
-      - store_test_results:
-          path: ./tmp/results
-      - store_artifacts:
-          path: ./tmp/results
-      - store_artifacts:
-          path: /tmp/core_dumps
-      - store_artifacts:
-          path: /tmp/memuse.txt
+#  Test qt:
+#    <<: *build_machine_environment
+#    steps:
+#      - run:
+#          <<: *run_log_mem_use
+#      - attach_workspace:
+#          at: .
+#      - run:
+#          name: Run Qt Tests
+#          command: ./src/qt/test/test_wispr-qt
+#      - store_test_results:
+#          path: ./tmp/results
+#      - store_artifacts:
+#          path: ./tmp/results
+#      - store_artifacts:
+#          path: /tmp/core_dumps
+#      - store_artifacts:
+#          path: /tmp/memuse.txt
 
-  Test btc util:
-    <<: *build_machine_environment
-    steps:
-      - run:
-          <<: *run_log_mem_use
-      - attach_workspace:
-          at: .
-      - run:
-          name: Run BTC Util Tests
-          command: cd ./src && test/bitcoin-util-test.py
-      - store_test_results:
-          path: ./tmp/results
-      - store_artifacts:
-          path: ./tmp/results
-      - store_artifacts:
-          path: /tmp/core_dumps
-      - store_artifacts:
-          path: /tmp/memuse.txt
+  #Test btc util:
+  #  <<: *build_machine_environment
+  #  steps:
+  #    - run:
+  #        <<: *run_log_mem_use
+  #    - attach_workspace:
+  #        at: .
+  #    - run:
+  #        name: Run BTC Util Tests
+  #        command: cd ./src && test/bitcoin-util-test.py
+  #    - store_test_results:
+  #        path: ./tmp/results
+  #    - store_artifacts:
+  #        path: ./tmp/results
+  #    - store_artifacts:
+  #        path: /tmp/core_dumps
+  #    - store_artifacts:
+  #        path: /tmp/memuse.txt
 
   Test uint256:
     <<: *build_machine_environment
@@ -906,12 +906,12 @@ workflows:
       - Test libsecp256k1:
           requires:
             - Build
-      - Test qt:
-          requires:
-            - Build
-      - Test btc util:
-          requires:
-            - Build
+#      - Test qt:
+#          requires:
+#            - Build
+#      - Test btc util:
+#          requires:
+#            - Build
       - Test uint256:
           requires:
             - Build
@@ -1011,9 +1011,9 @@ workflows:
       - Test univalues:
           requires:
             - Build
-#      - Test rpctests:
-#          requires:
-#            - Build
+      - Test rpctests:
+          requires:
+            - Build
 
 #      - Clean Up:
 #          requires:
