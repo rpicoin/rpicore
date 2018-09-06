@@ -99,7 +99,7 @@ BOOST_AUTO_TEST_CASE(DoS_bantime)
     SendMessages(&dummyNode, false);
     BOOST_CHECK(CNode::IsBanned(addr));
 
-    SetMockTime(nStartTime+60*60);
+    SetMockTime(nStartTime+64);
     BOOST_CHECK(CNode::IsBanned(addr));
 
     SetMockTime(nStartTime+60*60*24+1);
