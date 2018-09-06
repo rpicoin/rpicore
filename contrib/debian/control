@@ -22,7 +22,7 @@ Build-Depends: debhelper,
  libqrencode-dev,
  libprotobuf-dev, protobuf-compiler
 Standards-Version: 3.9.2
-Homepage: http://www.wispr.org
+Homepage: http://www.wispr.tech
 Vcs-Git: git://github.com/WisprProject/core.git
 Vcs-Browser: http://github.com/WisprProject/core
 

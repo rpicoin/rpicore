@@ -1,7 +1,7 @@
 <!--- Remove this description and sections that do not apply -->
 
 This issue tracker is only for technical issues related to WISPR Core.
-General WISPR questions and/or support requests and are best directed to the [WISPR Discord](https://discord.wispr.org).
+General WISPR questions and/or support requests and are best directed to the [WISPR Discord](https://discord.wispr.tech).
 
 ### Describe the issue
 

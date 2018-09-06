@@ -3,7 +3,7 @@ WISPR Core
 
 Setup
 ---------------------
-[WISPR Core](http://wispr.org/wallet) is the original WISPR client and it builds the backbone of the network. However, it downloads and stores the entire history of WISPR transactions; depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more. Thankfully you only have to do this once.
+[WISPR Core](http://wispr.tech/wallet) is the original WISPR client and it builds the backbone of the network. However, it downloads and stores the entire history of WISPR transactions; depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more. Thankfully you only have to do this once.
 
 Running
 ---------------------
@@ -28,9 +28,9 @@ Drag WISPR-Qt to your applications folder, and then run WISPR-Qt.
 
 * See the documentation at the [WISPR Wiki](https://en.bitcoin.it/wiki/Main_Page) ***TODO***
 for help and more information.
-* Ask for help on [BitcoinTalk](https://bitcointalk.org/index.php?topic=1262920.0) or on the [WISPR Forum](http://forum.wispr.org/).
-* Join our Discord server [Discord Server](https://discord.wispr.org)
-* Join one of our Slack groups [WISPR Slack Groups](https://wispr.org/slack-logins/) (Main community is replaced by Discord).
+* Ask for help on [BitcoinTalk](https://bitcointalk.org/index.php?topic=1262920.0) or on the [WISPR Forum](http://forum.wispr.tech/).
+* Join our Discord server [Discord Server](https://discord.wispr.tech)
+* Join one of our Slack groups [WISPR Slack Groups](https://wispr.tech/slack-logins/) (Main community is replaced by Discord).
 
 Building
 ---------------------
@@ -56,7 +56,7 @@ The Wispr repo's [root README](https://github.com/WisprProject/core/blob/master/
 
 ### Resources
 
-* Discuss on the [BitcoinTalk](https://bitcointalk.org/index.php?topic=1262920.0) or the [WISPR](http://forum.wispr.org/) forum.
+* Discuss on the [BitcoinTalk](https://bitcointalk.org/index.php?topic=1262920.0) or the [WISPR](http://forum.wispr.tech/) forum.
 * Join the [WISPR-Dev](https://wispr-dev.slack.com/) Slack group ([Sign-Up](https://wispr-dev.herokuapp.com/)).
 
 ### Miscellaneous
