@@ -12,7 +12,7 @@
 #include "spork.h"
 
 //
-// Bootup the Masternode, look for a 10000 WISPR input and register on the network
+// Bootup the Masternode, look for a 125000 WISPR input and register on the network
 //
 void CActiveMasternode::ManageStatus()
 {
@@ -137,18 +137,18 @@ void CActiveMasternode::ManageStatus()
 std::string CActiveMasternode::GetStatus()
 {
     switch (status) {
-    case ACTIVE_MASTERNODE_INITIAL:
-        return "Node just started, not yet activated";
-    case ACTIVE_MASTERNODE_SYNC_IN_PROCESS:
-        return "Sync in progress. Must wait until sync is complete to start Masternode";
-    case ACTIVE_MASTERNODE_INPUT_TOO_NEW:
-        return strprintf("Masternode input must have at least %d confirmations", MASTERNODE_MIN_CONFIRMATIONS);
-    case ACTIVE_MASTERNODE_NOT_CAPABLE:
-        return "Not capable masternode: " + notCapableReason;
-    case ACTIVE_MASTERNODE_STARTED:
-        return "Masternode successfully started";
-    default:
-        return "unknown";
+        case ACTIVE_MASTERNODE_INITIAL:
+            return "Node just started, not yet activated";
+        case ACTIVE_MASTERNODE_SYNC_IN_PROCESS:
+            return "Sync in progress. Must wait until sync is complete to start Masternode";
+        case ACTIVE_MASTERNODE_INPUT_TOO_NEW:
+            return strprintf("Masternode input must have at least %d confirmations", MASTERNODE_MIN_CONFIRMATIONS);
+        case ACTIVE_MASTERNODE_NOT_CAPABLE:
+            return "Not capable masternode: " + notCapableReason;
+        case ACTIVE_MASTERNODE_STARTED:
+            return "Masternode successfully started";
+        default:
+            return "unknown";
     }
 }
 
@@ -219,7 +219,7 @@ bool CActiveMasternode::SendMasternodePing(std::string& errorMessage)
         LogPrint("masternode", "dseep - relaying from active mn, %s \n", vin.ToString().c_str());
         LOCK(cs_vNodes);
         BOOST_FOREACH (CNode* pnode, vNodes)
-            pnode->PushMessage("dseep", vin, vchMasterNodeSignature, masterNodeSignatureTime, false);
+        pnode->PushMessage("dseep", vin, vchMasterNodeSignature, masterNodeSignatureTime, false);
 
         /*
          * END OF "REMOVE"
@@ -275,8 +275,8 @@ bool CActiveMasternode::CreateBroadcast(std::string strService, std::string strK
 
 bool CActiveMasternode::CreateBroadcast(CTxIn vin, CService service, CKey keyCollateralAddress, CPubKey pubKeyCollateralAddress, CKey keyMasternode, CPubKey pubKeyMasternode, std::string& errorMessage, CMasternodeBroadcast &mnb)
 {
-	// wait for reindex and/or import to finish
-	if (fImporting || fReindex) return false;
+    // wait for reindex and/or import to finish
+    if (fImporting || fReindex) return false;
 
     CMasternodePing mnp(vin);
     if (!mnp.Sign(keyMasternode, pubKeyMasternode)) {
@@ -327,7 +327,7 @@ bool CActiveMasternode::CreateBroadcast(CTxIn vin, CService service, CKey keyCol
 
     LOCK(cs_vNodes);
     BOOST_FOREACH (CNode* pnode, vNodes)
-        pnode->PushMessage("dsee", vin, service, vchMasterNodeSignature, masterNodeSignatureTime, pubKeyCollateralAddress, pubKeyMasternode, -1, -1, masterNodeSignatureTime, PROTOCOL_VERSION, donationAddress, donationPercantage);
+    pnode->PushMessage("dsee", vin, service, vchMasterNodeSignature, masterNodeSignatureTime, pubKeyCollateralAddress, pubKeyMasternode, -1, -1, masterNodeSignatureTime, PROTOCOL_VERSION, donationAddress, donationPercantage);
 
     /*
      * END OF "REMOVE"
@@ -343,8 +343,8 @@ bool CActiveMasternode::GetMasterNodeVin(CTxIn& vin, CPubKey& pubkey, CKey& secr
 
 bool CActiveMasternode::GetMasterNodeVin(CTxIn& vin, CPubKey& pubkey, CKey& secretKey, std::string strTxHash, std::string strOutputIndex)
 {
-	// wait for reindex and/or import to finish
-	if (fImporting || fReindex) return false;
+    // wait for reindex and/or import to finish
+    if (fImporting || fReindex) return false;
 
     // Find possible candidates
     TRY_LOCK(pwalletMain->cs_wallet, fWallet);
@@ -395,8 +395,8 @@ bool CActiveMasternode::GetMasterNodeVin(CTxIn& vin, CPubKey& pubkey, CKey& secr
 // Extract Masternode vin information from output
 bool CActiveMasternode::GetVinFromOutput(COutput out, CTxIn& vin, CPubKey& pubkey, CKey& secretKey)
 {
-	// wait for reindex and/or import to finish
-	if (fImporting || fReindex) return false;
+    // wait for reindex and/or import to finish
+    if (fImporting || fReindex) return false;
 
     CScript pubScript;
 
@@ -451,12 +451,12 @@ vector<COutput> CActiveMasternode::SelectCoinsMasternode()
     // Lock MN coins from masternode.conf back if they where temporary unlocked
     if (!confLockedCoins.empty()) {
         BOOST_FOREACH (COutPoint outpoint, confLockedCoins)
-            pwalletMain->LockCoin(outpoint);
+        pwalletMain->LockCoin(outpoint);
     }
 
     // Filter
     BOOST_FOREACH (const COutput& out, vCoins) {
-        if (out.tx->vout[out.i].nValue == 10000 * COIN) { //exactly
+        if (out.tx->vout[out.i].nValue == 125000 * COIN) { //exactly
             filteredCoins.push_back(out);
         }
     }
