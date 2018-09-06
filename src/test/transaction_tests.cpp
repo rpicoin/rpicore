@@ -173,7 +173,7 @@ BOOST_AUTO_TEST_CASE(tx_invalid)
             {
                 if (test.size() != 4 || !test[2].isStr() || !test[3].isStr())
                 {
-                    BOOST_MESSAGE("Bad size or string");
+                    printf("Bad size or string\n");
                     BOOST_ERROR("Bad test: " << strTest);
                     continue;
                 }
@@ -199,7 +199,7 @@ BOOST_AUTO_TEST_CASE(tx_invalid)
                 }
                 if (!fValid)
                 {
-                    BOOST_MESSAGE("Bad transaction scheme");
+                    printf("Bad transaction scheme\n");
                     BOOST_ERROR("Bad test: " << strTest);
                     continue;
                 }
@@ -217,7 +217,7 @@ BOOST_AUTO_TEST_CASE(tx_invalid)
                 {
                     if (!mapprevOutScriptPubKeys.count(tx.vin[i].prevout))
                     {
-                        BOOST_MESSAGE("Not a prevout");
+                        printf("Not a prevout\n");
                         BOOST_ERROR("Bad test: " << strTest);
                         break;
                     }
