@@ -23,8 +23,8 @@ Build-Depends: debhelper,
  libprotobuf-dev, protobuf-compiler
 Standards-Version: 3.9.2
 Homepage: http://www.wispr.org
-Vcs-Git: git://github.com/WISPR-Project/WISPR.git
-Vcs-Browser: http://github.com/WISPR-Project/WISPR
+Vcs-Git: git://github.com/WisprProject/core.git
+Vcs-Browser: http://github.com/WisprProject/core
 
 Package: wisprd
 Architecture: any

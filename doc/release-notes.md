@@ -1,10 +1,10 @@
 (note: this is a temporary file, to be added-to by anybody, and moved to release-notes at release time)
 
-WISPR Core version *version* is now available from:  <https://github.com/wispr-project/wispr/releases>
+WISPR Core version *version* is now available from:  <https://github.com/WisprProject/core/releases>
 
 This is a new major version release, including various bug fixes and performance improvements, as well as updated translations.
 
-Please report bugs using the issue tracker at github: <https://github.com/wispr-project/wispr/issues>
+Please report bugs using the issue tracker at github: <https://github.com/WisprProject/core/issues>
 
 
 Mandatory Update
@@ -60,4 +60,4 @@ Detailed release notes follow. This overview includes changes that affect behavi
 Thanks to everyone who directly contributed to this release:
 
 
-As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/wispr-project-translations/), the QA team during Testing and the Node hosts supporting our Testnet.
+As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/WisprProject-translations/), the QA team during Testing and the Node hosts supporting our Testnet.

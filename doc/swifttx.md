@@ -12,8 +12,8 @@ When a "Transaction Lock" occurs the hash of the related transaction is broadcas
 * `zmqpubhashtxlock`: publishes the transaction hash when locked via SwiftX
 
 This mechanism has been integrated into Bitcore-Node-WISPR which allows for notification to be broadcast through Insight API in one of two ways:
-* WebSocket: [https://github.com/WISPR-Project/insight-api-wispr#web-socket-api](https://github.com/WISPR-Project/insight-api-wispr#web-socket-api) 
-* API: [https://github.com/WISPR-Project/insight-api-wispr#swifttx-transactions](https://github.com/WISPR-Project/insight-api-wispr#swifttx-transactions) 
+* WebSocket: [https://github.com/WisprProject/insight-api-wispr#web-socket-api](https://github.com/WisprProject/insight-api-wispr#web-socket-api) 
+* API: [https://github.com/WisprProject/insight-api-wispr#swifttx-transactions](https://github.com/WisprProject/insight-api-wispr#swifttx-transactions) 
 
 ####Command line option
 

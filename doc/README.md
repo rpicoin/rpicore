@@ -42,7 +42,7 @@ The following are developer notes on how to build WISPR on your native platform.
 
 Development
 ---------------------
-The Wispr repo's [root README](https://github.com/WISPR-Project/WISPR/blob/master/README.md) contains relevant information on the development process and automated testing.
+The Wispr repo's [root README](https://github.com/WisprProject/core/blob/master/README.md) contains relevant information on the development process and automated testing.
 
 - [Developer Notes](developer-notes.md)
 - [Multiwallet Qt Development](multiwallet-qt.md)
