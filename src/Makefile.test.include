@@ -1,7 +1,8 @@
 # Copyright (c) 2013-2016 The Bitcoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
-TESTS += test/test_wispr test/bitcoin-util-test.py
+#READD test/bitcoin-util-test.py here
+TESTS += test/test_wispr
 bin_PROGRAMS += test/test_wispr
 TEST_SRCDIR = test
 TEST_BINARY=test/test_wispr$(EXEEXT)
