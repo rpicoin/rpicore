@@ -113,21 +113,24 @@ jobs:
   Tests:
     <<: *build_machine_environment
     steps:
-    - run:
-        <<: *run_log_mem_use
-    - attach_workspace:
-        at: .
-    - run:
-        name: Check
-        command: make check -s -j3 || ( echo "Build failure. Verbose build follows." && export TESTS_FAILED=true ; false )
-    - store_test_results:
-        path: ./tmp/results
-    - store_artifacts:
-        path: ./tmp/results
-    - store_artifacts:
-        path: /tmp/core_dumps
-    - store_artifacts:
-        path: /tmp/memuse.txt
+      - run:
+          <<: *run_log_mem_use
+      - attach_workspace:
+          at: .
+      - run:
+          name: Check
+          command: make check -s -j3 || ( echo "Build failure. Verbose build follows." && export TESTS_FAILED=true ; false )
+      - persist_to_workspace:
+          root: .
+          paths:
+          - ./src
+          - ./qa
+      - store_artifacts:
+          path: ./tmp/results
+      - store_artifacts:
+          path: /tmp/core_dumps
+      - store_artifacts:
+          path: /tmp/memuse.txt
 
   Test libsecp256k1:
     <<: *build_machine_environment
@@ -139,8 +142,6 @@ jobs:
       - run:
           name: Run libsecp256k1 Tests
           command: ./src/secp256k1/tests
-      - store_test_results:
-          path: ./tmp/results
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -164,8 +165,6 @@ jobs:
       - run:
           name: Run Univalue Tests
           command: cd ./src/univalue && sudo test/unitester
-      - store_test_results:
-          path: ./tmp/results
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -221,8 +220,6 @@ jobs:
       - run:
           name: Run Wispr Tests
           command: src/test/test_wispr --run_test="uint256_tests"
-      - store_test_results:
-          path: ./tmp/results
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -240,8 +237,6 @@ jobs:
       - run:
           name: Run Wispr Tests
           command: src/test/test_wispr --run_test="key_tests"
-      - store_test_results:
-          path: ./tmp/results
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -259,8 +254,6 @@ jobs:
       - run:
           name: Run Wispr Tests
           command: src/test/test_wispr --run_test="Checkpoints_tests"
-      - store_test_results:
-          path: ./tmp/results
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -278,8 +271,6 @@ jobs:
       - run:
           name: Run Wispr Tests
           command: src/test/test_wispr --run_test="allocator_tests"
-      - store_test_results:
-          path: ./tmp/results
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -297,8 +288,6 @@ jobs:
       - run:
           name: Run Wispr Tests
           command: src/test/test_wispr --run_test="netbase_tests"
-      - store_test_results:
-          path: ./tmp/results
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -316,8 +305,6 @@ jobs:
       - run:
           name: Run Wispr Tests
           command: src/test/test_wispr --run_test="libzerocoin"
-      - store_test_results:
-          path: ./tmp/results
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -335,8 +322,6 @@ jobs:
       - run:
           name: Run Wispr Tests
           command: src/test/test_wispr --run_test="sigopcount_tests"
-      - store_test_results:
-          path: ./tmp/results
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -354,8 +339,6 @@ jobs:
       - run:
           name: Run Wispr Tests
           command: src/test/test_wispr --run_test="budget_tests"
-      - store_test_results:
-          path: ./tmp/results
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -373,8 +356,6 @@ jobs:
       - run:
           name: Run Wispr Tests
           command: src/test/test_wispr --run_test="zerocoin_denom_tests"
-      - store_test_results:
-          path: ./tmp/results
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -392,8 +373,6 @@ jobs:
       - run:
           name: Run Wispr Tests
           command: src/test/test_wispr --run_test="mempool_tests"
-      - store_test_results:
-          path: ./tmp/results
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -411,8 +390,6 @@ jobs:
       - run:
           name: Run Wispr Tests
           command: src/test/test_wispr --run_test="multisig_tests"
-      - store_test_results:
-          path: ./tmp/results
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -430,8 +407,6 @@ jobs:
       - run:
           name: Run Wispr Tests
           command: src/test/test_wispr --run_test="crypto_tests"
-      - store_test_results:
-          path: ./tmp/results
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -449,8 +424,6 @@ jobs:
       - run:
           name: Run Wispr Tests
           command: src/test/test_wispr --run_test="sanity_tests"
-      - store_test_results:
-          path: ./tmp/results
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -468,8 +441,6 @@ jobs:
       - run:
           name: Run Wispr Tests
           command: src/test/test_wispr --run_test="CheckBlock_tests"
-      - store_test_results:
-          path: ./tmp/results
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -487,8 +458,6 @@ jobs:
       - run:
           name: Run Wispr Tests
           command: src/test/test_wispr --run_test="coins_tests"
-      - store_test_results:
-          path: ./tmp/results
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -505,8 +474,6 @@ jobs:
       - run:
           name: Run Wispr Tests
           command: src/test/test_wispr --run_test="compress_tests"
-      - store_test_results:
-          path: ./tmp/results
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -524,8 +491,6 @@ jobs:
       - run:
           name: Run Wispr Tests
           command: src/test/test_wispr --run_test="mruset_tests"
-      - store_test_results:
-          path: ./tmp/results
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -542,8 +507,6 @@ jobs:
       - run:
           name: Run Wispr Tests
           command: src/test/test_wispr --run_test="pmt_tests"
-      - store_test_results:
-          path: ./tmp/results
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -560,8 +523,6 @@ jobs:
       - run:
           name: Run Wispr Tests
           command: src/test/test_wispr --run_test="rpc_tests"
-      - store_test_results:
-          path: ./tmp/results
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -579,8 +540,6 @@ jobs:
       - run:
           name: Run Wispr Tests
           command: src/test/test_wispr --run_test="zerocoin_implementation_tests"
-      - store_test_results:
-          path: ./tmp/results
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -598,8 +557,6 @@ jobs:
       - run:
           name: Run Wispr Tests
           command: src/test/test_wispr --run_test="accounting_tests"
-      - store_test_results:
-          path: ./tmp/results
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -617,8 +574,6 @@ jobs:
       - run:
           name: Run Wispr Tests
           command: src/test/test_wispr --run_test="rpc_wallet_tests"
-      - store_test_results:
-          path: ./tmp/results
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -636,8 +591,6 @@ jobs:
       - run:
           name: Run Wispr Tests
           command: src/test/test_wispr --run_test="util_tests"
-      - store_test_results:
-          path: ./tmp/results
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -655,8 +608,6 @@ jobs:
       - run:
           name: Run Wispr Tests
           command: src/test/test_wispr --run_test="benchmark_zerocoin"
-      - store_test_results:
-          path: ./tmp/results
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -674,8 +625,6 @@ jobs:
       - run:
           name: Run Wispr Tests
           command: src/test/test_wispr --run_test="tutorial_libzerocoin"
-      - store_test_results:
-          path: ./tmp/results
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -693,8 +642,6 @@ jobs:
       - run:
           name: Run Wispr Tests
           command: src/test/test_wispr --run_test="wallet_tests"
-      - store_test_results:
-          path: ./tmp/results
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -712,8 +659,6 @@ jobs:
       - run:
           name: Run Wispr Tests
           command: src/test/test_wispr --run_test="sighash_tests"
-      - store_test_results:
-          path: ./tmp/results
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -731,8 +676,6 @@ jobs:
       - run:
           name: Run Wispr Tests
           command: src/test/test_wispr --run_test="skiplist_tests"
-      - store_test_results:
-          path: ./tmp/results
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -750,8 +693,6 @@ jobs:
       - run:
           name: Run Wispr Tests
           command: src/test/test_wispr --run_test="script_tests"
-      - store_test_results:
-          path: ./tmp/results
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -769,8 +710,6 @@ jobs:
       - run:
           name: Run Wispr Tests
           command: src/test/test_wispr --run_test="scriptnum_tests"
-      - store_test_results:
-          path: ./tmp/results
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -788,8 +727,6 @@ jobs:
       - run:
           name: Run Wispr Tests
           command: src/test/test_wispr --run_test="serialize_tests"
-      - store_test_results:
-          path: ./tmp/results
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -807,8 +744,6 @@ jobs:
       - run:
           name: Run Wispr Tests
           command: src/test/test_wispr --run_test="base32_tests"
-      - store_test_results:
-          path: ./tmp/results
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -825,8 +760,6 @@ jobs:
       - run:
           name: Run Wispr Tests
           command: src/test/test_wispr --run_test="base58_tests"
-      - store_test_results:
-          path: ./tmp/results
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -843,8 +776,6 @@ jobs:
       - run:
           name: Run Wispr Tests
           command: src/test/test_wispr --run_test="base64_tests"
-      - store_test_results:
-          path: ./tmp/results
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -862,8 +793,6 @@ jobs:
       - run:
           name: Run Wispr Tests
           command: src/test/test_wispr --run_test="transaction_tests"
-      - store_test_results:
-          path: ./tmp/results
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -881,8 +810,6 @@ jobs:
       - run:
           name: Run Wispr Tests
           command: src/test/test_wispr --run_test="univalue_tests"
-      - store_test_results:
-          path: ./tmp/results
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -916,14 +843,16 @@ workflows:
       - Tests:
           requires:
           - Build
+      - hold:
+          type: approval
+          requires:
+            - Tests
       - Test univalue:
           requires:
-            - Tests
-            - $TESTS_FAILED
+            - hold
       - Test libsecp256k1:
           requires:
-            - Tests
-            - $TESTS_FAILED
+            - hold
 #      - Test qt:
 #          requires:
 #            - Tests
@@ -932,136 +861,103 @@ workflows:
 #            - Tests
       - Test uint256:
           requires:
-            - Tests
-            - $TESTS_FAILED
+            - hold
       - Test keys:
           requires:
-            - Tests
-            - $TESTS_FAILED
+            - hold
       - Test Checkpoints:
           requires:
-            - Tests
-            - $TESTS_FAILED
+            - hold
       - Test Allocator:
           requires:
-            - Tests
-            - $TESTS_FAILED
+            - hold
       - Test Netbase:
           requires:
-            - Tests
-            - $TESTS_FAILED
+            - hold
       - Test libzerocoin:
           requires:
-            - Tests
-            - $TESTS_FAILED
+            - hold
       - Test sigopcount:
           requires:
-            - Tests
-            - $TESTS_FAILED
+            - hold
       - Test budget:
           requires:
-            - Tests
-            - $TESTS_FAILED
+            - hold
       - Test zerocoin denom:
           requires:
-            - Tests
-            - $TESTS_FAILED
+            - hold
       - Test mempool:
           requires:
-            - Tests
-            - $TESTS_FAILED
+            - hold
       - Test multisig:
           requires:
-            - Tests
-            - $TESTS_FAILED
+            - hold
       - Test sanity:
           requires:
-            - Tests
-            - $TESTS_FAILED
+            - hold
       - Test crypto:
           requires:
-            - Tests
-            - $TESTS_FAILED
+            - hold
       - Test CheckBlock:
           requires:
-            - Tests
-            - $TESTS_FAILED
+            - hold
       - Test coins:
           requires:
-            - Tests
-            - $TESTS_FAILED
+            - hold
       - Test compress:
           requires:
-            - Tests
-            - $TESTS_FAILED
+            - hold
       - Test rpc:
           requires:
-            - Tests
-            - $TESTS_FAILED
+            - hold
       - Test zerocoin implementation:
           requires:
-            - Tests
-            - $TESTS_FAILED
+            - hold
       - Test accounting:
           requires:
-            - Tests
-            - $TESTS_FAILED
+            - hold
       - Test rpc wallet:
           requires:
-            - Tests
-            - $TESTS_FAILED
+            - hold
       - Test util:
           requires:
-            - Tests
-            - $TESTS_FAILED
+            - hold
       - Test benchmark zerocoin:
           requires:
-            - Tests
-            - $TESTS_FAILED
+            - hold
       - Test tutorial libzerocoin:
           requires:
-            - Tests
-            - $TESTS_FAILED
+            - hold
       - Test wallet:
           requires:
-            - Tests
-            - $TESTS_FAILED
+            - hold
       - Test sighash:
           requires:
-            - Tests
-            - $TESTS_FAILED
+            - hold
       - Test mruset:
           requires:
-            - Tests
-            - $TESTS_FAILED
+            - hold
       - Test pmt:
           requires:
-            - Tests
-            - $TESTS_FAILED
+            - hold
       - Test skiplist:
           requires:
-            - Tests
-            - $TESTS_FAILED
+            - hold
       - Test script:
           requires:
-            - Tests
-            - $TESTS_FAILED
+            - hold
       - Test scriptnum:
           requires:
-            - Tests
-            - $TESTS_FAILED
+            - hold
       - Test serialize:
           requires:
-            - Tests
-            - $TESTS_FAILED
+            - hold
       - Test transaction:
           requires:
-            - Tests
-            - $TESTS_FAILED
+            - hold
       - Test univalues:
           requires:
-            - Tests
-            - $TESTS_FAILED
+            - hold
 #      - Test rpctests:
 #          requires:
 #            - Tests
