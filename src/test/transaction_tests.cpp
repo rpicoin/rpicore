@@ -210,6 +210,7 @@ BOOST_AUTO_TEST_CASE(tx_invalid)
                 CDataStream stream(ParseHex(transaction), SER_NETWORK, PROTOCOL_VERSION);
                 CTransaction tx;
                 BOOST_TEST_CHECKPOINT("Stream transaction");
+                BOOST_ERROR("Bad stream: " << stream);
                 stream >> tx;
 
                 CValidationState state;
