@@ -207,7 +207,7 @@ private:
     void UpdateHash() const;
 
 public:
-    static const int32_t CURRENT_VERSION = 2;
+    static const int32_t CURRENT_VERSION = 1;
 
     // The local variables are made const to prevent unintended modification
     // without updating the cached hash value. However, CTransaction is not
@@ -233,9 +233,10 @@ public:
     template <typename Stream, typename Operation>
     inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
         READWRITE(*const_cast<int32_t*>(&this->nVersion));
-        int newProtocolTime = !GetBoolArg("-testnet", false) ? 1538567022 : 1537448663;
-        nVersion = GetAdjustedTime() >= newProtocolTime ? this->nVersion : 1;
-        if(nVersion == 1) {
+        nVersion = this->nVersion;
+//        int newProtocolTime = !GetBoolArg("-testnet", false) ? 1538567022 : 1537448663;
+//        nVersion = GetAdjustedTime() >= newProtocolTime ? this->nVersion : 1;
+        if(nVersion < 2){
             READWRITE(*const_cast<unsigned int *>(&nTime));
         }
         READWRITE(*const_cast<std::vector<CTxIn>*>(&vin));
@@ -329,9 +330,10 @@ struct CMutableTransaction
     template <typename Stream, typename Operation>
     inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
         READWRITE(this->nVersion);
-        int newProtocolTime = !GetBoolArg("-testnet", false) ? 1538567022 : 1537448663;
-        nVersion = GetAdjustedTime() >= newProtocolTime ? this->nVersion : 1;
-        if(nVersion == 1){
+//        int newProtocolTime = !GetBoolArg("-testnet", false) ? 1538567022 : 1537448663;
+//        nVersion = GetAdjustedTime() >= newProtocolTime ? this->nVersion : 1;
+        nVersion = this->nVersion;
+        if(nVersion < 2){
             READWRITE(nTime);
         }
         READWRITE(vin);

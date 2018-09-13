@@ -141,7 +141,7 @@ public:
         /** Height or Time Based Activations **/
         nLastPOWBlock = 450;
         nNewProtocolStartHeight = 400000;
-        nNewProtocolStartTime = 1538567022;
+        nNewProtocolStartTime = 1539963322;
         nZerocoinStartHeight = nNewProtocolStartHeight;
         nZerocoinStartTime = nNewProtocolStartTime;
         /**
@@ -260,7 +260,7 @@ public:
         nMasternodeCountDrift = 4;
         nMaxMoneyOut = 120000000 * COIN;
         nNewProtocolStartHeight = 10000;
-        nNewProtocolStartTime = 1537448663;
+        nNewProtocolStartTime = 1537191184;
         nZerocoinStartHeight = nNewProtocolStartHeight;
         nZerocoinStartTime = nNewProtocolStartTime; // July 2, 2018
         const char* pszTimestamp = "I would rather be without a state than without a voice";

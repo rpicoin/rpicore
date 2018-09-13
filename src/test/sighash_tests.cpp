@@ -30,6 +30,7 @@ uint256 static SignatureHashOld(CScript scriptCode, const CTransaction& txTo, un
     }
     CMutableTransaction txTmp(txTo);
 
+
     // In case concatenating two scripts ends up with two codeseparators,
     // or an extra one at the end, this prevents all those possible incompatibilities.
     scriptCode.FindAndDelete(CScript(OP_CODESEPARATOR));
