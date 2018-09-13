@@ -119,14 +119,14 @@ public:
     /** Height or Time Based Activations **/
 //    int ModifierUpgradeBlock() const { return nModifierUpdateBlock; }
     int LAST_POW_BLOCK() const { return nLastPOWBlock; }
-    int Zerocoin_StartHeight() const { return nZerocoinStartHeight; }
+//    int Zerocoin_StartHeight() const { return nZerocoinStartHeight; }
     int NEW_PROTOCOLS_STARTHEIGHT() const { return nNewProtocolStartHeight; }
     int NEW_PROTOCOLS_STARTTIME() const { return nNewProtocolStartTime; }
 //    int Zerocoin_Block_EnforceSerialRange() const { return nBlockEnforceSerialRange; }
 //    int Zerocoin_Block_RecalculateAccumulators() const { return nBlockRecalculateAccumulators; }
 //    int Zerocoin_Block_FirstFraudulent() const { return nBlockFirstFraudulent; }
 //    int Zerocoin_Block_LastGoodCheckpoint() const { return nBlockLastGoodCheckpoint; }
-    int Zerocoin_StartTime() const { return nZerocoinStartTime; }
+//    int Zerocoin_StartTime() const { return nZerocoinStartTime; }
 //    int Block_Enforce_Invalid() const { return nBlockEnforceInvalidUTXO; }
 //    int Zerocoin_Block_V2_Start() const { return nBlockZerocoinV2; }
 //    CAmount InvalidAmountFiltered() const { return nInvalidAmountFiltered; };

@@ -8,9 +8,11 @@
 #define BITCOIN_PRIMITIVES_TRANSACTION_H
 
 #include "amount.h"
+#include "util.h"
 #include "script/script.h"
 #include "serialize.h"
 #include "uint256.h"
+#include "timedata.h"
 
 #include <list>
 
@@ -205,7 +207,7 @@ private:
     void UpdateHash() const;
 
 public:
-    static const int32_t CURRENT_VERSION=1;
+    static const int32_t CURRENT_VERSION = 2;
 
     // The local variables are made const to prevent unintended modification
     // without updating the cached hash value. However, CTransaction is not
@@ -231,8 +233,11 @@ public:
     template <typename Stream, typename Operation>
     inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
         READWRITE(*const_cast<int32_t*>(&this->nVersion));
-        nVersion = this->nVersion;
-        READWRITE(*const_cast<unsigned int*>(&nTime));
+        int newProtocolTime = !GetBoolArg("-testnet", false) ? 1538567022 : 1537448663;
+        nVersion = GetAdjustedTime() >= newProtocolTime ? this->nVersion : 1;
+        if(nVersion == 1) {
+            READWRITE(*const_cast<unsigned int *>(&nTime));
+        }
         READWRITE(*const_cast<std::vector<CTxIn>*>(&vin));
         READWRITE(*const_cast<std::vector<CTxOut>*>(&vout));
         READWRITE(*const_cast<uint32_t*>(&nLockTime));
@@ -324,8 +329,11 @@ struct CMutableTransaction
     template <typename Stream, typename Operation>
     inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
         READWRITE(this->nVersion);
-        nVersion = this->nVersion;
-        READWRITE(nTime);
+        int newProtocolTime = !GetBoolArg("-testnet", false) ? 1538567022 : 1537448663;
+        nVersion = GetAdjustedTime() >= newProtocolTime ? this->nVersion : 1;
+        if(nVersion == 1){
+            READWRITE(nTime);
+        }
         READWRITE(vin);
         READWRITE(vout);
         READWRITE(nLockTime);

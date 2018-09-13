@@ -935,7 +935,7 @@ bool CheckZerocoinMint(const uint256& txHash, const CTxOut& txout, CValidationSt
 
 bool ContextualCheckZerocoinMint(const CTransaction& tx, const PublicCoin& coin, const CBlockIndex* pindex)
 {
-    if (pindex->nHeight >= Params().Zerocoin_StartHeight() && Params().NetworkID() != CBaseChainParams::TESTNET) {
+    if (pindex->nHeight >= Params().NEW_PROTOCOLS_STARTHEIGHT() && Params().NetworkID() != CBaseChainParams::TESTNET) {
         //See if this coin has already been added to the blockchain
         uint256 txid;
         int nHeight;
@@ -951,7 +951,7 @@ bool ContextualCheckZerocoinMint(const CTransaction& tx, const PublicCoin& coin,
 bool ContextualCheckZerocoinSpend(const CTransaction& tx, const CoinSpend& spend, CBlockIndex* pindex, const uint256& hashBlock)
 {
     //Check to see if the zWSP is properly signed
-    if (pindex->nHeight >= Params().Zerocoin_StartHeight()) {
+    if (pindex->nHeight >= Params().NEW_PROTOCOLS_STARTHEIGHT()) {
         if (!spend.HasValidSignature())
             return error("%s: V2 zWSP spend does not have a valid signature", __func__);
 
@@ -1034,7 +1034,7 @@ bool CheckZerocoinSpend(const CTransaction& tx, bool fVerifySignature, CValidati
                 return state.DoS(100, error("%s: Zerocoinspend could not find accumulator associated with checksum %s", __func__, HexStr(BEGIN(nChecksum), END(nChecksum))));
             }
 
-            Accumulator accumulator(Params().Zerocoin_Params(chainActive.Height() < Params().Zerocoin_StartHeight()),
+            Accumulator accumulator(Params().Zerocoin_Params(chainActive.Height() < Params().NEW_PROTOCOLS_STARTHEIGHT()),
                                     newSpend.getDenomination(), bnAccumulatorValue);
 
             //Check that the coin has been accumulated
@@ -1219,7 +1219,7 @@ bool AcceptToMemoryPool(CTxMemPool& pool, CValidationState& state, const CTransa
     if (GetAdjustedTime() > GetSporkValue(SPORK_16_ZEROCOIN_MAINTENANCE_MODE) && tx.ContainsZerocoins())
         return state.DoS(10, error("AcceptToMemoryPool : Zerocoin transactions are temporarily disabled for maintenance"), REJECT_INVALID, "bad-tx");
 
-    if (!CheckTransaction(tx, chainActive.Height() >= Params().Zerocoin_StartHeight(), true, state))
+    if (!CheckTransaction(tx, chainActive.Height() >= Params().NEW_PROTOCOLS_STARTHEIGHT(), true, state))
         return state.DoS(100, error("AcceptToMemoryPool: : CheckTransaction failed"), REJECT_INVALID, "bad-tx");
 
     // Coinbase is only valid in a block, not as a loose transaction
@@ -1464,7 +1464,7 @@ bool AcceptableInputs(CTxMemPool& pool, CValidationState& state, const CTransact
         *pfMissingInputs = false;
 
 
-    if (!CheckTransaction(tx, chainActive.Height() >= Params().Zerocoin_StartHeight(), true, state))
+    if (!CheckTransaction(tx, chainActive.Height() >= Params().NEW_PROTOCOLS_STARTHEIGHT(), true, state))
         return error("AcceptableInputs: : CheckTransaction failed");
 
     // Coinbase is only valid in a block, not as a loose transaction
@@ -2383,7 +2383,7 @@ void ThreadScriptCheck()
 
 void RecalculateZWSPMinted()
 {
-    CBlockIndex *pindex = chainActive[Params().Zerocoin_StartHeight()];
+    CBlockIndex *pindex = chainActive[Params().NEW_PROTOCOLS_STARTHEIGHT()];
     int nHeightEnd = chainActive.Height();
     while (true) {
         if (pindex->nHeight % 1000 == 0)
@@ -2410,7 +2410,7 @@ void RecalculateZWSPMinted()
 
 void RecalculateZWSPSpent()
 {
-    CBlockIndex* pindex = chainActive[Params().Zerocoin_StartHeight()];
+    CBlockIndex* pindex = chainActive[Params().NEW_PROTOCOLS_STARTHEIGHT()];
     while (true) {
         if (pindex->nHeight % 1000 == 0)
             LogPrintf("%s : block %d...\n", __func__, pindex->nHeight);
@@ -2451,7 +2451,7 @@ bool RecalculateWSPSupply(int nHeightStart)
 
     CBlockIndex* pindex = chainActive[nHeightStart];
     CAmount nSupplyPrev = pindex->pprev->nMoneySupply;
-    if (nHeightStart == Params().Zerocoin_StartHeight())
+    if (nHeightStart == Params().NEW_PROTOCOLS_STARTHEIGHT())
         nSupplyPrev = CAmount(5449796547496199);
 
     while (true) {
@@ -2511,7 +2511,7 @@ bool ReindexAccumulators(list<uint256>& listMissingCheckpoints, string& strError
         LogPrintf("%s : finding missing checkpoints\n", __func__);
 
         //search the chain to see when zerocoin started
-        int nZerocoinStart = Params().Zerocoin_StartHeight();
+        int nZerocoinStart = Params().NEW_PROTOCOLS_STARTHEIGHT();
 
         // find each checkpoint that is missing
         CBlockIndex* pindex = chainActive[nZerocoinStart];
@@ -2839,7 +2839,7 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
     }
 
     // Ensure that accumulator checkpoints are valid and in the same state as this instance of the chain
-    AccumulatorMap mapAccumulators(Params().Zerocoin_Params(pindex->nHeight < Params().Zerocoin_StartHeight()));
+    AccumulatorMap mapAccumulators(Params().Zerocoin_Params(pindex->nHeight < Params().NEW_PROTOCOLS_STARTHEIGHT()));
     if (!ValidateAccumulatorCheckpoint(block, pindex, mapAccumulators))
         return state.DoS(100, error("%s: Failed to validate accumulator checkpoint for block=%s height=%d", __func__,
                                     block.GetHash().GetHex(), pindex->nHeight), REJECT_INVALID, "bad-acc-checkpoint");
@@ -3588,7 +3588,9 @@ CBlockIndex* AddToBlockIndex(const CBlock& block)
         if (!ComputeNextStakeModifier(pindexNew->pprev, nStakeModifier, fGeneratedStakeModifier))
             LogPrintf("AddToBlockIndex() : ComputeNextStakeModifier() failed \n");
         pindexNew->SetStakeModifier(nStakeModifier, fGeneratedStakeModifier);
-        pindexNew->bnStakeModifierV2 = ComputeStakeModifier(pindexNew->pprev, bn2Hash);
+        if(pindexNew->nHeight < Params().NEW_PROTOCOLS_STARTHEIGHT()){
+            pindexNew->bnStakeModifierV2 = ComputeStakeModifier(pindexNew->pprev, bn2Hash);
+        }
         pindexNew->nStakeModifierChecksum = GetStakeModifierChecksum(pindexNew);
         if (!CheckStakeModifierCheckpoints(pindexNew->nHeight, pindexNew->nStakeModifierChecksum))
             LogPrintf("AddToBlockIndex() : Rejected by stake modifier checkpoint height=%d, modifier=%s \n", pindexNew->nHeight, boost::lexical_cast<std::string>(nStakeModifier));
@@ -3739,14 +3741,14 @@ bool CheckBlockHeader(const CBlockHeader& block, CValidationState& state, bool f
         return state.DoS(50, error("CheckBlockHeader() : proof of work failed"),
                          REJECT_INVALID, "high-hash");
 
-    // Version 4 header must be used after Params().Zerocoin_StartHeight(). And never before.
-    if (block.GetBlockTime() > Params().Zerocoin_StartTime()) {
+    // Version 4 header must be used after Params().NEW_PROTOCOLS_STARTHEIGHT(). And never before.
+    if (block.GetBlockTime() > Params().NEW_PROTOCOLS_STARTTIME()) {
         if(block.nVersion < Params().Zerocoin_HeaderVersion())
-            return state.DoS(50, error("CheckBlockHeader() : block version must be above 4 after ZerocoinStartHeight"),
+            return state.DoS(50, error("CheckBlockHeader() : block version must be above 7 after ZerocoinStartHeight"),
                              REJECT_INVALID, "block-version");
     } else {
         if (block.nVersion >= Params().Zerocoin_HeaderVersion())
-            return state.DoS(50, error("CheckBlockHeader() : block version must be below 4 before ZerocoinStartHeight"),
+            return state.DoS(50, error("CheckBlockHeader() : block version must be below 8 before ZerocoinStartHeight"),
                              REJECT_INVALID, "block-version");
     }
 
@@ -3869,7 +3871,7 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
     }
 
     // Check transactions
-    bool fZerocoinActive = block.GetBlockTime() > Params().Zerocoin_StartTime();
+    bool fZerocoinActive = block.GetBlockTime() > Params().NEW_PROTOCOLS_STARTTIME();
     vector<CBigNum> vBlockSerials;
     for (const CTransaction& tx : block.vtx) {
         if (!CheckTransaction(tx, fZerocoinActive, true, state))
@@ -4096,7 +4098,7 @@ bool AcceptBlockHeader(const CBlock& block, CValidationState& state, CBlockIndex
 
 bool ContextualCheckZerocoinStake(int nHeight, CStakeInput* stake)
 {
-    if (nHeight < Params().Zerocoin_StartHeight())
+    if (nHeight < Params().NEW_PROTOCOLS_STARTHEIGHT())
         return error("%s: zWSP stake block is less than allowed start height", __func__);
 
     if (CZWspStake* zWSP = dynamic_cast<CZWspStake*>(stake)) {
@@ -4147,7 +4149,7 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
                              REJECT_INVALID, "bad-prevblk");
         }
     }
-    if (block.IsProofOfStake() && !CheckCoinStakeTimestamp(block.GetBlockTime(), (int64_t)block.vtx[1].nTime))
+    if (block.IsProofOfStake() && chainActive.Height() < Params().NEW_PROTOCOLS_STARTHEIGHT() && !CheckCoinStakeTimestamp(block.GetBlockTime(), (int64_t)block.vtx[1].nTime))
         return state.DoS(50, error("AcceptBlock() : coinstake timestamp violation nTimeBlock=%d nTimeTx=%u\n", block.GetBlockTime(), block.vtx[1].nTime));
 
     if (block.GetHash() != Params().HashGenesisBlock() && !CheckWork(block, pindexPrev))

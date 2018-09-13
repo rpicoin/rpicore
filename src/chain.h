@@ -465,8 +465,9 @@ public:
         READWRITE(nMoneySupply);
         READWRITE(nFlags);
         READWRITE(nStakeModifier);
-        READWRITE(bnStakeModifierV2);
-
+        if(this->nVersion < 8) {
+            READWRITE(bnStakeModifierV2);
+        }
         if (IsProofOfStake()) {
             READWRITE(prevoutStake);
             READWRITE(nStakeTime);

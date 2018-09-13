@@ -411,21 +411,10 @@ bool Stake(CStakeInput* stakeInput, unsigned int nBits, unsigned int nTimeBlockF
             break;
 
         //hash this iteration
-        if (chainActive.Height() > Params().NEW_PROTOCOLS_STARTHEIGHT()) {
-            //grab stake modifier
-            uint64_t nStakeModifier = 0;
-            if (!stakeInput->GetModifier(nStakeModifier))
-                return error("failed to get kernel stake modifier");
-            nTryTime = nTimeTx + nHashDrift - i;
-            // if stake hash does not meet the target then continue to next iteration
-            if (!CheckStakeV2(ssUniqueID, nValueIn, nStakeModifier, bnTargetPerCoinDay, nTimeBlockFrom, nTryTime, hashProofOfStake))
-                continue;
-        } else {
-            nTryTime = nTimeTx - i;
-            if (!CheckStakeV1(txPrev.nTime, prev, nTryTime, hashProofOfStake, nValueInOld, chainActive.Tip(),
-                              nBits) || !((nTryTime & STAKE_TIMESTAMP_MASK) == 0)) {
-                continue;
-            }
+        nTryTime = nTimeTx - i;
+        if (!CheckStakeV1(txPrev.nTime, prev, nTryTime, hashProofOfStake, nValueInOld, chainActive.Tip(),
+                          nBits) || !((nTryTime & STAKE_TIMESTAMP_MASK) == 0)) {
+            continue;
         }
 
         fSuccess = true; // if we make it this far then we have successfully created a stake hash
@@ -438,7 +427,53 @@ bool Stake(CStakeInput* stakeInput, unsigned int nBits, unsigned int nTimeBlockF
     mapHashedBlocks[chainActive.Tip()->nHeight] = GetTime(); //store a time stamp of when we last hashed on this block
     return fSuccess;
 }
+bool StakeV2(CStakeInput* stakeInput, unsigned int nBits, unsigned int nTimeBlockFrom, unsigned int& nTimeTx, uint256& hashProofOfStake)
+{
+    if (nTimeTx < nTimeBlockFrom)
+        return error("CheckStakeKernelHash() : nTime violation");
 
+    if (nTimeBlockFrom + nStakeMinAge > nTimeTx) // Min age requirement
+        return error("CheckStakeKernelHash() : min age violation - nTimeBlockFrom=%d nStakeMinAge=%d nTimeTx=%d",
+                     nTimeBlockFrom, nStakeMinAge, nTimeTx);
+
+    //grab difficulty
+    uint256 bnTargetPerCoinDay;
+    bnTargetPerCoinDay.SetCompact(nBits);
+
+    //grab stake modifier
+    uint64_t nStakeModifier = 0;
+    if (!stakeInput->GetModifier(nStakeModifier))
+        return error("failed to get kernel stake modifier");
+
+    bool fSuccess = false;
+    unsigned int nTryTime = 0;
+    int nHeightStart = chainActive.Height();
+    int nHashDrift = 30;
+    CDataStream ssUniqueID = stakeInput->GetUniqueness();
+    CAmount nValueIn = stakeInput->GetValue();
+    for (int i = 0; i < nHashDrift; i++) //iterate the hashing
+    {
+        //new block came in, move on
+        if (chainActive.Height() != nHeightStart)
+            break;
+
+        //hash this iteration
+        nTryTime = nTimeTx + nHashDrift - i;
+
+        // if stake hash does not meet the target then continue to next iteration
+        if (!CheckStakeV2(ssUniqueID, nValueIn, nStakeModifier, bnTargetPerCoinDay, nTimeBlockFrom, nTryTime, hashProofOfStake))
+            continue;
+
+        fSuccess = true; // if we make it this far then we have successfully created a stake hash
+        //LogPrintf("%s: hashproof=%s\n", __func__, hashProofOfStake.GetHex());
+        nTimeTx = nTryTime;
+        break;
+    }
+
+    mapHashedBlocks.clear();
+    mapHashedBlocks[chainActive.Tip()->nHeight] = GetTime(); //store a time stamp of when we last hashed on this block
+    return fSuccess;
+}
 // Check kernel hash target and coinstake signature
 bool CheckProofOfStake(const CBlock block, uint256& hashProofOfStake, std::unique_ptr<CStakeInput>& stake)
 {
@@ -498,7 +533,6 @@ bool CheckProofOfStake(const CBlock block, uint256& hashProofOfStake, std::uniqu
             return error("CheckProofOfStake() : INFO: check kernel failed on coinstake %s, hashProof=%s \n",
                          tx.GetHash().ToString(), hashProofOfStake.ToString());
         }
-
     } else {
         if (!CheckStakeV1(txPrev.nTime, txin.prevout, tx.nTime, hashProofOfStake, nValueIn, pindexOld, block.nBits)) {
             return error("CheckProofOfStake() : INFO: old bnStakeModifierV2 check kernel failed on coinstake %s, hashProof=%s \n",

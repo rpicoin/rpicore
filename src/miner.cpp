@@ -119,7 +119,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
         pblock->nVersion = GetArg("-blockversion", pblock->nVersion);
 
     // Make sure to create the correct block version after zerocoin is enabled
-    bool fZerocoinActive = GetAdjustedTime() >= Params().Zerocoin_StartTime() && !pblock->IsProofOfWork();
+    bool fZerocoinActive = GetAdjustedTime() >= Params().NEW_PROTOCOLS_STARTTIME() && !pblock->IsProofOfWork();
     if (fZerocoinActive)
         pblock->nVersion = 8;
     else
@@ -141,34 +141,51 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
     static int64_t nLastCoinStakeSearchTime = GetAdjustedTime(); // only initialized at startup
 
     if (fProofOfStake) {
-        boost::this_thread::interruption_point();
-        CBlockIndex* pindexPrev = chainActive.Tip();
-        pblock->nTime = GetAdjustedTime();
         if(fZerocoinActive){
+            boost::this_thread::interruption_point();
+            pblock->nTime = GetAdjustedTime();
+            CBlockIndex* pindexPrev = chainActive.Tip();
             pblock->nBits = GetNextWorkRequired(pindexPrev, pblock);
-        }else{
-            pblock->nBits = GetNextTargetRequired(pindexPrev, fProofOfStake);
-        }
-//        pblock->nBits = GetNextWorkRequired(pindexPrev, pblock);
-        CMutableTransaction txCoinStake;
-//        txCoinStake.nTime = GetAdjustedTime();
-        txCoinStake.nTime &= ~STAKE_TIMESTAMP_MASK;
-        int64_t nSearchTime = txCoinStake.nTime; // search to current time
-        bool fStakeFound = false;
-        if (nSearchTime >= nLastCoinStakeSearchTime) {
-            nTxNewTime &= ~STAKE_TIMESTAMP_MASK;
-            if (pwallet->CreateCoinStake(*pwallet, pblock->nBits, nSearchTime - nLastCoinStakeSearchTime, txCoinStake, txCoinStake.nTime)) {
-                pblock->vtx[0].nTime = pblock->nTime = txCoinStake.nTime;
-                nTxNewTime = txCoinStake.nTime;
-                pblock->vtx[0].vout[0].SetEmpty();
-                pblock->vtx.push_back(CTransaction(txCoinStake));
-                fStakeFound = true;
+            CMutableTransaction txCoinStake;
+            int64_t nSearchTime = pblock->nTime; // search to current time
+            bool fStakeFound = false;
+            if (nSearchTime >= nLastCoinStakeSearchTime) {
+                unsigned int nTxNewTime = 0;
+                if (pwallet->CreateCoinStake(*pwallet, pblock->nBits, nSearchTime - nLastCoinStakeSearchTime, txCoinStake, nTxNewTime)) {
+                    pblock->nTime = nTxNewTime;
+                    pblock->vtx[0].vout[0].SetEmpty();
+                    pblock->vtx.push_back(CTransaction(txCoinStake));
+                    fStakeFound = true;
+                }
+                nLastCoinStakeSearchInterval = nSearchTime - nLastCoinStakeSearchTime;
+                nLastCoinStakeSearchTime = nSearchTime;
             }
-            nLastCoinStakeSearchInterval = nSearchTime - nLastCoinStakeSearchTime;
-            nLastCoinStakeSearchTime = nSearchTime;
+            if (!fStakeFound)
+                return NULL;
+        }else{
+             boost::this_thread::interruption_point();
+             CBlockIndex* pindexPrev = chainActive.Tip();
+             pblock->nTime = GetAdjustedTime();
+             pblock->nBits = GetNextTargetRequired(pindexPrev, fProofOfStake);
+             CMutableTransaction txCoinStake;
+             txCoinStake.nTime &= ~STAKE_TIMESTAMP_MASK;
+             int64_t nSearchTime = txCoinStake.nTime; // search to current time
+             bool fStakeFound = false;
+             if (nSearchTime >= nLastCoinStakeSearchTime) {
+                 nTxNewTime &= ~STAKE_TIMESTAMP_MASK;
+                 if (pwallet->CreateCoinStake(*pwallet, pblock->nBits, nSearchTime - nLastCoinStakeSearchTime, txCoinStake, txCoinStake.nTime)) {
+                     pblock->vtx[0].nTime = pblock->nTime = txCoinStake.nTime;
+                     nTxNewTime = txCoinStake.nTime;
+                     pblock->vtx[0].vout[0].SetEmpty();
+                     pblock->vtx.push_back(CTransaction(txCoinStake));
+                     fStakeFound = true;
+                 }
+                 nLastCoinStakeSearchInterval = nSearchTime - nLastCoinStakeSearchTime;
+                 nLastCoinStakeSearchTime = nSearchTime;
+             }
+             if (!fStakeFound)
+                 return NULL;
         }
-        if (!fStakeFound)
-            return NULL;
     }
 
     // Largest block you're willing to create:
@@ -490,7 +507,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
             if (nHeight >= pCheckpointCache.first || pCheckpointCache.second.first != hashBlockLastAccumulated) {
                 //For the period before v2 activation, zWSP will be disabled and previous block's checkpoint is all that will be needed
                 pCheckpointCache.second.second = pindexPrev->nAccumulatorCheckpoint;
-                if (pindexPrev->nHeight + 1 >= Params().Zerocoin_StartHeight()) {
+                if (pindexPrev->nHeight + 1 >= Params().NEW_PROTOCOLS_STARTHEIGHT()) {
                     AccumulatorMap mapAccumulators(Params().Zerocoin_Params(false));
                     if (fZerocoinActive && !CalculateAccumulatorCheckpoint(nHeight, nCheckpoint, mapAccumulators)) {
                         LogPrintf("%s: failed to get accumulator checkpoint\n", __func__);
