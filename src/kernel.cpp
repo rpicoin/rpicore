@@ -525,7 +525,7 @@ bool CheckProofOfStake(const CBlock block, uint256& hashProofOfStake, std::uniqu
     int64_t nValueIn = txPrev.vout[txin.prevout.n].nValue;
     unsigned int nBlockFromTime = blockprev.nTime;
     unsigned int nTxTime = block.nTime;
-    if (pindex->nHeight > Params().NEW_PROTOCOLS_STARTHEIGHT()) {
+    if (pindex->nHeight >= Params().NEW_PROTOCOLS_STARTHEIGHT()) {
         if (!stake->GetModifier(nStakeModifier))
             return error("%s failed to get modifier for stake input\n", __func__);
         if(!CheckStakeV2(stake->GetUniqueness(), stake->GetValue(), nStakeModifier, bnTargetPerCoinDay, nBlockFromTime,
