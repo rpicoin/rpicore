@@ -259,7 +259,7 @@ public:
         nMaturity = 10;
         nMasternodeCountDrift = 4;
         nMaxMoneyOut = 120000000 * COIN;
-        nNewProtocolStartHeight = 10000;
+        nNewProtocolStartHeight = 7500;
         nNewProtocolStartTime = 1537191184;
         nZerocoinStartHeight = nNewProtocolStartHeight;
         nZerocoinStartTime = nNewProtocolStartTime; // July 2, 2018
