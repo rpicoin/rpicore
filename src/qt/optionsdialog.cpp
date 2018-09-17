@@ -52,6 +52,11 @@ OptionsDialog::OptionsDialog(QWidget* parent, bool enableWallet) : QDialog(paren
     ui->mapPortUpnp->setEnabled(false);
 #endif
 
+    /*Disable minting option until new protocol start*/
+    bool newProtocolStart = GetAdjustedTime() >= Params().NEW_PROTOCOLS_STARTTIME();
+    if(!newProtocolStart){
+        ui->checkBoxZeromintEnable->setEnabled(false);
+    }
     ui->proxyIp->setEnabled(false);
     ui->proxyPort->setEnabled(false);
     ui->proxyPort->setValidator(new QIntValidator(1, 65535, this));
