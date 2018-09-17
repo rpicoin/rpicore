@@ -512,6 +512,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
                 if (pindexPrev->nHeight + 1 >= Params().NEW_PROTOCOLS_STARTHEIGHT()) {
                     LogPrintf("CreateNewBlock(): mapAccumulators\n");
                     AccumulatorMap mapAccumulators(Params().Zerocoin_Params(false));
+                    LogPrintf("CreateNewBlock(): Mapped Accumulators\n");
                     if (fZerocoinActive && !CalculateAccumulatorCheckpoint(nHeight, nCheckpoint, mapAccumulators)) {
                         LogPrintf("%s: failed to get accumulator checkpoint\n", __func__);
                     } else {

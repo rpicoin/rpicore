@@ -237,6 +237,7 @@ bool CalculateAccumulatorCheckpoint(int nHeight, uint256& nCheckpoint, Accumulat
     }
 
     //the checkpoint is updated every ten blocks, return current active checkpoint if not update block
+    LogPrint("CalculateAccumulatorCheckpoint: current active checkpoint\n");
     if (nHeight % 10 != 0) {
         nCheckpoint = chainActive[nHeight - 1]->nAccumulatorCheckpoint;
         return true;
