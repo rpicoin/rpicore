@@ -1812,7 +1812,7 @@ int64_t GetBlockValue(int nHeight)
     int64_t nSubsidy = 0;
     if (nHeight == 0) {
         nSubsidy = 125000 * COIN;
-    } else if (nHeight < Params().NEW_PROTOCOLS_STARTHEIGHT()) {
+    } else if (nHeight < Params().NEW_PROTOCOLS_STARTHEIGHT() && nHeight > 450) {
         nSubsidy = 5 * COIN;
     } else {
         nSubsidy = 10 * COIN;
