@@ -237,10 +237,7 @@ bool CalculateAccumulatorCheckpoint(int nHeight, uint256& nCheckpoint, Accumulat
     }
 
     //the checkpoint is updated every ten blocks, return current active checkpoint if not update block
-    LogPrintf("CalculateAccumulatorCheckpoint: pblockindex\n");
     CBlockIndex* pblockindex = chainActive[nHeight - 1];
-    LogPrintf("CalculateAccumulatorCheckpoint: current active checkpoint\n");
-    //    uint256 checkP = pblockindex->nAccumulatorCheckpoint;
     if(pblockindex->nAccumulatorCheckpoint == NULL){
         nCheckpoint = 0;
         return true;
@@ -250,7 +247,6 @@ bool CalculateAccumulatorCheckpoint(int nHeight, uint256& nCheckpoint, Accumulat
         return true;
     }
 
-    LogPrintf("CalculateAccumulatorCheckpoint: set the accumulators to last checkpoint value\n");
     //set the accumulators to last checkpoint value
     int nHeightCheckpoint;
     mapAccumulators.Reset();
