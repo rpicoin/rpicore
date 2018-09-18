@@ -1812,7 +1812,7 @@ int64_t GetBlockValue(int nHeight)
     int64_t nSubsidy = 0;
     if (nHeight == 0) {
         nSubsidy = 125000 * COIN;
-    } else if (nHeight < Params().NEW_PROTOCOLS_STARTHEIGHT()) {
+    } else if (nHeight < Params().NEW_PROTOCOLS_STARTHEIGHT() && nHeight > 450) {
         nSubsidy = 5 * COIN;
     } else {
         nSubsidy = 10 * COIN;
@@ -4149,7 +4149,7 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
                              REJECT_INVALID, "bad-prevblk");
         }
     }
-    if (block.IsProofOfStake() && chainActive.Height() < Params().NEW_PROTOCOLS_STARTHEIGHT() && !CheckCoinStakeTimestamp(block.GetBlockTime(), (int64_t)block.vtx[1].nTime))
+    if (block.IsProofOfStake() && (chainActive.Height() + 1) < Params().NEW_PROTOCOLS_STARTHEIGHT() && !CheckCoinStakeTimestamp(block.GetBlockTime(), (int64_t)block.vtx[1].nTime))
         return state.DoS(50, error("AcceptBlock() : coinstake timestamp violation nTimeBlock=%d nTimeTx=%u\n", block.GetBlockTime(), block.vtx[1].nTime));
 
     if (block.GetHash() != Params().HashGenesisBlock() && !CheckWork(block, pindexPrev))

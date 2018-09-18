@@ -2970,7 +2970,7 @@ bool CWallet::CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int
     CAmount nCredit = 0;
     CScript scriptPubKeyKernel;
     bool fKernelFound = false;
-    bool newProtocolStart = chainActive.Height() >= Params().NEW_PROTOCOLS_STARTHEIGHT();
+    bool newProtocolStart = chainActive.Height() + 1 >= Params().NEW_PROTOCOLS_STARTHEIGHT();
     for (std::unique_ptr<CStakeInput>& stakeInput : listInputs) {
         // Make sure the wallet is unlocked and shutdown hasn't been requested
         if (IsLocked() || ShutdownRequested())

@@ -305,7 +305,7 @@ bool CheckStakeV2(const CDataStream& ssUniqueID, CAmount nValueIn, const uint64_
     CDataStream ss(SER_GETHASH, 0);
     ss << nStakeModifier << nTimeBlockFrom << ssUniqueID << nTimeTx;
     hashProofOfStake = Hash(ss.begin(), ss.end());
-    //LogPrintf("%s: modifier:%d nTimeBlockFrom:%d nTimeTx:%d hash:%s\n", __func__, nStakeModifier, nTimeBlockFrom, nTimeTx, hashProofOfStake.GetHex());
+//    LogPrintf("%s: modifier:%d nTimeBlockFrom:%d nTimeTx:%d hash:%s\n", __func__, nStakeModifier, nTimeBlockFrom, nTimeTx, hashProofOfStake.ToString());
 
     return stakeTargetHit(hashProofOfStake, nValueIn, bnTarget);
 }
@@ -525,7 +525,7 @@ bool CheckProofOfStake(const CBlock block, uint256& hashProofOfStake, std::uniqu
     int64_t nValueIn = txPrev.vout[txin.prevout.n].nValue;
     unsigned int nBlockFromTime = blockprev.nTime;
     unsigned int nTxTime = block.nTime;
-    if (pindex->nHeight > Params().NEW_PROTOCOLS_STARTHEIGHT()) {
+    if (block.nVersion > 7) {
         if (!stake->GetModifier(nStakeModifier))
             return error("%s failed to get modifier for stake input\n", __func__);
         if(!CheckStakeV2(stake->GetUniqueness(), stake->GetValue(), nStakeModifier, bnTargetPerCoinDay, nBlockFromTime,
