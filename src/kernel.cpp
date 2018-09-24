@@ -358,7 +358,6 @@ bool CheckStakeV1(unsigned int nTxPrevTime, const COutPoint &prevout,
     uint64_t nStakeModifier = pindexPrev->nStakeModifier;
     uint256 bnStakeModifierV2 = pindexPrev->bnStakeModifierV2;
     int nStakeModifierHeight = pindexPrev->nHeight;
-    int64_t nStakeModifierTime = pindexPrev->nTime;
 
     // Calculate hash
     CDataStream ss(SER_GETHASH, 0);

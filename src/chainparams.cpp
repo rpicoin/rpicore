@@ -264,7 +264,7 @@ public:
         nMasternodeCountDrift = 4;
         nMaxMoneyOut = 120000000 * COIN;
         nNewProtocolStartHeight = 750;
-        nNewProtocolStartTime = 1539963322;
+        nNewProtocolStartTime = 1537830552;
         nZerocoinStartHeight = nNewProtocolStartHeight;
         nZerocoinStartTime = nNewProtocolStartTime; // July 2, 2018
         const char* pszTimestamp = "I would rather be without a state than without a voice";
