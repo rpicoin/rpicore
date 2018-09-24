@@ -132,8 +132,10 @@ public:
         nRejectBlockOutdatedMajority = 950;
         nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 0;
-        nTargetTimespan =  16 * 60; // WISPR: 1 day
-        nTargetSpacing = 64;  // WISPR: 1 minute
+        nTargetTimespanV1 =  16 * 60; // WISPR Old: 1 day
+        nTargetTimespanV2 =  1 * 60; // WISPR New: 1 day
+        nTargetSpacingV1 = 64;  // WISPR Old: 1 minute
+        nTargetSpacingV2 = 1 * 60;  // WISPR New: 1 minute
         nMaturity = 100;
         nMasternodeCountDrift = 20;
         nMaxMoneyOut = 120000000 * COIN;
@@ -141,7 +143,7 @@ public:
         /** Height or Time Based Activations **/
         nLastPOWBlock = 450;
         nNewProtocolStartHeight = 400000;
-        nNewProtocolStartTime = 1539963322;
+        nNewProtocolStartTime = 1539963322; //Friday, October 19, 2018 3:35:22 PM
         nZerocoinStartHeight = nNewProtocolStartHeight;
         nZerocoinStartTime = nNewProtocolStartTime;
         /**
@@ -253,14 +255,16 @@ public:
         nRejectBlockOutdatedMajority = 75;
         nToCheckBlockUpgradeMajority = 100;
         nMinerThreads = 0;
-        nTargetTimespan =  16 * 60; // WISPR: 1 day
-        nTargetSpacing = 64;  // WISPR: 1 minute
+        nTargetTimespanV1 =  16 * 60; // WISPR Old: 1 day
+        nTargetTimespanV2 =  1 * 60; // WISPR New: 1 day
+        nTargetSpacingV1 = 64;  // WISPR Old: 1 minute
+        nTargetSpacingV2 = 1 * 60;  // WISPR New: 1 minute
         nLastPOWBlock = 450;
         nMaturity = 10;
         nMasternodeCountDrift = 4;
         nMaxMoneyOut = 120000000 * COIN;
-        nNewProtocolStartHeight = 7500;
-        nNewProtocolStartTime = 1537213175;
+        nNewProtocolStartHeight = 750;
+        nNewProtocolStartTime = 1539963322;
         nZerocoinStartHeight = nNewProtocolStartHeight;
         nZerocoinStartTime = nNewProtocolStartTime; // July 2, 2018
         const char* pszTimestamp = "I would rather be without a state than without a voice";
@@ -318,7 +322,7 @@ public:
         nPoolMaxTransactions = 2;
         strSporkKey = "04A8B319388C0F8588D238B9941DC26B26D3F9465266B368A051C5C100F79306A557780101FE2192FE170D7E6DEFDCBEE4C8D533396389C0DAFFDBC842B002243C";
         strObfuscationPoolDummyAddress = "mbTYaNZm7TaPt5Du65aPsL8FNTktufYydC";
-        nStartMasternodePayments = 1539963322;
+        nStartMasternodePayments = 1539963322; //Friday, October 19, 2018 3:35:22 PM
         nBudget_Fee_Confirmations = 3; // Number of confirmations for the finalization fee. We have to make this very short
         // here because we only have a 8 block finalization window on testnet
     }
@@ -348,8 +352,10 @@ public:
         nRejectBlockOutdatedMajority = 950;
         nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 1;
-        nTargetTimespan = 16 * 60; // WISPR: 1 day
-        nTargetSpacing = 64;        // WISPR: 1 minutes
+        nTargetTimespanV1 = 16 * 60; // WISPR Old: 1 day
+        nTargetTimespanV2 = 1 * 60; // WISPR New: 1 day
+        nTargetSpacingV1 = 64;        // WISPR Old: 1 minutes
+        nTargetSpacingV2 = 1 * 60;        // WISPR New: 1 minute
         bnProofOfWorkLimit = ~uint256(0) >> 1;
         genesis.nTime = 1411111111;
         genesis.nBits  = bnProofOfWorkLimit.GetCompact();

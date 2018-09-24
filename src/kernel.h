@@ -13,8 +13,10 @@
 // Supposed to be 2^n-1
 static const int STAKE_TIMESTAMP_MASK = 15;
 // MODIFIER_INTERVAL: time to elapse before new modifier is computed
-static const unsigned int MODIFIER_INTERVAL = 10 * 60;
-static const unsigned int MODIFIER_INTERVAL_TESTNET = 10 * 60;
+static const unsigned int MODIFIER_INTERVALV1 = 10 * 60;
+static const unsigned int MODIFIER_INTERVALV2 = 60;
+static const unsigned int MODIFIER_INTERVAL_TESTNETV1 = 10 * 60;
+static const unsigned int MODIFIER_INTERVAL_TESTNETV2 = 60;
 extern unsigned int nModifierInterval;
 extern unsigned int getIntervalVersion(bool fTestNet);
 
@@ -26,7 +28,6 @@ static const int MODIFIER_INTERVAL_RATIO = 3;
 bool GetKernelStakeModifier(uint256 hashBlockFrom, uint64_t& nStakeModifier, int& nStakeModifierHeight, int64_t& nStakeModifierTime, bool fPrintProofOfStake);
 uint256 ComputeStakeModifier(const CBlockIndex* pindexPrev, const uint256& kernel);
 bool ComputeNextStakeModifier(const CBlockIndex* pindexPrev, uint64_t& nStakeModifier, bool& fGeneratedStakeModifier);
-inline unsigned int GetTargetSpacing() { return 64; }
 bool CheckStakeV2(const CDataStream& ssUniqueID, CAmount nValueIn, const uint64_t nStakeModifier, const uint256& bnTarget, unsigned int nTimeBlockFrom, unsigned int& nTimeTx, uint256& hashProofOfStake);
 bool CheckStakeV1(unsigned int nTxPrevTime, const COutPoint &prevout,
                   unsigned int nTimeTx, uint256 &hashProofOfStake, int64_t nValueIn, CBlockIndex *pindexPrev,

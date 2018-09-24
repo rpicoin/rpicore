@@ -50,9 +50,7 @@ public:
     const std::vector<unsigned char>& AlertKey() const { return vAlertPubKey; }
     int GetDefaultPort() const { return nDefaultPort; }
     const uint256& ProofOfWorkLimit() const { return bnProofOfWorkLimit; }
-    const CBigNum& ProofOfWorkLimitBig() const { return bnProofOfWorkLimitBig; }
     const uint256& ProofOfStakeLimit() const { return bnProofOfStakeLimit; }
-    const CBigNum& ProofOfStakeLimitBig() const { return bnProofOfStakeLimitBig; }
     int SubsidyHalvingInterval() const { return nSubsidyHalvingInterval; }
     /** Used to check majorities for block version upgrade */
     int EnforceBlockUpgradeMajority() const { return nEnforceBlockUpgradeMajority; }
@@ -75,9 +73,24 @@ public:
     bool SkipProofOfWorkCheck() const { return fSkipProofOfWorkCheck; }
     /** Make standard checks */
     bool RequireStandard() const { return fRequireStandard; }
-    int64_t TargetTimespan() const { return nTargetTimespan; }
-    int64_t TargetSpacing() const { return nTargetSpacing; }
-    int64_t Interval() const { return nTargetTimespan / nTargetSpacing; }
+    int64_t TargetTimespanV1() const {
+            return nTargetTimespanV1;
+    }
+    int64_t TargetSpacingV1() const {
+            return nTargetSpacingV1;
+    }
+    int64_t IntervalV1() const {
+            return nTargetTimespanV1 / nTargetSpacingV1;
+        }
+    int64_t TargetTimespanV2() const {
+        return nTargetTimespanV2;
+    }
+    int64_t TargetSpacingV2() const {
+        return nTargetSpacingV2;
+    }
+    int64_t IntervalV2() const {
+        return nTargetTimespanV2 / nTargetSpacingV2;
+    }
     int COINBASE_MATURITY() const { return nMaturity; }
     CAmount MaxMoneyOut() const { return nMaxMoneyOut; }
     /** The masternode count that we will allow the see-saw reward payments to be off by */
@@ -145,8 +158,10 @@ protected:
     int nEnforceBlockUpgradeMajority;
     int nRejectBlockOutdatedMajority;
     int nToCheckBlockUpgradeMajority;
-    int64_t nTargetTimespan;
-    int64_t nTargetSpacing;
+    int64_t nTargetTimespanV1;
+    int64_t nTargetTimespanV2;
+    int64_t nTargetSpacingV1;
+    int64_t nTargetSpacingV2;
     int nLastPOWBlock;
     int nMasternodeCountDrift;
     int nMaturity;
@@ -190,8 +205,6 @@ protected:
     int nNewProtocolStartTime;
     int nZerocoinRequiredStakeDepth;
     uint256 bnProofOfStakeLimit;
-    CBigNum bnProofOfWorkLimitBig = CBigNum(bnProofOfWorkLimit);
-    CBigNum bnProofOfStakeLimitBig= CBigNum(bnProofOfStakeLimit);
 
 //    int nBlockEnforceSerialRange;
 //    int nBlockRecalculateAccumulators;

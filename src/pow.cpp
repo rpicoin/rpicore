@@ -34,9 +34,8 @@ unsigned int GetNextTargetRequired(const CBlockIndex* pindexLast, bool fProofOfS
     const CBlockIndex *pindexPrevPrev = GetLastBlockIndex(pindexPrev->pprev, fProofOfStake);
     if (pindexPrevPrev->pprev == NULL)
         return bnTargetLimit.GetCompact(); // second block
-
-    int64_t nTargetTimespan = Params().TargetTimespan();
-    int64_t nTargetSpacing = Params().TargetSpacing();
+    int64_t nTargetTimespan = Params().TargetTimespanV1();
+    int64_t nTargetSpacing = Params().TargetSpacingV1();
     int64_t nActualSpacing = pindexPrev->GetBlockTime() - pindexPrevPrev->GetBlockTime();
 
     if (nActualSpacing < 0)
@@ -76,9 +75,9 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
     }
 
     if (pindexLast->nHeight > Params().LAST_POW_BLOCK()) {
-        uint256 bnTargetLimit = Params().ProofOfStakeLimit();
-        int64_t nTargetSpacing = Params().TargetSpacing();
-        int64_t nTargetTimespan = Params().TargetTimespan();
+        uint256 bnTargetLimit = (~uint256(0) >> 24);
+        int64_t nTargetSpacing = 60;
+        int64_t nTargetTimespan = 60 * 40;
 
         int64_t nActualSpacing = 0;
         if (pindexLast->nHeight != 0)
@@ -132,7 +131,7 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
 
     uint256 bnNew(PastDifficultyAverage);
 
-    int64_t _nTargetTimespan = CountBlocks * Params().TargetSpacing();
+    int64_t _nTargetTimespan = CountBlocks * Params().TargetSpacingV2();
 
     if (nActualTimespan < _nTargetTimespan / 3)
         nActualTimespan = _nTargetTimespan / 3;

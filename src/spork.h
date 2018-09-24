@@ -84,19 +84,19 @@ public:
 
     uint256 GetHash()
     {
-        uint256 n = HashQuark(BEGIN(nSporkID), END(nTimeSigned));
-        return n;
+        return SerializeHash(*this);
     }
 
     ADD_SERIALIZE_METHODS;
 
     template <typename Stream, typename Operation>
-    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion)
-    {
+    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
         READWRITE(nSporkID);
         READWRITE(nValue);
         READWRITE(nTimeSigned);
-        READWRITE(vchSig);
+        if (!(nType & SER_GETHASH)) {
+            READWRITE(vchSig);
+        }
     }
 };
 
