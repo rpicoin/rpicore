@@ -261,7 +261,7 @@ void CMasternodeSync::Process()
     if (Params().NetworkID() != CBaseChainParams::REGTEST &&
         !IsBlockchainSynced() && RequestedMasternodeAssets > MASTERNODE_SYNC_SPORKS) return;
 
-    if(chainActive.Height() < Params().StartMasternodePayments()){
+    if(GetAdjustedTime() < Params().StartMasternodePayments()){
         RequestedMasternodeAssets = MASTERNODE_SYNC_FINISHED;
         return;
     }
