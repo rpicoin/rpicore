@@ -465,16 +465,13 @@ public:
         READWRITE(nMoneySupply);
         READWRITE(nFlags);
         READWRITE(nStakeModifier);
-        if(this->nVersion < 8) {
-            READWRITE(bnStakeModifierV2);
-        }
         if (IsProofOfStake()) {
             READWRITE(prevoutStake);
             READWRITE(nStakeTime);
         } else {
             const_cast<CDiskBlockIndex*>(this)->prevoutStake.SetNull();
             const_cast<CDiskBlockIndex*>(this)->nStakeTime = 0;
-//            const_cast<CDiskBlockIndex*>(this)->hashProofOfStake = GetProofOfWorkHash();
+            const_cast<CDiskBlockIndex*>(this)->hashProofOfStake = GetProofOfWorkHash();
         }
 
         // block header
@@ -489,6 +486,8 @@ public:
             READWRITE(nAccumulatorCheckpoint);
             READWRITE(mapZerocoinSupply);
             READWRITE(vMintDenominationsInBlock);
+        }else{
+            READWRITE(bnStakeModifierV2);
         }
 
     }
