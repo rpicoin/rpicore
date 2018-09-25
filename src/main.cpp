@@ -79,8 +79,9 @@ bool fCheckBlockIndex = false;
 bool fVerifyingBlocks = false;
 unsigned int nCoinCacheSize = 5000;
 bool fAlerts = DEFAULT_ALERTS;
-unsigned int nModifierInterval = 10 * 60; // time to elapse before new modifier is computed
+unsigned int nModifierInterval; // time to elapse before new modifier is computed
 unsigned int nStakeMinAge = 8 * 60 * 60;
+unsigned int nStakeMinAgeV2 = 60 * 60;
 int64_t nReserveBalance = 0;
 
 /** Fees smaller than this (in uwsp) are considered zero fee (for relaying and mining)
@@ -898,7 +899,7 @@ bool GetCoinAge(const CTransaction& tx, const unsigned int nTxTime, uint64_t& nC
         // Read block header
         CBlockHeader prevblock = pindex->GetBlockHeader();
 
-        if (prevblock.nTime + nStakeMinAge > nTxTime)
+        if (prevblock.nTime + GetStakeMinAge() > nTxTime)
             continue; // only count coins meeting min age requirement
 
         if (nTxTime < prevblock.nTime) {

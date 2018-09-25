@@ -19,6 +19,7 @@ static const unsigned int MODIFIER_INTERVAL_TESTNETV1 = 10 * 60;
 static const unsigned int MODIFIER_INTERVAL_TESTNETV2 = 60;
 extern unsigned int nModifierInterval;
 extern unsigned int getIntervalVersion(bool fTestNet);
+extern unsigned int GetStakeMinAge();
 
 // MODIFIER_INTERVAL_RATIO:
 // ratio of group interval length between the last group and the first group
@@ -36,7 +37,6 @@ bool stakeTargetHit(uint256 hashProofOfStake, int64_t nValueIn, uint256 bnTarget
 bool stakeTargetHitOld(uint256 hashProofOfStake, uint256 bnTargetPerCoinDay);
 bool Stake(CStakeInput* stakeInput, unsigned int nBits, unsigned int nTimeBlockFrom, unsigned int& nTimeTx, uint256& hashProofOfStake);
 bool StakeV2(CStakeInput* stakeInput, unsigned int nBits, unsigned int nTimeBlockFrom, unsigned int& nTimeTx, uint256& hashProofOfStake);
-
 
 // Check kernel hash target and coinstake signature
 // Sets hashProofOfStake on success return
