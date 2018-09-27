@@ -47,6 +47,47 @@ std::string zerocoinModulus = "2519590847565789349402718324004839857142928212620
 "8441436038339044149526344321901146575444541784240209246165157233507787077498171257724679629263863563732899121548"
 "31438167899885040445364023527381951378636564391212010397122822120720357";
 
+std::string strHexModulus = "c7970ceedcc3b0754490201a7aa613cd73911081c790f5f1a8726f463550bb5b7ff0db8e1ea1189ec72f93d1650011bd721aeeacc2acde32a04107f0648c2813a31f5b0b7765ff8b44b4b6ffc93384b646eb09c7cf5e8592d40ea33c80039f35b4f14a04b51f7bfd781be4d1673164ba8eb991c2c4d730bbbe35f592bdef524af7e8daefd26c66fc02c479af89d64d373f442709439de66ceb955f3ea37d5159f6135809f85334b5cb1813addc80cd05609f10ac6a95ad65872c909525bdad32bc729592642920f24c61dc5b3c3b7923e56b16a4d9d373d8721f24a3fc0f1b3131f55615172866bccc30f95054c824e733a5eb6817f7bc16399d48c6361cc7e5";
+
+BOOST_AUTO_TEST_CASE(bignum_setdecimal)
+{
+    CBigNum bnDec;
+    bnDec.SetDec(zerocoinModulus);
+    CBigNum bnHex;
+    bnHex.SetHex(strHexModulus);
+    BOOST_CHECK_MESSAGE(bnDec == bnHex, "CBigNum.SetDec() does not work correctly");
+}
+
+std::string negstrHexModulus = "-c7970ceedcc3b0754490201a7aa613cd73911081c790f5f1a8726f463550bb5b7ff0db8e1ea1189ec72f93d1650011bd721aeeacc2acde32a04107f0648c2813a31f5b0b7765ff8b44b4b6ffc93384b646eb09c7cf5e8592d40ea33c80039f35b4f14a04b51f7bfd781be4d1673164ba8eb991c2c4d730bbbe35f592bdef524af7e8daefd26c66fc02c479af89d64d373f442709439de66ceb955f3ea37d5159f6135809f85334b5cb1813addc80cd05609f10ac6a95ad65872c909525bdad32bc729592642920f24c61dc5b3c3b7923e56b16a4d9d373d8721f24a3fc0f1b3131f55615172866bccc30f95054c824e733a5eb6817f7bc16399d48c6361cc7e5";
+std::string str_a = "775897c5463939bf29a02816aba7b1741162e1f6b052cd32fec36c44dfee7d4b5162de78bb0b448cb305b0a9bd7e006aec62d7c1e94a31003c2decbdc6fd7c9b261cb88801c51e7cee71a215ff113ccbd02069cf29671e6302944ca5780a2f626eb9046fa6872968addc93c74d09cf6b2872bc4c6bd08e89324cc7e9fb921488";
+std::string str_b = "-775897c5463939bf29a02816aba7b1741162e1f6b052cd32fec36c44dfee7d4b5162de78bb0b448cb305b0a9bd7e006aec62d7c1e94a31003c2decbdc6fd7c9b261cb88801c51e7cee71a215ff113ccbd02069cf29671e6302944ca5780a2f626eb9046fa6872968addc93c74d09cf6b2872bc4c6bd08e89324cc7e9fb921488";
+
+BOOST_AUTO_TEST_CASE(bignum_basic_tests)
+{
+    CBigNum bn, bn2;
+    std::vector<unsigned char> vch;
+
+    bn.SetHex(strHexModulus);
+    vch = bn.getvch();
+    bn2.setvch(vch);
+    BOOST_CHECK_MESSAGE(bn2 == bn, "CBigNum.setvch() or CBigNum.getvch() does not work correctly");
+
+    bn.SetHex(negstrHexModulus);
+    vch = bn.getvch();
+    bn2.setvch(vch);
+    BOOST_CHECK_MESSAGE(bn2 == bn, "CBigNum.setvch() or CBigNum.getvch() does not work correctly");
+
+    bn.SetHex(str_a);
+    vch = bn.getvch();
+    bn2.setvch(vch);
+    BOOST_CHECK_MESSAGE(bn2 == bn, "CBigNum.setvch() or CBigNum.getvch() does not work correctly");
+
+    bn.SetHex(str_b);
+    vch = bn.getvch();
+    bn2.setvch(vch);
+    BOOST_CHECK_MESSAGE(bn2 == bn, "CBigNum.setvch() or CBigNum.getvch() does not work correctly");
+}
+
 //ZQ_ONE mints
 std::string rawTx1 = "0100000020fa905b01c300debee79c8061f8fa5e6b252435a26e3fe006dd13e19cf0a00757136c5c01010000004847304402200da2e47992271f1256d68f10df7113f3179b3eab11e8e38fa2d2b8bfb1a10bc0022052bce179d580f0150d67b686c891b2e6d863f1314404f27caba599dc14a92d0c01ffffffff020000000000000000000011c9d20c0000004341044815561eba60fd39e32b76f349ff8fcd9119f71d07e567eace3b125b0e6dd1e0e6508d29917b3329ae4aee4e0484984979a76692a33faa5644c1e4331e838115ac00000000";
 std::string rawTxpub1 = "473ff507157523e74680ab37f586aae52e53f3f912492b19f7e14ab120d54238ae30b338f39662a410e6d707784d730f24d19dd9f75e85221b51b902a19d50c120844d15bf8a3b9e346355857e7381e5be19c6d3d22e01845565819aae7cacc93d75f1ef0c7b09d823865cdfa3671715e5bfc8dd8fc8baef26216e7941fa0c3";
@@ -452,17 +493,6 @@ BOOST_AUTO_TEST_CASE(checksum_tests)
         BOOST_CHECK_MESSAGE(checksumParsed == vChecksums[i], "checksum parse failed");
         i++;
     }
-}
-
-string strHexModulus = "0xc7970ceedcc3b0754490201a7aa613cd73911081c790f5f1a8726f463550bb5b7ff0db8e1ea1189ec72f93d1650011bd721aeeacc2acde32a04107f0648c2813a31f5b0b7765ff8b44b4b6ffc93384b646eb09c7cf5e8592d40ea33c80039f35b4f14a04b51f7bfd781be4d1673164ba8eb991c2c4d730bbbe35f592bdef524af7e8daefd26c66fc02c479af89d64d373f442709439de66ceb955f3ea37d5159f6135809f85334b5cb1813addc80cd05609f10ac6a95ad65872c909525bdad32bc729592642920f24c61dc5b3c3b7923e56b16a4d9d373d8721f24a3fc0f1b3131f55615172866bccc30f95054c824e733a5eb6817f7bc16399d48c6361cc7e5";
-
-BOOST_AUTO_TEST_CASE(bignum_setdecimal)
-{
-    CBigNum bnDec;
-    bnDec.SetDec(zerocoinModulus);
-    CBigNum bnHex;
-    bnHex.SetHex(strHexModulus);
-    BOOST_CHECK_MESSAGE(bnDec == bnHex, "CBigNum.SetDec() does not work correctly");
 }
 
 BOOST_AUTO_TEST_CASE(test_checkpoints)
