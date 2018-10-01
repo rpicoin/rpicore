@@ -683,7 +683,8 @@ DBErrors CWalletDB::LoadWallet(CWallet* pwallet)
         LOCK(pwallet->cs_wallet);
         int nMinVersion = 0;
         if (Read((string) "minversion", nMinVersion)) {
-            if (nMinVersion > CLIENT_VERSION)
+            // TODO Remove with version 0.6.1
+            if (nMinVersion > CLIENT_VERSION && CLIENT_VERSION > 61000)
                 return DB_TOO_NEW;
             pwallet->LoadMinVersion(nMinVersion);
         }
@@ -781,7 +782,8 @@ DBErrors CWalletDB::FindWalletTx(CWallet* pwallet, vector<uint256>& vTxHash, vec
         LOCK(pwallet->cs_wallet);
         int nMinVersion = 0;
         if (Read((string) "minversion", nMinVersion)) {
-            if (nMinVersion > CLIENT_VERSION)
+            // TODO Remove with version 0.6.1
+            if (nMinVersion > CLIENT_VERSION && CLIENT_VERSION > 61000)
                 return DB_TOO_NEW;
             pwallet->LoadMinVersion(nMinVersion);
         }

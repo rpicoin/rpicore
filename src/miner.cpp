@@ -164,28 +164,28 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
             if (!fStakeFound)
                 return NULL;
         }else{
-            boost::this_thread::interruption_point();
-            CBlockIndex* pindexPrev = chainActive.Tip();
-            pblock->nTime = GetAdjustedTime();
-            pblock->nBits = GetNextTargetRequired(pindexPrev, fProofOfStake);
-            CMutableTransaction txCoinStake;
-            txCoinStake.nTime &= ~STAKE_TIMESTAMP_MASK;
-            int64_t nSearchTime = txCoinStake.nTime; // search to current time
-            bool fStakeFound = false;
-            if (nSearchTime >= nLastCoinStakeSearchTime) {
-                nTxNewTime &= ~STAKE_TIMESTAMP_MASK;
-                if (pwallet->CreateCoinStake(*pwallet, pblock->nBits, nSearchTime - nLastCoinStakeSearchTime, txCoinStake, txCoinStake.nTime)) {
-                    pblock->vtx[0].nTime = pblock->nTime = txCoinStake.nTime;
-                    nTxNewTime = txCoinStake.nTime;
-                    pblock->vtx[0].vout[0].SetEmpty();
-                    pblock->vtx.push_back(CTransaction(txCoinStake));
-                    fStakeFound = true;
-                }
-                nLastCoinStakeSearchInterval = nSearchTime - nLastCoinStakeSearchTime;
-                nLastCoinStakeSearchTime = nSearchTime;
-            }
-            if (!fStakeFound)
-                return NULL;
+             boost::this_thread::interruption_point();
+             CBlockIndex* pindexPrev = chainActive.Tip();
+             pblock->nTime = GetAdjustedTime();
+             pblock->nBits = GetNextTargetRequired(pindexPrev, fProofOfStake);
+             CMutableTransaction txCoinStake;
+             txCoinStake.nTime &= ~STAKE_TIMESTAMP_MASK;
+             int64_t nSearchTime = txCoinStake.nTime; // search to current time
+             bool fStakeFound = false;
+             if (nSearchTime >= nLastCoinStakeSearchTime) {
+                 nTxNewTime &= ~STAKE_TIMESTAMP_MASK;
+                 if (pwallet->CreateCoinStake(*pwallet, pblock->nBits, nSearchTime - nLastCoinStakeSearchTime, txCoinStake, txCoinStake.nTime)) {
+                     pblock->vtx[0].nTime = pblock->nTime = txCoinStake.nTime;
+                     nTxNewTime = txCoinStake.nTime;
+                     pblock->vtx[0].vout[0].SetEmpty();
+                     pblock->vtx.push_back(CTransaction(txCoinStake));
+                     fStakeFound = true;
+                 }
+                 nLastCoinStakeSearchInterval = nSearchTime - nLastCoinStakeSearchTime;
+                 nLastCoinStakeSearchTime = nSearchTime;
+             }
+             if (!fStakeFound)
+                 return NULL;
         }
     }
 

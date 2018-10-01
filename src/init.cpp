@@ -1591,10 +1591,18 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
 
         if (GetBoolArg("-upgradewallet", fFirstRun)) {
             int nMaxVersion = GetArg("-upgradewallet", 0);
+            if(nMaxVersion < FEATURE_LATEST){
+                nMaxVersion = FEATURE_LATEST;
+            }
             if (nMaxVersion == 0) // the -upgradewallet without argument case
             {
                 LogPrintf("Performing wallet upgrade to %i\n", FEATURE_LATEST);
                 nMaxVersion = CLIENT_VERSION;
+                // TODO Remove with version 0.6.1
+                if(nMaxVersion < FEATURE_LATEST){
+                    nMaxVersion = FEATURE_LATEST;
+                    LogPrintf("nMaxVersion: %d,  pwalletMain->GetVersion(): %d\n", nMaxVersion, pwalletMain->GetVersion());
+                }
                 pwalletMain->SetMinVersion(FEATURE_LATEST); // permanently upgrade the wallet immediately
             } else
                 LogPrintf("Allowing wallet upgrade up to %i\n", nMaxVersion);
