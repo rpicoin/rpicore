@@ -620,8 +620,9 @@ void CoinControlDialog::updateLabels(WalletModel* model, QDialog* dialog)
             dPriorityNeeded = AllowFreeThreshold(); // not enough data, back to hard-coded
         fAllowFree = (dPriority >= dPriorityNeeded);
 
+        bool newProtocolStart = chainActive.Height() >= Params().NEW_PROTOCOLS_STARTHEIGHT();
         if (fSendFreeTransactions)
-            if (fAllowFree && nBytes <= MAX_FREE_TRANSACTION_CREATE_SIZE)
+            if (fAllowFree && newProtocolStart && nBytes <= MAX_FREE_TRANSACTION_CREATE_SIZEV2)
                 nPayFee = 0;
 
         if (nPayAmount > 0) {
@@ -683,7 +684,12 @@ void CoinControlDialog::updateLabels(WalletModel* model, QDialog* dialog)
     }
 
     // turn labels "red"
-    l5->setStyleSheet((nBytes >= MAX_FREE_TRANSACTION_CREATE_SIZE) ? "color:red;" : ""); // Bytes >= 1000
+    bool newProtocolStart = chainActive.Height() >= Params().NEW_PROTOCOLS_STARTHEIGHT();
+    if(newProtocolStart){
+        l5->setStyleSheet((nBytes >= MAX_FREE_TRANSACTION_CREATE_SIZEV2) ? "color:red;" : ""); // Bytes >= 1000
+    }else{
+        l5->setStyleSheet((nBytes >= MAX_FREE_TRANSACTION_CREATE_SIZE) ? "color:red;" : ""); // Bytes >= 1000
+    }
     l6->setStyleSheet((dPriority > 0 && !fAllowFree) ? "color:red;" : "");               // Priority < "medium"
     l7->setStyleSheet((fDust) ? "color:red;" : "");                                      // Dust = "yes"
 
