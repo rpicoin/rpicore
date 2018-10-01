@@ -592,7 +592,7 @@ UniValue getblocktemplate(const UniValue& params, bool fHelp)
         result.push_back(Pair("payee_amount", ""));
     }
 
-    result.push_back(Pair("masternode_payments", pblock->nTime > Params().StartMasternodePayments()));
+    result.push_back(Pair("masternode_payments", (int64_t)(pindexPrev->nHeight + 1) >= Params().NEW_PROTOCOLS_STARTHEIGHT()));
     result.push_back(Pair("enforce_masternode_payments", true));
 
     return result;
