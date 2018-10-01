@@ -3127,6 +3127,10 @@ https://www.transifex.com/WisprProject/WisprProject-translations</translation>
         <translation>Os desenvolvedores do Dash Core</translation>
     </message>
     <message>
+        <source>The PIVX Core developers</source>
+        <translation>Os desenvolvedores do PIVX Core</translation>
+    </message>
+    <message>
         <source>The WISPR Core developers</source>
         <translation>Os desenvolvedores do WISPR Core</translation>
     </message>

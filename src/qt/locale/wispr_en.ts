@@ -5433,6 +5433,11 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1"/>
+        <source>The PIVX Core developers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source>The WISPR Core developers</source>
         <translation type="unfinished"></translation>
     </message>

@@ -3916,6 +3916,10 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
         <translation>The Dash Core developers</translation>
     </message>
     <message>
+        <source>The PIVX Core developers</source>
+        <translation>The PIVX Core developers</translation>
+    </message>
+    <message>
         <source>The WISPR Core developers</source>
         <translation>The WISPR Core developers</translation>
     </message>

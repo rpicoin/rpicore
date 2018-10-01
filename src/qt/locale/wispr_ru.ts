@@ -4244,6 +4244,10 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Разработчики Dash Core</translation>
     </message>
     <message>
+        <source>The PIVX Core developers</source>
+        <translation>Разработчики PIVX Core</translation>
+    </message>
+    <message>
         <source>The WISPR Core developers</source>
         <translation>Разработчики WISPR Core</translation>
     </message>

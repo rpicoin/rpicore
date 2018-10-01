@@ -4161,6 +4161,10 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Dash Core utvecklarna</translation>
     </message>
     <message>
+        <source>The PIVX Core developers</source>
+        <translation>PIVX Core utvecklarna</translation>
+    </message>
+    <message>
         <source>The WISPR Core developers</source>
         <translation>WISPR Core utvecklarna</translation>
     </message>

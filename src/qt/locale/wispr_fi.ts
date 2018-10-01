@@ -2215,6 +2215,10 @@ Please check the address and try again.</source>
         <translation>Dash Core kehittäjät</translation>
     </message>
     <message>
+        <source>The PIVX Core developers</source>
+        <translation>PIVX core kehittäjät</translation>
+    </message>
+    <message>
         <source>The WISPR Core developers</source>
         <translation>WISPR core kehittäjät</translation>
     </message>

@@ -2473,6 +2473,10 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
         <translation>La Dash kerno programistoj</translation>
     </message>
     <message>
+        <source>The PIVX Core developers</source>
+        <translation>La PIVX kerno programistoj</translation>
+    </message>
+    <message>
         <source>The WISPR Core developers</source>
         <translation>La WISPR kerno programistoj</translation>
     </message>

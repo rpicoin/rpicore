@@ -4245,6 +4245,10 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <translation>Los desarrolladores de Dash Core</translation>
     </message>
     <message>
+        <source>The PIVX Core developers</source>
+        <translation>Los desarrolladores de PIVX Core</translation>
+    </message>
+    <message>
         <source>The WISPR Core developers</source>
         <translation>Los desarrolladores de WISPR Core</translation>
     </message>

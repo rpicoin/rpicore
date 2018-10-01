@@ -4236,6 +4236,10 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <translation>Die Dash Core Entwickler</translation>
     </message>
     <message>
+        <source>The PIVX Core developers</source>
+        <translation>Die PIVX Core Entwickler</translation>
+    </message>
+    <message>
         <source>The WISPR Core developers</source>
         <translation>Die WISPR Core Entwickler</translation>
     </message>

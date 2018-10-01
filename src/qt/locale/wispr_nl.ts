@@ -4245,6 +4245,10 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>De Dash Kernontwikkelaars</translation>
     </message>
     <message>
+        <source>The PIVX Core developers</source>
+        <translation>De PIVX Kernontwikkelaars</translation>
+    </message>
+    <message>
         <source>The WISPR Core developers</source>
         <translation>De WISPR Kernontwikkelaars</translation>
     </message>

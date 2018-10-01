@@ -4245,6 +4245,10 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Dash Core 개발자</translation>
     </message>
     <message>
+        <source>The PIVX Core developers</source>
+        <translation>PIVX Core 개발자</translation>
+    </message>
+    <message>
         <source>The WISPR Core developers</source>
         <translation>WISPR Core 개발자</translation>
     </message>

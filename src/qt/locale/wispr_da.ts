@@ -4244,6 +4244,10 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>DASH "core" udviklerne</translation>
     </message>
     <message>
+        <source>The PIVX Core developers</source>
+        <translation>PIVX "core" udviklerne</translation>
+    </message>
+    <message>
         <source>The WISPR Core developers</source>
         <translation>WISPR "core" udviklerne</translation>
     </message>
