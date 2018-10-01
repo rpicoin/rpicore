@@ -166,7 +166,6 @@ public:
         txNew.vin[0].scriptSig = CScript() << 0 << CScriptNum(42) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
         txNew.vout[0].nValue = 125000 * COIN;
         txNew.vout[0].scriptPubKey = CScript() << ParseHex("0433f2952f9002c9088a19607e3d4a54d3d9dfe1cf5c78168b8ba6524fb19fc5d7d3202948e6b8b09e98c425875af6af78fd4f64ff07d97a9ae31ebda5162fbac3") << OP_CHECKSIG;
-//        printf("Main net\n");
         genesis.vtx.push_back(txNew);
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
@@ -176,11 +175,11 @@ public:
         genesis.nNonce = 36156;
 
         hashGenesisBlock = genesis.GetHash();
-//        printf("genesis = %s\n", genesis.ToString().c_str());
         assert(hashGenesisBlock == uint256("0x0000ec93e0a3fe0aafa3be7dafe1290f5fca039a4037dd5174bc3dd7a35d67f0"));
         assert(genesis.hashMerkleRoot == uint256("0xbcd0064f46daed0b3c1ccff16656a0da04b5509924118b7c13d21c81d62ec521"));
 
         vSeeds.push_back(CDNSSeedData("wispr.tech", "dnsseed.wispr.tech"));     // Primary DNS Seeder for wispr
+        vSeeds.push_back(CDNSSeedData("wispr-seeds.nl", "main.wispr-seeds.nl"));     // Secondary DNS Seeder for wispr
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 73);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 135);
@@ -249,8 +248,6 @@ public:
         pchMessageStart[3] = 0x78;
         vAlertPubKey=ParseHex("04b20dd657f5e4fe0cf9aebb956498c383bac98a079c1003df02c2f121574cd280b8900248a8c6a43074b356e670ef83ec1aadfec60602df7c2366bae732372bba");
         nDefaultPort = 17002;
-//        bnProofOfWorkLimit = ~uint256(0) >> 16; // WISPR starting difficulty is 1 / 2^12
-//        bnProofOfStakeLimit = ~uint256(0) >> 48;
         nEnforceBlockUpgradeMajority = 51;
         nRejectBlockOutdatedMajority = 75;
         nToCheckBlockUpgradeMajority = 100;
@@ -277,8 +274,6 @@ public:
         txNew2.vout.resize(1);
         txNew2.vin[0].scriptSig = CScript() << 0 << CScriptNum(42) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
         txNew2.vout[0].SetEmpty();
-//        txNew2.vout[0].nValue = 125000 * COIN;
-//        txNew2.vout[0].scriptPubKey = CScript() << ParseHex("0433f2952f9002c9088a19607e3d4a54d3d9dfe1cf5c78168b8ba6524fb19fc5d7d3202948e6b8b09e98c425875af6af78fd4f64ff07d97a9ae31ebda5162fbac3") << OP_CHECKSIG;
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis.vtx.push_back(txNew2);
         genesis.hashPrevBlock = 0;
@@ -289,9 +284,6 @@ public:
         genesis.nNonce   = 142000;
 
         hashGenesisBlock = genesis.GetHash();
-//        printf("Test net\n");
-//        printf("genesis = %s\n", genesis.ToString().c_str());
-//        printf("genesis.hashMerkleRoot = %s\n", genesis.hashMerkleRoot.ToString().c_str());
 
         assert(hashGenesisBlock == uint256("03205c57ebefb02d86c2c0c2de368fa48e92f7df7240f1b528ebbeae70fdbdb1"));
         assert(genesis.hashMerkleRoot == uint256("0x26069b04c7c7b5b8773824b15cfbf0ddaf11ee261657a1aeb28aa5c8163909ee"));
@@ -300,6 +292,7 @@ public:
         vFixedSeeds.clear();
         vSeeds.clear();
         vSeeds.push_back(CDNSSeedData("wispr.tech", "testnet-seed.wispr.tech"));     // Primary DNS Seeder for testnet wispr
+        vSeeds.push_back(CDNSSeedData("wispr-seeds.nl", "test.wispr-seeds.nl"));     // Secondary DNS Seeder for testnet wispr
 
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 110);
