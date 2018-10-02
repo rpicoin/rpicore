@@ -5254,8 +5254,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Всички права запазени (c) 2014-%i Dash Core разработчици</translation>
     </message>
     <message>
-        <source>Copyright (C) 2015-%i The WISPR Core Developers</source>
-        <translation>Всички права запазени (c) 2015-%i WISPR Core разработчици</translation>
+        <source>Copyright (C) 2015-%i The PIVX Core Developers</source>
+        <translation>Всички права запазени (c) 2015-%i PIVX Core разработчици</translation>
+    </message>
+    <message>
+        <source>Copyright (C) 2017-%i The WISPR Core Developers</source>
+        <translation>Всички права запазени (c) 2017-%i WISPR Core разработчици</translation>
     </message>
     <message>
         <source>Corrupted block database detected</source>

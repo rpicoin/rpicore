@@ -6741,7 +6741,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1"/>
-        <source>Copyright (C) 2015-%i The WISPR Core Developers</source>
+        <source>Copyright (C) 2015-%i The PIVX Core Developers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Copyright (C) 2017-%i The WISPR Core Developers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
