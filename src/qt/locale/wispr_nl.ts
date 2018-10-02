@@ -5270,8 +5270,12 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Copyright (C) 2014-%i The Dash Kernontwikkelaars</translation>
     </message>
     <message>
-        <source>Copyright (C) 2015-%i The WISPR Core Developers</source>
-        <translation>Copyright (C) 2015-%i The WISPR Kernontwikkelaars</translation>
+        <source>Copyright (C) 2015-%i The PIVX Core Developers</source>
+        <translation>Copyright (C) 2015-%i The PIVX Kernontwikkelaars</translation>
+    </message>
+    <message>
+        <source>Copyright (C) 2017-%i The WISPR Core Developers</source>
+        <translation>Copyright (C) 2017-%i The WISPR Kernontwikkelaars</translation>
     </message>
     <message>
         <source>Corrupted block database detected</source>
