@@ -1,5 +1,5 @@
 ---
-name: "wispr-win-3.2"
+name: "wispr-win-0.3"
 enable_cache: true
 suites:
 - "trusty"

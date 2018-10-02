@@ -1,5 +1,5 @@
 ---
-name: "wispr-linux-3.2"
+name: "wispr-linux-0.3"
 enable_cache: true
 suites:
 - "trusty"

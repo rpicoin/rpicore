@@ -1,5 +1,5 @@
 ---
-name: "wispr-osx-3.2"
+name: "wispr-osx-0.3"
 enable_cache: true
 suites:
 - "trusty"
