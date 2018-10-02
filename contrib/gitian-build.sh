@@ -279,7 +279,7 @@ then
         echo ""
         echo "Compiling ${VERSION} Linux"
         echo ""
-        ./bin/gbuild -j ${proc} -m ${mem} --commit wispr=${COMMIT} --url wispr=${url} ../core/contrib/gitian-descriptors/gitian-linux.yml
+        ./bin/gbuild -j ${proc} -m ${mem} --commit core=${COMMIT} --url core=${url} ../core/contrib/gitian-descriptors/gitian-linux.yml
         ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../core/contrib/gitian-descriptors/gitian-linux.yml
         mv build/out/wispr-*.tar.gz build/out/src/wispr-*.tar.gz ../core-binaries/${VERSION}
     fi
@@ -289,7 +289,7 @@ then
         echo ""
         echo "Compiling ${VERSION} Windows"
         echo ""
-        ./bin/gbuild -j ${proc} -m ${mem} --commit wispr=${COMMIT} --url wispr=${url} ../core/contrib/gitian-descriptors/gitian-win.yml
+        ./bin/gbuild -j ${proc} -m ${mem} --commit core=${COMMIT} --url core=${url} ../core/contrib/gitian-descriptors/gitian-win.yml
         ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../core/contrib/gitian-descriptors/gitian-win.yml
         mv build/out/wispr-*-win-unsigned.tar.gz inputs/wispr-win-unsigned.tar.gz
         mv build/out/wispr-*.zip build/out/wispr-*.exe ../core-binaries/${VERSION}
@@ -300,7 +300,7 @@ then
         echo ""
         echo "Compiling ${VERSION} Mac OSX"
         echo ""
-        ./bin/gbuild -j ${proc} -m ${mem} --commit wispr=${COMMIT} --url wispr=${url} ../core/contrib/gitian-descriptors/gitian-osx.yml
+        ./bin/gbuild -j ${proc} -m ${mem} --commit core=${COMMIT} --url core=${url} ../core/contrib/gitian-descriptors/gitian-osx.yml
         ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../core/contrib/gitian-descriptors/gitian-osx.yml
         mv build/out/wispr-*-osx-unsigned.tar.gz inputs/wispr-osx-unsigned.tar.gz
         mv build/out/wispr-*.tar.gz build/out/wispr-*.dmg ../core-binaries/${VERSION}
@@ -311,7 +311,7 @@ then
         echo ""
         echo "Compiling ${VERSION} AArch64"
         echo ""
-        ./bin/gbuild -j ${proc} -m ${mem} --commit wispr=${COMMIT} --url wispr=${url} ../core/contrib/gitian-descriptors/gitian-aarch64.yml
+        ./bin/gbuild -j ${proc} -m ${mem} --commit core=${COMMIT} --url core=${url} ../core/contrib/gitian-descriptors/gitian-aarch64.yml
         ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-aarch64 --destination ../gitian.sigs/ ../core/contrib/gitian-descriptors/gitian-aarch64.yml
         mv build/out/wispr-*.tar.gz build/out/src/wispr-*.tar.gz ../core-binaries/${VERSION}
     fi
