@@ -252,7 +252,7 @@ then
 fi
 
 # Set up build
-pushd ./wispr
+pushd ./core
 git fetch
 git checkout ${COMMIT}
 popd
@@ -261,7 +261,7 @@ popd
 if [[ $build = true ]]
 then
     # Make output folder
-    mkdir -p ./wispr-binaries/${VERSION}
+    mkdir -p ./core-binaries/${VERSION}
 
     # Build Dependencies
     echo ""
@@ -271,7 +271,7 @@ then
     mkdir -p inputs
     wget -N -P inputs $osslPatchUrl
     wget -N -P inputs $osslTarUrl
-    make -C ../wispr/depends download SOURCES_PATH=`pwd`/cache/common
+    make -C ../core/depends download SOURCES_PATH=`pwd`/cache/common
 
     # Linux
     if [[ $linux = true ]]
@@ -279,9 +279,9 @@ then
         echo ""
         echo "Compiling ${VERSION} Linux"
         echo ""
-        ./bin/gbuild -j ${proc} -m ${mem} --commit wispr=${COMMIT} --url wispr=${url} ../wispr/contrib/gitian-descriptors/gitian-linux.yml
-        ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../wispr/contrib/gitian-descriptors/gitian-linux.yml
-        mv build/out/wispr-*.tar.gz build/out/src/wispr-*.tar.gz ../wispr-binaries/${VERSION}
+        ./bin/gbuild -j ${proc} -m ${mem} --commit wispr=${COMMIT} --url wispr=${url} ../core/contrib/gitian-descriptors/gitian-linux.yml
+        ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../core/contrib/gitian-descriptors/gitian-linux.yml
+        mv build/out/wispr-*.tar.gz build/out/src/wispr-*.tar.gz ../core-binaries/${VERSION}
     fi
     # Windows
     if [[ $windows = true ]]
@@ -289,10 +289,10 @@ then
         echo ""
         echo "Compiling ${VERSION} Windows"
         echo ""
-        ./bin/gbuild -j ${proc} -m ${mem} --commit wispr=${COMMIT} --url wispr=${url} ../wispr/contrib/gitian-descriptors/gitian-win.yml
-        ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../wispr/contrib/gitian-descriptors/gitian-win.yml
+        ./bin/gbuild -j ${proc} -m ${mem} --commit wispr=${COMMIT} --url wispr=${url} ../core/contrib/gitian-descriptors/gitian-win.yml
+        ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../core/contrib/gitian-descriptors/gitian-win.yml
         mv build/out/wispr-*-win-unsigned.tar.gz inputs/wispr-win-unsigned.tar.gz
-        mv build/out/wispr-*.zip build/out/wispr-*.exe ../wispr-binaries/${VERSION}
+        mv build/out/wispr-*.zip build/out/wispr-*.exe ../core-binaries/${VERSION}
     fi
     # Mac OSX
     if [[ $osx = true ]]
@@ -300,10 +300,10 @@ then
         echo ""
         echo "Compiling ${VERSION} Mac OSX"
         echo ""
-        ./bin/gbuild -j ${proc} -m ${mem} --commit wispr=${COMMIT} --url wispr=${url} ../wispr/contrib/gitian-descriptors/gitian-osx.yml
-        ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../wispr/contrib/gitian-descriptors/gitian-osx.yml
+        ./bin/gbuild -j ${proc} -m ${mem} --commit wispr=${COMMIT} --url wispr=${url} ../core/contrib/gitian-descriptors/gitian-osx.yml
+        ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../core/contrib/gitian-descriptors/gitian-osx.yml
         mv build/out/wispr-*-osx-unsigned.tar.gz inputs/wispr-osx-unsigned.tar.gz
-        mv build/out/wispr-*.tar.gz build/out/wispr-*.dmg ../wispr-binaries/${VERSION}
+        mv build/out/wispr-*.tar.gz build/out/wispr-*.dmg ../core-binaries/${VERSION}
     fi
     # AArch64
     if [[ $aarch64 = true ]]
@@ -311,9 +311,9 @@ then
         echo ""
         echo "Compiling ${VERSION} AArch64"
         echo ""
-        ./bin/gbuild -j ${proc} -m ${mem} --commit wispr=${COMMIT} --url wispr=${url} ../wispr/contrib/gitian-descriptors/gitian-aarch64.yml
-        ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-aarch64 --destination ../gitian.sigs/ ../wispr/contrib/gitian-descriptors/gitian-aarch64.yml
-        mv build/out/wispr-*.tar.gz build/out/src/wispr-*.tar.gz ../wispr-binaries/${VERSION}
+        ./bin/gbuild -j ${proc} -m ${mem} --commit wispr=${COMMIT} --url wispr=${url} ../core/contrib/gitian-descriptors/gitian-aarch64.yml
+        ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-aarch64 --destination ../gitian.sigs/ ../core/contrib/gitian-descriptors/gitian-aarch64.yml
+        mv build/out/wispr-*.tar.gz build/out/src/wispr-*.tar.gz ../core-binaries/${VERSION}
     fi
     popd
 
@@ -341,32 +341,32 @@ then
     echo ""
     echo "Verifying v${VERSION} Linux"
     echo ""
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-linux ../wispr/contrib/gitian-descriptors/gitian-linux.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-linux ../core/contrib/gitian-descriptors/gitian-linux.yml
     # Windows
     echo ""
     echo "Verifying v${VERSION} Windows"
     echo ""
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-unsigned ../wispr/contrib/gitian-descriptors/gitian-win.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-unsigned ../core/contrib/gitian-descriptors/gitian-win.yml
     # Mac OSX
     echo ""
     echo "Verifying v${VERSION} Mac OSX"
     echo ""
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-unsigned ../wispr/contrib/gitian-descriptors/gitian-osx.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-unsigned ../core/contrib/gitian-descriptors/gitian-osx.yml
     # AArch64
     echo ""
     echo "Verifying v${VERSION} AArch64"
     echo ""
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-aarch64 ../wispr/contrib/gitian-descriptors/gitian-aarch64.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-aarch64 ../core/contrib/gitian-descriptors/gitian-aarch64.yml
     # Signed Windows
     echo ""
     echo "Verifying v${VERSION} Signed Windows"
     echo ""
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../wispr/contrib/gitian-descriptors/gitian-osx-signer.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../core/contrib/gitian-descriptors/gitian-osx-signer.yml
     # Signed Mac OSX
     echo ""
     echo "Verifying v${VERSION} Signed Mac OSX"
     echo ""
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../wispr/contrib/gitian-descriptors/gitian-osx-signer.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../core/contrib/gitian-descriptors/gitian-osx-signer.yml
     popd
 fi
 
@@ -381,10 +381,10 @@ then
         echo ""
         echo "Signing ${VERSION} Windows"
         echo ""
-        ./bin/gbuild -i --commit signature=${COMMIT} ../wispr/contrib/gitian-descriptors/gitian-win-signer.yml
-        ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../wispr/contrib/gitian-descriptors/gitian-win-signer.yml
-        mv build/out/wispr-*win64-setup.exe ../wispr-binaries/${VERSION}
-        mv build/out/wispr-*win32-setup.exe ../wispr-binaries/${VERSION}
+        ./bin/gbuild -i --commit signature=${COMMIT} ../core/contrib/gitian-descriptors/gitian-win-signer.yml
+        ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../core/contrib/gitian-descriptors/gitian-win-signer.yml
+        mv build/out/wispr-*win64-setup.exe ../core-binaries/${VERSION}
+        mv build/out/wispr-*win32-setup.exe ../core-binaries/${VERSION}
     fi
     # Sign Mac OSX
     if [[ $osx = true ]]
@@ -392,9 +392,9 @@ then
         echo ""
         echo "Signing ${VERSION} Mac OSX"
         echo ""
-        ./bin/gbuild -i --commit signature=${COMMIT} ../wispr/contrib/gitian-descriptors/gitian-osx-signer.yml
-        ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../wispr/contrib/gitian-descriptors/gitian-osx-signer.yml
-        mv build/out/wispr-osx-signed.dmg ../wispr-binaries/${VERSION}/wispr-${VERSION}-osx.dmg
+        ./bin/gbuild -i --commit signature=${COMMIT} ../core/contrib/gitian-descriptors/gitian-osx-signer.yml
+        ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../core/contrib/gitian-descriptors/gitian-osx-signer.yml
+        mv build/out/wispr-osx-signed.dmg ../core-binaries/${VERSION}/wispr-${VERSION}-osx.dmg
     fi
     popd
 
