@@ -38,25 +38,34 @@ Instructions: Homebrew
 
 #### Install dependencies using Homebrew
 
-        brew install autoconf automake berkeley-db4 libtool boost miniupnpc openssl pkg-config protobuf qt5 zmq libevent
+        brew install autoconf automake berkeley-db4 libtool boost miniupnpc openssl pkg-config protobuf qt5 zmq libevent gmp
 
 ### Building `wisprd`
 
 1. Clone the github tree to get the source code and go into the directory.
 
-        git clone https://github.com/WisprProject/core.git
-        cd WISPR
+        git clone https://github.com/WisprProject/core.git wispr
+        cd wispr
 
 2.  Make the Homebrew OpenSSL headers visible to the configure script  (do ```brew info openssl``` to find out why this is necessary, or if you use Homebrew with installation folders different from the default).
 
         export LDFLAGS+=-L/usr/local/opt/openssl/lib
         export CPPFLAGS+=-I/usr/local/opt/openssl/include
 
+        Side-note: if you're using zsh, use these two commands:
+
+        LDFLAGS+=-L/usr/local/opt/openssl/lib
+        CPPFLAGS+=-I/usr/local/opt/openssl/include
+
 3.  Build wisprd:
 
         ./autogen.sh
         ./configure --with-gui=qt5
         make
+
+    Note: If you run into "error: Detected unsupported SSL version"
+    try running ./configure with additional parameters:
+    ./configure LDFLAGS='-L/usr/local/opt/openssl/lib' CPPFLAGS='-I/usr/local/opt/openssl/include' PKG_CONFIG_PATH='/usr/local/opt/openssl/lib/pkgconfig' --with-gui=qt5
 
 4.  It is also a good idea to build and run the unit tests:
 
