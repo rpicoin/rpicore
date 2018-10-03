@@ -8,7 +8,6 @@ Forked off of [PIVX](https://github.com/PIVX-Project/PIVX), it's a fully Proof-o
 
 - Anonymized transactions using the [_Zerocoin Protocol_](https://en.wikipedia.org/wiki/Zerocoin_protocol).
 - Fast transactions featuring guaranteed zero confirmation transactions, based on PIVX's _SwiftX_.
-- Masternode voting system, put money behind an idea or your own.
 
 For more info, visit us at [wispr.tech](http://wispr.tech) or check out our ANN thread at [BitcoinTalk](https://bitcointalk.org/index.php?topic=4481839).
 
