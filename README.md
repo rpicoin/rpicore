@@ -1,7 +1,7 @@
 WISPR Core integration/staging repository
 =====================================
 
-[![Build Status](https://travis-ci.org/WisprProject/core.svg?branch=0.3_RC)](https://travis-ci.org/WisprProject/core) [![GitHub version](https://badge.fury.io/gh/WisprProject%2Fcore.svg)](https://badge.fury.io/gh/WisprProject%2core)
+[![Build Status](https://travis-ci.org/WisprProject/core.svg?branch=0.3)](https://travis-ci.org/WisprProject/core) [![GitHub version](https://badge.fury.io/gh/WisprProject%2Fcore.svg)](https://badge.fury.io/gh/WisprProject%2core)
 
 Wispr is an experimental cryptocurrency which aims to bring a blockchain-backed secure messaging system, along with several other state-of-the-art blockchain features, as announced in our roadmap.<br>
 Forked off of [PIVX](https://github.com/PIVX-Project/PIVX), it's a fully Proof-of-Stake cryptocurrency with a fair reward system that encourages every type of user to stake and make the network more secure and efficient.
