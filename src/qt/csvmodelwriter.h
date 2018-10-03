@@ -1,8 +1,13 @@
-#ifndef CSVMODELWRITER_H
-#define CSVMODELWRITER_H
+// Copyright (c) 2011-2013 The Bitcoin developers
+// Copyright (c) 2017 The PIVX developers
+// Distributed under the MIT/X11 software license, see the accompanying
+// file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include <QObject>
+#ifndef BITCOIN_QT_CSVMODELWRITER_H
+#define BITCOIN_QT_CSVMODELWRITER_H
+
 #include <QList>
+#include <QObject>
 
 QT_BEGIN_NAMESPACE
 class QAbstractItemModel;
@@ -16,10 +21,10 @@ class CSVModelWriter : public QObject
     Q_OBJECT
 
 public:
-    explicit CSVModelWriter(const QString &filename, QObject *parent = 0);
+    explicit CSVModelWriter(const QString& filename, QObject* parent = 0);
 
-    void setModel(const QAbstractItemModel *model);
-    void addColumn(const QString &title, int column, int role=Qt::EditRole);
+    void setModel(const QAbstractItemModel* model);
+    void addColumn(const QString& title, int column, int role = Qt::EditRole);
 
     /** Perform export of the model to CSV.
         @returns true on success, false otherwise
@@ -28,10 +33,9 @@ public:
 
 private:
     QString filename;
-    const QAbstractItemModel *model;
+    const QAbstractItemModel* model;
 
-    struct Column
-    {
+    struct Column {
         QString title;
         int column;
         int role;
@@ -39,4 +43,4 @@ private:
     QList<Column> columns;
 };
 
-#endif // CSVMODELWRITER_H
+#endif // BITCOIN_QT_CSVMODELWRITER_H

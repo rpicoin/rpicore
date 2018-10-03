@@ -1,1 +1,0 @@
-To build Wispr on a Raspberry Pi, refer to https://medium.com/wispr-blockchain-technology-revolutionizing/24-7-staking-wsp-on-a-raspberry-pi-full-tutorial-wisprtech-5312ad97b085

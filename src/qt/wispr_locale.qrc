@@ -1,0 +1,36 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="bg">locale/wispr_bg.qm</file>
+        <file alias="ca">locale/wispr_ca.qm</file>
+        <file alias="cs">locale/wispr_cs.qm</file>
+        <file alias="da">locale/wispr_da.qm</file>
+        <file alias="de">locale/wispr_de.qm</file>
+        <file alias="en">locale/wispr_en.qm</file>
+        <file alias="en_US">locale/wispr_en_US.qm</file>
+        <file alias="eo">locale/wispr_eo.qm</file>
+        <file alias="es">locale/wispr_es.qm</file>
+        <file alias="es_ES">locale/wispr_es_ES.qm</file>
+        <file alias="fi">locale/wispr_fi.qm</file>
+        <file alias="fr_FR">locale/wispr_fr_FR.qm</file>
+        <file alias="hi_IN">locale/wispr_hi_IN.qm</file>
+        <file alias="hr">locale/wispr_hr.qm</file>
+        <file alias="hr_HR">locale/wispr_hr_HR.qm</file>
+        <file alias="it">locale/wispr_it.qm</file>
+        <file alias="ja">locale/wispr_ja.qm</file>
+        <file alias="ko_KR">locale/wispr_ko_KR.qm</file>
+        <file alias="lt_LT">locale/wispr_lt_LT.qm</file>
+        <file alias="nl">locale/wispr_nl.qm</file>
+        <file alias="pl">locale/wispr_pl.qm</file>
+        <file alias="pt">locale/wispr_pt.qm</file>
+        <file alias="pt_BR">locale/wispr_pt_BR.qm</file>
+        <file alias="ro_RO">locale/wispr_ro_RO.qm</file>
+        <file alias="ru">locale/wispr_ru.qm</file>
+        <file alias="sk">locale/wispr_sk.qm</file>
+        <file alias="sv">locale/wispr_sv.qm</file>
+        <file alias="tr">locale/wispr_tr.qm</file>
+        <file alias="uk">locale/wispr_uk.qm</file>
+        <file alias="vi">locale/wispr_vi.qm</file>
+        <file alias="zh_CN">locale/wispr_zh_CN.qm</file>
+        <file alias="zh_TW">locale/wispr_zh_TW.qm</file>
+    </qresource>
+</RCC>

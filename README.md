@@ -1,10 +1,15 @@
-Wispr Core integration/staging repository
+WISPR Core integration/staging repository
 =====================================
 
-Wispr is an experimental cryptocurrency which aims to bring a blockchain-backed secure messaging system, along with several other state-of-the-art blockchain features, as announced in our roadmap.<br>
-Forked off of [Blackcoin](https://github.com/CoinBlack/blackcoin), it's a fully Proof-of-Stake cryptocurrency with a fair reward system that encourages every type of user to stake and make the network more secure and efficient.
+[![Build Status](https://travis-ci.org/WisprProject/core.svg?branch=0.3)](https://travis-ci.org/WisprProject/core) [![GitHub version](https://badge.fury.io/gh/WisprProject%2Fcore.svg)](https://badge.fury.io/gh/WisprProject%2core)
 
-For more info, visit us at [wispr.tech](http://wispr.tech) or check out our ANN thread at [BitcoinTalk](https://bitcointalk.org/index.php?topic=2561885).
+Wispr is an experimental cryptocurrency which aims to bring a blockchain-backed secure messaging system, along with several other state-of-the-art blockchain features, as announced in our roadmap.<br>
+Forked off of [PIVX](https://github.com/PIVX-Project/PIVX), it's a fully Proof-of-Stake cryptocurrency with a fair reward system that encourages every type of user to stake and make the network more secure and efficient.
+
+- Anonymized transactions using the [_Zerocoin Protocol_](https://en.wikipedia.org/wiki/Zerocoin_protocol).
+- Fast transactions featuring guaranteed zero confirmation transactions, based on PIVX's _SwiftX_.
+
+For more info, visit us at [wispr.tech](http://wispr.tech) or check out our ANN thread at [BitcoinTalk](https://bitcointalk.org/index.php?topic=4481839).
 
 ### Coin Specs
 
@@ -16,8 +21,9 @@ For more info, visit us at [wispr.tech](http://wispr.tech) or check out our ANN 
 <tr><td>Annual Inflation Rate</td><td>25%</td></tr>
 <tr><td>Max Reorganization Depth</td><td>500 blocks</td></tr>
 <tr><td>Block Time</td><td>60 Seconds</td></tr>
-<tr><td>Block Reward</td><td>5 WSP + tx Fees paid to miners</td></tr>
-<tr><td>Min Tx Fee</td><td>0.0001 WSP</td></tr>
+<tr><td>Staking Block Reward</td><td>6 WSP</td></tr>
+<tr><td>Masternode Block Reward</td><td>4 WSP</td></tr>
+<tr><td>Min Tx Fee</td><td>0 WSP</td></tr>
 <tr><td>Difficulty Retargeting</td><td>Every Block</td></tr>
 <tr><td>Coin Maturity</td><td>100 blocks</td></tr>
 <tr><td>Confirmations</td><td>10</td></tr>
@@ -28,7 +34,7 @@ For more info, visit us at [wispr.tech](http://wispr.tech) or check out our ANN 
 
 ### Premine
 The initial coins were premined in a private PoW phase up to block 450. Each block held 125,000 coins and some blocks were PoS in order to make a total of 25,000,000 WSP. Due to mining calculations an extra 125,000 WSP was mined and later [burned](https://explorer.wispr.tech/tx/ccabff166654a078da5cda2aa758e1f801f14e8886c8b2fcc9e2d32126755fb9).<br>
-To find out how the premine was distributed, check our [ANN thread](https://bitcointalk.org/index.php?topic=2561885). 
+To find out how the premine was distributed, check our [ANN thread](https://bitcointalk.org/index.php?topic=2561885).
 
 ### Building Wispr
 Check out <b>/doc</b> for specific OS build instructions.

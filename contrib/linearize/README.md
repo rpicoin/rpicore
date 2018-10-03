@@ -17,12 +17,12 @@ Optional config file setting for linearize-hashes:
    $ ./linearize-data.py linearize.cfg
 
 Required configuration file settings:
-* "input": bitcoind blocks/ directory containing wspNNNNN.dat
+* "input": bitcoind blocks/ directory containing blkNNNNN.dat
 * "hashlist": text file containing list of block hashes, linearized-hashes.py
 output.
 * "output_file": bootstrap.dat
       or
-* "output": output directory for linearized blocks/wspNNNNN.dat output
+* "output": output directory for linearized blocks/blkNNNNN.dat output
 
 Optional config file setting for linearize-data:
 * "netmagic": network magic number
