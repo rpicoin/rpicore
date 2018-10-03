@@ -2778,9 +2778,9 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
 
     //PoW phase redistributed fees to miner. PoS stage destroys fees.
     CAmount nExpectedMint = GetBlockValue(pindex->pprev->nHeight);
-//    if (block.IsProofOfWork())
-    nExpectedMint += nFees;
-
+    if (block.IsProofOfWork() || chainActive.Height() < Params().NEW_PROTOCOLS_STARTHEIGHT()) {
+        nExpectedMint += nFees;
+    }
     //Check that the block does not overmint
     if (!IsBlockValueValid(block, nExpectedMint, pindex->nMint)) {
         return state.DoS(100, error("ConnectBlock() : reward pays too much (actual=%s vs limit=%s)",
