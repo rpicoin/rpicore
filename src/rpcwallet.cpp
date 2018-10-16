@@ -790,7 +790,7 @@ UniValue movecmd(const UniValue& params, bool fHelp)
             "\nArguments:\n"
             "1. \"fromaccount\"   (string, required) The name of the account to move funds from. May be the default account using \"\".\n"
             "2. \"toaccount\"     (string, required) The name of the account to move funds to. May be the default account using \"\".\n"
-            "3. amount            (numeric, required) Quantity of PIV to move between accounts.\n"
+            "3. amount            (numeric, required) Quantity of WSP to move between accounts.\n"
             "4. minconf           (numeric, optional, default=1) Only use funds with at least this many confirmations.\n"
             "5. \"comment\"       (string, optional) An optional comment, stored in the wallet only.\n"
 
@@ -2128,6 +2128,7 @@ UniValue getwalletinfo(const UniValue& params, bool fHelp)
             "  \"keypoololdest\": xxxxxx,    (numeric) the timestamp (seconds since GMT epoch) of the oldest pre-generated key in the key pool\n"
             "  \"keypoolsize\": xxxx,        (numeric) how many new keys are pre-generated\n"
             "  \"unlocked_until\": ttt,      (numeric) the timestamp in seconds since epoch (midnight Jan 1 1970 GMT) that the wallet is unlocked for transfers, or 0 if the wallet is locked\n"
+            "  \"paytxfee\": x.xxxx,         (numeric) the transaction fee configuration, set in WSP/kB\n"
             "}\n"
 
             "\nExamples:\n" +
@@ -2143,6 +2144,7 @@ UniValue getwalletinfo(const UniValue& params, bool fHelp)
     obj.push_back(Pair("keypoolsize", (int)pwalletMain->GetKeyPoolSize()));
     if (pwalletMain->IsCrypted())
         obj.push_back(Pair("unlocked_until", nWalletUnlockTime));
+    obj.push_back(Pair("paytxfee",      ValueFromAmount(payTxFee.GetFeePerK())));
     return obj;
 }
 
@@ -2308,7 +2310,7 @@ UniValue printMultiSend()
 
     UniValue vMS(UniValue::VOBJ);
     for (unsigned int i = 0; i < pwalletMain->vMultiSend.size(); i++) {
-        vMS.push_back(Pair("Address " + boost::lexical_cast<std::string>(i), pwalletMain->vMultiSend[i].first));
+        vMS.push_back(Pair("Address " + std::to_string(i), pwalletMain->vMultiSend[i].first));
         vMS.push_back(Pair("Percent", pwalletMain->vMultiSend[i].second));
     }
 
@@ -2436,7 +2438,7 @@ UniValue multisend(const UniValue& params, bool fHelp)
         }
     }
     if (params.size() == 2 && params[0].get_str() == "delete") {
-        int del = boost::lexical_cast<int>(params[1].get_str());
+        int del = std::stoi(params[1].get_str().c_str());
         if (!walletdb.EraseMultiSend(pwalletMain->vMultiSend))
             throw JSONRPCError(RPC_DATABASE_ERROR, "failed to delete old MultiSend vector from database");
 
@@ -2492,11 +2494,11 @@ UniValue multisend(const UniValue& params, bool fHelp)
     CBitcoinAddress address(strAddress);
     if (!address.IsValid())
         throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid WSP address");
-    if (boost::lexical_cast<int>(params[1].get_str()) < 0)
+    if (std::stoi(params[1].get_str().c_str()) < 0)
         throw JSONRPCError(RPC_INVALID_PARAMETER, "Invalid parameter, expected valid percentage");
     if (pwalletMain->IsLocked())
         throw JSONRPCError(RPC_WALLET_UNLOCK_NEEDED, "Error: Please enter the wallet passphrase with walletpassphrase first.");
-    unsigned int nPercent = boost::lexical_cast<unsigned int>(params[1].get_str());
+    unsigned int nPercent = (unsigned int) std::stoul(params[1].get_str().c_str());
 
     LOCK(pwalletMain->cs_wallet);
     {
@@ -2561,32 +2563,71 @@ UniValue getzerocoinbalance(const UniValue& params, bool fHelp)
 UniValue listmintedzerocoins(const UniValue& params, bool fHelp)
 {
 
-    if (fHelp || params.size() != 0)
+    if (fHelp || params.size() > 2)
         throw runtime_error(
-            "listmintedzerocoins\n"
+            "listmintedzerocoins (fVerbose) (fMatureOnly)\n"
             "\nList all zWSP mints in the wallet.\n" +
             HelpRequiringPassphrase() + "\n"
 
-            "\nResult:\n"
+            "\nArguments:\n"
+            "1. fVerbose      (boolean, optional, default=false) Output mints metadata.\n"
+            "2. fMatureOnly      (boolean, optional, default=false) List only mature mints. (Set only if fVerbose is specified)\n"
+
+            "\nResult (with fVerbose=false):\n"
             "[\n"
             "  \"xxx\"      (string) Pubcoin in hex format.\n"
             "  ,...\n"
             "]\n"
 
+            "\nResult (with fVerbose=true):\n"
+            "[\n"
+            "  {\n"
+            "    \"serial hash\": \"xxx\",   (string) Mint serial hash in hex format.\n"
+            "    \"version\": n,   (numeric) Zerocoin version number.\n"
+            "    \"zWSP ID\": \"xxx\",   (string) Pubcoin in hex format.\n"
+            "    \"denomination\": n,   (numeric) Coin denomination.\n"
+            "    \"confirmations\": n   (numeric) Number of confirmations.\n"
+            "  }\n"
+            "  ,..."
+            "]\n"
+
             "\nExamples:\n" +
-            HelpExampleCli("listmintedzerocoins", "") + HelpExampleRpc("listmintedzerocoins", ""));
+            HelpExampleCli("listmintedzerocoins", "") + HelpExampleRpc("listmintedzerocoins", "") +
+            HelpExampleCli("listmintedzerocoins", "true") + HelpExampleRpc("listmintedzerocoins", "true") +
+            HelpExampleCli("listmintedzerocoins", "true true") + HelpExampleRpc("listmintedzerocoins", "true, true"));
+
+    bool fVerbose = (params.size() > 0) ? params[0].get_bool() : false;
+    bool fMatureOnly = (params.size() > 1) ? params[1].get_bool() : false;
 
     LOCK2(cs_main, pwalletMain->cs_wallet);
 
     EnsureWalletIsUnlocked(true);
 
     CWalletDB walletdb(pwalletMain->strWalletFile);
-    set<CMintMeta> setMints = pwalletMain->zwspTracker->ListMints(true, false, true);
+    set<CMintMeta> setMints = pwalletMain->zwspTracker->ListMints(true, fMatureOnly, true);
+
+    int nBestHeight = chainActive.Height();
 
     UniValue jsonList(UniValue::VARR);
-    for (const CMintMeta& meta : setMints)
-        jsonList.push_back(meta.hashPubcoin.GetHex());
-
+    if (fVerbose) {
+        for (const CMintMeta& m : setMints) {
+            // Construct mint object
+            UniValue objMint(UniValue::VOBJ);
+            objMint.push_back(Pair("serial hash", m.hashSerial.GetHex()));  // Serial hash
+            objMint.push_back(Pair("version", m.nVersion));                 // Zerocoin version
+            objMint.push_back(Pair("zWSP ID", m.hashPubcoin.GetHex()));     // PubCoin
+            int denom = libzerocoin::ZerocoinDenominationToInt(m.denom);
+            objMint.push_back(Pair("denomination", denom));                 // Denomination
+            int nConfirmations = (m.nHeight && nBestHeight > m.nHeight) ? nBestHeight - m.nHeight : 0;
+            objMint.push_back(Pair("confirmations", nConfirmations));       // Confirmations
+            // Push back mint object
+            jsonList.push_back(objMint);
+        }
+    } else {
+        for (const CMintMeta& m : setMints)
+            // Push back PubCoin
+            jsonList.push_back(m.hashPubcoin.GetHex());
+    }
     return jsonList;
 }
 
@@ -2832,29 +2873,117 @@ UniValue spendzerocoin(const UniValue& params, bool fHelp)
 
     EnsureWalletIsUnlocked();
 
-    int64_t nTimeStart = GetTimeMillis();
     CAmount nAmount = AmountFromValue(params[0]);   // Spending amount
     bool fMintChange = params[1].get_bool();        // Mint change to zWSP
     bool fMinimizeChange = params[2].get_bool();    // Minimize change
     int nSecurityLevel = params[3].get_int();       // Security level
+    std::string address_str = params.size() > 4 ? params[4].get_str() : "";
 
-    CBitcoinAddress address = CBitcoinAddress(); // Optional sending address. Dummy initialization here.
-    if (params.size() == 5) {
-        // Destination address was supplied as params[4]. Optional parameters MUST be at the end
-        // to avoid type confusion from the JSON interpreter
-        address = CBitcoinAddress(params[4].get_str());
-        if(!address.IsValid())
-            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid WISPR address");
+    vector<CZerocoinMint> vMintsSelected;
+
+    return DoZwspSpend(nAmount, fMintChange, fMinimizeChange, nSecurityLevel, vMintsSelected, address_str);
+}
+
+
+UniValue spendzerocoinmints(const UniValue& params, bool fHelp)
+{
+    if (fHelp || params.size() < 1 || params.size() > 2)
+        throw runtime_error(
+            "spendzerocoinmints mints_list (\"address\") \n"
+            "\nSpend zWSP mints to a WSP address.\n" +
+            HelpRequiringPassphrase() + "\n"
+
+            "\nArguments:\n"
+            "1. mints_list     (string, required) A json array of zerocoin mints serial hashes\n"
+            "2. \"address\"     (string, optional, default=change) Send to specified address or to a new change address.\n"
+
+            "\nResult:\n"
+            "{\n"
+            "  \"txid\": \"xxx\",             (string) Transaction hash.\n"
+            "  \"bytes\": nnn,              (numeric) Transaction size.\n"
+            "  \"fee\": amount,             (numeric) Transaction fee (if any).\n"
+            "  \"spends\": [                (array) JSON array of input objects.\n"
+            "    {\n"
+            "      \"denomination\": nnn,   (numeric) Denomination value.\n"
+            "      \"pubcoin\": \"xxx\",      (string) Pubcoin in hex format.\n"
+            "      \"serial\": \"xxx\",       (string) Serial number in hex format.\n"
+            "      \"acc_checksum\": \"xxx\", (string) Accumulator checksum in hex format.\n"
+            "    }\n"
+            "    ,...\n"
+            "  ],\n"
+            "  \"outputs\": [                 (array) JSON array of output objects.\n"
+            "    {\n"
+            "      \"value\": amount,         (numeric) Value in WSP.\n"
+            "      \"address\": \"xxx\"         (string) WSP address or \"zerocoinmint\" for reminted change.\n"
+            "    }\n"
+            "    ,...\n"
+            "  ]\n"
+            "}\n"
+
+            "\nExamples\n" +
+            HelpExampleCli("spendzerocoinmints", "'[\"0d8c16eee7737e3cc1e4e70dc006634182b175e039700931283b202715a0818f\", \"dfe585659e265e6a509d93effb906d3d2a0ac2fe3464b2c3b6d71a3ef34c8ad7\"]' \"DMJRSsuU9zfyrvxVaAEFQqK4MxZg6vgeS6\"") +
+            HelpExampleRpc("spendzerocoinmints", "[\"0d8c16eee7737e3cc1e4e70dc006634182b175e039700931283b202715a0818f\", \"dfe585659e265e6a509d93effb906d3d2a0ac2fe3464b2c3b6d71a3ef34c8ad7\"], \"DMJRSsuU9zfyrvxVaAEFQqK4MxZg6vgeS6\""));
+
+    LOCK2(cs_main, pwalletMain->cs_wallet);
+
+    if(GetAdjustedTime() > GetSporkValue(SPORK_16_ZEROCOIN_MAINTENANCE_MODE))
+        throw JSONRPCError(RPC_WALLET_ERROR, "zWSP is currently disabled due to maintenance.");
+
+    std::string address_str = "";
+    if (params.size() > 1) {
+        RPCTypeCheck(params, boost::assign::list_of(UniValue::VARR)(UniValue::VSTR));
+        address_str = params[1].get_str();
+    } else
+        RPCTypeCheck(params, boost::assign::list_of(UniValue::VARR));
+
+    EnsureWalletIsUnlocked();
+
+    UniValue arrMints = params[0].get_array();
+    if (arrMints.size() == 0)
+        throw JSONRPCError(RPC_WALLET_ERROR, "No zerocoin selected");
+    if (arrMints.size() > 7)
+        throw JSONRPCError(RPC_WALLET_ERROR, "Too many mints included. Maximum zerocoins per spend: 7");
+
+    CAmount nAmount(0);   // Spending amount
+
+    // fetch mints and update nAmount
+    vector<CZerocoinMint> vMintsSelected;
+    for(unsigned int i=0; i < arrMints.size(); i++) {
+
+        CZerocoinMint mint;
+        std::string serialHash = arrMints[i].get_str();
+
+        if (!IsHex(serialHash))
+            throw JSONRPCError(RPC_INVALID_PARAMETER, "Invalid parameter, expected hex serial hash");
+
+        uint256 hashSerial(serialHash);
+        if (!pwalletMain->GetMint(hashSerial, mint)) {
+            std::string strErr = "Failed to fetch mint associated with serial hash " + serialHash;
+            throw JSONRPCError(RPC_WALLET_ERROR, strErr);
+        }
+
+        vMintsSelected.emplace_back(mint);
+        nAmount += mint.GetDenominationAsAmount();
     }
 
+    return DoZwspSpend(nAmount, false, true, 100, vMintsSelected, address_str);
+}
+
+
+extern UniValue DoZwspSpend(const CAmount nAmount, bool fMintChange, bool fMinimizeChange, const int nSecurityLevel, vector<CZerocoinMint>& vMintsSelected, std::string address_str)
+{
+    int64_t nTimeStart = GetTimeMillis();
+    CBitcoinAddress address = CBitcoinAddress(); // Optional sending address. Dummy initialization here.
     CWalletTx wtx;
-    vector<CZerocoinMint> vMintsSelected;
     CZerocoinSpendReceipt receipt;
     bool fSuccess;
 
-    if(params.size() == 5) // Spend to supplied destination address
+    if(address_str != "") { // Spend to supplied destination address
+        address = CBitcoinAddress(address_str);
+        if(!address.IsValid())
+            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid WISPR address");
         fSuccess = pwalletMain->SpendZerocoin(nAmount, nSecurityLevel, wtx, receipt, vMintsSelected, fMintChange, fMinimizeChange, &address);
-    else                   // Spend to newly generated local address
+    } else                   // Spend to newly generated local address
         fSuccess = pwalletMain->SpendZerocoin(nAmount, nSecurityLevel, wtx, receipt, vMintsSelected, fMintChange, fMinimizeChange);
 
     if (!fSuccess)
@@ -2900,6 +3029,7 @@ UniValue spendzerocoin(const UniValue& params, bool fHelp)
 
     return ret;
 }
+
 
 UniValue resetmintzerocoin(const UniValue& params, bool fHelp)
 {
