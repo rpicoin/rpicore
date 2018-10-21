@@ -119,16 +119,14 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
         pblock->nVersion = GetArg("-blockversion", pblock->nVersion);
 
     // Make sure to create the correct block version after zerocoin is enabled
-    bool fZerocoinActive = chainActive.Height() + 1 >= Params().NEW_PROTOCOLS_STARTHEIGHT() && fProofOfStake;
-//    bool fZerocoinActive = GetAdjustedTime() >= Params().NEW_PROTOCOLS_STARTTIME() && fProofOfStake;
-    if (fZerocoinActive)
-        pblock->nVersion = 8;
-    else
-        pblock->nVersion = 7;
+//    bool fZerocoinActive = (chainActive.Height() + 1) >= Params().NEW_PROTOCOLS_STARTHEIGHT();
+//    if (fZerocoinActive)
+    pblock->nVersion = 8;
+//    else
+//        pblock->nVersion = 7;
 
     // Create coinbase tx
     CMutableTransaction txNew;
-    txNew.nTime = GetAdjustedTime();
     txNew.vin.resize(1);
     txNew.vin[0].prevout.SetNull();
     txNew.vout.resize(1);
@@ -136,57 +134,32 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
     pblock->vtx.push_back(txNew);
     pblocktemplate->vTxFees.push_back(-1);   // updated at end
     pblocktemplate->vTxSigOps.push_back(-1); // updated at end
-    unsigned int nTxNewTime = 0;
 
     // ppcoin: if coinstake available add coinstake tx
     static int64_t nLastCoinStakeSearchTime = GetAdjustedTime(); // only initialized at startup
 
     if (fProofOfStake) {
-        if(fZerocoinActive){
-            boost::this_thread::interruption_point();
-            pblock->nTime = GetAdjustedTime();
-            CBlockIndex* pindexPrev = chainActive.Tip();
-            pblock->nBits = GetNextWorkRequired(pindexPrev, pblock);
-            CMutableTransaction txCoinStake;
-            int64_t nSearchTime = pblock->nTime; // search to current time
-            bool fStakeFound = false;
-            if (nSearchTime >= nLastCoinStakeSearchTime) {
-                unsigned int nTxNewTime = 0;
-                if (pwallet->CreateCoinStake(*pwallet, pblock->nBits, nSearchTime - nLastCoinStakeSearchTime, txCoinStake, nTxNewTime)) {
-                    pblock->nTime = nTxNewTime;
-                    pblock->vtx[0].vout[0].SetEmpty();
-                    pblock->vtx.push_back(CTransaction(txCoinStake));
-                    fStakeFound = true;
-                }
-                nLastCoinStakeSearchInterval = nSearchTime - nLastCoinStakeSearchTime;
-                nLastCoinStakeSearchTime = nSearchTime;
+        boost::this_thread::interruption_point();
+        pblock->nTime = GetAdjustedTime();
+        CBlockIndex* pindexPrev = chainActive.Tip();
+        pblock->nBits = GetNextWorkRequired(pindexPrev, pblock);
+        CMutableTransaction txCoinStake;
+        int64_t nSearchTime = pblock->nTime; // search to current time
+        bool fStakeFound = false;
+        if (nSearchTime >= nLastCoinStakeSearchTime) {
+            unsigned int nTxNewTime = 0;
+            if (pwallet->CreateCoinStake(*pwallet, pblock->nBits, nSearchTime - nLastCoinStakeSearchTime, txCoinStake, nTxNewTime)) {
+                pblock->nTime = nTxNewTime;
+                pblock->vtx[0].vout[0].SetEmpty();
+                pblock->vtx.push_back(CTransaction(txCoinStake));
+                fStakeFound = true;
             }
-            if (!fStakeFound)
-                return NULL;
-        }else{
-             boost::this_thread::interruption_point();
-             CBlockIndex* pindexPrev = chainActive.Tip();
-             pblock->nTime = GetAdjustedTime();
-             pblock->nBits = GetNextTargetRequired(pindexPrev, fProofOfStake);
-             CMutableTransaction txCoinStake;
-             txCoinStake.nTime &= ~STAKE_TIMESTAMP_MASK;
-             int64_t nSearchTime = txCoinStake.nTime; // search to current time
-             bool fStakeFound = false;
-             if (nSearchTime >= nLastCoinStakeSearchTime) {
-                 nTxNewTime &= ~STAKE_TIMESTAMP_MASK;
-                 if (pwallet->CreateCoinStake(*pwallet, pblock->nBits, nSearchTime - nLastCoinStakeSearchTime, txCoinStake, txCoinStake.nTime)) {
-                     pblock->vtx[0].nTime = pblock->nTime = txCoinStake.nTime;
-                     nTxNewTime = txCoinStake.nTime;
-                     pblock->vtx[0].vout[0].SetEmpty();
-                     pblock->vtx.push_back(CTransaction(txCoinStake));
-                     fStakeFound = true;
-                 }
-                 nLastCoinStakeSearchInterval = nSearchTime - nLastCoinStakeSearchTime;
-                 nLastCoinStakeSearchTime = nSearchTime;
-             }
-             if (!fStakeFound)
-                 return NULL;
+            nLastCoinStakeSearchInterval = nSearchTime - nLastCoinStakeSearchTime;
+            nLastCoinStakeSearchTime = nSearchTime;
         }
+
+        if (!fStakeFound)
+            return NULL;
     }
 
     // Largest block you're willing to create:
@@ -244,8 +217,8 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
                     nTotalIn = tx.GetZerocoinSpent();
 
                     //Give a high priority to zerocoinspends to get into the next block
-                    //Priority = (age^6+100000)*amount - gives higher priority to zwsps that have been in mempool long
-                    //and higher priority to zwsps that are large in value
+                    //Priority = (age^6+100000)*amount - gives higher priority to zpivs that have been in mempool long
+                    //and higher priority to zpivs that are large in value
                     int64_t nTimeSeen = GetAdjustedTime();
                     double nConfs = 100000;
 
@@ -259,7 +232,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
 
                     double nTimePriority = std::pow(GetAdjustedTime() - nTimeSeen, 6);
 
-                    // zWSP spends can have very large priority, use non-overflowing safe functions
+                    // zPIV spends can have very large priority, use non-overflowing safe functions
                     dPriority = double_safe_addition(dPriority, (nTimePriority * nConfs));
                     dPriority = double_safe_multiplication(dPriority, nTotalIn);
 
@@ -307,7 +280,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
 
                 int nConf = nHeight - coins->nHeight;
 
-                // zWSP spends can have very large priority, use non-overflowing safe functions
+                // zPIV spends can have very large priority, use non-overflowing safe functions
                 dPriority = double_safe_addition(dPriority, ((double)nValueIn * nConf));
 
             }
@@ -380,7 +353,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
             if (!view.HaveInputs(tx))
                 continue;
 
-            // double check that there are no double spent zWSP spends in this block or tx
+            // double check that there are no double spent zPIV spends in this block or tx
             if (tx.IsZerocoinSpend()) {
                 int nHeightTx = 0;
                 if (IsTransactionInChain(tx.GetHash(), nHeightTx))
@@ -402,7 +375,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
                         vTxSerials.emplace_back(spend.getCoinSerialNumber());
                     }
                 }
-                //This zWSP serial has already been included in the block, do not add this tx.
+                //This zPIV serial has already been included in the block, do not add this tx.
                 if (fDoubleSerial)
                     continue;
             }
@@ -454,17 +427,10 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
             }
         }
 
-        if (!fProofOfStake && nHeight > Params().LAST_POW_BLOCK() && nHeight >= Params().NEW_PROTOCOLS_STARTHEIGHT()) {
+        if (!fProofOfStake) {
             //Masternode and general budget payments
             FillBlockPayee(txNew, nFees, fProofOfStake, false);
 
-            //Make payee
-            if (txNew.vout.size() > 1) {
-                pblock->payee = txNew.vout[1].scriptPubKey;
-            }
-        }else if (!fProofOfStake && nHeight < Params().NEW_PROTOCOLS_STARTHEIGHT()) {
-            txNew.vout[0].nValue = GetBlockValue(nHeight);
-            txNew.vin[0].scriptSig = CScript() << nHeight << OP_0;
             //Make payee
             if (txNew.vout.size() > 1) {
                 pblock->payee = txNew.vout[1].scriptPubKey;
@@ -476,68 +442,56 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
         LogPrintf("CreateNewBlock(): total size %u\n", nBlockSize);
 
         // Compute final coinbase transaction.
-//        printf("CreateNewBlock(): compute final ccoinbase transaction\n");
         pblock->vtx[0].vin[0].scriptSig = CScript() << nHeight << OP_0;
         if (!fProofOfStake) {
             pblock->vtx[0] = txNew;
             pblocktemplate->vTxFees[0] = -nFees;
         }
 
-        if(pblock->nVersion < 8 && fProofOfStake){
-            pblock->vtx[1].nTime= pblock->nTime = pblock->vtx[0].nTime = nTxNewTime;
-            LogPrintf("old block time, %u , t1: %u, t2: %u, calculated: %u\n", pblock->nTime, pblock->vtx[0].nTime, pblock->vtx[1].nTime, nTxNewTime);
-        }
-
         // Fill in header
         pblock->hashPrevBlock = pindexPrev->GetBlockHash();
         if (!fProofOfStake)
             UpdateTime(pblock, pindexPrev);
-
-        if(fZerocoinActive){
-            pblock->nBits = GetNextWorkRequired(pindexPrev, pblock);
-        }else{
-            pblock->nBits = GetNextTargetRequired(pindexPrev, fProofOfStake);
-        }
+        pblock->nBits = GetNextWorkRequired(pindexPrev, pblock);
         pblock->nNonce = 0;
 
         //Calculate the accumulator checkpoint only if the previous cached checkpoint need to be updated
         uint256 nCheckpoint;
-        if(nHeight > 10) {
-            uint256 hashBlockLastAccumulated = chainActive[nHeight - (nHeight % 10) - 10]->GetBlockHash();
-            if (nHeight >= pCheckpointCache.first || pCheckpointCache.second.first != hashBlockLastAccumulated) {
-                //For the period before v2 activation, zWSP will be disabled and previous block's checkpoint is all that will be needed
-                pCheckpointCache.second.second = pindexPrev->nAccumulatorCheckpoint;
-                if (pindexPrev->nHeight + 1 >= Params().NEW_PROTOCOLS_STARTHEIGHT()) {
-                    AccumulatorMap mapAccumulators(Params().Zerocoin_Params(false));
-                    if (fZerocoinActive && !CalculateAccumulatorCheckpoint(nHeight, nCheckpoint, mapAccumulators)) {
-                        LogPrintf("%s: failed to get accumulator checkpoint\n", __func__);
-                    } else {
-                        // the next time the accumulator checkpoint should be recalculated ( the next height that is multiple of 10)
-                        pCheckpointCache.first = nHeight + (10 - (nHeight % 10));
+        uint256 hashBlockLastAccumulated = chainActive[nHeight - (nHeight % 10) - 10]->GetBlockHash();
+        if (nHeight >= pCheckpointCache.first || pCheckpointCache.second.first != hashBlockLastAccumulated) {
+            //For the period before v2 activation, zPIV will be disabled and previous block's checkpoint is all that will be needed
+            pCheckpointCache.second.second = pindexPrev->nAccumulatorCheckpoint;
+            if (pindexPrev->nHeight + 1 >= Params().Zerocoin_Block_V2_Start()) {
+                AccumulatorMap mapAccumulators(Params().Zerocoin_Params(false));
+                if (fZerocoinActive && !CalculateAccumulatorCheckpoint(nHeight, nCheckpoint, mapAccumulators)) {
+                    LogPrintf("%s: failed to get accumulator checkpoint\n", __func__);
+                } else {
+                    // the next time the accumulator checkpoint should be recalculated ( the next height that is multiple of 10)
+                    pCheckpointCache.first = nHeight + (10 - (nHeight % 10));
 
-                        // the block hash of the last block used in the accumulator checkpoint calc. This will handle reorg situations.
-                        pCheckpointCache.second.first = hashBlockLastAccumulated;
-                        pCheckpointCache.second.second = nCheckpoint;
-                    }
+                    // the block hash of the last block used in the accumulator checkpoint calc. This will handle reorg situations.
+                    pCheckpointCache.second.first = hashBlockLastAccumulated;
+                    pCheckpointCache.second.second = nCheckpoint;
                 }
             }
         }
+
         pblock->nAccumulatorCheckpoint = pCheckpointCache.second.second;
         pblocktemplate->vTxSigOps[0] = GetLegacySigOpCount(pblock->vtx[0]);
 
         CValidationState state;
-        if(!pblock->IsProofOfWork() && !GetBoolArg("-testnet", false)) {
-            if (!TestBlockValidity(state, *pblock, pindexPrev, pblock->IsProofOfWork(), false)) {
-                LogPrintf("CreateNewBlock() : TestBlockValidity failed\n");
-                mempool.clear();
-                return NULL;
-            }
+        if (!TestBlockValidity(state, *pblock, pindexPrev, false, false)) {
+            LogPrintf("CreateNewBlock() : TestBlockValidity failed\n");
+            mempool.clear();
+            return NULL;
         }
+
 //        if (pblock->IsZerocoinStake()) {
 //            CWalletTx wtx(pwalletMain, pblock->vtx[1]);
 //            pwalletMain->AddToWallet(wtx);
 //        }
     }
+
     return pblocktemplate.release();
 }
 
