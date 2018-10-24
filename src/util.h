@@ -28,6 +28,7 @@
 
 #include <boost/filesystem/path.hpp>
 #include <boost/thread/exceptions.hpp>
+#include <boost/thread/condition_variable.hpp> // for boost::thread_interrupted
 #define CVOIDBEGIN(a)        ((const void*)&(a))
 
 //WISPR only features
