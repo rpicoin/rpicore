@@ -29,7 +29,7 @@ class CBlockHeader
 {
 public:
     // header
-    static const int32_t CURRENT_VERSION=8;
+    static const int32_t CURRENT_VERSION=9;     // Version 9 supports CLTV activation
     int32_t nVersion;
     uint256 hashPrevBlock;
     uint256 hashMerkleRoot;
@@ -78,7 +78,6 @@ public:
 
     uint256 GetHash() const;
     uint256 GetPoWHash() const;
-//    uint256 GetHashForType(fProofOfStake) const;
 
     int64_t GetBlockTime() const
     {
