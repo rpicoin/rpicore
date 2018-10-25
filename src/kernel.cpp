@@ -392,70 +392,8 @@ bool CheckStakeV1(unsigned int nTxPrevTime, const COutPoint &prevout,
 
     return stakeTargetHitOld(hashProofOfStake, bnTarget);
 }
+
 bool Stake(CStakeInput* stakeInput, unsigned int nBits, unsigned int nTimeBlockFrom, unsigned int& nTimeTx, uint256& hashProofOfStake)
-{
-    if (nTimeTx < nTimeBlockFrom)
-        return error("Stake() : nTime violation");
-
-    if (nTimeBlockFrom + GetStakeMinAge() > nTimeTx) // Min age requirement
-        return error("Stake() : min age violation - nTimeBlockFrom=%d nStakeMinAge=%d nTimeTx=%d",
-                     nTimeBlockFrom, GetStakeMinAge(), nTimeTx);
-
-    //grab difficulty
-    uint256 bnTargetPerCoinDay;
-    bnTargetPerCoinDay.SetCompact(nBits);
-//    const CTxIn &txin = txNew.vin[0];
-
-
-
-    bool fSuccess = false;
-    unsigned int nTryTime = GetAdjustedTime();
-    int nHeightStart = chainActive.Height();
-    unsigned int nHashDrift = 60;
-    CDataStream ssUniqueID = stakeInput->GetUniqueness();
-    CBlockIndex *pindex = stakeInput->GetIndexFrom();
-    CBlock block;
-    ReadBlockFromDisk(block, pindex);
-    uint256 hashBlock;
-    CTransaction txPrev;
-    stakeInput->GetTxFrom(txPrev);
-    // Locate the transaction
-    CAmount nValueIn = stakeInput->GetValue();
-    int nIndex;
-    for (nIndex = 0; nIndex < (int)txPrev.vout.size(); nIndex++) {
-        if (txPrev.vout[nIndex].nValue == nValueIn) {
-            break;
-        }
-    }
-    COutPoint prev;
-    prev.n = nIndex;
-    prev.hash = txPrev.GetHash();
-    int64_t nValueInOld = txPrev.vout[nIndex].nValue;
-    nTryTime &= ~STAKE_TIMESTAMP_MASK;
-    for (unsigned int i = 0; i<nHashDrift; i++) //iterate the hashing
-    {
-        //new block came in, move on
-        if (chainActive.Height() != nHeightStart)
-            break;
-
-        //hash this iteration
-        nTryTime = nTimeTx - i;
-        if (!CheckStakeV1(txPrev.nTime, prev, nTryTime, hashProofOfStake, nValueInOld, chainActive.Tip(),
-                          nBits) || !((nTryTime & STAKE_TIMESTAMP_MASK) == 0)) {
-            continue;
-        }
-
-        fSuccess = true; // if we make it this far then we have successfully created a stake hash
-        LogPrintf("%s: hashproof=%s\n", __func__, hashProofOfStake.GetHex());
-        nTimeTx = nTryTime;
-        break;
-    }
-
-    mapHashedBlocks.clear();
-    mapHashedBlocks[chainActive.Tip()->nHeight] = GetTime(); //store a time stamp of when we last hashed on this block
-    return fSuccess;
-}
-bool StakeV2(CStakeInput* stakeInput, unsigned int nBits, unsigned int nTimeBlockFrom, unsigned int& nTimeTx, uint256& hashProofOfStake)
 {
     if (nTimeTx < nTimeBlockFrom)
         return error("CheckStakeKernelHash() : nTime violation");

@@ -36,7 +36,6 @@ bool CheckStakeV1(unsigned int nTxPrevTime, const COutPoint &prevout,
 bool stakeTargetHit(uint256 hashProofOfStake, int64_t nValueIn, uint256 bnTargetPerCoinDay);
 bool stakeTargetHitOld(uint256 hashProofOfStake, uint256 bnTargetPerCoinDay);
 bool Stake(CStakeInput* stakeInput, unsigned int nBits, unsigned int nTimeBlockFrom, unsigned int& nTimeTx, uint256& hashProofOfStake);
-bool StakeV2(CStakeInput* stakeInput, unsigned int nBits, unsigned int nTimeBlockFrom, unsigned int& nTimeTx, uint256& hashProofOfStake);
 
 // Check kernel hash target and coinstake signature
 // Sets hashProofOfStake on success return

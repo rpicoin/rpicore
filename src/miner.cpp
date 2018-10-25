@@ -118,12 +118,8 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
     if (Params().MineBlocksOnDemand())
         pblock->nVersion = GetArg("-blockversion", pblock->nVersion);
 
-    // Make sure to create the correct block version after zerocoin is enabled
     bool fZerocoinActive = (chainActive.Height() + 1) >= Params().NEW_PROTOCOLS_STARTHEIGHT();
-    if (fZerocoinActive)
-        pblock->nVersion = 8;
-    else
-        pblock->nVersion = 7;
+    pblock->nVersion = 8;   // Supports CLTV activation
 
     // Create coinbase tx
     CMutableTransaction txNew;
@@ -217,8 +213,8 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
                     nTotalIn = tx.GetZerocoinSpent();
 
                     //Give a high priority to zerocoinspends to get into the next block
-                    //Priority = (age^6+100000)*amount - gives higher priority to zpivs that have been in mempool long
-                    //and higher priority to zpivs that are large in value
+                    //Priority = (age^6+100000)*amount - gives higher priority to zwsps that have been in mempool long
+                    //and higher priority to zwsps that are large in value
                     int64_t nTimeSeen = GetAdjustedTime();
                     double nConfs = 100000;
 
@@ -232,7 +228,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
 
                     double nTimePriority = std::pow(GetAdjustedTime() - nTimeSeen, 6);
 
-                    // zPIV spends can have very large priority, use non-overflowing safe functions
+                    // zWSP spends can have very large priority, use non-overflowing safe functions
                     dPriority = double_safe_addition(dPriority, (nTimePriority * nConfs));
                     dPriority = double_safe_multiplication(dPriority, nTotalIn);
 
@@ -280,7 +276,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
 
                 int nConf = nHeight - coins->nHeight;
 
-                // zPIV spends can have very large priority, use non-overflowing safe functions
+                // zWSP spends can have very large priority, use non-overflowing safe functions
                 dPriority = double_safe_addition(dPriority, ((double)nValueIn * nConf));
 
             }
@@ -353,7 +349,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
             if (!view.HaveInputs(tx))
                 continue;
 
-            // double check that there are no double spent zPIV spends in this block or tx
+            // double check that there are no double spent zWSP spends in this block or tx
             if (tx.IsZerocoinSpend()) {
                 int nHeightTx = 0;
                 if (IsTransactionInChain(tx.GetHash(), nHeightTx))
@@ -375,7 +371,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
                         vTxSerials.emplace_back(spend.getCoinSerialNumber());
                     }
                 }
-                //This zPIV serial has already been included in the block, do not add this tx.
+                //This zWSP serial has already been included in the block, do not add this tx.
                 if (fDoubleSerial)
                     continue;
             }
@@ -389,6 +385,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
             // Note that flags: we don't want to set mempool/IsStandard()
             // policy here, but we still have to ensure that the block we
             // create only contains transactions that are valid in new blocks.
+
             CValidationState state;
             if (!CheckInputs(tx, state, view, true, MANDATORY_SCRIPT_VERIFY_FLAGS, true))
                 continue;
@@ -459,7 +456,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
         uint256 nCheckpoint;
         uint256 hashBlockLastAccumulated = chainActive[nHeight - (nHeight % 10) - 10]->GetBlockHash();
         if (nHeight >= pCheckpointCache.first || pCheckpointCache.second.first != hashBlockLastAccumulated) {
-            //For the period before v2 activation, zPIV will be disabled and previous block's checkpoint is all that will be needed
+            //For the period before v2 activation, zWSP will be disabled and previous block's checkpoint is all that will be needed
             pCheckpointCache.second.second = pindexPrev->nAccumulatorCheckpoint;
             if (pindexPrev->nHeight + 1 >= Params().NEW_PROTOCOLS_STARTHEIGHT()) {
                 AccumulatorMap mapAccumulators(Params().Zerocoin_Params(false));

@@ -2981,7 +2981,6 @@ bool CWallet::CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int
     CAmount nCredit;
     CScript scriptPubKeyKernel;
     bool fKernelFound = false;
-    bool newProtocolStart = chainActive.Height() + 1 >= Params().NEW_PROTOCOLS_STARTHEIGHT();
     for (std::unique_ptr<CStakeInput>& stakeInput : listInputs) {
         nCredit = 0;
         // Make sure the wallet is unlocked and shutdown hasn't been requested
@@ -3001,114 +3000,48 @@ bool CWallet::CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int
         nTxNewTime = GetAdjustedTime();
 
         //iterates each utxo inside of CheckStakeKernelHash()
-        if(newProtocolStart){
-            if (StakeV2(stakeInput.get(), nBits, block.GetBlockTime(), nTxNewTime, hashProofOfStake)) {
-                LOCK(cs_main);
-                //Double check that this will pass time requirements
-                if (nTxNewTime <= chainActive.Tip()->GetMedianTimePast()) {
-                    LogPrintf("CreateCoinStake() : kernel found, but it is too far in the past \n");
-                    continue;
-                }
-
-                // Found a kernel
-                LogPrintf("CreateCoinStake : kernel found\n");
-                nCredit += stakeInput->GetValue();
-
-                // Calculate reward
-                CAmount nReward;
-                nReward = GetBlockValue(chainActive.Height() + 1);
-                nCredit += nReward;
-
-                // Create the output transaction(s)
-                vector<CTxOut> vout;
-                if (!stakeInput->CreateTxOuts(this, vout, nCredit)) {
-                    LogPrintf("%s : failed to get scriptPubKey\n", __func__);
-                    continue;
-                }
-                txNew.vout.insert(txNew.vout.end(), vout.begin(), vout.end());
-
-                CAmount nMinFee = 0;
-                if (!stakeInput->IsZWSP()) {
-                    // Set output amount
-                    if (txNew.vout.size() == 3) {
-                        txNew.vout[1].nValue = ((nCredit - nMinFee) / 2 / CENT) * CENT;
-                        txNew.vout[2].nValue = nCredit - nMinFee - txNew.vout[1].nValue;
-                    } else
-                        txNew.vout[1].nValue = nCredit - nMinFee;
-                }
-
-                // Limit size
-                unsigned int nBytes = ::GetSerializeSize(txNew, SER_NETWORK, PROTOCOL_VERSION);
-                if (nBytes >= DEFAULT_BLOCK_MAX_SIZE / 5)
-                    return error("CreateCoinStake : exceeded coinstake size limit");
-
-                //Masternode payment
-                FillBlockPayee(txNew, nMinFee, true, stakeInput->IsZWSP());
-
-                uint256 hashTxOut = txNew.GetHash();
-                CTxIn in;
-                if (!stakeInput->CreateTxIn(this, in, hashTxOut)) {
-                    LogPrintf("%s : failed to create TxIn\n", __func__);
-                    txNew.vin.clear();
-                    txNew.vout.clear();
-                    nCredit = 0;
-                    continue;
-                }
-                txNew.vin.emplace_back(in);
-
-                //Mark mints as spent
-                if (stakeInput->IsZWSP()) {
-                    CZWspStake* z = (CZWspStake*)stakeInput.get();
-                    if (!z->MarkSpent(this, txNew.GetHash()))
-                        return error("%s: failed to mark mint as used\n", __func__);
-                }
-
-                fKernelFound = true;
-                break;
+        if (Stake(stakeInput.get(), nBits, block.GetBlockTime(), nTxNewTime, hashProofOfStake)) {
+            LOCK(cs_main);
+            //Double check that this will pass time requirements
+            if (nTxNewTime <= chainActive.Tip()->GetMedianTimePast()) {
+                LogPrintf("CreateCoinStake() : kernel found, but it is too far in the past \n");
+                continue;
             }
-        }else{
-            if (Stake(stakeInput.get(), nBits, block.GetBlockTime(), nTxNewTime, hashProofOfStake)) {
-                LOCK(cs_main);
-                //Double check that this will pass time requirements
-                if (nTxNewTime <= chainActive.Tip()->GetMedianTimePast()) {
-                    LogPrintf("CreateCoinStake() : kernel found, but it is too far in the past \n");
-                    continue;
-                }
 
-                // Found a kernel
-                LogPrintf("CreateCoinStake : kernel found\n");
-                nCredit += stakeInput->GetValue();
+            // Found a kernel
+            LogPrintf("CreateCoinStake : kernel found\n");
+            nCredit += stakeInput->GetValue();
 
-                // Calculate reward
-                CAmount nReward;
-                nReward = GetBlockValue(chainActive.Height() + 1);
-                nCredit += nReward;
+            // Calculate reward
+            CAmount nReward;
+            nReward = GetBlockValue(chainActive.Height() + 1);
+            nCredit += nReward;
 
-                // Create the output transaction(s)
-                vector<CTxOut> vout;
-                if (!stakeInput->CreateTxOuts(this, vout, nCredit)) {
-                    LogPrintf("%s : failed to get scriptPubKey\n", __func__);
-                    continue;
-                }
-                txNew.vout.insert(txNew.vout.end(), vout.begin(), vout.end());
+            // Create the output transaction(s)
+            vector<CTxOut> vout;
+            if (!stakeInput->CreateTxOuts(this, vout, nCredit)) {
+                LogPrintf("%s : failed to get scriptPubKey\n", __func__);
+                continue;
+            }
+            txNew.vout.insert(txNew.vout.end(), vout.begin(), vout.end());
 
-                CAmount nMinFee = 0;
-                if (!stakeInput->IsZWSP()) {
-                    // Set output amount
-                    if (txNew.vout.size() == 3) {
-                        txNew.vout[1].nValue = ((nCredit - nMinFee) / 2 / CENT) * CENT;
-                        txNew.vout[2].nValue = nCredit - nMinFee - txNew.vout[1].nValue;
-                    } else
-                        txNew.vout[1].nValue = nCredit - nMinFee;
-                }
+            CAmount nMinFee = 0;
+            if (!stakeInput->IsZWSP()) {
+                // Set output amount
+                if (txNew.vout.size() == 3) {
+                    txNew.vout[1].nValue = ((nCredit - nMinFee) / 2 / CENT) * CENT;
+                    txNew.vout[2].nValue = nCredit - nMinFee - txNew.vout[1].nValue;
+                } else
+                    txNew.vout[1].nValue = nCredit - nMinFee;
+            }
 
-                // Limit size
-                unsigned int nBytes = ::GetSerializeSize(txNew, SER_NETWORK, PROTOCOL_VERSION);
-                if (nBytes >= DEFAULT_BLOCK_MAX_SIZE / 5)
-                    return error("CreateCoinStake : exceeded coinstake size limit");
+            // Limit size
+            unsigned int nBytes = ::GetSerializeSize(txNew, SER_NETWORK, PROTOCOL_VERSION);
+            if (nBytes >= DEFAULT_BLOCK_MAX_SIZE / 5)
+                return error("CreateCoinStake : exceeded coinstake size limit");
 
-                //Masternode payment
-                FillBlockPayee(txNew, nMinFee, true, stakeInput->IsZWSP());
+            //Masternode payment
+            FillBlockPayee(txNew, nMinFee, true, stakeInput->IsZWSP());
 
             uint256 hashTxOut = txNew.GetHash();
             CTxIn in;
@@ -3116,20 +3049,19 @@ bool CWallet::CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int
                 LogPrintf("%s : failed to create TxIn\n", __func__);
                 txNew.vin.clear();
                 txNew.vout.clear();
-                    continue;
-                }
-                txNew.vin.emplace_back(in);
-
-                //Mark mints as spent
-                if (stakeInput->IsZWSP()) {
-                    CZWspStake* z = (CZWspStake*)stakeInput.get();
-                    if (!z->MarkSpent(this, txNew.GetHash()))
-                        return error("%s: failed to mark mint as used\n", __func__);
-                }
-
-                fKernelFound = true;
-                break;
+                continue;
             }
+            txNew.vin.emplace_back(in);
+
+            //Mark mints as spent
+            if (stakeInput->IsZWSP()) {
+                CZWspStake* z = (CZWspStake*)stakeInput.get();
+                if (!z->MarkSpent(this, txNew.GetHash()))
+                    return error("%s: failed to mark mint as used\n", __func__);
+            }
+
+            fKernelFound = true;
+            break;
         }
         if (fKernelFound)
             break; // if kernel is found stop searching
