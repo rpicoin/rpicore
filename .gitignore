@@ -64,7 +64,6 @@ src/qt/test/moc*.cpp
 *.pyc
 *.o
 *.o-*
-*.patch
 .wispr
 *.a
 *.pb.cc
@@ -74,7 +73,6 @@ src/qt/test/moc*.cpp
 *.trs
 *.dmg
 
-*.json.h
 *.raw.h
 
 #libtool object files
