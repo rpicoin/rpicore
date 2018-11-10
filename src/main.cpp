@@ -2779,6 +2779,12 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
         pos.nTxOffset += ::GetSerializeSize(tx, SER_DISK, CLIENT_VERSION);
     }
 
+    //A one-time event where money supply counts were off and recalculated on a certain block.
+    if (pindex->nHeight == Params().NEW_PROTOCOLS_STARTHEIGHT() + 1) {
+        RecalculateZWSPMinted();
+        RecalculateZWSPSpent();
+        RecalculateWSPSupply(Params().NEW_PROTOCOLS_STARTHEIGHT());
+    }
 
     //Track zWSP money supply in the block index
     if (!UpdateZWSPSupply(block, pindex))
