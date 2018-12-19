@@ -5,6 +5,9 @@ WISPR Core integration/staging repository
 
 Wispr is an experimental cryptocurrency which aims to bring a blockchain-backed secure messaging system, along with several other state-of-the-art blockchain features, as announced in our roadmap.<br>
 Forked off of [PIVX](https://github.com/PIVX-Project/PIVX), it's a fully Proof-of-Stake cryptocurrency with a fair reward system that encourages every type of user to stake and make the network more secure and efficient.
+- Anonymized transactions & consensus using the [_Zerocoin Protocol_](http://www.wispr.org/zpiv) and [zPoS](https://wispr.org/zpos/).
+- light/mobile wallet privacy using the [Zerocoin Light Node Protocol](https://wispr.org/wp-content/uploads/2018/11/Zerocoin_Light_Node_Protocol.pdf)
+- Fast transactions featuring guaranteed zero confirmation transactions, we call it _SwiftX_.
 
 - Anonymized transactions using the [_Zerocoin Protocol_](https://en.wikipedia.org/wiki/Zerocoin_protocol).
 - Fast transactions featuring guaranteed zero confirmation transactions, based on PIVX's _SwiftX_.
