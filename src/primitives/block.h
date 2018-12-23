@@ -11,7 +11,7 @@
 #include "keystore.h"
 #include "serialize.h"
 #include "uint256.h"
-#include <boost/foreach.hpp>
+
 
 
 /** The maximum allowed size for a serialized block, in bytes (network rule) */
@@ -157,7 +157,7 @@ public:
     int64_t GetMaxTransactionTime() const
     {
         int64_t maxTransactionTime = 0;
-        BOOST_FOREACH(const CTransaction& tx, vtx)
+        for(const CTransaction& tx: vtx)
         maxTransactionTime = std::max(maxTransactionTime, (int64_t)tx.nTime);
         return maxTransactionTime;
     }
