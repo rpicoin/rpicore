@@ -343,10 +343,6 @@ bool CheckStakeV1(unsigned int nTxPrevTime, const COutPoint &prevout,
                   unsigned int nTimeTx, uint256 &hashProofOfStake, int64_t nValueIn, CBlockIndex *pindexPrev,
                   unsigned int nBits, bool fDebug = false) {
 
-    string function = __func__;
-//    LogPrintf(
-//            "%s :nTimeTxPrev=%u nTimeTx=%u\n", function, nTxPrevTime, nTimeTx);
-
     if (nTimeTx < nTxPrevTime)  // Transaction timestamp violation
         return error("CheckStakeV1() : nTime violation");
 
@@ -361,34 +357,12 @@ bool CheckStakeV1(unsigned int nTxPrevTime, const COutPoint &prevout,
     uint256 bnWeight = uint256(nValueIn);
     bnTarget *= bnWeight;
 
-//    uint256 targetProofOfStake = bnTarget;
-
-    uint64_t nStakeModifier = pindexPrev->nStakeModifier;
     uint256 bnStakeModifierV2 = pindexPrev->bnStakeModifierV2;
-    int nStakeModifierHeight = pindexPrev->nHeight;
-
     // Calculate hash
     CDataStream ss(SER_GETHASH, 0);
     ss << bnStakeModifierV2;
     ss << nTxPrevTime << prevout.hash << prevout.n << nTimeTx;
     hashProofOfStake = Hash(ss.begin(), ss.end());
-
-    if(fDebug) {
-        LogPrintf("%s : Checking block at height=%ds\n",
-                  function, (nStakeModifierHeight + 1));
-        LogPrintf(
-                "%s : height=%ds, using modifier %016x, bnStakeModifierV2 %s\n nTimeTxPrev=%u nPrevout=%u "
-                "nTimeTx=%u, nBits = %08x, modifier checksum %016x, prevoutHash=%s \n hashProofOfStake=%s\n", function,
-                nStakeModifierHeight, nStakeModifier,
-                bnStakeModifierV2.ToString(), nTxPrevTime,
-                prevout.n, nTimeTx, nBits, pindexPrev->nStakeModifierChecksum, prevout.hash.ToString(),
-                hashProofOfStake.ToString());
-        LogPrintf(
-                "%s :  bnTarget=%s \n bnCoinDayWeight=%s \n bnTarget * bnCoinDayWeight=%s \n",
-                function,
-                bnTargetOld.ToString(), bnWeight.ToString(),
-                bnTarget.ToString());
-    }
 
     return stakeTargetHitOld(hashProofOfStake, bnTarget);
 }
