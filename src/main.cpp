@@ -3952,22 +3952,22 @@ bool ContextualCheckBlockHeader(const CBlockHeader& block, CValidationState& sta
     if (pcheckpoint && nHeight < pcheckpoint->nHeight)
         return state.DoS(0, error("%s : forked chain older than last checkpoint (height %d)", __func__, nHeight));
 
-    // Reject block.nVersion=1 blocks when 95% (75% on testnet) of the network has upgraded:
-    if (block.nVersion < 6 &&
-        CBlockIndex::IsSuperMajority(6, pindexPrev, Params().RejectBlockOutdatedMajority())) {
-        return state.Invalid(error("%s : rejected nVersion=1 block", __func__),
+    // Reject block.nVersion=6 blocks when 95% (75% on testnet) of the network has upgraded:
+    if (block.nVersion < 7 &&
+        CBlockIndex::IsSuperMajority(7, pindexPrev, Params().RejectBlockOutdatedMajority())) {
+        return state.Invalid(error("%s : rejected nVersion=6 block", __func__),
                              REJECT_OBSOLETE, "bad-version");
     }
 
-    // Reject block.nVersion=2 blocks when 95% (75% on testnet) of the network has upgraded:
-    if (block.nVersion < 7 && CBlockIndex::IsSuperMajority(7, pindexPrev, Params().RejectBlockOutdatedMajority())) {
-        return state.Invalid(error("%s : rejected nVersion=2 block", __func__),
+    // Reject block.nVersion=7 blocks when 95% (75% on testnet) of the network has upgraded:
+    if (block.nVersion < 8 && CBlockIndex::IsSuperMajority(8, pindexPrev, Params().RejectBlockOutdatedMajority())) {
+        return state.Invalid(error("%s : rejected nVersion=7 block", __func__),
                              REJECT_OBSOLETE, "bad-version");
     }
 
-    // Reject block.nVersion=4 blocks when 95% (75% on testnet) of the network has upgraded:
+    // Reject block.nVersion=8 blocks when 95% (75% on testnet) of the network has upgraded:
     if (block.nVersion < 9 && CBlockIndex::IsSuperMajority(9, pindexPrev, Params().RejectBlockOutdatedMajority())) {
-        return state.Invalid(error("%s : rejected nVersion=4 block", __func__),
+        return state.Invalid(error("%s : rejected nVersion=8 block", __func__),
                              REJECT_OBSOLETE, "bad-version");
     }
 
