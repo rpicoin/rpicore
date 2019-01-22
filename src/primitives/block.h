@@ -85,6 +85,23 @@ public:
     }
 };
 
+/**
+    see GETHEADERS message, vtx collapses to a single 0 byte
+*/
+class CBlockGetHeader : public CBlockHeader
+{
+public:
+    CBlockGetHeader() {};
+    CBlockGetHeader(const CBlockHeader &header) { *((CBlockHeader*)this) = header; };
+    std::vector<CTransaction> vtx;
+
+    ADD_SERIALIZE_METHODS;
+    template <typename Stream, typename Operation>
+    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
+        READWRITE(*(CBlockHeader*)this);
+        READWRITE(vtx);
+    }
+};
 
 class CBlock : public CBlockHeader
 {
