@@ -125,7 +125,7 @@ private:
 };
 
 TorControlConnection::TorControlConnection(struct event_base *_base):
-    base(_base), b_conn(0)
+    base(_base), b_conn(nullptr)
 {
 }
 
@@ -231,7 +231,7 @@ bool TorControlConnection::Disconnect()
 {
     if (b_conn)
         bufferevent_free(b_conn);
-    b_conn = 0;
+    b_conn = nullptr;
     return true;
 }
 
@@ -395,7 +395,7 @@ static std::pair<bool,std::string> ReadBinaryFile(const std::string &filename, s
 static bool WriteBinaryFile(const std::string &filename, const std::string &data)
 {
     FILE *f = fopen(filename.c_str(), "wb");
-    if (f == NULL)
+    if (f == nullptr)
         return false;
     if (fwrite(data.data(), 1, data.size(), f) != data.size()) {
         fclose(f);
@@ -455,7 +455,7 @@ private:
 
 TorController::TorController(struct event_base* _base, const std::string& _target):
     base(_base),
-    target(_target), conn(base), reconnect(true), reconnect_ev(0),
+    target(_target), conn(base), reconnect(true), reconnect_ev(nullptr),
     reconnect_timeout(RECONNECT_TIMEOUT_START)
 {
     reconnect_ev = event_new(base, -1, 0, reconnect_cb, this);
@@ -478,7 +478,7 @@ TorController::~TorController()
 {
     if (reconnect_ev) {
         event_free(reconnect_ev);
-        reconnect_ev = 0;
+        reconnect_ev = nullptr;
     }
     if (service.IsValid()) {
         RemoveLocal(service);
@@ -779,6 +779,6 @@ void StopTorControl()
         torControlThread.timed_join(boost::posix_time::seconds(1));
 #endif
         event_base_free(gBase);
-        gBase = 0;
+        gBase = nullptr;
     }
 }

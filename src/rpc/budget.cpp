@@ -193,7 +193,7 @@ UniValue preparebudget(const UniValue& params, bool fHelp)
         throw runtime_error("Invalid payment count, must be more than zero.");
 
     // Start must be in the next budget cycle
-    if (pindexPrev != NULL) nBlockMin = pindexPrev->nHeight - pindexPrev->nHeight % GetBudgetPaymentCycleBlocks() + GetBudgetPaymentCycleBlocks();
+    if (pindexPrev != nullptr) nBlockMin = pindexPrev->nHeight - pindexPrev->nHeight % GetBudgetPaymentCycleBlocks() + GetBudgetPaymentCycleBlocks();
 
     int nBlockStart = params[3].get_int();
     if (nBlockStart % GetBudgetPaymentCycleBlocks() != 0) {
@@ -288,7 +288,7 @@ UniValue submitbudget(const UniValue& params, bool fHelp)
         throw runtime_error("Invalid payment count, must be more than zero.");
 
     // Start must be in the next budget cycle
-    if (pindexPrev != NULL) nBlockMin = pindexPrev->nHeight - pindexPrev->nHeight % GetBudgetPaymentCycleBlocks() + GetBudgetPaymentCycleBlocks();
+    if (pindexPrev != nullptr) nBlockMin = pindexPrev->nHeight - pindexPrev->nHeight % GetBudgetPaymentCycleBlocks() + GetBudgetPaymentCycleBlocks();
 
     int nBlockStart = params[3].get_int();
     if (nBlockStart % GetBudgetPaymentCycleBlocks() != 0) {
@@ -410,7 +410,7 @@ UniValue mnbudgetvote(const UniValue& params, bool fHelp)
             }
 
             CMasternode* pmn = mnodeman.Find(activeMasternode.vin);
-            if (pmn == NULL) {
+            if (pmn == nullptr) {
                 failed++;
                 statusObj.push_back(Pair("node", "local"));
                 statusObj.push_back(Pair("result", "failed"));
@@ -630,7 +630,7 @@ UniValue getbudgetvotes(const UniValue& params, bool fHelp)
 
     CBudgetProposal* pbudgetProposal = budget.FindProposal(strProposalName);
 
-    if (pbudgetProposal == NULL) throw runtime_error("Unknown proposal name");
+    if (pbudgetProposal == nullptr) throw runtime_error("Unknown proposal name");
 
     std::map<uint256, CBudgetVote>::iterator it = pbudgetProposal->mapVotes.begin();
     while (it != pbudgetProposal->mapVotes.end()) {
@@ -775,7 +775,7 @@ UniValue getbudgetinfo(const UniValue& params, bool fHelp)
     if (params.size() == 1) {
         std::string strProposalName = SanitizeString(params[0].get_str());
         CBudgetProposal* pbudgetProposal = budget.FindProposal(strProposalName);
-        if (pbudgetProposal == NULL) throw runtime_error("Unknown proposal name");
+        if (pbudgetProposal == nullptr) throw runtime_error("Unknown proposal name");
         UniValue bObj(UniValue::VOBJ);
         budgetToJSON(pbudgetProposal, bObj);
         ret.push_back(bObj);
@@ -837,7 +837,7 @@ UniValue mnbudgetrawvote(const UniValue& params, bool fHelp)
         throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Malformed base64 encoding");
 
     CMasternode* pmn = mnodeman.Find(vin);
-    if (pmn == NULL) {
+    if (pmn == nullptr) {
         return "Failure to find masternode in list : " + vin.ToString();
     }
 
@@ -964,7 +964,7 @@ UniValue mnfinalbudget(const UniValue& params, bool fHelp)
             return "Error upon calling SetKey";
 
         CMasternode* pmn = mnodeman.Find(activeMasternode.vin);
-        if (pmn == NULL) {
+        if (pmn == nullptr) {
             return "Failure to find masternode in list : " + activeMasternode.vin.ToString();
         }
 
@@ -1018,7 +1018,7 @@ UniValue mnfinalbudget(const UniValue& params, bool fHelp)
 
         CFinalizedBudget* pfinalBudget = budget.FindFinalizedBudget(hash);
 
-        if (pfinalBudget == NULL) return "Unknown budget hash";
+        if (pfinalBudget == nullptr) return "Unknown budget hash";
 
         std::map<uint256, CFinalizedBudgetVote>::iterator it = pfinalBudget->mapVotes.begin();
         while (it != pfinalBudget->mapVotes.end()) {

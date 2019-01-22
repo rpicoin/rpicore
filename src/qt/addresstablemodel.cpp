@@ -189,7 +189,7 @@ public:
         if (idx >= 0 && idx < cachedAddressTable.size()) {
             return &cachedAddressTable[idx];
         } else {
-            return 0;
+            return nullptr;
         }
     }
 };

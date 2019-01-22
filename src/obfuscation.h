@@ -192,7 +192,7 @@ public:
     bool GetAddress(CService& addr)
     {
         CMasternode* pmn = mnodeman.Find(vin);
-        if (pmn != NULL) {
+        if (pmn != nullptr) {
             addr = pmn->addr;
             return true;
         }
@@ -203,7 +203,7 @@ public:
     bool GetProtocolVersion(int& protocolVersion)
     {
         CMasternode* pmn = mnodeman.Find(vin);
-        if (pmn != NULL) {
+        if (pmn != nullptr) {
             protocolVersion = pmn->protocolVersion;
             return true;
         }

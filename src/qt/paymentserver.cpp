@@ -264,9 +264,9 @@ bool PaymentServer::ipcSendCommandLine()
 
 PaymentServer::PaymentServer(QObject* parent, bool startLocalServer) : QObject(parent),
                                                                        saveURIs(true),
-                                                                       uriServer(0),
-                                                                       netManager(0),
-                                                                       optionsModel(0)
+                                                                       uriServer(nullptr),
+                                                                       netManager(nullptr),
+                                                                       optionsModel(nullptr)
 {
     // Verify that the version of the library that we linked against is
     // compatible with the version of the headers we compiled against.
@@ -326,7 +326,7 @@ void PaymentServer::initNetManager()
 {
     if (!optionsModel)
         return;
-    if (netManager != NULL)
+    if (netManager != nullptr)
         delete netManager;
 
     // netManager is used to fetch paymentrequests given in wispr: URIs

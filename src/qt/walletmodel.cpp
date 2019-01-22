@@ -28,9 +28,11 @@
 
 using namespace std;
 
-WalletModel::WalletModel(CWallet* wallet, OptionsModel* optionsModel, QObject* parent) : QObject(parent), wallet(wallet), optionsModel(optionsModel), addressTableModel(0),
-                                                                                         transactionTableModel(0),
-                                                                                         recentRequestsTableModel(0),
+WalletModel::WalletModel(CWallet* wallet, OptionsModel* optionsModel, QObject* parent) : QObject(parent), wallet(wallet), optionsModel(optionsModel), addressTableModel(
+        nullptr),
+                                                                                         transactionTableModel(nullptr),
+                                                                                         recentRequestsTableModel(
+                                                                                                 nullptr),
                                                                                          cachedBalance(0), cachedUnconfirmedBalance(0), cachedImmatureBalance(0),
                                                                                          cachedZerocoinBalance(0), cachedUnconfirmedZerocoinBalance(0), cachedImmatureZerocoinBalance(0),
                                                                                          cachedEncryptionStatus(Unencrypted),

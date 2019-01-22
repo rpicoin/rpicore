@@ -184,9 +184,9 @@ public:
 
     void SetNull()
     {
-        phashBlock = NULL;
-        pprev = NULL;
-        pskip = NULL;
+        phashBlock = nullptr;
+        pprev = nullptr;
+        pskip = nullptr;
         nHeight = 0;
         nFile = 0;
         nDataPos = 0;
@@ -545,7 +545,7 @@ public:
     CBlockIndex* Tip(bool fProofOfStake = false) const
     {
         if (vChain.size() < 1)
-            return NULL;
+            return nullptr;
 
         CBlockIndex* pindex = vChain[vChain.size() - 1];
 
@@ -560,7 +560,7 @@ public:
     CBlockIndex* operator[](int nHeight) const
     {
         if (nHeight < 0 || nHeight >= (int)vChain.size())
-            return NULL;
+            return nullptr;
         return vChain[nHeight];
     }
 
@@ -583,7 +583,7 @@ public:
         if (Contains(pindex))
             return (*this)[pindex->nHeight + 1];
         else
-            return NULL;
+            return nullptr;
     }
 
     /** Return the maximal height in the chain. Is equal to chain.Tip() ? chain.Tip()->nHeight : -1. */
@@ -596,7 +596,7 @@ public:
     void SetTip(CBlockIndex* pindex);
 
     /** Return a CBlockLocator that refers to a block in this chain (by default the tip). */
-    CBlockLocator GetLocator(const CBlockIndex* pindex = NULL) const;
+    CBlockLocator GetLocator(const CBlockIndex* pindex = nullptr) const;
 
     /** Find the last common block between this chain and a block index entry. */
     const CBlockIndex* FindFork(const CBlockIndex* pindex) const;

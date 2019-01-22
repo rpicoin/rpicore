@@ -79,7 +79,7 @@ uint64_t nLocalServices = NODE_NETWORK;
 CCriticalSection cs_mapLocalHost;
 map<CNetAddr, LocalServiceInfo> mapLocalHost;
 static bool vfLimited[NET_MAX] = {};
-static CNode* pnodeLocalHost = NULL;
+static CNode* pnodeLocalHost = nullptr;
 uint64_t nLocalHostNonce = 0;
 static std::vector<ListenSocket> vhListenSocket;
 CAddrMan addrman;
@@ -106,7 +106,7 @@ CCriticalSection cs_vAddedNodes;
 NodeId nLastNodeId = 0;
 CCriticalSection cs_nLastNodeId;
 
-static CSemaphore* semOutbound = NULL;
+static CSemaphore* semOutbound = nullptr;
 boost::condition_variable messageHandlerCondition;
 
 // Signals for message handling
@@ -349,7 +349,7 @@ CNode* FindNode(const CNetAddr& ip)
     for (CNode* pnode : vNodes)
         if ((CNetAddr)pnode->addr == ip)
             return (pnode);
-    return NULL;
+    return nullptr;
 }
 
 CNode* FindNode(const CSubNet& subNet)
@@ -358,7 +358,7 @@ CNode* FindNode(const CSubNet& subNet)
     for (CNode* pnode : vNodes)
     if (subNet.Match((CNetAddr)pnode->addr))
         return (pnode);
-    return NULL;
+    return nullptr;
 }
 
 CNode* FindNode(const std::string& addrName)
@@ -367,7 +367,7 @@ CNode* FindNode(const std::string& addrName)
     for (CNode* pnode : vNodes)
         if (pnode->addrName == addrName)
             return (pnode);
-    return NULL;
+    return nullptr;
 }
 
 CNode* FindNode(const CService& addr)
@@ -383,16 +383,16 @@ CNode* FindNode(const CService& addr)
                 return (pnode);
         }
     }
-    return NULL;
+    return nullptr;
 }
 
 CNode* ConnectNode(CAddress addrConnect, const char* pszDest, bool obfuScationMaster)
 {
-    if (pszDest == NULL) {
+    if (pszDest == nullptr) {
         // we clean masternode connections in CMasternodeMan::ProcessMasternodeConnections()
         // so should be safe to skip this and connect to local Hot MN on CActiveMasternode::ManageStatus()
         if (IsLocal(addrConnect) && !obfuScationMaster)
-            return NULL;
+            return nullptr;
 
         // Look for an existing connection
         CNode* pnode = FindNode((CService)addrConnect);
@@ -417,7 +417,7 @@ CNode* ConnectNode(CAddress addrConnect, const char* pszDest, bool obfuScationMa
         if (!IsSelectableSocket(hSocket)) {
             LogPrintf("Cannot create connection: non-selectable socket created (fd >= FD_SETSIZE ?)\n");
             CloseSocket(hSocket);
-            return NULL;
+            return nullptr;
         }
 
         addrman.Attempt(addrConnect);
@@ -441,7 +441,7 @@ CNode* ConnectNode(CAddress addrConnect, const char* pszDest, bool obfuScationMa
         addrman.Attempt(addrConnect);
     }
 
-    return NULL;
+    return nullptr;
 }
 
 void CNode::CloseSocketDisconnect()
@@ -1509,7 +1509,7 @@ void ThreadMessageHandler()
         }
 
         // Poll the connected nodes for messages
-        CNode* pnodeTrickle = NULL;
+        CNode* pnodeTrickle = nullptr;
         if (!vNodesCopy.empty())
             pnodeTrickle = vNodesCopy[GetRand(vNodesCopy.size())];
 
@@ -1727,13 +1727,13 @@ void StartNode(boost::thread_group& threadGroup, CScheduler& scheduler)
 
     // Initialize random numbers. Even when rand() is only usable for trivial use-cases most nodes should have a different
     // seed after all the file-IO done at this point. Should be good enough even when nodes are started via scripts.
-    srand(time(NULL));
+    srand(time(nullptr));
 
     LogPrintf("Loaded %i addresses from peers.dat  %dms\n",
         addrman.size(), GetTimeMillis() - nStart);
     fAddressesInitialized = true;
 
-    if (semOutbound == NULL) {
+    if (semOutbound == nullptr) {
         // initialize semaphore
         int nMaxOutbound = min(MAX_OUTBOUND_CONNECTIONS, nMaxConnections);
         semOutbound = new CSemaphore(nMaxOutbound);
@@ -1817,9 +1817,9 @@ public:
         vNodesDisconnected.clear();
         vhListenSocket.clear();
         delete semOutbound;
-        semOutbound = NULL;
+        semOutbound = nullptr;
         delete pnodeLocalHost;
-        pnodeLocalHost = NULL;
+        pnodeLocalHost = nullptr;
 
 #ifdef WIN32
         // Shutdown Windows Sockets

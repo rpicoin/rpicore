@@ -85,7 +85,7 @@ public:
         DbTxn* ptxn = NULL;
         int ret = dbenv.txn_begin(NULL, &ptxn, flags);
         if (!ptxn || ret != 0)
-            return NULL;
+            return nullptr;
         return ptxn;
     }
 };
@@ -222,11 +222,11 @@ protected:
     Dbc* GetCursor()
     {
         if (!pdb)
-            return NULL;
+            return nullptr;
         Dbc* pcursor = NULL;
         int ret = pdb->cursor(NULL, &pcursor, 0);
         if (ret != 0)
-            return NULL;
+            return nullptr;
         return pcursor;
     }
 
@@ -308,7 +308,7 @@ public:
         return Write(std::string("version"), nVersion);
     }
 
-    bool static Rewrite(const std::string& strFile, const char* pszSkip = NULL);
+    bool static Rewrite(const std::string& strFile, const char* pszSkip = nullptr);
 };
 
 #endif // BITCOIN_DB_H

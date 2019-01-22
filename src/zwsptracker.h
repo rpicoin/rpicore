@@ -22,7 +22,7 @@ private:
 public:
     CzWSPTracker(std::string strWalletFile);
     ~CzWSPTracker();
-    void Add(const CDeterministicMint& dMint, bool isNew = false, bool isArchived = false, CzWSPWallet* zWSPWallet = NULL);
+    void Add(const CDeterministicMint& dMint, bool isNew = false, bool isArchived = false, CzWSPWallet* zWSPWallet = nullptr);
     void Add(const CZerocoinMint& mint, bool isNew = false, bool isArchived = false);
     bool Archive(CMintMeta& meta);
     bool HasPubcoin(const CBigNum& bnValue) const;

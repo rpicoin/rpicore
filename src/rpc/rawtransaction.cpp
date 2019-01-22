@@ -268,7 +268,7 @@ UniValue listunspent(const UniValue& params, bool fHelp)
 
     UniValue results(UniValue::VARR);
     vector<COutput> vecOutputs;
-    assert(pwalletMain != NULL);
+    assert(pwalletMain != nullptr);
     LOCK2(cs_main, pwalletMain->cs_wallet);
     pwalletMain->AvailableCoins(vecOutputs, false, NULL, false, ALL_COINS, false, nWatchonlyConfig);
     for (const COutput& out: vecOutputs) {
@@ -794,7 +794,7 @@ UniValue sendrawtransaction(const UniValue& params, bool fHelp)
             RelayTransactionLockReq(tx, true);
         }
         CValidationState state;
-        if (!AcceptToMemoryPool(mempool, state, tx, false, NULL, !fOverrideFees)) {
+        if (!AcceptToMemoryPool(mempool, state, tx, false, nullptr, !fOverrideFees)) {
             if (state.IsInvalid())
                 throw JSONRPCError(RPC_TRANSACTION_REJECTED, strprintf("%i: %s", state.GetRejectCode(), state.GetRejectReason()));
             else

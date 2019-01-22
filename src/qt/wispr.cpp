@@ -296,13 +296,13 @@ void BitcoinCore::shutdown()
 
 BitcoinApplication::BitcoinApplication(int& argc, char** argv) : QApplication(argc, argv),
                                                                  coreThread(0),
-                                                                 optionsModel(0),
-                                                                 clientModel(0),
-                                                                 window(0),
-                                                                 pollShutdownTimer(0),
+                                                                 optionsModel(nullptr),
+                                                                 clientModel(nullptr),
+                                                                 window(nullptr),
+                                                                 pollShutdownTimer(nullptr),
 #ifdef ENABLE_WALLET
-                                                                 paymentServer(0),
-                                                                 walletModel(0),
+                                                                 paymentServer(nullptr),
+                                                                 walletModel(nullptr),
 #endif
                                                                  returnValue(0)
 {
@@ -319,10 +319,10 @@ BitcoinApplication::~BitcoinApplication()
     }
 
     delete window;
-    window = 0;
+    window = nullptr;
 #ifdef ENABLE_WALLET
     delete paymentServer;
-    paymentServer = 0;
+    paymentServer = nullptr;
 #endif
     // Delete Qt-settings if user clicked on "Reset Options"
     QSettings settings;
@@ -331,7 +331,7 @@ BitcoinApplication::~BitcoinApplication()
         settings.sync();
     }
     delete optionsModel;
-    optionsModel = 0;
+    optionsModel = nullptr;
 }
 
 #ifdef ENABLE_WALLET
@@ -405,10 +405,10 @@ void BitcoinApplication::requestShutdown()
 #ifdef ENABLE_WALLET
     window->removeAllWallets();
     delete walletModel;
-    walletModel = 0;
+    walletModel = nullptr;
 #endif
     delete clientModel;
-    clientModel = 0;
+    clientModel = nullptr;
 
     // Show a simple window indicating shutdown status
     ShutdownWindow::showShutdownWindow(window);

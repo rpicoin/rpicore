@@ -73,7 +73,7 @@ void CObfuscationPool::ProcessMessageObfuscation(CNode* pfrom, std::string& strC
         vRecv >> nDenom >> txCollateral;
 
         CMasternode* pmn = mnodeman.Find(activeMasternode.vin);
-        if (pmn == NULL) {
+        if (pmn == nullptr) {
             errorID = ERR_MN_LIST;
             pfrom->PushMessage("dssu", sessionID, GetState(), GetEntriesCount(), MASTERNODE_REJECTED, errorID);
             return;
@@ -117,7 +117,7 @@ void CObfuscationPool::ProcessMessageObfuscation(CNode* pfrom, std::string& strC
         if (dsq.IsExpired()) return;
 
         CMasternode* pmn = mnodeman.Find(dsq.vin);
-        if (pmn == NULL) return;
+        if (pmn == nullptr) return;
 
         // if the queue is ready, submit if we can
         if (dsq.ready) {
@@ -260,7 +260,7 @@ void CObfuscationPool::ProcessMessageObfuscation(CNode* pfrom, std::string& strC
 
             {
                 LOCK(cs_main);
-                if (!AcceptableInputs(mempool, state, CTransaction(tx), false, NULL, false, true)) {
+                if (!AcceptableInputs(mempool, state, CTransaction(tx), false, nullptr, false, true)) {
                     LogPrintf("dsi -- transaction not valid! \n");
                     errorID = ERR_INVALID_TX;
                     pfrom->PushMessage("dssu", sessionID, GetState(), GetEntriesCount(), MASTERNODE_REJECTED, errorID);
@@ -994,7 +994,7 @@ bool CObfuscationPool::IsCollateralValid(const CTransaction& txCollateral)
     {
         LOCK(cs_main);
         CValidationState state;
-        if (!AcceptableInputs(mempool, state, txCollateral, true, NULL)) {
+        if (!AcceptableInputs(mempool, state, txCollateral, true, nullptr)) {
             if (fDebug) LogPrintf("CObfuscationPool::IsCollateralValid - didn't pass IsAcceptable\n");
             return false;
         }
@@ -1183,7 +1183,7 @@ void CObfuscationPool::SendObfuscationDenominate(std::vector<CTxIn>& vin, std::v
                 MilliSleep(50);
                 continue;
             }
-            if (!AcceptableInputs(mempool, state, CTransaction(tx), false, NULL, false, true)) {
+            if (!AcceptableInputs(mempool, state, CTransaction(tx), false, nullptr, false, true)) {
                 LogPrintf("dsi -- transaction not valid! %s \n", tx.ToString());
                 UnlockCoins();
                 SetNull();
@@ -1600,7 +1600,7 @@ bool CObfuscationPool::DoAutomaticDenominating(bool fDryRun)
         // otherwise, try one randomly
         while (i < 10) {
             CMasternode* pmn = mnodeman.FindRandomNotInVec(vecMasternodesUsed, ActiveProtocol());
-            if (pmn == NULL) {
+            if (pmn == nullptr) {
                 LogPrintf("DoAutomaticDenominating --- Can't find random masternode!\n");
                 strAutoDenomResult = _("Can't find random Masternode.");
                 return false;
@@ -1614,8 +1614,8 @@ bool CObfuscationPool::DoAutomaticDenominating(bool fDryRun)
 
             lastTimeChanged = GetTimeMillis();
             LogPrintf("DoAutomaticDenominating --- attempt %d connection to Masternode %s\n", i, pmn->addr.ToString());
-            CNode* pnode = ConnectNode((CAddress)pmn->addr, NULL, true);
-            if (pnode != NULL) {
+            CNode* pnode = ConnectNode((CAddress)pmn->addr, nullptr, true);
+            if (pnode != nullptr) {
                 pSubmittedToMasternode = pmn;
                 vecMasternodesUsed.push_back(pmn->vin);
 
@@ -1690,7 +1690,7 @@ bool CObfuscationPool::SendRandomPaymentToSelf()
     // ****** Add fees ************ /
     vecSend.push_back(make_pair(scriptChange, nPayment));
 
-    CCoinControl* coinControl = NULL;
+    CCoinControl* coinControl = nullptr;
     bool success = pwalletMain->CreateTransaction(vecSend, wtx, reservekey, nFeeRet, strFail, coinControl, ONLY_DENOMINATED);
     if (!success) {
         LogPrintf("SendRandomPaymentToSelf: Error - %s\n", strFail);
@@ -1732,7 +1732,7 @@ bool CObfuscationPool::MakeCollateralAmounts()
     if (!success) {
         // if we failed (most likeky not enough funds), try to use all coins instead -
         // MN-like funds should not be touched in any case and we can't mix denominated without collaterals anyway
-        CCoinControl* coinControlNull = NULL;
+        CCoinControl* coinControlNull = nullptr;
         LogPrintf("MakeCollateralAmounts: ONLY_NONDENOMINATED_NOT10000IFMN Error - %s\n", strFail);
         success = pwalletMain->CreateTransaction(vecSend, wtx, reservekeyChange,
             nFeeRet, strFail, coinControlNull, ONLY_NOT10000IFMN);
@@ -1813,7 +1813,7 @@ bool CObfuscationPool::CreateDenominated(CAmount nTotalValue)
 
     // if we have anything left over, it will be automatically send back as change - there is no need to send it manually
 
-    CCoinControl* coinControl = NULL;
+    CCoinControl* coinControl = nullptr;
     bool success = pwalletMain->CreateTransaction(vecSend, wtx, reservekeyChange,
         nFeeRet, strFail, coinControl, ONLY_NONDENOMINATED_NOT10000IFMN);
     if (!success) {
@@ -2223,7 +2223,7 @@ bool CObfuscationQueue::CheckSignature()
 {
     CMasternode* pmn = mnodeman.Find(vin);
 
-    if (pmn != NULL) {
+    if (pmn != nullptr) {
         std::string strMessage = vin.ToString() + std::to_string(nDenom) + std::to_string(time) + std::to_string(ready);
 
         std::string errorMessage = "";
@@ -2260,7 +2260,7 @@ void CObfuscationPool::RelayIn(const std::vector<CTxDSIn>& vin, const int64_t& n
         vout2.push_back(out);
 
     CNode* pnode = FindNode(pSubmittedToMasternode->addr);
-    if (pnode != NULL) {
+    if (pnode != nullptr) {
         LogPrintf("RelayIn - found master, relaying message - %s \n", pnode->addr.ToString());
         pnode->PushMessage("dsi", vin2, nAmount, txCollateral, vout2);
     }

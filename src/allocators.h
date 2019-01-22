@@ -204,7 +204,7 @@ struct secure_allocator : public std::allocator<T> {
         typedef secure_allocator<_Other> other;
     };
 
-    T* allocate(std::size_t n, const void* hint = 0)
+    T* allocate(std::size_t n, const void* hint = nullptr)
     {
         T* p;
         p = std::allocator<T>::allocate(n, hint);

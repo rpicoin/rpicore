@@ -189,7 +189,7 @@ public:
     // If non-NULL, *mutated is set to whether mutation was detected in the merkle
     // tree (a duplication of transactions in the block leading to an identical
     // merkle root).
-    uint256 BuildMerkleTree(bool* mutated = NULL) const;
+    uint256 BuildMerkleTree(bool* mutated = nullptr) const;
 
     std::vector<uint256> GetMerkleBranch(int nIndex) const;
     static uint256 CheckMerkleBranch(uint256 hash, const std::vector<uint256>& vMerkleBranch, int nIndex);

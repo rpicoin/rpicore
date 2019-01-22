@@ -8,8 +8,8 @@
 #include "wallet.h"
 
 WalletModelTransaction::WalletModelTransaction(const QList<SendCoinsRecipient>& recipients) : recipients(recipients),
-                                                                                              walletTransaction(0),
-                                                                                              keyChange(0),
+                                                                                              walletTransaction(nullptr),
+                                                                                              keyChange(nullptr),
                                                                                               fee(0)
 {
     walletTransaction = new CWalletTx();

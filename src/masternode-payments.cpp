@@ -175,7 +175,7 @@ void DumpMasternodePayments()
 bool IsBlockValueValid(const CBlock& block, CAmount nExpectedValue, CAmount nMinted)
 {
     CBlockIndex* pindexPrev = chainActive.Tip();
-    if (pindexPrev == NULL) return true;
+    if (pindexPrev == nullptr) return true;
 
     int nHeight = 0;
     if (pindexPrev->GetBlockHash() == block.hashPrevBlock) {
@@ -386,7 +386,7 @@ void CMasternodePayments::ProcessMessageMasternodePayments(CNode* pfrom, std::st
         int nHeight;
         {
             TRY_LOCK(cs_main, locked);
-            if (!locked || chainActive.Tip() == NULL) return;
+            if (!locked || chainActive.Tip() == nullptr) return;
             nHeight = chainActive.Tip()->nHeight;
         }
 
@@ -474,7 +474,7 @@ bool CMasternodePayments::IsScheduled(CMasternode& mn, int nNotBlockHeight)
     int nHeight;
     {
         TRY_LOCK(cs_main, locked);
-        if (!locked || chainActive.Tip() == NULL) return false;
+        if (!locked || chainActive.Tip() == nullptr) return false;
         nHeight = chainActive.Tip()->nHeight;
     }
 
@@ -635,7 +635,7 @@ void CMasternodePayments::CleanPaymentList()
     int nHeight;
     {
         TRY_LOCK(cs_main, locked);
-        if (!locked || chainActive.Tip() == NULL) return;
+        if (!locked || chainActive.Tip() == nullptr) return;
         nHeight = chainActive.Tip()->nHeight;
     }
 
@@ -721,7 +721,7 @@ bool CMasternodePayments::ProcessBlock(int nBlockHeight)
         int nCount = 0;
         CMasternode* pmn = mnodeman.GetNextMasternodeInQueueForPayment(nBlockHeight, true, nCount);
 
-        if (pmn != NULL) {
+        if (pmn != nullptr) {
             LogPrint("masternode","CMasternodePayments::ProcessBlock() Found by FindOldestNotInVec \n");
 
             newWinner.nBlockHeight = nBlockHeight;
@@ -772,7 +772,7 @@ bool CMasternodePaymentWinner::SignatureValid()
 {
     CMasternode* pmn = mnodeman.Find(vinMasternode);
 
-    if (pmn != NULL) {
+    if (pmn != nullptr) {
         std::string strMessage = vinMasternode.prevout.ToStringShort() + std::to_string(nBlockHeight) + payee.ToString();
 
         std::string errorMessage = "";
@@ -793,7 +793,7 @@ void CMasternodePayments::Sync(CNode* node, int nCountNeeded)
     int nHeight;
     {
         TRY_LOCK(cs_main, locked);
-        if (!locked || chainActive.Tip() == NULL) return;
+        if (!locked || chainActive.Tip() == nullptr) return;
         nHeight = chainActive.Tip()->nHeight;
     }
 

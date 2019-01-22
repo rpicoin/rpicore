@@ -130,7 +130,7 @@ bool PaymentRequestPlus::getMerchant(X509_STORE* certStore, QString& merchant) c
         return false;
     }
 
-    char* website = NULL;
+    char* website = nullptr;
     bool fResult = true;
     try {
         if (!X509_STORE_CTX_init(store_ctx, certStore, signing_cert, chain)) {

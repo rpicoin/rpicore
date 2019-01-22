@@ -465,7 +465,7 @@ void CBudgetManager::CheckAndRemove()
     // Add some verbosity once loading blocks from files has finished
     {
         TRY_LOCK(cs_main, locked);
-        if ((locked) && (chainActive.Tip() != NULL)) {
+        if ((locked) && (chainActive.Tip() != nullptr)) {
             CBlockIndex* pindexPrev = chainActive.Tip();
             if (pindexPrev) {
                 nHeight = pindexPrev->nHeight;
@@ -603,7 +603,7 @@ CFinalizedBudget* CBudgetManager::FindFinalizedBudget(uint256 nHash)
     if (mapFinalizedBudgets.count(nHash))
         return &mapFinalizedBudgets[nHash];
 
-    return NULL;
+    return nullptr;
 }
 
 CBudgetProposal* CBudgetManager::FindProposal(const std::string& strProposalName)
@@ -611,7 +611,7 @@ CBudgetProposal* CBudgetManager::FindProposal(const std::string& strProposalName
     //find the prop with the highest yes count
 
     int nYesCount = -99999;
-    CBudgetProposal* pbudgetProposal = NULL;
+    CBudgetProposal* pbudgetProposal = nullptr;
 
     std::map<uint256, CBudgetProposal>::iterator it = mapProposals.begin();
     while (it != mapProposals.end()) {
@@ -622,7 +622,7 @@ CBudgetProposal* CBudgetManager::FindProposal(const std::string& strProposalName
         ++it;
     }
 
-    if (nYesCount == -99999) return NULL;
+    if (nYesCount == -99999) return nullptr;
 
     return pbudgetProposal;
 }
@@ -634,7 +634,7 @@ CBudgetProposal* CBudgetManager::FindProposal(uint256 nHash)
     if (mapProposals.count(nHash))
         return &mapProposals[nHash];
 
-    return NULL;
+    return nullptr;
 }
 
 bool CBudgetManager::IsBudgetPaymentBlock(int nBlockHeight)
@@ -911,7 +911,7 @@ std::string CBudgetManager::GetRequiredPaymentsString(int nBlockHeight)
 
 CAmount CBudgetManager::GetTotalBudget(int nHeight)
 {
-    if (chainActive.Tip() == NULL) return 0;
+    if (chainActive.Tip() == nullptr) return 0;
 
     if (Params().NetworkID() == CBaseChainParams::TESTNET) {
         CAmount nSubsidy = 0 * COIN;
@@ -1108,7 +1108,7 @@ void CBudgetManager::ProcessMessage(CNode* pfrom, std::string& strCommand, CData
         }
 
         CMasternode* pmn = mnodeman.Find(vote.vin);
-        if (pmn == NULL) {
+        if (pmn == nullptr) {
             LogPrint("mnbudget","mvote - unknown masternode - vin: %s\n", vote.vin.prevout.hash.ToString());
             mnodeman.AskForMN(pfrom, vote.vin);
             return;
@@ -1183,7 +1183,7 @@ void CBudgetManager::ProcessMessage(CNode* pfrom, std::string& strCommand, CData
         }
 
         CMasternode* pmn = mnodeman.Find(vote.vin);
-        if (pmn == NULL) {
+        if (pmn == nullptr) {
             LogPrint("mnbudget", "fbvote - unknown masternode - vin: %s\n", vote.vin.prevout.hash.ToString());
             mnodeman.AskForMN(pfrom, vote.vin);
             return;
@@ -1512,7 +1512,7 @@ bool CBudgetProposal::IsValid(std::string& strError, bool fCheckCollateral)
     }
 
     CBlockIndex* pindexPrev = chainActive.Tip();
-    if (pindexPrev == NULL) {
+    if (pindexPrev == nullptr) {
         strError = "Proposal " + strProposalName + ": Tip is NULL";
         return true;
     }
@@ -1640,7 +1640,7 @@ int CBudgetProposal::GetBlockStartCycle()
 int CBudgetProposal::GetBlockCurrentCycle()
 {
     CBlockIndex* pindexPrev = chainActive.Tip();
-    if (pindexPrev == NULL) return -1;
+    if (pindexPrev == nullptr) return -1;
 
     if (pindexPrev->nHeight >= GetBlockEndCycle()) return -1;
 
@@ -1756,7 +1756,7 @@ bool CBudgetVote::SignatureValid(bool fSignatureCheck)
 
     CMasternode* pmn = mnodeman.Find(vin);
 
-    if (pmn == NULL) {
+    if (pmn == nullptr) {
         if (fDebug){
             LogPrint("mnbudget","CBudgetVote::SignatureValid() - Unknown Masternode - %s\n", vin.prevout.hash.ToString());
         }
@@ -2066,7 +2066,7 @@ bool CFinalizedBudget::IsValid(std::string& strError, bool fCheckCollateral)
     // Remove obsolete finalized budgets after some time
 
     CBlockIndex* pindexPrev = chainActive.Tip();
-    if (pindexPrev == NULL) return true;
+    if (pindexPrev == nullptr) return true;
 
     // Get start of current budget-cycle
     int nCurrentHeight = chainActive.Height();
@@ -2287,7 +2287,7 @@ bool CFinalizedBudgetVote::SignatureValid(bool fSignatureCheck)
 
     CMasternode* pmn = mnodeman.Find(vin);
 
-    if (pmn == NULL) {
+    if (pmn == nullptr) {
         LogPrint("mnbudget","CFinalizedBudgetVote::SignatureValid() - Unknown Masternode %s\n", strMessage);
         return false;
     }

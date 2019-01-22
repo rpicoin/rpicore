@@ -66,7 +66,7 @@ struct TestingSetup {
         UnregisterNodeSignals(GetNodeSignals());
 #ifdef ENABLE_WALLET
         delete pwalletMain;
-        pwalletMain = NULL;
+        pwalletMain = nullptr;
 #endif
         delete pcoinsTip;
         delete pcoinsdbview;

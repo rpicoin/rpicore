@@ -202,7 +202,7 @@ Test_Accumulator()
 {
 	// This test assumes a list of coins were generated during
 	// the Test_MintCoin() test.
-	if (gCoins[0] == NULL) {
+	if (gCoins[0] == nullptr) {
 		return false;
 	}
 	try {
@@ -393,11 +393,11 @@ Test_MintAndSpend()
 {
 	try {
 		// This test assumes a list of coins were generated in Test_MintCoin()
-		if (gCoins[0] == NULL)
+		if (gCoins[0] == nullptr)
 		{
 			// No coins: mint some.
 			Test_MintCoin();
-			if (gCoins[0] == NULL) {
+			if (gCoins[0] == nullptr) {
 				return false;
 			}
 		}
@@ -452,7 +452,7 @@ Test_RunAllTests()
 
 	gNumTests = gSuccessfulTests = gProofSize = 0;
 	for (uint32_t i = 0; i < TESTS_COINS_TO_ACCUMULATE; i++) {
-		gCoins[i] = NULL;
+		gCoins[i] = nullptr;
 	}
 
 	// Run through all of the Zerocoin tests

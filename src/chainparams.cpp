@@ -418,7 +418,7 @@ public:
 static CUnitTestParams unitTestParams;
 
 
-static CChainParams* pCurrentParams = 0;
+static CChainParams* pCurrentParams = nullptr;
 
 CModifiableParams* ModifiableParams()
 {

@@ -74,8 +74,8 @@ using namespace boost;
 using namespace std;
 
 #ifdef ENABLE_WALLET
-CWallet* pwalletMain = NULL;
-CzWSPWallet* zwalletMain = NULL;
+CWallet* pwalletMain = nullptr;
+CzWSPWallet* zwalletMain = nullptr;
 int nWalletBackups = 10;
 #endif
 volatile bool fFeeEstimatesInitialized = false;
@@ -168,8 +168,8 @@ public:
     // Writes do not need similar protection, as failure to write is handled by the caller.
 };
 
-static CCoinsViewDB* pcoinsdbview = NULL;
-static CCoinsViewErrorCatcher* pcoinscatcher = NULL;
+static CCoinsViewDB* pcoinsdbview = nullptr;
+static CCoinsViewErrorCatcher* pcoinscatcher = nullptr;
 static boost::scoped_ptr<ECCVerifyHandle> globalVerifyHandle;
 
 static boost::thread_group threadGroup;
@@ -207,7 +207,7 @@ void PrepareShutdown()
 #ifdef ENABLE_WALLET
     if (pwalletMain)
         bitdb.Flush(false);
-    GenerateBitcoins(false, NULL, 0);
+    GenerateBitcoins(false, nullptr, 0);
 #endif
     StopNode();
     DumpMasternodes();
@@ -232,24 +232,24 @@ void PrepareShutdown()
 
     {
         LOCK(cs_main);
-        if (pcoinsTip != NULL) {
+        if (pcoinsTip != nullptr) {
             FlushStateToDisk();
 
             //record that client took the proper shutdown procedure
             pblocktree->WriteFlag("shutdown", true);
         }
         delete pcoinsTip;
-        pcoinsTip = NULL;
+        pcoinsTip = nullptr;
         delete pcoinscatcher;
-        pcoinscatcher = NULL;
+        pcoinscatcher = nullptr;
         delete pcoinsdbview;
-        pcoinsdbview = NULL;
+        pcoinsdbview = nullptr;
         delete pblocktree;
-        pblocktree = NULL;
+        pblocktree = nullptr;
         delete zerocoinDB;
-        zerocoinDB = NULL;
+        zerocoinDB = nullptr;
         delete pSporkDB;
-        pSporkDB = NULL;
+        pSporkDB = nullptr;
     }
 #ifdef ENABLE_WALLET
     if (pwalletMain)
@@ -293,9 +293,9 @@ void Shutdown()
     StopTorControl();
 #ifdef ENABLE_WALLET
     delete pwalletMain;
-    pwalletMain = NULL;
+    pwalletMain = nullptr;
     delete zwalletMain;
-    zwalletMain = NULL;
+    zwalletMain = nullptr;
 #endif
     globalVerifyHandle.reset();
     ECC_Stop();
@@ -755,7 +755,7 @@ bool AppInit2()
 #endif
     typedef BOOL(WINAPI * PSETPROCDEPPOL)(DWORD);
     PSETPROCDEPPOL setProcDEPPol = (PSETPROCDEPPOL)GetProcAddress(GetModuleHandleA("Kernel32.dll"), "SetProcessDEPPolicy");
-    if (setProcDEPPol != NULL) setProcDEPPol(PROCESS_DEP_ENABLE);
+    if (setProcDEPPol != nullptr) setProcDEPPol(PROCESS_DEP_ENABLE);
 #endif
 
     if (!SetupNetworking())
@@ -914,7 +914,7 @@ bool AppInit2()
         nScriptCheckThreads = MAX_SCRIPTCHECK_THREADS;
 
     fServer = GetBoolArg("-server", false);
-    setvbuf(stdout, NULL, _IOLBF, 0); /// ***TODO*** do we still need this after -printtoconsole is gone?
+    setvbuf(stdout, nullptr, _IOLBF, 0); /// ***TODO*** do we still need this after -printtoconsole is gone?
 
     // Staking needs a CWallet instance, so make sure wallet is enabled
 #ifdef ENABLE_WALLET
@@ -1569,8 +1569,8 @@ bool AppInit2()
 // ********************************************************* Step 8: load wallet
 #ifdef ENABLE_WALLET
     if (fDisableWallet) {
-        pwalletMain = NULL;
-        zwalletMain = NULL;
+        pwalletMain = nullptr;
+        zwalletMain = nullptr;
         LogPrintf("Wallet disabled!\n");
     } else {
         // needed to restore wallet transaction meta data after -zapwallettxes
@@ -1587,7 +1587,7 @@ bool AppInit2()
             }
 
             delete pwalletMain;
-            pwalletMain = NULL;
+            pwalletMain = nullptr;
         }
 
         uiInterface.InitMessage(_("Loading wallet..."));
@@ -1732,9 +1732,9 @@ bool AppInit2()
             vImportFiles.push_back(strFile);
     }
     threadGroup.create_thread(boost::bind(&ThreadImport, vImportFiles));
-    if (chainActive.Tip() == NULL) {
+    if (chainActive.Tip() == nullptr) {
         LogPrintf("Waiting for genesis block to be imported...\n");
-        while (!fRequestShutdown && chainActive.Tip() == NULL)
+        while (!fRequestShutdown && chainActive.Tip() == nullptr)
             MilliSleep(10);
     }
 

@@ -432,7 +432,7 @@ int64_t GetAverageVoteTime()
 
 void CleanTransactionLocksList()
 {
-    if (chainActive.Tip() == NULL) return;
+    if (chainActive.Tip() == nullptr) return;
 
     std::map<uint256, CTransactionLock>::iterator it = mapTxLocks.begin();
 
@@ -485,7 +485,7 @@ bool CConsensusVote::SignatureValid()
 
     CMasternode* pmn = mnodeman.Find(vinMasternode);
 
-    if (pmn == NULL) {
+    if (pmn == nullptr) {
         LogPrintf("SwiftX::CConsensusVote::SignatureValid() - Unknown Masternode\n");
         return false;
     }

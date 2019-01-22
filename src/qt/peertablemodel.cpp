@@ -102,7 +102,7 @@ public:
         if (idx >= 0 && idx < cachedNodeStats.size()) {
             return &cachedNodeStats[idx];
         } else {
-            return 0;
+            return nullptr;
         }
     }
 };

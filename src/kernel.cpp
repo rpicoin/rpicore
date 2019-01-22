@@ -108,7 +108,7 @@ static bool SelectBlockFromCandidates(
     bool fFirstRun = true;
     bool fSelected = false;
     uint256 hashBest = 0;
-    *pindexSelected = (const CBlockIndex*)0;
+    *pindexSelected = (const CBlockIndex*) nullptr;
     for (const std::pair<int64_t, uint256> & item: vSortedByTimestamp) {
         if (!mapBlockIndex.count(item.second))
             return error("SelectBlockFromCandidates: failed to find block index for candidate block %s", item.second.ToString().c_str());

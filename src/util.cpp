@@ -206,24 +206,24 @@ static boost::once_flag debugPrintInitFlag = BOOST_ONCE_INIT;
  * We use boost::call_once() to make sure these are initialized
  * in a thread-safe manner the first time called:
  */
-static FILE* fileout = NULL;
+static FILE* fileout = nullptr;
 static boost::mutex* mutexDebugLog = NULL;
 
 static void DebugPrintInit()
 {
-    assert(fileout == NULL);
+    assert(fileout == nullptr);
     assert(mutexDebugLog == NULL);
 
     boost::filesystem::path pathDebug = GetDataDir() / "debug.log";
     fileout = fopen(pathDebug.string().c_str(), "a");
-    if (fileout) setbuf(fileout, NULL); // unbuffered
+    if (fileout) setbuf(fileout, nullptr); // unbuffered
 
     mutexDebugLog = new boost::mutex();
 }
 
 bool LogAcceptCategory(const char* category)
 {
-    if (category != NULL) {
+    if (category != nullptr) {
         if (!fDebug)
             return false;
 
@@ -267,7 +267,7 @@ int LogPrintStr(const std::string& str)
         static bool fStartedNewLine = true;
         boost::call_once(&DebugPrintInit, debugPrintInitFlag);
 
-        if (fileout == NULL)
+        if (fileout == nullptr)
             return ret;
 
         boost::mutex::scoped_lock scoped_lock(*mutexDebugLog);
@@ -277,7 +277,7 @@ int LogPrintStr(const std::string& str)
             fReopenDebugLog = false;
             boost::filesystem::path pathDebug = GetDataDir() / "debug.log";
             if (freopen(pathDebug.string().c_str(), "a", fileout) != NULL)
-                setbuf(fileout, NULL); // unbuffered
+                setbuf(fileout, nullptr); // unbuffered
         }
 
         // Debug print useful for profiling
@@ -400,7 +400,7 @@ static std::string FormatException(std::exception* pex, const char* pszThread)
 {
 #ifdef WIN32
     char pszModule[MAX_PATH] = "";
-    GetModuleFileNameA(NULL, pszModule, sizeof(pszModule));
+    GetModuleFileNameA(nullptr, pszModule, sizeof(pszModule));
 #else
     const char* pszModule = "wispr";
 #endif
@@ -512,7 +512,7 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
     if (!streamConfig.good()) {
         // Create empty wispr.conf if it does not exist
         FILE* configFile = fopen(GetConfigFile().string().c_str(), "a");
-        if (configFile != NULL)
+        if (configFile != nullptr)
             fclose(configFile);
         return; // Nothing to read, so just return
     }
@@ -643,7 +643,7 @@ void AllocateFileRange(FILE* file, unsigned int offset, unsigned int length)
     int64_t nEndPos = (int64_t)offset + length;
     nFileSize.u.LowPart = nEndPos & 0xFFFFFFFF;
     nFileSize.u.HighPart = nEndPos >> 32;
-    SetFilePointerEx(hFile, nFileSize, 0, FILE_BEGIN);
+    SetFilePointerEx(hFile, nFileSize, nullptr, FILE_BEGIN);
     SetEndOfFile(hFile);
 #elif defined(MAC_OSX)
     // OSX specific version
@@ -694,7 +694,7 @@ void ShrinkDebugFile()
             fwrite(begin_ptr(vch), 1, nBytes, file);
             fclose(file);
         }
-    } else if (file != NULL)
+    } else if (file != nullptr)
         fclose(file);
 }
 
@@ -705,7 +705,7 @@ boost::filesystem::path GetSpecialFolderPath(int nFolder, bool fCreate)
 
     char pszPath[MAX_PATH] = "";
 
-    if (SHGetSpecialFolderPathA(NULL, pszPath, nFolder, fCreate)) {
+    if (SHGetSpecialFolderPathA(nullptr, pszPath, nFolder, fCreate)) {
         return fs::path(pszPath);
     }
 

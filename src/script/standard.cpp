@@ -33,7 +33,7 @@ const char* GetTxnOutputType(txnouttype t)
     case TX_NULL_DATA: return "nulldata";
     case TX_ZEROCOINMINT: return "zerocoinmint";
     }
-    return NULL;
+    return nullptr;
 }
 
 /**

@@ -26,7 +26,7 @@ bool CZWspControlWidgetItem::operator<(const QTreeWidgetItem &other) const {
 ZWspControlDialog::ZWspControlDialog(QWidget *parent) :
     QDialog(parent, Qt::WindowSystemMenuHint | Qt::WindowTitleHint | Qt::WindowCloseButtonHint),
     ui(new Ui::ZWspControlDialog),
-    model(0)
+    model(nullptr)
 {
     ui->setupUi(this);
     setMints.clear();

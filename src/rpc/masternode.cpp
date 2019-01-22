@@ -237,7 +237,7 @@ UniValue listmasternodes(const UniValue& params, bool fHelp)
 
         CMasternode* mn = mnodeman.Find(s.second.vin);
 
-        if (mn != NULL) {
+        if (mn != nullptr) {
             if (strFilter != "" && strTxHash.find(strFilter) == string::npos &&
                 mn->Status().find(strFilter) == string::npos &&
                 CBitcoinAddress(mn->pubKeyCollateralAddress.GetID()).ToString().find(strFilter) == string::npos) continue;
@@ -285,7 +285,7 @@ UniValue masternodeconnect(const UniValue& params, bool fHelp)
 
     CService addr = CService(strAddress);
 
-    CNode* pnode = ConnectNode((CAddress)addr, NULL, false);
+    CNode* pnode = ConnectNode((CAddress)addr, nullptr, false);
     if (pnode) {
         pnode->Release();
         return NullUniValue;
@@ -851,7 +851,7 @@ UniValue getmasternodescores (const UniValue& params, bool fHelp)
     std::vector<CMasternode> vMasternodes = mnodeman.GetFullMasternodeVector();
     for (int nHeight = chainActive.Tip()->nHeight - nLast; nHeight < chainActive.Tip()->nHeight + 20; nHeight++) {
         uint256 nHigh = 0;
-        CMasternode* pBestMasternode = NULL;
+        CMasternode* pBestMasternode = nullptr;
         for (CMasternode& mn: vMasternodes) {
             uint256 n = mn.CalculateScore(1, nHeight - 100);
             if (n > nHigh) {

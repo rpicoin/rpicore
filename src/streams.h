@@ -326,7 +326,7 @@ public:
     {
         if (file) {
             ::fclose(file);
-            file = NULL;
+            file = nullptr;
         }
     }
 
@@ -337,7 +337,7 @@ public:
     FILE* release()
     {
         FILE* ret = file;
-        file = NULL;
+        file = nullptr;
         return ret;
     }
 
@@ -349,7 +349,7 @@ public:
 
     /** Return true if the wrapped FILE* is NULL, false otherwise.
      */
-    bool IsNull() const { return (file == NULL); }
+    bool IsNull() const { return (file == nullptr); }
 
     //
     // Stream subset
@@ -467,7 +467,7 @@ public:
     {
         if (src) {
             ::fclose(src);
-            src = NULL;
+            src = nullptr;
         }
     }
 

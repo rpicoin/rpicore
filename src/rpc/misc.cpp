@@ -116,7 +116,7 @@ UniValue getinfo(const UniValue& params, bool fHelp)
     obj.push_back(Pair("testnet", Params().TestnetToBeDeprecatedFieldRPC()));
 
     // During inital block verification chainActive.Tip() might be not yet initialized
-    if (chainActive.Tip() == NULL) {
+    if (chainActive.Tip() == nullptr) {
         obj.push_back(Pair("status", "Blockchain information not yet available"));
         return obj;
     }

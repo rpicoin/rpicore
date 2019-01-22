@@ -138,7 +138,7 @@ bool static LookupIntern(const char* pszName, std::vector<CNetAddr>& vIP, unsign
     aiHint.ai_flags = fAllowLookup ? AI_ADDRCONFIG : AI_NUMERICHOST;
 #endif
 
-    struct addrinfo* aiRes = NULL;
+    struct addrinfo* aiRes = nullptr;
 #ifdef HAVE_GETADDRINFO_A
     struct gaicb gcb, *query = &gcb;
     memset(query, 0, sizeof(struct gaicb));
@@ -162,7 +162,7 @@ bool static LookupIntern(const char* pszName, std::vector<CNetAddr>& vIP, unsign
             aiRes = query->ar_result;
     } while (nErr == EAI_INPROGRESS);
 #else
-    int nErr = getaddrinfo(pszName, NULL, &aiHint, &aiRes);
+    int nErr = getaddrinfo(pszName, nullptr, &aiHint, &aiRes);
 #endif
     if (nErr)
         return false;
@@ -275,7 +275,7 @@ bool static InterruptibleRecv(char* data, size_t len, int timeout, SOCKET& hSock
                 fd_set fdset;
                 FD_ZERO(&fdset);
                 FD_SET(hSocket, &fdset);
-                int nRet = select(hSocket + 1, &fdset, NULL, NULL, &tval);
+                int nRet = select(hSocket + 1, &fdset, nullptr, nullptr, &tval);
                 if (nRet == SOCKET_ERROR) {
                     return false;
                 }
@@ -476,7 +476,7 @@ bool static ConnectSocketDirectly(const CService& addrConnect, SOCKET& hSocketRe
             fd_set fdset;
             FD_ZERO(&fdset);
             FD_SET(hSocket, &fdset);
-            int nRet = select(hSocket + 1, NULL, &fdset, NULL, &timeout);
+            int nRet = select(hSocket + 1, nullptr, &fdset, nullptr, &timeout);
             if (nRet == 0) {
                 LogPrint("net", "connection to %s timeout\n", addrConnect.ToString());
                 CloseSocket(hSocket);
@@ -1005,7 +1005,7 @@ static const int NET_UNKNOWN = NET_MAX + 0;
 static const int NET_TEREDO = NET_MAX + 1;
 int static GetExtNetwork(const CNetAddr* addr)
 {
-    if (addr == NULL)
+    if (addr == nullptr)
         return NET_UNKNOWN;
     if (addr->IsRFC4380())
         return NET_TEREDO;
@@ -1402,8 +1402,8 @@ std::string NetworkErrorString(int err)
     char buf[256];
     buf[0] = 0;
     if (FormatMessageA(FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS | FORMAT_MESSAGE_MAX_WIDTH_MASK,
-            NULL, err, MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT),
-            buf, sizeof(buf), NULL)) {
+                       nullptr, err, MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT),
+            buf, sizeof(buf), nullptr)) {
         return strprintf("%s (%d)", buf, err);
     } else {
         return strprintf("Unknown error (%d)", err);

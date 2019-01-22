@@ -82,7 +82,7 @@ const CWalletTx* CWallet::GetWalletTx(const uint256& hash) const
     LOCK(cs_wallet);
     std::map<uint256, CWalletTx>::const_iterator it = mapWallet.find(hash);
     if (it == mapWallet.end())
-        return NULL;
+        return nullptr;
     return &(it->second);
 }
 
@@ -391,7 +391,7 @@ void CWallet::SyncMetaData(pair<TxSpends::iterator, TxSpends::iterator> range)
     // So: find smallest nOrderPos:
 
     int nMinOrderPos = std::numeric_limits<int>::max();
-    const CWalletTx* copyFrom = NULL;
+    const CWalletTx* copyFrom = nullptr;
     for (TxSpends::iterator it = range.first; it != range.second; ++it) {
         const uint256& hash = it->second;
         int n = mapWallet[hash].nOrderPos;
@@ -563,7 +563,7 @@ bool CWallet::EncryptWallet(const SecureString& strWalletPassphrase)
             pwalletdbEncryption = new CWalletDB(strWalletFile);
             if (!pwalletdbEncryption->TxnBegin()) {
                 delete pwalletdbEncryption;
-                pwalletdbEncryption = NULL;
+                pwalletdbEncryption = nullptr;
                 return false;
             }
             pwalletdbEncryption->WriteMasterKey(nMasterKeyMaxID, kMasterKey);
@@ -591,7 +591,7 @@ bool CWallet::EncryptWallet(const SecureString& strWalletPassphrase)
             }
 
             delete pwalletdbEncryption;
-            pwalletdbEncryption = NULL;
+            pwalletdbEncryption = nullptr;
         }
 
         Lock();
@@ -813,7 +813,7 @@ int CWallet::GetRealInputObfuscationRounds(CTxIn in, int rounds) const
     unsigned int nout = in.prevout.n;
 
     const CWalletTx* wtx = GetWalletTx(hash);
-    if (wtx != NULL) {
+    if (wtx != nullptr) {
         std::map<uint256, CMutableTransaction>::const_iterator mdwi = mDenomWtxes.find(hash);
         // not known yet, let's add it
         if (mdwi == mDenomWtxes.end()) {
@@ -1070,7 +1070,7 @@ CAmount CWalletTx::GetImmatureCredit(bool fUseCache) const
 
 CAmount CWalletTx::GetAvailableCredit(bool fUseCache) const
 {
-    if (pwallet == 0)
+    if (pwallet == nullptr)
         return 0;
 
     // Must wait until coinbase is safely deep enough in the chain before valuing it
@@ -1098,7 +1098,7 @@ CAmount CWalletTx::GetAvailableCredit(bool fUseCache) const
 
 CAmount CWalletTx::GetAnonymizableCredit(bool fUseCache) const
 {
-    if (pwallet == 0)
+    if (pwallet == nullptr)
         return 0;
 
     // Must wait until coinbase is safely deep enough in the chain before valuing it
@@ -1132,7 +1132,7 @@ CAmount CWalletTx::GetAnonymizableCredit(bool fUseCache) const
 
 CAmount CWalletTx::GetAnonymizedCredit(bool fUseCache) const
 {
-    if (pwallet == 0)
+    if (pwallet == nullptr)
         return 0;
 
     // Must wait until coinbase is safely deep enough in the chain before valuing it
@@ -1166,7 +1166,7 @@ CAmount CWalletTx::GetAnonymizedCredit(bool fUseCache) const
 // Return sum of unlocked coins
 CAmount CWalletTx::GetUnlockedCredit() const
 {
-    if (pwallet == 0)
+    if (pwallet == nullptr)
         return 0;
 
     // Must wait until coinbase is safely deep enough in the chain before valuing it
@@ -1192,7 +1192,7 @@ CAmount CWalletTx::GetUnlockedCredit() const
     // Return sum of unlocked coins
 CAmount CWalletTx::GetLockedCredit() const
 {
-    if (pwallet == 0)
+    if (pwallet == nullptr)
         return 0;
 
     // Must wait until coinbase is safely deep enough in the chain before valuing it
@@ -1226,7 +1226,7 @@ CAmount CWalletTx::GetLockedCredit() const
 
 CAmount CWalletTx::GetDenominatedCredit(bool unconfirmed, bool fUseCache) const
 {
-    if (pwallet == 0)
+    if (pwallet == nullptr)
         return 0;
 
     // Must wait until coinbase is safely deep enough in the chain before valuing it
@@ -1284,7 +1284,7 @@ CAmount CWalletTx::GetImmatureWatchOnlyCredit(const bool& fUseCache) const
 
 CAmount CWalletTx::GetAvailableWatchOnlyCredit(const bool& fUseCache) const
 {
-    if (pwallet == 0)
+    if (pwallet == nullptr)
         return 0;
 
     // Must wait until coinbase is safely deep enough in the chain before valuing it
@@ -1311,7 +1311,7 @@ CAmount CWalletTx::GetAvailableWatchOnlyCredit(const bool& fUseCache) const
 
 CAmount CWalletTx::GetLockedWatchOnlyCredit() const
 {
-    if (pwallet == 0)
+    if (pwallet == nullptr)
         return 0;
 
     // Must wait until coinbase is safely deep enough in the chain before valuing it
@@ -1577,7 +1577,7 @@ void CWalletTx::RelayWalletTransaction(std::string strCommand)
 set<uint256> CWalletTx::GetConflicts() const
 {
     set<uint256> result;
-    if (pwallet != NULL) {
+    if (pwallet != nullptr) {
         uint256 myHash = GetHash();
         result = pwallet->GetConflicts(myHash);
         result.erase(myHash);
@@ -2478,7 +2478,7 @@ bool CWallet::SelectCoinsByDenominations(int nDenom, CAmount nValueMin, CAmount 
 
 bool CWallet::SelectCoinsDark(CAmount nValueMin, CAmount nValueMax, std::vector<CTxIn>& setCoinsRet, CAmount& nValueRet, int nObfuscationRoundsMin, int nObfuscationRoundsMax) const
 {
-    CCoinControl* coinControl = NULL;
+    CCoinControl* coinControl = nullptr;
 
     setCoinsRet.clear();
     nValueRet = 0;
@@ -2653,7 +2653,7 @@ bool CWallet::GetBudgetSystemCollateralTX(CWalletTx& tx, uint256 hash, bool useI
     vector<pair<CScript, CAmount> > vecSend;
     vecSend.push_back(make_pair(scriptChange, BUDGET_FEE_TX_OLD)); // Old 50 WSP collateral
 
-    CCoinControl* coinControl = NULL;
+    CCoinControl* coinControl = nullptr;
     bool success = CreateTransaction(vecSend, tx, reservekey, nFeeRet, strFail, coinControl, ALL_COINS, useIX, (CAmount)0);
     if (!success) {
         LogPrintf("GetBudgetSystemCollateralTX: Error - %s\n", strFail);
@@ -2676,7 +2676,7 @@ bool CWallet::GetBudgetFinalizationCollateralTX(CWalletTx& tx, uint256 hash, boo
     vector<pair<CScript, CAmount> > vecSend;
     vecSend.push_back(make_pair(scriptChange, BUDGET_FEE_TX)); // New 5 WSP collateral
 
-    CCoinControl* coinControl = NULL;
+    CCoinControl* coinControl = nullptr;
     bool success = CreateTransaction(vecSend, tx, reservekey, nFeeRet, strFail, coinControl, ALL_COINS, useIX, (CAmount)0);
     if (!success) {
         LogPrintf("GetBudgetSystemCollateralTX: Error - %s\n", strFail);
@@ -3116,7 +3116,7 @@ bool CWallet::CommitTransaction(CWalletTx& wtxNew, CReserveKey& reservekey, std:
             // This is only to keep the database open to defeat the auto-flush for the
             // duration of this scope.  This is the only place where this optimization
             // maybe makes sense; please don't do it anywhere else.
-            CWalletDB* pwalletdb = fFileBacked ? new CWalletDB(strWalletFile, "r") : NULL;
+            CWalletDB* pwalletdb = fFileBacked ? new CWalletDB(strWalletFile, "r") : nullptr;
 
             // Take key pair from key pool so it won't be used again
             reservekey.KeepKey();

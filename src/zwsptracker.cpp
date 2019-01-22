@@ -279,7 +279,7 @@ bool CzWSPTracker::UpdateState(const CMintMeta& meta)
 
 void CzWSPTracker::Add(const CDeterministicMint& dMint, bool isNew, bool isArchived, CzWSPWallet* zWSPWallet)
 {
-    bool iszWSPWalletInitialized = (NULL != zWSPWallet);
+    bool iszWSPWalletInitialized = (nullptr != zWSPWallet);
     CMintMeta meta;
     meta.hashPubcoin = dMint.GetPubcoinHash();
     meta.nHeight = dMint.GetHeight();
