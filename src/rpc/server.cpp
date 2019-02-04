@@ -302,6 +302,8 @@ static const CRPCCommand vRPCCommands[] =
         /* Block chain and UTXO */
         {"blockchain", "findserial", &findserial, true, false, false},
         {"blockchain", "getaccumulatorvalues", &getaccumulatorvalues, true, false, false},
+        {"blockchain", "getaccumulatorwitness", &getaccumulatorwitness, true, false, false},
+        {"blockchain", "getmintsinblocks", &getmintsinblocks, true, false, false},
         {"blockchain", "getblockchaininfo", &getblockchaininfo, true, false, false},
         {"blockchain", "getbestblockhash", &getbestblockhash, true, false, false},
         {"blockchain", "getblockcount", &getblockcount, true, false, false},
@@ -391,6 +393,8 @@ static const CRPCCommand vRPCCommands[] =
         {"wallet", "addmultisigaddress", &addmultisigaddress, true, false, true},
         {"wallet", "autocombinerewards", &autocombinerewards, false, false, true},
         {"wallet", "backupwallet", &backupwallet, true, false, true},
+        {"wallet", "enableautomintaddress", &enableautomintaddress, true, false, true},
+        {"wallet", "createautomintaddress", &createautomintaddress, true, false, true},
         {"wallet", "dumpprivkey", &dumpprivkey, true, false, true},
         {"wallet", "dumpwallet", &dumpwallet, true, false, true},
         {"wallet", "bip38encrypt", &bip38encrypt, true, false, true},
