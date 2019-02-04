@@ -21,7 +21,7 @@ bool CGenWit::isValid(int chainActiveHeight) {
         return error("%s: ERROR: filter not within size constraints", __func__);
     }
 
-    if (startingHeight < Params().Zerocoin_Block_V2_Start()){
+    if (startingHeight < Params().NEW_PROTOCOLS_STARTHEIGHT()){
         return error("%s: ERROR: starting height before V2 activation", __func__);
     }
 

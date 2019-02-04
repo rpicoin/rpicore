@@ -30,7 +30,7 @@ void CLightWorker::ThreadLightZWSPSimplified() {
             } else {
                 LogPrintf("%s calculating work for %s \n\n", "pivx-light-thread", genWit.toString());
                 int blockHeight = pIndex->nHeight;
-                if (blockHeight >= Params().Zerocoin_Block_V2_Start()) {
+                if (blockHeight >= Params().NEW_PROTOCOLS_STARTHEIGHT()) {
 
                     // TODO: The protocol actually doesn't care about the Accumulator..
                     libzerocoin::Accumulator accumulator(params, genWit.getDen(), genWit.getAccWitValue());
