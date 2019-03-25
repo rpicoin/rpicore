@@ -1,2 +1,2 @@
-usr/local/bin/RPICoind usr/bin
-usr/local/bin/RPICoin-cli usr/bin
+usr/local/bin/rpicoind usr/bin
+usr/local/bin/rpicoin-cli usr/bin

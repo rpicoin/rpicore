@@ -5,7 +5,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/RPICoin-config.h"
+#include "config/rpicoin-config.h"
 #endif
 
 #include "util.h"
@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
     // Don't remove this, it's needed to access
     // QCoreApplication:: in the tests
     QCoreApplication app(argc, argv);
-    app.setApplicationName("RPICoin-Qt-test");
+    app.setApplicationName("Rpicoin-Qt-test");
 
     SSL_library_init();
 

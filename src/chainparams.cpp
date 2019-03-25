@@ -2,8 +2,7 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2018 The PIVX developers
-// Copyright (c) 2018 The RPICoin developers
-// Copyright (c) 2018-2019 The RPICoin developers
+// Copyright (c) 2018 The WISPR developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -60,7 +59,7 @@ static Checkpoints::MapCheckpoints mapCheckpoints =
                 (50000, uint256("0xb177127054381243141e809bbfb2d568aeae2dd9b3c486e54f0989d4546d0d80")) // Block 50.000
                 (75000, uint256("06f162fe22851c400c1532a6d49d7894640ea0aa292fad5f02f348480da6b20d")) // Block 75.000
                 (100000, uint256("ed8cccfb51c901af271892966160686177a05f101bd3fd517d5b82274a8f6611")) // Block 100.000
-                (5000000, uint256("76d5412ec389433de6cd22345209c859b4c18b6d8f8893df479c9f7520d19901")) // Block 125.000
+                (125000, uint256("76d5412ec389433de6cd22345209c859b4c18b6d8f8893df479c9f7520d19901")) // Block 125.000
                 (150000, uint256("a7e0dfdc9c3197e9e763e858aafa9553c0235c0e328371a5f8c5ba0b6e44919d")) // Block 150.000
                 (200000, uint256("385e915b52f0ad669b91005ab7ddb22356b6a220e8b98cbcf2c8aca5c5dd3b03")) // Block 200.000
                 (250000, uint256("40ee22bd8b2cc23f83e16d19a53aa8591617772f9722c56b86d16163b2a10416")); // Block 250.000
@@ -119,13 +118,13 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 4-byte int at any alignment.
          */
-        pchMessageStart[0] = 0x20;
-        pchMessageStart[1] = 0x45;
-        pchMessageStart[2] = 0x12;
-        pchMessageStart[3] = 0x77;
-        vAlertPubKey=ParseHex("0411f84b889c61c1842ec84a15e3093d7dd99d955ab797b24c984cdcfe3aca23f04ec06bd840e8093aaf83488c039027ecc4ad704261245be30289be166f667c61");
-        nDefaultPort = 17000;
-        bnProofOfWorkLimit = ~uint256(0) >> 16; // RPICoin starting difficulty is 1 / 2^12
+        pchMessageStart[0] = 0x14;
+        pchMessageStart[1] = 0x37;
+        pchMessageStart[2] = 0x25;
+        pchMessageStart[3] = 0x61;
+        vAlertPubKey=ParseHex("04890c0c7f2bf2304af7a7de92f3717d96b5d347e30a179cf975ab5e0152b113103598798599fecb8d735238e6dae110565d230d7ba93a076b98bd5bd5bb5f17fb");
+        nDefaultPort = 18000;
+        bnProofOfWorkLimit = ~uint256(0) >> 16; // WISPR starting difficulty is 1 / 2^12
         bnProofOfStakeLimit = ~uint256(0) >> 48;
         nSubsidyHalvingInterval = 0;
         nMaxReorganizationDepth = 500;
@@ -133,17 +132,17 @@ public:
         nRejectBlockOutdatedMajority = 950;
         nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 0;
-        nTargetTimespanV1 =  16 * 60; // RPICoin Old: 1 day
-        nTargetTimespanV2 =  1 * 60; // RPICoin New: 1 day
-        nTargetSpacingV1 = 64;  // RPICoin Old: 1 minute
-        nTargetSpacingV2 = 1 * 60;  // RPICoin New: 1 minute
-        nMaturity = 50;
+        nTargetTimespanV1 =  16 * 60; // WISPR Old: 1 day
+        nTargetTimespanV2 =  1 * 60; // WISPR New: 1 day
+        nTargetSpacingV1 = 64;  // WISPR Old: 1 minute
+        nTargetSpacingV2 = 1 * 60;  // WISPR New: 1 minute
+        nMaturity = 100;
         nMasternodeCountDrift = 20;
         nMaxMoneyOut = 120000000 * COIN;
 
         /** Height or Time Based Activations **/
-        nLastPOWBlock = 450;
-        nNewProtocolStartHeight = 400000;
+        nLastPOWBlock = 100;
+        nNewProtocolStartHeight = 450000;
         nNewProtocolStartTime = 1539963322; //Friday, October 19, 2018 3:35:22 PM
         nZerocoinStartHeight = nNewProtocolStartHeight;
         nZerocoinStartTime = nNewProtocolStartTime;
@@ -157,33 +156,38 @@ public:
          *     CTxOut(nValue=50.00000000, scriptPubKey=0xA9037BAC7050C479B121CF)
          *   vMerkleTree: e0028e
          */
-        const char* pszTimestamp = "I would rather be without a state than without a voice";
+        const char* pszTimestamp = "Buying Bitcoin Is Not Investing, Claims Warren Buffett";
         CMutableTransaction txNew;
         txNew.nVersion = 1;
-        txNew.nTime = 1513403825;
+        txNew.nTime = 1525283223;
         txNew.nLockTime = 0;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 0 << CScriptNum(42) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
-        txNew.vout[0].nValue = 5000000 * COIN;
-        txNew.vout[0].scriptPubKey = CScript() << ParseHex("0433f2952f9002c9088a19607e3d4a54d3d9dfe1cf5c78168b8ba6524fb19fc5d7d3202948e6b8b09e98c425875af6af78fd4f64ff07d97a9ae31ebda5162fbac3") << OP_CHECKSIG;
+        txNew.vout[0].nValue = 113713337 * COIN;
+        vout[0].scriptPubKey = CScript() << ParseHex("0467b402a59fdb190a280fd7bc2234986dae22a28df82dabe19b58383c1c1f78b6d82f88fb90054efa6ff0025a8a38b802a2d04b5037f4fc56beb445f18d22d403") << OP_CHECKSIG;
         genesis.vtx.push_back(txNew);
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime = 1513403825;
+        genesis.nTime    = 1525283223;
         genesis.nBits = bnProofOfWorkLimit.GetCompact();
-        genesis.nNonce = 36156;
+        genesis.nNonce   = 4004610;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x0000ec93e0a3fe0aafa3be7dafe1290f5fca039a4037dd5174bc3dd7a35d67f0"));
-        assert(genesis.hashMerkleRoot == uint256("0xbcd0064f46daed0b3c1ccff16656a0da04b5509924118b7c13d21c81d62ec521"));
+        assert(hashGenesisBlock == uint256("0x0000b712bda549469a4533c0827bd8263299cd2d13030b15e72d93a3e094e914"));
+        assert(genesis.hashMerkleRoot == uint256("0x768512611033b4e7af714b9312d1a0e529b2fb4efd9b99d406403012df093073"));
 
-        vSeeds.push_back(CDNSSeedData("rpicoin.com", "dnsseed.rpicoin.com"));     // Primary DNS Seeder for RPICoin
-        vSeeds.push_back(CDNSSeedData("rpipay.com", "main.rpipay.com"));     // Secondary DNS Seeder for RPICoin
+        vSeeds.push_back(CDNSSeedData("seed1.rpicoin.com", "seed1.rpicoin.com"));
+        vSeeds.push_back(CDNSSeedData("seed2.rpicoin.com", "seed2.rpicoin.com"));
+        vSeeds.push_back(CDNSSeedData("seed3.rpicoin.com", "seed3.rpicoin.com"));
+        vSeeds.push_back(CDNSSeedData("seed4.rpicoin.com", "seed4.rpicoin.com"));
+        vSeeds.push_back(CDNSSeedData("seed5.rpicoin.com", "seed5.rpicoin.com"));
+        vSeeds.push_back(CDNSSeedData("seed6.rpicoin.com", "seed6.rpicoin.com"));
+        vSeeds.push_back(CDNSSeedData("seed7.rpicoin.com", "seed7.rpicoin.com"));
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 73);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 135);
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 60);
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 122);
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1, 145);
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x88)(0xB2)(0x1E).convert_to_container<std::vector<unsigned char> >();
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x88)(0xAD)(0xE4).convert_to_container<std::vector<unsigned char> >();
@@ -221,7 +225,7 @@ public:
         nRequiredAccumulation = 1;
         nDefaultSecurityLevel = 100; //full security level for accumulators
         nZerocoinHeaderVersion = 8; //Block headers must be this version once zerocoin is active
-        nZerocoinRequiredStakeDepth = 200; //The required confirmations for a zRPI to be stakable
+        nZerocoinRequiredStakeDepth = 200; //The required confirmations for a zrpi to be stakable
 
         nBudget_Fee_Confirmations = 6; // Number of confirmations for the finalization fee
     }
@@ -243,20 +247,20 @@ public:
     {
         networkID = CBaseChainParams::TESTNET;
         strNetworkID = "test";
-        pchMessageStart[0] = 0x21;
-        pchMessageStart[1] = 0x46;
-        pchMessageStart[2] = 0x13;
-        pchMessageStart[3] = 0x78;
-        vAlertPubKey=ParseHex("04b20dd657f5e4fe0cf9aebb956498c383bac98a079c1003df02c2f121574cd280b8900248a8c6a43074b356e670ef83ec1aadfec60602df7c2366bae732372bba");
-        nDefaultPort = 17002;
+        pchMessageStart[0] = 0x44;
+        pchMessageStart[1] = 0x18;
+        pchMessageStart[2] = 0x61;
+        pchMessageStart[3] = 0x33;
+        vAlertPubKey=ParseHex("0467b402a59fdb190a280fd7bc2234986dae22a28df82dabe19b58383c1c1f78b6d82f88fb90054efa6ff0025a8a38b802a2d04b5037f4fc56beb445f18d22d403");
+        nDefaultPort = 18002;
         nEnforceBlockUpgradeMajority = 51;
         nRejectBlockOutdatedMajority = 75;
         nToCheckBlockUpgradeMajority = 100;
         nMinerThreads = 0;
-        nTargetTimespanV1 =  16 * 60; // RPICoin Old: 1 day
-        nTargetTimespanV2 =  1 * 60; // RPICoin New: 1 day
-        nTargetSpacingV1 = 64;  // RPICoin Old: 1 minute
-        nTargetSpacingV2 = 1 * 60;  // RPICoin New: 1 minute
+        nTargetTimespanV1 =  16 * 60; // WISPR Old: 1 day
+        nTargetTimespanV2 =  1 * 60; // WISPR New: 1 day
+        nTargetSpacingV1 = 64;  // WISPR Old: 1 minute
+        nTargetSpacingV2 = 1 * 60;  // WISPR New: 1 minute
         nLastPOWBlock = 450;
         nMaturity = 10;
         nMasternodeCountDrift = 4;
@@ -265,11 +269,11 @@ public:
         nNewProtocolStartTime = 1537830552;
         nZerocoinStartHeight = nNewProtocolStartHeight;
         nZerocoinStartTime = nNewProtocolStartTime; // July 2, 2018
-        const char* pszTimestamp = "I would rather be without a state than without a voice";
+        const char* pszTimestamp = "Buying Bitcoin Is Not Investing, Claims Warren Buffett";
         genesis.SetNull();
         CMutableTransaction txNew2;
         txNew2.nVersion = 1;
-        txNew2.nTime = 1512932225;
+        txNew2.nTime = 1525283445;
         txNew2.nLockTime = 0;
         txNew2.vin.resize(1);
         txNew2.vout.resize(1);
@@ -280,21 +284,18 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime    = 1512932225;
+        genesis.nTime    = 1525283445;
         genesis.nBits    = bnProofOfWorkLimit.GetCompact();
-        genesis.nNonce   = 142000;
+        genesis.nNonce   = 1759192;
 
         hashGenesisBlock = genesis.GetHash();
 
-        assert(hashGenesisBlock == uint256("03205c57ebefb02d86c2c0c2de368fa48e92f7df7240f1b528ebbeae70fdbdb1"));
-        assert(genesis.hashMerkleRoot == uint256("0x26069b04c7c7b5b8773824b15cfbf0ddaf11ee261657a1aeb28aa5c8163909ee"));
+        assert(hashGenesisBlock == uint256("0x0000d17194220e485dce46951ad042de557ceefdcdc96b1a4358847c103f9aae"));
+        assert(genesis.hashMerkleRoot == uint256("0x25533f4208eab0dd0e880a32df9405daff31850bd23d2ec9dd7db8532992cb88"));
 
 
         vFixedSeeds.clear();
         vSeeds.clear();
-        vSeeds.push_back(CDNSSeedData("rpicoin.com", "testnet-seed.rpicoin.com"));     // Primary DNS Seeder for testnet RPICoin
-        vSeeds.push_back(CDNSSeedData("rpipay.com", "test.rpipay.com"));     // Secondary DNS Seeder for testnet RPICoin
-
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 110);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 8);
@@ -346,17 +347,17 @@ public:
         nRejectBlockOutdatedMajority = 950;
         nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 1;
-        nTargetTimespanV1 = 16 * 60; // RPICoin Old: 1 day
-        nTargetTimespanV2 = 1 * 60; // RPICoin New: 1 day
-        nTargetSpacingV1 = 64;        // RPICoin Old: 1 minutes
-        nTargetSpacingV2 = 1 * 60;        // RPICoin New: 1 minute
+        nTargetTimespanV1 = 16 * 60; // WISPR Old: 1 day
+        nTargetTimespanV2 = 1 * 60; // WISPR New: 1 day
+        nTargetSpacingV1 = 64;        // WISPR Old: 1 minutes
+        nTargetSpacingV2 = 1 * 60;        // WISPR New: 1 minute
         bnProofOfWorkLimit = ~uint256(0) >> 1;
         genesis.nTime = 1411111111;
         genesis.nBits  = bnProofOfWorkLimit.GetCompact();
         genesis.nNonce = 2;
 
         hashGenesisBlock = genesis.GetHash();
-        nDefaultPort = 17004;
+        nDefaultPort = 18004;
 //        printf("Req net\n");
 //        printf("genesis = %s\n", genesis.ToString().c_str());
         assert(hashGenesisBlock == uint256("0302157c185ae0018bb60f0c506087be772aa2015150f994cc1a6db55e8e23bd"));
@@ -388,7 +389,7 @@ public:
     {
         networkID = CBaseChainParams::UNITTEST;
         strNetworkID = "unittest";
-        nDefaultPort = 17005;
+        nDefaultPort = 18005;
         vFixedSeeds.clear(); //! Unit test mode doesn't have any fixed seeds.
         vSeeds.clear();      //! Unit test mode doesn't have any DNS seeds.
 

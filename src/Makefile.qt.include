@@ -2,43 +2,43 @@
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-bin_PROGRAMS += qt/RPICoin-qt
+bin_PROGRAMS += qt/rpicoin-qt
 EXTRA_LIBRARIES += qt/libbitcoinqt.a
 
-# RPICoin qt core #
+# rpicoin qt core #
 QT_TS = \
-  qt/locale/RPICoin_bg.ts \
-  qt/locale/RPICoin_ca.ts \
-  qt/locale/RPICoin_cs.ts \
-  qt/locale/RPICoin_da.ts \
-  qt/locale/RPICoin_de.ts \
-  qt/locale/RPICoin_en.ts \
-  qt/locale/RPICoin_en_US.ts \
-  qt/locale/RPICoin_eo.ts \
-  qt/locale/RPICoin_es.ts \
-  qt/locale/RPICoin_es_ES.ts \
-  qt/locale/RPICoin_fi.ts \
-  qt/locale/RPICoin_fr_FR.ts \
-  qt/locale/RPICoin_hi_IN.ts \
-  qt/locale/RPICoin_hr.ts \
-  qt/locale/RPICoin_hr_HR.ts \
-  qt/locale/RPICoin_it.ts \
-  qt/locale/RPICoin_ja.ts \
-  qt/locale/RPICoin_ko_KR.ts \
-  qt/locale/RPICoin_lt_LT.ts \
-  qt/locale/RPICoin_nl.ts \
-  qt/locale/RPICoin_pl.ts \
-  qt/locale/RPICoin_pt.ts \
-  qt/locale/RPICoin_pt_BR.ts \
-  qt/locale/RPICoin_ro_RO.ts \
-  qt/locale/RPICoin_ru.ts \
-  qt/locale/RPICoin_sk.ts \
-  qt/locale/RPICoin_sv.ts \
-  qt/locale/RPICoin_tr.ts \
-  qt/locale/RPICoin_uk.ts \
-  qt/locale/RPICoin_vi.ts \
-  qt/locale/RPICoin_zh_CN.ts \
-  qt/locale/RPICoin_zh_TW.ts
+  qt/locale/rpicoin_bg.ts \
+  qt/locale/rpicoin_ca.ts \
+  qt/locale/rpicoin_cs.ts \
+  qt/locale/rpicoin_da.ts \
+  qt/locale/rpicoin_de.ts \
+  qt/locale/rpicoin_en.ts \
+  qt/locale/rpicoin_en_US.ts \
+  qt/locale/rpicoin_eo.ts \
+  qt/locale/rpicoin_es.ts \
+  qt/locale/rpicoin_es_ES.ts \
+  qt/locale/rpicoin_fi.ts \
+  qt/locale/rpicoin_fr_FR.ts \
+  qt/locale/rpicoin_hi_IN.ts \
+  qt/locale/rpicoin_hr.ts \
+  qt/locale/rpicoin_hr_HR.ts \
+  qt/locale/rpicoin_it.ts \
+  qt/locale/rpicoin_ja.ts \
+  qt/locale/rpicoin_ko_KR.ts \
+  qt/locale/rpicoin_lt_LT.ts \
+  qt/locale/rpicoin_nl.ts \
+  qt/locale/rpicoin_pl.ts \
+  qt/locale/rpicoin_pt.ts \
+  qt/locale/rpicoin_pt_BR.ts \
+  qt/locale/rpicoin_ro_RO.ts \
+  qt/locale/rpicoin_ru.ts \
+  qt/locale/rpicoin_sk.ts \
+  qt/locale/rpicoin_sv.ts \
+  qt/locale/rpicoin_tr.ts \
+  qt/locale/rpicoin_uk.ts \
+  qt/locale/rpicoin_vi.ts \
+  qt/locale/rpicoin_zh_CN.ts \
+  qt/locale/rpicoin_zh_TW.ts
 
 QT_FORMS_UI = \
   qt/forms/addressbookpage.ui \
@@ -125,16 +125,16 @@ BITCOIN_MM = \
   qt/macnotificationhandler.mm
 
 QT_MOC = \
-  qt/RPICoin.moc \
+  qt/rpicoin.moc \
   qt/bitcoinamountfield.moc \
   qt/intro.moc \
   qt/overviewpage.moc \
   qt/rpcconsole.moc
 
-QT_QRC_CPP = qt/qrc_RPICoin.cpp
-QT_QRC = qt/RPICoin.qrc
-QT_QRC_LOCALE_CPP = qt/qrc_RPICoin_locale.cpp
-QT_QRC_LOCALE = qt/RPICoin_locale.qrc
+QT_QRC_CPP = qt/qrc_rpicoin.cpp
+QT_QRC = qt/rpicoin.qrc
+QT_QRC_LOCALE_CPP = qt/qrc_rpicoin_locale.cpp
+QT_QRC_LOCALE = qt/rpicoin_locale.qrc
 
 PROTOBUF_CC = qt/paymentrequest.pb.cc
 PROTOBUF_H = qt/paymentrequest.pb.h
@@ -258,12 +258,12 @@ RES_ICONS = \
   qt/res/icons/tx_input.png \
   qt/res/icons/tx_output.png \
   qt/res/icons/tx_mined.png \
-  qt/res/icons/unit_RPICoin.png \
-  qt/res/icons/unit_mRPICoin.png \
-  qt/res/icons/unit_uRPICoin.png \
-  qt/res/icons/unit_tRPICoin.png \
-  qt/res/icons/unit_tmRPICoin.png \
-  qt/res/icons/unit_tuRPICoin.png
+  qt/res/icons/unit_rpicoin.png \
+  qt/res/icons/unit_mrpicoin.png \
+  qt/res/icons/unit_urpicoin.png \
+  qt/res/icons/unit_trpicoin.png \
+  qt/res/icons/unit_tmrpicoin.png \
+  qt/res/icons/unit_turpicoin.png
 
 BITCOIN_QT_CPP = \
   qt/bantablemodel.cpp \
@@ -337,7 +337,7 @@ RES_IMAGES = \
   qt/res/images/about.png \
   qt/res/images/splash.png \
   qt/res/images/splash_testnet.png \
-  qt/res/images/RPICoin_logo_horizontal.png \
+  qt/res/images/rpicoin_logo_horizontal.png \
   qt/res/images/downArrow_dark.png \
   qt/res/images/downArrow_small_dark.png \
   qt/res/images/downArrow_small.png \
@@ -355,7 +355,7 @@ RES_CSS = \
 
 RES_MOVIES = $(wildcard $(srcdir)/qt/res/movies/spinner-*.png)
 
-BITCOIN_RC = qt/res/RPICoin-qt-res.rc
+BITCOIN_RC = qt/res/rpicoin-qt-res.rc
 
 BITCOIN_QT_INCLUDES = -I$(builddir)/qt -I$(srcdir)/qt -I$(srcdir)/qt/forms \
   -I$(builddir)/qt/forms
@@ -377,72 +377,72 @@ QT_FORMS_H=$(join $(dir $(QT_FORMS_UI)),$(addprefix ui_, $(notdir $(QT_FORMS_UI:
 # Most files will depend on the forms and moc files as includes. Generate them
 # before anything else.
 $(QT_MOC): $(QT_FORMS_H)
-$(qt_libbitcoinqt_a_OBJECTS) $(qt_RPICoin_qt_OBJECTS) : | $(QT_MOC)
+$(qt_libbitcoinqt_a_OBJECTS) $(qt_rpicoin_qt_OBJECTS) : | $(QT_MOC)
 
 #Generating these with a half-written protobuf header leads to wacky results.
 #This makes sure it's done.
 $(QT_MOC): $(PROTOBUF_H)
 $(QT_MOC_CPP): $(PROTOBUF_H)
 
-# RPICoin-qt binary #
-qt_RPICoin_qt_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
+# rpicoin-qt binary #
+qt_rpicoin_qt_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
   $(QT_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS)
-qt_RPICoin_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
+qt_rpicoin_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
 qt_bitcoin_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
 
-qt_RPICoin_qt_SOURCES = qt/RPICoin.cpp
+qt_rpicoin_qt_SOURCES = qt/rpicoin.cpp
 if TARGET_DARWIN
-  qt_RPICoin_qt_SOURCES += $(BITCOIN_MM)
+  qt_rpicoin_qt_SOURCES += $(BITCOIN_MM)
 endif
 if TARGET_WINDOWS
-  qt_RPICoin_qt_SOURCES += $(BITCOIN_RC)
+  qt_rpicoin_qt_SOURCES += $(BITCOIN_RC)
 endif
-qt_RPICoin_qt_LDADD = qt/libbitcoinqt.a $(LIBBITCOIN_SERVER)
+qt_rpicoin_qt_LDADD = qt/libbitcoinqt.a $(LIBBITCOIN_SERVER)
 if ENABLE_WALLET
-qt_RPICoin_qt_LDADD += $(LIBBITCOIN_WALLET)
+qt_rpicoin_qt_LDADD += $(LIBBITCOIN_WALLET)
 endif
 if ENABLE_ZMQ
-qt_RPICoin_qt_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
+qt_rpicoin_qt_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
 endif
-qt_RPICoin_qt_LDADD += $(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) $(LIBUNIVALUE) $(LIBBITCOIN_ZEROCOIN) $(LIBLEVELDB) $(LIBLEVELDB_SSE42) $(LIBMEMENV) \
+qt_rpicoin_qt_LDADD += $(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) $(LIBUNIVALUE) $(LIBBITCOIN_ZEROCOIN) $(LIBLEVELDB) $(LIBLEVELDB_SSE42) $(LIBMEMENV) \
   $(BOOST_LIBS) $(QT_LIBS) $(QT_DBUS_LIBS) $(QR_LIBS) $(PROTOBUF_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(LIBSECP256K1) \
   $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
-qt_RPICoin_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-qt_RPICoin_qt_LIBTOOLFLAGS = --tag CXX
+qt_rpicoin_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+qt_rpicoin_qt_LIBTOOLFLAGS = --tag CXX
 
 #locale/foo.ts -> locale/foo.qm
 QT_QM=$(QT_TS:.ts=.qm)
 
 SECONDARY: $(QT_QM)
 
-$(srcdir)/qt/RPICoinstrings.cpp: $(libbitcoin_server_a_SOURCES) $(libbitcoin_wallet_a_SOURCES) $(libbitcoin_common_a_SOURCES) $(libbitcoin_zmq_a_SOURCES) $(libbitcoin_util_a_SOURCES)
+$(srcdir)/qt/rpicoinstrings.cpp: $(libbitcoin_server_a_SOURCES) $(libbitcoin_wallet_a_SOURCES) $(libbitcoin_common_a_SOURCES) $(libbitcoin_zmq_a_SOURCES) $(libbitcoin_util_a_SOURCES)
 	@test -n $(XGETTEXT) || echo "xgettext is required for updating translations"
 	$(AM_V_GEN) cd $(srcdir); XGETTEXT=$(XGETTEXT) PACKAGE_NAME="$(PACKAGE_NAME)" $(PYTHON) ../share/qt/extract_strings_qt.py $^
 
-translate: $(srcdir)/qt/RPICoinstrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(BITCOIN_QT_CPP) $(BITCOIN_QT_H) $(BITCOIN_MM)
+translate: $(srcdir)/qt/rpicoinstrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(BITCOIN_QT_CPP) $(BITCOIN_QT_H) $(BITCOIN_MM)
 	@test -n $(LUPDATE) || echo "lupdate is required for updating translations"
-	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LUPDATE) $^ -locations relative -no-obsolete -ts $(srcdir)/qt/locale/RPICoin_en.ts
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LUPDATE) $^ -locations relative -no-obsolete -ts $(srcdir)/qt/locale/rpicoin_en.ts
 
 $(QT_QRC_LOCALE_CPP): $(QT_QRC_LOCALE) $(QT_QM)
 	@test -f $(RCC)
 	@cp -f $< $(@D)/temp_$(<F)
-	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name RPICoin_locale $(@D)/temp_$(<F) | \
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name rpicoin_locale $(@D)/temp_$(<F) | \
 	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
 	@rm $(@D)/temp_$(<F)
 
 $(QT_QRC_CPP): $(QT_QRC) $(QT_FORMS_H) $(RES_ICONS) $(RES_IMAGES) $(RES_CSS) $(RES_MOVIES) $(PROTOBUF_H)
 	@test -f $(RCC)
-	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name RPICoin $< | \
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name rpicoin $< | \
 	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
 
-CLEAN_QT = $(nodist_qt_libbitcoinqt_a_SOURCES) $(QT_QM) $(QT_FORMS_H) qt/*.gcda qt/*.gcno qt/temp_RPICoin_locale.qrc
+CLEAN_QT = $(nodist_qt_libbitcoinqt_a_SOURCES) $(QT_QM) $(QT_FORMS_H) qt/*.gcda qt/*.gcno qt/temp_rpicoin_locale.qrc
 
 CLEANFILES += $(CLEAN_QT)
 
-RPICoin_qt_clean: FORCE
-	rm -f $(CLEAN_QT) $(qt_libbitcoinqt_a_OBJECTS) $(qt_RPICoin_qt_OBJECTS) qt/RPICoin-qt$(EXEEXT) $(LIBBITCOINQT)
+rpicoin_qt_clean: FORCE
+	rm -f $(CLEAN_QT) $(qt_libbitcoinqt_a_OBJECTS) $(qt_rpicoin_qt_OBJECTS) qt/rpicoin-qt$(EXEEXT) $(LIBBITCOINQT)
 
-RPICoin_qt : qt/RPICoin-qt$(EXEEXT)
+rpicoin_qt : qt/rpicoin-qt$(EXEEXT)
 
 ui_%.h: %.ui
 	@test -f $(UIC)

@@ -83,7 +83,7 @@ PrivacyDialog::PrivacyDialog(QWidget* parent) : QDialog(parent, Qt::WindowSystem
     ui->labelZsupplyText1000->setText(tr("Denom. <b>1000</b>:"));
     ui->labelZsupplyText5000->setText(tr("Denom. <b>5000</b>:"));
 
-    // RPICoin settings
+    // WISPR settings
     QSettings settings;
     if (!settings.contains("nSecurityLevel")){
         nSecurityLevel = 42;
@@ -302,19 +302,19 @@ void PrivacyDialog::on_pushButtonSpendzRPI_clicked()
     sendzRPI();
 }
 
-void PrivacyDialog::on_pushButtonZWspControl_clicked()
+void PrivacyDialog::on_pushButtonZRpiControl_clicked()
 {
     if (!walletModel || !walletModel->getOptionsModel())
         return;
 
-    ZWspControlDialog* zWspControl = new ZWspControlDialog(this);
-    zWspControl->setModel(walletModel);
-    zWspControl->exec();
+    ZRpiControlDialog* zRpiControl = new ZRpiControlDialog(this);
+    zRpiControl->setModel(walletModel);
+    zRpiControl->exec();
 }
 
-void PrivacyDialog::setZWspControlLabels(int64_t nAmount, int nQuantity)
+void PrivacyDialog::setZRpiControlLabels(int64_t nAmount, int nQuantity)
 {
-    ui->labelzWspSelected_int->setText(QString::number(nAmount));
+    ui->labelzRpiSelected_int->setText(QString::number(nAmount));
     ui->labelQuantitySelected_int->setText(QString::number(nQuantity));
 }
 
@@ -334,7 +334,7 @@ void PrivacyDialog::sendzRPI()
     }
     else{
         if (!address.IsValid()) {
-            QMessageBox::warning(this, tr("Spend Zerocoin"), tr("Invalid RPICoin Address"), QMessageBox::Ok, QMessageBox::Ok);
+            QMessageBox::warning(this, tr("Spend Zerocoin"), tr("Invalid Rpicoin Address"), QMessageBox::Ok, QMessageBox::Ok);
             ui->payTo->setFocus();
             return;
         }
@@ -367,7 +367,7 @@ void PrivacyDialog::sendzRPI()
 
     if(!fWholeNumber && fMintChange){
         QString strFeeWarning = "You've entered an amount with fractional digits and want the change to be converted to Zerocoin.<br /><br /><b>";
-        strFeeWarning += QString::number(dzFee, 'f', 8) + " WSP </b>will be added to the standard transaction fees!<br />";
+        strFeeWarning += QString::number(dzFee, 'f', 8) + " RPI </b>will be added to the standard transaction fees!<br />";
         QMessageBox::StandardButton retval = QMessageBox::question(this, tr("Confirm additional Fees"),
             strFeeWarning,
             QMessageBox::Yes | QMessageBox::Cancel,
@@ -423,8 +423,8 @@ void PrivacyDialog::sendzRPI()
     // use mints from zRPI selector if applicable
     vector<CMintMeta> vMintsToFetch;
     vector<CZerocoinMint> vMintsSelected;
-    if (!ZWspControlDialog::setSelectedMints.empty()) {
-        vMintsToFetch = ZWspControlDialog::GetSelectedMints();
+    if (!ZRpiControlDialog::setSelectedMints.empty()) {
+        vMintsToFetch = ZRpiControlDialog::GetSelectedMints();
 
         for (auto& meta : vMintsToFetch) {
             if (meta.nVersion < libzerocoin::PrivateCoin::PUBKEY_VERSION) {
@@ -496,8 +496,8 @@ void PrivacyDialog::sendzRPI()
     }
 
     // Clear zrpi selector in case it was used
-    ZWspControlDialog::setSelectedMints.clear();
-    ui->labelzWspSelected_int->setText(QString("0"));
+    ZRpiControlDialog::setSelectedMints.clear();
+    ui->labelzRpiSelected_int->setText(QString("0"));
     ui->labelQuantitySelected_int->setText(QString("0"));
 
     // Some statistics for entertainment
@@ -515,7 +515,7 @@ void PrivacyDialog::sendzRPI()
 
     CAmount nValueOut = 0;
     for (const CTxOut& txout: wtxNew.vout) {
-        strStats += tr("value out: ") + FormatMoney(txout.nValue).c_str() + " Wsp, ";
+        strStats += tr("value out: ") + FormatMoney(txout.nValue).c_str() + " Rpi, ";
         nValueOut += txout.nValue;
 
         strStats += tr("address: ");
@@ -840,7 +840,7 @@ void PrivacyDialog::updateSPORK16Status()
     } else if (!fMaintenanceMode && !fButtonsEnabled) {
         // Mint zRPI
         ui->pushButtonMintzRPI->setEnabled(true);
-        ui->pushButtonMintzRPI->setToolTip(tr("PrivacyDialog", "Enter an amount of WSP to convert to zRPI", 0));
+        ui->pushButtonMintzRPI->setToolTip(tr("PrivacyDialog", "Enter an amount of RPI to convert to zRPI", 0));
 
         // Spend zRPI
         ui->pushButtonSpendzRPI->setEnabled(true);

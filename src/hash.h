@@ -5,8 +5,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef RPICoin_HASH_H
-#define RPICoin_HASH_H
+#ifndef RPICOIN_HASH_H
+#define RPICOIN_HASH_H
 
 #include "crypto/ripemd160.h"
 #include "crypto/sha256.h"
@@ -284,4 +284,4 @@ void BIP32Hash(const ChainCode chainCode, unsigned int nChild, unsigned char hea
 
 void scrypt_hash(const char* pass, unsigned int pLen, const char* salt, unsigned int sLen, char* output, unsigned int N, unsigned int r, unsigned int p, unsigned int dkLen);
 
-#endif // RPICoin_HASH_H
+#endif // RPICOIN_HASH_H

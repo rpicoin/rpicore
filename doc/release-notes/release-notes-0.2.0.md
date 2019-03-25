@@ -1,13 +1,13 @@
-RPICoin Core version *3.1.0.1* is now available from:  <https://github.com/RPICoinProject/core/releases>
+RPICoin Core version *3.1.0.1* is now available from:  <https://github.com/rpicoin/rpicore/releases>
 
-This is a new bugfix release, specifically addressing a bug with windows OS masternode control wallets. Users upgrading to this version are encouraged to also read the detailed release notes for the previous [3.1.0](https://github.com/RPICoinProject/core/releases/tag/v3.1.0) release as information will not be duplicated here.
+This is a new bugfix release, specifically addressing a bug with windows OS masternode control wallets. Users upgrading to this version are encouraged to also read the detailed release notes for the previous [3.1.0](https://github.com/rpicoin/rpicore/releases/tag/v3.1.0) release as information will not be duplicated here.
 
-Please report bugs using the issue tracker at github: <https://github.com/RPICoinProject/core/issues>
+Please report bugs using the issue tracker at github: <https://github.com/rpicoin/rpicore/issues>
 
 How to Upgrade
 ==============
 
-If you are running an older version, shut it down. Wait until it has completely shut down (which might take a few minutes for older versions), then run the installer (on Windows) or just copy over /Applications/RPICoin-Qt (on Mac) or RPICoind/RPICoin-qt (on Linux).
+If you are running an older version, shut it down. Wait until it has completely shut down (which might take a few minutes for older versions), then run the installer (on Windows) or just copy over /Applications/WISPR-Qt (on Mac) or rpicoind/rpicoin-qt (on Linux).
 
 
 Compatibility
@@ -51,4 +51,4 @@ Detailed release notes follow. This overview includes changes that affect behavi
 Thanks to everyone who directly contributed to this release:
 - Fuzzbawls
 
-As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/RPICoinProject-translations/), the QA team during Testing and the Node hosts supporting our Testnet.
+As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/rpicoin-translations/), the QA team during Testing and the Node hosts supporting our Testnet.

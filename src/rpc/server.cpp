@@ -266,11 +266,11 @@ UniValue stop(const UniValue& params, bool fHelp)
     if (fHelp || params.size() > 1)
         throw runtime_error(
             "stop\n"
-            "\nStop RPICoin server.");
+            "\nStop WISPR server.");
     // Event loop will exit after current HTTP requests have been handled, so
     // this reply will get back to the client.
     StartShutdown();
-    return "RPICoin server stopping";
+    return "WISPR server stopping";
 }
 
 
@@ -354,37 +354,37 @@ static const CRPCCommand vRPCCommands[] =
         {"hidden", "reconsiderblock", &reconsiderblock, true, true, false},
         {"hidden", "setmocktime", &setmocktime, true, false, false},
 
-        /* RPICoin features */
-        {"RPICoin", "masternode", &masternode, true, true, false},
-        {"RPICoin", "listmasternodes", &listmasternodes, true, true, false},
-        {"RPICoin", "getmasternodecount", &getmasternodecount, true, true, false},
-        {"RPICoin", "masternodeconnect", &masternodeconnect, true, true, false},
-        {"RPICoin", "createmasternodebroadcast", &createmasternodebroadcast, true, true, false},
-        {"RPICoin", "decodemasternodebroadcast", &decodemasternodebroadcast, true, true, false},
-        {"RPICoin", "relaymasternodebroadcast", &relaymasternodebroadcast, true, true, false},
-        {"RPICoin", "masternodecurrent", &masternodecurrent, true, true, false},
-        {"RPICoin", "masternodedebug", &masternodedebug, true, true, false},
-        {"RPICoin", "startmasternode", &startmasternode, true, true, false},
-        {"RPICoin", "createmasternodekey", &createmasternodekey, true, true, false},
-        {"RPICoin", "getmasternodeoutputs", &getmasternodeoutputs, true, true, false},
-        {"RPICoin", "listmasternodeconf", &listmasternodeconf, true, true, false},
-        {"RPICoin", "getmasternodestatus", &getmasternodestatus, true, true, false},
-        {"RPICoin", "getmasternodewinners", &getmasternodewinners, true, true, false},
-        {"RPICoin", "getmasternodescores", &getmasternodescores, true, true, false},
-        {"RPICoin", "mnbudget", &mnbudget, true, true, false},
-        {"RPICoin", "preparebudget", &preparebudget, true, true, false},
-        {"RPICoin", "submitbudget", &submitbudget, true, true, false},
-        {"RPICoin", "mnbudgetvote", &mnbudgetvote, true, true, false},
-        {"RPICoin", "getbudgetvotes", &getbudgetvotes, true, true, false},
-        {"RPICoin", "getnextsuperblock", &getnextsuperblock, true, true, false},
-        {"RPICoin", "getbudgetprojection", &getbudgetprojection, true, true, false},
-        {"RPICoin", "getbudgetinfo", &getbudgetinfo, true, true, false},
-        {"RPICoin", "mnbudgetrawvote", &mnbudgetrawvote, true, true, false},
-        {"RPICoin", "mnfinalbudget", &mnfinalbudget, true, true, false},
-        {"RPICoin", "checkbudgets", &checkbudgets, true, true, false},
-        {"RPICoin", "mnsync", &mnsync, true, true, false},
-        {"RPICoin", "spork", &spork, true, true, false},
-        {"RPICoin", "getpoolinfo", &getpoolinfo, true, true, false},
+        /* WISPR features */
+        {"rpicoin", "masternode", &masternode, true, true, false},
+        {"rpicoin", "listmasternodes", &listmasternodes, true, true, false},
+        {"rpicoin", "getmasternodecount", &getmasternodecount, true, true, false},
+        {"rpicoin", "masternodeconnect", &masternodeconnect, true, true, false},
+        {"rpicoin", "createmasternodebroadcast", &createmasternodebroadcast, true, true, false},
+        {"rpicoin", "decodemasternodebroadcast", &decodemasternodebroadcast, true, true, false},
+        {"rpicoin", "relaymasternodebroadcast", &relaymasternodebroadcast, true, true, false},
+        {"rpicoin", "masternodecurrent", &masternodecurrent, true, true, false},
+        {"rpicoin", "masternodedebug", &masternodedebug, true, true, false},
+        {"rpicoin", "startmasternode", &startmasternode, true, true, false},
+        {"rpicoin", "createmasternodekey", &createmasternodekey, true, true, false},
+        {"rpicoin", "getmasternodeoutputs", &getmasternodeoutputs, true, true, false},
+        {"rpicoin", "listmasternodeconf", &listmasternodeconf, true, true, false},
+        {"rpicoin", "getmasternodestatus", &getmasternodestatus, true, true, false},
+        {"rpicoin", "getmasternodewinners", &getmasternodewinners, true, true, false},
+        {"rpicoin", "getmasternodescores", &getmasternodescores, true, true, false},
+        {"rpicoin", "mnbudget", &mnbudget, true, true, false},
+        {"rpicoin", "preparebudget", &preparebudget, true, true, false},
+        {"rpicoin", "submitbudget", &submitbudget, true, true, false},
+        {"rpicoin", "mnbudgetvote", &mnbudgetvote, true, true, false},
+        {"rpicoin", "getbudgetvotes", &getbudgetvotes, true, true, false},
+        {"rpicoin", "getnextsuperblock", &getnextsuperblock, true, true, false},
+        {"rpicoin", "getbudgetprojection", &getbudgetprojection, true, true, false},
+        {"rpicoin", "getbudgetinfo", &getbudgetinfo, true, true, false},
+        {"rpicoin", "mnbudgetrawvote", &mnbudgetrawvote, true, true, false},
+        {"rpicoin", "mnfinalbudget", &mnfinalbudget, true, true, false},
+        {"rpicoin", "checkbudgets", &checkbudgets, true, true, false},
+        {"rpicoin", "mnsync", &mnsync, true, true, false},
+        {"rpicoin", "spork", &spork, true, true, false},
+        {"rpicoin", "getpoolinfo", &getpoolinfo, true, true, false},
 
 #ifdef ENABLE_WALLET
         /* Wallet */
@@ -618,14 +618,14 @@ std::vector<std::string> CRPCTable::listCommands() const
 
 std::string HelpExampleCli(string methodname, string args)
 {
-    return "> RPICoin-cli " + methodname + " " + args + "\n";
+    return "> rpicoin-cli " + methodname + " " + args + "\n";
 }
 
 std::string HelpExampleRpc(string methodname, string args)
 {
     return "> curl --user myusername --data-binary '{\"jsonrpc\": \"1.0\", \"id\":\"curltest\", "
            "\"method\": \"" +
-           methodname + "\", \"params\": [" + args + "] }' -H 'content-type: text/plain;' http://127.0.0.1:17001/\n";
+           methodname + "\", \"params\": [" + args + "] }' -H 'content-type: text/plain;' http://127.0.0.1:18001/\n";
 }
 
 void RPCSetTimerInterfaceIfUnset(RPCTimerInterface *iface)

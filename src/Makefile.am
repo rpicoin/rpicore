@@ -65,11 +65,11 @@ noinst_PROGRAMS =
 TESTS =
 
 if BUILD_BITCOIND
-  bin_PROGRAMS += RPICoind
+  bin_PROGRAMS += rpicoind
 endif
 
 if BUILD_BITCOIN_UTILS
-  bin_PROGRAMS += RPICoin-cli RPICoin-tx
+  bin_PROGRAMS += rpicoin-cli rpicoin-tx
 endif
 
 .PHONY: FORCE
@@ -191,7 +191,7 @@ obj/build.h: FORCE
 	  "$(abs_top_srcdir)"
 libbitcoin_util_a-clientversion.$(OBJEXT): obj/build.h
 
-# server: shared between RPICoind and RPICoin-qt
+# server: shared between rpicoind and rpicoin-qt
 libbitcoin_server_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(MINIUPNPC_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS)
 libbitcoin_server_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_server_a_SOURCES = \
@@ -239,7 +239,7 @@ libbitcoin_zmq_a_SOURCES = \
   zmq/zmqpublishnotifier.cpp
 endif
 
-# wallet: shared between RPICoind and RPICoin-qt, but only linked
+# wallet: shared between rpicoind and rpicoin-qt, but only linked
 # when wallet enabled
 libbitcoin_wallet_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_wallet_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
@@ -322,7 +322,7 @@ libzerocoin_libbitcoin_zerocoin_a_SOURCES = \
   libzerocoin/Params.cpp \
   libzerocoin/SerialNumberSignatureOfKnowledge.cpp
 
-# common: shared between RPICoind, and RPICoin-qt and non-server tools
+# common: shared between rpicoind, and rpicoin-qt and non-server tools
 libbitcoin_common_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_common_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_common_a_SOURCES = \
@@ -387,7 +387,7 @@ libbitcoin_util_a_SOURCES += compat/glibc_compat.cpp
 AM_LDFLAGS += $(COMPAT_LDFLAGS)
 endif
 
-# cli: shared between RPICoin-cli and RPICoin-qt
+# cli: shared between rpicoin-cli and rpicoin-qt
 libbitcoin_cli_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_cli_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_cli_a_SOURCES = \
@@ -397,16 +397,16 @@ libbitcoin_cli_a_SOURCES = \
 nodist_libbitcoin_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
-# RPICoind binary #
-RPICoind_SOURCES = RPICoind.cpp
-RPICoind_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-RPICoind_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-RPICoind_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# rpicoind binary #
+rpicoind_SOURCES = rpicoind.cpp
+rpicoind_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+rpicoind_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+rpicoind_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-RPICoind_SOURCES += RPICoind-res.rc
+rpicoind_SOURCES += rpicoind-res.rc
 endif
-RPICoind_LDADD = \
+rpicoind_LDADD = \
   $(LIBBITCOIN_SERVER) \
   $(LIBBITCOIN_COMMON) \
   $(LIBUNIVALUE) \
@@ -420,38 +420,38 @@ RPICoind_LDADD = \
   $(LIBMEMENV) \
   $(LIBSECP256K1)
 
-RPICoind_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS)
+rpicoind_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS)
 
-# RPICoin-cli binary #
-RPICoin_cli_SOURCES = RPICoin-cli.cpp
-RPICoin_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
-RPICoin_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-RPICoin_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# rpicoin-cli binary #
+rpicoin_cli_SOURCES = rpicoin-cli.cpp
+rpicoin_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
+rpicoin_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+rpicoin_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-RPICoin_cli_SOURCES += RPICoin-cli-res.rc
+rpicoin_cli_SOURCES += rpicoin-cli-res.rc
 endif
 
-RPICoin_cli_LDADD = \
+rpicoin_cli_LDADD = \
   $(LIBBITCOIN_CLI) \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_UTIL) \
   $(LIBBITCOIN_CRYPTO)
 
-RPICoin_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
+rpicoin_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
 #
 
-# RPICoin-tx binary #
-RPICoin_tx_SOURCES = RPICoin-tx.cpp
-RPICoin_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-RPICoin_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-RPICoin_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# rpicoin-tx binary #
+rpicoin_tx_SOURCES = rpicoin-tx.cpp
+rpicoin_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+rpicoin_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+rpicoin_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-RPICoin_tx_SOURCES += RPICoin-tx-res.rc
+rpicoin_tx_SOURCES += rpicoin-tx-res.rc
 endif
 
-RPICoin_tx_LDADD = \
+rpicoin_tx_LDADD = \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_ZEROCOIN) \
@@ -459,7 +459,7 @@ RPICoin_tx_LDADD = \
   $(LIBBITCOIN_CRYPTO) \
   $(LIBSECP256K1)
 
-RPICoin_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
+rpicoin_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
 #
 
 # bitcoinconsensus library #

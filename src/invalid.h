@@ -2,10 +2,10 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef RPICoin_INVALID_H
-#define RPICoin_INVALID_H
+#ifndef RPICOIN_INVALID_H
+#define RPICOIN_INVALID_H
 
-#endif //RPICoin_INVALID_H
+#endif //RPICOIN_INVALID_H
 
 #include <libzerocoin/bignum.h>
 #include <univalue/include/univalue.h>

@@ -1,11 +1,9 @@
-// Copyright (c) 2017 The PIVX developers
-// Copyright (c) 2018 The WISPR developers
-// Copyright (c) 2018-2019 The RPICoin developers
+// Copyright (c) 2017-2018 The PIVX developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef RPICoin_ACCUMULATORMAP_H
-#define RPICoin_ACCUMULATORMAP_H
+#ifndef WISPR_ACCUMULATORMAP_H
+#define WISPR_ACCUMULATORMAP_H
 
 #include "libzerocoin/Accumulator.h"
 #include "libzerocoin/Coin.h"
@@ -27,4 +25,4 @@ public:
     void Reset();
     void Reset(libzerocoin::ZerocoinParams* params2);
 };
-#endif //RPICoin_ACCUMULATORMAP_H
+#endif //WISPR_ACCUMULATORMAP_H

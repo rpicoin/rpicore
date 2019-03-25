@@ -35,7 +35,7 @@ class TxViewDelegate : public QAbstractItemDelegate
 {
     Q_OBJECT
 public:
-    TxViewDelegate() : QAbstractItemDelegate(), unit(BitcoinUnits::WSP)
+    TxViewDelegate() : QAbstractItemDelegate(), unit(BitcoinUnits::RPI)
     {
     }
 
@@ -147,7 +147,7 @@ OverviewPage::~OverviewPage()
     delete ui;
 }
 
-void OverviewPage::getPercentage(CAmount nUnlockedBalance, CAmount nZerocoinBalance, QString& sWSPPercentage, QString& szRPIPercentage)
+void OverviewPage::getPercentage(CAmount nUnlockedBalance, CAmount nZerocoinBalance, QString& sRPIPercentage, QString& szRPIPercentage)
 {
     int nPrecision = 2;
     double dzPercentage = 0.0;
@@ -167,7 +167,7 @@ void OverviewPage::getPercentage(CAmount nUnlockedBalance, CAmount nZerocoinBala
     double dPercentage = 100.0 - dzPercentage;
 
     szRPIPercentage = "(" + QLocale(QLocale::system()).toString(dzPercentage, 'f', nPrecision) + " %)";
-    sWSPPercentage = "(" + QLocale(QLocale::system()).toString(dPercentage, 'f', nPrecision) + " %)";
+    sRPIPercentage = "(" + QLocale(QLocale::system()).toString(dPercentage, 'f', nPrecision) + " %)";
 
 }
 
@@ -192,12 +192,12 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
         nWatchOnlyLockedBalance = pwalletMain->GetLockedWatchOnlyBalance();
     }
 
-    // WSP Balance
+    // RPI Balance
     CAmount nTotalBalance = balance + unconfirmedBalance;
     CAmount rpiAvailableBalance = balance - immatureBalance - nLockedBalance;
     CAmount nUnlockedBalance = nTotalBalance - nLockedBalance;
 
-    // WSP Watch-Only Balance
+    // RPI Watch-Only Balance
     CAmount nTotalWatchBalance = watchOnlyBalance + watchUnconfBalance;
     CAmount nAvailableWatchBalance = watchOnlyBalance - watchImmatureBalance - nWatchOnlyLockedBalance;
 
@@ -212,7 +212,7 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
     CAmount availableTotalBalance = rpiAvailableBalance + matureZerocoinBalance;
     CAmount sumTotalBalance = nTotalBalance + zerocoinBalance;
 
-    // WSP labels
+    // RPI labels
     ui->labelBalance->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, rpiAvailableBalance, false, BitcoinUnits::separatorAlways));
     ui->labelUnconfirmed->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, unconfirmedBalance, false, BitcoinUnits::separatorAlways));
     ui->labelImmature->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, immatureBalance, false, BitcoinUnits::separatorAlways));
@@ -237,7 +237,7 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
     ui->labelTotalz->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, sumTotalBalance, false, BitcoinUnits::separatorAlways));
 
     // Percentage labels
-    ui->labelWSPPercent->setText(sPercentage);
+    ui->labelRPIPercent->setText(sPercentage);
     ui->labelzRPIPercent->setText(szPercentage);
 
     // Adjust bubble-help according to AutoMint settings
@@ -248,10 +248,10 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
     int nZeromintPercentage = GetArg("-zeromintpercentage", 10);
     if (fEnableZeromint) {
         automintHelp += tr("AutoMint is currently enabled and set to ") + QString::number(nZeromintPercentage) + "%.\n";
-        automintHelp += tr("To disable AutoMint add 'enablezeromint=0' in RPICoin.conf.");
+        automintHelp += tr("To disable AutoMint add 'enablezeromint=0' in rpicoin.conf.");
     }
     else {
-        automintHelp += tr("AutoMint is currently disabled.\nTo enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in RPICoin.conf");
+        automintHelp += tr("AutoMint is currently disabled.\nTo enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in rpicoin.conf");
     }
 
     // Only show most balances if they are non-zero for the sake of simplicity
@@ -264,33 +264,33 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
 
     bool showWatchOnly = nTotalWatchBalance != 0;
 
-    // WSP Available
-    bool showWSPAvailable = settingShowAllBalances || rpiAvailableBalance != nTotalBalance;
-    bool showWatchOnlyWSPAvailable = showWSPAvailable || nAvailableWatchBalance != nTotalWatchBalance;
-    ui->labelBalanceText->setVisible(showWSPAvailable || showWatchOnlyWSPAvailable);
-    ui->labelBalance->setVisible(showWSPAvailable || showWatchOnlyWSPAvailable);
-    ui->labelWatchAvailable->setVisible(showWatchOnlyWSPAvailable && showWatchOnly);
+    // RPI Available
+    bool showRPIAvailable = settingShowAllBalances || rpiAvailableBalance != nTotalBalance;
+    bool showWatchOnlyRPIAvailable = showRPIAvailable || nAvailableWatchBalance != nTotalWatchBalance;
+    ui->labelBalanceText->setVisible(showRPIAvailable || showWatchOnlyRPIAvailable);
+    ui->labelBalance->setVisible(showRPIAvailable || showWatchOnlyRPIAvailable);
+    ui->labelWatchAvailable->setVisible(showWatchOnlyRPIAvailable && showWatchOnly);
 
-    // WSP Pending
-    bool showWSPPending = settingShowAllBalances || unconfirmedBalance != 0;
-    bool showWatchOnlyWSPPending = showWSPPending || watchUnconfBalance != 0;
-    ui->labelPendingText->setVisible(showWSPPending || showWatchOnlyWSPPending);
-    ui->labelUnconfirmed->setVisible(showWSPPending || showWatchOnlyWSPPending);
-    ui->labelWatchPending->setVisible(showWatchOnlyWSPPending && showWatchOnly);
+    // RPI Pending
+    bool showRPIPending = settingShowAllBalances || unconfirmedBalance != 0;
+    bool showWatchOnlyRPIPending = showRPIPending || watchUnconfBalance != 0;
+    ui->labelPendingText->setVisible(showRPIPending || showWatchOnlyRPIPending);
+    ui->labelUnconfirmed->setVisible(showRPIPending || showWatchOnlyRPIPending);
+    ui->labelWatchPending->setVisible(showWatchOnlyRPIPending && showWatchOnly);
 
-    // WSP Immature
-    bool showWSPImmature = settingShowAllBalances || immatureBalance != 0;
-    bool showWatchOnlyImmature = showWSPImmature || watchImmatureBalance != 0;
-    ui->labelImmatureText->setVisible(showWSPImmature || showWatchOnlyImmature);
-    ui->labelImmature->setVisible(showWSPImmature || showWatchOnlyImmature); // for symmetry reasons also show immature label when the watch-only one is shown
+    // RPI Immature
+    bool showRPIImmature = settingShowAllBalances || immatureBalance != 0;
+    bool showWatchOnlyImmature = showRPIImmature || watchImmatureBalance != 0;
+    ui->labelImmatureText->setVisible(showRPIImmature || showWatchOnlyImmature);
+    ui->labelImmature->setVisible(showRPIImmature || showWatchOnlyImmature); // for symmetry reasons also show immature label when the watch-only one is shown
     ui->labelWatchImmature->setVisible(showWatchOnlyImmature && showWatchOnly); // show watch-only immature balance
 
-    // WSP Locked
-    bool showWSPLocked = settingShowAllBalances || nLockedBalance != 0;
-    bool showWatchOnlyWSPLocked = showWSPLocked || nWatchOnlyLockedBalance != 0;
-    ui->labelLockedBalanceText->setVisible(showWSPLocked || showWatchOnlyWSPLocked);
-    ui->labelLockedBalance->setVisible(showWSPLocked || showWatchOnlyWSPLocked);
-    ui->labelWatchLocked->setVisible(showWatchOnlyWSPLocked && showWatchOnly);
+    // RPI Locked
+    bool showRPILocked = settingShowAllBalances || nLockedBalance != 0;
+    bool showWatchOnlyRPILocked = showRPILocked || nWatchOnlyLockedBalance != 0;
+    ui->labelLockedBalanceText->setVisible(showRPILocked || showWatchOnlyRPILocked);
+    ui->labelLockedBalance->setVisible(showRPILocked || showWatchOnlyRPILocked);
+    ui->labelWatchLocked->setVisible(showWatchOnlyRPILocked && showWatchOnly);
 
     // zRPI
     bool showzRPIAvailable = settingShowAllBalances || zerocoinBalance != matureZerocoinBalance;
@@ -305,7 +305,7 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
 
     // Percent split
     bool showPercentages = ! (zerocoinBalance == 0 && nTotalBalance == 0);
-    ui->labelWSPPercent->setVisible(showPercentages);
+    ui->labelRPIPercent->setVisible(showPercentages);
     ui->labelzRPIPercent->setVisible(showPercentages);
 
     static int cachedTxLocks = 0;
@@ -378,7 +378,7 @@ void OverviewPage::setWalletModel(WalletModel* model)
         connect(model, SIGNAL(notifyWatchonlyChanged(bool)), this, SLOT(updateWatchOnlyLabels(bool)));
     }
 
-    // update the display unit, to not use the default ("WSP")
+    // update the display unit, to not use the default ("RPI")
     updateDisplayUnit();
 
     // Hide orphans

@@ -13,7 +13,7 @@
 #define BITCOIN_UTIL_H
 
 #if defined(HAVE_CONFIG_H)
-#include "config/RPICoin-config.h"
+#include "config/rpicoin-config.h"
 #endif
 
 #include "compat.h"
@@ -30,7 +30,7 @@
 #include <boost/thread/exceptions.hpp>
 #define CVOIDBEGIN(a)        ((const void*)&(a))
 
-//RPICoin only features
+//WISPR only features
 
 extern bool fMasterNode;
 extern bool fLiteMode;
@@ -39,7 +39,7 @@ extern int nSwiftTXDepth;
 extern int nZeromintPercentage;
 extern const int64_t AUTOMINT_DELAY;
 extern int nPreferredDenom;
-extern int nAnonymizeRPICoinAmount;
+extern int nAnonymizeRpicoinAmount;
 extern int nLiquidityProvider;
 extern bool fEnableZeromint;
 extern int64_t enforceMasternodePaymentsTime;
@@ -213,7 +213,7 @@ void RenameThread(const char* name);
 template <typename Callable>
 void TraceThread(const char* name, Callable func)
 {
-    std::string s = strprintf("RPICoin-%s", name);
+    std::string s = strprintf("rpicoin-%s", name);
     RenameThread(s.c_str());
     try {
         LogPrintf("%s thread start\n", name);

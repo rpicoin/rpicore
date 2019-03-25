@@ -74,7 +74,7 @@ def get_symlink_files():
     files = sorted(subprocess.check_output([GIT, 'ls-tree', '--full-tree', '-r', 'HEAD']).splitlines())
     ret = []
     for f in files:
-        if (int(f.decode('utf-8').split(" ")[0], 8) & 0o170000) == 0o120000:
+        if (int(f.decode('utf-8').split(" ")[0], 8) & 0o180000) == 0o120000:
             ret.append(f.decode('utf-8').split("\t")[1])
     return ret
 

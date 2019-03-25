@@ -7,7 +7,7 @@
 #define BITCOIN_BIGNUM_H
 
 #if defined HAVE_CONFIG_H
-#include "RPICoin-config.h"
+#include "rpicoin-config.h"
 #endif
 
 #include <stdexcept>

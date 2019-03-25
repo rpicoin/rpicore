@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef RPICoin_STAKEINPUT_H
-#define RPICoin_STAKEINPUT_H
+#ifndef WISPR_STAKEINPUT_H
+#define WISPR_STAKEINPUT_H
 
 class CKeyStore;
 class CWallet;
@@ -30,7 +30,7 @@ public:
 // zRPIStake can take two forms
 // 1) the stake candidate, which is a zcmint that is attempted to be staked
 // 2) a staked zrpi, which is a zcspend that has successfully staked
-class CZWspStake : public CStakeInput
+class CZRpiStake : public CStakeInput
 {
 private:
     uint32_t nChecksum;
@@ -39,7 +39,7 @@ private:
     uint256 hashSerial;
 
 public:
-    explicit CZWspStake(libzerocoin::CoinDenomination denom, const uint256& hashSerial)
+    explicit CZRpiStake(libzerocoin::CoinDenomination denom, const uint256& hashSerial)
     {
         this->denom = denom;
         this->hashSerial = hashSerial;
@@ -47,7 +47,7 @@ public:
         fMint = true;
     }
 
-    explicit CZWspStake(const libzerocoin::CoinSpend& spend);
+    explicit CZRpiStake(const libzerocoin::CoinSpend& spend);
 
     CBlockIndex* GetIndexFrom() override;
     bool GetTxFrom(CTransaction& tx) override;
@@ -63,13 +63,13 @@ public:
     uint32_t GetChecksum();
 };
 
-class CWspStake : public CStakeInput
+class CRpiStake : public CStakeInput
 {
 private:
     CTransaction txFrom;
     unsigned int nPosition;
 public:
-    CWspStake()
+    CRpiStake()
     {
         this->pindexFrom = nullptr;
     }
@@ -87,4 +87,4 @@ public:
 };
 
 
-#endif //RPICoin_STAKEINPUT_H
+#endif //WISPR_STAKEINPUT_H

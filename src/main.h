@@ -9,7 +9,7 @@
 #define BITCOIN_MAIN_H
 
 #if defined(HAVE_CONFIG_H)
-#include "config/RPICoin-config.h"
+#include "config/rpicoin-config.h"
 #endif
 
 #include "amount.h"
@@ -346,7 +346,7 @@ bool IsBlockHashInChain(const uint256& hashBlock);
 bool ValidOutPoint(const COutPoint out, int nHeight);
 void RecalculateZRPISpent();
 void RecalculateZRPIMinted();
-bool RecalculateWSPSupply(int nHeightStart);
+bool RecalculateRPISupply(int nHeightStart);
 bool ReindexAccumulators(list<uint256>& listMissingCheckpoints, string& strError);
 
 

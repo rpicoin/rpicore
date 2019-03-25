@@ -1,6 +1,6 @@
-usr/local/bin/RPICoin-qt usr/bin
+usr/local/bin/rpicoin-qt usr/bin
 share/pixmaps/bitcoin32.xpm usr/share/pixmaps
 share/pixmaps/bitcoin16.xpm usr/share/pixmaps
 share/pixmaps/bitcoin128.png usr/share/pixmaps
-debian/RPICoin-qt.desktop usr/share/applications
-debian/RPICoin-qt.protocol usr/share/kde4/services/
+debian/rpicoin-qt.desktop usr/share/applications
+debian/rpicoin-qt.protocol usr/share/kde4/services/

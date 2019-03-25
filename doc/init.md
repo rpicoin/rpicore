@@ -1,60 +1,60 @@
-Sample init scripts and service configuration for RPICoind
+Sample init scripts and service configuration for rpicoind
 ==========================================================
 
 Sample scripts and configuration files for systemd, Upstart and OpenRC
 can be found in the contrib/init folder.
 
-    contrib/init/RPICoind.service:    systemd service unit configuration
-    contrib/init/RPICoind.openrc:     OpenRC compatible SysV style init script
-    contrib/init/RPICoind.openrcconf: OpenRC conf.d file
-    contrib/init/RPICoind.conf:       Upstart service configuration file
-    contrib/init/RPICoind.init:       CentOS compatible SysV style init script
+    contrib/init/rpicoind.service:    systemd service unit configuration
+    contrib/init/rpicoind.openrc:     OpenRC compatible SysV style init script
+    contrib/init/rpicoind.openrcconf: OpenRC conf.d file
+    contrib/init/rpicoind.conf:       Upstart service configuration file
+    contrib/init/rpicoind.init:       CentOS compatible SysV style init script
 
 1. Service User
 ---------------------------------
 
-All three startup configurations assume the existence of a "RPICoin" user
+All three startup configurations assume the existence of a "rpicoin" user
 and group.  They must be created before attempting to use these scripts.
 
 2. Configuration
 ---------------------------------
 
-At a bare minimum, RPICoind requires that the rpcpassword setting be set
+At a bare minimum, rpicoind requires that the rpcpassword setting be set
 when running as a daemon.  If the configuration file does not exist or this
-setting is not set, RPICoind will shutdown promptly after startup.
+setting is not set, rpicoind will shutdown promptly after startup.
 
 This password does not have to be remembered or typed as it is mostly used
-as a fixed token that RPICoind and client programs read from the configuration
+as a fixed token that rpicoind and client programs read from the configuration
 file, however it is recommended that a strong and secure password be used
 as this password is security critical to securing the wallet should the
 wallet be enabled.
 
-If RPICoind is run with "-daemon" flag, and no rpcpassword is set, it will
+If rpicoind is run with "-daemon" flag, and no rpcpassword is set, it will
 print a randomly generated suitable password to stderr.  You can also
 generate one from the shell yourself like this:
 
 bash -c 'tr -dc a-zA-Z0-9 < /dev/urandom | head -c32 && echo'
 
-Once you have a password in hand, set rpcpassword= in /etc/RPICoin/RPICoin.conf
+Once you have a password in hand, set rpcpassword= in /etc/rpicoin/rpicoin.conf
 
 For an example configuration file that describes the configuration settings,
-see contrib/debian/examples/RPICoin.conf.
+see contrib/debian/examples/rpicoin.conf.
 
 3. Paths
 ---------------------------------
 
 All three configurations assume several paths that might need to be adjusted.
 
-Binary:              /usr/bin/RPICoind
-Configuration file:  /etc/RPICoin/RPICoin.conf
-Data directory:      /var/lib/RPICoind
-PID file:            /var/run/RPICoind/RPICoind.pid (OpenRC and Upstart)
-                     /var/lib/RPICoind/RPICoind.pid (systemd)
+Binary:              /usr/bin/rpicoind
+Configuration file:  /etc/rpicoin/rpicoin.conf
+Data directory:      /var/lib/rpicoind
+PID file:            /var/run/rpicoind/rpicoind.pid (OpenRC and Upstart)
+                     /var/lib/rpicoind/rpicoind.pid (systemd)
 
 The configuration file, PID directory (if applicable) and data directory
-should all be owned by the RPICoin user and group.  It is advised for security
+should all be owned by the rpicoin user and group.  It is advised for security
 reasons to make the configuration file and data directory only readable by the
-RPICoin user and group.  Access to RPICoin-cli and other RPICoind rpc clients
+rpicoin user and group.  Access to rpicoin-cli and other rpicoind rpc clients
 can then be controlled by group membership.
 
 4. Installing Service Configuration
@@ -66,19 +66,19 @@ Installing this .service file consists on just copying it to
 /usr/lib/systemd/system directory, followed by the command
 "systemctl daemon-reload" in order to update running systemd configuration.
 
-To test, run "systemctl start RPICoind" and to enable for system startup run
-"systemctl enable RPICoind"
+To test, run "systemctl start rpicoind" and to enable for system startup run
+"systemctl enable rpicoind"
 
 4b) OpenRC
 
-Rename RPICoind.openrc to RPICoind and drop it in /etc/init.d.  Double
+Rename rpicoind.openrc to rpicoind and drop it in /etc/init.d.  Double
 check ownership and permissions and make it executable.  Test it with
-"/etc/init.d/RPICoind start" and configure it to run on startup with
-"rc-update add RPICoind"
+"/etc/init.d/rpicoind start" and configure it to run on startup with
+"rc-update add rpicoind"
 
 4c) Upstart (for Debian/Ubuntu based distributions)
 
-Drop RPICoind.conf in /etc/init.  Test by running "service RPICoind start"
+Drop rpicoind.conf in /etc/init.  Test by running "service rpicoind start"
 it will automatically start on reboot.
 
 NOTE: This script is incompatible with CentOS 5 and Amazon Linux 2014 as they
@@ -86,11 +86,11 @@ use old versions of Upstart and do not supply the start-stop-daemon uitility.
 
 4d) CentOS
 
-Copy RPICoind.init to /etc/init.d/RPICoind. Test by running "service RPICoind start".
+Copy rpicoind.init to /etc/init.d/rpicoind. Test by running "service rpicoind start".
 
-Using this script, you can adjust the path and flags to the RPICoind program by
-setting the RPICoinD and FLAGS environment variables in the file
-/etc/sysconfig/RPICoind. You can also use the DAEMONOPTS environment variable here.
+Using this script, you can adjust the path and flags to the rpicoind program by
+setting the WISPRD and FLAGS environment variables in the file
+/etc/sysconfig/rpicoind. You can also use the DAEMONOPTS environment variable here.
 
 5. Auto-respawn
 -----------------------------------

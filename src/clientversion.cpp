@@ -1,6 +1,5 @@
 // Copyright (c) 2012-2017 The Bitcoin Core developers
 // Copyright (c) 2016-2017 The PIVX developers
-// Copyright (c) 2018-2019 The RPICoin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -46,8 +45,8 @@ const std::string CLIENT_NAME("RPICoin Core");
 //! git will put "#define GIT_ARCHIVE 1" on the next line inside archives. 
 #define GIT_ARCHIVE 1
 #ifdef GIT_ARCHIVE
-#define GIT_COMMIT_ID "fe719235e32dfb8a93af8ea5e8286c4216dd1749"
-#define GIT_COMMIT_DATE "Sun, 21 Oct 2018 10:11:45 +0200"
+#define GIT_COMMIT_ID "ada00410e2beffebb9e88ee17afb64d664e7ff89"
+#define GIT_COMMIT_DATE "Sun, 10 Mar 2019 12:23:26 +0100"
 #endif
 
 #define BUILD_DESC_WITH_SUFFIX(maj, min, rev, build, suffix) \

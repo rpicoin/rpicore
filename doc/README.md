@@ -3,38 +3,38 @@ RPICoin Core
 
 Setup
 ---------------------
-[RPICoin Core](http://RPICoin.tech/wallet) is the original RPICoin client and it builds the backbone of the network. However, it downloads and stores the entire history of RPICoin transactions; depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more. Thankfully you only have to do this once.
+[RPICoin Core](http://rpicoin.tech/wallet) is the original WISPR client and it builds the backbone of the network. However, it downloads and stores the entire history of WISPR transactions; depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more. Thankfully you only have to do this once.
 
 Running
 ---------------------
-The following are some helpful notes on how to run RPICoin on your native platform.
+The following are some helpful notes on how to run WISPR on your native platform.
 
 ### Unix
 
 Unpack the files into a directory and run:
 
-- bin/32/RPICoin-qt (GUI, 32-bit) or bin/32/RPICoind (headless, 32-bit)
-- bin/64/RPICoin-qt (GUI, 64-bit) or bin/64/RPICoind (headless, 64-bit)
+- bin/32/rpicoin-qt (GUI, 32-bit) or bin/32/rpicoind (headless, 32-bit)
+- bin/64/rpicoin-qt (GUI, 64-bit) or bin/64/rpicoind (headless, 64-bit)
 
 ### Windows
 
-Unpack the files into a directory, and then run RPICoin-qt.exe.
+Unpack the files into a directory, and then run rpicoin-qt.exe.
 
 ### OSX
 
-Drag RPICoin-Qt to your applications folder, and then run RPICoin-Qt.
+Drag WISPR-Qt to your applications folder, and then run WISPR-Qt.
 
 ### Need Help?
 
-* See the documentation at the [RPICoin Wiki](https://en.bitcoin.it/wiki/Main_Page) ***TODO***
+* See the documentation at the [WISPR Wiki](https://en.bitcoin.it/wiki/Main_Page) ***TODO***
 for help and more information.
-* Ask for help on [BitcoinTalk](https://bitcointalk.org/index.php?topic=1262920.0) or on the [RPICoin Forum](http://forum.RPICoin.tech/).
-* Join our Discord server [Discord Server](https://discord.RPICoin.tech)
-* Join one of our Slack groups [RPICoin Slack Groups](https://RPICoin.tech/slack-logins/) (Main community is replaced by Discord).
+* Ask for help on [BitcoinTalk](https://bitcointalk.org/index.php?topic=1262920.0) or on the [WISPR Forum](http://forum.rpicoin.tech/).
+* Join our Discord server [Discord Server](https://discord.rpicoin.tech)
+* Join one of our Slack groups [WISPR Slack Groups](https://rpicoin.tech/slack-logins/) (Main community is replaced by Discord).
 
 Building
 ---------------------
-The following are developer notes on how to build RPICoin on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
+The following are developer notes on how to build WISPR on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
 
 - [OSX Build Notes](build-osx.md)
 - [Unix Build Notes](build-unix.md)
@@ -42,7 +42,7 @@ The following are developer notes on how to build RPICoin on your native platfor
 
 Development
 ---------------------
-The RPICoin repo's [root README](https://github.com/RPICoinProject/core/blob/master/README.md) contains relevant information on the development process and automated testing.
+The Rpicoin repo's [root README](https://github.com/rpicoin/rpicore/blob/master/README.md) contains relevant information on the development process and automated testing.
 
 - [Developer Notes](developer-notes.md)
 - [Multiwallet Qt Development](multiwallet-qt.md)
@@ -56,8 +56,8 @@ The RPICoin repo's [root README](https://github.com/RPICoinProject/core/blob/mas
 
 ### Resources
 
-* Discuss on the [BitcoinTalk](https://bitcointalk.org/index.php?topic=1262920.0) or the [RPICoin](http://forum.RPICoin.tech/) forum.
-* Join the [RPICoin-Dev](https://RPICoin-dev.slack.com/) Slack group ([Sign-Up](https://RPICoin-dev.herokuapp.com/)).
+* Discuss on the [BitcoinTalk](https://bitcointalk.org/index.php?topic=1262920.0) or the [WISPR](http://forum.rpicoin.tech/) forum.
+* Join the [WISPR-Dev](https://rpicoin-dev.slack.com/) Slack group ([Sign-Up](https://rpicoin-dev.herokuapp.com/)).
 
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)

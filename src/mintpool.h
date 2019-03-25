@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef RPICoin_MINTPOOL_H
-#define RPICoin_MINTPOOL_H
+#ifndef RPICOIN_MINTPOOL_H
+#define RPICOIN_MINTPOOL_H
 
 #include <map>
 #include <list>
@@ -50,4 +50,4 @@ public:
 };
 
 
-#endif //RPICoin_MINTPOOL_H
+#endif //RPICOIN_MINTPOOL_H

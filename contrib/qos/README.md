@@ -1,5 +1,5 @@
 ### Qos ###
 
-This is a Linux bash script that will set up tc to limit the outgoing bandwidth for connections to the Bitcoin network. It limits outbound TCP traffic with a source or destination port of 17000, but not if the destination IP is within a LAN (defined as 192.168.x.x).
+This is a Linux bash script that will set up tc to limit the outgoing bandwidth for connections to the Bitcoin network. It limits outbound TCP traffic with a source or destination port of 18000, but not if the destination IP is within a LAN (defined as 192.168.x.x).
 
-This means one can have an always-on RPICoind instance running, and another local RPICoind/RPICoin-qt instance which connects to this node and receives blocks from it.
+This means one can have an always-on rpicoind instance running, and another local rpicoind/rpicoin-qt instance which connects to this node and receives blocks from it.

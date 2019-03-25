@@ -2,8 +2,8 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef RPICoin_CSPORKDB_H
-#define RPICoin_CSPORKDB_H
+#ifndef WISPR_CSPORKDB_H
+#define WISPR_CSPORKDB_H
 
 #include <boost/filesystem/path.hpp>
 #include "leveldbwrapper.h"
@@ -25,4 +25,4 @@ public:
 };
 
 
-#endif //RPICoin_CSPORKDB_H
+#endif //WISPR_CSPORKDB_H

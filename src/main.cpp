@@ -51,7 +51,7 @@ using namespace std;
 using namespace libzerocoin;
 
 #if defined(NDEBUG)
-#error "RPICoin cannot be compiled without assertions."
+#error "RPICOIN cannot be compiled without assertions."
 #endif
 
 /**
@@ -1755,17 +1755,10 @@ double ConvertBitsToDouble(unsigned int nBits)
 
 int64_t GetBlockValue(int nHeight)
 {
-    if (nHeight < 450 && nHeight > 0)
-        return 5000000 * COIN;
+    if (nHeight < 101 && nHeight > 0)
+        return 8999676 * COIN;
 
-    int64_t nSubsidy = 0;
-    if (nHeight == 0) {
-        nSubsidy = 5000000 * COIN;
-    } else if (nHeight < Params().NEW_PROTOCOLS_STARTHEIGHT() && nHeight > 450) {
-        nSubsidy = 5 * COIN;
-    } else {
-        nSubsidy = 10 * COIN;
-    }
+    int64_t nSubsidy = 300 * COIN;
     return nSubsidy;
 }
 
@@ -1780,7 +1773,7 @@ CAmount GetSeeSaw(const CAmount& blockValue, int nMasternodeCount, int nHeight)
     }
 
     int64_t nMoneySupply = chainActive.Tip()->nMoneySupply;
-    int64_t mNodeCoins = nMasternodeCount * 5000000 * COIN;
+    int64_t mNodeCoins = nMasternodeCount * 125000 * COIN;
 
     // Use this log to compare the masternode count for different clients
     //LogPrintf("Adjusting seesaw at height %d with %d masternodes (without drift: %d) at %ld\n", nHeight, nMasternodeCount, nMasternodeCount - Params().MasternodeCountDrift(), GetTime());
@@ -1808,7 +1801,7 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
     }
 
     if (nHeight > Params().NEW_PROTOCOLS_STARTHEIGHT()) {
-        //When zRPI is staked, masternode only gets 2 WSP
+        //When zRPI is staked, masternode only gets 2 RPI
         ret = 4 * COIN;
         if (isZRPIStake)
             ret = 3 * COIN;
@@ -2183,7 +2176,7 @@ bool DisconnectBlock(CBlock& block, CValidationState& state, CBlockIndex* pindex
         const CTransaction& tx = block.vtx[i];
 
         /** UNDO ZEROCOIN DATABASING
-         * note we only undo zerocoin databasing in the following statement, value to and from RPICoin
+         * note we only undo zerocoin databasing in the following statement, value to and from RPICOIN
          * addresses should still be handled by the typical bitcoin based undo code
          * */
         if (tx.ContainsZerocoins()) {
@@ -2326,7 +2319,7 @@ static CCheckQueue<CScriptCheck> scriptcheckqueue(128);
 
 void ThreadScriptCheck()
 {
-    RenameThread("RPICoin-scriptch");
+    RenameThread("rpicoin-scriptch");
     scriptcheckqueue.Thread();
 }
 
@@ -2393,7 +2386,7 @@ void RecalculateZRPISpent()
     }
 }
 
-bool RecalculateWSPSupply(int nHeightStart)
+bool RecalculateRPISupply(int nHeightStart)
 {
     if (nHeightStart > chainActive.Height())
         return false;
@@ -2454,7 +2447,7 @@ bool RecalculateWSPSupply(int nHeightStart)
 
 bool ReindexAccumulators(list<uint256>& listMissingCheckpoints, string& strError)
 {
-    // RPICoin: recalculate Accumulator Checkpoints that failed to database properly
+    // RPICOIN: recalculate Accumulator Checkpoints that failed to database properly
     if (!listMissingCheckpoints.empty()) {
         uiInterface.ShowProgress(_("Calculating missing accumulators..."), 0);
         LogPrintf("%s : finding missing checkpoints\n", __func__);
@@ -2767,7 +2760,7 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
     pindex->nMoneySupply = nMoneySupplyPrev + nValueOut - nValueIn;
     pindex->nMint = pindex->nMoneySupply - nMoneySupplyPrev + nFees;
 
-//    LogPrintf("XX69----------> ConnectBlock(): nValueOut: %s, nValueIn: %s, nFees: %s, nMint: %s zWspSpent: %s\n",
+//    LogPrintf("XX69----------> ConnectBlock(): nValueOut: %s, nValueIn: %s, nFees: %s, nMint: %s zRpiSpent: %s\n",
 //              FormatMoney(nValueOut), FormatMoney(nValueIn),
 //              FormatMoney(nFees), FormatMoney(pindex->nMint), FormatMoney(nAmountZerocoinSpent));
 
@@ -2958,7 +2951,7 @@ void static UpdateTip(CBlockIndex* pindexNew)
 {
     chainActive.SetTip(pindexNew);
 
-    // If turned on AutoZeromint will automatically convert WSP to zRPI
+    // If turned on AutoZeromint will automatically convert RPI to zRPI
     if (pwalletMain->isZeromintEnabled ())
         pwalletMain->AutoZeromint ();
 
@@ -3801,7 +3794,7 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
                 nHeight = (*mi).second->nHeight + 1;
         }
 
-        // RPICoin
+        // RPICOIN
         // It is entierly possible that we don't have enough data and this could fail
         // (i.e. the block could indeed be valid). Store the block for later consideration
         // but issue an initial reject message.
@@ -4048,10 +4041,10 @@ bool AcceptBlockHeader(const CBlock& block, CValidationState& state, CBlockIndex
 
 bool ContextualCheckZerocoinStake(int nHeight, CStakeInput* stake)
 {
-    if (nHeight < Params().NEW_PROTOCOLS_STARTHEIGHT())
+    if (Params().PivProtocolsStartHeightSmallerThen(nHeight))
         return error("%s: zRPI stake block is less than allowed start height", __func__);
 
-    if (CZWspStake* zRPI = dynamic_cast<CZWspStake*>(stake)) {
+    if (CZRpiStake* zRPI = dynamic_cast<CZRpiStake*>(stake)) {
         CBlockIndex* pindexFrom = zRPI->GetIndexFrom();
         if (!pindexFrom)
             return error("%s: failed to get index associated with zRPI stake checksum", __func__);
@@ -5289,7 +5282,7 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
             return false;
         }
 
-        // RPICoin: We use certain sporks during IBD, so check to see if they are
+        // RPICOIN: We use certain sporks during IBD, so check to see if they are
         // available. If not, ask the first peer connected for them.
         bool fMissingSporks = !pSporkDB->SporkExists(SPORK_14_NEW_PROTOCOL_ENFORCEMENT) &&
                               !pSporkDB->SporkExists(SPORK_15_NEW_PROTOCOL_ENFORCEMENT_2) &&

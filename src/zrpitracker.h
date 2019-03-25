@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef RPICoin_ZRPITRACKER_H
-#define RPICoin_ZRPITRACKER_H
+#ifndef RPICOIN_ZRPITRACKER_H
+#define RPICOIN_ZRPITRACKER_H
 
 #include "primitives/zerocoin.h"
 #include <list>
@@ -48,4 +48,4 @@ public:
     void Clear();
 };
 
-#endif //RPICoin_ZRPITRACKER_H
+#endif //RPICOIN_ZRPITRACKER_H

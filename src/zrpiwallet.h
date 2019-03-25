@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef RPICoin_ZRPIWALLET_H
-#define RPICoin_ZRPIWALLET_H
+#ifndef WISPR_ZRPIWALLET_H
+#define WISPR_ZRPIWALLET_H
 
 #include <map>
 #include "libzerocoin/Coin.h"
@@ -45,4 +45,4 @@ private:
     uint512 GetZerocoinSeed(uint32_t n);
 };
 
-#endif //RPICoin_ZRPIWALLET_H
+#endif //WISPR_ZRPIWALLET_H

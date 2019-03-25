@@ -14,7 +14,7 @@
 - (NSString *)__bundleIdentifier
 {
     if (self == [NSBundle mainBundle]) {
-        return @"io.RPICoin.RPICoin-Qt";
+        return @"io.rpicoin.Rpicoin-Qt";
     } else {
         return [self __bundleIdentifier];
     }

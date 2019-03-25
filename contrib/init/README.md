@@ -1,10 +1,10 @@
 Sample configuration files for:
 
-SystemD: RPICoind.service
-Upstart: RPICoind.conf
-OpenRC:  RPICoind.openrc
-         RPICoind.openrcconf
-CentOS:  RPICoind.init
+SystemD: rpicoind.service
+Upstart: rpicoind.conf
+OpenRC:  rpicoind.openrc
+         rpicoind.openrcconf
+CentOS:  rpicoind.init
 
 have been made available to assist packagers in creating node packages here.
 

@@ -344,7 +344,7 @@ QString TransactionTableModel::formatTxType(const TransactionRecord* wtx) const
     case TransactionRecord::SendToSelf:
         return tr("Payment to yourself");
     case TransactionRecord::StakeMint:
-        return tr("WSP Stake");
+        return tr("RPI Stake");
     case TransactionRecord::StakeZRPI:
         return tr("zRPI Stake");
     case TransactionRecord::Generated:
@@ -360,15 +360,15 @@ QString TransactionTableModel::formatTxType(const TransactionRecord* wtx) const
     case TransactionRecord::Obfuscated:
         return tr("Obfuscated");
     case TransactionRecord::ZerocoinMint:
-        return tr("Converted WSP to zRPI");
+        return tr("Converted RPI to zRPI");
     case TransactionRecord::ZerocoinSpend:
         return tr("Spent zRPI");
     case TransactionRecord::RecvFromZerocoinSpend:
-        return tr("Received WSP from zRPI");
-    case TransactionRecord::ZerocoinSpend_Change_zWsp:
+        return tr("Received RPI from zRPI");
+    case TransactionRecord::ZerocoinSpend_Change_zRpi:
         return tr("Minted Change as zRPI from zRPI Spend");
     case TransactionRecord::ZerocoinSpend_FromMe:
-        return tr("Converted zRPI to WSP");
+        return tr("Converted zRPI to RPI");
 
     default:
         return QString();
@@ -423,7 +423,7 @@ QString TransactionTableModel::formatTxToAddress(const TransactionRecord* wtx, b
     case TransactionRecord::SendToOther:
         return QString::fromStdString(wtx->address) + watchAddress;
     case TransactionRecord::ZerocoinMint:
-    case TransactionRecord::ZerocoinSpend_Change_zWsp:
+    case TransactionRecord::ZerocoinSpend_Change_zRpi:
         return tr("Anonymous (zRPI Transaction)");
     case TransactionRecord::StakeZRPI:
         return tr("Anonymous (zRPI Stake)");

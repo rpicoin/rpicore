@@ -1,6 +1,6 @@
 [Protocol]
-exec=RPICoin-qt '%u'
-protocol=RPICoin
+exec=rpicoin-qt '%u'
+protocol=rpicoin
 input=none
 output=none
 helper=true

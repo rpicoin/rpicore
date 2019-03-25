@@ -17,7 +17,7 @@ osx=true
 SIGNER=
 VERSION=
 commit=false
-url=https://github.com/RPICoin/rpicore
+url=https://github.com/rpicoin/rpicore
 proc=2
 mem=2000
 lxc=true
@@ -31,7 +31,7 @@ commitFiles=true
 read -d '' usage <<- EOF
 Usage: $scriptName [-c|u|v|b|s|B|o|h|j|m|] signer version
 
-Run this script from the directory containing the RPICoin, gitian-builder, gitian.sigs, and RPICoin-detached-sigs.
+Run this script from the directory containing the rpicoin, gitian-builder, gitian.sigs, and rpicoin-detached-sigs.
 
 Arguments:
 signer          GPG signer to sign each build assert file
@@ -39,7 +39,7 @@ version        Version number, commit, or branch to build. If building a commit 
 
 Options:
 -c|--commit    Indicate that the version argument is for a commit or branch
--u|--url    Specify the URL of the repository. Default is https://github.com/RPICoin/rpicore
+-u|--url    Specify the URL of the repository. Default is https://github.com/rpicoin/rpicore
 -v|--verify     Verify the gitian build
 -b|--build    Do a gitian build
 -s|--sign    Make signed binaries for Windows and Mac OSX
@@ -237,8 +237,8 @@ echo ${COMMIT}
 if [[ $setup = true ]]
 then
     sudo apt-get install ruby apache2 git apt-cacher-ng python-vm-builder qemu-kvm qemu-utils
-    git clone https://github.com/RPICoin/gitian.sigs
-    git clone https://github.com/RPICoin/detached.sigs.git
+    git clone https://github.com/rpicoin/gitian.sigs
+    git clone https://github.com/rpicoin/detached.sigs.git
     git clone https://github.com/devrandom/gitian-builder.git
     pushd ./gitian-builder
     if [[ -n "$USE_LXC" ]]
@@ -281,7 +281,7 @@ then
         echo ""
         ./bin/gbuild -j ${proc} -m ${mem} --commit core=${COMMIT} --url core=${url} ../core/contrib/gitian-descriptors/gitian-linux.yml
         ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../core/contrib/gitian-descriptors/gitian-linux.yml
-        mv build/out/RPICoin-*.tar.gz build/out/src/RPICoin-*.tar.gz ../core-binaries/${VERSION}
+        mv build/out/rpicoin-*.tar.gz build/out/src/rpicoin-*.tar.gz ../core-binaries/${VERSION}
     fi
     # Windows
     if [[ $windows = true ]]
@@ -291,8 +291,8 @@ then
         echo ""
         ./bin/gbuild -j ${proc} -m ${mem} --commit core=${COMMIT} --url core=${url} ../core/contrib/gitian-descriptors/gitian-win.yml
         ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../core/contrib/gitian-descriptors/gitian-win.yml
-        mv build/out/RPICoin-*-win-unsigned.tar.gz inputs/RPICoin-win-unsigned.tar.gz
-        mv build/out/RPICoin-*.zip build/out/RPICoin-*.exe ../core-binaries/${VERSION}
+        mv build/out/rpicoin-*-win-unsigned.tar.gz inputs/rpicoin-win-unsigned.tar.gz
+        mv build/out/rpicoin-*.zip build/out/rpicoin-*.exe ../core-binaries/${VERSION}
     fi
     # Mac OSX
     if [[ $osx = true ]]
@@ -302,8 +302,8 @@ then
         echo ""
         ./bin/gbuild -j ${proc} -m ${mem} --commit core=${COMMIT} --url core=${url} ../core/contrib/gitian-descriptors/gitian-osx.yml
         ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../core/contrib/gitian-descriptors/gitian-osx.yml
-        mv build/out/RPICoin-*-osx-unsigned.tar.gz inputs/RPICoin-osx-unsigned.tar.gz
-        mv build/out/RPICoin-*.tar.gz build/out/RPICoin-*.dmg ../core-binaries/${VERSION}
+        mv build/out/rpicoin-*-osx-unsigned.tar.gz inputs/rpicoin-osx-unsigned.tar.gz
+        mv build/out/rpicoin-*.tar.gz build/out/rpicoin-*.dmg ../core-binaries/${VERSION}
     fi
     # AArch64
     if [[ $aarch64 = true ]]
@@ -313,7 +313,7 @@ then
         echo ""
         ./bin/gbuild -j ${proc} -m ${mem} --commit core=${COMMIT} --url core=${url} ../core/contrib/gitian-descriptors/gitian-aarch64.yml
         ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-aarch64 --destination ../gitian.sigs/ ../core/contrib/gitian-descriptors/gitian-aarch64.yml
-        mv build/out/RPICoin-*.tar.gz build/out/src/RPICoin-*.tar.gz ../core-binaries/${VERSION}
+        mv build/out/rpicoin-*.tar.gz build/out/src/rpicoin-*.tar.gz ../core-binaries/${VERSION}
     fi
     popd
 
@@ -383,8 +383,8 @@ then
         echo ""
         ./bin/gbuild -i --commit signature=${COMMIT} ../core/contrib/gitian-descriptors/gitian-win-signer.yml
         ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../core/contrib/gitian-descriptors/gitian-win-signer.yml
-        mv build/out/RPICoin-*win64-setup.exe ../core-binaries/${VERSION}
-        mv build/out/RPICoin-*win32-setup.exe ../core-binaries/${VERSION}
+        mv build/out/rpicoin-*win64-setup.exe ../core-binaries/${VERSION}
+        mv build/out/rpicoin-*win32-setup.exe ../core-binaries/${VERSION}
     fi
     # Sign Mac OSX
     if [[ $osx = true ]]
@@ -394,7 +394,7 @@ then
         echo ""
         ./bin/gbuild -i --commit signature=${COMMIT} ../core/contrib/gitian-descriptors/gitian-osx-signer.yml
         ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../core/contrib/gitian-descriptors/gitian-osx-signer.yml
-        mv build/out/RPICoin-osx-signed.dmg ../core-binaries/${VERSION}/RPICoin-${VERSION}-osx.dmg
+        mv build/out/rpicoin-osx-signed.dmg ../core-binaries/${VERSION}/rpicoin-${VERSION}-osx.dmg
     fi
     popd
 
