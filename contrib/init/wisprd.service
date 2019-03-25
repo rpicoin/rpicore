@@ -1,0 +1,26 @@
+[Unit]
+Description=RPICoin's distributed currency daemon
+After=network.target
+
+[Service]
+User=RPICoin
+Group=RPICoin
+
+Type=forking
+PIDFile=/var/lib/RPICoind/RPICoind.pid
+
+ExecStart=/usr/bin/RPICoind -daemon -pid=/var/lib/RPICoind/RPICoind.pid \
+          -conf=/etc/RPICoin/RPICoin.conf -datadir=/var/lib/RPICoind
+
+ExecStop=-/usr/bin/RPICoin-cli -conf=/etc/RPICoin/RPICoin.conf \
+         -datadir=/var/lib/RPICoind stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target
