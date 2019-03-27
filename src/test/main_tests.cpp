@@ -19,14 +19,14 @@ BOOST_AUTO_TEST_CASE(subsidy_limit_test)
     for (int nHeight = 0; nHeight < 1; nHeight += 1) {
         /* premine in block 1 (125,000 RPI) */
         CAmount nSubsidy = GetBlockValue(nHeight);
-        BOOST_CHECK(nSubsidy <= 125000 * COIN);
+        BOOST_CHECK(nSubsidy <= 8999676 * COIN);
         nSum += nSubsidy;
     }
 
-    for (int nHeight = 1; nHeight < 450; nHeight += 1) {
+    for (int nHeight = 1; nHeight < 101; nHeight += 1) {
         /* PoW Phase One */
         CAmount nSubsidy = GetBlockValue(nHeight);
-        BOOST_CHECK(nSubsidy <= 125000 * COIN);
+        BOOST_CHECK(nSubsidy <= 8999676 * COIN);
         nSum += nSubsidy;
         BOOST_CHECK(nSum > 0 && nSum <= nMoneySupplyPoWEnd);
     }

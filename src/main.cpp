@@ -1753,10 +1753,14 @@ double ConvertBitsToDouble(unsigned int nBits)
     return dDiff;
 }
 
-int64_t GetBlockValue(int nHeight)
+CAmount GetBlockValue(int nHeight)
 {
     if (nHeight < 101 && nHeight > 0)
         return 8999676 * COIN;
+
+    if (nHeight > Params().NEW_PROTOCOLS_STARTHEIGHT()) {
+        return 250 * COIN;
+    }
 
     int64_t nSubsidy = 300 * COIN;
     return nSubsidy;
@@ -1773,7 +1777,7 @@ CAmount GetSeeSaw(const CAmount& blockValue, int nMasternodeCount, int nHeight)
     }
 
     int64_t nMoneySupply = chainActive.Tip()->nMoneySupply;
-    int64_t mNodeCoins = nMasternodeCount * 125000 * COIN;
+    int64_t mNodeCoins = nMasternodeCount * 10000000 * COIN;
 
     // Use this log to compare the masternode count for different clients
     //LogPrintf("Adjusting seesaw at height %d with %d masternodes (without drift: %d) at %ld\n", nHeight, nMasternodeCount, nMasternodeCount - Params().MasternodeCountDrift(), GetTime());
@@ -1786,7 +1790,7 @@ CAmount GetSeeSaw(const CAmount& blockValue, int nMasternodeCount, int nHeight)
     if (mNodeCoins == 0) {
         ret = 0;
     } else if (nHeight > Params().NEW_PROTOCOLS_STARTHEIGHT()) {
-        ret = blockValue * 0.4;
+        ret = blockValue * 0.55;
     }
     return ret;
 }
@@ -1796,13 +1800,13 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
     int64_t ret = 0;
 
     if (Params().NetworkID() == CBaseChainParams::TESTNET) {
-        if (nHeight < 450)
+        if (nHeight < 101)
             return 0;
     }
 
     if (nHeight > Params().NEW_PROTOCOLS_STARTHEIGHT()) {
         //When zRPI is staked, masternode only gets 2 RPI
-        ret = 4 * COIN;
+        ret = 137.5 * COIN;
         if (isZRPIStake)
             ret = 3 * COIN;
     }
