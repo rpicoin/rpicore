@@ -42,12 +42,15 @@ const std::string CLIENT_NAME("RPICoin Core");
 #include "obj/build.h"
 #endif
 
+
 //! git will put "#define GIT_ARCHIVE 1" on the next line inside archives. 
 #define GIT_ARCHIVE 1
+#define GIT_ARCHIVE 1
 #ifdef GIT_ARCHIVE
-#define GIT_COMMIT_ID "ada00410e2beffebb9e88ee17afb64d664e7ff89"
-#define GIT_COMMIT_DATE "Sun, 10 Mar 2019 12:23:26 +0100"
+#define GIT_COMMIT_ID "eac5d7d8487812e3474c96eb5d28ac5f3d77bed4"
+#define GIT_COMMIT_DATE "Wed, 27 Mar 2019 16:05:31 +0100"
 #endif
+
 
 #define BUILD_DESC_WITH_SUFFIX(maj, min, rev, build, suffix) \
     "v" DO_STRINGIZE(maj) "." DO_STRINGIZE(min) "." DO_STRINGIZE(rev) "." DO_STRINGIZE(build) "-" DO_STRINGIZE(suffix)
