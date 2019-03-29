@@ -1,6 +1,4 @@
-(note: this is a temporary file, to be added-to by anybody, and moved to release-notes at release time)
-
-PIVX Core version *version* is now available from:  <https://github.com/pivx-project/pivx/releases>
+PIVX Core version *3.2.0* is now available from:  <https://github.com/pivx-project/pivx/releases>
 
 This is a new major version release, including various bug fixes and performance improvements, as well as updated translations.
 
@@ -10,6 +8,9 @@ Please report bugs using the issue tracker at github: <https://github.com/pivx-p
 Mandatory Update
 ==============
 
+PIVX Core v3.2.0 is a **mandatory update** for all block creators, masternodes, and integrated services (exchanges). Old version 4 blocks will be rejected once 95% of a rolling 7 days worth of blocks have signaled the new version 5.
+
+Masternodes will need to be restarted once both the masternode daemon and the controller wallet have been upgraded.
 
 How to Upgrade
 ==============
@@ -187,29 +188,154 @@ Support for the new RISC-V 64bit processors has been added, though still experim
 
 The previous `gitian-build.sh` shell script has been replaced with a more feature rich python version; `gitian-build.py`. This script now supports the use of a docker container in addition to LXC or KVM virtualization, as well as the ability to build against a pull request by number.
 
-*version* Change log
+*3.2.0* Change log
 ==============
 
 Detailed release notes follow. This overview includes changes that affect behavior, not code moves, refactors and string updates. For convenience in locating the code changes and accompanying discussion, both the pull request and git merge commit are mentioned.
 
-### Core Features
-
 ### Build System
- 
+ - #758 `81c7c4764c` [Depends] Update libsecp256k1 to latest master (warrows)
+ - #804 `4a8e46a158` [Depends] Update zmq to 4.3.1 (Dimitris Apostolou)
+ - #795 `1920f3e8ad` [Build] Add  support for RISC-V and build it with gitian (cevap)
+ - #786 `44226f225e` [Build] add gitian build python script (cevap)
+ - #783 `ccba68e425` [Depends] Update QT to 5.9.7 (cevap)
+ - #754 `b9cbeb0951` [Build] Update Build/Depends systems from upstream (Fuzzbawls)
+ - #752 `63fb77b0a9` [Build] Fix Thread Safety Analysis Warnings (Fuzzbawls)
+ - #749 `36ff23553c` [Build] Update genbuild.sh script (Fuzzbawls)
+ - #681 `95ec0763cf` [Depends] Add gmp bignum support for zerocoin lib (warrows)
+ - #704 `f0a427bfd7` [Build] GCC-7 and glibc-2.27 back compat (Fuzzbawls)
+ - #706 `d3c5b808dd` [Build] Remove throw keywords in leveldb function signatures (Fuzzbawls)
+ - #708 `72cd07186b` [Build] Remove stale m4 file (Fuzzbawls)
+ - #671 `b003052103` [Build] Update to latest leveldb (Fuzzbawls)
+
 ### P2P Protocol and Network Code
+ - #843 `817cec4ff4` [Net] Increment Protocol Version (Fuzzbawls)
+ - #837 `d241b5ed77` [Zerocoin][UNIT TEST][RPC] Wrapped serials. (random-zebra)
+ - #803 `065f94118d` [NET] Invalid blocks from forks stored on disk fix + blocks DoS spam filter. (furszy)
+ - #802 `ed0dd2a20a` [Refactor] Remove begin/end_ptr functions (warrows)
+ - #768 `204c038a4d` [Net] Zerocoin Light Node Protocol (furszy)
+ - #798 `a663bccea7` [Net] Improve addrman Select() performance when buckets are nearly empty (Pieter Wuille)
+ - #800 `7fa20d69f6` [Net] nLastTry is only used for addrman entries (Pieter Wuille)
+ - #740 `5f7cb412a3` [Net] Pull uacomment in from upstream (Fuzzbawls)
+ - #774 `167c7fa6d0` [Budget] Make checks for MN-autovoting deterministic (Mrs-X)
+ - #770 `ab9cf3629c` [Main] Do not record zerocoin tx's in ConnectBlock() if it is fJustCheck (presstab)
+ - #705 `6a5b64bc21` [Main] Check Lock Time Verify (presstab)
 
 ### GUI
- 
+ - #850 `e488db7334` [Qt] Update localizations from Transifex (Fuzzbawls)
+ - #847 `fc924c1f63` [Qt] Fix to display missing clock5.png tx image (joeuhren)
+ - #840 `757d81c4a9` [QT] cleanup, remove old trading dialog form (furszy)
+ - #826 `0d738b3dc0` [Qt] Fix a windows only crash when r-clicking a proposal (warrows)
+ - #792 `c12697469b` [UI] Add a budget monitoring and voting tab (warrows)
+ - #794 `8dcb52fcd4` [UI] Open related options tab when clicking automint icon (warrows)
+ - #791 `c0aa454e19` [Qt] Fix Missing Explorer Icon (sicXnull)
+ - #779 `d617c85a89` [Qt] Periodic translation update (Fuzzbawls)
+ - #781 `10e1a8a306` [Qt] Don't show staking/automint status icons without a wallet (Fuzzbawls)
+ - #776 `3fcdc932d9` [Qt] Add a security warning to the debug console's default output. (Fuzzbawls)
+ - #747 `feb87c10fa` [GUI] Hide orphans - contextMenu action (random-zebra)
+ - #741 `ea2637838c` [GUI] Sort by 'data' in zPIV and coin control dialogs (random-zebra)
+ - #733 `9a792d73e9` [GUI] Hide orphans (random-zebra)
+ - #735 `44840c5069` [Qt] Stop using dummy strings in clientversion.cpp (Fuzzbawls)
+ - #725 `793db15baf` [UI] Sort numbers correctly in zPIV and coin control dialogs (random-zebra)
+ - #714 `bf2ad88066` [UI] Add address field in receive tab (warrows)
+ - #683 `ec1180b52c` [Qt] receivecoinsdialog - address control + clean UI (random-zebra)
+ - #677 `29fab5982f` [Qt] change colors for tx labels in history/overview (random-zebra)
+ - #693 `022b58257c` [UI] Add address to the payment request history (warrows)
+ - #698 `3f35bc81d8` [Qt] Remove Qt4 build support & code fallbacks (Wladimir J. van der Laan)
+ - #655 `de0c4e0888` [Qt] Fix PIV balances on overview page (Fuzzbawls)
+ - #680 `71ac5285e5` [Qt] Privacy dialog: hide/show denominations (random-zebra)
+ - #675 `8a26ba0b07` [Qt] SwiftX - intuitiveness (random-zebra)
+ - #668 `4a68c9ed43` [Qt] Clean up Multisend Dialog UI (Fuzzbawls)
+
 ### RPC/REST
+ - #838 `5673c8373e` [RPC][Test] spendrawzerocoin + wrapped serials functional test (random-zebra)
+ - #821 `86d6133735` [RPC] Fixup signrawtransaction on regtest (Fuzzbawls)
+ - #751 `e820cf3816` [RPC] Show the configured/set txfee in getwalletinfo (Fuzzbawls)
+ - #750 `25fe72d97d` [RPC] Add mediantime to getblock/getblockheader output (Fuzzbawls)
+ - #760 `8b79a3944a` [RPC] Show BIP65 soft-fork progress in getblockchaininfo (Fuzzbawls)
+ - #742 `297d67b43a` [RPC] Add masternode's pubkey to listmasternodes RPC (presstab)
+ - #729 `f84ec3df8b` [RPC] Fix RPCTimerInterface (random-zebra)
+ - #727 `08f6e1774b` [RPC] Add 'spendzerocoinmints' RPC call (random-zebra)
+ - #726 `8f28b7ad23` [RPC] include mints metadata in 'listmintedzerocoins' output (random-zebra)
+ - #724 `ee0717c2af` [RPC] Ensure that a numeric is being passed to AmmountFromValue (Fuzzbawls)
+ - #723 `0774f5fc0d` [RPC] Error when calling getreceivedbyaddress with non-wallet address (Fuzzbawls)
+ - #722 `3ce4fd7226` [RPC] Add more verbosity to validateaddress (Fuzzbawls)
+ - #721 `cecda14082` [RPC] Fix movecmd's help description to include amount (Fuzzbawls)
+ - #720 `056b4d5cb1` [RPC] Sanitize walletpassphrase timeout argument (Fuzzbawls)
+ - #719 `463fd38325` [RPC] Fix verifychain (Fuzzbawls)
+ - #711 `17d1f30131` [RPC] Don't allow backupwallet to overwrite the wallet-in-use (Fuzzbawls)
+ - #688 `64071d142d` [Zerocoin]  RPC import/export zerocoins private key standardized + Cleanup in AccPoK and SoK to avoid redundant calculations. (furszy)
 
 ### Wallet
- 
+ - #842 `c6c84fe85f` [Wallet] [zPIV] Precomputed Zerocoin Proofs (Fuzzbawls)
+ - #817 `37a06eaa93` [Wallet] Fix segfault with runtime -disablewallet (Fuzzbawls)
+ - #763 `d4762f7e7a` [Wallet] Add automint address (Fuzzbawls)
+ - #759 `19fd0877cd` [Wallet] Avoid failed zPIV spend because of changed seed (warrows)
+ - #755 `65be6b611b` [Wallet] Fix zPIV spend when too much mints are selected (warrows)
+ - #734 `5df105fed2` [Staking] Ensure nCredit is correctly initialized in CreateCoinStake (warrows)
+ - #730 `394d48b2c9` [Wallet] fix bug with fWalletUnlockAnonymizeOnly flag setting (random-zebra)
+ - #715 `30048cce62` [Refactor] Remove GetCoinAge (Fuzzbawls)
+ - #700 `a2d717090f` [Wallet] Avoid autocombine getting stuck (warrows)
+ - #656 `5272a4f684` [Wallet] Fix double locked coin when wallet and MN are on same machine (Tim Uy)
+ - #653 `fdf4503b66` [Wallet] change COINBASE_MATURITY to Params().COINBASE_MATURITY() (Alko89)
+
+### Test Suites
+ - #822 `2b8daac4c0` [Tests] Integrate fake stake tests into parent test suite (Fuzzbawls)
+ - #812 `f8eb7feefc` [Regtest][Tests][RPC] Regtest mode + Test suite. (random-zebra)
+
 ### Miscellaneous
- 
+ - #788 `55ce1619f5` [Misc] Update license year 2019 (Everton Melo)
+ - #736 `d2ad4d6e93` [Utils] Update linters for python3 (Fuzzbawls)
+ - #699 `8b1f68d896` [Refactor] Use references instead of copies in for loops (Fuzzbawls)
+ - #697 `5a5797f5c3` [Trivial] Remove Redundant Declarations (Fuzzbawls)
+ - #667 `49f9a0fa9e` [Zerocoin] Clean zerocoin bignum file (warrows)
+ - #669 `dd6909fd30` [Utils] Fix syntax error in gitian-build.sh (Aitor González)
+ - #632 `0d91550ff6` [MoveOnly] Move non-wallet RPC files to subdir (Fuzzbawls)
+ - #731 `f7f49cfa7c` [zPIV] Fix bignum overloads when using OpenSSL (Fuzzbawls)
+ - #692 `1fde9b2b7a` [Zerocoin] Remove explicit copy assignement operator from Accumulator (warrows)
+ - #761 `88a93bd35a` [Refactoring] Abstract out and switch openssl cleanse (Adam Langley)
+ - #743 `af0c340fe0` [Refactor] remove CPubKey::GetHex (random-zebra)
+ - #737 `434abd1ae9` [Refactor] Remove 'boost::lexical_cast<>' (random-zebra)
+ - #769 `6482454cf6` [Main] Unify shutdown proceedure in init rather than per-app (Fuzzbawls)
+ - #815 `decee4bc8c` [Doc] Update release notes with forthcoming 3.2.0 changes (Fuzzbawls)
+ - #816 `51e7b2c4b0` [Doc] Update build-unix.md (Fuzzbawls)
+ - #757 `a611a7fa77` [Doc] Update doc/build-windows.md (idas4you)
+ - #778 `65caa886ac` [Doc] Update README.md (veilgets)
+ - #703 `51663473fc` [Docs] Add missing automake dependency (Mrs-X)
+ - #762 `abfceb39a1` [Random] WIN32 Seed Cleanup: Move nLastPerfmon behind win32 ifdef. (21E14)
+ - #771 `4b1be14505` [Main] Clean up sync.cpp/h with upstream declarations (Fuzzbawls)
  
 ## Credits
 
 Thanks to everyone who directly contributed to this release:
 
+- 21E14
+- Adam Langley
+- Aitor González
+- Alko89
+- Benjamin Allred
+- Chun Kuan Lee
+- Cory Fields
+- Dimitris Apostolou
+- Everton Melo
+- Fuzzbawls
+- Matias Furszyfer
+- Mrs-X
+- Pieter Wuille
+- SHTDJ
+- Tim Uy
+- Wladimir J. van der Laan
+- blondfrogs
+- cevap
+- fanquake
+- gpdionisio
+- idas4you
+- joeuhren
+- presstab
+- random-zebra
+- s3v3nh4cks
+- sicXnull
+- veilgets
+- warrows
 
 As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/pivx-project-translations/), the QA team during Testing and the Node hosts supporting our Testnet.
