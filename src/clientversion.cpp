@@ -43,12 +43,11 @@ const std::string CLIENT_NAME("RPICoin Core");
 #endif
 
 
-//! git will put "#define GIT_ARCHIVE 1" on the next line inside archives. 
-#define GIT_ARCHIVE 1
+//! git will put "#define GIT_ARCHIVE 1" on the next line inside archives. $Format:%n#define GIT_ARCHIVE 1$
 #define GIT_ARCHIVE 1
 #ifdef GIT_ARCHIVE
-#define GIT_COMMIT_ID "eac5d7d8487812e3474c96eb5d28ac5f3d77bed4"
-#define GIT_COMMIT_DATE "Wed, 27 Mar 2019 16:05:31 +0100"
+#define GIT_COMMIT_ID "$Format:%H$"
+#define GIT_COMMIT_DATE "$Format:%cD$"
 #endif
 
 
