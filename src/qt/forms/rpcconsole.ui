@@ -696,7 +696,7 @@
        <string>&amp;Peers</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_2">
-       <item row="0" column="0" rorpian="2">
+       <item row="0" column="0" rowspan="2">
         <layout class="QVBoxLayout" name="verticalLayout_101">
          <property name="spacing">
           <number>0</number>

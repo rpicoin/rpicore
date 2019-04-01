@@ -1467,7 +1467,7 @@
                     </attribute>
                    </widget>
                   </item>
-                  <item row="0" column="4" rorpian="3">
+                  <item row="0" column="4" rowspan="3">
                    <layout class="QVBoxLayout" name="verticalLayoutFee3" stretch="0,0,0,0">
                     <property name="spacing">
                      <number>6</number>
