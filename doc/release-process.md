@@ -29,7 +29,7 @@ Check out the source code in the following directory hierarchy.
     git clone https://github.com/devrandom/gitian-builder.git
     git clone https://github.com/rpicoin/rpicore.git
 
-### WISPR maintainers/release engineers, suggestion for writing release notes
+### RPICoin maintainers/release engineers, suggestion for writing release notes
 
 Write release notes. git shortlog helps a lot, for example:
 

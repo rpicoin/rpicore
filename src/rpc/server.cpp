@@ -266,11 +266,11 @@ UniValue stop(const UniValue& params, bool fHelp)
     if (fHelp || params.size() > 1)
         throw runtime_error(
             "stop\n"
-            "\nStop WISPR server.");
+            "\nStop RPICoin server.");
     // Event loop will exit after current HTTP requests have been handled, so
     // this reply will get back to the client.
     StartShutdown();
-    return "WISPR server stopping";
+    return "RPICoin server stopping";
 }
 
 
@@ -354,7 +354,7 @@ static const CRPCCommand vRPCCommands[] =
         {"hidden", "reconsiderblock", &reconsiderblock, true, true, false},
         {"hidden", "setmocktime", &setmocktime, true, false, false},
 
-        /* WISPR features */
+        /* RPICoin features */
         {"rpicoin", "masternode", &masternode, true, true, false},
         {"rpicoin", "listmasternodes", &listmasternodes, true, true, false},
         {"rpicoin", "getmasternodecount", &getmasternodecount, true, true, false},

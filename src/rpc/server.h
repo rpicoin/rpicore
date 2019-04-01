@@ -129,7 +129,7 @@ public:
 };
 
 /**
- * WISPR RPC command dispatcher.
+ * RPICoin RPC command dispatcher.
  */
 class CRPCTable
 {

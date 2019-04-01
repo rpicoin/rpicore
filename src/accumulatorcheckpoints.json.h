@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WISPR_ACCUMULATORCHECKPOINTS_JSON_H
-#define WISPR_ACCUMULATORCHECKPOINTS_JSON_H
+#ifndef RPICoin_ACCUMULATORCHECKPOINTS_JSON_H
+#define RPICoin_ACCUMULATORCHECKPOINTS_JSON_H
 
 #include <string>
 std::string GetMainCheckpoints() {
@@ -57,4 +57,4 @@ std::string GetRegTestCheckpoints() {
     return strRegTestCheckpoints;
 }
 
-#endif //WISPR_ACCUMULATORCHECKPOINTS_JSON_H
+#endif //RPICoin_ACCUMULATORCHECKPOINTS_JSON_H

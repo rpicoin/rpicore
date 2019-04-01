@@ -53,9 +53,9 @@ static const int MAX_URI_LENGTH = 255;
 /* Number of frames in spinner animation */
 #define SPINNER_FRAMES 35
 
-#define QAPP_ORG_NAME "WISPR"
+#define QAPP_ORG_NAME "RPICoin"
 #define QAPP_ORG_DOMAIN "rpicoin.tech"
-#define QAPP_APP_NAME_DEFAULT "WISPR-Qt"
-#define QAPP_APP_NAME_TESTNET "WISPR-Qt-testnet"
+#define QAPP_APP_NAME_DEFAULT "RPICoin-Qt"
+#define QAPP_APP_NAME_TESTNET "RPICoin-Qt-testnet"
 
 #endif // BITCOIN_QT_GUICONSTANTS_H

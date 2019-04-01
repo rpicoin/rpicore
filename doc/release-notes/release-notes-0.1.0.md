@@ -13,7 +13,7 @@ Please report bugs using the issue tracker at github:
 How to Upgrade
 ==============
 
-If you are running an older version, shut it down. Wait until it has completely shut down (which might take a few minutes for older versions), then run the installer (on Windows) or just copy over /Applications/WISPR-Qt (on Mac) or rpicoind/rpicoin-qt (on Linux).
+If you are running an older version, shut it down. Wait until it has completely shut down (which might take a few minutes for older versions), then run the installer (on Windows) or just copy over /Applications/RPICoin-Qt (on Mac) or rpicoind/rpicoin-qt (on Linux).
 
 
 Compatibility
@@ -40,7 +40,7 @@ Notable Changes
 
 Automated Database Corruption Repair
 ---------------------
-There have been cases of blockchain database corruption that can occur when WISPR client is not closed gracefully. The most common cases of corruption have been identified and the wallet will now automatically fix most of these corruptions. Certain corruption states are still unable to be fixed, but now provide more detailed error messages to the user as well as prompting the user to reindex their database.
+There have been cases of blockchain database corruption that can occur when RPICoin client is not closed gracefully. The most common cases of corruption have been identified and the wallet will now automatically fix most of these corruptions. Certain corruption states are still unable to be fixed, but now provide more detailed error messages to the user as well as prompting the user to reindex their database.
 
 More Accurate Error Messages
 ---------------------
@@ -52,7 +52,7 @@ Many 3rd party services have reported that their debug logs have been overloaded
 
 Removal of Heavy Running Transaction Search Code
 ---------------------
-Many areas of the block validation code use a "slow" transaction search, which searches redundantly for transactions. This "slow" search has been removed upstream in Bitcoin and is now removed in WISPR. This provides a more efficient syncing process and generally better performing wallet.
+Many areas of the block validation code use a "slow" transaction search, which searches redundantly for transactions. This "slow" search has been removed upstream in Bitcoin and is now removed in RPICoin. This provides a more efficient syncing process and generally better performing wallet.
 
 Sync Fix for Block 908000
 ---------------------

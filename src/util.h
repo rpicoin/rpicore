@@ -30,7 +30,7 @@
 #include <boost/thread/exceptions.hpp>
 #define CVOIDBEGIN(a)        ((const void*)&(a))
 
-//WISPR only features
+//RPICoin only features
 
 extern bool fMasterNode;
 extern bool fLiteMode;

@@ -62,12 +62,12 @@
         <translation>Indirizzi di ricezione</translation>
     </message>
     <message>
-        <source>These are your WISPR addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Questi sono gli indirizzi WISPR per l'invio di pagamenti. Controlla sempre l'importo e l'indirizzo di ricezione prima di inviare valuta.</translation>
+        <source>These are your RPICoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Questi sono gli indirizzi RPICoin per l'invio di pagamenti. Controlla sempre l'importo e l'indirizzo di ricezione prima di inviare valuta.</translation>
     </message>
     <message>
-        <source>These are your WISPR addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Questi sono gli indirizzi WISPR per la ricezione di pagamenti. Si raccomanda di utilizzare un indirizzo diverso per ogni transazione.</translation>
+        <source>These are your RPICoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Questi sono gli indirizzi RPICoin per la ricezione di pagamenti. Si raccomanda di utilizzare un indirizzo diverso per ogni transazione.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -176,8 +176,8 @@
         <translation>Conferma cifratura portafoglio</translation>
     </message>
     <message>
-        <source>WISPR will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your RPIs from being stolen by malware infecting your computer.</source>
-        <translation>WISPR verrà ora chiuso per completare il processo di cifratura. Ricorda che crittografare il tuo portafoglio non protegge completamente i tuoi RPI dal furto da parte di software malevoli che potrebbero infettare il tuo computer.</translation>
+        <source>RPICoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your RPIs from being stolen by malware infecting your computer.</source>
+        <translation>RPICoin verrà ora chiuso per completare il processo di cifratura. Ricorda che crittografare il tuo portafoglio non protegge completamente i tuoi RPI dal furto da parte di software malevoli che potrebbero infettare il tuo computer.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -254,12 +254,12 @@
         <translation>Indirizzo:</translation>
     </message>
     <message>
-        <source>Enter a WISPR Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation>Inserire un indirizzo WISPR da crittografare utilizzando BIP 38. Inserire una password nel campo centrale. Cliccare su "cripta" per generare la chiave privata crittografata.</translation>
+        <source>Enter a RPICoin Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
+        <translation>Inserire un indirizzo RPICoin da crittografare utilizzando BIP 38. Inserire una password nel campo centrale. Cliccare su "cripta" per generare la chiave privata crittografata.</translation>
     </message>
     <message>
-        <source>The WISPR address to encrypt</source>
-        <translation>Indirizzo WISPR da crittografare</translation>
+        <source>The RPICoin address to encrypt</source>
+        <translation>Indirizzo RPICoin da crittografare</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -290,8 +290,8 @@
         <translation>Copiare la firma corrente negli Appunti di sistema</translation>
     </message>
     <message>
-        <source>Encrypt the private key for this WISPR address</source>
-        <translation>Crittografa la chiave privata per questo indirizzo WISPR</translation>
+        <source>Encrypt the private key for this RPICoin address</source>
+        <translation>Crittografa la chiave privata per questo indirizzo RPICoin</translation>
     </message>
     <message>
         <source>Reset all fields</source>
@@ -649,8 +649,8 @@
         <translation>RPICoin Core</translation>
     </message>
     <message>
-        <source>Send coins to a WISPR address</source>
-        <translation>Invia valuta all'indirizzo WISPR</translation>
+        <source>Send coins to a RPICoin address</source>
+        <translation>Invia valuta all'indirizzo RPICoin</translation>
     </message>
     <message>
         <source>Request payments (generates QR codes and rpicoin: URIs)</source>
@@ -677,16 +677,16 @@
         <translation>Visualizza informazioni su RPICoin Core</translation>
     </message>
     <message>
-        <source>Modify configuration options for WISPR</source>
-        <translation>Modifica le opzioni di configurazione per WISPR</translation>
+        <source>Modify configuration options for RPICoin</source>
+        <translation>Modifica le opzioni di configurazione per RPICoin</translation>
     </message>
     <message>
-        <source>Sign messages with your WISPR addresses to prove you own them</source>
-        <translation>Firma i messaggi con i tuoi indirizzi WISPR per dimostrare di essere il proprietario </translation>
+        <source>Sign messages with your RPICoin addresses to prove you own them</source>
+        <translation>Firma i messaggi con i tuoi indirizzi RPICoin per dimostrare di essere il proprietario </translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified WISPR addresses</source>
-        <translation>Verifica i messaggi per assicurarsi che siano stati firmati con indirizzi WISPR specifici</translation>
+        <source>Verify messages to ensure they were signed with specified RPICoin addresses</source>
+        <translation>Verifica i messaggi per assicurarsi che siano stati firmati con indirizzi RPICoin specifici</translation>
     </message>
     <message>
         <source>&amp;BIP38 tool</source>
@@ -717,8 +717,8 @@
         <translation>Apri file di configurazione del Masternodo</translation>
     </message>
     <message>
-        <source>Open a WISPR: URI or payment request</source>
-        <translation>Apri un WISPR: URI o richiesta di pagamento</translation>
+        <source>Open a RPICoin: URI or payment request</source>
+        <translation>Apri un RPICoin: URI o richiesta di pagamento</translation>
     </message>
     <message>
         <source>&amp;Blockchain explorer</source>
@@ -729,15 +729,15 @@
         <translation>Finestra Block Explorer</translation>
     </message>
     <message>
-        <source>Show the RPICoin Core help message to get a list with possible WISPR command-line options</source>
-        <translation>Mostra il messaggio di aiuto RPICoin Core per ottenere un elenco con le possibili opzioni di riga di comando WISPR</translation>
+        <source>Show the RPICoin Core help message to get a list with possible RPICoin command-line options</source>
+        <translation>Mostra il messaggio di aiuto RPICoin Core per ottenere un elenco con le possibili opzioni di riga di comando RPICoin</translation>
     </message>
     <message>
         <source>RPICoin Core client</source>
         <translation>RPICoin Core</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to WISPR network</source>
+        <source>%n active connection(s) to RPICoin network</source>
         <translation><numerusform>%n connessione attiva alla rete RPIIX</numerusform><numerusform>%n connessioni attive alla rete RPIIX</numerusform></translation>
     </message>
     <message>
@@ -1173,8 +1173,8 @@ MultiSend: %1</translation>
         <translation>Modifica indirizzo di invio</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid WISPR address.</source>
-        <translation>L'indirizzo inserito "%1" non è un indirizzo WISPR valido.</translation>
+        <source>The entered address "%1" is not a valid RPICoin address.</source>
+        <translation>L'indirizzo inserito "%1" non è un indirizzo RPICoin valido.</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book.</source>
@@ -1282,8 +1282,8 @@ MultiSend: %1</translation>
         <translation>Essendo il primo avvio dell'applicazione, puoi scegliere dove RPICoin Core salverà i propri dati.</translation>
     </message>
     <message>
-        <source>RPICoin Core will download and store a copy of the WISPR block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>RPICoin Core scaricherà e salverà una copia della blockchain WISPR. Verranno salvati almeno %1GB di dati in questa cartella, che cresceranno nel tempo. In questa cartella verrà salvato anche il portafoglio.</translation>
+        <source>RPICoin Core will download and store a copy of the RPICoin block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <translation>RPICoin Core scaricherà e salverà una copia della blockchain RPICoin. Verranno salvati almeno %1GB di dati in questa cartella, che cresceranno nel tempo. In questa cartella verrà salvato anche il portafoglio.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -1436,12 +1436,12 @@ MultiSend: %1</translation>
         <translation>Inserire indirizzo destinatario</translation>
     </message>
     <message>
-        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other WISPR addresses after it matures.
-To Add: enter percentage to give and WISPR address to add to the MultiSend vector.
+        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other RPICoin addresses after it matures.
+To Add: enter percentage to give and RPICoin address to add to the MultiSend vector.
 To Delete: Enter address to delete and press delete.
 MultiSend will not be activated unless you have clicked Activate</source>
-        <translation>MultiSend ti permette di inviare automaticamente ad una lista di indirizzi WISPR fino al 100% delle ricompense di stake o masternodi, dopo che queste sono mature.
-Per Aggiunger: inserisci la percentuale da inviare e l'indirizzo WISPR da aggiungere al vettore MultiSend.
+        <translation>MultiSend ti permette di inviare automaticamente ad una lista di indirizzi RPICoin fino al 100% delle ricompense di stake o masternodi, dopo che queste sono mature.
+Per Aggiunger: inserisci la percentuale da inviare e l'indirizzo RPICoin da aggiungere al vettore MultiSend.
 Per Eliminare: Inserisci l'indirizzo da eliminare e premi elimina.
 MultiSend non verrà attivato a meno che tu non prema su Attiva</translation>
     </message>
@@ -1804,8 +1804,8 @@ Per favore controlla l'indirizzo e riprova nuovamente.</translation>
         <translation>Saldo corrente bloccato in indirizzi sola-lettura.</translation>
     </message>
     <message>
-        <source>Your current WISPR balance, unconfirmed and immature transactions included</source>
-        <translation>Il tuo saldo WISPR corrente, incluse le transazioni non confermate e non mature</translation>
+        <source>Your current RPICoin balance, unconfirmed and immature transactions included</source>
+        <translation>Il tuo saldo RPICoin corrente, incluse le transazioni non confermate e non mature</translation>
     </message>
     <message>
         <source>zRPI Balance</source>
@@ -2483,8 +2483,8 @@ Per cambiare la percentuale (riavvio non necessario):
 <context>
     <name>SignVerifyMessageDialog</name>
     <message>
-        <source>The WISPR address to sign the message with</source>
-        <translation>L'indirizzo WISPR per firmare il messaggio con</translation>
+        <source>The RPICoin address to sign the message with</source>
+        <translation>L'indirizzo RPICoin per firmare il messaggio con</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2507,16 +2507,16 @@ Per cambiare la percentuale (riavvio non necessario):
         <translation>Copiare la firma corrente negli Appunti di sistema</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this WISPR address</source>
-        <translation>Firmare il messaggio per dimostrare di possedere questo indirizzo WISPR</translation>
+        <source>Sign the message to prove you own this RPICoin address</source>
+        <translation>Firmare il messaggio per dimostrare di possedere questo indirizzo RPICoin</translation>
     </message>
     <message>
-        <source>The WISPR address the message was signed with</source>
-        <translation>L'indirizzo WISPR con cui è stato firmato il messaggio</translation>
+        <source>The RPICoin address the message was signed with</source>
+        <translation>L'indirizzo RPICoin con cui è stato firmato il messaggio</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified WISPR address</source>
-        <translation>Verificare il messaggio per assicurarsi che sia stato firmato con l'indirizzo WISPR specificato </translation>
+        <source>Verify the message to ensure it was signed with the specified RPICoin address</source>
+        <translation>Verificare il messaggio per assicurarsi che sia stato firmato con l'indirizzo RPICoin specificato </translation>
     </message>
     <message>
         <source>Reset all sign message fields</source>

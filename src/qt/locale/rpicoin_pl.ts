@@ -510,11 +510,11 @@
     </message>
     <message>
         <source>RPICoin Core</source>
-        <translation>&amp;Rdzeń WISPR</translation>
+        <translation>&amp;Rdzeń RPICoin</translation>
     </message>
     <message>
-        <source>Send coins to a WISPR address</source>
-        <translation>Wyślij monety do adresu WISPR</translation>
+        <source>Send coins to a RPICoin address</source>
+        <translation>Wyślij monety do adresu RPICoin</translation>
     </message>
     <message>
         <source>Request payments (generates QR codes and rpicoin: URIs)</source>
@@ -537,16 +537,16 @@
         <translation>Pokaż informacje o rdzeniu bitcoina</translation>
     </message>
     <message>
-        <source>Modify configuration options for WISPR</source>
-        <translation>Modyfikuj opcje konfiguracji WISPR</translation>
+        <source>Modify configuration options for RPICoin</source>
+        <translation>Modyfikuj opcje konfiguracji RPICoin</translation>
     </message>
     <message>
-        <source>Sign messages with your WISPR addresses to prove you own them</source>
-        <translation>Zatwierdź wiadomość z twoimi adresami WISPR, by udowodnić, że jesteś w ich posiadaniu</translation>
+        <source>Sign messages with your RPICoin addresses to prove you own them</source>
+        <translation>Zatwierdź wiadomość z twoimi adresami RPICoin, by udowodnić, że jesteś w ich posiadaniu</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified WISPR addresses</source>
-        <translation>Zweryfikuj wiadomości by upewnić się, że zostały zatwierdzone z podanego adresu WISPR</translation>
+        <source>Verify messages to ensure they were signed with specified RPICoin addresses</source>
+        <translation>Zweryfikuj wiadomości by upewnić się, że zostały zatwierdzone z podanego adresu RPICoin</translation>
     </message>
     <message>
         <source>&amp;BIP38 tool</source>
@@ -573,8 +573,8 @@
         <translation>Otwórz &amp;Plik konfiguracji Masternode</translation>
     </message>
     <message>
-        <source>Open a WISPR: URI or payment request</source>
-        <translation>Otwórz WISPR: URI i żądanie zapłaty</translation>
+        <source>Open a RPICoin: URI or payment request</source>
+        <translation>Otwórz RPICoin: URI i żądanie zapłaty</translation>
     </message>
     <message>
         <source>&amp;Blockchain explorer</source>
@@ -585,12 +585,12 @@
         <translation>Okno eksplorera bloków</translation>
     </message>
     <message>
-        <source>Show the RPICoin Core help message to get a list with possible WISPR command-line options</source>
-        <translation>Pokaż wiadomość pomocy rdzenia WISPR, aby dostać listę możliwych opcji WISPR command-line</translation>
+        <source>Show the RPICoin Core help message to get a list with possible RPICoin command-line options</source>
+        <translation>Pokaż wiadomość pomocy rdzenia RPICoin, aby dostać listę możliwych opcji RPICoin command-line</translation>
     </message>
     <message>
         <source>RPICoin Core client</source>
-        <translation>Rdzeń WISPR klient</translation>
+        <translation>Rdzeń RPICoin klient</translation>
     </message>
     <message>
         <source>Synchronizing with network...</source>
@@ -900,7 +900,7 @@ MultiWysyłlka: %1</translation>
     <name>HelpMessageDialog</name>
     <message>
         <source>RPICoin Core</source>
-        <translation>&amp;Rdzeń WISPR</translation>
+        <translation>&amp;Rdzeń RPICoin</translation>
     </message>
     </context>
 <context>
@@ -915,7 +915,7 @@ MultiWysyłlka: %1</translation>
     </message>
     <message>
         <source>RPICoin Core</source>
-        <translation>&amp;Rdzeń WISPR</translation>
+        <translation>&amp;Rdzeń RPICoin</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1190,12 +1190,12 @@ Proszę sprawdzić adres i spróbować ponownie</translation>
         <translation>Zezwól na przychodzące połączenia</translation>
     </message>
     <message>
-        <source>Automatically start WISPR after logging in to the system.</source>
-        <translation>Automatycznie uruchom WISPR po zalogowaniu do systemu</translation>
+        <source>Automatically start RPICoin after logging in to the system.</source>
+        <translation>Automatycznie uruchom RPICoin po zalogowaniu do systemu</translation>
     </message>
     <message>
-        <source>&amp;Start WISPR on system login</source>
-        <translation>&amp;Uruchom WISPR podczas logowania do systemu</translation>
+        <source>&amp;Start RPICoin on system login</source>
+        <translation>&amp;Uruchom RPICoin podczas logowania do systemu</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
@@ -1214,8 +1214,8 @@ Proszę sprawdzić adres i spróbować ponownie</translation>
         <translation>&amp;Sieć</translation>
     </message>
     <message>
-        <source>The user interface language can be set here. This setting will take effect after restarting WISPR.</source>
-        <translation>Język interfejsu użytkownika może być wybrany tutaj. Ustawienia ulegną zmianie po restarcie WISPR</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting RPICoin.</source>
+        <translation>Język interfejsu użytkownika może być wybrany tutaj. Ustawienia ulegną zmianie po restarcie RPICoin</translation>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
@@ -1224,8 +1224,8 @@ https://www.transifex.com/rpicoin/rpicoin-translations</source>
 https://www.transifex.com/rpicoin/rpicoin-translations </translation>
     </message>
     <message>
-        <source>Connect to the WISPR network through a SOCKS5 proxy.</source>
-        <translation>Połącz z siecią WISPR poprzez SOCKS5 proxy.</translation>
+        <source>Connect to the RPICoin network through a SOCKS5 proxy.</source>
+        <translation>Połącz z siecią RPICoin poprzez SOCKS5 proxy.</translation>
     </message>
     <message>
         <source>Proxy &amp;IP:</source>
@@ -1463,8 +1463,8 @@ https://www.transifex.com/rpicoin/rpicoin-translations </translation>
         <translation>Liczba</translation>
     </message>
     <message>
-        <source>Enter a WISPR address (e.g. %1)</source>
-        <translation>Wprowadź adres WISPR (np. %1)</translation>
+        <source>Enter a RPICoin address (e.g. %1)</source>
+        <translation>Wprowadź adres RPICoin (np. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -1894,8 +1894,8 @@ https://www.transifex.com/rpicoin/rpicoin-translations </translation>
         <translation>Alt+P</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this WISPR address</source>
-        <translation>Zatwierdź wiadomość, aby udowodnić, że podany adres WISPR jest w twoim posiadaniu</translation>
+        <source>Sign the message to prove you own this RPICoin address</source>
+        <translation>Zatwierdź wiadomość, aby udowodnić, że podany adres RPICoin jest w twoim posiadaniu</translation>
     </message>
     <message>
         <source>Clear &amp;All</source>
@@ -1930,7 +1930,7 @@ https://www.transifex.com/rpicoin/rpicoin-translations </translation>
     <name>SplashScreen</name>
     <message>
         <source>RPICoin Core</source>
-        <translation>&amp;Rdzeń WISPR</translation>
+        <translation>&amp;Rdzeń RPICoin</translation>
     </message>
     </context>
 <context>

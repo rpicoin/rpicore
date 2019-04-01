@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WISPR_SPENDTYPE_H
-#define WISPR_SPENDTYPE_H
+#ifndef RPICoin_SPENDTYPE_H
+#define RPICoin_SPENDTYPE_H
 
 #include <cstdint>
 
@@ -16,4 +16,4 @@ namespace libzerocoin {
     };
 }
 
-#endif //WISPR_SPENDTYPE_H
+#endif //RPICoin_SPENDTYPE_H

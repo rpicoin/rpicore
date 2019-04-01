@@ -4,8 +4,8 @@
 
 
 
-#ifndef WISPR_INVALID_SERIALS_JSON_H
-#define WISPR_INVALID_SERIALS_JSON_H
+#ifndef RPICoin_INVALID_SERIALS_JSON_H
+#define RPICoin_INVALID_SERIALS_JSON_H
 
 #include <string>
 
@@ -19,4 +19,4 @@ std::string LoadInvalidSerials()
     return str;
 }
 
-#endif //WISPR_INVALID_SERIALS_JSON_H
+#endif //RPICoin_INVALID_SERIALS_JSON_H

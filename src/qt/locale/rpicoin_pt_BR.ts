@@ -62,12 +62,12 @@
         <translation>Endereços de recebimento</translation>
     </message>
     <message>
-        <source>These are your WISPR addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Esses são seus endereços WISPR para envio de pagamentos. Sempre verifique a quantia e os endereços de recebimento antes de enviar moedas.</translation>
+        <source>These are your RPICoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Esses são seus endereços RPICoin para envio de pagamentos. Sempre verifique a quantia e os endereços de recebimento antes de enviar moedas.</translation>
     </message>
     <message>
-        <source>These are your WISPR addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Esses são seus endereços WISPR para recebimento de pagamentos. É recomendado usar um novo endereço para cada transação.</translation>
+        <source>These are your RPICoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Esses são seus endereços RPICoin para recebimento de pagamentos. É recomendado usar um novo endereço para cada transação.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -176,8 +176,8 @@
         <translation>Confirmar criptografia de carteira</translation>
     </message>
     <message>
-        <source>WISPR will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your RPIs from being stolen by malware infecting your computer.</source>
-        <translation>WISPR vai fechar agora para finalizar o processo de criptografia. Lembre-se que encriptar sua carteira não pode proteger totalmente suas RPIs de serem roubadas por malwares infectando seu computador.</translation>
+        <source>RPICoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your RPIs from being stolen by malware infecting your computer.</source>
+        <translation>RPICoin vai fechar agora para finalizar o processo de criptografia. Lembre-se que encriptar sua carteira não pode proteger totalmente suas RPIs de serem roubadas por malwares infectando seu computador.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -254,7 +254,7 @@
         <translation>Endereço:</translation>
     </message>
     <message>
-        <source>Enter a WISPR Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
+        <source>Enter a RPICoin Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
         <translation>Insira um endereço que você deseja criptografar usando a BIP 38. Insira a palavra-chave na caixa do meio. Pressione criptografar para computar a chave privada criptografada.</translation>
     </message>
     <message>
@@ -617,8 +617,8 @@
         <translation>RPICoin Core</translation>
     </message>
     <message>
-        <source>Send coins to a WISPR address</source>
-        <translation>Enviar moedas para um endereço WISPR</translation>
+        <source>Send coins to a RPICoin address</source>
+        <translation>Enviar moedas para um endereço RPICoin</translation>
     </message>
     <message>
         <source>Request payments (generates QR codes and rpicoin: URIs)</source>
@@ -645,16 +645,16 @@
         <translation>Mostra informação sobre o RPICoin Core</translation>
     </message>
     <message>
-        <source>Modify configuration options for WISPR</source>
-        <translation>Modificar opções de configuração para WISPR</translation>
+        <source>Modify configuration options for RPICoin</source>
+        <translation>Modificar opções de configuração para RPICoin</translation>
     </message>
     <message>
-        <source>Sign messages with your WISPR addresses to prove you own them</source>
-        <translation>Assine mensagens com seus endereços WISPR para provar que você os detém</translation>
+        <source>Sign messages with your RPICoin addresses to prove you own them</source>
+        <translation>Assine mensagens com seus endereços RPICoin para provar que você os detém</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified WISPR addresses</source>
-        <translation>Verifique as mensagens para ter certeza que estão assinadas com os endereços WISPR especificados</translation>
+        <source>Verify messages to ensure they were signed with specified RPICoin addresses</source>
+        <translation>Verifique as mensagens para ter certeza que estão assinadas com os endereços RPICoin especificados</translation>
     </message>
     <message>
         <source>&amp;BIP38 tool</source>
@@ -685,8 +685,8 @@
         <translation>Abrir arquivo de configuração de Masternode</translation>
     </message>
     <message>
-        <source>Open a WISPR: URI or payment request</source>
-        <translation>Abrir um WISPR: URI ou requisição de pagamento</translation>
+        <source>Open a RPICoin: URI or payment request</source>
+        <translation>Abrir um RPICoin: URI ou requisição de pagamento</translation>
     </message>
     <message>
         <source>&amp;Blockchain explorer</source>
@@ -697,12 +697,12 @@
         <translation>Janela de exploração de blocos</translation>
     </message>
     <message>
-        <source>Show the RPICoin Core help message to get a list with possible WISPR command-line options</source>
-        <translation>Mostra a ajuda da RPICoin Core para receber uma lista com possíveis opções de linha de comando WISPR</translation>
+        <source>Show the RPICoin Core help message to get a list with possible RPICoin command-line options</source>
+        <translation>Mostra a ajuda da RPICoin Core para receber uma lista com possíveis opções de linha de comando RPICoin</translation>
     </message>
     <message>
         <source>RPICoin Core client</source>
-        <translation>Cliente Core WISPR</translation>
+        <translation>Cliente Core RPICoin</translation>
     </message>
     <message>
         <source>Synchronizing with network...</source>
@@ -1118,8 +1118,8 @@ MultiSend: %1</translation>
         <translation>Editar endereço remetente</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid WISPR address.</source>
-        <translation>O endereço que você selecionou, "%1" , não é um endereço válido de WISPR</translation>
+        <source>The entered address "%1" is not a valid RPICoin address.</source>
+        <translation>O endereço que você selecionou, "%1" , não é um endereço válido de RPICoin</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book.</source>
@@ -1223,8 +1223,8 @@ MultiSend: %1</translation>
         <translation>Como essa é a primeira vez que o programa é utilizado, você pode escolher onde RPICoin Core vai armazenar os seus dados.</translation>
     </message>
     <message>
-        <source>RPICoin Core will download and store a copy of the WISPR block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>RPICoin Core vai baixar e armazenar uma cópia da blockchain WISPR. Pelo menos %1GB de informação será armazenado neste diretório e irá aumentar com o tempo. A carteira também será armazenada neste diretório.</translation>
+        <source>RPICoin Core will download and store a copy of the RPICoin block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <translation>RPICoin Core vai baixar e armazenar uma cópia da blockchain RPICoin. Pelo menos %1GB de informação será armazenado neste diretório e irá aumentar com o tempo. A carteira também será armazenada neste diretório.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -1606,16 +1606,16 @@ Favor verificar o endereço e tente novamente.</translation>
         <translation>Configuração de ofuscação</translation>
     </message>
     <message>
-        <source>Obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening WISPR's configuration screen.</source>
-        <translation>Ofuscação foi definida com sucesso para o básico (%1 e 2 rodadas) Você pode mudar isto a qualquer tempo ao abrir a configuração de tela WISPR's.</translation>
+        <source>Obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening RPICoin's configuration screen.</source>
+        <translation>Ofuscação foi definida com sucesso para o básico (%1 e 2 rodadas) Você pode mudar isto a qualquer tempo ao abrir a configuração de tela RPICoin's.</translation>
     </message>
     <message>
-        <source>Obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening WISPR's configuration screen.</source>
-        <translation>Ofuscação foi definida com sucesso para alto (%1 e 8 rodadas). Você pode mudar isto a qualquer tempo ao abrir a configuração de tela WISPR's.</translation>
+        <source>Obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening RPICoin's configuration screen.</source>
+        <translation>Ofuscação foi definida com sucesso para alto (%1 e 8 rodadas). Você pode mudar isto a qualquer tempo ao abrir a configuração de tela RPICoin's.</translation>
     </message>
     <message>
-        <source>Obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening WISPR's configuration screen.</source>
-        <translation>Ofuscação foi definida com sucesso para máxima (%1 e 16 rodadas). Você pode mudar isto a qualquer tempo ao abrir a configuração de tela WISPR's.</translation>
+        <source>Obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening RPICoin's configuration screen.</source>
+        <translation>Ofuscação foi definida com sucesso para máxima (%1 e 16 rodadas). Você pode mudar isto a qualquer tempo ao abrir a configuração de tela RPICoin's.</translation>
     </message>
 </context>
 <context>
@@ -1668,8 +1668,8 @@ Favor verificar o endereço e tente novamente.</translation>
         <translation>C&amp;arteira</translation>
     </message>
     <message>
-        <source>Automatically open the WISPR client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Abrir automaticamente a porta do cliente WISPR no roteador. Isto somente funciona quando seu roteador suporta UPnP e este esteja habilitado.</translation>
+        <source>Automatically open the RPICoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Abrir automaticamente a porta do cliente RPICoin no roteador. Isto somente funciona quando seu roteador suporta UPnP e este esteja habilitado.</translation>
     </message>
     <message>
         <source>Accept connections from outside</source>
@@ -1688,12 +1688,12 @@ Favor verificar o endereço e tente novamente.</translation>
         <translation>Expert</translation>
     </message>
     <message>
-        <source>Automatically start WISPR after logging in to the system.</source>
-        <translation>Iniciar automaticamente WISPR depois de logar no sistema.</translation>
+        <source>Automatically start RPICoin after logging in to the system.</source>
+        <translation>Iniciar automaticamente RPICoin depois de logar no sistema.</translation>
     </message>
     <message>
-        <source>&amp;Start WISPR on system login</source>
-        <translation>&amp;Iniciar WISPR ao logar no sistema</translation>
+        <source>&amp;Start RPICoin on system login</source>
+        <translation>&amp;Iniciar RPICoin ao logar no sistema</translation>
     </message>
     <message>
         <source>Enable coin &amp;control features</source>
@@ -1708,8 +1708,8 @@ Favor verificar o endereço e tente novamente.</translation>
         <translation>&amp;Rede</translation>
     </message>
     <message>
-        <source>The user interface language can be set here. This setting will take effect after restarting WISPR.</source>
-        <translation>A linguagem da interface pode ser definida aqui. Está configuração terá efeito após reinício do WISPR.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting RPICoin.</source>
+        <translation>A linguagem da interface pode ser definida aqui. Está configuração terá efeito após reinício do RPICoin.</translation>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
@@ -1718,8 +1718,8 @@ https://www.transifex.com/rpicoin/rpicoin-translations</source>
 https://www.transifex.com/rpicoin/rpicoin-translations</translation>
     </message>
     <message>
-        <source>Connect to the WISPR network through a SOCKS5 proxy.</source>
-        <translation>Conectar à rede WISPR através de um proxy SOCKS5</translation>
+        <source>Connect to the RPICoin network through a SOCKS5 proxy.</source>
+        <translation>Conectar à rede RPICoin através de um proxy SOCKS5</translation>
     </message>
     <message>
         <source>Proxy &amp;IP:</source>
@@ -1853,8 +1853,8 @@ https://www.transifex.com/rpicoin/rpicoin-translations</translation>
         <translation>Imaturo:</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the WISPR network after a connection is established, but this process has not completed yet.</source>
-        <translation>A informação mostrada pode estar desatualizada. A sua carteira se sincroniza automaticamente com a rede WISPR após estabelecer uma conexão, mas esse processo ainda não foi concluído.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the RPICoin network after a connection is established, but this process has not completed yet.</source>
+        <translation>A informação mostrada pode estar desatualizada. A sua carteira se sincroniza automaticamente com a rede RPICoin após estabelecer uma conexão, mas esse processo ainda não foi concluído.</translation>
     </message>
     <message>
         <source>Unconfirmed transactions to watch-only addresses</source>
@@ -1950,8 +1950,8 @@ https://www.transifex.com/rpicoin/rpicoin-translations</translation>
         <translation>Ações Zerocoin:</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the WISPR network after a connection is established, but this process has not completed yet.</source>
-        <translation>A informação mostrada pode estar desatualizada. A sua carteira se sincroniza automaticamente com a rede WISPR após estabelecer uma conexão, mas esse processo ainda não foi concluído.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the RPICoin network after a connection is established, but this process has not completed yet.</source>
+        <translation>A informação mostrada pode estar desatualizada. A sua carteira se sincroniza automaticamente com a rede RPICoin após estabelecer uma conexão, mas esse processo ainda não foi concluído.</translation>
     </message>
     <message>
         <source>0</source>
@@ -1998,8 +1998,8 @@ https://www.transifex.com/rpicoin/rpicoin-translations</translation>
         <translation>Pagar &amp;Para:</translation>
     </message>
     <message>
-        <source>The WISPR address to send the payment to. Creates local payment to yourself when empty.</source>
-        <translation>O endereço WISPR para enviar o pagamento. Cria um pagamento local para si mesmo quando vazio.</translation>
+        <source>The RPICoin address to send the payment to. Creates local payment to yourself when empty.</source>
+        <translation>O endereço RPICoin para enviar o pagamento. Cria um pagamento local para si mesmo quando vazio.</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2173,8 +2173,8 @@ https://www.transifex.com/rpicoin/rpicoin-translations</translation>
         <translation>Quantidade</translation>
     </message>
     <message>
-        <source>Enter a WISPR address (e.g. %1)</source>
-        <translation>Insira um endereço WISPR (e.g. %1)</translation>
+        <source>Enter a RPICoin address (e.g. %1)</source>
+        <translation>Insira um endereço RPICoin (e.g. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -2431,8 +2431,8 @@ https://www.transifex.com/rpicoin/rpicoin-translations</translation>
         <translation>saída:</translation>
     </message>
     <message>
-        <source>Welcome to the WISPR RPC console.</source>
-        <translation>Bem-vindo ao console da WISPR RPC</translation>
+        <source>Welcome to the RPICoin RPC console.</source>
+        <translation>Bem-vindo ao console da RPICoin RPC</translation>
     </message>
     <message>
         <source>Do you want to continue?.&lt;br /&gt;</source>
@@ -2735,8 +2735,8 @@ https://www.transifex.com/rpicoin/rpicoin-translations</translation>
         <translation>Se a taxa padrão estiver definida para 1000 uRPIs e a transação for somente de 250 bytes, então "por kilobyte" pagará somente 250 uRPIs em taxa,&lt;br /&gt; pagará pelo menos 1000 uRPIs. Para transações maiores que um kilobyte ambas pagam por kilobyte.</translation>
     </message>
     <message>
-        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for WISPR transactions than the network can process.</source>
-        <translation>Pagar a taxa mínima é aceitável desde que existe menos volume de transações que espaço nos blocos. &lt;br/&gt; Mas fique atento que isso pode acabar em uma transação que nunca será confirmada caso haja mais demanda por transações de WISPR do que a rede pode processar.</translation>
+        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for RPICoin transactions than the network can process.</source>
+        <translation>Pagar a taxa mínima é aceitável desde que existe menos volume de transações que espaço nos blocos. &lt;br/&gt; Mas fique atento que isso pode acabar em uma transação que nunca será confirmada caso haja mais demanda por transações de RPICoin do que a rede pode processar.</translation>
     </message>
     <message>
         <source>normal</source>
@@ -2819,8 +2819,8 @@ https://www.transifex.com/rpicoin/rpicoin-translations</translation>
         <translation>Copiar troco</translation>
     </message>
     <message>
-        <source>Warning: Invalid WISPR address</source>
-        <translation>Aviso: endereço WISPR inválido</translation>
+        <source>Warning: Invalid RPICoin address</source>
+        <translation>Aviso: endereço RPICoin inválido</translation>
     </message>
     <message>
         <source>%1 to %2</source>
@@ -2906,8 +2906,8 @@ https://www.transifex.com/rpicoin/rpicoin-translations</translation>
         <translation>Pagar &amp;Para:</translation>
     </message>
     <message>
-        <source>The WISPR address to send the payment to</source>
-        <translation>O endereço WISPR para enviar o pagamento</translation>
+        <source>The RPICoin address to send the payment to</source>
+        <translation>O endereço RPICoin para enviar o pagamento</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2988,8 +2988,8 @@ https://www.transifex.com/rpicoin/rpicoin-translations</translation>
         <translation>&amp;Assinar mensagem</translation>
     </message>
     <message>
-        <source>The WISPR address to sign the message with</source>
-        <translation>O endereço WISPR para assinar a mensagem</translation>
+        <source>The RPICoin address to sign the message with</source>
+        <translation>O endereço RPICoin para assinar a mensagem</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -3020,16 +3020,16 @@ https://www.transifex.com/rpicoin/rpicoin-translations</translation>
         <translation>Copia a assinatura atual do sistema de transferência</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this WISPR address</source>
-        <translation>Assine a mensagem para provar que você possui este endereço WISPR</translation>
+        <source>Sign the message to prove you own this RPICoin address</source>
+        <translation>Assine a mensagem para provar que você possui este endereço RPICoin</translation>
     </message>
     <message>
-        <source>The WISPR address the message was signed with</source>
-        <translation>O endereço WISPR que assinou a mensagem</translation>
+        <source>The RPICoin address the message was signed with</source>
+        <translation>O endereço RPICoin que assinou a mensagem</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified WISPR address</source>
-        <translation>Verifique a mensagem para ter certeza que foi assinada com o endereço WISPR especificado.</translation>
+        <source>Verify the message to ensure it was signed with the specified RPICoin address</source>
+        <translation>Verifique a mensagem para ter certeza que foi assinada com o endereço RPICoin especificado.</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -3717,7 +3717,7 @@ https://www.transifex.com/rpicoin/rpicoin-translations</translation>
     </message>
     <message>
         <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong RPICoin Core will not work properly.</source>
-        <translation>Aviso: Favor verificar se o horário e data de seu computador estão corretos! Se o seu relógio estiver errado o Core WISPR não vai funcionar corretamente.</translation>
+        <translation>Aviso: Favor verificar se o horário e data de seu computador estão corretos! Se o seu relógio estiver errado o Core RPICoin não vai funcionar corretamente.</translation>
     </message>
     <message>
         <source>Warning: The network does not appear to fully agree! Some miners appear to be experiencing issues.</source>

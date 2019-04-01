@@ -29,10 +29,10 @@
   <string>????</string>
 
   <key>CFBundleExecutable</key>
-  <string>WISPR-Qt</string>
+  <string>RPICoin-Qt</string>
   
   <key>CFBundleName</key>
-  <string>WISPR-Qt</string>
+  <string>RPICoin-Qt</string>
 
   <key>LSHasLocalizedDisplayName</key>
   <true/>

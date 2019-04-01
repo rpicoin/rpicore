@@ -62,12 +62,12 @@
         <translation>Prijímacia adresa</translation>
     </message>
     <message>
-        <source>These are your WISPR addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Toto sú vaše WISPR adresy na odosielanie platieb. Pred odoslaním vždy skontrolujte výšku a adresu prijemcu.</translation>
+        <source>These are your RPICoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Toto sú vaše RPICoin adresy na odosielanie platieb. Pred odoslaním vždy skontrolujte výšku a adresu prijemcu.</translation>
     </message>
     <message>
-        <source>These are your WISPR addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Toto sú vaše WISPR adresy na prijímanie platieb. Pre každú transakciu sa odporúča použiť novú prijímaciu adresu.</translation>
+        <source>These are your RPICoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Toto sú vaše RPICoin adresy na prijímanie platieb. Pre každú transakciu sa odporúča použiť novú prijímaciu adresu.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -172,8 +172,8 @@
         <translation>Potvrďte šifrovanie peňaženky</translation>
     </message>
     <message>
-        <source>WISPR will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your RPIs from being stolen by malware infecting your computer.</source>
-        <translation>WISPR sa teraz ukončí, aby dokončil proces šifrovania. Nezabudnite, že šifrovanie peňaženky nemôže úplne ochrániť vaše RPI pred odcudzením škodlivým softvérom, ktorý infikuje váš počítač.</translation>
+        <source>RPICoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your RPIs from being stolen by malware infecting your computer.</source>
+        <translation>RPICoin sa teraz ukončí, aby dokončil proces šifrovania. Nezabudnite, že šifrovanie peňaženky nemôže úplne ochrániť vaše RPI pred odcudzením škodlivým softvérom, ktorý infikuje váš počítač.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -573,8 +573,8 @@
         <translation>RPICoin Core</translation>
     </message>
     <message>
-        <source>Send coins to a WISPR address</source>
-        <translation>Odoslať mince na adresu WISPR</translation>
+        <source>Send coins to a RPICoin address</source>
+        <translation>Odoslať mince na adresu RPICoin</translation>
     </message>
     <message>
         <source>Request payments (generates QR codes and rpicoin: URIs)</source>
@@ -597,16 +597,16 @@
         <translation>Zobraziť informácie o RPICoin Core</translation>
     </message>
     <message>
-        <source>Modify configuration options for WISPR</source>
-        <translation>Zmeňte možnosti konfigurácie pre WISPR</translation>
+        <source>Modify configuration options for RPICoin</source>
+        <translation>Zmeňte možnosti konfigurácie pre RPICoin</translation>
     </message>
     <message>
-        <source>Sign messages with your WISPR addresses to prove you own them</source>
-        <translation>Podpíšte správy pomocou adresy WISPR, aby ste preukázali, že ich vlastníte</translation>
+        <source>Sign messages with your RPICoin addresses to prove you own them</source>
+        <translation>Podpíšte správy pomocou adresy RPICoin, aby ste preukázali, že ich vlastníte</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified WISPR addresses</source>
-        <translation>Overte správy, aby sa zabezpečilo, že boli podpísané zadanými WISPR adresami</translation>
+        <source>Verify messages to ensure they were signed with specified RPICoin addresses</source>
+        <translation>Overte správy, aby sa zabezpečilo, že boli podpísané zadanými RPICoin adresami</translation>
     </message>
     <message>
         <source>&amp;BIP38 tool</source>
@@ -637,8 +637,8 @@
         <translation>Otvoriť konfiguračný súbor masternodu</translation>
     </message>
     <message>
-        <source>Open a WISPR: URI or payment request</source>
-        <translation>Otvorte WISPR: URI alebo žiadosť o platbu</translation>
+        <source>Open a RPICoin: URI or payment request</source>
+        <translation>Otvorte RPICoin: URI alebo žiadosť o platbu</translation>
     </message>
     <message>
         <source>&amp;Blockchain explorer</source>
@@ -649,8 +649,8 @@
         <translation>Okno blockchain prehliadača</translation>
     </message>
     <message>
-        <source>Show the RPICoin Core help message to get a list with possible WISPR command-line options</source>
-        <translation>Zobraziť pomocnú správu programu RPICoin Core a získajte zoznam možností príkazového riadka WISPR</translation>
+        <source>Show the RPICoin Core help message to get a list with possible RPICoin command-line options</source>
+        <translation>Zobraziť pomocnú správu programu RPICoin Core a získajte zoznam možností príkazového riadka RPICoin</translation>
     </message>
     <message>
         <source>RPICoin Core client</source>
@@ -1114,8 +1114,8 @@ MultiSend: %1</translation>
 <context>
     <name>SignVerifyMessageDialog</name>
     <message>
-        <source>The WISPR address to sign the message with</source>
-        <translation>Adresa WISPR, ktorou chcete správu podpísať</translation>
+        <source>The RPICoin address to sign the message with</source>
+        <translation>Adresa RPICoin, ktorou chcete správu podpísať</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -1138,16 +1138,16 @@ MultiSend: %1</translation>
         <translation>Skopírujte aktuálny podpis do schránky</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this WISPR address</source>
-        <translation>Podpíšte správu, aby ste preukázali, že ste vlastníkom tejto WISPR adresy</translation>
+        <source>Sign the message to prove you own this RPICoin address</source>
+        <translation>Podpíšte správu, aby ste preukázali, že ste vlastníkom tejto RPICoin adresy</translation>
     </message>
     <message>
-        <source>The WISPR address the message was signed with</source>
-        <translation>WISPR adresa, ktorou bola správa podpísaná</translation>
+        <source>The RPICoin address the message was signed with</source>
+        <translation>RPICoin adresa, ktorou bola správa podpísaná</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified WISPR address</source>
-        <translation>Skontrolujte správu, aby ste sa uistili, že bola podpísaná zadanou WISPR adresou</translation>
+        <source>Verify the message to ensure it was signed with the specified RPICoin address</source>
+        <translation>Skontrolujte správu, aby ste sa uistili, že bola podpísaná zadanou RPICoin adresou</translation>
     </message>
     <message>
         <source>Reset all sign message fields</source>

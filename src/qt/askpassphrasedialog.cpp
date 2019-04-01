@@ -131,7 +131,7 @@ void AskPassphraseDialog::accept()
                 if (model->setWalletEncrypted(true, newpass1)) {
                     QMessageBox::warning(this, tr("Wallet encrypted"),
                         "<qt>" +
-                            tr("WISPR will close now to finish the encryption process. "
+                            tr("RPICoin will close now to finish the encryption process. "
                                "Remember that encrypting your wallet cannot fully protect "
                                "your RPIs from being stolen by malware infecting your computer.") +
                             "<br><br><b>" +

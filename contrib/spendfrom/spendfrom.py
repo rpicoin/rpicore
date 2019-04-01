@@ -35,9 +35,9 @@ def check_json_precision():
 def determine_db_dir():
     """Return the default location of the rpicoin data directory"""
     if platform.system() == "Darwin":
-        return os.path.expanduser("~/Library/Application Support/WISPR/")
+        return os.path.expanduser("~/Library/Application Support/RPICoin/")
     elif platform.system() == "Windows":
-        return os.path.join(os.environ['APPDATA'], "WISPR")
+        return os.path.join(os.environ['APPDATA'], "RPICoin")
     return os.path.expanduser("~/.rpicoin")
 
 def read_bitcoin_config(dbdir):

@@ -62,12 +62,12 @@
         <translation>Adrese za primanje</translation>
     </message>
     <message>
-        <source>These are your WISPR addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>To su vaše WISPR adrese za slanje plaćanja. Uvijek provjerite iznos i adresu primatelja prije slanja novca.</translation>
+        <source>These are your RPICoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>To su vaše RPICoin adrese za slanje plaćanja. Uvijek provjerite iznos i adresu primatelja prije slanja novca.</translation>
     </message>
     <message>
-        <source>These are your WISPR addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>To su vaše WISPR adrese za primanje uplata. Preporuča se upotreba nove adrese primanja za svaku transakciju.</translation>
+        <source>These are your RPICoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>To su vaše RPICoin adrese za primanje uplata. Preporuča se upotreba nove adrese primanja za svaku transakciju.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -172,8 +172,8 @@
         <translation>Potvrdite šifriranje novčanika</translation>
     </message>
     <message>
-        <source>WISPR will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your RPIs from being stolen by malware infecting your computer.</source>
-        <translation>WISPR se sada zatvara kako bi dovršio proces šifriranja. Ne zaboravite da šifriranje vašeg novčanika ne može u potpunosti zaštititi vaše RPI od krađe zlonamjernog softvera koji zarazi vaše računalo.</translation>
+        <source>RPICoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your RPIs from being stolen by malware infecting your computer.</source>
+        <translation>RPICoin se sada zatvara kako bi dovršio proces šifriranja. Ne zaboravite da šifriranje vašeg novčanika ne može u potpunosti zaštititi vaše RPI od krađe zlonamjernog softvera koji zarazi vaše računalo.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -605,8 +605,8 @@
         <translation>RPICoin Core</translation>
     </message>
     <message>
-        <source>Send coins to a WISPR address</source>
-        <translation>Pošaljite kovanice na WISPR adresu</translation>
+        <source>Send coins to a RPICoin address</source>
+        <translation>Pošaljite kovanice na RPICoin adresu</translation>
     </message>
     <message>
         <source>Request payments (generates QR codes and rpicoin: URIs)</source>
@@ -633,16 +633,16 @@
         <translation>Prikaz informacija o RPICoin Coreu</translation>
     </message>
     <message>
-        <source>Modify configuration options for WISPR</source>
-        <translation>Izmijenite opcije konfiguracije za WISPR</translation>
+        <source>Modify configuration options for RPICoin</source>
+        <translation>Izmijenite opcije konfiguracije za RPICoin</translation>
     </message>
     <message>
-        <source>Sign messages with your WISPR addresses to prove you own them</source>
-        <translation>Potpišite poruke s vašim WISPR adresama kako biste dokazali da ih posjedujete</translation>
+        <source>Sign messages with your RPICoin addresses to prove you own them</source>
+        <translation>Potpišite poruke s vašim RPICoin adresama kako biste dokazali da ih posjedujete</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified WISPR addresses</source>
-        <translation>Potvrdite poruke kako biste bili sigurni da su potpisani s određenim WISPR adresama</translation>
+        <source>Verify messages to ensure they were signed with specified RPICoin addresses</source>
+        <translation>Potvrdite poruke kako biste bili sigurni da su potpisani s određenim RPICoin adresama</translation>
     </message>
     <message>
         <source>&amp;BIP38 tool</source>
@@ -1118,8 +1118,8 @@
 <context>
     <name>SignVerifyMessageDialog</name>
     <message>
-        <source>The WISPR address to sign the message with</source>
-        <translation>WISPR adresa za potpisivanje poruke s</translation>
+        <source>The RPICoin address to sign the message with</source>
+        <translation>RPICoin adresa za potpisivanje poruke s</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -1142,16 +1142,16 @@
         <translation>Kopirajte trenutačni potpis u međuspremnik sustava</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this WISPR address</source>
-        <translation>Potpišite poruku da biste dokazali da ste vlasnik ove WISPR adrese</translation>
+        <source>Sign the message to prove you own this RPICoin address</source>
+        <translation>Potpišite poruku da biste dokazali da ste vlasnik ove RPICoin adrese</translation>
     </message>
     <message>
-        <source>The WISPR address the message was signed with</source>
-        <translation>WISPR adresa s kojom je potpisana poruka</translation>
+        <source>The RPICoin address the message was signed with</source>
+        <translation>RPICoin adresa s kojom je potpisana poruka</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified WISPR address</source>
-        <translation>Potvrdite poruku kako biste bili sigurni da je potpisan s navedenom WISPR adresom</translation>
+        <source>Verify the message to ensure it was signed with the specified RPICoin address</source>
+        <translation>Potvrdite poruku kako biste bili sigurni da je potpisan s navedenom RPICoin adresom</translation>
     </message>
     <message>
         <source>Reset all sign message fields</source>

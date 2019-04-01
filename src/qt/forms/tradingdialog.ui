@@ -2941,7 +2941,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>Generate WISPR Deposit Address</string>
+      <string>Generate RPICoin Deposit Address</string>
      </property>
      <property name="icon">
       <iconset resource="../rpicoin.qrc">

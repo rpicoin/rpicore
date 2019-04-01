@@ -425,12 +425,12 @@ boost::filesystem::path GetDefaultDataDir()
 {
     namespace fs = boost::filesystem;
 // Windows < Vista: C:\Documents and Settings\Username\Application Data\RPICOIN
-// Windows >= Vista: C:\Users\Username\AppData\Roaming\WISPR
-// Mac: ~/Library/Application Support/WISPR
+// Windows >= Vista: C:\Users\Username\AppData\Roaming\RPICoin
+// Mac: ~/Library/Application Support/RPICoin
 // Unix: ~/.rpicoin
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "WISPR";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "RPICoin";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -442,7 +442,7 @@ boost::filesystem::path GetDefaultDataDir()
     // Mac
     pathRet /= "Library/Application Support";
     TryCreateDirectory(pathRet);
-    return pathRet / "WISPR";
+    return pathRet / "RPICoin";
 #else
     // Unix
     return pathRet / ".rpicoin";

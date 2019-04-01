@@ -2,7 +2,7 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2018 The PIVX developers
-// Copyright (c) 2018 The WISPR developers
+// Copyright (c) 2018 The RPICoin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -124,7 +124,7 @@ public:
         pchMessageStart[3] = 0x61;
         vAlertPubKey=ParseHex("04890c0c7f2bf2304af7a7de92f3717d96b5d347e30a179cf975ab5e0152b113103598798599fecb8d735238e6dae110565d230d7ba93a076b98bd5bd5bb5f17fb");
         nDefaultPort = 18000;
-        bnProofOfWorkLimit = ~uint256(0) >> 16; // WISPR starting difficulty is 1 / 2^12
+        bnProofOfWorkLimit = ~uint256(0) >> 16; // RPICoin starting difficulty is 1 / 2^12
         bnProofOfStakeLimit = ~uint256(0) >> 48;
         nSubsidyHalvingInterval = 0;
         nMaxReorganizationDepth = 500;
@@ -132,10 +132,10 @@ public:
         nRejectBlockOutdatedMajority = 950;
         nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 0;
-        nTargetTimespanV1 =  16 * 60; // WISPR Old: 1 day
-        nTargetTimespanV2 =  1 * 60; // WISPR New: 1 day
-        nTargetSpacingV1 = 64;  // WISPR Old: 1 minute
-        nTargetSpacingV2 = 1 * 60;  // WISPR New: 1 minute
+        nTargetTimespanV1 =  16 * 60; // RPICoin Old: 1 day
+        nTargetTimespanV2 =  1 * 60; // RPICoin New: 1 day
+        nTargetSpacingV1 = 64;  // RPICoin Old: 1 minute
+        nTargetSpacingV2 = 1 * 60;  // RPICoin New: 1 minute
         nMaturity = 100;
         nMasternodeCountDrift = 20;
         nMaxMoneyOut = 120000000 * COIN;
@@ -257,10 +257,10 @@ public:
         nRejectBlockOutdatedMajority = 75;
         nToCheckBlockUpgradeMajority = 100;
         nMinerThreads = 0;
-        nTargetTimespanV1 =  16 * 60; // WISPR Old: 1 day
-        nTargetTimespanV2 =  1 * 60; // WISPR New: 1 day
-        nTargetSpacingV1 = 64;  // WISPR Old: 1 minute
-        nTargetSpacingV2 = 1 * 60;  // WISPR New: 1 minute
+        nTargetTimespanV1 =  16 * 60; // RPICoin Old: 1 day
+        nTargetTimespanV2 =  1 * 60; // RPICoin New: 1 day
+        nTargetSpacingV1 = 64;  // RPICoin Old: 1 minute
+        nTargetSpacingV2 = 1 * 60;  // RPICoin New: 1 minute
         nLastPOWBlock = 450;
         nMaturity = 10;
         nMasternodeCountDrift = 4;
@@ -347,10 +347,10 @@ public:
         nRejectBlockOutdatedMajority = 950;
         nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 1;
-        nTargetTimespanV1 = 16 * 60; // WISPR Old: 1 day
-        nTargetTimespanV2 = 1 * 60; // WISPR New: 1 day
-        nTargetSpacingV1 = 64;        // WISPR Old: 1 minutes
-        nTargetSpacingV2 = 1 * 60;        // WISPR New: 1 minute
+        nTargetTimespanV1 = 16 * 60; // RPICoin Old: 1 day
+        nTargetTimespanV2 = 1 * 60; // RPICoin New: 1 day
+        nTargetSpacingV1 = 64;        // RPICoin Old: 1 minutes
+        nTargetSpacingV2 = 1 * 60;        // RPICoin New: 1 minute
         bnProofOfWorkLimit = ~uint256(0) >> 1;
         genesis.nTime = 1411111111;
         genesis.nBits  = bnProofOfWorkLimit.GetCompact();

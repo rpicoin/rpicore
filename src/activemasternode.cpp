@@ -12,7 +12,7 @@
 #include "spork.h"
 
 //
-// Bootup the Masternode, look for a 125000 WISPR input and register on the network
+// Bootup the Masternode, look for a 125000 RPICoin input and register on the network
 //
 void CActiveMasternode::ManageStatus()
 {

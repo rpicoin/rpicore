@@ -102,7 +102,7 @@ void setupAddressWidget(QValidatedLineEdit* widget, QWidget* parent)
     widget->setFont(bitcoinAddressFont());
     // We don't want translators to use own addresses in translations
     // and this is the only place, where this address is supplied.
-    widget->setPlaceholderText(QObject::tr("Enter a WISPR address (e.g. %1)").arg("WffFAEDF5MNo4sXn9rRr1s71ZfNJK2zHWL"));
+    widget->setPlaceholderText(QObject::tr("Enter a RPICoin address (e.g. %1)").arg("WffFAEDF5MNo4sXn9rRr1s71ZfNJK2zHWL"));
     widget->setValidator(new BitcoinAddressEntryValidator(parent));
     widget->setCheckValidator(new BitcoinAddressCheckValidator(parent));
 }
@@ -118,7 +118,7 @@ void setupAmountWidget(QLineEdit* widget, QWidget* parent)
 
 bool parseBitcoinURI(const QUrl& uri, SendCoinsRecipient* out)
 {
-    // return if URI is not valid or is no WISPR: URI
+    // return if URI is not valid or is no RPICoin: URI
     if (!uri.isValid() || uri.scheme() != QString(URI_SCHEME))
         return false;
 
@@ -570,12 +570,12 @@ bool DHMSTableWidgetItem::operator<(QTableWidgetItem const& item) const
 #ifdef WIN32
 boost::filesystem::path static StartupShortcutPath()
 {
-    return GetSpecialFolderPath(CSIDL_STARTUP) / "WISPR.lnk";
+    return GetSpecialFolderPath(CSIDL_STARTUP) / "RPICoin.lnk";
 }
 
 bool GetStartOnSystemStartup()
 {
-    // check for WISPR.lnk
+    // check for RPICoin.lnk
     return boost::filesystem::exists(StartupShortcutPath());
 }
 
@@ -688,7 +688,7 @@ bool SetStartOnSystemStartup(bool fAutoStart)
         // Write a rpicoin.desktop file to the autostart directory:
         optionFile << "[Desktop Entry]\n";
         optionFile << "Type=Application\n";
-        optionFile << "Name=WISPR\n";
+        optionFile << "Name=RPICoin\n";
         optionFile << "Exec=" << pszExePath << " -min\n";
         optionFile << "Terminal=false\n";
         optionFile << "Hidden=false\n";

@@ -89,7 +89,7 @@ use old versions of Upstart and do not supply the start-stop-daemon uitility.
 Copy rpicoind.init to /etc/init.d/rpicoind. Test by running "service rpicoind start".
 
 Using this script, you can adjust the path and flags to the rpicoind program by
-setting the WISPRD and FLAGS environment variables in the file
+setting the RPICoinD and FLAGS environment variables in the file
 /etc/sysconfig/rpicoind. You can also use the DAEMONOPTS environment variable here.
 
 5. Auto-respawn

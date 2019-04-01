@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WISPR_QT_MULTISENDDIALOG_H
-#define WISPR_QT_MULTISENDDIALOG_H
+#ifndef RPICoin_QT_MULTISENDDIALOG_H
+#define RPICoin_QT_MULTISENDDIALOG_H
 
 #include <QDialog>
 
@@ -38,4 +38,4 @@ private:
     WalletModel* model;
 };
 
-#endif // WISPR_QT_MULTISENDDIALOG_H
+#endif // RPICoin_QT_MULTISENDDIALOG_H

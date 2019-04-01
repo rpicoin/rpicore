@@ -1,9 +1,9 @@
 [Desktop Entry]
 Encoding=UTF-8
-Name=WISPR
-Comment=WISPR P2P Cryptocurrency
-Comment[fr]=WISPR, monnaie virtuelle cryptographique pair à pair
-Comment[tr]=WISPR, eşten eşe kriptografik sanal para birimi
+Name=RPICoin
+Comment=RPICoin P2P Cryptocurrency
+Comment[fr]=RPICoin, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=RPICoin, eşten eşe kriptografik sanal para birimi
 Exec=rpicoin-qt %u
 Terminal=false
 Type=Application

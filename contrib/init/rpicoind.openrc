@@ -17,7 +17,7 @@ BITCOIND_GROUP=${BITCOIND_GROUP:-rpicoin}
 BITCOIND_BIN=${BITCOIND_BIN:-/usr/bin/rpicoind}
 
 name="RPICoin Core Daemon"
-description="WISPR crypto-currency p2p network daemon"
+description="RPICoin crypto-currency p2p network daemon"
 
 command="/usr/bin/rpicoind"
 command_args="-pid=\"${BITCOIND_PIDFILE}\" \
@@ -78,7 +78,7 @@ checkconfig()
 		eerror "It is also recommended that you also set alertnotify so you are "
 		eerror "notified of problems:"
 		eerror ""
-		eerror "ie: alertnotify=echo %%s | mail -s \"WISPR Alert\"" \
+		eerror "ie: alertnotify=echo %%s | mail -s \"RPICoin Alert\"" \
 			"admin@foo.com"
 		eerror ""
 		return 1

@@ -15,7 +15,7 @@ Users updating from a previous version after Tuesday, May 8, 2018 12:00:00 AM GM
 How to Upgrade
 ==============
 
-If you are running an older version, shut it down. Wait until it has completely shut down (which might take a few minutes for older versions), then run the installer (on Windows) or just copy over /Applications/WISPR-Qt (on Mac) or rpicoind/rpicoin-qt (on Linux).
+If you are running an older version, shut it down. Wait until it has completely shut down (which might take a few minutes for older versions), then run the installer (on Windows) or just copy over /Applications/RPICoin-Qt (on Mac) or rpicoind/rpicoin-qt (on Linux).
 
 
 Compatibility
@@ -45,7 +45,7 @@ zRPI Updates
 
 ### zRPI Staking
 
-zRPI Staking is here! zRPI staking will be activated on the morning of the 8th of May 2018. With the release of zRPI staking, there are effectively 2 versions of zRPI, zRPI minted on the 3.0.6 WISPR wallet or lower, and zRPI minted on WISPR wallet version or higher. New features in this release will require the use of zRPI v2, zRPI minted on this wallet release 3.1.0 or later. If you currently hold zRPI v1 and wish to take advantage of zRPI staking and deterministic zRPI, you will need to spend the zRPI v1 to yourself and remint zRPI v2.
+zRPI Staking is here! zRPI staking will be activated on the morning of the 8th of May 2018. With the release of zRPI staking, there are effectively 2 versions of zRPI, zRPI minted on the 3.0.6 RPICoin wallet or lower, and zRPI minted on RPICoin wallet version or higher. New features in this release will require the use of zRPI v2, zRPI minted on this wallet release 3.1.0 or later. If you currently hold zRPI v1 and wish to take advantage of zRPI staking and deterministic zRPI, you will need to spend the zRPI v1 to yourself and remint zRPI v2.
 Note: To find your zRPI version, click the privacy tab, then the zRPI Control button then expand the arrows next to the desired denomination.
 
 
@@ -70,7 +70,7 @@ RPI/zRPI Staking and Masternode Rewards
 
 ### RPI, zRPI and Masternode Payment Schedule
 
-To encourage the use of zRPI and increase the WISPR zerocoin anonymity set, the WISPR payment schedule has been changed to the following:
+To encourage the use of zRPI and increase the RPICoin zerocoin anonymity set, the RPICoin payment schedule has been changed to the following:
 
 If a user staking zRPI wins the reward for their block, the following zRPI reward will be:
 - 3 zRPI (3 x 1 denominations) rewarded to the staker, 2 RPI rewarded to the masternode owner and 1 RPI available for the budget. This is a total block reward of 6 RPI, up from 5.
@@ -89,7 +89,7 @@ User Experience
 
 ### Graphical User Interface
 
-The visual layout of the WISPR Qt wallet has undergone a near-complete overhaul.
+The visual layout of the RPICoin Qt wallet has undergone a near-complete overhaul.
 A new 'vertical tab' layout is now being used instead of the prior 'horizontal tab' layout, as well as a completely new icon set.
 The overview tab has been simplified greatly to display only balances that are active or relevant, zero-balance line items are hidden by default to avoid clutter.
 
@@ -113,7 +113,7 @@ Backup to external devices / locations
 
 ### Summary
 
- The WISPR wallet can now have user selected directories for automatic backups of the wallet data file (wallet.dat). This can be set by adding the following lines to the rpicoin.conf file, found in the WISPR data directory.
+ The RPICoin wallet can now have user selected directories for automatic backups of the wallet data file (wallet.dat). This can be set by adding the following lines to the rpicoin.conf file, found in the RPICoin data directory.
 - backuppath = <directory / full path>
 - zrpibackuppath = <directory / full path>
 - custombackupthreshold = <backup limit>
@@ -164,12 +164,12 @@ Backing up 4 times will result as shown below
             
 
 
-WISPR Daemon & Client (RPC Changes)
+RPICoin Daemon & Client (RPC Changes)
 --------------
 
 ### RPC Ban Management
 
-The WISPR client peer bans now have additional RPC commands to manage peers. Peers can be banned and unbanned at will without the need to restart the wallet client. No changes have been made to the conditions resulting in automatic peer bans. New RPC commands: `setban`, `listbanned`, `clearbanned`, and `disconnectnode`
+The RPICoin client peer bans now have additional RPC commands to manage peers. Peers can be banned and unbanned at will without the need to restart the wallet client. No changes have been made to the conditions resulting in automatic peer bans. New RPC commands: `setban`, `listbanned`, `clearbanned`, and `disconnectnode`
 
 
 ### Random-cookie RPC authentication
@@ -188,7 +188,7 @@ This allows for a user (such as a third party integration) to query the blockcha
 ### New RPC command 
 `findserial`
 
-Search the zerocoin database for a zerocoinspend transaction that contains the given serial. This will be a helpful tool for the WISPR support group, which often times sees users say "I didn't spend that zRPI". This RPC call allows for support to grab the serial, and then find the spend tx on the chain.
+Search the zerocoin database for a zerocoinspend transaction that contains the given serial. This will be a helpful tool for the RPICoin support group, which often times sees users say "I didn't spend that zRPI". This RPC call allows for support to grab the serial, and then find the spend tx on the chain.
 
 
 ### New RPC commands 
@@ -206,11 +206,11 @@ Network Layer 2 Changes (Proposals / Budgets / SwiftX)
 
 ### Monthly Budget Increase
 
-As voted on by the WISPR masternodes, the monthly budget available to be utilised has been increased to 42,000 RPI / month. This RPI only has the opportunity to be raised once per month (paid to winning proposals) with any unused RPI not created by the blockchain.
+As voted on by the RPICoin masternodes, the monthly budget available to be utilised has been increased to 42,000 RPI / month. This RPI only has the opportunity to be raised once per month (paid to winning proposals) with any unused RPI not created by the blockchain.
 
 ### Budget Finalization Fee
 
-The WISPR finalization fee for successful proposals has now been reduced, this fee is now 5 RPI down from 50 RPI. The total fee outlay for a successful proposal is now a total of 55 RPI.
+The RPICoin finalization fee for successful proposals has now been reduced, this fee is now 5 RPI down from 50 RPI. The total fee outlay for a successful proposal is now a total of 55 RPI.
 
 
 ### SwiftX Raw Transactions
@@ -251,8 +251,8 @@ Minor Enhancements
 -	Enforced v1 zRPI spends to require a security level of 100
 -	Updates to zRPI spends to avoid segfaults
 -	Updates to configuration will now reflect on the privacy tab
--	Fixed a  bug that would not start masternodes from the WISPR-Qt masternodes tab
--	Updated WISPR-Qt tooltips
+-	Fixed a  bug that would not start masternodes from the RPICoin-Qt masternodes tab
+-	Updated RPICoin-Qt tooltips
 -	Icon added to the wallet GUI to reflect the status of autominting (active / inactive)
 -	Updated errors causing the blockchain to corrupt when experiencing unexpected wallet shutdowns
 -	Updated RPC help outputs & removed the deprecated obfuscation. 
@@ -263,7 +263,7 @@ Minor Enhancements
 Further Reading: Version 2 Zerocoins
 ==============
 
-Several critical security flaws in the zerocoin protocol and WISPR's zerocoin implementation have been patched. Enough has changed that new zerocoins are distinct from old zerocoins, and have been labelled as *version 2*. When using the zRPI Control dialog in the QT wallet, a user is able to see zRPI marked as version 1 or 2.
+Several critical security flaws in the zerocoin protocol and RPICoin's zerocoin implementation have been patched. Enough has changed that new zerocoins are distinct from old zerocoins, and have been labelled as *version 2*. When using the zRPI Control dialog in the QT wallet, a user is able to see zRPI marked as version 1 or 2.
 
 zPoS (zRPI staking)
 --------------
@@ -273,7 +273,7 @@ Once a zRPI has over 200 confirmations it becomes available to stake. Staking zR
 Secure Spending
 --------------
 
-Version 1 zerocoins, as implemented by [Miers et. al](http://zerocoin.org/media/pdf/ZerocoinOakland.pdf), allow for something we describe as *serial trolling*. Spending zerocoins requires that the spender reveal their serial number associated with the zerocoin, and in turn that serial number is used to check for double spending. There is a fringe situation (which is very unlikely to happen within WISPR's zerocoin implementation due to delayed coin accumulation) where the spender sends the spending transaction, but the transaction does not immediately make it into the blockchain and remains in the mempool for a long enough duration that a *troll* has enough time to see the spender's serial number, mint a new zerocoin with the same serial number, and spend the new zerocoin before the original spender's transaction becomes confirmed. If the timing of this fringe situation worked, then the original spender's coin would be seen as invalid because the troll was able to have the serial recorded into the blockchain first, thus making the original spender's serial appear as a double spend.
+Version 1 zerocoins, as implemented by [Miers et. al](http://zerocoin.org/media/pdf/ZerocoinOakland.pdf), allow for something we describe as *serial trolling*. Spending zerocoins requires that the spender reveal their serial number associated with the zerocoin, and in turn that serial number is used to check for double spending. There is a fringe situation (which is very unlikely to happen within RPICoin's zerocoin implementation due to delayed coin accumulation) where the spender sends the spending transaction, but the transaction does not immediately make it into the blockchain and remains in the mempool for a long enough duration that a *troll* has enough time to see the spender's serial number, mint a new zerocoin with the same serial number, and spend the new zerocoin before the original spender's transaction becomes confirmed. If the timing of this fringe situation worked, then the original spender's coin would be seen as invalid because the troll was able to have the serial recorded into the blockchain first, thus making the original spender's serial appear as a double spend.
 
 The serial troll situation is mitigated in version 2 by requiring that the serial number be a hash of a public key. The spend requires an additional signature signed by the private key associated with the public key hash matching the serial number. This work around was conceived by Tim Ruffing, a cryptographer that has studied the zerocoin protocol and done consulting work for the ZCoin project.
 
@@ -285,7 +285,7 @@ Zerocoins, or zRPI, are now deterministically generated using a unique 256 bit s
 Zerocoin Modulus
 --------------
 
-WISPR's zerocoin implementation used the same code from the ZCoin project to import the modulus use for the zerocoin protocol. The chosen modulus is the 2048 bit RSA number created for the RSA factoring challenge. The ZCoin project's implementation (which WISPR used) improperly imported the modulus into the code. This flaw was discovered by user GOAT from the [Civitas Project](https://github.com/eastcoastcrypto/Civitas/), and reported to WISPR using the bug bounty program. The modulus is now correctly imported and WISPR's accumulators have been changed to use the new proper modulus.
+RPICoin's zerocoin implementation used the same code from the ZCoin project to import the modulus use for the zerocoin protocol. The chosen modulus is the 2048 bit RSA number created for the RSA factoring challenge. The ZCoin project's implementation (which RPICoin used) improperly imported the modulus into the code. This flaw was discovered by user GOAT from the [Civitas Project](https://github.com/eastcoastcrypto/Civitas/), and reported to RPICoin using the bug bounty program. The modulus is now correctly imported and RPICoin's accumulators have been changed to use the new proper modulus.
 
 
 *3.1.0* Change log

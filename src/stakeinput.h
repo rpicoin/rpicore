@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WISPR_STAKEINPUT_H
-#define WISPR_STAKEINPUT_H
+#ifndef RPICoin_STAKEINPUT_H
+#define RPICoin_STAKEINPUT_H
 
 class CKeyStore;
 class CWallet;
@@ -87,4 +87,4 @@ public:
 };
 
 
-#endif //WISPR_STAKEINPUT_H
+#endif //RPICoin_STAKEINPUT_H
