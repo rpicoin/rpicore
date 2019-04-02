@@ -353,15 +353,15 @@ public:
         nTargetSpacingV1 = 64;        // RPICoin Old: 1 minutes
         nTargetSpacingV2 = 1 * 60;        // RPICoin New: 1 minute
         bnProofOfWorkLimit = ~uint256(0) >> 1;
-        genesis.nTime = 1411111111;
+        genesis.nTime = 1525283445;
         genesis.nBits  = bnProofOfWorkLimit.GetCompact();
-        genesis.nNonce = 2;
+        genesis.nNonce = 1759192:;
 
         hashGenesisBlock = genesis.GetHash();
         nDefaultPort = 18004;
 //        printf("Req net\n");
 //        printf("genesis = %s\n", genesis.ToString().c_str());
-        assert(hashGenesisBlock == uint256("0302157c185ae0018bb60f0c506087be772aa2015150f994cc1a6db55e8e23bd"));
+        assert(hashGenesisBlock == uint256("0x0000d17194220e485dce46951ad042de557ceefdcdc96b1a4358847c103f9aae"));
 
         vFixedSeeds.clear(); //! Testnet mode doesn't have any fixed seeds.
         vSeeds.clear();      //! Testnet mode doesn't have any DNS seeds.
