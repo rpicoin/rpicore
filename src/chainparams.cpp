@@ -361,7 +361,7 @@ public:
         nDefaultPort = 18004;
 //        printf("Req net\n");
 //        printf("genesis = %s\n", genesis.ToString().c_str());
-        assert(hashGenesisBlock == uint256("0x0000d17194220e485dce46951ad042de557ceefdcdc96b1a4358847c103f9aae"));
+//        assert(hashGenesisBlock == uint256("0x0000d17194220e485dce46951ad042de557ceefdcdc96b1a4358847c103f9aae"));
 
         vFixedSeeds.clear(); //! Testnet mode doesn't have any fixed seeds.
         vSeeds.clear();      //! Testnet mode doesn't have any DNS seeds.
