@@ -55,8 +55,8 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
         boost::assign::map_list_of
-                (0, uint256("0x0000b712bda549469a4533c0827bd8263299cd2d13030b15e72d93a3e094e914"));
-//                (14317, uint256("0x50929653a7146de37b82b9125e55ea03aa4ae062ce3a2e3098026eea07e5bc81")) // 125.000 Coin Burn Confirmation
+                (0, uint256("0x0000b712bda549469a4533c0827bd8263299cd2d13030b15e72d93a3e094e914"))
+                (15000, uint256("ada47cca3d6fb0e9ec7b7cbb1b014255935ab02d02fa2242da2efb5157d09791")); // Block 15.000
 //                (50000, uint256("0xb177127054381243141e809bbfb2d568aeae2dd9b3c486e54f0989d4546d0d80")) // Block 50.000
 //                (75000, uint256("06f162fe22851c400c1532a6d49d7894640ea0aa292fad5f02f348480da6b20d")) // Block 75.000
 //                (100000, uint256("ed8cccfb51c901af271892966160686177a05f101bd3fd517d5b82274a8f6611")) // Block 100.000
@@ -66,8 +66,8 @@ static Checkpoints::MapCheckpoints mapCheckpoints =
 //              (250000, uint256("40ee22bd8b2cc23f83e16d19a53aa8591617772f9722c56b86d16163b2a10416")); // Block 250.000
 static const Checkpoints::CCheckpointData data = {
         &mapCheckpoints,
-        1530243664, // * UNIX timestamp of last checkpoint block (Done)
-        514630,    // * total number of transactions between genesis and last checkpoint TODO: keep using correct number
+        1526713728, // * UNIX timestamp of last checkpoint block (Done)
+        15000,    // * total number of transactions between genesis and last checkpoint TODO: keep using correct number
         //   (the tx=... number in the SetBestChain debug.log lines)
         2000        // * estimated number of transactions per day after checkpoint
 };
@@ -123,8 +123,8 @@ public:
         pchMessageStart[1] = 0x37;
         pchMessageStart[2] = 0x25;
         pchMessageStart[3] = 0x61;
-        vAlertPubKey=ParseHex("04890c0c7f2bf2304af7a7de92f3717d96b5d347e30a179cf975ab5e0152b113103598798599fecb8d735238e6dae110565d230d7ba93a076b98bd5bd5bb5f17fb");
-        nDefaultPort = 18000;
+        vAlertPubKey=ParseHex("04890c0c7f2bf2304af7a7de92f3717d96b5d347e30a179cf975ab5e0152b113103598798599fecb8d735238e6dae110565d230d7ba93a076b98bd5bd5bb5f17fb");        
+	nDefaultPort = 18000;
         bnProofOfWorkLimit = ~uint256(0) >> 16; // RPICoin starting difficulty is 1 / 2^12
         bnProofOfStakeLimit = ~uint256(0) >> 48;
         nSubsidyHalvingInterval = 0;
@@ -144,7 +144,7 @@ public:
         /** Height or Time Based Activations **/
         nLastPOWBlock = 100;
         nNewProtocolStartHeight = 450000;
-        nNewProtocolStartTime = 1539963322; //Friday, October 19, 2018 3:35:22 PM
+        nNewProtocolStartTime = 1556618400; //April 30, 2019 10:00:00 AM UTC
         nZerocoinStartHeight = nNewProtocolStartHeight;
         nZerocoinStartTime = nNewProtocolStartTime;
         /**
@@ -210,8 +210,8 @@ public:
 
         nPoolMaxTransactions = 3;
         strSporkKey = "04ac60266c909c22b95415270278b8ea90bec852922d3b2bd110cfba62fc4da20f7d5d6c7f109c9604a421c6e75e47a3c8963dcd1b9b7ca71aaeef3d410e4cc65a";
-        strObfuscationPoolDummyAddress = "WYCSnxDBqGkcruCwreLtBfpXtSMgoo5yUJ";
-        nStartMasternodePayments = nNewProtocolStartTime; // July 2, 2018
+        strObfuscationPoolDummyAddress = "RYCSnxDBqGkcruCwreLtBfpXtSMgoo5yUJ";
+        nStartMasternodePayments = nNewProtocolStartTime; // April 30, 2019
 
         /** Zerocoin */
         zerocoinModulus = "25195908475657893494027183240048398571429282126204032027777137836043662020707595556264018525880784"
@@ -262,14 +262,14 @@ public:
         nTargetTimespanV2 =  1 * 60; // RPICoin New: 1 day
         nTargetSpacingV1 = 64;  // RPICoin Old: 1 minute
         nTargetSpacingV2 = 1 * 60;  // RPICoin New: 1 minute
-        nLastPOWBlock = 450;
+        nLastPOWBlock = 100;
         nMaturity = 10;
         nMasternodeCountDrift = 4;
         nMaxMoneyOut = 120000000 * COIN;
         nNewProtocolStartHeight = 750;
-        nNewProtocolStartTime = 1537830552;
+        nNewProtocolStartTime = 1556618400;
         nZerocoinStartHeight = nNewProtocolStartHeight;
-        nZerocoinStartTime = nNewProtocolStartTime; // July 2, 2018
+        nZerocoinStartTime = nNewProtocolStartTime; // April 30, 2019
         const char* pszTimestamp = "Buying Bitcoin Is Not Investing, Claims Warren Buffett";
         genesis.SetNull();
         CMutableTransaction txNew2;
@@ -339,10 +339,10 @@ public:
     {
         networkID = CBaseChainParams::REGTEST;
         strNetworkID = "regtest";
-        pchMessageStart[0] = 0xFF;
-        pchMessageStart[1] = 0xAF;
-        pchMessageStart[2] = 0xB7;
-        pchMessageStart[3] = 0xDF;
+        pchMessageStart[0] = 0xAD;
+        pchMessageStart[1] = 0xBF;
+        pchMessageStart[2] = 0xB1;
+        pchMessageStart[3] = 0xDA;
         nSubsidyHalvingInterval = 0;
         nEnforceBlockUpgradeMajority = 750;
         nRejectBlockOutdatedMajority = 950;
@@ -353,9 +353,9 @@ public:
         nTargetSpacingV1 = 64;        // RPICoin Old: 1 minutes
         nTargetSpacingV2 = 1 * 60;        // RPICoin New: 1 minute
         bnProofOfWorkLimit = ~uint256(0) >> 1;
-        genesis.nTime = 1525283445;
+        genesis.nTime = 1411111111;
         genesis.nBits  = bnProofOfWorkLimit.GetCompact();
-        genesis.nNonce = 1759192;
+        genesis.nNonce = 2;
 
         hashGenesisBlock = genesis.GetHash();
         nDefaultPort = 18004;
