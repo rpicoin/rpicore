@@ -1,4 +1,4 @@
-PIVX Core version *3.2.1* is now available from:  <https://github.com/pivx-project/pivx/releases>
+PIVX Core version *3.2.2* is now available from:  <https://github.com/pivx-project/pivx/releases>
 
 This is a new minor version release, including various bug fixes and performance improvements.
 
@@ -8,9 +8,9 @@ Please report bugs using the issue tracker at github: <https://github.com/pivx-p
 Supplemental Update
 ==============
 
-PIVX Core v3.2.1 is a **supplemental update** to v3.2.0 containing minor bug fixes. Users are still advised to read the [v3.2.0 Release Notes](https://github.com/PIVX-Project/PIVX/blob/master/doc/release-notes/release-notes-3.2.0.md) to familiarize themselves with the major feature changes.
+PIVX Core v3.2.2 is a **supplemental update** to v3.2.0/1 containing minor bug fixes. Users are still advised to read the [v3.2.0 Release Notes](https://github.com/PIVX-Project/PIVX/blob/master/doc/release-notes/release-notes-3.2.0.md) to familiarize themselves with the major feature changes.
 
-While updating from v3.2.0 is not required, it is recommended, especially for anyone encountering the issues detailed in the Notable Changes section below.
+While updating from v3.2.0 is not required, it is highly recommended, especially for anyone encountering the issues detailed in the Notable Changes section below.
 
 How to Upgrade
 ==============
@@ -41,59 +41,37 @@ The minimum supported version of MacOS (OSX) has been moved from 10.8 Mountain L
 Bug Fixes
 ------
 
-### GUI crash when recalculating zPIV data
+### Improper rejection of valid blocks
 
-A GUI only crash when recalculating zPIV data (mints/spends/supply) has been fixed. Clients syncing via the network from a point prior to any recalculations can now do so without error again.
+A bug was discovered in the block acceptance portion of the code that resulted in rejection of otherwise valid blocks. This caused a race condition where some clients ended up on a low-difficulty chain.
 
-### macOS installer mounting
+This issue has been fixed, and no user funds were at risk.
 
-The macOS installer image (`.dmg` file) had an issue with it's stylesheet that caused an error after mounting the image. Affected macOS users will now see the expected behavior of a finder window appearing after mounting, allowing drag-n-drop installation of the PIVX-Qt.app
-
-### macOS "Pink Pinstripes"
-
-A GUI wallet stylesheet issue was causing "pink pinstripes" to display in many of the wallet's views, this has now been resolved.
-
-### Incorrect seed warning in zPIV control dialog
-
-Because of the way the zPIV master seed is handled, locked wallets were showing a status message in the zPIV control dialog window which mentioned that the master seed was not the same used to mint the denom. This message was not entirely correct, and a more appropriate message is now displayed for locked wallets.
-
-### Invalid chain state on shutdown
-
-An issue in how the wallet shutdown procedure is carried out was sometimes leading to marking an incoming block as invalid when it in fact was valid. This would cause the client to seem "stuck" when starting it again. This issue is now resolved.
 
 Performance Improvements
 ------
 
 ### New checkpoints
 
-More recent checkpoints have been added for both mainnet and testnet. These help alleviate some of the load when (re-)syncing from the network.
+More recent checkpoints have been added for mainnet. These help alleviate some of the load when (re-)syncing from the network.
 
-*3.2.0* Change log
+*3.2.2* Change log
 ==============
 
 Detailed release notes follow. This overview includes changes that affect behavior, not code moves, refactors and string updates. For convenience in locating the code changes and accompanying discussion, both the pull request and git merge commit are mentioned.
 
-### Build System
- - #858 `a2c801205e` [Build] [macOS] Fix macOS dmg issue (10.12+) (Jonas Schnelli)
- - #866 `9cd6016f3a` [Build] Update debian contrib files (Fuzzbawls)
-
 ### P2P Protocol and Network Code
- - #861 `909ed11702` [Net] Add new checkpoints for mainnet/testnet (Fuzzbawls)
+ - #880 `a890dc97cd` [NET] Valid forked blocks rejected fix. (furszy)
+ - #884 `013676df00` [Net] Add additional checkpoints (Fuzzbawls)
+ - #887 `ec7993eac8` [Net] Fix incorrect last checkpoint timestamp (Fuzzbawls)
 
-### GUI
- - #860 `2cefebd1f7` [Qt] Prevent double deletion of progress dialog (Fuzzbawls)
- - #852 `37e88b892f` [QT] Fix a display bug about zPIV mints (warrows)
- - #863 `89b84a4f5a` [Qt] Stop using a solid white image as a border image (Fuzzbawls)
 
-### Miscellaneous
- - #865 `ede1af4e10` [Main] Don't return an invalid state when shutting down the wallet (Fuzzbawls)
- - #868 `a1080d8658` [Performances] Decrease the number of wasted CPU cycles (warrows)
- 
+
 ## Credits
 
 Thanks to everyone who directly contributed to this release:
 
 Fuzzbawls
-Warrows
+Furszy
 
-As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/pivx-project-translations/), the QA team during Testing and the Node hosts supporting our Testnet.
+As well as everyone that helped with reviews and translating on [Transifex](https://www.transifex.com/projects/p/pivx-project-translations/), the QA team during Testing and the Node hosts supporting our Testnet.
