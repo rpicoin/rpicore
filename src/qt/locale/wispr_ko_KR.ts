@@ -433,8 +433,8 @@
         <translation>겨래내역 보기</translation>
     </message>
     <message>
-        <source>Privacy Actions for zPIV</source>
-        <translation>zPIV 생성 및 관리</translation>
+        <source>Privacy Actions for zWSP</source>
+        <translation>zWSP 생성 및 관리</translation>
     </message>
     <message>
         <source>E&amp;xit</source>
@@ -1895,28 +1895,28 @@ https://www.transifex.com/pivx-project/pivx-project-translations</translation>
         <translation>&amp;UPnp를 사용하여 포트 매핑</translation>
     </message>
     <message>
-        <source>Enable automatic minting of PIV units to zPIV</source>
-        <translation>보상받은 PIV를 zPIV로 자동변환 활성화</translation>
+        <source>Enable automatic minting of PIV units to zWSP</source>
+        <translation>보상받은 PIV를 zWSP로 자동변환 활성화</translation>
     </message>
     <message>
-        <source>Enable zPIV Automint</source>
-        <translation>zPIV 자동생성 활성화</translation>
+        <source>Enable zWSP Automint</source>
+        <translation>zWSP 자동생성 활성화</translation>
     </message>
     <message>
-        <source>Percentage of incoming PIV which get automatically converted to zPIV via Zerocoin Protocol (min: 10%)</source>
-        <translation>PIV수신시 자동변환 zPIV 비율 (최소값:10%)</translation>
+        <source>Percentage of incoming PIV which get automatically converted to zWSP via Zerocoin Protocol (min: 10%)</source>
+        <translation>PIV수신시 자동변환 zWSP 비율 (최소값:10%)</translation>
     </message>
     <message>
-        <source>Percentage of autominted zPIV</source>
-        <translation>자동 변환되는 zPIV 비율</translation>
+        <source>Percentage of autominted zWSP</source>
+        <translation>자동 변환되는 zWSP 비율</translation>
     </message>
     <message>
         <source>Wait with automatic conversion to Zerocoin until enough PIV for this denomination is available</source>
         <translation>이 디노미네이션의 PIV가 충분해질 때까지 Zerocoin으로 자동전환은 보류됩니다.</translation>
     </message>
     <message>
-        <source>Preferred Automint zPIV Denomination</source>
-        <translation>선호하는 자동생성 zPIV 디노미네이션 </translation>
+        <source>Preferred Automint zWSP Denomination</source>
+        <translation>선호하는 자동생성 zWSP 디노미네이션 </translation>
     </message>
     <message>
         <source>Stake split threshold:</source>
@@ -2106,14 +2106,14 @@ https://www.transifex.com/pivx-project/pivx-project-translations</translation>
         <translation>현재 PIVX 잔액, 미확정, 생성중인 코인 포함</translation>
     </message>
     <message>
-        <source>zPIV Balance</source>
-        <translation>zPIV 잔액</translation>
+        <source>zWSP Balance</source>
+        <translation>zWSP 잔액</translation>
     </message>
     <message>
         <source>Mature: more than 20 confirmation and more than 1 mint of the same denomination after it was minted.
-These zPIV are spendable.</source>
+These zWSP are spendable.</source>
         <translation>성숙한 : 그것이 발행 된 후 같은 명칭의 20 개 이상의 확인 및 1 개 민트.
-이 zPIV는 쓸만합니다.</translation>
+이 zWSP는 쓸만합니다.</translation>
     </message>
     <message>
         <source>Unconfirmed: less than 20 confirmations
@@ -2166,8 +2166,8 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
         <translation>출금 가능 액수:</translation>
     </message>
     <message>
-        <source>Locked PIV or Masternode collaterals. These are excluded from zPIV minting.</source>
-        <translation>잠금 PIV 또는 Masternode collaterals. 이들은 zPIV minting에서 제외됩니다.</translation>
+        <source>Locked PIV or Masternode collaterals. These are excluded from zWSP minting.</source>
+        <translation>잠금 PIV 또는 Masternode collaterals. 이들은 zWSP minting에서 제외됩니다.</translation>
     </message>
     <message>
         <source>Locked:</source>
@@ -2178,8 +2178,8 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
         <translation>미승인:</translation>
     </message>
     <message>
-        <source>Your current zPIV balance, unconfirmed and immature zPIV included.</source>
-        <translation>zPIV 잔액, 미확정, 생성중인 zPIV 포함.</translation>
+        <source>Your current zWSP balance, unconfirmed and immature zWSP included.</source>
+        <translation>zWSP 잔액, 미확정, 생성중인 zWSP 포함.</translation>
     </message>
     <message>
         <source>Recent transactions</source>
@@ -2190,10 +2190,10 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
         <translation>동기화되지 않음</translation>
     </message>
     <message>
-        <source>Current percentage of zPIV.
+        <source>Current percentage of zWSP.
 If AutoMint is enabled this percentage will settle around the configured AutoMint percentage (default = 10%).
 </source>
-        <translation>현재 zPIV의 백분율 .
+        <translation>현재 zWSP의 백분율 .
 자동 저장 기능이 활성화 된 경우이 비율은 구성된 자동 저장 비율 (기본값 = 10 %)을 기준으로 정해집니다.</translation>
     </message>
     <message>
@@ -2336,8 +2336,8 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in pivx.conf<
         <translation>0</translation>
     </message>
     <message>
-        <source>zPIV</source>
-        <translation>zPIV</translation>
+        <source>zWSP</source>
+        <translation>zWSP</translation>
     </message>
     <message>
         <source>Available for minting are coins which are confirmed and not locked or Masternode collaterals.</source>
@@ -2388,16 +2388,16 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in pivx.conf<
         <translation>프라이버시</translation>
     </message>
     <message>
-        <source>Enter an amount of Piv to convert to zPIV</source>
-        <translation>zPIV로 변환할 PIV 수량을 입력하세요.</translation>
+        <source>Enter an amount of Piv to convert to zWSP</source>
+        <translation>zWSP로 변환할 PIV 수량을 입력하세요.</translation>
     </message>
     <message>
-        <source>zPIV Control</source>
-        <translation>zPIV 컨트롤</translation>
+        <source>zWSP Control</source>
+        <translation>zWSP 컨트롤</translation>
     </message>
     <message>
-        <source>zPIV Selected:</source>
-        <translation>선택된 zPIV :</translation>
+        <source>zWSP Selected:</source>
+        <translation>선택된 zWSP :</translation>
     </message>
     <message>
         <source>Quantity Selected:</source>
@@ -2412,24 +2412,24 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in pivx.conf<
         <translation>제로코인 보내기</translation>
     </message>
     <message>
-        <source>Available (mature and spendable) zPIV for spending</source>
-        <translation>전송 가능한 zPIV</translation>
+        <source>Available (mature and spendable) zWSP for spending</source>
+        <translation>전송 가능한 zWSP</translation>
     </message>
     <message>
         <source>Available Balance:</source>
         <translation>가능한 잔액:</translation>
     </message>
     <message>
-        <source>Available (mature and spendable) zPIV for spending
+        <source>Available (mature and spendable) zWSP for spending
 
-zPIV are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
-        <translation>지출에 사용할 수있는 성숙한 소비재 zPIV
+zWSP are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
+        <translation>지출에 사용할 수있는 성숙한 소비재 zWSP
 
-zPIV는 성명서가 20 개 이상 있고 명칭이 동일하지 않은 2 개 이상의 민트가 작성되었을 때 성숙합니다.</translation>
+zWSP는 성명서가 20 개 이상 있고 명칭이 동일하지 않은 2 개 이상의 민트가 작성되었을 때 성숙합니다.</translation>
     </message>
     <message>
-        <source>0 zPIV</source>
-        <translation>0 zPIV</translation>
+        <source>0 zWSP</source>
+        <translation>0 zWSP</translation>
     </message>
     <message>
         <source>Pay &amp;To:</source>
@@ -2488,7 +2488,7 @@ zPIV는 성명서가 20 개 이상 있고 명칭이 동일하지 않은 2 개 �
         <translation>제로코인 상태 :</translation>
     </message>
     <message>
-        <source>Total Balance including unconfirmed and immature zPIV</source>
+        <source>Total Balance including unconfirmed and immature zWSP</source>
         <translation>승인중이거나, 생성중인 제로코인도 포함된 전체 잔액입니다.</translation>
     </message>
     <message>
@@ -2510,24 +2510,24 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
 미성숙 : 확인되었지만 발행 된 후 같은 종파 1 개 미만</translation>
     </message>
     <message>
-        <source>Show the current status of automatic zPIV minting.
+        <source>Show the current status of automatic zWSP minting.
 
 To change the status (restart required):
 - enable: add 'enablezeromint=1' to pivx.conf
 - disable: add 'enablezeromint=0' to pivx.conf
 
 To change the percentage (no restart required):
-- menu Settings-&gt;Options-&gt;Percentage of autominted zPIV
+- menu Settings-&gt;Options-&gt;Percentage of autominted zWSP
 
 </source>
-        <translation>현재 zPIV 자동 생성 상태를 보여줍니다.
+        <translation>현재 zWSP 자동 생성 상태를 보여줍니다.
 
 자동생성 상태를 변경하시려면 (지갑 재시작 필요함):
 - 활성화: 'enablezeromint=1' 를 pivx.conf 파일에 추가
 - 비활성화: 'enablezeromint=0' 를 pivx.conf 파일에 추가
 
 자동 생성 비율 변경하시려면 (지갑 재시작 필요없음):
-- 메뉴 설정-&gt;옵션-&gt;zPIV 자동생성 비율
+- 메뉴 설정-&gt;옵션-&gt;zWSP 자동생성 비율
 
 </translation>
     </message>
@@ -2716,12 +2716,12 @@ Maximum allowed: </source>
 가능한 최대값 :</translation>
     </message>
     <message>
-        <source>zPIV Spend #: </source>
-        <translation>zPIV 전송 # :</translation>
+        <source>zWSP Spend #: </source>
+        <translation>zWSP 전송 # :</translation>
     </message>
     <message>
-        <source>zPIV Mint</source>
-        <translation>zPIV 생성</translation>
+        <source>zWSP Mint</source>
+        <translation>zWSP 생성</translation>
     </message>
     <message>
         <source> &lt;b&gt;enabled&lt;/b&gt;.</source>
@@ -2736,12 +2736,12 @@ Maximum allowed: </source>
         <translation> 구성된 목표 비율 : &lt;b&gt;</translation>
     </message>
     <message>
-        <source>zPIV is currently disabled due to maintenance.</source>
-        <translation>zPIV는 현재 점검중이라 사용하실수 없습니다.</translation>
+        <source>zWSP is currently disabled due to maintenance.</source>
+        <translation>zWSP는 현재 점검중이라 사용하실수 없습니다.</translation>
     </message>
     <message>
-        <source>zPIV is currently undergoing maintenance.</source>
-        <translation>zPIV는 현재 점검중입니다.</translation>
+        <source>zWSP is currently undergoing maintenance.</source>
+        <translation>zWSP는 현재 점검중입니다.</translation>
     </message>
     <message>
         <source>Denom. with value &lt;b&gt;1&lt;/b&gt;:</source>
@@ -2828,8 +2828,8 @@ Maximum allowed: </source>
         <translation>성공적으로 발행됨</translation>
     </message>
     <message>
-        <source> zPIV in </source>
-        <translation> zPIV in </translation>
+        <source> zWSP in </source>
+        <translation> zWSP in </translation>
     </message>
     <message>
         <source> sec. Used denominations:
@@ -3221,8 +3221,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>맞춤 백업 경로 :</translation>
     </message>
     <message>
-        <source>Custom zPIV Backup Path:</source>
-        <translation>맞춤 zPIV 백업 경로 :</translation>
+        <source>Custom zWSP Backup Path:</source>
+        <translation>맞춤 zWSP 백업 경로 :</translation>
     </message>
     <message>
         <source>Custom Backups Threshold:</source>
@@ -4431,8 +4431,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>PIV stake</translation>
     </message>
     <message>
-        <source>zPIV Stake</source>
-        <translation>zPIV stake</translation>
+        <source>zWSP Stake</source>
+        <translation>zWSP stake</translation>
     </message>
     <message>
         <source>Obfuscation Denominate</source>
@@ -4451,32 +4451,32 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>난독화 표시 만들기</translation>
     </message>
     <message>
-        <source>Converted PIV to zPIV</source>
-        <translation>PIV를 zPIV로 변환</translation>
+        <source>Converted PIV to zWSP</source>
+        <translation>PIV를 zWSP로 변환</translation>
     </message>
     <message>
-        <source>Spent zPIV</source>
-        <translation>zPIV 사용</translation>
+        <source>Spent zWSP</source>
+        <translation>zWSP 사용</translation>
     </message>
     <message>
-        <source>Received PIV from zPIV</source>
-        <translation>zPIV를 PIV로 받음</translation>
+        <source>Received PIV from zWSP</source>
+        <translation>zWSP를 PIV로 받음</translation>
     </message>
     <message>
-        <source>Minted Change as zPIV from zPIV Spend</source>
-        <translation>zPIV 전송후 남은 zPIV로 잔돈 생성</translation>
+        <source>Minted Change as zWSP from zWSP Spend</source>
+        <translation>zWSP 전송후 남은 zWSP로 잔돈 생성</translation>
     </message>
     <message>
-        <source>Converted zPIV to PIV</source>
-        <translation>zPIV를 PIV로 변환</translation>
+        <source>Converted zWSP to PIV</source>
+        <translation>zWSP를 PIV로 변환</translation>
     </message>
     <message>
-        <source>Anonymous (zPIV Transaction)</source>
-        <translation>Anonymous (zPIV 거래)</translation>
+        <source>Anonymous (zWSP Transaction)</source>
+        <translation>Anonymous (zWSP 거래)</translation>
     </message>
     <message>
-        <source>Anonymous (zPIV Stake)</source>
-        <translation>Anonymous (zPIV 스테이킹)</translation>
+        <source>Anonymous (zWSP Stake)</source>
+        <translation>Anonymous (zWSP 스테이킹)</translation>
     </message>
     <message>
         <source>Sent to</source>
@@ -4686,12 +4686,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>내보내기 성공</translation>
     </message>
     <message>
-        <source>Received PIV from zPIV</source>
-        <translation>zPIV를 PIV로 받음</translation>
+        <source>Received PIV from zWSP</source>
+        <translation>zWSP를 PIV로 받음</translation>
     </message>
     <message>
-        <source>Zerocoin Spend, Change in zPIV</source>
-        <translation>제로코인 전송, 잔돈은 zPIV</translation>
+        <source>Zerocoin Spend, Change in zWSP</source>
+        <translation>제로코인 전송, 잔돈은 zWSP</translation>
     </message>
     <message>
         <source>The transaction history was successfully saved to %1.</source>
@@ -4759,10 +4759,10 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
 </context>
 <context>
-    <name>ZPivControlDialog</name>
+    <name>ZWspControlDialog</name>
     <message>
-        <source>Select zPIV to Spend</source>
-        <translation>사용할 zPIV 선택</translation>
+        <source>Select zWSP to Spend</source>
+        <translation>사용할 zWSP 선택</translation>
     </message>
     <message>
         <source>Quantity</source>
@@ -4773,8 +4773,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>0</translation>
     </message>
     <message>
-        <source>zPIV</source>
-        <translation>zPIV</translation>
+        <source>zWSP</source>
+        <translation>zWSP</translation>
     </message>
     <message>
         <source>Select/Deselect All</source>
@@ -4836,16 +4836,16 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>MIT 소프트웨어 라이센스에 따라 배포, 첨부 파일 COPYING 또는 &lt;http://www.opensource.org/licenses/mit-license.php&gt; 를 참조하십시오.</translation>
     </message>
     <message>
-        <source>Enable automatic wallet backups triggered after each zPIV minting (0-1, default: %u)</source>
-        <translation>Enable automatic wallet backups triggered after each zPIV minting (0-1, default: %u)</translation>
+        <source>Enable automatic wallet backups triggered after each zWSP minting (0-1, default: %u)</source>
+        <translation>Enable automatic wallet backups triggered after each zWSP minting (0-1, default: %u)</translation>
     </message>
     <message>
         <source>Enable or disable staking functionality for PIV inputs (0-1, default: %u)</source>
         <translation>Enable or disable staking functionality for PIV inputs (0-1, default: %u)</translation>
     </message>
     <message>
-        <source>Enable or disable staking functionality for zPIV inputs (0-1, default: %u)</source>
-        <translation>Enable or disable staking functionality for zPIV inputs (0-1, default: %u)</translation>
+        <source>Enable or disable staking functionality for zWSP inputs (0-1, default: %u)</source>
+        <translation>Enable or disable staking functionality for zWSP inputs (0-1, default: %u)</translation>
     </message>
     <message>
         <source>Enable spork administration functionality with the appropriate private key.</source>
@@ -5445,11 +5445,11 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <source>Percentage of automatically minted Zerocoin  (1-100, default: %u)</source>
-        <translation>자동생성 zPIV 비율  (1-100, default: %u)</translation>
+        <translation>자동생성 zWSP 비율  (1-100, default: %u)</translation>
     </message>
     <message>
-        <source>Reindex the PIV and zPIV money supply statistics</source>
-        <translation>PIV 및 zPIV 공급량 다시 색인</translation>
+        <source>Reindex the PIV and zWSP money supply statistics</source>
+        <translation>PIV 및 zWSP 공급량 다시 색인</translation>
     </message>
     <message>
         <source>Reindexing zerocoin database...</source>
@@ -5524,8 +5524,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>자동생성 제로코인 선호 디노미네이션 (1/5/10/50/100/500/1000/5000) 0사용안됨, 기본값 : %u)</translation>
     </message>
     <message>
-        <source>Specify custom backup path to add a copy of any automatic zPIV backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup. If backuppath is set as well, 4 backups will happen</source>
-        <translation>Specify custom backup path to add a copy of any automatic zPIV backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup. If backuppath is set as well, 4 backups will happen</translation>
+        <source>Specify custom backup path to add a copy of any automatic zWSP backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup. If backuppath is set as well, 4 backups will happen</source>
+        <translation>Specify custom backup path to add a copy of any automatic zWSP backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup. If backuppath is set as well, 4 backups will happen</translation>
     </message>
     <message>
         <source>Specify custom backup path to add a copy of any wallet backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup.</source>
@@ -6020,8 +6020,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>sporks와 동기화 중입니다...</translation>
     </message>
     <message>
-        <source>Syncing zPIV wallet...</source>
-        <translation>zPIV 지갑 동기화중...</translation>
+        <source>Syncing zWSP wallet...</source>
+        <translation>zWSP 지갑 동기화중...</translation>
     </message>
     <message>
         <source>The coin spend has been used</source>
@@ -6160,8 +6160,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>JSON-RPC 연결 사용자 이름</translation>
     </message>
     <message>
-        <source>Value is below the smallest available denomination (= 1) of zPIV</source>
-        <translation>Value is below the smallest available denomination (= 1) of zPIV</translation>
+        <source>Value is below the smallest available denomination (= 1) of zWSP</source>
+        <translation>Value is below the smallest available denomination (= 1) of zWSP</translation>
     </message>
     <message>
         <source>Value more than Obfuscation pool maximum allows.</source>
@@ -6217,7 +6217,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <source>You don't have enough Zerocoins in your wallet</source>
-        <translation>지갑에 zPIV 가 부족합니다.</translation>
+        <translation>지갑에 zWSP 가 부족합니다.</translation>
     </message>
     <message>
         <source>You need to rebuild the database using -reindex to change -txindex</source>

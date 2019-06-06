@@ -127,8 +127,7 @@ public:
     int Zerocoin_RequiredStakeDepth() const { return consensus.nZerocoinRequiredStakeDepth; }
 
     /** Height or Time Based Activations **/
-    int ModifierUpgradeBlock() const { return nModifierUpdateBlock; }
-    int LAST_POW_BLOCK() const { return nLastPOWBlock; }
+//    int ModifierUpgradeBlock() const { return nModifierUpdateBlock; }
     int Zerocoin_StartHeight() const { return nZerocoinStartHeight; }
     int Zerocoin_Block_EnforceSerialRange() const { return nBlockEnforceSerialRange; }
     int Zerocoin_Block_RecalculateAccumulators() const { return nBlockRecalculateAccumulators; }
@@ -171,7 +170,6 @@ protected:
     bool fTestnetToBeDeprecatedFieldRPC;
     bool fHeadersFirstSyncingActive;
 
-    int nBlockDoubleAccumulated;
 
     // fake serial attack
     int nFakeSerialBlockheightEnd = 0;
@@ -203,10 +201,6 @@ protected:
     int nBlockEnforceInvalidUTXO;
     int nBlockZerocoinV2;
     int nBlockDoubleAccumulated;
-
-    // fake serial attack
-    int nFakeSerialBlockheightEnd = 0;
-    CAmount nSupplyBeforeFakeSerial = 0;
 };
 
 /**

@@ -111,7 +111,7 @@ bool CzWSPTracker::GetMetaFromStakeHash(const uint256& hashStake, CMintMeta& met
     return false;
 }
 
-CoinWitnessData* CzPIVTracker::GetSpendCache(const uint256& hashStake)
+CoinWitnessData* CzWSPTracker::GetSpendCache(const uint256& hashStake)
 {
     AssertLockHeld(cs_spendcache);
     if (!mapStakeCache.count(hashStake)) {
@@ -123,7 +123,7 @@ CoinWitnessData* CzPIVTracker::GetSpendCache(const uint256& hashStake)
     return mapStakeCache.at(hashStake).get();
 }
 
-bool CzPIVTracker::ClearSpendCache()
+bool CzWSPTracker::ClearSpendCache()
 {
     AssertLockHeld(cs_spendcache);
     if (!mapStakeCache.empty()) {

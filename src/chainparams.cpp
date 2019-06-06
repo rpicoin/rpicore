@@ -403,7 +403,7 @@ public:
         fDefaultCheckMemPool = true;
         fRequireStandard = false;
         fMineBlocksOnDemand = true;
-        fSkipProofOfWorkCheck = true;
+        consensus.fSkipProofOfWorkCheck = true;
         fTestnetToBeDeprecatedFieldRPC = false;
     }
     const Checkpoints::CCheckpointData& Checkpoints() const

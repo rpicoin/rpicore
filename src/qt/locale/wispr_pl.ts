@@ -434,8 +434,8 @@ Użyj hasła składającego się z dziesięciu lub więcej losowych znaków lub 
         <translation>Przeglądaj historię transakcji</translation>
     </message>
     <message>
-        <source>Privacy Actions for zPIV</source>
-        <translation>Prywatne Akcje zPIV</translation>
+        <source>Privacy Actions for zWSP</source>
+        <translation>Prywatne Akcje zWSP</translation>
     </message>
     <message>
         <source>&amp;Governance</source>
@@ -2034,36 +2034,36 @@ https://www.transifex.com/pivx-project/pivx-project-translations </translation>
         <translation>Mapuj port za pomocą &amp;UPnP</translation>
     </message>
     <message>
-        <source>Enable automatic minting of PIV units to zPIV</source>
-        <translation>Włącz automatyczny minting PIV do zPIV</translation>
+        <source>Enable automatic minting of PIV units to zWSP</source>
+        <translation>Włącz automatyczny minting PIV do zWSP</translation>
     </message>
     <message>
-        <source>Enable zPIV Automint</source>
-        <translation>Włącz zPIV Automint</translation>
+        <source>Enable zWSP Automint</source>
+        <translation>Włącz zWSP Automint</translation>
     </message>
     <message>
-        <source>Enable automatic zPIV minting from specific addresses</source>
-        <translation>Włącz automatyczne wybijanie zPIV-ów z określonych adresów</translation>
+        <source>Enable automatic zWSP minting from specific addresses</source>
+        <translation>Włącz automatyczne wybijanie zWSP-ów z określonych adresów</translation>
     </message>
     <message>
         <source>Enable Automint Addresses</source>
         <translation>Włącz adresy Automint</translation>
     </message>
     <message>
-        <source>Percentage of incoming PIV which get automatically converted to zPIV via Zerocoin Protocol (min: 10%)</source>
-        <translation>Procent PIV, które są automatycznie konwertowane na zPIV za pomocą protokołu Zerocoin (min: 10%)</translation>
+        <source>Percentage of incoming PIV which get automatically converted to zWSP via Zerocoin Protocol (min: 10%)</source>
+        <translation>Procent PIV, które są automatycznie konwertowane na zWSP za pomocą protokołu Zerocoin (min: 10%)</translation>
     </message>
     <message>
-        <source>Percentage of autominted zPIV</source>
-        <translation>Procent automint zPIV</translation>
+        <source>Percentage of autominted zWSP</source>
+        <translation>Procent automint zWSP</translation>
     </message>
     <message>
         <source>Wait with automatic conversion to Zerocoin until enough PIV for this denomination is available</source>
         <translation>Zaczekaj z automatyczną konwersją na Zerocoin, aż będzie dostępna wystarczająca wartość PIV dla tego nominału</translation>
     </message>
     <message>
-        <source>Preferred Automint zPIV Denomination</source>
-        <translation>Preferowane nominały Automint zPIV</translation>
+        <source>Preferred Automint zWSP Denomination</source>
+        <translation>Preferowane nominały Automint zWSP</translation>
     </message>
     <message>
         <source>Stake split threshold:</source>
@@ -2261,14 +2261,14 @@ https://www.transifex.com/pivx-project/pivx-project-translations </translation>
         <translation>Twoje bieżące saldo PIVX, niepotwierdzone transakcje zostały uwzględnione</translation>
     </message>
     <message>
-        <source>zPIV Balance</source>
-        <translation>zPIV Saldo</translation>
+        <source>zWSP Balance</source>
+        <translation>zWSP Saldo</translation>
     </message>
     <message>
         <source>Mature: more than 20 confirmation and more than 1 mint of the same denomination after it was minted.
-These zPIV are spendable.</source>
+These zWSP are spendable.</source>
         <translation>Dojrzałe: ponad 20 potwierdzeń i więcej niż 1 mint o tym samym nominale po jej wybiciu.
-Te zPIV można wydać</translation>
+Te zWSP można wydać</translation>
     </message>
     <message>
         <source>Unconfirmed: less than 20 confirmations
@@ -2321,8 +2321,8 @@ Niedojrzały: potwierdzony, ale mniej niż 1 mint o tym samym nominale po wybici
         <translation>Możliwy do wysłania:</translation>
     </message>
     <message>
-        <source>Locked PIV or Masternode collaterals. These are excluded from zPIV minting.</source>
-        <translation>Zablokowane PIV lub Masternode. Są one wyłączone zPIV minting</translation>
+        <source>Locked PIV or Masternode collaterals. These are excluded from zWSP minting.</source>
+        <translation>Zablokowane PIV lub Masternode. Są one wyłączone zWSP minting</translation>
     </message>
     <message>
         <source>Locked:</source>
@@ -2333,8 +2333,8 @@ Niedojrzały: potwierdzony, ale mniej niż 1 mint o tym samym nominale po wybici
         <translation>Niepotwierdzone:</translation>
     </message>
     <message>
-        <source>Your current zPIV balance, unconfirmed and immature zPIV included.</source>
-        <translation>Twoje obecne saldo zPIV, niepotwierdzone i niedojrzałe zPIV włącznie.</translation>
+        <source>Your current zWSP balance, unconfirmed and immature zWSP included.</source>
+        <translation>Twoje obecne saldo zWSP, niepotwierdzone i niedojrzałe zWSP włącznie.</translation>
     </message>
     <message>
         <source>Recent transactions</source>
@@ -2345,10 +2345,10 @@ Niedojrzały: potwierdzony, ale mniej niż 1 mint o tym samym nominale po wybici
         <translation>Brak synchronizacji</translation>
     </message>
     <message>
-        <source>Current percentage of zPIV.
+        <source>Current percentage of zWSP.
 If AutoMint is enabled this percentage will settle around the configured AutoMint percentage (default = 10%).
 </source>
-        <translation>Aktualny procent zPIV.
+        <translation>Aktualny procent zWSP.
 Jeśli włączona jest funkcja AutoMint, procent ten ustabilizuje się wokół skonfigurowanej wartości AutoMint (domyślnie = 10%).
 </translation>
     </message>
@@ -2492,8 +2492,8 @@ Aby włączyć AutoMint zmień "enablezeromint = 0" na "enablezeromint = 1" w pl
         <translation>0</translation>
     </message>
     <message>
-        <source>zPIV</source>
-        <translation>zPIV</translation>
+        <source>zWSP</source>
+        <translation>zWSP</translation>
     </message>
     <message>
         <source>Available for minting are coins which are confirmed and not locked or Masternode collaterals.</source>
@@ -2544,16 +2544,16 @@ Aby włączyć AutoMint zmień "enablezeromint = 0" na "enablezeromint = 1" w pl
         <translation>PRYWATNOŚĆ</translation>
     </message>
     <message>
-        <source>Enter an amount of Piv to convert to zPIV</source>
-        <translation>Wprowadź ilość Piv, aby przekonwertować na zPIV</translation>
+        <source>Enter an amount of Piv to convert to zWSP</source>
+        <translation>Wprowadź ilość Piv, aby przekonwertować na zWSP</translation>
     </message>
     <message>
-        <source>zPIV Control</source>
-        <translation>Kontrola zPIV</translation>
+        <source>zWSP Control</source>
+        <translation>Kontrola zWSP</translation>
     </message>
     <message>
-        <source>zPIV Selected:</source>
-        <translation>Wybrano zPIV:</translation>
+        <source>zWSP Selected:</source>
+        <translation>Wybrano zWSP:</translation>
     </message>
     <message>
         <source>Quantity Selected:</source>
@@ -2568,24 +2568,24 @@ Aby włączyć AutoMint zmień "enablezeromint = 0" na "enablezeromint = 1" w pl
         <translation>Wydaj Zerocoin</translation>
     </message>
     <message>
-        <source>Available (mature and spendable) zPIV for spending</source>
-        <translation>Dostępne (starsze i dostępne) zPIV do wydania</translation>
+        <source>Available (mature and spendable) zWSP for spending</source>
+        <translation>Dostępne (starsze i dostępne) zWSP do wydania</translation>
     </message>
     <message>
         <source>Available Balance:</source>
         <translation>Dostępne saldo:</translation>
     </message>
     <message>
-        <source>Available (mature and spendable) zPIV for spending
+        <source>Available (mature and spendable) zWSP for spending
 
-zPIV are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
-        <translation>Dostępne (starsze i dostępne) zPIV do wydania
+zWSP are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
+        <translation>Dostępne (starsze i dostępne) zWSP do wydania
 
-zPIV są dojrzałe, gdy mają więcej niż 20 potwierdzeń I więcej niż 2 mints tego samego nominału które po nich zostały wybite</translation>
+zWSP są dojrzałe, gdy mają więcej niż 20 potwierdzeń I więcej niż 2 mints tego samego nominału które po nich zostały wybite</translation>
     </message>
     <message>
-        <source>0 zPIV</source>
-        <translation>0 zPIV</translation>
+        <source>0 zWSP</source>
+        <translation>0 zWSP</translation>
     </message>
     <message>
         <source>Pay &amp;To:</source>
@@ -2644,8 +2644,8 @@ zPIV są dojrzałe, gdy mają więcej niż 20 potwierdzeń I więcej niż 2 mint
         <translation>Zerocoin Stats:</translation>
     </message>
     <message>
-        <source>Total Balance including unconfirmed and immature zPIV</source>
-        <translation>Łączne saldo razem z niepotwierdzonym i niedojrzałym zPIV</translation>
+        <source>Total Balance including unconfirmed and immature zWSP</source>
+        <translation>Łączne saldo razem z niepotwierdzonym i niedojrzałym zWSP</translation>
     </message>
     <message>
         <source>Total Zerocoin  Balance:</source>
@@ -2666,24 +2666,24 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
 Niedojrzały: potwierdzony, ale mniej niż 1 mint o tym samym nominale po wybiciu</translation>
     </message>
     <message>
-        <source>Show the current status of automatic zPIV minting.
+        <source>Show the current status of automatic zWSP minting.
 
 To change the status (restart required):
 - enable: add 'enablezeromint=1' to pivx.conf
 - disable: add 'enablezeromint=0' to pivx.conf
 
 To change the percentage (no restart required):
-- menu Settings-&gt;Options-&gt;Percentage of autominted zPIV
+- menu Settings-&gt;Options-&gt;Percentage of autominted zWSP
 
 </source>
-        <translation>Pokaż aktualny status automatycznego mint zPIV.
+        <translation>Pokaż aktualny status automatycznego mint zWSP.
 
 Aby zmienić status (wymagany restart):
 - włącz: dodaj "enablezeromint = 1" do pliku pivx.conf
 - wyłącz: dodaj "enablezeromint = 0" do pliku pivx.conf
 
 Aby zmienić procent (bez ponownego uruchamiania):
-- menu Ustawienia-&gt; Opcje-&gt; Procent autominted zPIV
+- menu Ustawienia-&gt; Opcje-&gt; Procent autominted zWSP
 
 </translation>
     </message>
@@ -2732,8 +2732,8 @@ Aby zmienić procent (bez ponownego uruchamiania):
         <translation>0 x</translation>
     </message>
     <message>
-        <source>Show zPIV denominations list</source>
-        <translation> Pokaż listę jednostek zPIV</translation>
+        <source>Show zWSP denominations list</source>
+        <translation> Pokaż listę jednostek zWSP</translation>
     </message>
     <message>
         <source>Show Denominations</source>
@@ -2884,12 +2884,12 @@ Maximum allowed: </source>
 Maksymalna dozwolona:</translation>
     </message>
     <message>
-        <source>zPIV Spend #: </source>
-        <translation>Wydaj zPIV #:</translation>
+        <source>zWSP Spend #: </source>
+        <translation>Wydaj zWSP #:</translation>
     </message>
     <message>
-        <source>zPIV Mint</source>
-        <translation>zPIV Mint</translation>
+        <source>zWSP Mint</source>
+        <translation>zWSP Mint</translation>
     </message>
     <message>
         <source> &lt;b&gt;enabled&lt;/b&gt;.</source>
@@ -2904,12 +2904,12 @@ Maksymalna dozwolona:</translation>
         <translation>Skonfigurowana wartość procentowa:&lt;b&gt;</translation>
     </message>
     <message>
-        <source>zPIV is currently disabled due to maintenance.</source>
-        <translation>zPIV jest obecnie wyłączony z powodu konserwacji.</translation>
+        <source>zWSP is currently disabled due to maintenance.</source>
+        <translation>zWSP jest obecnie wyłączony z powodu konserwacji.</translation>
     </message>
     <message>
-        <source>zPIV is currently undergoing maintenance.</source>
-        <translation>zPIV jest obecnie w trakcie konserwacji.</translation>
+        <source>zWSP is currently undergoing maintenance.</source>
+        <translation>zWSP jest obecnie w trakcie konserwacji.</translation>
     </message>
     <message>
         <source>Denom. with value &lt;b&gt;1&lt;/b&gt;:</source>
@@ -2996,8 +2996,8 @@ Maksymalna dozwolona:</translation>
         <translation>Pomyślnie minted -wybite-</translation>
     </message>
     <message>
-        <source> zPIV in </source>
-        <translation> zPIV w</translation>
+        <source> zWSP in </source>
+        <translation> zWSP w</translation>
     </message>
     <message>
         <source> sec. Used denominations:
@@ -3071,7 +3071,7 @@ Albo wybierz wyższe nominały (potrzeba mniej wejść) albo zmniejsz kwotę do 
     </message>
     <message numerus="yes">
         <source>PrivacyDialog</source>
-        <comment>Enter an amount of PIV to convert to zPIV</comment>
+        <comment>Enter an amount of PIV to convert to zWSP</comment>
         <translation><numerusform>PrivacyDialog</numerusform><numerusform>PrivacyDialog</numerusform><numerusform>PrivacyDialog</numerusform><numerusform>PrivacyDialog</numerusform></translation>
     </message>
     <message>
@@ -3493,8 +3493,8 @@ Proszę być cierpliwym...</translation>
         <translation>Standardowa ścieżka kopii zapasowej:</translation>
     </message>
     <message>
-        <source>Custom zPIV Backup Path:</source>
-        <translation>standardowa ścieżka kopii zapasowej zPIV:</translation>
+        <source>Custom zWSP Backup Path:</source>
+        <translation>standardowa ścieżka kopii zapasowej zWSP:</translation>
     </message>
     <message>
         <source>Custom Backups Threshold:</source>
@@ -4749,8 +4749,8 @@ Proszę być cierpliwym...</translation>
         <translation>PIV Stake</translation>
     </message>
     <message>
-        <source>zPIV Stake</source>
-        <translation>zPIV Stake</translation>
+        <source>zWSP Stake</source>
+        <translation>zWSP Stake</translation>
     </message>
     <message>
         <source>Obfuscation Denominate</source>
@@ -4769,32 +4769,32 @@ Proszę być cierpliwym...</translation>
         <translation>Zamaskowanie Utwórz denominacje</translation>
     </message>
     <message>
-        <source>Converted PIV to zPIV</source>
-        <translation>przekonwertowany PIV to zPIV</translation>
+        <source>Converted PIV to zWSP</source>
+        <translation>przekonwertowany PIV to zWSP</translation>
     </message>
     <message>
-        <source>Spent zPIV</source>
-        <translation>Wydaj zPIV</translation>
+        <source>Spent zWSP</source>
+        <translation>Wydaj zWSP</translation>
     </message>
     <message>
-        <source>Received PIV from zPIV</source>
-        <translation>Otrzymano PIV z zPIV</translation>
+        <source>Received PIV from zWSP</source>
+        <translation>Otrzymano PIV z zWSP</translation>
     </message>
     <message>
-        <source>Minted Change as zPIV from zPIV Spend</source>
-        <translation>Reszta Minted jako zPIV z Wysyłki zPIV</translation>
+        <source>Minted Change as zWSP from zWSP Spend</source>
+        <translation>Reszta Minted jako zWSP z Wysyłki zWSP</translation>
     </message>
     <message>
-        <source>Converted zPIV to PIV</source>
-        <translation>przekonwertowany zPIV to PIV</translation>
+        <source>Converted zWSP to PIV</source>
+        <translation>przekonwertowany zWSP to PIV</translation>
     </message>
     <message>
-        <source>Anonymous (zPIV Transaction)</source>
-        <translation>Anonimowa (transakcja zPIV)</translation>
+        <source>Anonymous (zWSP Transaction)</source>
+        <translation>Anonimowa (transakcja zWSP)</translation>
     </message>
     <message>
-        <source>Anonymous (zPIV Stake)</source>
-        <translation>Anonimowy (zPIV Stake)</translation>
+        <source>Anonymous (zWSP Stake)</source>
+        <translation>Anonimowy (zWSP Stake)</translation>
     </message>
     <message>
         <source>Sent to</source>
@@ -5008,12 +5008,12 @@ Proszę być cierpliwym...</translation>
         <translation>Eksportowanie zakończyło się pomyślnie</translation>
     </message>
     <message>
-        <source>Received PIV from zPIV</source>
-        <translation>Otrzymano PIV z zPIV</translation>
+        <source>Received PIV from zWSP</source>
+        <translation>Otrzymano PIV z zWSP</translation>
     </message>
     <message>
-        <source>Zerocoin Spend, Change in zPIV</source>
-        <translation>Wydawanie Zerocoin, Zmień z zPIV</translation>
+        <source>Zerocoin Spend, Change in zWSP</source>
+        <translation>Wydawanie Zerocoin, Zmień z zWSP</translation>
     </message>
     <message>
         <source>The transaction history was successfully saved to %1.</source>
@@ -5081,10 +5081,10 @@ Proszę być cierpliwym...</translation>
     </message>
 </context>
 <context>
-    <name>ZPivControlDialog</name>
+    <name>ZWspControlDialog</name>
     <message>
-        <source>Select zPIV to Spend</source>
-        <translation>Wybierz zPIV do wydania</translation>
+        <source>Select zWSP to Spend</source>
+        <translation>Wybierz zWSP do wydania</translation>
     </message>
     <message>
         <source>Quantity</source>
@@ -5095,8 +5095,8 @@ Proszę być cierpliwym...</translation>
         <translation>0</translation>
     </message>
     <message>
-        <source>zPIV</source>
-        <translation>zPIV</translation>
+        <source>zWSP</source>
+        <translation>zWSP</translation>
     </message>
     <message>
         <source>Select/Deselect All</source>
@@ -5166,16 +5166,16 @@ Proszę być cierpliwym...</translation>
         <translation>Włącz automatyczne wybijanie Zerocoin z określonych adresów (0-1, domyślnie:%u)</translation>
     </message>
     <message>
-        <source>Enable automatic wallet backups triggered after each zPIV minting (0-1, default: %u)</source>
-        <translation>Włącz automatyczne kopie zapasowe portfela uruchamiane po każdym mintingu zPIV (0-1, domyślnie: %u)</translation>
+        <source>Enable automatic wallet backups triggered after each zWSP minting (0-1, default: %u)</source>
+        <translation>Włącz automatyczne kopie zapasowe portfela uruchamiane po każdym mintingu zWSP (0-1, domyślnie: %u)</translation>
     </message>
     <message>
         <source>Enable or disable staking functionality for PIV inputs (0-1, default: %u)</source>
         <translation>Włączanie lub wyłączanie funkcji stake dla przychodzących PIV (0-1, domyślnie:%u)</translation>
     </message>
     <message>
-        <source>Enable or disable staking functionality for zPIV inputs (0-1, default: %u)</source>
-        <translation>Włączanie lub wyłączanie funkcji staking dla nowych zPIV (0-1, domyślnie: %u)</translation>
+        <source>Enable or disable staking functionality for zWSP inputs (0-1, default: %u)</source>
+        <translation>Włączanie lub wyłączanie funkcji staking dla nowych zWSP (0-1, domyślnie: %u)</translation>
     </message>
     <message>
         <source>Enable spork administration functionality with the appropriate private key.</source>
@@ -5542,8 +5542,8 @@ Proszę być cierpliwym...</translation>
         <translation>Włącz SwiftX, pokaż potwierdzenia zablokowanych transakcji (bool, domyślnie: %s)</translation>
     </message>
     <message>
-        <source>Specify custom backup path to add a copy of any automatic zPIV backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup. If backuppath is set as well, 4 backups will happen</source>
-        <translation>Określ standardową ścieżkę kopii zapasowej, aby dodać kopię automatycznej kopii zapasowej zPIV. Jeśli ustawione jako katalog, każda kopia zapasowa generuje plik z sygnaturą czasową. Jeśli ustawione jako plik, będzie przepisywać do tego pliku każdą kopię zapasową. Jeśli ustawiona jest również ścieżka tworzenia kopii zapasowych, zostaną utworzone 4 kopie zapasowe</translation>
+        <source>Specify custom backup path to add a copy of any automatic zWSP backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup. If backuppath is set as well, 4 backups will happen</source>
+        <translation>Określ standardową ścieżkę kopii zapasowej, aby dodać kopię automatycznej kopii zapasowej zWSP. Jeśli ustawione jako katalog, każda kopia zapasowa generuje plik z sygnaturą czasową. Jeśli ustawione jako plik, będzie przepisywać do tego pliku każdą kopię zapasową. Jeśli ustawiona jest również ścieżka tworzenia kopii zapasowych, zostaną utworzone 4 kopie zapasowe</translation>
     </message>
     <message>
         <source>&lt;category&gt; can be:</source>
@@ -5758,8 +5758,8 @@ Proszę być cierpliwym...</translation>
         <translation>Synchronizowanie sporks...</translation>
     </message>
     <message>
-        <source>Syncing zPIV wallet...</source>
-        <translation>Synchronizuję portfel zPIV ...</translation>
+        <source>Syncing zWSP wallet...</source>
+        <translation>Synchronizuję portfel zWSP ...</translation>
     </message>
     <message>
         <source>The coin spend has been used</source>
@@ -5842,8 +5842,8 @@ Proszę być cierpliwym...</translation>
         <translation>Nazwa użytkownika dla połączeń JSON-RPC</translation>
     </message>
     <message>
-        <source>Value is below the smallest available denomination (= 1) of zPIV</source>
-        <translation>Wartość jest mniejsza od najmniejszej dostępnej (= 1) zPIV</translation>
+        <source>Value is below the smallest available denomination (= 1) of zWSP</source>
+        <translation>Wartość jest mniejsza od najmniejszej dostępnej (= 1) zWSP</translation>
     </message>
     <message>
         <source>Verifying blocks...</source>

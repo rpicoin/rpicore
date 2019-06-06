@@ -433,8 +433,8 @@
         <translation>Naršyti pavedimų istoriją</translation>
     </message>
     <message>
-        <source>Privacy Actions for zPIV</source>
-        <translation>zPIV Saugumo Veiksmai </translation>
+        <source>Privacy Actions for zWSP</source>
+        <translation>zWSP Saugumo Veiksmai </translation>
     </message>
     <message>
         <source>E&amp;xit</source>
@@ -1843,24 +1843,24 @@ https://www.transifex.com/pivx-project/pivx-project-translations</translation>
         <translation>Įrašyti prievadą naudojant &amp;UPnP</translation>
     </message>
     <message>
-        <source>Enable automatic minting of PIV units to zPIV</source>
-        <translation>Įgalinti automatinį konvertavimą iš PIV į zPIV</translation>
+        <source>Enable automatic minting of PIV units to zWSP</source>
+        <translation>Įgalinti automatinį konvertavimą iš PIV į zWSP</translation>
     </message>
     <message>
-        <source>Enable zPIV Automint</source>
-        <translation>Įgalinti zPIV Automatinį nukaldinima</translation>
+        <source>Enable zWSP Automint</source>
+        <translation>Įgalinti zWSP Automatinį nukaldinima</translation>
     </message>
     <message>
-        <source>Percentage of incoming PIV which get automatically converted to zPIV via Zerocoin Protocol (min: 10%)</source>
-        <translation>Procentas gauto PIV, kuris automatiškai bus konvertuotas į zPIV naudojant Zerocoin Protokolą (min: 10%)</translation>
+        <source>Percentage of incoming PIV which get automatically converted to zWSP via Zerocoin Protocol (min: 10%)</source>
+        <translation>Procentas gauto PIV, kuris automatiškai bus konvertuotas į zWSP naudojant Zerocoin Protokolą (min: 10%)</translation>
     </message>
     <message>
-        <source>Percentage of autominted zPIV</source>
-        <translation>Automatiškai sukurtų zPIV procentas</translation>
+        <source>Percentage of autominted zWSP</source>
+        <translation>Automatiškai sukurtų zWSP procentas</translation>
     </message>
     <message>
-        <source>Preferred Automint zPIV Denomination</source>
-        <translation>Pageidautinas zPIV Automatinio Nukaldinimo Nominalas</translation>
+        <source>Preferred Automint zWSP Denomination</source>
+        <translation>Pageidautinas zWSP Automatinio Nukaldinimo Nominalas</translation>
     </message>
     <message>
         <source>Connect to the PIVX network through a SOCKS5 proxy.</source>
@@ -2010,14 +2010,14 @@ https://www.transifex.com/pivx-project/pivx-project-translations</translation>
         <translation>Jūsų dabartinis PIVX balansas, įskaitant nepatvirtintus ir nesubrendusius sandorius</translation>
     </message>
     <message>
-        <source>zPIV Balance</source>
-        <translation>zPIV Balansas</translation>
+        <source>zWSP Balance</source>
+        <translation>zWSP Balansas</translation>
     </message>
     <message>
         <source>Mature: more than 20 confirmation and more than 1 mint of the same denomination after it was minted.
-These zPIV are spendable.</source>
+These zWSP are spendable.</source>
         <translation>Subrendę: daugiau nei 20 patvirtinimų ir daugiau nei 1 konvertacija to pačio nominalo, kai jis jau buvo konvertuotas.
-Šiuos zPIV galima išleisti.</translation>
+Šiuos zWSP galima išleisti.</translation>
     </message>
     <message>
         <source>Unconfirmed: less than 20 confirmations
@@ -2070,8 +2070,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo
         <translation>Prienamas išleidimui:</translation>
     </message>
     <message>
-        <source>Locked PIV or Masternode collaterals. These are excluded from zPIV minting.</source>
-        <translation>Užrakinti PIV arba Masternode užstatai. Jie yra neįtraukti į zPIV kalimą.</translation>
+        <source>Locked PIV or Masternode collaterals. These are excluded from zWSP minting.</source>
+        <translation>Užrakinti PIV arba Masternode užstatai. Jie yra neįtraukti į zWSP kalimą.</translation>
     </message>
     <message>
         <source>Locked:</source>
@@ -2175,8 +2175,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo
         <translation>0</translation>
     </message>
     <message>
-        <source>zPIV</source>
-        <translation>zPIV</translation>
+        <source>zWSP</source>
+        <translation>zWSP</translation>
     </message>
     <message>
         <source>Available for minting are coins which are confirmed and not locked or Masternode collaterals.</source>
@@ -2219,12 +2219,12 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo
         <translation>PRIVATUMAS</translation>
     </message>
     <message>
-        <source>zPIV Control</source>
-        <translation>zPiv Kontrolė</translation>
+        <source>zWSP Control</source>
+        <translation>zWsp Kontrolė</translation>
     </message>
     <message>
-        <source>zPIV Selected:</source>
-        <translation>Pasirinkta zPIV:</translation>
+        <source>zWSP Selected:</source>
+        <translation>Pasirinkta zWSP:</translation>
     </message>
     <message>
         <source>Quantity Selected:</source>
@@ -2243,8 +2243,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo
         <translation>Prieinamas Balansas: </translation>
     </message>
     <message>
-        <source>0 zPIV</source>
-        <translation>0 zPIV</translation>
+        <source>0 zWSP</source>
+        <translation>0 zWSP</translation>
     </message>
     <message>
         <source>Pay &amp;To:</source>
@@ -2283,8 +2283,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo
         <translation>Zerocoin Statistika:</translation>
     </message>
     <message>
-        <source>Total Balance including unconfirmed and immature zPIV</source>
-        <translation>Bendras balansas, įskaitant nepatvirtintą ir nesubrendusį zPIV</translation>
+        <source>Total Balance including unconfirmed and immature zWSP</source>
+        <translation>Bendras balansas, įskaitant nepatvirtintą ir nesubrendusį zWSP</translation>
     </message>
     <message>
         <source>Total Zerocoin  Balance:</source>
@@ -2461,12 +2461,12 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo
         <translation>Kopijuoti sumą</translation>
     </message>
     <message>
-        <source>zPIV Spend #: </source>
-        <translation>zPIV Išleidimas #:</translation>
+        <source>zWSP Spend #: </source>
+        <translation>zWSP Išleidimas #:</translation>
     </message>
     <message>
-        <source>zPIV Mint</source>
-        <translation>zPIV Konvertavimas</translation>
+        <source>zWSP Mint</source>
+        <translation>zWSP Konvertavimas</translation>
     </message>
     <message>
         <source> &lt;b&gt;enabled&lt;/b&gt;.</source>
@@ -3401,14 +3401,14 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo
     </message>
     </context>
 <context>
-    <name>ZPivControlDialog</name>
+    <name>ZWspControlDialog</name>
     <message>
         <source>0</source>
         <translation>0</translation>
     </message>
     <message>
-        <source>zPIV</source>
-        <translation>zPIV</translation>
+        <source>zWSP</source>
+        <translation>zWSP</translation>
     </message>
     </context>
 <context>

@@ -33,7 +33,7 @@ bool CheckStakeV2(const CDataStream& ssUniqueID, CAmount nValueIn, const uint64_
 bool CheckStakeV1(unsigned int nTxPrevTime, const COutPoint &prevout,
                   unsigned int nTimeTx, uint256 &hashProofOfStake, int64_t nValueIn, CBlockIndex *pindexPrev,
                   unsigned int nBits, bool fDebug);
-bool stakeTargetHit(const uint256& hashProofOfStake, int64_t nValueIn, uint256 bnTargetPerCoinDay);
+bool stakeTargetHit(const uint256& hashProofOfStake, const int64_t& nValueIn, const uint256& bnTargetPerCoinDay);
 bool stakeTargetHitOld(uint256 hashProofOfStake, uint256 bnTargetPerCoinDay);
 bool Stake(CStakeInput* stakeInput, unsigned int nBits, unsigned int nTimeBlockFrom, unsigned int& nTimeTx, uint256& hashProofOfStake);
 

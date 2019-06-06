@@ -433,8 +433,8 @@
         <translation>&amp;Foliumi transakcio historio</translation>
     </message>
     <message>
-        <source>Privacy Actions for zPIV</source>
-        <translation>Privataj agoj por zPIV</translation>
+        <source>Privacy Actions for zWSP</source>
+        <translation>Privataj agoj por zWSP</translation>
     </message>
     <message>
         <source>E&amp;xit</source>
@@ -1752,8 +1752,8 @@ https://www.transifex.com/pivx-project/pivx-project-translations</translation>
         <translation>Via aktuala PIVX totalo, nekonformita kaj nematurita transakcioj inkluzivita</translation>
     </message>
     <message>
-        <source>zPIV Balance</source>
-        <translation>zPIV kvanto</translation>
+        <source>zWSP Balance</source>
+        <translation>zWSP kvanto</translation>
     </message>
     <message>
         <source>Unconfirmed: less than 20 confirmations
@@ -1823,8 +1823,8 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
         <translation>0</translation>
     </message>
     <message>
-        <source>zPIV</source>
-        <translation>zPIV</translation>
+        <source>zWSP</source>
+        <translation>zWSP</translation>
     </message>
     <message>
         <source>0.000 000 00 PIV</source>
@@ -1843,12 +1843,12 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
         <translation>Kvanto:</translation>
     </message>
     <message>
-        <source>zPIV Control</source>
-        <translation>zPIV kontrolu</translation>
+        <source>zWSP Control</source>
+        <translation>zWSP kontrolu</translation>
     </message>
     <message>
-        <source>zPIV Selected:</source>
-        <translation>Elektita zPIV</translation>
+        <source>zWSP Selected:</source>
+        <translation>Elektita zWSP</translation>
     </message>
     <message>
         <source>Quantity Selected:</source>
@@ -1859,12 +1859,12 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
         <translation>Elspezi zerocoin</translation>
     </message>
     <message>
-        <source>Available (mature and spendable) zPIV for spending</source>
-        <translation>Havebla (matura kaj elspezebla) zPIV por elspezi</translation>
+        <source>Available (mature and spendable) zWSP for spending</source>
+        <translation>Havebla (matura kaj elspezebla) zWSP por elspezi</translation>
     </message>
     <message>
-        <source>0 zPIV</source>
-        <translation>0 zPIV</translation>
+        <source>0 zWSP</source>
+        <translation>0 zWSP</translation>
     </message>
     <message>
         <source>Pay &amp;To:</source>
@@ -2613,14 +2613,14 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
     </message>
     </context>
 <context>
-    <name>ZPivControlDialog</name>
+    <name>ZWspControlDialog</name>
     <message>
         <source>0</source>
         <translation>0</translation>
     </message>
     <message>
-        <source>zPIV</source>
-        <translation>zPIV</translation>
+        <source>zWSP</source>
+        <translation>zWSP</translation>
     </message>
     </context>
 <context>

@@ -557,7 +557,7 @@
     </message>
     <message>
         <location line="+11"/>
-        <source>Privacy Actions for zPIV</source>
+        <source>Privacy Actions for zWSP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2574,17 +2574,17 @@ https://www.transifex.com/pivx-project/pivx-project-translations</source>
     </message>
     <message>
         <location line="-184"/>
-        <source>Enable automatic minting of PIV units to zPIV</source>
+        <source>Enable automatic minting of PIV units to zWSP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+6"/>
-        <source>Enable zPIV Automint</source>
+        <source>Enable zWSP Automint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Enable automatic zPIV minting from specific addresses</source>
+        <source>Enable automatic zWSP minting from specific addresses</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2594,12 +2594,12 @@ https://www.transifex.com/pivx-project/pivx-project-translations</source>
     </message>
     <message>
         <location line="+11"/>
-        <source>Percentage of incoming PIV which get automatically converted to zPIV via Zerocoin Protocol (min: 10%)</source>
+        <source>Percentage of incoming PIV which get automatically converted to zWSP via Zerocoin Protocol (min: 10%)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Percentage of autominted zPIV</source>
+        <source>Percentage of autominted zWSP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2610,7 +2610,7 @@ https://www.transifex.com/pivx-project/pivx-project-translations</source>
     </message>
     <message>
         <location line="-13"/>
-        <source>Preferred Automint zPIV Denomination</source>
+        <source>Preferred Automint zWSP Denomination</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2866,14 +2866,14 @@ https://www.transifex.com/pivx-project/pivx-project-translations</source>
     </message>
     <message>
         <location line="+96"/>
-        <source>zPIV Balance</source>
+        <source>zWSP Balance</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+53"/>
         <location line="+17"/>
         <source>Mature: more than 20 confirmation and more than 1 mint of the same denomination after it was minted.
-These zPIV are spendable.</source>
+These zWSP are spendable.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2946,7 +2946,7 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
     <message>
         <location line="+191"/>
         <location line="+19"/>
-        <source>Locked PIV or Masternode collaterals. These are excluded from zPIV minting.</source>
+        <source>Locked PIV or Masternode collaterals. These are excluded from zWSP minting.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2962,7 +2962,7 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
     <message>
         <location line="+58"/>
         <location line="+19"/>
-        <source>Your current zPIV balance, unconfirmed and immature zPIV included.</source>
+        <source>Your current zWSP balance, unconfirmed and immature zWSP included.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2978,7 +2978,7 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
     </message>
     <message>
         <location line="+111"/>
-        <source>Current percentage of zPIV.
+        <source>Current percentage of zWSP.
 If AutoMint is enabled this percentage will settle around the configured AutoMint percentage (default = 10%).
 </source>
         <translation type="unfinished"></translation>
@@ -3169,7 +3169,7 @@ To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1
     <message>
         <location line="-371"/>
         <location line="+600"/>
-        <source>zPIV</source>
+        <source>zWSP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3235,17 +3235,17 @@ To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1
     <message>
         <location line="+308"/>
         <location line="+52"/>
-        <source>Enter an amount of Piv to convert to zPIV</source>
+        <source>Enter an amount of Piv to convert to zWSP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+301"/>
-        <source>zPIV Control</source>
+        <source>zWSP Control</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>zPIV Selected:</source>
+        <source>zWSP Selected:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3271,7 +3271,7 @@ To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1
     </message>
     <message>
         <location line="+7"/>
-        <source>Available (mature and spendable) zPIV for spending</source>
+        <source>Available (mature and spendable) zWSP for spending</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3281,9 +3281,9 @@ To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1
     </message>
     <message>
         <location line="+16"/>
-        <source>Available (mature and spendable) zPIV for spending
+        <source>Available (mature and spendable) zWSP for spending
 
-zPIV are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
+zWSP are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3300,7 +3300,7 @@ zPIV are mature when they have more than 20 confirmations AND more than 2 mints 
         <location line="+31"/>
         <location line="+31"/>
         <location line="+31"/>
-        <source>0 zPIV</source>
+        <source>0 zWSP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3378,7 +3378,7 @@ zPIV are mature when they have more than 20 confirmations AND more than 2 mints 
         <location line="+25"/>
         <location line="+885"/>
         <location line="+38"/>
-        <source>Total Balance including unconfirmed and immature zPIV</source>
+        <source>Total Balance including unconfirmed and immature zWSP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3412,14 +3412,14 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
     </message>
     <message>
         <location line="+40"/>
-        <source>Show the current status of automatic zPIV minting.
+        <source>Show the current status of automatic zWSP minting.
 
 To change the status (restart required):
 - enable: add &apos;enablezeromint=1&apos; to pivx.conf
 - disable: add &apos;enablezeromint=0&apos; to pivx.conf
 
 To change the percentage (no restart required):
-- menu Settings-&gt;Options-&gt;Percentage of autominted zPIV
+- menu Settings-&gt;Options-&gt;Percentage of autominted zWSP
 
 </source>
         <translation type="unfinished"></translation>
@@ -3489,7 +3489,7 @@ To change the percentage (no restart required):
     </message>
     <message>
         <location line="-1273"/>
-        <source>Show zPIV denominations list</source>
+        <source>Show zWSP denominations list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3681,12 +3681,12 @@ Maximum allowed: </source>
     </message>
     <message>
         <location line="+34"/>
-        <source>zPIV Spend #: </source>
+        <source>zWSP Spend #: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+16"/>
-        <source>zPIV Mint</source>
+        <source>zWSP Mint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3707,13 +3707,13 @@ Maximum allowed: </source>
     <message>
         <location line="+12"/>
         <location line="+4"/>
-        <source>zPIV is currently disabled due to maintenance.</source>
+        <source>zWSP is currently disabled due to maintenance.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="-645"/>
         <location line="+112"/>
-        <source>zPIV is currently undergoing maintenance.</source>
+        <source>zWSP is currently undergoing maintenance.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3824,7 +3824,7 @@ Maximum allowed: </source>
     </message>
     <message>
         <location line="+0"/>
-        <source> zPIV in </source>
+        <source> zWSP in </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3918,7 +3918,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message numerus="yes">
         <location line="+362"/>
         <source>PrivacyDialog</source>
-        <comment>Enter an amount of PIV to convert to zPIV</comment>
+        <comment>Enter an amount of PIV to convert to zWSP</comment>
         <translation type="unfinished">
             <numerusform></numerusform>
             <numerusform></numerusform>
@@ -4478,7 +4478,7 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+29"/>
-        <source>Custom zPIV Backup Path:</source>
+        <source>Custom zWSP Backup Path:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6102,7 +6102,7 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+2"/>
-        <source>zPIV Stake</source>
+        <source>zWSP Stake</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6127,37 +6127,37 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+4"/>
-        <source>Converted PIV to zPIV</source>
+        <source>Converted PIV to zWSP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Spent zPIV</source>
+        <source>Spent zWSP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Received PIV from zPIV</source>
+        <source>Received PIV from zWSP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Minted Change as zPIV from zPIV Spend</source>
+        <source>Minted Change as zWSP from zWSP Spend</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Converted zPIV to PIV</source>
+        <source>Converted zWSP to PIV</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+56"/>
-        <source>Anonymous (zPIV Transaction)</source>
+        <source>Anonymous (zWSP Transaction)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Anonymous (zPIV Stake)</source>
+        <source>Anonymous (zWSP Stake)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6426,12 +6426,12 @@ Please be patient...</source>
     </message>
     <message>
         <location line="-310"/>
-        <source>Received PIV from zPIV</source>
+        <source>Received PIV from zWSP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Zerocoin Spend, Change in zPIV</source>
+        <source>Zerocoin Spend, Change in zWSP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6516,10 +6516,10 @@ Please be patient...</source>
     </message>
 </context>
 <context>
-    <name>ZPivControlDialog</name>
+    <name>ZWspControlDialog</name>
     <message>
         <location filename="../forms/zpivcontroldialog.ui" line="+20"/>
-        <source>Select zPIV to Spend</source>
+        <source>Select zWSP to Spend</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6535,7 +6535,7 @@ Please be patient...</source>
     </message>
     <message>
         <location line="-7"/>
-        <source>zPIV</source>
+        <source>zWSP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6623,7 +6623,7 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+2"/>
-        <source>Enable automatic wallet backups triggered after each zPIV minting (0-1, default: %u)</source>
+        <source>Enable automatic wallet backups triggered after each zWSP minting (0-1, default: %u)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6633,7 +6633,7 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+2"/>
-        <source>Enable or disable staking functionality for zPIV inputs (0-1, default: %u)</source>
+        <source>Enable or disable staking functionality for zWSP inputs (0-1, default: %u)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7138,7 +7138,7 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+1"/>
-        <source>Enable precomputation of zPIV spends and stakes (0-1, default %u)</source>
+        <source>Enable precomputation of zWSP spends and stakes (0-1, default %u)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7443,17 +7443,17 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+1"/>
-        <source>Recalculating minted ZPIV...</source>
+        <source>Recalculating minted ZWSP...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Recalculating spent ZPIV...</source>
+        <source>Recalculating spent ZWSP...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Reindex the PIV and zPIV money supply statistics</source>
+        <source>Reindex the PIV and zWSP money supply statistics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7550,7 +7550,7 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+27"/>
-        <source>Specify custom backup path to add a copy of any automatic zPIV backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup. If backuppath is set as well, 4 backups will happen</source>
+        <source>Specify custom backup path to add a copy of any automatic zWSP backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup. If backuppath is set as well, 4 backups will happen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -8180,7 +8180,7 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+1"/>
-        <source>Syncing zPIV wallet...</source>
+        <source>Syncing zWSP wallet...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -8355,7 +8355,7 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+1"/>
-        <source>Value is below the smallest available denomination (= 1) of zPIV</source>
+        <source>Value is below the smallest available denomination (= 1) of zWSP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

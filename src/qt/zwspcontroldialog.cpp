@@ -110,9 +110,9 @@ void ZWspControlDialog::updateList()
         itemMint->setData(COLUMN_CONFIRMATIONS, Qt::UserRole, QVariant((qlonglong) nConfirmations));
 
         {
-            LOCK(pwalletMain->zpivTracker->cs_spendcache);
+            LOCK(pwalletMain->zwspTracker->cs_spendcache);
 
-            CoinWitnessData *witnessData = pwalletMain->zpivTracker->GetSpendCache(mint.hashStake);
+            CoinWitnessData *witnessData = pwalletMain->zwspTracker->GetSpendCache(mint.hashStake);
             if (witnessData->nHeightAccStart > 0  && witnessData->nHeightAccEnd > 0) {
                 int nPercent = std::max(0, std::min(100, (int)((double)(witnessData->nHeightAccEnd - witnessData->nHeightAccStart) / (double)(nBestHeight - witnessData->nHeightAccStart - 220) * 100)));
                 QString percent = QString::number(nPercent) + QString("%");
@@ -141,7 +141,7 @@ void ZWspControlDialog::updateList()
             if(nConfirmations < Params().Zerocoin_MintRequiredConfirmations())
                 strReason = strprintf("Needs %d more confirmations", Params().Zerocoin_MintRequiredConfirmations() - nConfirmations);
             else if (model->getEncryptionStatus() == WalletModel::EncryptionStatus::Locked)
-                strReason = "Your wallet is locked. Impossible to precompute or spend zPIV.";
+                strReason = "Your wallet is locked. Impossible to precompute or spend zWSP.";
             else if (!mint.isSeedCorrect)
                 strReason = "The zWSP seed used to mint this zWSP is not the same as currently hold in the wallet";
             else

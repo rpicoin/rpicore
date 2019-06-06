@@ -28,6 +28,7 @@
 #include "masternodeman.h"
 #include "miner.h"
 #include "net.h"
+#include "reverse_iterate.h"
 #include "rpc/server.h"
 #include "script/standard.h"
 #include "scheduler.h"
@@ -558,10 +559,10 @@ std::string HelpMessage(HelpMessageMode mode)
     strUsage += HelpMessageOpt("-enableautoconvertaddress=<n>", strprintf(_("Enable automatic Zerocoin minting from specific addresses (0-1, default: %u)"), DEFAULT_AUTOCONVERTADDRESS));
     strUsage += HelpMessageOpt("-zeromintpercentage=<n>", strprintf(_("Percentage of automatically minted Zerocoin  (1-100, default: %u)"), 10));
     strUsage += HelpMessageOpt("-preferredDenom=<n>", strprintf(_("Preferred Denomination for automatically minted Zerocoin  (1/5/10/50/100/500/1000/5000), 0 for no preference. default: %u)"), 0));
-    strUsage += HelpMessageOpt("-backupzwsp=<n>", strprintf(_("Enable automatic wallet backups triggered after each zPIV minting (0-1, default: %u)"), 1));
-    strUsage += HelpMessageOpt("-precompute=<n>", strprintf(_("Enable precomputation of zPIV spends and stakes (0-1, default %u)"), 1));
+    strUsage += HelpMessageOpt("-backupzwsp=<n>", strprintf(_("Enable automatic wallet backups triggered after each zWSP minting (0-1, default: %u)"), 1));
+    strUsage += HelpMessageOpt("-precompute=<n>", strprintf(_("Enable precomputation of zWSP spends and stakes (0-1, default %u)"), 1));
     strUsage += HelpMessageOpt("-precomputecachelength=<n>", strprintf(_("Set the number of included blocks to precompute per cycle. (minimum: %d) (maximum: %d) (default: %d)"), MIN_PRECOMPUTE_LENGTH, MAX_PRECOMPUTE_LENGTH, DEFAULT_PRECOMPUTE_LENGTH));
-    strUsage += HelpMessageOpt("-zwspbackuppath=<dir|file>", _("Specify custom backup path to add a copy of any automatic zPIV backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup. If backuppath is set as well, 4 backups will happen"));
+    strUsage += HelpMessageOpt("-zwspbackuppath=<dir|file>", _("Specify custom backup path to add a copy of any automatic zWSP backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup. If backuppath is set as well, 4 backups will happen"));
 #endif // ENABLE_WALLET
     strUsage += HelpMessageOpt("-reindexzerocoin=<n>", strprintf(_("Delete all zerocoin spends and mints that have been recorded to the blockchain database and reindex them (0-1, default: %u)"), 0));
 
@@ -1520,7 +1521,7 @@ bool AppInit2()
                         LogPrintf("Current GetZerocoinSupply: %d vs %d\n", pblockindex->GetZerocoinSupply()/COIN , zpivSupplyCheckpoint/COIN);
                         reindexDueWrappedSerials = true;
                     } else if (pblockindex->GetZerocoinSupply() > zpivSupplyCheckpoint) {
-                        // Trigger global zPIV reindex
+                        // Trigger global zWSP reindex
                         reindexZerocoin = true;
                         LogPrintf("Current GetZerocoinSupply: %d vs %d\n", pblockindex->GetZerocoinSupply()/COIN , zpivSupplyCheckpoint/COIN);
                     }
@@ -1534,11 +1535,11 @@ bool AppInit2()
                 // Recalculate money supply for blocks that are impacted by accounting issue after zerocoin activation
                 if (GetBoolArg("-reindexmoneysupply", false) || reindexZerocoin) {
                     if (chainHeight > Params().Zerocoin_StartHeight()) {
-                        RecalculateZPIVMinted();
-                        RecalculateZPIVSpent();
+                        RecalculateZWSPMinted();
+                        RecalculateZWSPSpent();
                     }
                     // Recalculate from the zerocoin activation or from scratch.
-                    RecalculatePIVSupply(reindexZerocoin ? Params().Zerocoin_StartHeight() : 1);
+                    RecalculateWSPSupply(reindexZerocoin ? Params().Zerocoin_StartHeight() : 1);
                 }
 
                 // Check Recalculation result
@@ -2040,7 +2041,7 @@ bool AppInit2()
         threadGroup.create_thread(boost::bind(&ThreadFlushWalletDB, boost::ref(pwalletMain->strWalletFile)));
 
         if (GetBoolArg("-precompute", true)) {
-            // Run a thread to precompute any zPIV spends
+            // Run a thread to precompute any zWSP spends
             threadGroup.create_thread(boost::bind(&ThreadPrecomputeSpends));
         }
     }
