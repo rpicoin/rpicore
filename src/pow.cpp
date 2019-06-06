@@ -59,7 +59,10 @@ unsigned int GetNextTargetRequired(const CBlockIndex* pindexLast, bool fProofOfS
 
 unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHeader* pblock)
 {
-    /* current difficulty formula, wispr - DarkGravity v3, written by Evan Duffield - evan@dashpay.io */
+    if (Params().NetworkID() == CBaseChainParams::REGTEST)
+        return pindexLast->nBits;
+
+    /* current difficulty formula, pivx - DarkGravity v3, written by Evan Duffield - evan@dashpay.io */
     const CBlockIndex* BlockLastSolved = pindexLast;
     const CBlockIndex* BlockReading = pindexLast;
     int64_t nActualTimespan = 0;
@@ -167,8 +170,12 @@ bool CheckProofOfWork(uint256 hash, unsigned int nBits)
         return error("CheckProofOfWork() : nBits below minimum work");
 
     // Check proof of work matches claimed amount
-    if (hash > bnTarget)
-        return error("CheckProofOfWork() : hash doesn't match nBits, hash = %s", hash.ToString());
+    if (hash > bnTarget) {
+        if (Params().MineBlocksOnDemand())
+            return false;
+        else
+            return error("CheckProofOfWork() : hash doesn't match nBits");
+    }
 
     return true;
 }

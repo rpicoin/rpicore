@@ -62,12 +62,12 @@
         <translation>Gavimo adresai</translation>
     </message>
     <message>
-        <source>These are your WISPR addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Tai jūsų WISPR adresai mokėjimų išsiuntimams. Visada patikrinkite sumą ir gavėjo adresą prieš siųsdami monetas.</translation>
+        <source>These are your PIVX addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Tai jūsų PIVX adresai mokėjimų išsiuntimams. Visada patikrinkite sumą ir gavėjo adresą prieš siųsdami monetas.</translation>
     </message>
     <message>
-        <source>These are your WISPR addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Tai jūsų WISPR adresai mokėjimų gavimams. Rekomenduojama naudoti naują adresą kiekvienam pavedimui.</translation>
+        <source>These are your PIVX addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Tai jūsų PIVX adresai mokėjimų gavimams. Rekomenduojama naudoti naują adresą kiekvienam pavedimui.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -176,16 +176,16 @@
         <translation>Patvirtinkite piniginės užšifravimą.</translation>
     </message>
     <message>
-        <source>WISPR will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your WSPs from being stolen by malware infecting your computer.</source>
-        <translation>Dabar WISPR išsijungs, kad būtų užbaigtas šifravimo procesas. Atminkite, kad jūsų piniginės užšifravimas negali visiškai apsaugoti jūsų WSP nuo kenkėjiškų programų, užkrėsto jūsų kompiuterio.</translation>
+        <source>PIVX will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your PIVs from being stolen by malware infecting your computer.</source>
+        <translation>Dabar PIVX išsijungs, kad būtų užbaigtas šifravimo procesas. Atminkite, kad jūsų piniginės užšifravimas negali visiškai apsaugoti jūsų PIV nuo kenkėjiškų programų, užkrėsto jūsų kompiuterio.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>Ar tikrai norite užšifruoti savo piniginę?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR WSP&lt;/b&gt;!</source>
-        <translation>Įspėjimas: jei užšifruosite savo piniginę ir prarasite slaptafrazę, jūs &lt;b&gt;PRARASITE VISUS SAVO WSP&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR PIV&lt;/b&gt;!</source>
+        <translation>Įspėjimas: jei užšifruosite savo piniginę ir prarasite slaptafrazę, jūs &lt;b&gt;PRARASITE VISUS SAVO PIV&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -254,12 +254,12 @@
         <translation>Adresas:</translation>
     </message>
     <message>
-        <source>Enter a WISPR Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation>Įveskite Wispr adresą, kurį norėtumėte užšifruoti naudojant BIP 38. Vidiniame laukelyje įrašykite slaptą frazę. Paspauskite užšifruoti, jei norite gauti užšifruotą privatųjį raktą.</translation>
+        <source>Enter a PIVX Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
+        <translation>Įveskite Pivx adresą, kurį norėtumėte užšifruoti naudojant BIP 38. Vidiniame laukelyje įrašykite slaptą frazę. Paspauskite užšifruoti, jei norite gauti užšifruotą privatųjį raktą.</translation>
     </message>
     <message>
-        <source>The WISPR address to encrypt</source>
-        <translation>WISPR adresas, kurį norite užšifruoti</translation>
+        <source>The PIVX address to encrypt</source>
+        <translation>PIVX adresas, kurį norite užšifruoti</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -290,8 +290,8 @@
         <translation>Kopijuoti dabartinį parašą</translation>
     </message>
     <message>
-        <source>Encrypt the private key for this WISPR address</source>
-        <translation>Užšifruoti šio WISPR adreso privatų raktą</translation>
+        <source>Encrypt the private key for this PIVX address</source>
+        <translation>Užšifruoti šio PIVX adreso privatų raktą</translation>
     </message>
     <message>
         <source>Reset all fields</source>
@@ -433,8 +433,8 @@
         <translation>Naršyti pavedimų istoriją</translation>
     </message>
     <message>
-        <source>Privacy Actions for zWSP</source>
-        <translation>zWSP Saugumo Veiksmai </translation>
+        <source>Privacy Actions for zPIV</source>
+        <translation>zPIV Saugumo Veiksmai </translation>
     </message>
     <message>
         <source>E&amp;xit</source>
@@ -608,10 +608,6 @@
         <source>&amp;Command-line options</source>
         <translation>&amp;Komandinės eilutės parinktys</translation>
     </message>
-    <message numerus="yes">
-        <source>Processed %n blocks of transaction history.</source>
-        <translation><numerusform>Apdorota %n operacijų istorijos blokų.</numerusform><numerusform>Apdorota %n operacijų istorijos blokų.</numerusform><numerusform>Apdorota %n operacijų istorijos blokų.</numerusform><numerusform>Apdorota %n operacijų istorijos blokų.</numerusform></translation>
-    </message>
     <message>
         <source>Synchronizing additional data: %p%</source>
         <translation>Sinchronizuojami papildomi duomenys: %p%</translation>
@@ -645,16 +641,16 @@
         <translation>Skirtukų įrankių juosta</translation>
     </message>
     <message>
-        <source>WISPR Core</source>
-        <translation>WISPR Core</translation>
+        <source>PIVX Core</source>
+        <translation>PIVX Core</translation>
     </message>
     <message>
-        <source>Send coins to a WISPR address</source>
-        <translation>Siųsti monetas į WISPR adresą</translation>
+        <source>Send coins to a PIVX address</source>
+        <translation>Siųsti monetas į PIVX adresą</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and wispr: URIs)</source>
-        <translation>Prašyti mokėjimų (sugeneruoja QR kodus ir wispr URI)</translation>
+        <source>Request payments (generates QR codes and pivx: URIs)</source>
+        <translation>Prašyti mokėjimų (sugeneruoja QR kodus ir pivx URI)</translation>
     </message>
     <message>
         <source>&amp;Privacy</source>
@@ -669,24 +665,24 @@
         <translation>Naršyti masternod'us</translation>
     </message>
     <message>
-        <source>&amp;About WISPR Core</source>
-        <translation>&amp;Apie WISPR Core</translation>
+        <source>&amp;About PIVX Core</source>
+        <translation>&amp;Apie PIVX Core</translation>
     </message>
     <message>
-        <source>Show information about WISPR Core</source>
-        <translation>Rodyti informaciją apie WISPR Core</translation>
+        <source>Show information about PIVX Core</source>
+        <translation>Rodyti informaciją apie PIVX Core</translation>
     </message>
     <message>
-        <source>Modify configuration options for WISPR</source>
-        <translation>Keisti WISPR konfigūravimo parinktis</translation>
+        <source>Modify configuration options for PIVX</source>
+        <translation>Keisti PIVX konfigūravimo parinktis</translation>
     </message>
     <message>
-        <source>Sign messages with your WISPR addresses to prove you own them</source>
-        <translation>Pasirašykite pranešimus naudodami savo WISPR adresus, kad įrodytumėte, kad juos turite</translation>
+        <source>Sign messages with your PIVX addresses to prove you own them</source>
+        <translation>Pasirašykite pranešimus naudodami savo PIVX adresus, kad įrodytumėte, kad juos turite</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified WISPR addresses</source>
-        <translation>Patvirtinkite pranešimus, kad jie būtų pasirašyti su nurodytais WISPR adresais</translation>
+        <source>Verify messages to ensure they were signed with specified PIVX addresses</source>
+        <translation>Patvirtinkite pranešimus, kad jie būtų pasirašyti su nurodytais PIVX adresais</translation>
     </message>
     <message>
         <source>&amp;BIP38 tool</source>
@@ -717,8 +713,8 @@
         <translation>Atidaryti Masternod'o konfigūracijos failą</translation>
     </message>
     <message>
-        <source>Open a WISPR: URI or payment request</source>
-        <translation>Atidaryti WISPR: URI arba mokėjimo prašymą</translation>
+        <source>Open a PIVX: URI or payment request</source>
+        <translation>Atidaryti PIVX: URI arba mokėjimo prašymą</translation>
     </message>
     <message>
         <source>&amp;Blockchain explorer</source>
@@ -729,16 +725,12 @@
         <translation>Blokų naršyklės langas</translation>
     </message>
     <message>
-        <source>Show the WISPR Core help message to get a list with possible WISPR command-line options</source>
-        <translation>Rodyti WISPR Core žinyną, kad gautumėte sąrašą su galimomis WISPR komandinės eilutės parinktimis</translation>
+        <source>Show the PIVX Core help message to get a list with possible PIVX command-line options</source>
+        <translation>Rodyti PIVX Core žinyną, kad gautumėte sąrašą su galimomis PIVX komandinės eilutės parinktimis</translation>
     </message>
     <message>
-        <source>WISPR Core client</source>
-        <translation>WISPR Core piniginė</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n active connection(s) to WISPR network</source>
-        <translation><numerusform>%n aktyvių prisijungimų WISPR tinkle ()</numerusform><numerusform>%n aktyvių prisijungimų WISPR tinkle ()</numerusform><numerusform>%n aktyvių prisijungimų WISPR tinkle ()</numerusform><numerusform>%n aktyvių prisijungimų WISPR tinkle ()</numerusform></translation>
+        <source>PIVX Core client</source>
+        <translation>PIVX Core piniginė</translation>
     </message>
     <message>
         <source>Synchronizing with network...</source>
@@ -760,25 +752,9 @@
         <source>Up to date</source>
         <translation>Atnaujinta</translation>
     </message>
-    <message numerus="yes">
-        <source>%n hour(s)</source>
-        <translation><numerusform>%n valanda</numerusform><numerusform>%n valandų</numerusform><numerusform>%n valandų</numerusform><numerusform>%n valandų</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n day(s)</source>
-        <translation><numerusform>%n diena</numerusform><numerusform>%n dienų</numerusform><numerusform>%n dienų</numerusform><numerusform>%n dienų</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n week(s)</source>
-        <translation><numerusform>%n savaitė</numerusform><numerusform>%n savaičių</numerusform><numerusform>%n savaičių</numerusform><numerusform>%n savaičių</numerusform></translation>
-    </message>
     <message>
         <source>%1 and %2</source>
         <translation>%1 ir %2</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n year(s)</source>
-        <translation><numerusform>%n metai</numerusform><numerusform>%n metų</numerusform><numerusform>%n metų</numerusform><numerusform>%n metų</numerusform></translation>
     </message>
     <message>
         <source>Catching up...</source>
@@ -864,7 +840,7 @@ MultiSend: %1</translation>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>Piniginė yra &lt;b&gt;užšifruota&lt;/b&gt; ir šiuo metu &lt;b&gt;užrakinta&lt;/b&gt;</translation>
     </message>
-</context>
+    </context>
 <context>
     <name>BlockExplorer</name>
     <message>
@@ -892,8 +868,8 @@ MultiSend: %1</translation>
         <translation>Teksto etiketė</translation>
     </message>
     <message>
-        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (wispr.conf).</source>
-        <translation>Ne visi pavedimai bus rodomi. Norėdami peržiūrėti visus pavedimus, reikia nustatyti txindex = 1 konfigūracijos faile (wispr.conf).</translation>
+        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (pivx.conf).</source>
+        <translation>Ne visi pavedimai bus rodomi. Norėdami peržiūrėti visus pavedimus, reikia nustatyti txindex = 1 konfigūracijos faile (pivx.conf).</translation>
     </message>
 </context>
 <context>
@@ -1122,8 +1098,8 @@ MultiSend: %1</translation>
         <translation>Ši etiketė taps raudona, jei gavėjas gaus sumą mažesnę už %1</translation>
     </message>
     <message>
-        <source>Can vary +/- %1 uwsp per input.</source>
-        <translation>Gali skirtis +/- %1 uwsp kiekvienoje įvestyje.</translation>
+        <source>Can vary +/- %1 upiv per input.</source>
+        <translation>Gali skirtis +/- %1 upiv kiekvienoje įvestyje.</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -1177,8 +1153,8 @@ MultiSend: %1</translation>
         <translation>Keisti siuntimo adresą</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid WISPR address.</source>
-        <translation>Įvestas adresas "%1" nėra galiojantis WISPR adresas.</translation>
+        <source>The entered address "%1" is not a valid PIVX address.</source>
+        <translation>Įvestas adresas "%1" nėra galiojantis PIVX adresas.</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book.</source>
@@ -1217,22 +1193,33 @@ MultiSend: %1</translation>
     </message>
 </context>
 <context>
+    <name>GovernancePage</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>0</source>
+        <translation>0</translation>
+    </message>
+    </context>
+<context>
     <name>HelpMessageDialog</name>
     <message>
         <source>version</source>
         <translation>versija</translation>
     </message>
     <message>
-        <source>WISPR Core</source>
-        <translation>WISPR Core</translation>
+        <source>PIVX Core</source>
+        <translation>PIVX Core</translation>
     </message>
     <message>
         <source>(%1-bit)</source>
         <translation>(%1-bitai)</translation>
     </message>
     <message>
-        <source>About WISPR Core</source>
-        <translation>Apie WISPR Core</translation>
+        <source>About PIVX Core</source>
+        <translation>Apie PIVX Core</translation>
     </message>
     <message>
         <source>Command-line options</source>
@@ -1278,16 +1265,16 @@ MultiSend: %1</translation>
         <translation>Sveiki</translation>
     </message>
     <message>
-        <source>Welcome to WISPR Core.</source>
-        <translation>Sveiki atvykę į WISPR Core</translation>
+        <source>Welcome to PIVX Core.</source>
+        <translation>Sveiki atvykę į PIVX Core</translation>
     </message>
     <message>
-        <source>As this is the first time the program is launched, you can choose where WISPR Core will store its data.</source>
-        <translation>Kadangi programa paleista pirmą kartą, galite pasirinkti kur WISPR Core saugos savo duomenis.</translation>
+        <source>As this is the first time the program is launched, you can choose where PIVX Core will store its data.</source>
+        <translation>Kadangi programa paleista pirmą kartą, galite pasirinkti kur PIVX Core saugos savo duomenis.</translation>
     </message>
     <message>
-        <source>WISPR Core will download and store a copy of the WISPR block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>WISPR Core atsisiųs ir saugos WISPR blockchain'o kopiją. Šiame kataloge bus saugomas ne mažesnis kaip %1GB duomenų kiekis, kuris laikui bėgant augs. Piniginė taip pat bus saugoma šiame kataloge.</translation>
+        <source>PIVX Core will download and store a copy of the PIVX block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <translation>PIVX Core atsisiųs ir saugos PIVX blockchain'o kopiją. Šiame kataloge bus saugomas ne mažesnis kaip %1GB duomenų kiekis, kuris laikui bėgant augs. Piniginė taip pat bus saugoma šiame kataloge.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -1298,8 +1285,8 @@ MultiSend: %1</translation>
         <translation>Naudoti pasirinktą duomenų katalogą:</translation>
     </message>
     <message>
-        <source>WISPR Core</source>
-        <translation>WISPR Core</translation>
+        <source>PIVX Core</source>
+        <translation>PIVX Core</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -1440,12 +1427,12 @@ MultiSend: %1</translation>
         <translation>Įveskite adresą kuriam norite siųsti</translation>
     </message>
     <message>
-        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other WISPR addresses after it matures.
-To Add: enter percentage to give and WISPR address to add to the MultiSend vector.
+        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other PIVX addresses after it matures.
+To Add: enter percentage to give and PIVX address to add to the MultiSend vector.
 To Delete: Enter address to delete and press delete.
 MultiSend will not be activated unless you have clicked Activate</source>
-        <translation>MultiSend leidžia automatiškai išsiųsti iki 100% jūsų stake'inimo ar masternod'ų atlygio į kitus WISPR adresus.
-Norėdami pridėti: įveskite pateiktą procentą ir WISPR adresą, kurį norite pridėti prie MultiSend sąrašo.
+        <translation>MultiSend leidžia automatiškai išsiųsti iki 100% jūsų stake'inimo ar masternod'ų atlygio į kitus PIVX adresus.
+Norėdami pridėti: įveskite pateiktą procentą ir PIVX adresą, kurį norite pridėti prie MultiSend sąrašo.
 Norėdami ištrinti: įveskite adresą, kurį norite ištrinti, ir paspauskite ištrinti
 MultiSend nebus aktyvuotas, nebent paspausite "Įjungti"</translation>
     </message>
@@ -1534,42 +1521,8 @@ MultiSend nebus aktyvuotas, nebent paspausite "Įjungti"</translation>
         <translation>(nėra etiketės)</translation>
     </message>
     <message>
-        <source>The entered address:
-</source>
-        <translation>Įvestas adresas: 
-</translation>
-    </message>
-    <message>
-        <source> is invalid.
-Please check the address and try again.</source>
-        <translation>yra netinkamas.
-Patikrinkite adresą ir bandykite dar kartą.</translation>
-    </message>
-    <message>
-        <source>The total amount of your MultiSend vector is over 100% of your stake reward
-</source>
-        <translation>Bendra MultiSend sąrašo suma yra didesnė nei 100% jūsų stake'inimo atlygio
-</translation>
-    </message>
-    <message>
         <source>Please Enter 1 - 100 for percent.</source>
         <translation>Įveskite 1-100 procentų</translation>
-    </message>
-    <message>
-        <source>MultiSend Vector
-</source>
-        <translation>MultiSend Sąrašas
-</translation>
-    </message>
-    <message>
-        <source>Removed </source>
-        <translation>Pašalintas</translation>
-    </message>
-    <message>
-        <source>Could not locate address
-</source>
-        <translation>Nepavyko rasti adreso
-</translation>
     </message>
 </context>
 <context>
@@ -1651,8 +1604,8 @@ Patikrinkite adresą ir bandykite dar kartą.</translation>
         <translation>Adresas / Suma:</translation>
     </message>
     <message>
-        <source>Add destinations to send WSP to</source>
-        <translation>Pridėkite vietas, kurioms norite siųsti WSP</translation>
+        <source>Add destinations to send PIV to</source>
+        <translation>Pridėkite vietas, kurioms norite siųsti PIV</translation>
     </message>
     <message>
         <source>Add &amp;Destination</source>
@@ -1750,48 +1703,48 @@ Patikrinkite adresą ir bandykite dar kartą.</translation>
         <translation>Pasirinkite privatumo lygmenį.</translation>
     </message>
     <message>
-        <source>Use 2 separate masternodes to mix funds up to 10000 WSP</source>
-        <translation>Naudokite 2 atskirus masternod'us, kad sumaišytumėte lėšas iki 10 000 WSP</translation>
+        <source>Use 2 separate masternodes to mix funds up to 10000 PIV</source>
+        <translation>Naudokite 2 atskirus masternod'us, kad sumaišytumėte lėšas iki 10 000 PIV</translation>
     </message>
     <message>
-        <source>Use 8 separate masternodes to mix funds up to 10000 WSP</source>
-        <translation>Naudokite 8 atskirus masternod'us, kad sumaišytumėte lėšas iki 10 000 WSP</translation>
+        <source>Use 8 separate masternodes to mix funds up to 10000 PIV</source>
+        <translation>Naudokite 8 atskirus masternod'us, kad sumaišytumėte lėšas iki 10 000 PIV</translation>
     </message>
     <message>
         <source>Use 16 separate masternodes</source>
         <translation>Naudokite 16 atskirų masternod'ų</translation>
     </message>
     <message>
-        <source>This option is the quickest and will cost about ~0.025 WSP to anonymize 10000 WSP</source>
-        <translation>Ši parinktis yra greičiausia ir kainuos apie ~0.025 WSP, kad anonimizuotų 10000 WSP</translation>
+        <source>This option is the quickest and will cost about ~0.025 PIV to anonymize 10000 PIV</source>
+        <translation>Ši parinktis yra greičiausia ir kainuos apie ~0.025 PIV, kad anonimizuotų 10000 PIV</translation>
     </message>
     <message>
-        <source>This option is moderately fast and will cost about 0.05 WSP to anonymize 10000 WSP</source>
-        <translation>Ši parinktis yra vidutiniškai greita ir kainuoja apie 0,05 WSP, kad anonimizuotų 10000 WSP</translation>
+        <source>This option is moderately fast and will cost about 0.05 PIV to anonymize 10000 PIV</source>
+        <translation>Ši parinktis yra vidutiniškai greita ir kainuoja apie 0,05 PIV, kad anonimizuotų 10000 PIV</translation>
     </message>
     <message>
         <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
         <translation>Tai yra lėčiausias ir saugiausias variantas. Maksimalus anonimiškumas kainuos.</translation>
     </message>
     <message>
-        <source>0.1 WSP per 10000 WSP you anonymize.</source>
-        <translation>0.1 WSP kas 1000 WSP kuriuos anonimizuosite.</translation>
+        <source>0.1 PIV per 10000 PIV you anonymize.</source>
+        <translation>0.1 PIV kas 1000 PIV kuriuos anonimizuosite.</translation>
     </message>
     <message>
         <source>Obfuscation Configuration</source>
         <translation>Obfuscation Konfigūracija</translation>
     </message>
     <message>
-        <source>Obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening WISPR's configuration screen.</source>
-        <translation>Obfuscation buvo sėkmingai nustatytas į paprastą (%1 ir 2 raundai). Bet kada galite tai pakeisti, atidarę WISPR konfigūracijos ekraną.</translation>
+        <source>Obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening PIVX's configuration screen.</source>
+        <translation>Obfuscation buvo sėkmingai nustatytas į paprastą (%1 ir 2 raundai). Bet kada galite tai pakeisti, atidarę PIVX konfigūracijos ekraną.</translation>
     </message>
     <message>
-        <source>Obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening WISPR's configuration screen.</source>
-        <translation>Obfuscation buvo sėkmingai nustatytas į aukštą (%1 ir 8 raundai). Bet kada galite tai pakeisti, atidarę WISPR konfigūracijos ekraną.</translation>
+        <source>Obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening PIVX's configuration screen.</source>
+        <translation>Obfuscation buvo sėkmingai nustatytas į aukštą (%1 ir 8 raundai). Bet kada galite tai pakeisti, atidarę PIVX konfigūracijos ekraną.</translation>
     </message>
     <message>
-        <source>Obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening WISPR's configuration screen.</source>
-        <translation>Obfuscation buvo sėkmingai nustatytas į maksimumą (%1 ir 16 raundai). Bet kada galite tai pakeisti, atidarę WISPR konfigūracijos ekraną.</translation>
+        <source>Obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening PIVX's configuration screen.</source>
+        <translation>Obfuscation buvo sėkmingai nustatytas į maksimumą (%1 ir 16 raundai). Bet kada galite tai pakeisti, atidarę PIVX konfigūracijos ekraną.</translation>
     </message>
 </context>
 <context>
@@ -1844,12 +1797,12 @@ Patikrinkite adresą ir bandykite dar kartą.</translation>
         <translation>Ekspertas</translation>
     </message>
     <message>
-        <source>Automatically start WISPR after logging in to the system.</source>
-        <translation>Automatiškai paleisti WISPR prisijungus prie sistemos.</translation>
+        <source>Automatically start PIVX after logging in to the system.</source>
+        <translation>Automatiškai paleisti PIVX prisijungus prie sistemos.</translation>
     </message>
     <message>
-        <source>&amp;Start WISPR on system login</source>
-        <translation>&amp;Paleisti WISPR sistemai įsijungiant</translation>
+        <source>&amp;Start PIVX on system login</source>
+        <translation>&amp;Paleisti PIVX sistemai įsijungiant</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
@@ -1876,42 +1829,42 @@ Patikrinkite adresą ir bandykite dar kartą.</translation>
         <translation>&amp;Tinklas</translation>
     </message>
     <message>
-        <source>The user interface language can be set here. This setting will take effect after restarting WISPR.</source>
-        <translation>Čia galite nustatyti vartotojo sąsajos kalbą. Šis nustatymas įsigalios iš naujo paleidus "WISPR".</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting PIVX.</source>
+        <translation>Čia galite nustatyti vartotojo sąsajos kalbą. Šis nustatymas įsigalios iš naujo paleidus "PIVX".</translation>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/WisprProject/WisprProject-translations</source>
+https://www.transifex.com/pivx-project/pivx-project-translations</source>
         <translation>Trūksta kalbos arba vertimas nebaigtas? Padėkite prisidėdami prie vertimų čia: 
-https://www.transifex.com/WisprProject/WisprProject-translations</translation>
+https://www.transifex.com/pivx-project/pivx-project-translations</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
         <translation>Įrašyti prievadą naudojant &amp;UPnP</translation>
     </message>
     <message>
-        <source>Enable automatic minting of WSP units to zWSP</source>
-        <translation>Įgalinti automatinį konvertavimą iš WSP į zWSP</translation>
+        <source>Enable automatic minting of PIV units to zPIV</source>
+        <translation>Įgalinti automatinį konvertavimą iš PIV į zPIV</translation>
     </message>
     <message>
-        <source>Enable zWSP Automint</source>
-        <translation>Įgalinti zWSP Automatinį nukaldinima</translation>
+        <source>Enable zPIV Automint</source>
+        <translation>Įgalinti zPIV Automatinį nukaldinima</translation>
     </message>
     <message>
-        <source>Percentage of incoming WSP which get automatically converted to zWSP via Zerocoin Protocol (min: 10%)</source>
-        <translation>Procentas gauto WSP, kuris automatiškai bus konvertuotas į zWSP naudojant Zerocoin Protokolą (min: 10%)</translation>
+        <source>Percentage of incoming PIV which get automatically converted to zPIV via Zerocoin Protocol (min: 10%)</source>
+        <translation>Procentas gauto PIV, kuris automatiškai bus konvertuotas į zPIV naudojant Zerocoin Protokolą (min: 10%)</translation>
     </message>
     <message>
-        <source>Percentage of autominted zWSP</source>
-        <translation>Automatiškai sukurtų zWSP procentas</translation>
+        <source>Percentage of autominted zPIV</source>
+        <translation>Automatiškai sukurtų zPIV procentas</translation>
     </message>
     <message>
-        <source>Preferred Automint zWSP Denomination</source>
-        <translation>Pageidautinas zWSP Automatinio Nukaldinimo Nominalas</translation>
+        <source>Preferred Automint zPIV Denomination</source>
+        <translation>Pageidautinas zPIV Automatinio Nukaldinimo Nominalas</translation>
     </message>
     <message>
-        <source>Connect to the WISPR network through a SOCKS5 proxy.</source>
-        <translation>Jungtis prie WISPR tinklo naudojant SOCKS5 tarpinį serverį.</translation>
+        <source>Connect to the PIVX network through a SOCKS5 proxy.</source>
+        <translation>Jungtis prie PIVX tinklo naudojant SOCKS5 tarpinį serverį.</translation>
     </message>
     <message>
         <source>Proxy &amp;IP:</source>
@@ -2029,8 +1982,8 @@ https://www.transifex.com/WisprProject/WisprProject-translations</translation>
         <translation>Bendras balansas, įskaitant visas nepasiekiamas monetas.</translation>
     </message>
     <message>
-        <source>WSP Balance</source>
-        <translation>WSP Balansas</translation>
+        <source>PIV Balance</source>
+        <translation>PIV Balansas</translation>
     </message>
     <message>
         <source>Pending:</source>
@@ -2053,18 +2006,18 @@ https://www.transifex.com/WisprProject/WisprProject-translations</translation>
         <translation>Dabartinis bendras užrakintas balansas tik žiūrėjimo adresuose</translation>
     </message>
     <message>
-        <source>Your current WISPR balance, unconfirmed and immature transactions included</source>
-        <translation>Jūsų dabartinis WISPR balansas, įskaitant nepatvirtintus ir nesubrendusius sandorius</translation>
+        <source>Your current PIVX balance, unconfirmed and immature transactions included</source>
+        <translation>Jūsų dabartinis PIVX balansas, įskaitant nepatvirtintus ir nesubrendusius sandorius</translation>
     </message>
     <message>
-        <source>zWSP Balance</source>
-        <translation>zWSP Balansas</translation>
+        <source>zPIV Balance</source>
+        <translation>zPIV Balansas</translation>
     </message>
     <message>
         <source>Mature: more than 20 confirmation and more than 1 mint of the same denomination after it was minted.
-These zWSP are spendable.</source>
+These zPIV are spendable.</source>
         <translation>Subrendę: daugiau nei 20 patvirtinimų ir daugiau nei 1 konvertacija to pačio nominalo, kai jis jau buvo konvertuotas.
-Šiuos zWSP galima išleisti.</translation>
+Šiuos zPIV galima išleisti.</translation>
     </message>
     <message>
         <source>Unconfirmed: less than 20 confirmations
@@ -2073,8 +2026,8 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
 Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo po to, kai buvo konvertuotas.</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the WISPR network after a connection is established, but this process has not completed yet.</source>
-        <translation>Rodoma informacija gali būti pasenusi. Jūsų piniginė automatiškai sinchronizuojasi su WISPR tinklu po ryšio aktyvavimo, tačiau šis procesas dar nebaigtas.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the PIVX network after a connection is established, but this process has not completed yet.</source>
+        <translation>Rodoma informacija gali būti pasenusi. Jūsų piniginė automatiškai sinchronizuojasi su PIVX tinklu po ryšio aktyvavimo, tačiau šis procesas dar nebaigtas.</translation>
     </message>
     <message>
         <source>OVERVIEW</source>
@@ -2117,8 +2070,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo
         <translation>Prienamas išleidimui:</translation>
     </message>
     <message>
-        <source>Locked WSP or Masternode collaterals. These are excluded from zWSP minting.</source>
-        <translation>Užrakinti WSP arba Masternode užstatai. Jie yra neįtraukti į zWSP kalimą.</translation>
+        <source>Locked PIV or Masternode collaterals. These are excluded from zPIV minting.</source>
+        <translation>Užrakinti PIV arba Masternode užstatai. Jie yra neįtraukti į zPIV kalimą.</translation>
     </message>
     <message>
         <source>Locked:</source>
@@ -2141,8 +2094,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo
         <translation>AutoMint šiuo metu įgalintas ir nustatytas</translation>
     </message>
     <message>
-        <source>To disable AutoMint add 'enablezeromint=0' in wispr.conf.</source>
-        <translation>Norėdami išjungti Automatinį Kalimą pridėkite 'enablezeromint=0' wispr.conf faile.</translation>
+        <source>To disable AutoMint add 'enablezeromint=0' in pivx.conf.</source>
+        <translation>Norėdami išjungti Automatinį Kalimą pridėkite 'enablezeromint=0' pivx.conf faile.</translation>
     </message>
     </context>
 <context>
@@ -2156,8 +2109,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo
         <translation>Netinkamas mokėjimo adresas %1</translation>
     </message>
     <message>
-        <source>Cannot start wispr: click-to-pay handler</source>
-        <translation>Nepavyksta paleisti wispr: apdorojimo "spustelėjimo ir apmokėjimo" funkcijos klaida</translation>
+        <source>Cannot start pivx: click-to-pay handler</source>
+        <translation>Nepavyksta paleisti pivx: apdorojimo "spustelėjimo ir apmokėjimo" funkcijos klaida</translation>
     </message>
     <message>
         <source>Payment request file cannot be read! This can be caused by an invalid payment request file.</source>
@@ -2210,8 +2163,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo
         <translation>Zerocoin Veiksmai:</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the WISPR network after a connection is established, but this process has not completed yet.</source>
-        <translation>Rodoma informacija gali būti pasenusi. Jūsų piniginė automatiškai sinchronizuojasi su WISPR tinklu po ryšio aktyvavimo, tačiau šis procesas dar nebaigtas.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the PIVX network after a connection is established, but this process has not completed yet.</source>
+        <translation>Rodoma informacija gali būti pasenusi. Jūsų piniginė automatiškai sinchronizuojasi su PIVX tinklu po ryšio aktyvavimo, tačiau šis procesas dar nebaigtas.</translation>
     </message>
     <message>
         <source>Mint Zerocoin</source>
@@ -2222,8 +2175,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo
         <translation>0</translation>
     </message>
     <message>
-        <source>zWSP</source>
-        <translation>zWSP</translation>
+        <source>zPIV</source>
+        <translation>zPIV</translation>
     </message>
     <message>
         <source>Available for minting are coins which are confirmed and not locked or Masternode collaterals.</source>
@@ -2234,8 +2187,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo
         <translation>Prieinama Konvertavimui:</translation>
     </message>
     <message>
-        <source>0.000 000 00 WSP</source>
-        <translation>0.000 000 00 WSP</translation>
+        <source>0.000 000 00 PIV</source>
+        <translation>0.000 000 00 PIV</translation>
     </message>
     <message>
         <source>Reset</source>
@@ -2266,12 +2219,12 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo
         <translation>PRIVATUMAS</translation>
     </message>
     <message>
-        <source>zWSP Control</source>
-        <translation>zWsp Kontrolė</translation>
+        <source>zPIV Control</source>
+        <translation>zPiv Kontrolė</translation>
     </message>
     <message>
-        <source>zWSP Selected:</source>
-        <translation>Pasirinkta zWSP:</translation>
+        <source>zPIV Selected:</source>
+        <translation>Pasirinkta zPIV:</translation>
     </message>
     <message>
         <source>Quantity Selected:</source>
@@ -2290,16 +2243,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo
         <translation>Prieinamas Balansas: </translation>
     </message>
     <message>
-        <source>0 zWSP</source>
-        <translation>0 zWSP</translation>
-    </message>
-    <message>
-        <source>Security Level:</source>
-        <translation>Saugumo Lygmuo:</translation>
-    </message>
-    <message>
-        <source>Security Level 1 - 100 (default: 42)</source>
-        <translation>Saugumo Lygmuo 1 - 100 (numatytas: 42)</translation>
+        <source>0 zPIV</source>
+        <translation>0 zPIV</translation>
     </message>
     <message>
         <source>Pay &amp;To:</source>
@@ -2338,8 +2283,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo
         <translation>Zerocoin Statistika:</translation>
     </message>
     <message>
-        <source>Total Balance including unconfirmed and immature zWSP</source>
-        <translation>Bendras balansas, įskaitant nepatvirtintą ir nesubrendusį zWSP</translation>
+        <source>Total Balance including unconfirmed and immature zPIV</source>
+        <translation>Bendras balansas, įskaitant nepatvirtintą ir nesubrendusį zPIV</translation>
     </message>
     <message>
         <source>Total Zerocoin  Balance:</source>
@@ -2357,7 +2302,7 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo
         <source>Unconfirmed: less than 20 confirmations
 Immature: confirmed, but less than 1 mint of the same denomination after it was minted</source>
         <translation>Nepatvirtinta: mažiau nei 20 patvirtinimų
-Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominalo po to, kai buvo konvertuota.</translation>
+Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo po to, kai buvo konvertuotas.</translation>
     </message>
     <message>
         <source>Denom. 1:</source>
@@ -2501,7 +2446,7 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
     </message>
     <message>
         <source>out of sync</source>
-        <translation>ne sinchronizuotas</translation>
+        <translation>nesinchronizuotas</translation>
     </message>
     <message>
         <source>Mint Status: Okay</source>
@@ -2516,12 +2461,12 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
         <translation>Kopijuoti sumą</translation>
     </message>
     <message>
-        <source>zWSP Spend #: </source>
-        <translation>zWSP Išleidimas #:</translation>
+        <source>zPIV Spend #: </source>
+        <translation>zPIV Išleidimas #:</translation>
     </message>
     <message>
-        <source>zWSP Mint</source>
-        <translation>zWSP Konvertavimas</translation>
+        <source>zPIV Mint</source>
+        <translation>zPIV Konvertavimas</translation>
     </message>
     <message>
         <source> &lt;b&gt;enabled&lt;/b&gt;.</source>
@@ -2604,8 +2549,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
         <translation>Klaida: jūsų piniginė užrakinta. Pirmiausia įveskite piniginės slaptažodį.</translation>
     </message>
     <message>
-        <source>Invalid Wispr Address</source>
-        <translation>Netinkamas Wispr Adresas</translation>
+        <source>Invalid Pivx Address</source>
+        <translation>Netinkamas Pivx Adresas</translation>
     </message>
     <message>
         <source>Invalid Send Amount</source>
@@ -2624,14 +2569,6 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
         <translation>į adresą</translation>
     </message>
     <message>
-        <source>with Security Level </source>
-        <translation>su Saugumo Lygmeniu</translation>
-    </message>
-    <message>
-        <source>Failed to spend zWSP</source>
-        <translation>Nepavyko išleisti zWSP</translation>
-    </message>
-    <message>
         <source>serial: </source>
         <translation>serija:</translation>
     </message>
@@ -2645,14 +2582,17 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
     </message>
 </context>
 <context>
+    <name>ProposalFrame</name>
+    </context>
+<context>
     <name>QObject</name>
     <message>
         <source>Amount</source>
         <translation>Suma</translation>
     </message>
     <message>
-        <source>Enter a WISPR address (e.g. %1)</source>
-        <translation>Įveskite WISPR adresą (pvz. %1)</translation>
+        <source>Enter a PIVX address (e.g. %1)</source>
+        <translation>Įveskite PIVX adresą (pvz. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -2685,6 +2625,10 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
     <message>
         <source>N/A</source>
         <translation>N/A</translation>
+    </message>
+    <message>
+        <source>PIVX Core</source>
+        <translation>PIVX Core</translation>
     </message>
     </context>
 <context>
@@ -2829,8 +2773,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
         <translation>Iš:</translation>
     </message>
     <message>
-        <source>Welcome to the WISPR RPC console.</source>
-        <translation>Sveiki atvykę į WISPR RPC konsolę.</translation>
+        <source>Welcome to the PIVX RPC console.</source>
+        <translation>Sveiki atvykę į PIVX RPC konsolę.</translation>
     </message>
     <message>
         <source>never</source>
@@ -2840,12 +2784,12 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
 <context>
     <name>ReceiveCoinsDialog</name>
     <message>
-        <source>&amp;Label:</source>
-        <translation>&amp;Etiketė:</translation>
+        <source>A&amp;mount:</source>
+        <translation>S&amp;uma:</translation>
     </message>
     <message>
-        <source>&amp;Amount:</source>
-        <translation>&amp;Suma:</translation>
+        <source>&amp;Label:</source>
+        <translation>&amp;Etiketė:</translation>
     </message>
     <message>
         <source>&amp;Request payment</source>
@@ -2882,6 +2826,10 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
     <message>
         <source>Copy amount</source>
         <translation>Kopijuoti sumą</translation>
+    </message>
+    <message>
+        <source>Copy address</source>
+        <translation>Kopijuoti adresą</translation>
     </message>
 </context>
 <context>
@@ -2928,6 +2876,10 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
     <message>
         <source>Message</source>
         <translation>Žinutė</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresas</translation>
     </message>
     <message>
         <source>Amount</source>
@@ -3001,8 +2953,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
         <translation>Pasirinktinio pakeitimo adresas</translation>
     </message>
     <message>
-        <source>0 WSP</source>
-        <translation>0 WSP</translation>
+        <source>0 PIV</source>
+        <translation>0 PIV</translation>
     </message>
     <message>
         <source>Transaction Fee:</source>
@@ -3158,8 +3110,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
 <context>
     <name>SignVerifyMessageDialog</name>
     <message>
-        <source>The WISPR address to sign the message with</source>
-        <translation>WISPR adresas, kuriuo pasirašyti žinute</translation>
+        <source>The PIVX address to sign the message with</source>
+        <translation>PIVX adresas, kuriuo pasirašyti žinute</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -3182,16 +3134,16 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
         <translation>Kopijuoti dabartinį parašą</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this WISPR address</source>
-        <translation>Pažymėkite žinutę, kad įrodytumėte, jog jūs šio WISPR adreso savininkas</translation>
+        <source>Sign the message to prove you own this PIVX address</source>
+        <translation>Pažymėkite žinutę, kad įrodytumėte, jog jūs šio PIVX adreso savininkas</translation>
     </message>
     <message>
-        <source>The WISPR address the message was signed with</source>
-        <translation>WISPR adresas, kurio buvo pasirašyta žinutė</translation>
+        <source>The PIVX address the message was signed with</source>
+        <translation>PIVX adresas, kurio buvo pasirašyta žinutė</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified WISPR address</source>
-        <translation>Patikrinkite pranešimą, kad jis būtų pasirašytas su nurodytu WISPR adresu</translation>
+        <source>Verify the message to ensure it was signed with the specified PIVX address</source>
+        <translation>Patikrinkite pranešimą, kad jis būtų pasirašytas su nurodytu PIVX adresu</translation>
     </message>
     <message>
         <source>Reset all sign message fields</source>
@@ -3229,8 +3181,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>WISPR Core</source>
-        <translation>WISPR Core</translation>
+        <source>PIVX Core</source>
+        <translation>PIVX Core</translation>
     </message>
     </context>
 <context>
@@ -3449,18 +3401,18 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
     </message>
     </context>
 <context>
-    <name>ZWspControlDialog</name>
+    <name>ZPivControlDialog</name>
     <message>
         <source>0</source>
         <translation>0</translation>
     </message>
     <message>
-        <source>zWSP</source>
-        <translation>zWSP</translation>
+        <source>zPIV</source>
+        <translation>zPIV</translation>
     </message>
     </context>
 <context>
-    <name>wispr-core</name>
+    <name>pivx-core</name>
     <message>
         <source>(default: %s)</source>
         <translation>(numatytas: %s)</translation>
@@ -3494,8 +3446,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
         <translation>Klaida kraunant wallet.dat: Piniginė yra sugadinta</translation>
     </message>
     <message>
-        <source>Error loading wallet.dat: Wallet requires newer version of WISPR Core</source>
-        <translation>Klaida kraunant wallet.dat: Piniginė reikalauja naujesnės WISPR Core versijos</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of PIVX Core</source>
+        <translation>Klaida kraunant wallet.dat: Piniginė reikalauja naujesnės PIVX Core versijos</translation>
     </message>
     <message>
         <source>Error opening block database</source>
@@ -3568,10 +3520,6 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
     <message>
         <source>SwiftX options:</source>
         <translation>SwiftX nustatymai:</translation>
-    </message>
-    <message>
-        <source>Failed to deserialize</source>
-        <translation>Nepavyko deserializuoti</translation>
     </message>
     <message>
         <source>Failed to select a zerocoin</source>
@@ -3726,8 +3674,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
         <translation>Piniginė užrakinta.</translation>
     </message>
     <message>
-        <source>Wallet needed to be rewritten: restart WISPR Core to complete</source>
-        <translation>Piniginę reikia perrašyti: paleiskite WISPR Core iš naujo</translation>
+        <source>Wallet needed to be rewritten: restart PIVX Core to complete</source>
+        <translation>Piniginę reikia perrašyti: paleiskite PIVX Core iš naujo</translation>
     </message>
     <message>
         <source>Wallet options:</source>

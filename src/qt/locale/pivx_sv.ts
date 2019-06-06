@@ -62,12 +62,12 @@
         <translation>Mottagar adresser</translation>
     </message>
     <message>
-        <source>These are your WISPR addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Det här är dina WISPR adresser för att skicka betalningar. Kontrollera alltid summan och mottagaradressen före du sänder mynt.</translation>
+        <source>These are your PIVX addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Det här är dina PIVX adresser för att skicka betalningar. Kontrollera alltid summan och mottagaradressen före du sänder mynt.</translation>
     </message>
     <message>
-        <source>These are your WISPR addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Det här är dina WISPR adresser för att ta emot betalningar. Det är rekomenderat att använda en ny mottagaradress för varje transaktion.</translation>
+        <source>These are your PIVX addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Det här är dina PIVX adresser för att ta emot betalningar. Det är rekomenderat att använda en ny mottagaradress för varje transaktion.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -176,16 +176,16 @@
         <translation>Bekräfta plånboks krypering</translation>
     </message>
     <message>
-        <source>WISPR will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your WSPs from being stolen by malware infecting your computer.</source>
-        <translation>WISPR kommer att stängas ner nu för att färdigställa kryperingsprocessen. Kom ihåg att kryptering av din plånbok inte kan säkerställa dina WSPs från att bli stulna av skadeprogram som infekterat din dator.</translation>
+        <source>PIVX will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your PIVs from being stolen by malware infecting your computer.</source>
+        <translation>PIVX kommer att stängas ner nu för att färdigställa kryperingsprocessen. Kom ihåg att kryptering av din plånbok inte kan säkerställa dina PIVs från att bli stulna av skadeprogram som infekterat din dator.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>Är du säker på att du vill kryptera din plånbok?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR WSP&lt;/b&gt;!</source>
-        <translation>Varning: om du krypterar din plånbok och tappar bort din lösenfras kommer du &lt;b&gt; FÖRLORA ALLA DINA WSP&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR PIV&lt;/b&gt;!</source>
+        <translation>Varning: om du krypterar din plånbok och tappar bort din lösenfras kommer du &lt;b&gt; FÖRLORA ALLA DINA PIV&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -254,12 +254,12 @@
         <translation>Adress:</translation>
     </message>
     <message>
-        <source>Enter a WISPR Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation>Fyll i en WISPR Adress som du skulle vilja cryptera med BIP 38. Skriv in en lösenfras i den mittersta lådan. Tryck kryptera för att beräkna fram den krypterade privata nyckeln.</translation>
+        <source>Enter a PIVX Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
+        <translation>Fyll i en PIVX Adress som du skulle vilja cryptera med BIP 38. Skriv in en lösenfras i den mittersta lådan. Tryck kryptera för att beräkna fram den krypterade privata nyckeln.</translation>
     </message>
     <message>
-        <source>The WISPR address to encrypt</source>
-        <translation>WISPR adressen som ska krypteras</translation>
+        <source>The PIVX address to encrypt</source>
+        <translation>PIVX adressen som ska krypteras</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -271,7 +271,7 @@
     </message>
     <message>
         <source>Paste address from clipboard</source>
-        <translation>Limma in adress från urklipp</translation>
+        <translation>Infoga adress från urklipp</translation>
     </message>
     <message>
         <source>Alt+P</source>
@@ -290,8 +290,8 @@
         <translation>Kopiera den nuvarande signaturen till systemets urklipp</translation>
     </message>
     <message>
-        <source>Encrypt the private key for this WISPR address</source>
-        <translation>Kryptera den privata nyckeln för denna WISPR adressen</translation>
+        <source>Encrypt the private key for this PIVX address</source>
+        <translation>Kryptera den privata nyckeln för denna PIVX adressen</translation>
     </message>
     <message>
         <source>Reset all fields</source>
@@ -433,8 +433,8 @@
         <translation>Bläddra i transaktions historiken</translation>
     </message>
     <message>
-        <source>Privacy Actions for zWSP</source>
-        <translation>Integritets funktioner för zWSP</translation>
+        <source>Privacy Actions for zPIV</source>
+        <translation>Integritets funktioner för zPIV</translation>
     </message>
     <message>
         <source>E&amp;xit</source>
@@ -610,7 +610,7 @@
     </message>
     <message numerus="yes">
         <source>Processed %n blocks of transaction history.</source>
-        <translation><numerusform>Bearbetar %n block av transaktionshistoriken.</numerusform><numerusform>Bearbetar %n block av transaktionshistoriken.</numerusform></translation>
+        <translation><numerusform>Bearbetat %n block av transaktionshistoriken.</numerusform><numerusform>Bearbetat %n block av transaktionshistoriken.</numerusform></translation>
     </message>
     <message>
         <source>Synchronizing additional data: %p%</source>
@@ -623,6 +623,10 @@
     <message>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt; for anonymization and staking only</source>
         <translation>Plånboken är &lt;b&gt;krypterad&lt;/b&gt; och för tillfället &lt;b&gt;olåst&lt;/b&gt; för anonymisering och staking enbart</translation>
+    </message>
+    <message>
+        <source>Tor is &lt;b&gt;enabled&lt;/b&gt;: %1</source>
+        <translation>Tor är &lt;b&gt;aktiverat&lt;/b&gt;: %1</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -645,16 +649,16 @@
         <translation>flik vertygsrad</translation>
     </message>
     <message>
-        <source>WISPR Core</source>
-        <translation>WISPR Kärna</translation>
+        <source>PIVX Core</source>
+        <translation>PIVX Core</translation>
     </message>
     <message>
-        <source>Send coins to a WISPR address</source>
-        <translation>Skicka mynt till en WISPR adress</translation>
+        <source>Send coins to a PIVX address</source>
+        <translation>Skicka mynt till en PIVX adress</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and wispr: URIs)</source>
-        <translation>Begär betalning (genererar QR kod och wispr: URls)</translation>
+        <source>Request payments (generates QR codes and pivx: URIs)</source>
+        <translation>Begär betalning (genererar QR kod och pivx: URls)</translation>
     </message>
     <message>
         <source>&amp;Privacy</source>
@@ -669,24 +673,24 @@
         <translation>Utforska masternoder</translation>
     </message>
     <message>
-        <source>&amp;About WISPR Core</source>
-        <translation>Om WISPR Kärnan</translation>
+        <source>&amp;About PIVX Core</source>
+        <translation>Om PIVX Kärnan</translation>
     </message>
     <message>
-        <source>Show information about WISPR Core</source>
-        <translation>Visa information om WISPR Kärnan</translation>
+        <source>Show information about PIVX Core</source>
+        <translation>Visa information om PIVX Kärnan</translation>
     </message>
     <message>
-        <source>Modify configuration options for WISPR</source>
-        <translation>Ändra konfigurationsval för WISPR</translation>
+        <source>Modify configuration options for PIVX</source>
+        <translation>Ändra konfigurationsval för PIVX</translation>
     </message>
     <message>
-        <source>Sign messages with your WISPR addresses to prove you own them</source>
-        <translation>Signera meddelanden med din WISPR adress för att visa att du äger dem</translation>
+        <source>Sign messages with your PIVX addresses to prove you own them</source>
+        <translation>Signera meddelanden med din PIVX adress för att visa att du äger dem</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified WISPR addresses</source>
-        <translation>Verifiera meddelandet för att säkerställa att de blev signerat med den specifika WISPR adressen.</translation>
+        <source>Verify messages to ensure they were signed with specified PIVX addresses</source>
+        <translation>Verifiera meddelandet för att säkerställa att de blev signerat med den specifika PIVX adressen.</translation>
     </message>
     <message>
         <source>&amp;BIP38 tool</source>
@@ -717,8 +721,8 @@
         <translation>Öppna Huvudnodens konfigurations fil </translation>
     </message>
     <message>
-        <source>Open a WISPR: URI or payment request</source>
-        <translation>Öppna en WISPR: URI eller betalningsförfrågan</translation>
+        <source>Open a PIVX: URI or payment request</source>
+        <translation>Öppna en PIVX: URI eller betalningsförfrågan</translation>
     </message>
     <message>
         <source>&amp;Blockchain explorer</source>
@@ -729,16 +733,16 @@
         <translation>Blockera utforskarfönstret</translation>
     </message>
     <message>
-        <source>Show the WISPR Core help message to get a list with possible WISPR command-line options</source>
-        <translation>Visa WISPR Core hjälp meddelande för att få en lista med möjliga WISPR kommandorad alternativ</translation>
+        <source>Show the PIVX Core help message to get a list with possible PIVX command-line options</source>
+        <translation>Visa PIVX Core hjälp meddelande för att få en lista med möjliga PIVX kommandorad alternativ</translation>
     </message>
     <message>
-        <source>WISPR Core client</source>
-        <translation>WISPR kärn klient</translation>
+        <source>PIVX Core client</source>
+        <translation>PIVX kärn klient</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to WISPR network</source>
-        <translation><numerusform>%n aktiv(a) annslutning(ar) till WISPR nätverket</numerusform><numerusform>%n aktiv(a) annslutning(ar) till WISPR nätverket</numerusform></translation>
+        <source>%n active connection(s) to PIVX network</source>
+        <translation><numerusform>%n aktiva anslutning(ar) till PIVX nätverket</numerusform><numerusform>%n aktiva anslutning(ar) till PIVX nätverket</numerusform></translation>
     </message>
     <message>
         <source>Synchronizing with network...</source>
@@ -762,15 +766,15 @@
     </message>
     <message numerus="yes">
         <source>%n hour(s)</source>
-        <translation><numerusform>%n timme</numerusform><numerusform>%n timmar</numerusform></translation>
+        <translation><numerusform>%n timmar</numerusform><numerusform>%n timmar</numerusform></translation>
     </message>
     <message numerus="yes">
         <source>%n day(s)</source>
-        <translation><numerusform>%n dag</numerusform><numerusform>%n dagar</numerusform></translation>
+        <translation><numerusform>%n dagar</numerusform><numerusform>%n dagar</numerusform></translation>
     </message>
     <message numerus="yes">
         <source>%n week(s)</source>
-        <translation><numerusform>%n vecka</numerusform><numerusform>%n veckor</numerusform></translation>
+        <translation><numerusform>%n veckor</numerusform><numerusform>%n veckor</numerusform></translation>
     </message>
     <message>
         <source>%1 and %2</source>
@@ -850,7 +854,7 @@ MultiSend: %1</translation>
     </message>
     <message>
         <source>AutoMint is currently enabled and set to </source>
-        <translation>AutoMint är för tillfället aktiverat och inställd på</translation>
+        <translation>AutoMint är för tillfället aktiverat och inställt på</translation>
     </message>
     <message>
         <source>AutoMint is disabled</source>
@@ -864,7 +868,7 @@ MultiSend: %1</translation>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>Plånbok är &lt;b&gt;krypterad&lt;/b&gt; och tillfälligt &lt;b&gt;låst&lt;/b&gt;</translation>
     </message>
-</context>
+    </context>
 <context>
     <name>BlockExplorer</name>
     <message>
@@ -892,8 +896,8 @@ MultiSend: %1</translation>
         <translation>text etikett</translation>
     </message>
     <message>
-        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (wispr.conf).</source>
-        <translation>Alla transaktioner kommer inte visas. För att visa alla transaktioner behöver du sätta txindex=1 i konfigurationsfilen (wispr.conf).</translation>
+        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (pivx.conf).</source>
+        <translation>Alla transaktioner kommer inte visas. För att visa alla transaktioner behöver du sätta txindex=1 i konfigurationsfilen (pivx.conf).</translation>
     </message>
 </context>
 <context>
@@ -1130,8 +1134,8 @@ MultiSend: %1</translation>
         <translation>Den här etiketten blir röd, ifall någon mottagare får en mängd som är mindre än %1.</translation>
     </message>
     <message>
-        <source>Can vary +/- %1 uwsp per input.</source>
-        <translation>Kan variera med +/- %1 uwsp per inmatning.</translation>
+        <source>Can vary +/- %1 upiv per input.</source>
+        <translation>Kan variera med +/- %1 upiv per inmatning.</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -1185,8 +1189,8 @@ MultiSend: %1</translation>
         <translation>Redigera skickande adress</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid WISPR address.</source>
-        <translation>Den inmatade adressen "%1" är ej en giltig WISPR adress.</translation>
+        <source>The entered address "%1" is not a valid PIVX address.</source>
+        <translation>Den inmatade adressen "%1" är ej en giltig PIVX adress.</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book.</source>
@@ -1225,22 +1229,33 @@ MultiSend: %1</translation>
     </message>
 </context>
 <context>
+    <name>GovernancePage</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulär</translation>
+    </message>
+    <message>
+        <source>0</source>
+        <translation>0</translation>
+    </message>
+    </context>
+<context>
     <name>HelpMessageDialog</name>
     <message>
         <source>version</source>
         <translation>version</translation>
     </message>
     <message>
-        <source>WISPR Core</source>
-        <translation>WISPR Kärna</translation>
+        <source>PIVX Core</source>
+        <translation>PIVX Core</translation>
     </message>
     <message>
         <source>(%1-bit)</source>
         <translation>(%1-bit)</translation>
     </message>
     <message>
-        <source>About WISPR Core</source>
-        <translation>Om WISPR Kärna</translation>
+        <source>About PIVX Core</source>
+        <translation>Om PIVX Kärna</translation>
     </message>
     <message>
         <source>Command-line options</source>
@@ -1286,16 +1301,16 @@ MultiSend: %1</translation>
         <translation>Välkommen</translation>
     </message>
     <message>
-        <source>Welcome to WISPR Core.</source>
-        <translation>Välkommen till WISPR Core.</translation>
+        <source>Welcome to PIVX Core.</source>
+        <translation>Välkommen till PIVX Core.</translation>
     </message>
     <message>
-        <source>As this is the first time the program is launched, you can choose where WISPR Core will store its data.</source>
-        <translation>Eftersom detta är första gången programmet körs så kan du välja var WISPR Core ska spara sin data.</translation>
+        <source>As this is the first time the program is launched, you can choose where PIVX Core will store its data.</source>
+        <translation>Eftersom detta är första gången programmet körs så kan du välja var PIVX Core ska spara sin data.</translation>
     </message>
     <message>
-        <source>WISPR Core will download and store a copy of the WISPR block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>WISPR Kärnan kommer ladda ner och spara en kopia av WISPR block chain. Minst %1GB data kommer sparas i denna katalog och den kommer växa med tiden. Plånboken kommer också sparas i denna katalog.</translation>
+        <source>PIVX Core will download and store a copy of the PIVX block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <translation>PIVX Kärnan kommer ladda ner och spara en kopia av PIVX block chain. Minst %1GB data kommer sparas i denna katalog och den kommer växa med tiden. Plånboken kommer också sparas i denna katalog.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -1306,8 +1321,8 @@ MultiSend: %1</translation>
         <translation>Använd en skräddarsydd data katalog</translation>
     </message>
     <message>
-        <source>WISPR Core</source>
-        <translation>WISPR Core</translation>
+        <source>PIVX Core</source>
+        <translation>PIVX Core</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -1448,12 +1463,12 @@ MultiSend: %1</translation>
         <translation>Mata in Adress att Skicka till</translation>
     </message>
     <message>
-        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other WISPR addresses after it matures.
-To Add: enter percentage to give and WISPR address to add to the MultiSend vector.
+        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other PIVX addresses after it matures.
+To Add: enter percentage to give and PIVX address to add to the MultiSend vector.
 To Delete: Enter address to delete and press delete.
 MultiSend will not be activated unless you have clicked Activate</source>
-        <translation>MultiSend tillåter dig att automatiskt skicka upp till 100% av dina staking eller huvudnod belöningar till en lista av andra WISPR adresser efter att belöningarna har mognat.
-För att Lägga till: Ange procent att ge och WISPR adress för att lägga till i MultiSend vektorn.
+        <translation>MultiSend tillåter dig att automatiskt skicka upp till 100% av dina staking eller huvudnod belöningar till en lista av andra PIVX adresser efter att belöningarna har mognat.
+För att Lägga till: Ange procent att ge och PIVX adress för att lägga till i MultiSend vektorn.
 För att Ta Bort: Ange adressen som ska tas bort och tryck ta bort.
 MultiSend kommer inte aktiveras om du inte tryckt på Aktivera</translation>
     </message>
@@ -1542,47 +1557,78 @@ MultiSend kommer inte aktiveras om du inte tryckt på Aktivera</translation>
         <translation>(Ingen etikett)</translation>
     </message>
     <message>
-        <source>The entered address:
-</source>
-        <translation>Den inmatade adressen:
-</translation>
+        <source>MultiSend Active for Stakes and Masternode Rewards</source>
+        <translation>MultiSend Aktivt för Stakes och Huvudnods Belöningar</translation>
     </message>
     <message>
-        <source> is invalid.
+        <source>MultiSend Active for Stakes</source>
+        <translation>MultiSend Aktiv för Stakes</translation>
+    </message>
+    <message>
+        <source>MultiSend Active for Masternode Rewards</source>
+        <translation>MultiSend Aktivt för Huvudnods Belöningar</translation>
+    </message>
+    <message>
+        <source>MultiSend Not Active</source>
+        <translation>MultiSend inte Aktivt</translation>
+    </message>
+    <message>
+        <source>The entered address: %1 is invalid.
 Please check the address and try again.</source>
-        <translation>är ogiltig.
+        <translation>Den angivna adressen: %1 är ej giltig.
 Var vänlig kontrollera adressen och försök igen.</translation>
     </message>
     <message>
-        <source>The total amount of your MultiSend vector is over 100% of your stake reward
-</source>
-        <translation>Din totala MultiSend vektor mängd överstiger 100% av din staking belöning
-</translation>
+        <source>The total amount of your MultiSend vector is over 100% of your stake reward</source>
+        <translation>Den totala mängden av din MultiSend vektor är över 100% av din stake belöning</translation>
+    </message>
+    <message>
+        <source>Saved the MultiSend to memory, but failed saving properties to the database.</source>
+        <translation>Sparade MultiSend till minne, men misslyckades spara egenskaperna till databasen.</translation>
+    </message>
+    <message>
+        <source>MultiSend Vector</source>
+        <translation>MultiSend Vektor</translation>
+    </message>
+    <message>
+        <source>Removed %1</source>
+        <translation>Borttaget %1</translation>
+    </message>
+    <message>
+        <source>Could not locate address</source>
+        <translation>Kunde inte lokalisera adress</translation>
+    </message>
+    <message>
+        <source>Unable to activate MultiSend, check MultiSend vector</source>
+        <translation>Kan ej aktivera MultiSend, kontrollera MultiSend vektor</translation>
+    </message>
+    <message>
+        <source>Need to select to send on stake and/or masternode rewards</source>
+        <translation>Behöver välja att skicka på stake och/eller huvudnods belöningar</translation>
+    </message>
+    <message>
+        <source>MultiSend activated but writing settings to DB failed</source>
+        <translation>MultiSend aktiverat men misslyckades att skriva inställningar till DB</translation>
+    </message>
+    <message>
+        <source>MultiSend activated</source>
+        <translation>MultiSend aktiverat</translation>
+    </message>
+    <message>
+        <source>First Address Not Valid</source>
+        <translation>Första Adress Ej Giltig</translation>
+    </message>
+    <message>
+        <source>MultiSend deactivated but writing settings to DB failed</source>
+        <translation>MultiSend avaktiverat men misslyckades skriva inställningar till DB</translation>
+    </message>
+    <message>
+        <source>MultiSend deactivated</source>
+        <translation>MultiSend avaktiverat</translation>
     </message>
     <message>
         <source>Please Enter 1 - 100 for percent.</source>
         <translation>Var vänlig mata in 1 - 100 i procent.</translation>
-    </message>
-    <message>
-        <source>Saved the MultiSend to memory, but failed saving properties to the database.
-</source>
-        <translation>Sparade MultiSend till minne, men misslyckades spara egenskaperna till databasen.
-</translation>
-    </message>
-    <message>
-        <source>MultiSend Vector
-</source>
-        <translation>MultiSend Vektor</translation>
-    </message>
-    <message>
-        <source>Removed </source>
-        <translation>Borttagen</translation>
-    </message>
-    <message>
-        <source>Could not locate address
-</source>
-        <translation>Kunde inte lokalisera adress
-</translation>
     </message>
 </context>
 <context>
@@ -1657,7 +1703,7 @@ Var god vänta efter att du trycker på importera.</translation>
     </message>
     <message>
         <source>Quantity Selected:</source>
-        <translation>Kvantitet Vald:</translation>
+        <translation>Vald Kvantitet:</translation>
     </message>
     <message>
         <source>0</source>
@@ -1680,8 +1726,8 @@ Var god vänta efter att du trycker på importera.</translation>
         <translation>Adress / Mängd:</translation>
     </message>
     <message>
-        <source>Add destinations to send WSP to</source>
-        <translation>Lägg till destination att skicka WSP till</translation>
+        <source>Add destinations to send PIV to</source>
+        <translation>Lägg till destination att skicka PIV till</translation>
     </message>
     <message>
         <source>Add &amp;Destination</source>
@@ -1779,48 +1825,48 @@ Var god vänta efter att du trycker på importera.</translation>
         <translation>Var vänlig och välj en sekretess nivå.</translation>
     </message>
     <message>
-        <source>Use 2 separate masternodes to mix funds up to 10000 WSP</source>
-        <translation>Använd 2 separata huvudnoder för att blanda tillgångar upp till 10000 WSP</translation>
+        <source>Use 2 separate masternodes to mix funds up to 10000 PIV</source>
+        <translation>Använd 2 separata huvudnoder för att blanda tillgångar upp till 10000 PIV</translation>
     </message>
     <message>
-        <source>Use 8 separate masternodes to mix funds up to 10000 WSP</source>
-        <translation>Använd 8 separata huvudnoderför att blanda tillgångar upp till 10000 WSP</translation>
+        <source>Use 8 separate masternodes to mix funds up to 10000 PIV</source>
+        <translation>Använd 8 separata huvudnoderför att blanda tillgångar upp till 10000 PIV</translation>
     </message>
     <message>
         <source>Use 16 separate masternodes</source>
         <translation>Använd 16 separata huvudnoder</translation>
     </message>
     <message>
-        <source>This option is the quickest and will cost about ~0.025 WSP to anonymize 10000 WSP</source>
-        <translation>Det här alternativet är det snabbaste och kommer kostar ungefär ~0.025 WSP för att anonymisera 10000 WSP</translation>
+        <source>This option is the quickest and will cost about ~0.025 PIV to anonymize 10000 PIV</source>
+        <translation>Det här alternativet är det snabbaste och kommer kostar ungefär ~0.025 PIV för att anonymisera 10000 PIV</translation>
     </message>
     <message>
-        <source>This option is moderately fast and will cost about 0.05 WSP to anonymize 10000 WSP</source>
-        <translation>Det här alternativet är måttligt snabb och kommer kostar ungefär 0.05 WSP för att anonymisera 10000 WSP</translation>
+        <source>This option is moderately fast and will cost about 0.05 PIV to anonymize 10000 PIV</source>
+        <translation>Det här alternativet är måttligt snabb och kommer kostar ungefär 0.05 PIV för att anonymisera 10000 PIV</translation>
     </message>
     <message>
         <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
         <translation>Det här är det långsammaste och säkraste alternativet. Använda maximal anonymitet kommer kosta</translation>
     </message>
     <message>
-        <source>0.1 WSP per 10000 WSP you anonymize.</source>
-        <translation>0.1 WSP per 10000 WSP du anonymiserar.</translation>
+        <source>0.1 PIV per 10000 PIV you anonymize.</source>
+        <translation>0.1 PIV per 10000 PIV du anonymiserar.</translation>
     </message>
     <message>
         <source>Obfuscation Configuration</source>
         <translation>Fördunkling Konfiguration</translation>
     </message>
     <message>
-        <source>Obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening WISPR's configuration screen.</source>
-        <translation>Fördunkling sattes framgångsrikt till grundläggande (%1 och 2 rundor). Du kan ändra det här när du vill genom att öppna WISPR's konfigurationsskärm.</translation>
+        <source>Obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening PIVX's configuration screen.</source>
+        <translation>Fördunkling sattes framgångsrikt till grundläggande (%1 och 2 rundor). Du kan ändra det här när du vill genom att öppna PIVX's konfigurationsskärm.</translation>
     </message>
     <message>
-        <source>Obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening WISPR's configuration screen.</source>
-        <translation>Fördunkling sattes framgångsrikt till hög (%1 och 8 rundor). Du kan ändra det här när du vill genom att öppna WISPR's konfigurationsskärm.</translation>
+        <source>Obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening PIVX's configuration screen.</source>
+        <translation>Fördunkling sattes framgångsrikt till hög (%1 och 8 rundor). Du kan ändra det här när du vill genom att öppna PIVX's konfigurationsskärm.</translation>
     </message>
     <message>
-        <source>Obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening WISPR's configuration screen.</source>
-        <translation>Fördunkling sattes framgångsrikt till maximal (%1 och 16 rundor). Du kan ändra det här när du vill genom att öppna WISPR's konfigurationsskärm.</translation>
+        <source>Obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening PIVX's configuration screen.</source>
+        <translation>Fördunkling sattes framgångsrikt till maximal (%1 och 16 rundor). Du kan ändra det här när du vill genom att öppna PIVX's konfigurationsskärm.</translation>
     </message>
 </context>
 <context>
@@ -1865,6 +1911,10 @@ Var god vänta efter att du trycker på importera.</translation>
         <translation>MB</translation>
     </message>
     <message>
+        <source>Number of script &amp;verification threads</source>
+        <translation>Antal script &amp;verifications trådar</translation>
+    </message>
+    <message>
         <source>(0 = auto, &lt;0 = leave that many cores free)</source>
         <translation>(0 = auto, &lt;0 = lämna så många "kärnor" fria)</translation>
     </message>
@@ -1877,8 +1927,8 @@ Var god vänta efter att du trycker på importera.</translation>
         <translation>Om du avaktiverar spenderandet av okonfirmerad växel så kommer växeln från en transaktion &lt;br/&gt;ej kunna användas föräns transaktionen har minst en bekräftelse. &lt;br/&gt; Detta påverkar även hur ditt saldo beräknas.</translation>
     </message>
     <message>
-        <source>Automatically open the WISPR client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Öppna automatiskt WISPR klient porten på denna router. Detta funkar endast om din router stödjer UPnP och är påslaget.</translation>
+        <source>Automatically open the PIVX client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Öppna automatiskt PIVX klient porten på denna router. Detta funkar endast om din router stödjer UPnP och är påslaget.</translation>
     </message>
     <message>
         <source>Accept connections from outside</source>
@@ -1889,20 +1939,28 @@ Var god vänta efter att du trycker på importera.</translation>
         <translation>Tillåt inkommande anslutningar</translation>
     </message>
     <message>
+        <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
+        <translation>&amp;Koppla upp genom SOCKS5 proxy (standard proxy):</translation>
+    </message>
+    <message>
         <source>Expert</source>
         <translation>Expert</translation>
     </message>
     <message>
-        <source>Automatically start WISPR after logging in to the system.</source>
-        <translation>Starta WISPR automatiskt efter inloggning på systemet.</translation>
+        <source>Automatically start PIVX after logging in to the system.</source>
+        <translation>Starta PIVX automatiskt efter inloggning på systemet.</translation>
     </message>
     <message>
-        <source>&amp;Start WISPR on system login</source>
-        <translation>&amp;Starta WISPR vid systeminloggning</translation>
+        <source>&amp;Start PIVX on system login</source>
+        <translation>&amp;Starta PIVX vid systeminloggning</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
         <translation>Huruvida mynt kontroll funktioner ska visas eller inte.</translation>
+    </message>
+    <message>
+        <source>Enable coin &amp;control features</source>
+        <translation>Tillåt mynt &amp;kontroll funktioner</translation>
     </message>
     <message>
         <source>Show additional tab listing all your masternodes in first sub-tab&lt;br/&gt;and all masternodes on the network in second sub-tab.</source>
@@ -1921,50 +1979,50 @@ Var god vänta efter att du trycker på importera.</translation>
         <translation>&amp;Nätverk</translation>
     </message>
     <message>
-        <source>The user interface language can be set here. This setting will take effect after restarting WISPR.</source>
-        <translation>Användargränssnittets språk kan väljas här. Denna inställning börjar gälla efter att man startat om WISPR.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting PIVX.</source>
+        <translation>Användargränssnittets språk kan väljas här. Denna inställning börjar gälla efter att man startat om PIVX.</translation>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/WisprProject/WisprProject-translations</source>
+https://www.transifex.com/pivx-project/pivx-project-translations</source>
         <translation>Fattas språk eller är översättningen ofullständig? Hjälp till att bidra med översättning här:
-https://www.transifex.com/WisprProject/WisprProject-translations</translation>
+https://www.transifex.com/pivx-project/pivx-project-translations</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
         <translation>Kartlägg port med &amp;UPnP</translation>
     </message>
     <message>
-        <source>Enable automatic minting of WSP units to zWSP</source>
-        <translation>Tillåt automatisk prägling med WSP enheter till zWSP</translation>
+        <source>Enable automatic minting of PIV units to zPIV</source>
+        <translation>Tillåt automatisk prägling med PIV enheter till zPIV</translation>
     </message>
     <message>
-        <source>Enable zWSP Automint</source>
-        <translation>Tillåt zWSP Autoprägling</translation>
+        <source>Enable zPIV Automint</source>
+        <translation>Tillåt zPIV Autoprägling</translation>
     </message>
     <message>
-        <source>Percentage of incoming WSP which get automatically converted to zWSP via Zerocoin Protocol (min: 10%)</source>
-        <translation>Procent av inkommande WSP som automatiskt konverteras till zWSP via Zerocoin Protokollet (min: 10%)</translation>
+        <source>Percentage of incoming PIV which get automatically converted to zPIV via Zerocoin Protocol (min: 10%)</source>
+        <translation>Procent av inkommande PIV som automatiskt konverteras till zPIV via Zerocoin Protokollet (min: 10%)</translation>
     </message>
     <message>
-        <source>Percentage of autominted zWSP</source>
-        <translation>Procent av autopräglade zWSP</translation>
+        <source>Percentage of autominted zPIV</source>
+        <translation>Procent av autopräglade zPIV</translation>
     </message>
     <message>
-        <source>Wait with automatic conversion to Zerocoin until enough WSP for this denomination is available</source>
-        <translation>Vänta med automatisk omvandling till Zerocoin tills tillräckligt många WSP för denna valör är tillgängliga</translation>
+        <source>Wait with automatic conversion to Zerocoin until enough PIV for this denomination is available</source>
+        <translation>Vänta med automatisk omvandling till Zerocoin tills tillräckligt många PIV för denna valör är tillgängliga</translation>
     </message>
     <message>
-        <source>Preferred Automint zWSP Denomination</source>
-        <translation>Preferens på zWSP valör i autoprägling</translation>
+        <source>Preferred Automint zPIV Denomination</source>
+        <translation>Preferens på zPIV valör i autoprägling</translation>
     </message>
     <message>
         <source>Stake split threshold:</source>
         <translation>Staking delnings tröskel:</translation>
     </message>
     <message>
-        <source>Connect to the WISPR network through a SOCKS5 proxy.</source>
-        <translation>Anslut till WISPR nätverket via en SOCKS5 proxy.</translation>
+        <source>Connect to the PIVX network through a SOCKS5 proxy.</source>
+        <translation>Anslut till PIVX nätverket via en SOCKS5 proxy.</translation>
     </message>
     <message>
         <source>Proxy &amp;IP:</source>
@@ -2007,8 +2065,16 @@ https://www.transifex.com/WisprProject/WisprProject-translations</translation>
         <translation>&amp;Display</translation>
     </message>
     <message>
+        <source>User Interface &amp;language:</source>
+        <translation>Användargränssnitt och &amp;språk:</translation>
+    </message>
+    <message>
         <source>User Interface Theme:</source>
         <translation>Användargränssnitts Tema:</translation>
+    </message>
+    <message>
+        <source>&amp;Unit to show amounts in:</source>
+        <translation>&amp;Enhet att visa mängd i:</translation>
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
@@ -2021,6 +2087,14 @@ https://www.transifex.com/WisprProject/WisprProject-translations</translation>
     <message>
         <source>Hide empty balances</source>
         <translation>Dölj tomma saldon</translation>
+    </message>
+    <message>
+        <source>Hide orphan stakes in transaction lists</source>
+        <translation>Göm föräldralösa stakes i transaktionslistan</translation>
+    </message>
+    <message>
+        <source>Hide orphan stakes</source>
+        <translation>Göm föräldralösa stakes</translation>
     </message>
     <message>
         <source>Third party URLs (e.g. a block explorer) that appear in the transactions tab as context menu items. %s in the URL is replaced by transaction hash. Multiple URLs are separated by vertical bar |.</source>
@@ -2037,6 +2111,10 @@ https://www.transifex.com/WisprProject/WisprProject-translations</translation>
     <message>
         <source>Reset all client options to default.</source>
         <translation>Starta om alla klient alternativ till standard.</translation>
+    </message>
+    <message>
+        <source>&amp;Reset Options</source>
+        <translation>&amp;Återställnings Inställningar</translation>
     </message>
     <message>
         <source>&amp;OK</source>
@@ -2106,8 +2184,8 @@ https://www.transifex.com/WisprProject/WisprProject-translations</translation>
         <translation>Totalt saldo, inkluderar alla otillgängliga mynt.</translation>
     </message>
     <message>
-        <source>WSP Balance</source>
-        <translation>WSP Saldo</translation>
+        <source>PIV Balance</source>
+        <translation>PIV Saldo</translation>
     </message>
     <message>
         <source>Pending:</source>
@@ -2130,18 +2208,18 @@ https://www.transifex.com/WisprProject/WisprProject-translations</translation>
         <translation>Nuvarande låst saldo endast i "watch only" adresser</translation>
     </message>
     <message>
-        <source>Your current WISPR balance, unconfirmed and immature transactions included</source>
-        <translation>Ditt nuvarande WISPR saldo, obekräftade och omogna transaktioner är inkluderade</translation>
+        <source>Your current PIVX balance, unconfirmed and immature transactions included</source>
+        <translation>Ditt nuvarande PIVX saldo, obekräftade och omogna transaktioner är inkluderade</translation>
     </message>
     <message>
-        <source>zWSP Balance</source>
-        <translation>zWSP Saldo</translation>
+        <source>zPIV Balance</source>
+        <translation>zPIV Saldo</translation>
     </message>
     <message>
         <source>Mature: more than 20 confirmation and more than 1 mint of the same denomination after it was minted.
-These zWSP are spendable.</source>
+These zPIV are spendable.</source>
         <translation>Mogna: över 20 bekräftelser och över 1 prägling av samma valör efter den blev myntad.
-Dessa zWSP kan spenderas.</translation>
+Dessa zPIV kan spenderas.</translation>
     </message>
     <message>
         <source>Unconfirmed: less than 20 confirmations
@@ -2150,8 +2228,8 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
 Omogna: bekräftade men under 1 myntning av samma valör efter den blev präglad</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the WISPR network after a connection is established, but this process has not completed yet.</source>
-        <translation>Informationen kan vara föråldrad. Din plånbok synkroniserar automatiskt med WISPR nätverket efter att en anslutning är etablerad, men denna process har inte blivit klar än.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the PIVX network after a connection is established, but this process has not completed yet.</source>
+        <translation>nformationen kan vara föråldrad. Din plånbok synkroniserar automatiskt med PIVX nätverket efter att en anslutning är etablerad, men denna process har inte blivit klar än.</translation>
     </message>
     <message>
         <source>OVERVIEW</source>
@@ -2194,8 +2272,8 @@ Omogna: bekräftade men under 1 myntning av samma valör efter den blev präglad
         <translation>Spenderbar:</translation>
     </message>
     <message>
-        <source>Locked WSP or Masternode collaterals. These are excluded from zWSP minting.</source>
-        <translation>Låsta WSP eller masternode som säkerhet. Dessa är uteslutna från zWSP minting.</translation>
+        <source>Locked PIV or Masternode collaterals. These are excluded from zPIV minting.</source>
+        <translation>Låsta PIV eller masternode som säkerhet. Dessa är uteslutna från zPIV minting.</translation>
     </message>
     <message>
         <source>Locked:</source>
@@ -2206,8 +2284,8 @@ Omogna: bekräftade men under 1 myntning av samma valör efter den blev präglad
         <translation>Obekräftade:</translation>
     </message>
     <message>
-        <source>Your current zWSP balance, unconfirmed and immature zWSP included.</source>
-        <translation>Ditt nuvarande zWSP saldo, obekräftade och omogna zWSP inräknade.</translation>
+        <source>Your current zPIV balance, unconfirmed and immature zPIV included.</source>
+        <translation>Ditt nuvarande zPIV saldo, obekräftade och omogna zPIV inräknade.</translation>
     </message>
     <message>
         <source>Recent transactions</source>
@@ -2218,10 +2296,10 @@ Omogna: bekräftade men under 1 myntning av samma valör efter den blev präglad
         <translation>osynkroniserad</translation>
     </message>
     <message>
-        <source>Current percentage of zWSP.
+        <source>Current percentage of zPIV.
 If AutoMint is enabled this percentage will settle around the configured AutoMint percentage (default = 10%).
 </source>
-        <translation>Nuvarande procent zWSP.
+        <translation>Nuvarande procent zPIV.
 Om AutoMint är tillåten så kommer denna procent att vara som den konfigurerade AutoMint procenten (standard = 10%).
 </translation>
     </message>
@@ -2230,14 +2308,14 @@ Om AutoMint är tillåten så kommer denna procent att vara som den konfigurerad
         <translation>AutoMint är för tillfället aktiverat och inställt på</translation>
     </message>
     <message>
-        <source>To disable AutoMint add 'enablezeromint=0' in wispr.conf.</source>
-        <translation>För att inaktivera AutoMint, lägg till 'enablezeromint=0' i wispr.conf.</translation>
+        <source>To disable AutoMint add 'enablezeromint=0' in pivx.conf.</source>
+        <translation>För att inaktivera AutoMint, lägg till 'enablezeromint=0' i pivx.conf.</translation>
     </message>
     <message>
         <source>AutoMint is currently disabled.
-To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in wispr.conf</source>
+To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in pivx.conf</source>
         <translation>AutoMint är för närvarande inaktiverat.
-För att aktivera AutoMint ändra 'enablezeromint=0' till 'enablezeromint=1' i wispr.conf</translation>
+För att aktivera AutoMint ändra 'enablezeromint=0' till 'enablezeromint=1' i pivx.conf</translation>
     </message>
 </context>
 <context>
@@ -2263,12 +2341,12 @@ För att aktivera AutoMint ändra 'enablezeromint=0' till 'enablezeromint=1' i w
         <translation>Ogiltig betalningsadress %1</translation>
     </message>
     <message>
-        <source>Cannot start wispr: click-to-pay handler</source>
-        <translation>Kan ej starta wispr: klicka-för-att-betala hanterare</translation>
+        <source>Cannot start pivx: click-to-pay handler</source>
+        <translation>Kan ej starta pivx: klicka-för-att-betala hanterare</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid WISPR address or malformed URI parameters.</source>
-        <translation>URI kunde ej analyseras! Detta kan orsakas av en ogiltig WISPR adress eller felproducerade URI parametrar.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid PIVX address or malformed URI parameters.</source>
+        <translation>URI kunde ej analyseras! Detta kan orsakas av en ogiltig PIVX adress eller felproducerade URI parametrar.</translation>
     </message>
     <message>
         <source>Payment request file cannot be read! This can be caused by an invalid payment request file.</source>
@@ -2353,8 +2431,8 @@ För att aktivera AutoMint ändra 'enablezeromint=0' till 'enablezeromint=1' i w
         <translation>Zerocoin Handlingar:</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the WISPR network after a connection is established, but this process has not completed yet.</source>
-        <translation>nformationen kan vara föråldrad. Din plånbok synkroniserar automatiskt med WISPR nätverket efter att en anslutning är etablerad, men denna process har inte blivit klar än.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the PIVX network after a connection is established, but this process has not completed yet.</source>
+        <translation>nformationen kan vara föråldrad. Din plånbok synkroniserar automatiskt med PIVX nätverket efter att en anslutning är etablerad, men denna process har inte blivit klar än.</translation>
     </message>
     <message>
         <source>Mint Zerocoin</source>
@@ -2365,8 +2443,8 @@ För att aktivera AutoMint ändra 'enablezeromint=0' till 'enablezeromint=1' i w
         <translation>0</translation>
     </message>
     <message>
-        <source>zWSP</source>
-        <translation>zWSP</translation>
+        <source>zPIV</source>
+        <translation>zPIV</translation>
     </message>
     <message>
         <source>Available for minting are coins which are confirmed and not locked or Masternode collaterals.</source>
@@ -2377,8 +2455,8 @@ För att aktivera AutoMint ändra 'enablezeromint=0' till 'enablezeromint=1' i w
         <translation>Tillgängligt att prägla:</translation>
     </message>
     <message>
-        <source>0.000 000 00 WSP</source>
-        <translation>0.000 000 00 WSP</translation>
+        <source>0.000 000 00 PIV</source>
+        <translation>0.000 000 00 PIV</translation>
     </message>
     <message>
         <source>Reset Zerocoin Wallet DB. Deletes transactions that did not make it into the blockchain.</source>
@@ -2417,16 +2495,16 @@ För att aktivera AutoMint ändra 'enablezeromint=0' till 'enablezeromint=1' i w
         <translation>SEKRETESS</translation>
     </message>
     <message>
-        <source>Enter an amount of Wsp to convert to zWSP</source>
-        <translation>Mata in en mängd WSP att konvertera till zWSP</translation>
+        <source>Enter an amount of Piv to convert to zPIV</source>
+        <translation>Mata in en mängd PIV att konvertera till zPIV</translation>
     </message>
     <message>
-        <source>zWSP Control</source>
-        <translation>zWSP Kontroll</translation>
+        <source>zPIV Control</source>
+        <translation>zPIV Kontroll</translation>
     </message>
     <message>
-        <source>zWSP Selected:</source>
-        <translation>Valda zWSP:</translation>
+        <source>zPIV Selected:</source>
+        <translation>Valda zPIV:</translation>
     </message>
     <message>
         <source>Quantity Selected:</source>
@@ -2441,44 +2519,32 @@ För att aktivera AutoMint ändra 'enablezeromint=0' till 'enablezeromint=1' i w
         <translation>Spendera Zerocoin</translation>
     </message>
     <message>
-        <source>Available (mature and spendable) zWSP for spending</source>
-        <translation>Tillgängliga (mogna och spenderbara) zWSP att spendera</translation>
+        <source>Available (mature and spendable) zPIV for spending</source>
+        <translation>Tillgängliga (mogna och spenderbara) zPIV att spendera</translation>
     </message>
     <message>
         <source>Available Balance:</source>
         <translation>Tillgängligt Saldo:</translation>
     </message>
     <message>
-        <source>Available (mature and spendable) zWSP for spending
+        <source>Available (mature and spendable) zPIV for spending
 
-zWSP are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
-        <translation>Tillgängliga (mogna och spenderbara) zWSP att spendera
+zPIV are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
+        <translation>Tillgängliga (mogna och spenderbara) zPIV att spendera
 
-zWSP är mogna när de har över 20 bekräftelser OCH över 2 präglingar av samma valör efter de är myntade.</translation>
+zPIV är mogna när de har över 20 bekräftelser OCH över 2 präglingar av samma valör efter de är myntade.</translation>
     </message>
     <message>
-        <source>0 zWSP</source>
-        <translation>0 zWSP</translation>
-    </message>
-    <message>
-        <source>Security Level for Zerocoin Transactions. More is better, but needs more time and resources.</source>
-        <translation>Säkerhetsnivå på Zerocoin Transaktioner. Mer är bättre, men behöver mer tid och resurser.</translation>
-    </message>
-    <message>
-        <source>Security Level:</source>
-        <translation>Säkerhetsnivå:</translation>
-    </message>
-    <message>
-        <source>Security Level 1 - 100 (default: 42)</source>
-        <translation>Säkerhetsnivå 1- 100 (standard: 42)</translation>
+        <source>0 zPIV</source>
+        <translation>0 zPIV</translation>
     </message>
     <message>
         <source>Pay &amp;To:</source>
         <translation>Betala &amp;Till:</translation>
     </message>
     <message>
-        <source>The WISPR address to send the payment to. Creates local payment to yourself when empty.</source>
-        <translation>WISPR adress att skicka betalningen till. Skapar betalning till dig själv när den är tom.</translation>
+        <source>The PIVX address to send the payment to. Creates local payment to yourself when empty.</source>
+        <translation>PIVX adress att skicka betalningen till. Skapar betalning till dig själv när den är tom.</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2498,7 +2564,7 @@ zWSP är mogna när de har över 20 bekräftelser OCH över 2 präglingar av sam
     </message>
     <message>
         <source>&amp;Label:</source>
-        <translation>Etikett:</translation>
+        <translation>&amp;Etikett:</translation>
     </message>
     <message>
         <source>Enter a label for this address to add it to the list of used addresses</source>
@@ -2529,8 +2595,8 @@ zWSP är mogna när de har över 20 bekräftelser OCH över 2 präglingar av sam
         <translation>Zerocoin Stats:</translation>
     </message>
     <message>
-        <source>Total Balance including unconfirmed and immature zWSP</source>
-        <translation>Totalt Saldo, obekräftade och omogna zWSP inkluderade</translation>
+        <source>Total Balance including unconfirmed and immature zPIV</source>
+        <translation>Totalt Saldo, obekräftade och omogna zPIV inkluderade</translation>
     </message>
     <message>
         <source>Total Zerocoin  Balance:</source>
@@ -2548,27 +2614,27 @@ zWSP är mogna när de har över 20 bekräftelser OCH över 2 präglingar av sam
         <source>Unconfirmed: less than 20 confirmations
 Immature: confirmed, but less than 1 mint of the same denomination after it was minted</source>
         <translation>Obekräftade: Under 20 bekräftelser
-Omogna: bekräftade men under 1 mint av samma valör efter den blev mintad</translation>
+Omogna: bekräftade men under 1 myntning av samma valör efter den blev präglad</translation>
     </message>
     <message>
-        <source>Show the current status of automatic zWSP minting.
+        <source>Show the current status of automatic zPIV minting.
 
 To change the status (restart required):
-- enable: add 'enablezeromint=1' to wispr.conf
-- disable: add 'enablezeromint=0' to wispr.conf
+- enable: add 'enablezeromint=1' to pivx.conf
+- disable: add 'enablezeromint=0' to pivx.conf
 
 To change the percentage (no restart required):
-- menu Settings-&gt;Options-&gt;Percentage of autominted zWSP
+- menu Settings-&gt;Options-&gt;Percentage of autominted zPIV
 
 </source>
-        <translation>Visa den nuvarande statusen av automatisk zWSP minting.
+        <translation>Visa den nuvarande statusen av automatisk zPIV minting.
 
 För att ändra statusen (omstart krävs):
--aktivera: lägg till 'enablezeromint=1' i wispr.conf
--inaktivera: lägg till 'enablezeromint=0' i wispr.conf
+-aktivera: lägg till 'enablezeromint=1' i pivx.conf
+-inaktivera: lägg till 'enablezeromint=0' i pivx.conf
 
 För att ändra procenten (ingen omstart krävs):
--meny Inställningar-&gt;Alternativ-&gt;Procent på autominted zWSP
+-meny Inställningar-&gt;Alternativ-&gt;Procent på autominted zPIV
 
 </translation>
     </message>
@@ -2615,6 +2681,14 @@ För att ändra procenten (ingen omstart krävs):
     <message>
         <source>0 x</source>
         <translation>0 x</translation>
+    </message>
+    <message>
+        <source>Show zPIV denominations list</source>
+        <translation>Visa zPIV valör lista</translation>
+    </message>
+    <message>
+        <source>Show Denominations</source>
+        <translation>Visa Valörer</translation>
     </message>
     <message>
         <source>Denominations with value 5:</source>
@@ -2671,6 +2745,10 @@ För att ändra procenten (ingen omstart krävs):
     <message>
         <source>Denom. with value 5000:</source>
         <translation>Valörer med värde 5000:</translation>
+    </message>
+    <message>
+        <source>Hide Denominations</source>
+        <translation>Göm Valörer</translation>
     </message>
     <message>
         <source>Priority:</source>
@@ -2751,26 +2829,18 @@ Please be patient...</source>
 Ha lite tålamod...</translation>
     </message>
     <message>
-        <source>Spending Zerocoin.
-Computationally expensive, might need several minutes depending on the selected Security Level and your hardware.
-Please be patient...</source>
-        <translation>Spendera Zerocoin.
-Beräkningsmässigt krävande, kan behöva flera minuter beroende på den valda säkerhetsnivån och din hårdvara.
-Var god dröj...</translation>
-    </message>
-    <message>
         <source>) needed.
 Maximum allowed: </source>
         <translation>) behövda.
 Högsta tillåtna:</translation>
     </message>
     <message>
-        <source>zWSP Spend #: </source>
-        <translation>zWSP spendering #:</translation>
+        <source>zPIV Spend #: </source>
+        <translation>zPIV spendering #:</translation>
     </message>
     <message>
-        <source>zWSP Mint</source>
-        <translation>zWSP Prägling</translation>
+        <source>zPIV Mint</source>
+        <translation>zPIV Prägling</translation>
     </message>
     <message>
         <source> &lt;b&gt;enabled&lt;/b&gt;.</source>
@@ -2785,12 +2855,12 @@ Högsta tillåtna:</translation>
         <translation>Konfigurerat procent mål: &lt;b&gt;</translation>
     </message>
     <message>
-        <source>zWSP is currently disabled due to maintenance.</source>
-        <translation>zWSP är för nuvarande inaktiverat p.g.a. underhåll.</translation>
+        <source>zPIV is currently disabled due to maintenance.</source>
+        <translation>zPIV är för nuvarande inaktiverat p.g.a. underhåll.</translation>
     </message>
     <message>
-        <source>zWSP is currently undergoing maintenance.</source>
-        <translation>zWSP genomgår för tillfället underhåll.</translation>
+        <source>zPIV is currently undergoing maintenance.</source>
+        <translation>zPIV genomgår för tillfället underhåll.</translation>
     </message>
     <message>
         <source>Denom. with value &lt;b&gt;1&lt;/b&gt;:</source>
@@ -2877,8 +2947,8 @@ Högsta tillåtna:</translation>
         <translation>Framgångsrikt Myntade</translation>
     </message>
     <message>
-        <source> zWSP in </source>
-        <translation>zWSP i</translation>
+        <source> zPIV in </source>
+        <translation>zPIV i</translation>
     </message>
     <message>
         <source> sec. Used denominations:
@@ -2905,8 +2975,8 @@ Högsta tillåtna:</translation>
         <translation>Ingen 'Betala Till' adress inmatad, skapar lokal betalning</translation>
     </message>
     <message>
-        <source>Invalid Wispr Address</source>
-        <translation>Ogiltig Wispr Adress</translation>
+        <source>Invalid Pivx Address</source>
+        <translation>Ogiltig Pivx Adress</translation>
     </message>
     <message>
         <source>Invalid Send Amount</source>
@@ -2929,20 +2999,8 @@ Högsta tillåtna:</translation>
         <translation>till en nygjord (oanvänd och därför anonym) lokal adress&lt;br /&gt;</translation>
     </message>
     <message>
-        <source>with Security Level </source>
-        <translation>med Säkerhetsnivå</translation>
-    </message>
-    <message>
         <source>Confirm send coins</source>
         <translation>Bekräfta att skicka mynt</translation>
-    </message>
-    <message>
-        <source>Version 1 zWSP require a security level of 100 to successfully spend.</source>
-        <translation>Version 1 zWSP kräver en säkerhetsnivå på 100 för att kunna spenderas med framgång.</translation>
-    </message>
-    <message>
-        <source>Failed to spend zWSP</source>
-        <translation>Misslyckades med att spendera zWSP</translation>
     </message>
     <message>
         <source>Failed to fetch mint associated with serial hash</source>
@@ -2964,8 +3022,8 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     </message>
     <message numerus="yes">
         <source>PrivacyDialog</source>
-        <comment>Enter an amount of WSP to convert to zWSP</comment>
-        <translation><numerusform>SekretessRuta</numerusform><numerusform>SekretessDialog</numerusform></translation>
+        <comment>Enter an amount of PIV to convert to zPIV</comment>
+        <translation><numerusform>SekretessDialog</numerusform><numerusform>SekretessDialog</numerusform></translation>
     </message>
     <message>
         <source>denomination: </source>
@@ -3001,14 +3059,17 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     </message>
 </context>
 <context>
+    <name>ProposalFrame</name>
+    </context>
+<context>
     <name>QObject</name>
     <message>
         <source>Amount</source>
         <translation>Mängd</translation>
     </message>
     <message>
-        <source>Enter a WISPR address (e.g. %1)</source>
-        <translation>Mata in en WISPR adress (e.g. %1)</translation>
+        <source>Enter a PIVX address (e.g. %1)</source>
+        <translation>Mata in en PIVX adress (e.g. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -3050,12 +3111,20 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <source>%1 ms</source>
         <translation>%1 ms</translation>
     </message>
-</context>
+    <message>
+        <source>PIVX Core</source>
+        <translation>PIVX Core</translation>
+    </message>
+    </context>
 <context>
     <name>QRImageWidget</name>
     <message>
         <source>&amp;Save Image...</source>
         <translation>&amp;Spara Bild...</translation>
+    </message>
+    <message>
+        <source>&amp;Copy Image</source>
+        <translation>&amp;Kopiera Bild</translation>
     </message>
     <message>
         <source>Save QR Code</source>
@@ -3074,7 +3143,7 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     </message>
     <message>
         <source>&amp;Information</source>
-        <translation>information</translation>
+        <translation>&amp;Information</translation>
     </message>
     <message>
         <source>General</source>
@@ -3095,6 +3164,10 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     <message>
         <source>Number of connections</source>
         <translation>Antal anslutningar</translation>
+    </message>
+    <message>
+        <source>&amp;Open</source>
+        <translation>&amp;Öppna</translation>
     </message>
     <message>
         <source>Startup time</source>
@@ -3137,12 +3210,16 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Blockchain</translation>
     </message>
     <message>
-        <source>Open the WISPR debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Öppna WISPR felsökningslogg från den nuvarande data katalogen. Detta kan ta några sekunder för stora logg filer.</translation>
+        <source>Open the PIVX debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Öppna PIVX felsökningslogg från den nuvarande data katalogen. Detta kan ta några sekunder för stora logg filer.</translation>
     </message>
     <message>
         <source>Number of Masternodes</source>
         <translation>Antal Huvudnoder "masternodes"</translation>
+    </message>
+    <message>
+        <source>&amp;Console</source>
+        <translation>&amp;Konsoll</translation>
     </message>
     <message>
         <source>Clear console</source>
@@ -3151,6 +3228,10 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     <message>
         <source>&amp;Network Traffic</source>
         <translation>&amp;Nätverkstrafik</translation>
+    </message>
+    <message>
+        <source>&amp;Clear</source>
+        <translation>&amp;Rensa</translation>
     </message>
     <message>
         <source>Totals</source>
@@ -3225,6 +3306,10 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Ping Tid</translation>
     </message>
     <message>
+        <source>&amp;Wallet Repair</source>
+        <translation>&amp;Plånboks Reparation</translation>
+    </message>
+    <message>
         <source>Delete local Blockchain Folders</source>
         <translation>Radera lokala Blockchain Mappar</translation>
     </message>
@@ -3261,8 +3346,8 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Vanlig Backup Sökväg:</translation>
     </message>
     <message>
-        <source>Custom zWSP Backup Path:</source>
-        <translation>Vanlig zWSP Backup Sökväg:</translation>
+        <source>Custom zPIV Backup Path:</source>
+        <translation>Vanlig zPIV Backup Sökväg:</translation>
     </message>
     <message>
         <source>Custom Backups Threshold:</source>
@@ -3341,8 +3426,8 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Ut:</translation>
     </message>
     <message>
-        <source>Welcome to the WISPR RPC console.</source>
-        <translation>Välkommen till WISPR RPC konsol.</translation>
+        <source>Welcome to the PIVX RPC console.</source>
+        <translation>Välkommen till PIVX RPC konsol.</translation>
     </message>
     <message>
         <source>&amp;Disconnect Node</source>
@@ -3351,6 +3436,22 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     <message>
         <source>Ban Node for</source>
         <translation>förbjud Nod för att</translation>
+    </message>
+    <message>
+        <source>1 &amp;hour</source>
+        <translation>1 &amp;timme</translation>
+    </message>
+    <message>
+        <source>1 &amp;day</source>
+        <translation>1 &amp;dag</translation>
+    </message>
+    <message>
+        <source>1 &amp;week</source>
+        <translation>1 &amp;vecka</translation>
+    </message>
+    <message>
+        <source>1 &amp;year</source>
+        <translation>1 &amp;år</translation>
     </message>
     <message>
         <source>This will delete your local blockchain folders and the wallet will synchronize the complete Blockchain from scratch.&lt;br /&gt;&lt;br /&gt;</source>
@@ -3373,12 +3474,16 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Godkänn omsynkronisering av Blockchain</translation>
     </message>
     <message>
-        <source>Use up and down arrows to navigate history, and &lt;b&gt;Ctrl-L&lt;/b&gt; to clear screen.</source>
-        <translation>Använd upp- och ner-pilarna för att navigera historiken, och &lt;b&gt;Ctrl-L&lt;/b&gt; för att rensa skärm.</translation>
+        <source>Use up and down arrows to navigate history, and %1 to clear screen.</source>
+        <translation>Använd upp- och ner-pilarna för att navigera historiken, och %1 för att rensa skärm.</translation>
     </message>
     <message>
         <source>Type &lt;b&gt;help&lt;/b&gt; for an overview of available commands.</source>
         <translation>Skriv &lt;b&gt;help&lt;/b&gt; för en överblick av tillgängliga kommandon.</translation>
+    </message>
+    <message>
+        <source>WARNING: Scammers have been active, telling users to type commands here, stealing their wallet contents. Do not use this console without fully understanding the ramifications of a command.</source>
+        <translation>VARNING: Bedrägare har varit aktiva, säger åt användare att skriva kommandon här, stjäl deras innehåll i plånboken. Använd inte denna konsoll utan att fullt förstå vad ett kommando kan leda till.</translation>
     </message>
     <message>
         <source>%1 B</source>
@@ -3448,16 +3553,28 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>En valfri etikett att associera med den nya mottagaradressen.</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the WISPR network.</source>
-        <translation>Ett frivilligt meddelande att bifoga till betalningsförfrågan, som kommer visas när förfrågan öppnas. Observera: Medelandet kommer inte skickas med betalningen över WISPR nätverket.</translation>
+        <source>Your receiving address. You can copy and use it to receive coins on this wallet. A new one will be generated once it is used.</source>
+        <translation>Din mottagaradress. Du kan kopiera och använda den för att ta emot mynt på denna plånbok. En ny kommer genereras när den har använts.</translation>
+    </message>
+    <message>
+        <source>&amp;Address:</source>
+        <translation>&amp;Adress</translation>
+    </message>
+    <message>
+        <source>A&amp;mount:</source>
+        <translation>&amp;Mängd:</translation>
+    </message>
+    <message>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the PIVX network.</source>
+        <translation>Ett frivilligt meddelande att bifoga till betalningsförfrågan, som kommer visas när förfrågan öppnas. Observera: Medelandet kommer inte skickas med betalningen över PIVX nätverket.</translation>
     </message>
     <message>
         <source>RECEIVE</source>
         <translation>ERHÅLLA</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the WISPR network.</source>
-        <translation>Ett frivilligt meddelande att bifoga till betalningsförfrågan, vilket kommer visas när förfrågan öppnas.&lt;br&gt;Observera: Medelandet kommer inte skickas med betalningen över WISPR nätverket.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the PIVX network.</source>
+        <translation>Ett frivilligt meddelande att bifoga till betalningsförfrågan, vilket kommer visas när förfrågan öppnas.&lt;br&gt;Observera: Medelandet kommer inte skickas med betalningen över PIVX nätverket.</translation>
     </message>
     <message>
         <source>Use this form to request payments. All fields are &lt;b&gt;optional&lt;/b&gt;.</source>
@@ -3472,12 +3589,20 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>En frivillig mängd att anhålla om. Lämna den tom eller på noll för att inte fråga efter en specifik mängd.</translation>
     </message>
     <message>
+        <source>&amp;Request payment</source>
+        <translation>&amp;Förfråga betalning</translation>
+    </message>
+    <message>
         <source>Clear all fields of the form.</source>
         <translation>Rensa alla fält i formuläret.</translation>
     </message>
     <message>
         <source>Clear</source>
         <translation>Rensa</translation>
+    </message>
+    <message>
+        <source>Receiving Addresses</source>
+        <translation>Mottagar Adress</translation>
     </message>
     <message>
         <source>Requested payments history</source>
@@ -3510,6 +3635,10 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     <message>
         <source>Copy amount</source>
         <translation>Kopiera antal</translation>
+    </message>
+    <message>
+        <source>Copy address</source>
+        <translation>Kopiera Adress</translation>
     </message>
 </context>
 <context>
@@ -3579,7 +3708,11 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     </message>
     <message>
         <source>Message</source>
-        <translation>Medelande</translation>
+        <translation>Meddelande</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adress</translation>
     </message>
     <message>
         <source>Amount</source>
@@ -3614,7 +3747,7 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     </message>
     <message>
         <source>Insufficient funds!</source>
-        <translation>Otillräckliga pengar!</translation>
+        <translation>Otillräckliga medel !</translation>
     </message>
     <message>
         <source>Quantity:</source>
@@ -3658,7 +3791,7 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     </message>
     <message>
         <source>If this is activated, but the change address is empty or invalid, change will be sent to a newly generated address.</source>
-        <translation>Om detta är aktiverat, men växeladressen är tom eller ogiltig så kommer växel skickas till en nybildad adress.</translation>
+        <translation>Om detta är aktiverat, men växeladressen är tom eller ogiltig så kommer växeln att skickas till en nybildad adress.</translation>
     </message>
     <message>
         <source>Custom change address</source>
@@ -3677,8 +3810,12 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>UTXO Storlek:</translation>
     </message>
     <message>
-        <source>0 WSP</source>
-        <translation>0 WSP</translation>
+        <source>0 PIV</source>
+        <translation>0 PIV</translation>
+    </message>
+    <message>
+        <source>SwiftX technology allows for near instant transactions - A flat fee of 0.01 PIV applies</source>
+        <translation>SwiftX teknologi tillåter nästan omedelbara transaktioner - En fast avgift på 0.01PIV tillkommer</translation>
     </message>
     <message>
         <source>Transaction Fee:</source>
@@ -3687,6 +3824,10 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     <message>
         <source>Choose...</source>
         <translation>Välj...</translation>
+    </message>
+    <message>
+        <source>collapse fee-settings</source>
+        <translation>göm avgifts-inställningar</translation>
     </message>
     <message>
         <source>Minimize</source>
@@ -3729,16 +3870,16 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Mynt automatiskt valda</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uWSPs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uWSPs in fee,&lt;br /&gt;while "at least" pays 1000 uWSPs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Om 1000 uWSPs är den valda skräddarsydda avgiften och transaktionen är bara 250 bytes så kommer "per kilobyte" bara betala 250 uWSPs i avgift,&lt;br /&gt;medans "minst" betalar 1000 uWSPs. För transaktioner större än en kilobyte så betalar båda per kilobyte.</translation>
+        <source>If the custom fee is set to 1000 uPIVs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uPIVs in fee,&lt;br /&gt;while "at least" pays 1000 uPIVs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>Om 1000 uPIVs är den valda skräddarsydda avgiften och transaktionen är bara 250 bytes så kommer "per kilobyte" bara betala 250 uPIVs i avgift,&lt;br /&gt;medans "minst" betalar 1000 uPIVs. För transaktioner större än en kilobyte så betalar båda per kilobyte.</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uWSPs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uWSPs in fee,&lt;br /&gt;while "total at least" pays 1000 uWSPs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Om 1000 uWSPs är den valda skräddarsydda avgiften och transaktionen är bara 250 bytes så kommer "per kilobyte" bara betala 250 uWSPs i avgift,&lt;br /&gt;medans "minst totalt" betalar 1000 uWSPs. För transaktioner större än en kilobyte så betalar båda per kilobyte.</translation>
+        <source>If the custom fee is set to 1000 uPIVs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uPIVs in fee,&lt;br /&gt;while "total at least" pays 1000 uPIVs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>Om 1000 uPIVs är den valda skräddarsydda avgiften och transaktionen är bara 250 bytes så kommer "per kilobyte" bara betala 250 uPIVs i avgift,&lt;br /&gt;medans "minst totalt" betalar 1000 uPIVs. För transaktioner större än en kilobyte så betalar båda per kilobyte.</translation>
     </message>
     <message>
-        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for WISPR transactions than the network can process.</source>
-        <translation>Att endast betala minimum avgift är okej så länge som transaktionsvolymen är mindre än rummet i blocken.&lt;br /&gt;Men var medveten om att detta kan sluta som en transaktion som aldrig blir bekräftad när det finns ett större behov av WISPR transaktioner än nätverket kan bearbeta.</translation>
+        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for PIVX transactions than the network can process.</source>
+        <translation>Att endast betala minimum avgift är okej så länge som transaktionsvolymen är mindre än rummet i blocken.&lt;br /&gt;Men var medveten om att detta kan sluta som en transaktion som aldrig blir bekräftad när det finns ett större behov av PIVX transaktioner än nätverket kan bearbeta.</translation>
     </message>
     <message>
         <source>normal</source>
@@ -3765,6 +3906,10 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Bekräfta skickandet</translation>
     </message>
     <message>
+        <source>S&amp;end</source>
+        <translation>S&amp;icka</translation>
+    </message>
+    <message>
         <source>Clear all fields of the form.</source>
         <translation>Rensa alla fält i formuläret.</translation>
     </message>
@@ -3777,8 +3922,12 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Skicka till flera mottagare på en gång</translation>
     </message>
     <message>
-        <source>Anonymized WSP</source>
-        <translation>Anonymiserade WSP</translation>
+        <source>Add &amp;Recipient</source>
+        <translation>Lägg till &amp;Mottagare</translation>
+    </message>
+    <message>
+        <source>Anonymized PIV</source>
+        <translation>Anonymiserade PIV</translation>
     </message>
     <message>
         <source>Balance:</source>
@@ -3825,8 +3974,8 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Split block verktyget fungerar inte med flera adresser. Försök igen.</translation>
     </message>
     <message>
-        <source>Warning: Invalid WISPR address</source>
-        <translation>Varning: Ogiltig WISPR adress</translation>
+        <source>Warning: Invalid PIVX address</source>
+        <translation>Varning: Ogiltig PIVX adress</translation>
     </message>
     <message>
         <source>%1 to %2</source>
@@ -3854,7 +4003,7 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     </message>
     <message numerus="yes">
         <source>Estimated to begin confirmation within %n block(s).</source>
-        <translation><numerusform>Bekräftelse börjar om uppskattningsvis %n block.</numerusform><numerusform>Bekräftelse börjar om uppskattningsvis %n block.</numerusform></translation>
+        <translation><numerusform>Uppskattat att starta konfirmation inom %n block.</numerusform><numerusform>Uppskattat att starta konfirmation inom %n block.</numerusform></translation>
     </message>
     <message>
         <source>The recipient address is not valid, please recheck.</source>
@@ -3909,6 +4058,10 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Betala endast minsta avgift på %1</translation>
     </message>
     <message>
+        <source>Estimated to get 6 confirmations near instantly with &lt;b&gt;SwiftX&lt;/b&gt;!</source>
+        <translation>Upskattar att få 6 konfirmationer nästan omedelbart med &lt;b&gt;SwiftX&lt;/b&gt;!</translation>
+    </message>
+    <message>
         <source>Warning: Unknown change address</source>
         <translation>Varning: Okänd växeladress</translation>
     </message>
@@ -3928,8 +4081,8 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Betala &amp;Till:</translation>
     </message>
     <message>
-        <source>The WISPR address to send the payment to</source>
-        <translation>WISPR adressen att skicka betalningen till</translation>
+        <source>The PIVX address to send the payment to</source>
+        <translation>PIVX adressen att skicka betalningen till</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -3953,7 +4106,7 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     </message>
     <message>
         <source>&amp;Label:</source>
-        <translation>Etikett:</translation>
+        <translation>&amp;Etikett:</translation>
     </message>
     <message>
         <source>Enter a label for this address to add it to the list of used addresses</source>
@@ -3961,15 +4114,15 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     </message>
     <message>
         <source>A&amp;mount:</source>
-        <translation>&amp;mängd:</translation>
+        <translation>&amp;Mängd:</translation>
     </message>
     <message>
         <source>Message:</source>
         <translation>Medelande:</translation>
     </message>
     <message>
-        <source>A message that was attached to the WISPR: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the WISPR network.</source>
-        <translation>Ett medelande som var bifogat till WISPR: URI som kommer sparas med transaktionen som din referens. Lägg märke till: Detta meddelande kommer inte skickas genom WISPR nätverket.</translation>
+        <source>A message that was attached to the PIVX: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the PIVX network.</source>
+        <translation>Ett medelande som var bifogat till PIVX: URI som kommer sparas med transaktionen som din referens. Lägg märke till: Detta meddelande kommer inte skickas genom PIVX nätverket.</translation>
     </message>
     <message>
         <source>This is an unverified payment request.</source>
@@ -3995,8 +4148,8 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <source>WISPR Core is shutting down...</source>
-        <translation>WISPR Core stängs ner...</translation>
+        <source>PIVX Core is shutting down...</source>
+        <translation>PIVX Core stängs ner...</translation>
     </message>
     <message>
         <source>Do not shut down the computer until this window disappears.</source>
@@ -4018,8 +4171,8 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Du kan signera meddelanden med din egna adress för att bevisa att du äger dem. Se upp för att signera något vagt, då phishing-attacker kan försöka lura dig att signera din identitet åt dom. Signera endast fullt detaljerade påståenden du går med på.</translation>
     </message>
     <message>
-        <source>The WISPR address to sign the message with</source>
-        <translation>WISPR adressen för signera meddelandet med</translation>
+        <source>The PIVX address to sign the message with</source>
+        <translation>PIVX adressen för signera meddelandet med</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -4050,16 +4203,16 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Kopiera den nuvarande signaturen till systemets urklipp</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this WISPR address</source>
-        <translation>Signera meddelandet för att bevisa att du äger denna WISPR adress</translation>
+        <source>Sign the message to prove you own this PIVX address</source>
+        <translation>Signera meddelandet för att bevisa att du äger denna PIVX adress</translation>
     </message>
     <message>
-        <source>The WISPR address the message was signed with</source>
-        <translation>WISPR adressen meddelandet blev signerat med</translation>
+        <source>The PIVX address the message was signed with</source>
+        <translation>PIVX adressen meddelandet blev signerat med</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified WISPR address</source>
-        <translation>Verifiera meddelandet för att säkerställa att de blev signerat med den specifika WISPR adressen.</translation>
+        <source>Verify the message to ensure it was signed with the specified PIVX address</source>
+        <translation>Verifiera meddelandet för att säkerställa att de blev signerat med den specifika PIVX adressen.</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -4103,15 +4256,15 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     </message>
     <message>
         <source>The entered address does not refer to a key.</source>
-        <translation>Den angivna adressen refererar inte till en nyckel.</translation>
+        <translation>Den angivna adressen visar inte till en nyckel.</translation>
     </message>
     <message>
         <source>Wallet unlock was cancelled.</source>
-        <translation>Upplåsningen av plånboken var avbruten.</translation>
+        <translation>Upplåsningen av plånboken blev avbruten.</translation>
     </message>
     <message>
         <source>Private key for the entered address is not available.</source>
-        <translation>Den privata nyckel som angivits flr adressen är inte tillgänglig.</translation>
+        <translation>Den privata nyckel som angivits till adressen är inte tillgänglig.</translation>
     </message>
     <message>
         <source>Message signing failed.</source>
@@ -4145,8 +4298,8 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>WISPR Core</source>
-        <translation>WISPR Core</translation>
+        <source>PIVX Core</source>
+        <translation>PIVX Core</translation>
     </message>
     <message>
         <source>Version %1</source>
@@ -4165,10 +4318,6 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>PIVX Core utvecklarna</translation>
     </message>
     <message>
-        <source>The WISPR Core developers</source>
-        <translation>WISPR Core utvecklarna</translation>
-    </message>
-    <message>
         <source>[testnet]</source>
         <translation>[testnet]</translation>
     </message>
@@ -4184,7 +4333,7 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     <name>TransactionDesc</name>
     <message numerus="yes">
         <source>Open for %n more block(s)</source>
-        <translation><numerusform>Öppen för %n fler block</numerusform><numerusform>Öppen för %n fler block</numerusform></translation>
+        <translation><numerusform>Öppna för %n fler block</numerusform><numerusform>Öppna för %n fler block</numerusform></translation>
     </message>
     <message>
         <source>Open until %1</source>
@@ -4394,7 +4543,7 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     </message>
     <message numerus="yes">
         <source>Open for %n more block(s)</source>
-        <translation><numerusform>Öppen för %n fler block</numerusform><numerusform>Öppen för %n fler block</numerusform></translation>
+        <translation><numerusform>Öppna för %n fler block</numerusform><numerusform>Öppna för %n fler block</numerusform></translation>
     </message>
     <message>
         <source>Open until %1</source>
@@ -4445,12 +4594,12 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Mottaget via Fördunkling</translation>
     </message>
     <message>
-        <source>WSP Stake</source>
-        <translation>WSP staking</translation>
+        <source>PIV Stake</source>
+        <translation>PIV staking</translation>
     </message>
     <message>
-        <source>zWSP Stake</source>
-        <translation>zWSP Staking</translation>
+        <source>zPIV Stake</source>
+        <translation>zPIV Staking</translation>
     </message>
     <message>
         <source>Obfuscation Denominate</source>
@@ -4469,32 +4618,32 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Obfuscation Skapa tecken</translation>
     </message>
     <message>
-        <source>Converted WSP to zWSP</source>
-        <translation>Konvertera WSP till zWSP</translation>
+        <source>Converted PIV to zPIV</source>
+        <translation>Konvertera PIV till zPIV</translation>
     </message>
     <message>
-        <source>Spent zWSP</source>
-        <translation>Spendera zWSP</translation>
+        <source>Spent zPIV</source>
+        <translation>Spendera zPIV</translation>
     </message>
     <message>
-        <source>Received WSP from zWSP</source>
-        <translation>Mottog WSP från zWSP</translation>
+        <source>Received PIV from zPIV</source>
+        <translation>Mottog PIV från zPIV</translation>
     </message>
     <message>
-        <source>Minted Change as zWSP from zWSP Spend</source>
-        <translation>Myntad Växel som zWSP från zWSP Spendering</translation>
+        <source>Minted Change as zPIV from zPIV Spend</source>
+        <translation>Myntad Växel som zPIV från zPIV Spendering</translation>
     </message>
     <message>
-        <source>Converted zWSP to WSP</source>
-        <translation>Konverterad zWSP till WSP</translation>
+        <source>Converted zPIV to PIV</source>
+        <translation>Konverterad zPIV till PIV</translation>
     </message>
     <message>
-        <source>Anonymous (zWSP Transaction)</source>
-        <translation>Anonym (zWSP Transaktion)</translation>
+        <source>Anonymous (zPIV Transaction)</source>
+        <translation>Anonym (zPIV Transaktion)</translation>
     </message>
     <message>
-        <source>Anonymous (zWSP Stake)</source>
-        <translation>Anonym (zWSP Stake)</translation>
+        <source>Anonymous (zPIV Stake)</source>
+        <translation>Anonym (zPIV Stake)</translation>
     </message>
     <message>
         <source>Sent to</source>
@@ -4605,7 +4754,7 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     </message>
     <message>
         <source>Masternode Reward</source>
-        <translation>Huvudnods Belöning</translation>
+        <translation>Masternode Belöning</translation>
     </message>
     <message>
         <source>Zerocoin Mint</source>
@@ -4645,7 +4794,7 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     </message>
     <message>
         <source>Copy transaction ID</source>
-        <translation>Kopiera transactions ID</translation>
+        <translation>Kopiera transaktions ID</translation>
     </message>
     <message>
         <source>Edit label</source>
@@ -4654,6 +4803,10 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     <message>
         <source>Show transaction details</source>
         <translation>Visa Transaktionsdetaljer</translation>
+    </message>
+    <message>
+        <source>Hide orphan stakes</source>
+        <translation>Göm föräldralösa stakes</translation>
     </message>
     <message>
         <source>Export Transaction History</source>
@@ -4693,7 +4846,7 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     </message>
     <message>
         <source>Exporting Failed</source>
-        <translation>Exportering Misslyckad</translation>
+        <translation>Exportering Misslyckades</translation>
     </message>
     <message>
         <source>There was an error trying to save the transaction history to %1.</source>
@@ -4704,12 +4857,12 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Exportering Lyckat</translation>
     </message>
     <message>
-        <source>Received WSP from zWSP</source>
-        <translation>Mottog WSP från zWSP</translation>
+        <source>Received PIV from zPIV</source>
+        <translation>Mottog PIV från zPIV</translation>
     </message>
     <message>
-        <source>Zerocoin Spend, Change in zWSP</source>
-        <translation>Zerocoin spendera, Växel i zWSP</translation>
+        <source>Zerocoin Spend, Change in zPIV</source>
+        <translation>Zerocoin spendera, Växel i zPIV</translation>
     </message>
     <message>
         <source>The transaction history was successfully saved to %1.</source>
@@ -4745,8 +4898,8 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Skicka Mynt</translation>
     </message>
     <message>
-        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 WSP.</source>
-        <translation>wiftX stödjer inte att skicka så höga värden än. Transaktioner är för nuvarande begränsade till %1 WSP.</translation>
+        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 PIV.</source>
+        <translation>wiftX stödjer inte att skicka så höga värden än. Transaktioner är för nuvarande begränsade till %1 PIV.</translation>
     </message>
 </context>
 <context>
@@ -4777,10 +4930,10 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     </message>
 </context>
 <context>
-    <name>ZWspControlDialog</name>
+    <name>ZPivControlDialog</name>
     <message>
-        <source>Select zWSP to Spend</source>
-        <translation>Välj zWSP att Spendera</translation>
+        <source>Select zPIV to Spend</source>
+        <translation>Välj zPIV att Spendera</translation>
     </message>
     <message>
         <source>Quantity</source>
@@ -4791,20 +4944,16 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>0</translation>
     </message>
     <message>
-        <source>zWSP</source>
-        <translation>zWSP</translation>
+        <source>zPIV</source>
+        <translation>zPIV</translation>
     </message>
     <message>
         <source>Select/Deselect All</source>
         <translation>Markera/Avmarkera alla</translation>
     </message>
-    <message>
-        <source>Is Spendable</source>
-        <translation>Är Spenderbar</translation>
-    </message>
-</context>
+    </context>
 <context>
-    <name>wispr-core</name>
+    <name>pivx-core</name>
     <message>
         <source>(1 = keep tx meta data e.g. account owner and payment request information, 2 = drop tx meta data)</source>
         <translation>(1 = behåll tx meta data t.ex. kontoägare och information om betalningsförfråga, 2 = släpp tx meta data)</translation>
@@ -4830,8 +4979,8 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Beräknade ackumulator kontrollstation är inte vad som sparats av block index</translation>
     </message>
     <message>
-        <source>Cannot obtain a lock on data directory %s. WISPR Core is probably already running.</source>
-        <translation>Kan ej låsa in på data katalog %s. WISPR Kärna körs förmodligen redan.</translation>
+        <source>Cannot obtain a lock on data directory %s. PIVX Core is probably already running.</source>
+        <translation>Kan ej låsa in på data katalog %s. PIVX Kärna körs förmodligen redan.</translation>
     </message>
     <message>
         <source>Change automatic finalized budget voting behavior. mode=auto: Vote for only exact finalized budget match to my generated budget. (string, default: auto)</source>
@@ -4858,16 +5007,16 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Distribuerad under MIT mjukvarulicensen, se medföljande fil COPYING eller &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</translation>
     </message>
     <message>
-        <source>Enable automatic wallet backups triggered after each zWSP minting (0-1, default: %u)</source>
-        <translation>Aktivera automatisk plånboksbackup efter varje zWSP minting (0-1, standard: %u)</translation>
+        <source>Enable automatic wallet backups triggered after each zPIV minting (0-1, default: %u)</source>
+        <translation>Aktivera automatisk plånboksbackup efter varje zPIV minting (0-1, standard: %u)</translation>
     </message>
     <message>
-        <source>Enable or disable staking functionality for WSP inputs (0-1, default: %u)</source>
-        <translation>Aktivera eller avaktivera staking funktionalitet för WSP inmatningar (0-1, standard: %u)</translation>
+        <source>Enable or disable staking functionality for PIV inputs (0-1, default: %u)</source>
+        <translation>Aktivera eller avaktivera staking funktionalitet för PIV inmatningar (0-1, standard: %u)</translation>
     </message>
     <message>
-        <source>Enable or disable staking functionality for zWSP inputs (0-1, default: %u)</source>
-        <translation>Aktivera eller avaktivera staking funktionalitet för zWSP inmatningar (0-1, standard: %u)</translation>
+        <source>Enable or disable staking functionality for zPIV inputs (0-1, default: %u)</source>
+        <translation>Aktivera eller avaktivera staking funktionalitet för zPIV inmatningar (0-1, standard: %u)</translation>
     </message>
     <message>
         <source>Enable spork administration functionality with the appropriate private key.</source>
@@ -4902,12 +5051,12 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Exekvera kommando när den bästa block ändras (%s i cmd är utbytt mot block hash)</translation>
     </message>
     <message>
-        <source>Fees (in WSP/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
-        <translation>Avgifter (i WSP/Kb) mindre än detta anses vara noll avgift i vidarebefodring (standard: %s)</translation>
+        <source>Fees (in PIV/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
+        <translation>Avgifter (i PIV/Kb) mindre än detta anses vara noll avgift i vidarebefodring (standard: %s)</translation>
     </message>
     <message>
-        <source>Fees (in WSP/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
-        <translation>Avgifter (i WSP/Kb) mindre än detta anses vara noll avgift i transaktionsskapelse (standard: %s)</translation>
+        <source>Fees (in PIV/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
+        <translation>Avgifter (i PIV/Kb) mindre än detta anses vara noll avgift i transaktionsskapelse (standard: %s)</translation>
     </message>
     <message>
         <source>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: %u)</source>
@@ -5006,20 +5155,24 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Denna produkt inkluderar mjukvara utvecklad av OpenSSL Projektet för användning i OpenSSL Toolkit &lt;https://www.openssl.org/&gt; och kryptografisk mjukvara skriven av Eric Young och UPnP mjukvara skriven av Thomas Bernard.</translation>
     </message>
     <message>
-        <source>Unable to bind to %s on this computer. WISPR Core is probably already running.</source>
-        <translation>Kan inte binda till %s på denna dator. WISPR Core körs förmodligen redan.</translation>
+        <source>Total length of network version string (%i) exceeds maximum length (%i). Reduce the number or size of uacomments.</source>
+        <translation>Totala längden av nätverks verisionens sträng (%i) överskrider maximala längd (%i). Minska mängden eller storleken av uakommentarer.</translation>
+    </message>
+    <message>
+        <source>Unable to bind to %s on this computer. PIVX Core is probably already running.</source>
+        <translation>Kan inte binda till %s på denna dator. PIVX Core körs förmodligen redan.</translation>
     </message>
     <message>
         <source>Unable to locate enough Obfuscation denominated funds for this transaction.</source>
         <translation>Kan ej lokalisera tillräckligt Fördunklingsdenominationerade pengar för denna transaktion.</translation>
     </message>
     <message>
-        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 WSP.</source>
-        <translation>Kan ej lokalisera tillräckligt Fördunkling icke-denominationerade pengar för denna transaktion som inte är 10000 WSP.</translation>
+        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 PIV.</source>
+        <translation>Kan ej lokalisera tillräckligt Fördunkling icke-denominationerade pengar för denna transaktion som inte är 10000 PIV.</translation>
     </message>
     <message>
-        <source>Unable to locate enough funds for this transaction that are not equal 10000 WSP.</source>
-        <translation>Kan inte hitta tillräckligt med pengar för denna transaktion som inte är 10000 WSP.</translation>
+        <source>Unable to locate enough funds for this transaction that are not equal 10000 PIV.</source>
+        <translation>Kan inte hitta tillräckligt med pengar för denna transaktion som inte är 10000 PIV.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
@@ -5034,8 +5187,8 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Varning: -maxtxfee är sätt väldigt högt! Detta är transaktionsavgiften du kommer betala om du skickar en transaktion.</translation>
     </message>
     <message>
-        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong WISPR Core will not work properly.</source>
-        <translation>Varning: Var vänlig kontrollera att din dators tid och datum är korrekt! Om din klocka är fel så kommer WISPR Core inte att fungera korrekt.</translation>
+        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong PIVX Core will not work properly.</source>
+        <translation>Varning: Var vänlig kontrollera att din dators tid och datum är korrekt! Om din klocka är fel så kommer PIVX Core inte att fungera korrekt.</translation>
     </message>
     <message>
         <source>Warning: The network does not appear to fully agree! Some miners appear to be experiencing issues.</source>
@@ -5066,8 +5219,8 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Du måste specifiera en masternodeprivkey i konfigurationen. Var vänlig se dokumentationen för hjälp.</translation>
     </message>
     <message>
-        <source>(17000 could be used only on mainnet)</source>
-        <translation>(17000 kunde endast användas på mainnet)</translation>
+        <source>(51472 could be used only on mainnet)</source>
+        <translation>(51472 kunde endast användas på mainnet)</translation>
     </message>
     <message>
         <source>(default: %s)</source>
@@ -5078,8 +5231,8 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>(standard: 1)</translation>
     </message>
     <message>
-        <source>(must be 17000 for mainnet)</source>
-        <translation>(måste vara 17000 för mainnet)</translation>
+        <source>(must be 51472 for mainnet)</source>
+        <translation>(måste vara 51472 för mainnet)</translation>
     </message>
     <message>
         <source>Accept command line and JSON-RPC commands</source>
@@ -5108,6 +5261,10 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     <message>
         <source>Always query for peer addresses via DNS lookup (default: %u)</source>
         <translation>Fråga alltid efter peer adresser via DNS lookup (standard: %u)</translation>
+    </message>
+    <message>
+        <source>Append comment to the user agent string</source>
+        <translation>Bifoga kommentar till användaragent strängen</translation>
     </message>
     <message>
         <source>Attempt to recover private keys from a corrupt wallet.dat</source>
@@ -5188,10 +5345,6 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     <message>
         <source>Copyright (C) 2015-%i The PIVX Core Developers</source>
         <translation>Copyright (C) 2015-%i The PIVX Core Developers</translation>
-    </message>
-    <message>
-        <source>Copyright (C) 2017-%i The WISPR Core Developers</source>
-        <translation>Copyright (C) 2017-%i The WISPR Core Developers</translation>
     </message>
     <message>
         <source>Corrupted block database detected</source>
@@ -5278,8 +5431,8 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Fel vid laddning av wallet.dat: Plånbok korrupterad</translation>
     </message>
     <message>
-        <source>Error loading wallet.dat: Wallet requires newer version of WISPR Core</source>
-        <translation>Fel vid laddning av wallet.dat: Plånbok  kräver nyare WISPR Kärna version</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of PIVX Core</source>
+        <translation>Fel vid laddning av wallet.dat: Plånbok  kräver nyare PIVX Kärna version</translation>
     </message>
     <message>
         <source>Error opening block database</source>
@@ -5292,6 +5445,10 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     <message>
         <source>Error recovering public key.</source>
         <translation>Fel vid återhämtning av offentlig nyckel.</translation>
+    </message>
+    <message>
+        <source>Error writing zerocoinDB to disk</source>
+        <translation>Fel vid skrivning av zerocoinDB till disk</translation>
     </message>
     <message>
         <source>Error</source>
@@ -5330,12 +5487,16 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Misslyckades att lyssna på någon port. Använd -listen=0 om du vill detta.</translation>
     </message>
     <message>
+        <source>Failed to parse host:port string</source>
+        <translation>Misslyckades ta ut satsdelarna i host:port sträng</translation>
+    </message>
+    <message>
         <source>Failed to read block</source>
         <translation>Misslyckades läsa block</translation>
     </message>
     <message>
-        <source>Fee (in WSP/kB) to add to transactions you send (default: %s)</source>
-        <translation>Avgift (i WSP/kB) för att lägga till transaktioner you skicka (standard: %s)</translation>
+        <source>Fee (in PIV/kB) to add to transactions you send (default: %s)</source>
+        <translation>Avgift (i PIV/kB) för att lägga till transaktioner you skicka (standard: %s)</translation>
     </message>
     <message>
         <source>Finalizing transaction.</source>
@@ -5394,8 +5555,8 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Information</translation>
     </message>
     <message>
-        <source>Initialization sanity check failed. WISPR Core is shutting down.</source>
-        <translation>Initierings renlighetscheck misslyckades. WISPR Kärna stängs ner.</translation>
+        <source>Initialization sanity check failed. PIVX Core is shutting down.</source>
+        <translation>Initierings renlighetscheck misslyckades. PIVX Kärna stängs ner.</translation>
     </message>
     <message>
         <source>Input is not valid.</source>
@@ -5466,8 +5627,8 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Procent automatiskt mintad Zerocoin (1-100, default: %u)</translation>
     </message>
     <message>
-        <source>Reindex the WSP and zWSP money supply statistics</source>
-        <translation>Indexera WSP och zWSP pengarna tillgång statistik på nytt</translation>
+        <source>Reindex the PIV and zPIV money supply statistics</source>
+        <translation>Indexera PIV och zPIV pengarna tillgång statistik på nytt</translation>
     </message>
     <message>
         <source>Reindexing zerocoin database...</source>
@@ -5506,8 +5667,8 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
 </translation>
     </message>
     <message>
-        <source>Disable all WISPR specific functionality (Masternodes, Zerocoin, SwiftX, Budgeting) (0-1, default: %u)</source>
-        <translation>Avaktivera all WISPR funktionalitet (Huvudnoder, Zerocoin, SwiftX, Budgeting) (0-1, standard: %u)</translation>
+        <source>Disable all PIVX specific functionality (Masternodes, Zerocoin, SwiftX, Budgeting) (0-1, default: %u)</source>
+        <translation>Avaktivera all PIVX funktionalitet (Huvudnoder, Zerocoin, SwiftX, Budgeting) (0-1, standard: %u)</translation>
     </message>
     <message>
         <source>Enable SwiftX, show confirmations for locked transactions (bool, default: %s)</source>
@@ -5542,8 +5703,8 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Valör aatt föredra för automatiskt mintad Zerocoin (1/5/10/50/100/500/1000/5000), 0 för ingen preface. standard: %u)</translation>
     </message>
     <message>
-        <source>Specify custom backup path to add a copy of any automatic zWSP backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup. If backuppath is set as well, 4 backups will happen</source>
-        <translation>Specifiera skräddarsydd backup väg att lägga till en kopia av alla automatisk zWSP backup. Om satt som dir, varje backup genererar en tidsstämplad fil. Om satt som fil, skriver över den filen vid varje backup. Om backupvägen också är satt, 4 backups kommer hända</translation>
+        <source>Specify custom backup path to add a copy of any automatic zPIV backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup. If backuppath is set as well, 4 backups will happen</source>
+        <translation>Specifiera skräddarsydd backup väg att lägga till en kopia av alla automatisk zPIV backup. Om satt som dir, varje backup genererar en tidsstämplad fil. Om satt som fil, skriver över den filen vid varje backup. Om backupvägen också är satt, 4 backups kommer hända</translation>
     </message>
     <message>
         <source>Specify custom backup path to add a copy of any wallet backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup.</source>
@@ -5604,10 +5765,6 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     <message>
         <source>Failed to create mint</source>
         <translation>Misslyckades skapa mint</translation>
-    </message>
-    <message>
-        <source>Failed to deserialize</source>
-        <translation>Misslyckades att deserialize</translation>
     </message>
     <message>
         <source>Failed to find Zerocoins in wallet.dat</source>
@@ -6042,20 +6199,12 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Synkroniserar sporks...</translation>
     </message>
     <message>
-        <source>Syncing zWSP wallet...</source>
-        <translation>Synkroniserar zWSP plånbok...</translation>
+        <source>Syncing zPIV wallet...</source>
+        <translation>Synkroniserar zPIV plånbok...</translation>
     </message>
     <message>
         <source>The coin spend has been used</source>
         <translation>Mynt spenderingen har redan använts</translation>
-    </message>
-    <message>
-        <source>The new spend coin transaction did not verify</source>
-        <translation>Den nya spendera mynt transaktionen kunde inte verifieras</translation>
-    </message>
-    <message>
-        <source>The selected mint coin is an invalid coin</source>
-        <translation>Den valda mint myntet är ett ogiltigt mynt</translation>
     </message>
     <message>
         <source>The transaction did not verify</source>
@@ -6186,12 +6335,16 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Använd test nätverket</translation>
     </message>
     <message>
+        <source>User Agent comment (%s) contains unsafe characters.</source>
+        <translation>Användaragent kommentar (%s) innehåller osäkra tecken.</translation>
+    </message>
+    <message>
         <source>Username for JSON-RPC connections</source>
         <translation>Användarnamn för JSON-RPC anslutningar</translation>
     </message>
     <message>
-        <source>Value is below the smallest available denomination (= 1) of zWSP</source>
-        <translation>Värde är under den minsta tillgängliga valören (=1) av zWSP</translation>
+        <source>Value is below the smallest available denomination (= 1) of zPIV</source>
+        <translation>Värde är under den minsta tillgängliga valören (=1) av zPIV</translation>
     </message>
     <message>
         <source>Value more than Obfuscation pool maximum allows.</source>
@@ -6206,10 +6359,6 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Verifierar plånbok</translation>
     </message>
     <message>
-        <source>Version 1 zWSP require a security level of 100 to successfully spend.</source>
-        <translation>Version 1 zWSP kräver en säkerhetsnivå på 100 för att kunna spenderas med framgång.</translation>
-    </message>
-    <message>
         <source>Wallet %s resides outside data directory %s</source>
         <translation>Plånbok %s finns utanför data katalog %s</translation>
     </message>
@@ -6218,8 +6367,8 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Plånboken är låst.</translation>
     </message>
     <message>
-        <source>Wallet needed to be rewritten: restart WISPR Core to complete</source>
-        <translation>Plånbok behöver skrivas om: starta om WISPR Kärna för att göra klart</translation>
+        <source>Wallet needed to be rewritten: restart PIVX Core to complete</source>
+        <translation>Plånbok behöver skrivas om: starta om PIVX Kärna för att göra klart</translation>
     </message>
     <message>
         <source>Wallet options:</source>

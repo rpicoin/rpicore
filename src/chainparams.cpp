@@ -150,6 +150,11 @@ public:
         vAlertPubKey=ParseHex("0411f84b889c61c1842ec84a15e3093d7dd99d955ab797b24c984cdcfe3aca23f04ec06bd840e8093aaf83488c039027ecc4ad704261245be30289be166f667c61");
         nDefaultPort = 17000;
         nMinerThreads = 0;
+        nBlockDoubleAccumulated = 1050010;
+
+        // Fake Serial Attack
+        nFakeSerialBlockheightEnd = 1686229;
+        nSupplyBeforeFakeSerial = 4131563 * COIN;   // zerocoin supply at block nFakeSerialBlockheightEnd
 
         /**
          * Build the genesis block. Note that the output of the genesis coinbase cannot
@@ -286,6 +291,11 @@ public:
         txNew2.vout.resize(1);
         txNew2.vin[0].scriptSig = CScript() << 0 << CScriptNum(42) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
         txNew2.vout[0].SetEmpty();
+
+        // Fake Serial Attack
+        nFakeSerialBlockheightEnd = -1;
+        nSupplyBeforeFakeSerial = 0;
+
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis.vtx.push_back(txNew2);
         genesis.hashPrevBlock = 0;
@@ -362,6 +372,14 @@ public:
         consensus.fAllowMinDifficultyBlocks = true;
 
 
+        nBlockEnforceSerialRange = 1; //Enforce serial range starting this block
+        nBlockRecalculateAccumulators = 999999999; //Trigger a recalculation of accumulators
+        nBlockFirstFraudulent = 999999999; //First block that bad serials emerged
+        nBlockLastGoodCheckpoint = 999999999; //Last valid accumulator checkpoint
+
+        // Fake Serial Attack
+        nFakeSerialBlockheightEnd = -1;
+
         pchMessageStart[0] = 0xFF;
         pchMessageStart[1] = 0xAF;
         pchMessageStart[2] = 0xB7;
@@ -385,6 +403,7 @@ public:
         fDefaultCheckMemPool = true;
         fRequireStandard = false;
         fMineBlocksOnDemand = true;
+        fSkipProofOfWorkCheck = true;
         fTestnetToBeDeprecatedFieldRPC = false;
     }
     const Checkpoints::CCheckpointData& Checkpoints() const

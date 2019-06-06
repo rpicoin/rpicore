@@ -23,7 +23,7 @@
 
 #include "libzerocoin/Coin.h"
 #include "spork.h"
-#include "primitives/deterministicmint.h"
+#include "zpiv/deterministicmint.h"
 #include <boost/assign/list_of.hpp>
 #include <boost/thread/thread.hpp>
 
@@ -2123,7 +2123,9 @@ UniValue getwalletinfo(const UniValue& params, bool fHelp)
             "\nResult:\n"
             "{\n"
             "  \"walletversion\": xxxxx,     (numeric) the wallet version\n"
-            "  \"balance\": xxxxxxx,         (numeric) the total WSP balance of the wallet\n"
+            "  \"balance\": xxxxxxx,         (numeric) the total PIV balance of the wallet\n"
+            "  \"unconfirmed_balance\": xxx, (numeric) the total unconfirmed balance of the wallet in PIV\n"
+            "  \"immature_balance\": xxxxxx, (numeric) the total immature balance of the wallet in PIV\n"
             "  \"txcount\": xxxxxxx,         (numeric) the total number of transactions in the wallet\n"
             "  \"keypoololdest\": xxxxxx,    (numeric) the timestamp (seconds since GMT epoch) of the oldest pre-generated key in the key pool\n"
             "  \"keypoolsize\": xxxx,        (numeric) how many new keys are pre-generated\n"
@@ -2140,6 +2142,8 @@ UniValue getwalletinfo(const UniValue& params, bool fHelp)
     UniValue obj(UniValue::VOBJ);
     obj.push_back(Pair("walletversion", pwalletMain->GetVersion()));
     obj.push_back(Pair("balance", ValueFromAmount(pwalletMain->GetBalance())));
+    obj.push_back(Pair("unconfirmed_balance", ValueFromAmount(pwalletMain->GetUnconfirmedBalance())));
+    obj.push_back(Pair("immature_balance",    ValueFromAmount(pwalletMain->GetImmatureBalance())));
     obj.push_back(Pair("txcount", (int)pwalletMain->mapWallet.size()));
     obj.push_back(Pair("keypoololdest", pwalletMain->GetOldestKeyPoolTime()));
     obj.push_back(Pair("keypoolsize", (int)pwalletMain->GetKeyPoolSize()));
@@ -2588,7 +2592,9 @@ UniValue listmintedzerocoins(const UniValue& params, bool fHelp)
             "    \"version\": n,   (numeric) Zerocoin version number.\n"
             "    \"zWSP ID\": \"xxx\",   (string) Pubcoin in hex format.\n"
             "    \"denomination\": n,   (numeric) Coin denomination.\n"
+            "    \"mint height\": n     (numeric) Height of the block containing this mint.\n"
             "    \"confirmations\": n   (numeric) Number of confirmations.\n"
+            "    \"hash stake\": \"xxx\",   (string) Mint serialstake hash in hex format.\n"
             "  }\n"
             "  ,..."
             "]\n"
@@ -2612,7 +2618,7 @@ UniValue listmintedzerocoins(const UniValue& params, bool fHelp)
 
     UniValue jsonList(UniValue::VARR);
     if (fVerbose) {
-        for (const CMintMeta& m : setMints) {
+        for (auto m : setMints) {
             // Construct mint object
             UniValue objMint(UniValue::VOBJ);
             objMint.push_back(Pair("serial hash", m.hashSerial.GetHex()));  // Serial hash
@@ -2620,8 +2626,20 @@ UniValue listmintedzerocoins(const UniValue& params, bool fHelp)
             objMint.push_back(Pair("zWSP ID", m.hashPubcoin.GetHex()));     // PubCoin
             int denom = libzerocoin::ZerocoinDenominationToInt(m.denom);
             objMint.push_back(Pair("denomination", denom));                 // Denomination
+            objMint.push_back(Pair("mint height", m.nHeight));              // Mint Height
             int nConfirmations = (m.nHeight && nBestHeight > m.nHeight) ? nBestHeight - m.nHeight : 0;
             objMint.push_back(Pair("confirmations", nConfirmations));       // Confirmations
+            // hashStake
+            if (m.hashStake == 0) {
+                CZerocoinMint mint;
+                if (pwalletMain->GetMint(m.hashSerial, mint)) {
+                    uint256 hashStake = mint.GetSerialNumber().getuint256();
+                    hashStake = Hash(hashStake.begin(), hashStake.end());
+                    m.hashStake = hashStake;
+                    pwalletMain->zpivTracker->UpdateState(m);
+                }
+            }
+            objMint.push_back(Pair("hash stake", m.hashStake.GetHex()));       // Confirmations
             // Push back mint object
             jsonList.push_back(objMint);
         }
@@ -2823,22 +2841,17 @@ UniValue mintzerocoin(const UniValue& params, bool fHelp)
 
 UniValue spendzerocoin(const UniValue& params, bool fHelp)
 {
-    if (fHelp || params.size() > 5 || params.size() < 4)
+    if (fHelp || params.size() > 4 || params.size() < 3)
         throw runtime_error(
-            "spendzerocoin amount mintchange minimizechange securitylevel ( \"address\" )\n"
-            "\nSpend zWSP to a WSP address.\n" +
+            "spendzerocoin amount mintchange minimizechange ( \"address\" )\n"
+            "\nSpend zPIV to a PIV address.\n" +
             HelpRequiringPassphrase() + "\n"
 
             "\nArguments:\n"
             "1. amount          (numeric, required) Amount to spend.\n"
             "2. mintchange      (boolean, required) Re-mint any leftover change.\n"
             "3. minimizechange  (boolean, required) Try to minimize the returning change  [false]\n"
-            "4. securitylevel   (numeric, required) Amount of checkpoints to add to the accumulator.\n"
-            "                       A checkpoint contains 10 blocks worth of zerocoinmints.\n"
-            "                       The more checkpoints that are added, the more untraceable the transaction.\n"
-            "                       Use [100] to add the maximum amount of checkpoints available.\n"
-            "                       Adding more checkpoints makes the minting process take longer\n"
-            "5. \"address\"     (string, optional, default=change) Send to specified address or to a new change address.\n"
+            "4. \"address\"     (string, optional, default=change) Send to specified address or to a new change address.\n"
             "                       If there is change then an address is required\n"
 
             "\nResult:\n"
@@ -2865,8 +2878,8 @@ UniValue spendzerocoin(const UniValue& params, bool fHelp)
             "}\n"
 
             "\nExamples\n" +
-            HelpExampleCli("spendzerocoin", "5000 false true 100 \"DMJRSsuU9zfyrvxVaAEFQqK4MxZg6vgeS6\"") +
-            HelpExampleRpc("spendzerocoin", "5000 false true 100 \"DMJRSsuU9zfyrvxVaAEFQqK4MxZg6vgeS6\""));
+            HelpExampleCli("spendzerocoin", "5000 false true \"DMJRSsuU9zfyrvxVaAEFQqK4MxZg6vgeS6\"") +
+            HelpExampleRpc("spendzerocoin", "5000 false true \"DMJRSsuU9zfyrvxVaAEFQqK4MxZg6vgeS6\""));
 
     LOCK2(cs_main, pwalletMain->cs_wallet);
 
@@ -2878,12 +2891,11 @@ UniValue spendzerocoin(const UniValue& params, bool fHelp)
     CAmount nAmount = AmountFromValue(params[0]);   // Spending amount
     bool fMintChange = params[1].get_bool();        // Mint change to zWSP
     bool fMinimizeChange = params[2].get_bool();    // Minimize change
-    int nSecurityLevel = params[3].get_int();       // Security level
-    std::string address_str = params.size() > 4 ? params[4].get_str() : "";
+    std::string address_str = params.size() > 3 ? params[3].get_str() : "";
 
     vector<CZerocoinMint> vMintsSelected;
 
-    return DoZwspSpend(nAmount, fMintChange, fMinimizeChange, nSecurityLevel, vMintsSelected, address_str);
+    return DoZwspSpend(nAmount, fMintChange, fMinimizeChange, vMintsSelected, address_str);
 }
 
 
@@ -2968,11 +2980,20 @@ UniValue spendzerocoinmints(const UniValue& params, bool fHelp)
         nAmount += mint.GetDenominationAsAmount();
     }
 
-    return DoZwspSpend(nAmount, false, true, 100, vMintsSelected, address_str);
+    CBitcoinAddress address = CBitcoinAddress(); // Optional sending address. Dummy initialization here.
+    if (params.size() == 4) {
+        // Destination address was supplied as params[4]. Optional parameters MUST be at the end
+        // to avoid type confusion from the JSON interpreter
+        address = CBitcoinAddress(params[3].get_str());
+        if(!address.IsValid())
+            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid PIVX address");
+    }
+
+    return DoZwspSpend(nAmount, false, true, vMintsSelected, address_str);
 }
 
 
-extern UniValue DoZwspSpend(const CAmount nAmount, bool fMintChange, bool fMinimizeChange, const int nSecurityLevel, vector<CZerocoinMint>& vMintsSelected, std::string address_str)
+extern UniValue DoZwspSpend(const CAmount nAmount, bool fMintChange, bool fMinimizeChange, vector<CZerocoinMint>& vMintsSelected, std::string address_str)
 {
     int64_t nTimeStart = GetTimeMillis();
     CBitcoinAddress address = CBitcoinAddress(); // Optional sending address. Dummy initialization here.
@@ -2983,10 +3004,10 @@ extern UniValue DoZwspSpend(const CAmount nAmount, bool fMintChange, bool fMinim
     if(address_str != "") { // Spend to supplied destination address
         address = CBitcoinAddress(address_str);
         if(!address.IsValid())
-            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid WISPR address");
-        fSuccess = pwalletMain->SpendZerocoin(nAmount, nSecurityLevel, wtx, receipt, vMintsSelected, fMintChange, fMinimizeChange, &address);
+            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid PIVX address");
+        fSuccess = pwalletMain->SpendZerocoin(nAmount, wtx, receipt, vMintsSelected, fMintChange, fMinimizeChange, &address);
     } else                   // Spend to newly generated local address
-        fSuccess = pwalletMain->SpendZerocoin(nAmount, nSecurityLevel, wtx, receipt, vMintsSelected, fMintChange, fMinimizeChange);
+        fSuccess = pwalletMain->SpendZerocoin(nAmount, wtx, receipt, vMintsSelected, fMintChange, fMinimizeChange);
 
     if (!fSuccess)
         throw JSONRPCError(RPC_WALLET_ERROR, receipt.GetStatusMessage());
@@ -3227,6 +3248,7 @@ UniValue exportzerocoins(const UniValue& params, bool fHelp)
             "\nResult:\n"
             "[                   (array of json object)\n"
             "  {\n"
+            "    \"id\": \"serial hash\",  (string) the mint's zPIV serial hash \n"
             "    \"d\": n,         (numeric) the mint's zerocoin denomination \n"
             "    \"p\": \"pubcoin\", (string) The public coin\n"
             "    \"s\": \"serial\",  (string) The secret serial number\n"
@@ -3267,6 +3289,7 @@ UniValue exportzerocoins(const UniValue& params, bool fHelp)
             continue;
 
         UniValue objMint(UniValue::VOBJ);
+        objMint.push_back(Pair("id", meta.hashSerial.GetHex()));
         objMint.push_back(Pair("d", mint.GetDenomination()));
         objMint.push_back(Pair("p", mint.GetValue().GetHex()));
         objMint.push_back(Pair("s", mint.GetSerialNumber().GetHex()));
@@ -3675,4 +3698,101 @@ UniValue createautomintaddress(const UniValue& params, bool fHelp)
     LOCK(pwalletMain->cs_wallet);
     CBitcoinAddress address = pwalletMain->GenerateNewAutoMintKey();
     return address.ToString();
+}
+
+UniValue spendrawzerocoin(const UniValue& params, bool fHelp)
+{
+    if (fHelp || params.size() < 4 || params.size() > 5)
+        throw runtime_error(
+            "spendrawzerocoin \"serialHex\" denom \"randomnessHex\" [\"address\"]\n"
+            "\nCreate and broadcast a TX spending the provided zericoin.\n"
+
+            "\nArguments:\n"
+            "1. \"serialHex\"        (string, required) A zerocoin serial number (hex)\n"
+            "2. \"randomnessHex\"    (string, required) A zerocoin randomness value (hex)\n"
+            "3. denom                (numeric, required) A zerocoin denomination (decimal)\n"
+            "4. \"priv key\"         (string, required) The private key associated with this coin (hex)\n"
+            "5. \"address\"          (string, optional) PIVX address to spend to. If not specified, spend to change add.\n"
+
+            "\nResult:\n"
+                "\"txid\"             (string) The transaction txid in hex\n"
+
+            "\nExamples\n" +
+            HelpExampleCli("spendrawzerocoin", "\"f80892e78c30a393ef4ab4d5a9d5a2989de6ebc7b976b241948c7f489ad716a2\" \"a4fd4d7248e6a51f1d877ddd2a4965996154acc6b8de5aa6c83d4775b283b600\" 100 \"xxx\"") +
+            HelpExampleRpc("spendrawzerocoin", "\"f80892e78c30a393ef4ab4d5a9d5a2989de6ebc7b976b241948c7f489ad716a2\", \"a4fd4d7248e6a51f1d877ddd2a4965996154acc6b8de5aa6c83d4775b283b600\", 100, \"xxx\""));
+
+    LOCK2(cs_main, pwalletMain->cs_wallet);
+
+    if (GetAdjustedTime() > GetSporkValue(SPORK_16_ZEROCOIN_MAINTENANCE_MODE))
+            throw JSONRPCError(RPC_WALLET_ERROR, "zPIV is currently disabled due to maintenance.");
+
+    CBigNum serial;
+    serial.SetHex(params[0].get_str());
+
+    CBigNum randomness;
+    randomness.SetHex(params[1].get_str());
+
+    const int denom_int = params[2].get_int();
+    libzerocoin::CoinDenomination denom = libzerocoin::IntToZerocoinDenomination(denom_int);
+
+    std::string priv_key_str = params[3].get_str();
+    CPrivKey privkey;
+    CBitcoinSecret vchSecret;
+    bool fGood = vchSecret.SetString(priv_key_str);
+    CKey key = vchSecret.GetKey();
+    if (!key.IsValid() && fGood)
+        return JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "privkey is not valid");
+    privkey = key.GetPrivKey();
+
+    std::string address_str = "";
+    if (params.size() == 5)
+        address_str = params[4].get_str();
+
+    // Create the coin associated with these secrets
+    libzerocoin::PrivateCoin coin(Params().Zerocoin_Params(false), denom, serial, randomness);
+    coin.setPrivKey(privkey);
+    coin.setVersion(libzerocoin::PrivateCoin::CURRENT_VERSION);
+
+    // Create the mint associated with this coin
+    CZerocoinMint mint(denom, coin.getPublicCoin().getValue(), randomness, serial, false, CZerocoinMint::CURRENT_VERSION, &privkey);
+    vector<CZerocoinMint> vMintsSelected = {mint};
+    CAmount nAmount = mint.GetDenominationAsAmount();
+
+    return DoZpivSpend(nAmount, false, true, vMintsSelected, address_str);
+}
+
+UniValue clearspendcache(const UniValue& params, bool fHelp)
+{
+    if(fHelp || params.size() != 0)
+        throw runtime_error(
+            "clearspendcache\n"
+            "\nClear the pre-computed zPIV spend cache, and database.\n" +
+            HelpRequiringPassphrase() + "\n"
+
+            "\nExamples\n" +
+            HelpExampleCli("clearspendcache", "") + HelpExampleRpc("clearspendcache", ""));
+
+    EnsureWalletIsUnlocked();
+
+    CzPIVTracker* zpivTracker = pwalletMain->zpivTracker.get();
+
+    {
+        int nTries = 0;
+        while (nTries < 100) {
+            TRY_LOCK(zpivTracker->cs_spendcache, fLocked);
+            if (fLocked) {
+                if (zpivTracker->ClearSpendCache()) {
+                    fClearSpendCache = true;
+                    CWalletDB walletdb("precomputes.dat", "cr+");
+                    walletdb.EraseAllPrecomputes();
+                    return "Successfully Cleared the Precompute Spend Cache and Database";
+                }
+            } else {
+                fGlobalUnlockSpendCache = true;
+                nTries++;
+                MilliSleep(100);
+            }
+        }
+    }
+    throw JSONRPCError(RPC_WALLET_ERROR, "Error: Spend cache not cleared!");
 }

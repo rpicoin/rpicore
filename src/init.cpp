@@ -11,8 +11,7 @@
 
 #include "init.h"
 
-#include "accumulatorcheckpoints.h"
-#include "accumulators.h"
+#include "zpiv/accumulators.h"
 #include "activemasternode.h"
 #include "addrman.h"
 #include "amount.h"
@@ -40,14 +39,13 @@
 #include "util.h"
 #include "utilmoneystr.h"
 #include "validationinterface.h"
+#include "zpiv/accumulatorcheckpoints.h"
 #include "zwspchain.h"
-#include "reverse_iterate.h"
 
 #ifdef ENABLE_WALLET
 #include "db.h"
 #include "wallet.h"
 #include "walletdb.h"
-#include "accumulators.h"
 
 #endif
 
@@ -344,8 +342,15 @@ bool static Bind(const CService& addr, unsigned int flags)
     return true;
 }
 
+void OnRPCStarted()
+{
+    uiInterface.NotifyBlockTip.connect(RPCNotifyBlockChange);
+}
+
 void OnRPCStopped()
 {
+    uiInterface.NotifyBlockTip.disconnect(RPCNotifyBlockChange);
+    //RPCNotifyBlockChange(0);
     cvBlockChange.notify_all();
     LogPrint("rpc", "RPC stopped.\n");
 }
@@ -495,7 +500,7 @@ std::string HelpMessage(HelpMessageMode mode)
         strUsage += HelpMessageOpt("-stopafterblockimport", strprintf(_("Stop running after importing blocks from disk (default: %u)"), 0));
         strUsage += HelpMessageOpt("-sporkkey=<privkey>", _("Enable spork administration functionality with the appropriate private key."));
     }
-    string debugCategories = "addrman, alert, bench, coindb, db, lock, rand, rpc, selectcoins, tor, mempool, net, proxy, http, libevent, wispr, (obfuscation, swiftx, masternode, mnpayments, mnbudget, zero)"; // Don't translate these and qt below
+    string debugCategories = "addrman, alert, bench, coindb, db, lock, rand, rpc, selectcoins, tor, mempool, net, proxy, http, libevent, wispr, (obfuscation, swiftx, masternode, mnpayments, mnbudget, zero, precompute, staking)"; // Don't translate these and qt below
     if (mode == HMM_BITCOIN_QT)
         debugCategories += ", qt";
     strUsage += HelpMessageOpt("-debug=<category>", strprintf(_("Output debugging information (default: %u, supplying <category> is optional)"), 0) + ". " +
@@ -553,8 +558,10 @@ std::string HelpMessage(HelpMessageMode mode)
     strUsage += HelpMessageOpt("-enableautoconvertaddress=<n>", strprintf(_("Enable automatic Zerocoin minting from specific addresses (0-1, default: %u)"), DEFAULT_AUTOCONVERTADDRESS));
     strUsage += HelpMessageOpt("-zeromintpercentage=<n>", strprintf(_("Percentage of automatically minted Zerocoin  (1-100, default: %u)"), 10));
     strUsage += HelpMessageOpt("-preferredDenom=<n>", strprintf(_("Preferred Denomination for automatically minted Zerocoin  (1/5/10/50/100/500/1000/5000), 0 for no preference. default: %u)"), 0));
-    strUsage += HelpMessageOpt("-backupzwsp=<n>", strprintf(_("Enable automatic wallet backups triggered after each zWSP minting (0-1, default: %u)"), 1));
-    strUsage += HelpMessageOpt("-zwspbackuppath=<dir|file>", _("Specify custom backup path to add a copy of any automatic zWSP backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup. If backuppath is set as well, 4 backups will happen"));
+    strUsage += HelpMessageOpt("-backupzwsp=<n>", strprintf(_("Enable automatic wallet backups triggered after each zPIV minting (0-1, default: %u)"), 1));
+    strUsage += HelpMessageOpt("-precompute=<n>", strprintf(_("Enable precomputation of zPIV spends and stakes (0-1, default %u)"), 1));
+    strUsage += HelpMessageOpt("-precomputecachelength=<n>", strprintf(_("Set the number of included blocks to precompute per cycle. (minimum: %d) (maximum: %d) (default: %d)"), MIN_PRECOMPUTE_LENGTH, MAX_PRECOMPUTE_LENGTH, DEFAULT_PRECOMPUTE_LENGTH));
+    strUsage += HelpMessageOpt("-zwspbackuppath=<dir|file>", _("Specify custom backup path to add a copy of any automatic zPIV backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup. If backuppath is set as well, 4 backups will happen"));
 #endif // ENABLE_WALLET
     strUsage += HelpMessageOpt("-reindexzerocoin=<n>", strprintf(_("Delete all zerocoin spends and mints that have been recorded to the blockchain database and reindex them (0-1, default: %u)"), 0));
 
@@ -591,6 +598,11 @@ std::string HelpMessage(HelpMessageMode mode)
         strUsage += HelpMessageOpt("-rpcworkqueue=<n>", strprintf("Set the depth of the work queue to service RPC calls (default: %d)", DEFAULT_HTTP_WORKQUEUE));
         strUsage += HelpMessageOpt("-rpcservertimeout=<n>", strprintf("Timeout during HTTP requests (default: %d)", DEFAULT_HTTP_SERVER_TIMEOUT));
     }
+
+    strUsage += HelpMessageOpt("-blockspamfilter=<n>", strprintf(_("Use block spam filter (default: %u)"), DEFAULT_BLOCK_SPAM_FILTER));
+    strUsage += HelpMessageOpt("-blockspamfiltermaxsize=<n>", strprintf(_("Maximum size of the list of indexes in the block spam filter (default: %u)"), DEFAULT_BLOCK_SPAM_FILTER_MAX_SIZE));
+    strUsage += HelpMessageOpt("-blockspamfiltermaxavg=<n>", strprintf(_("Maximum average size of an index occurrence in the block spam filter (default: %u)"), DEFAULT_BLOCK_SPAM_FILTER_MAX_AVG));
+
     return strUsage;
 }
 
@@ -720,6 +732,7 @@ bool InitSanityCheck(void)
 
 bool AppInitServers()
 {
+    RPCServer::OnStarted(&OnRPCStarted);
     RPCServer::OnStopped(&OnRPCStopped);
     RPCServer::OnPreCommand(&OnRPCPreCommand);
     if (!InitHTTPServer())
@@ -1231,6 +1244,7 @@ bool AppInit2()
 
     }  // (!fDisableWallet)
 #endif // ENABLE_WALLET
+
     // ********************************************************* Step 6: network initialization
 
     RegisterNodeSignals(GetNodeSignals());
@@ -1491,19 +1505,54 @@ bool AppInit2()
                     }
                 }
 
-                // Recalculate money supply for blocks that are impacted by accounting issue after zerocoin activation
-                if (GetBoolArg("-reindexmoneysupply", false)) {
-                    if (chainActive.Height() > Params().NEW_PROTOCOLS_STARTHEIGHT()) {
-                        RecalculateZWSPMinted();
-                        RecalculateZWSPSpent();
+                // Wrapped serials inflation check
+                bool reindexDueWrappedSerials = false;
+                bool reindexZerocoin = false;
+                int chainHeight = chainActive.Height();
+                if(Params().NetworkID() == CBaseChainParams::MAIN && chainHeight > Params().Zerocoin_Block_EndFakeSerial()) {
+
+                    // Supply needs to be exactly GetSupplyBeforeFakeSerial + GetWrapppedSerialInflationAmount
+                    CBlockIndex* pblockindex = chainActive[Params().Zerocoin_Block_EndFakeSerial() + 1];
+                    CAmount zpivSupplyCheckpoint = Params().GetSupplyBeforeFakeSerial() + GetWrapppedSerialInflationAmount();
+
+                    if (pblockindex->GetZerocoinSupply() < zpivSupplyCheckpoint) {
+                        // Trigger reindex due wrapping serials
+                        LogPrintf("Current GetZerocoinSupply: %d vs %d\n", pblockindex->GetZerocoinSupply()/COIN , zpivSupplyCheckpoint/COIN);
+                        reindexDueWrappedSerials = true;
+                    } else if (pblockindex->GetZerocoinSupply() > zpivSupplyCheckpoint) {
+                        // Trigger global zPIV reindex
+                        reindexZerocoin = true;
+                        LogPrintf("Current GetZerocoinSupply: %d vs %d\n", pblockindex->GetZerocoinSupply()/COIN , zpivSupplyCheckpoint/COIN);
                     }
-                    RecalculateWSPSupply(1);
+
+                }
+
+                // Reindex only for wrapped serials inflation.
+                if (reindexDueWrappedSerials)
+                    AddWrappedSerialsInflation();
+
+                // Recalculate money supply for blocks that are impacted by accounting issue after zerocoin activation
+                if (GetBoolArg("-reindexmoneysupply", false) || reindexZerocoin) {
+                    if (chainHeight > Params().Zerocoin_StartHeight()) {
+                        RecalculateZPIVMinted();
+                        RecalculateZPIVSpent();
+                    }
+                    // Recalculate from the zerocoin activation or from scratch.
+                    RecalculatePIVSupply(reindexZerocoin ? Params().Zerocoin_StartHeight() : 1);
+                }
+
+                // Check Recalculation result
+                if(Params().NetworkID() == CBaseChainParams::MAIN && chainHeight > Params().Zerocoin_Block_EndFakeSerial()) {
+                    CBlockIndex* pblockindex = chainActive[Params().Zerocoin_Block_EndFakeSerial() + 1];
+                    CAmount zpivSupplyCheckpoint = Params().GetSupplyBeforeFakeSerial() + GetWrapppedSerialInflationAmount();
+                    if (pblockindex->GetZerocoinSupply() != zpivSupplyCheckpoint)
+                        return InitError(strprintf("ZerocoinSupply Recalculation failed: %d vs %d", pblockindex->GetZerocoinSupply()/COIN , zpivSupplyCheckpoint/COIN));
                 }
 
                 // Force recalculation of accumulators.
                 if (GetBoolArg("-reindexaccumulators", false)) {
-                    if (chainActive.Height() > Params().NEW_PROTOCOLS_STARTHEIGHT()) {
-                        CBlockIndex *pindex = chainActive[Params().NEW_PROTOCOLS_STARTHEIGHT()];
+                    if (chainHeight > Params().Zerocoin_Block_V2_Start()) {
+                        CBlockIndex *pindex = chainActive[Params().Zerocoin_Block_V2_Start()];
                         while (pindex->nHeight < chainActive.Height()) {
                             if (!count(listAccCheckpointsNoDB.begin(), listAccCheckpointsNoDB.end(),
                                        pindex->nAccumulatorCheckpoint))
@@ -1522,16 +1571,30 @@ bool AppInit2()
                     }
                 }
 
-                uiInterface.InitMessage(_("Verifying blocks..."));
+                if (!fReindex) {
+                    uiInterface.InitMessage(_("Verifying blocks..."));
 
-                // Flag sent to validation code to let it know it can skip certain checks
-                fVerifyingBlocks = true;
+                    // Flag sent to validation code to let it know it can skip certain checks
+                    fVerifyingBlocks = true;
 
-                // Zerocoin must check at level 4
-                if (!CVerifyDB().VerifyDB(pcoinsdbview, 4, GetArg("-checkblocks", 100))) {
-                    strLoadError = _("Corrupted block database detected");
-                    fVerifyingBlocks = false;
-                    break;
+                    {
+                        LOCK(cs_main);
+                        CBlockIndex *tip = chainActive[chainActive.Height()];
+                        RPCNotifyBlockChange(tip->GetBlockHash());
+                        if (tip && tip->nTime > GetAdjustedTime() + 2 * 60 * 60) {
+                            strLoadError = _("The block database contains a block which appears to be from the future. "
+                                             "This may be due to your computer's date and time being set incorrectly. "
+                                             "Only rebuild the block database if you are sure that your computer's date and time are correct");
+                            break;
+                        }
+                    }
+
+                    // Zerocoin must check at level 4
+                    if (!CVerifyDB().VerifyDB(pcoinsdbview, 4, GetArg("-checkblocks", 100))) {
+                        strLoadError = _("Corrupted block database detected");
+                        fVerifyingBlocks = false;
+                        break;
+                    }
                 }
             } catch (std::exception& e) {
                 if (fDebug) LogPrintf("%s\n", e.what());
@@ -1975,6 +2038,11 @@ bool AppInit2()
 
         // Run a thread to flush wallet periodically
         threadGroup.create_thread(boost::bind(&ThreadFlushWalletDB, boost::ref(pwalletMain->strWalletFile)));
+
+        if (GetBoolArg("-precompute", true)) {
+            // Run a thread to precompute any zPIV spends
+            threadGroup.create_thread(boost::bind(&ThreadPrecomputeSpends));
+        }
     }
 #endif
 

@@ -135,13 +135,15 @@ UniValue ValueFromAmount(const CAmount& amount)
             strprintf("%s%d.%08d", sign ? "-" : "", quotient, remainder));
 }
 
-uint256 ParseHashV(const UniValue& v, string strName)
+uint256 ParseHashV(const UniValue& v, std::string strName)
 {
-    string strHex;
+    std::string strHex;
     if (v.isStr())
         strHex = v.get_str();
     if (!IsHex(strHex)) // Note: IsHex("") is false
         throw JSONRPCError(RPC_INVALID_PARAMETER, strName + " must be hexadecimal string (not '" + strHex + "')");
+    if (64 != strHex.length())
+        throw JSONRPCError(RPC_INVALID_PARAMETER, strprintf("%s must be of length %d (not %d)", strName, 64, strHex.length()));
     uint256 result;
     result.SetHex(strHex);
     return result;
@@ -304,6 +306,7 @@ static const CRPCCommand vRPCCommands[] =
         {"blockchain", "getaccumulatorvalues", &getaccumulatorvalues, true, false, false},
         {"blockchain", "getaccumulatorwitness", &getaccumulatorwitness, true, false, false},
         {"blockchain", "getmintsinblocks", &getmintsinblocks, true, false, false},
+        {"blockchain", "getserials", &getserials, true, false, false},
         {"blockchain", "getblockchaininfo", &getblockchaininfo, true, false, false},
         {"blockchain", "getbestblockhash", &getbestblockhash, true, false, false},
         {"blockchain", "getblockcount", &getblockcount, true, false, false},
@@ -311,6 +314,7 @@ static const CRPCCommand vRPCCommands[] =
         {"blockchain", "getblockhash", &getblockhash, true, false, false},
         {"blockchain", "getblockheader", &getblockheader, false, false, false},
         {"blockchain", "getchaintips", &getchaintips, true, false, false},
+        {"blockchain", "getchecksumblock", &getchecksumblock, false, false, false},
         {"blockchain", "getdifficulty", &getdifficulty, true, false, false},
         {"blockchain", "getfeeinfo", &getfeeinfo, true, false, false},
         {"blockchain", "getmempoolinfo", &getmempoolinfo, true, true, false},
@@ -334,6 +338,7 @@ static const CRPCCommand vRPCCommands[] =
         {"generating", "getgenerate", &getgenerate, true, false, false},
         {"generating", "gethashespersec", &gethashespersec, true, false, false},
         {"generating", "setgenerate", &setgenerate, true, true, false},
+        {"generating", "generate", &generate, true, true, false},
 #endif
 
         /* Raw transactions */
@@ -355,6 +360,9 @@ static const CRPCCommand vRPCCommands[] =
         {"hidden", "invalidateblock", &invalidateblock, true, true, false},
         {"hidden", "reconsiderblock", &reconsiderblock, true, true, false},
         {"hidden", "setmocktime", &setmocktime, true, false, false},
+        { "hidden",             "waitfornewblock",        &waitfornewblock,        true,  true,  false  },
+        { "hidden",             "waitforblock",           &waitforblock,           true,  true,  false  },
+        { "hidden",             "waitforblockheight",     &waitforblockheight,     true,  true,  false  },
 
         /* WISPR features */
         {"wispr", "masternode", &masternode, true, true, false},
@@ -440,12 +448,14 @@ static const CRPCCommand vRPCCommands[] =
         {"wallet", "walletpassphrasechange", &walletpassphrasechange, true, false, true},
         {"wallet", "walletpassphrase", &walletpassphrase, true, false, true},
 
+        {"zerocoin", "createrawzerocoinstake", &createrawzerocoinstake, false, false, true},
         {"zerocoin", "getzerocoinbalance", &getzerocoinbalance, false, false, true},
         {"zerocoin", "listmintedzerocoins", &listmintedzerocoins, false, false, true},
         {"zerocoin", "listspentzerocoins", &listspentzerocoins, false, false, true},
         {"zerocoin", "listzerocoinamounts", &listzerocoinamounts, false, false, true},
         {"zerocoin", "mintzerocoin", &mintzerocoin, false, false, true},
         {"zerocoin", "spendzerocoin", &spendzerocoin, false, false, true},
+        {"zerocoin", "spendrawzerocoin", &spendrawzerocoin, true, false, false},
         {"zerocoin", "spendzerocoinmints", &spendzerocoinmints, false, false, true},
         {"zerocoin", "resetmintzerocoin", &resetmintzerocoin, false, false, true},
         {"zerocoin", "resetspentzerocoin", &resetspentzerocoin, false, false, true},
@@ -458,7 +468,8 @@ static const CRPCCommand vRPCCommands[] =
         {"zerocoin", "setzwspseed", &setzwspseed, false, false, true},
         {"zerocoin", "generatemintlist", &generatemintlist, false, false, true},
         {"zerocoin", "searchdzwsp", &searchdzwsp, false, false, true},
-        {"zerocoin", "dzwspstate", &dzwspstate, false, false, true}
+        {"zerocoin", "dzwspstate", &dzwspstate, false, false, true},
+        {"zerocoin", "clearspendcache", &clearspendcache, false, false, true}
 
 #endif // ENABLE_WALLET
 };

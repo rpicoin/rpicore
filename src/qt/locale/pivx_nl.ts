@@ -62,12 +62,12 @@
         <translation>Ontvangstadressen</translation>
     </message>
     <message>
-        <source>These are your WISPR addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Dit zijn uw WISPR adressen om betalingen mee te verzenden. Controleer altijd zowel het bedrag als het ontvangstadres voor het verzenden van geld.</translation>
+        <source>These are your PIVX addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Dit zijn uw PIVX adressen om betalingen mee te verzenden. Controleer altijd zowel het bedrag als het ontvangstadres voor het verzenden van geld.</translation>
     </message>
     <message>
-        <source>These are your WISPR addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Dit zijn uw WISPR adressen waarop betalingen kunnen worden ontvangen. Het wordt aangeraden om een nieuw ontvangstadres voor elke transactie te gebruiken.</translation>
+        <source>These are your PIVX addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Dit zijn uw PIVX adressen waarop betalingen kunnen worden ontvangen. Het wordt aangeraden om een nieuw ontvangstadres voor elke transactie te gebruiken.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -176,16 +176,16 @@
         <translation>Bevestig versleuteling van de portemonnee</translation>
     </message>
     <message>
-        <source>WISPR will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your WSPs from being stolen by malware infecting your computer.</source>
-        <translation>WISPR zal nu afsluiten om het versleutelingsproces te voltooien. Onthoud dat het versleutelen van uw portemonnee u niet volledig kan beschermen tegen malware infecties op uw computer die uw WSP's kunnen stelen.</translation>
+        <source>PIVX will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your PIVs from being stolen by malware infecting your computer.</source>
+        <translation>PIVX zal nu afsluiten om het versleutelingsproces te voltooien. Onthoud dat het versleutelen van uw portemonnee u niet volledig kan beschermen tegen malware infecties op uw computer die uw PIV's kunnen stelen.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>Weet u zeker dat u uw portemonnee wilt versleutelen?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR WSP&lt;/b&gt;!</source>
-        <translation>Waarschuwing: Als u uw portemonnee versleutelt en uw wachtwoord vergeet, zult u &lt;b&gt;AL UW WSP VERLIEZEN&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR PIV&lt;/b&gt;!</source>
+        <translation>Waarschuwing: Als u uw portemonnee versleutelt en uw wachtwoord vergeet, zult u &lt;b&gt;AL UW PIV VERLIEZEN&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -254,12 +254,12 @@
         <translation>Adres:</translation>
     </message>
     <message>
-        <source>Enter a WISPR Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation>Voer een WISPR adres in dat u wilt coderen met BIP 38. Voer een wachtwoordzin in in het middelste vak. Druk op versleutelen om de versleutelde privé sleutel te berekenen.</translation>
+        <source>Enter a PIVX Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
+        <translation>Voer een PIVX adres in dat u wilt coderen met BIP 38. Voer een wachtwoordzin in in het middelste vak. Druk op versleutelen om de versleutelde privé sleutel te berekenen.</translation>
     </message>
     <message>
-        <source>The WISPR address to encrypt</source>
-        <translation>Het WISPR adres om te versleutelen</translation>
+        <source>The PIVX address to encrypt</source>
+        <translation>Het PIVX adres om te versleutelen</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -290,8 +290,8 @@
         <translation>Kopieer de huidige handtekening naar het systeemklembord</translation>
     </message>
     <message>
-        <source>Encrypt the private key for this WISPR address</source>
-        <translation>Versleutel de privé sleutel voor dit WISPR adres</translation>
+        <source>Encrypt the private key for this PIVX address</source>
+        <translation>Versleutel de privé sleutel voor dit PIVX adres</translation>
     </message>
     <message>
         <source>Reset all fields</source>
@@ -433,8 +433,8 @@
         <translation>Blader door transactiegescheidenis</translation>
     </message>
     <message>
-        <source>Privacy Actions for zWSP</source>
-        <translation>Privacy Acties voor zWSP</translation>
+        <source>Privacy Actions for zPIV</source>
+        <translation>Privacy Acties voor zPIV</translation>
     </message>
     <message>
         <source>E&amp;xit</source>
@@ -610,7 +610,7 @@
     </message>
     <message numerus="yes">
         <source>Processed %n blocks of transaction history.</source>
-        <translation><numerusform>%n blokken aan transactiegeschiedenis verwerkt.</numerusform><numerusform>%n blokken aan transactiegeschiedenis verwerkt.</numerusform></translation>
+        <translation><numerusform>%n blokken verwerkt van de transactiegeschiedenis</numerusform><numerusform>%n blokken verwerkt van de transactiegeschiedenis</numerusform></translation>
     </message>
     <message>
         <source>Synchronizing additional data: %p%</source>
@@ -623,6 +623,10 @@
     <message>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt; for anonymization and staking only</source>
         <translation>Portemonnee is &lt;b&gt;versleuteld&lt;/b&gt; en momenteel &lt;b&gt;geopend&lt;/b&gt;enkel voor anonimisering en staking</translation>
+    </message>
+    <message>
+        <source>Tor is &lt;b&gt;enabled&lt;/b&gt;: %1</source>
+        <translation>Tor is &lt;b&gt;enabled&lt;/b&gt;: %1</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -645,16 +649,16 @@
         <translation>Tabblad werkbalk</translation>
     </message>
     <message>
-        <source>WISPR Core</source>
-        <translation>WISPR Core</translation>
+        <source>PIVX Core</source>
+        <translation>PIVX Core</translation>
     </message>
     <message>
-        <source>Send coins to a WISPR address</source>
-        <translation>Verstuur munten naar een WISPR adres</translation>
+        <source>Send coins to a PIVX address</source>
+        <translation>Verstuur munten naar een PIVX adres</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and wispr: URIs)</source>
-        <translation>Vraag betaling aan (genereert QR codes en WISPR: URI's)</translation>
+        <source>Request payments (generates QR codes and pivx: URIs)</source>
+        <translation>Vraag betaling aan (genereert QR codes en PIVX: URI's)</translation>
     </message>
     <message>
         <source>&amp;Privacy</source>
@@ -669,24 +673,24 @@
         <translation>Bekijk masternodes</translation>
     </message>
     <message>
-        <source>&amp;About WISPR Core</source>
-        <translation>&amp;Over WISPR Core</translation>
+        <source>&amp;About PIVX Core</source>
+        <translation>&amp;Over PIVX Core</translation>
     </message>
     <message>
-        <source>Show information about WISPR Core</source>
-        <translation>Toon informatie over WISPR Kern</translation>
+        <source>Show information about PIVX Core</source>
+        <translation>Toon informatie over PIVX Kern</translation>
     </message>
     <message>
-        <source>Modify configuration options for WISPR</source>
-        <translation>Wijzig WISPR configuratie opties</translation>
+        <source>Modify configuration options for PIVX</source>
+        <translation>Wijzig PIVX configuratie opties</translation>
     </message>
     <message>
-        <source>Sign messages with your WISPR addresses to prove you own them</source>
-        <translation>Onderteken berichten met uw WISPR adressen om te bewijzen dat deze adressen in uw bezit zijn</translation>
+        <source>Sign messages with your PIVX addresses to prove you own them</source>
+        <translation>Onderteken berichten met uw PIVX adressen om te bewijzen dat deze adressen in uw bezit zijn</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified WISPR addresses</source>
-        <translation>Controleer berichten om te verzekeren dat deze ondertekend zijn met de gespecificeerde WISPR adressen</translation>
+        <source>Verify messages to ensure they were signed with specified PIVX addresses</source>
+        <translation>Controleer berichten om te verzekeren dat deze ondertekend zijn met de gespecificeerde PIVX adressen</translation>
     </message>
     <message>
         <source>&amp;BIP38 tool</source>
@@ -717,8 +721,8 @@
         <translation>Open Masternode configuratiebestand</translation>
     </message>
     <message>
-        <source>Open a WISPR: URI or payment request</source>
-        <translation>Open een WISPR: URI of betaalverzoek</translation>
+        <source>Open a PIVX: URI or payment request</source>
+        <translation>Open een PIVX: URI of betaalverzoek</translation>
     </message>
     <message>
         <source>&amp;Blockchain explorer</source>
@@ -729,16 +733,16 @@
         <translation>Block verkenner venster</translation>
     </message>
     <message>
-        <source>Show the WISPR Core help message to get a list with possible WISPR command-line options</source>
-        <translation>Toon het WISPR Core help bericht om een ​​lijst te krijgen met mogelijke WISPR command line opties</translation>
+        <source>Show the PIVX Core help message to get a list with possible PIVX command-line options</source>
+        <translation>Toon het PIVX Core help bericht om een ​​lijst te krijgen met mogelijke PIVX command line opties</translation>
     </message>
     <message>
-        <source>WISPR Core client</source>
-        <translation>WISPR Core client</translation>
+        <source>PIVX Core client</source>
+        <translation>PIVX Core client</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to WISPR network</source>
-        <translation><numerusform>%n actieve verbindingen met het WISPR netwerk</numerusform><numerusform>%n actieve connectie(s) naar WISPR netwerk</numerusform></translation>
+        <source>%n active connection(s) to PIVX network</source>
+        <translation><numerusform>%n actieve verbinding(en) naar het PIVX netwerk</numerusform><numerusform>%n actieve verbinding(en) naar het PIVX netwerk</numerusform></translation>
     </message>
     <message>
         <source>Synchronizing with network...</source>
@@ -761,12 +765,8 @@
         <translation>Bijgewerkt</translation>
     </message>
     <message numerus="yes">
-        <source>%n hour(s)</source>
-        <translation><numerusform>%n uren</numerusform><numerusform>%n uren</numerusform></translation>
-    </message>
-    <message numerus="yes">
         <source>%n day(s)</source>
-        <translation><numerusform>%n day</numerusform><numerusform>%n dagen</numerusform></translation>
+        <translation><numerusform>%n dagen</numerusform><numerusform>%n dagen</numerusform></translation>
     </message>
     <message numerus="yes">
         <source>%n week(s)</source>
@@ -778,7 +778,7 @@
     </message>
     <message numerus="yes">
         <source>%n year(s)</source>
-        <translation><numerusform>%n year</numerusform><numerusform>%n jaren</numerusform></translation>
+        <translation><numerusform>%n jaren</numerusform><numerusform>%n jaren</numerusform></translation>
     </message>
     <message>
         <source>Catching up...</source>
@@ -864,7 +864,7 @@ MultiSend: %1</translation>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>Portemonnee is versleuteld &lt;/b&gt;en momenteel &lt;b&gt; vergrendeld&lt;/b&gt;</translation>
     </message>
-</context>
+    </context>
 <context>
     <name>BlockExplorer</name>
     <message>
@@ -892,8 +892,8 @@ MultiSend: %1</translation>
         <translation>TextLabel</translation>
     </message>
     <message>
-        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (wispr.conf).</source>
-        <translation>Niet alle transacties zullen worden getoond. Om alle transacties te bekijken moet u txindex=1 instellen in het configuratie bestand (wispr.conf).</translation>
+        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (pivx.conf).</source>
+        <translation>Niet alle transacties zullen worden getoond. Om alle transacties te bekijken moet u txindex=1 instellen in het configuratie bestand (pivx.conf).</translation>
     </message>
 </context>
 <context>
@@ -1130,8 +1130,8 @@ MultiSend: %1</translation>
         <translation>Dit label wordt rood, als een ontvanger een hoeveelheid kleiner dan %1 ontvangt.</translation>
     </message>
     <message>
-        <source>Can vary +/- %1 uwsp per input.</source>
-        <translation>Kan +/-%1 uwsp per invoer variëren.</translation>
+        <source>Can vary +/- %1 upiv per input.</source>
+        <translation>Kan +/-%1 upiv per invoer variëren.</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -1185,8 +1185,8 @@ MultiSend: %1</translation>
         <translation>Wijzig verzend adres</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid WISPR address.</source>
-        <translation>Het ingevoerde adres: "%1" is geen geldig WISPR adres.</translation>
+        <source>The entered address "%1" is not a valid PIVX address.</source>
+        <translation>Het ingevoerde adres: "%1" is geen geldig PIVX adres.</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book.</source>
@@ -1225,22 +1225,33 @@ MultiSend: %1</translation>
     </message>
 </context>
 <context>
+    <name>GovernancePage</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>0</source>
+        <translation>0</translation>
+    </message>
+    </context>
+<context>
     <name>HelpMessageDialog</name>
     <message>
         <source>version</source>
         <translation>versie</translation>
     </message>
     <message>
-        <source>WISPR Core</source>
-        <translation>WISPR Core</translation>
+        <source>PIVX Core</source>
+        <translation>PIVX Core</translation>
     </message>
     <message>
         <source>(%1-bit)</source>
         <translation>(%1-bit)</translation>
     </message>
     <message>
-        <source>About WISPR Core</source>
-        <translation>Over WISPR Core</translation>
+        <source>About PIVX Core</source>
+        <translation>Over PIVX Core</translation>
     </message>
     <message>
         <source>Command-line options</source>
@@ -1286,16 +1297,16 @@ MultiSend: %1</translation>
         <translation>Welkom</translation>
     </message>
     <message>
-        <source>Welcome to WISPR Core.</source>
-        <translation>Welkom bij WISPR Core.</translation>
+        <source>Welcome to PIVX Core.</source>
+        <translation>Welkom bij PIVX Core.</translation>
     </message>
     <message>
-        <source>As this is the first time the program is launched, you can choose where WISPR Core will store its data.</source>
-        <translation>Aangezien dit de eerste keer is dat het programma is gestart, kun je kiezen waar WISPR Core zijn data opslaat.</translation>
+        <source>As this is the first time the program is launched, you can choose where PIVX Core will store its data.</source>
+        <translation>Aangezien dit de eerste keer is dat het programma is gestart, kun je kiezen waar PIVX Core zijn data opslaat.</translation>
     </message>
     <message>
-        <source>WISPR Core will download and store a copy of the WISPR block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>WISPR Core zal een kopie van de WISPR blockchain downloaden en opslaan. Tenminste %1GB aan data zal worden opgeslagen in deze map en het zal over de tijd groeien. De portemonnee zal ook in deze map worden opgeslagen.</translation>
+        <source>PIVX Core will download and store a copy of the PIVX block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <translation>PIVX Core zal een kopie van de PIVX blockchain downloaden en opslaan. Tenminste %1GB aan data zal worden opgeslagen in deze map en het zal over de tijd groeien. De portemonnee zal ook in deze map worden opgeslagen.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -1306,8 +1317,8 @@ MultiSend: %1</translation>
         <translation>Gebruik een aangepaste data directory:</translation>
     </message>
     <message>
-        <source>WISPR Core</source>
-        <translation>WISPR Core</translation>
+        <source>PIVX Core</source>
+        <translation>PIVX Core</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -1448,12 +1459,12 @@ MultiSend: %1</translation>
         <translation>Vul het adres in om naar te verzenden</translation>
     </message>
     <message>
-        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other WISPR addresses after it matures.
-To Add: enter percentage to give and WISPR address to add to the MultiSend vector.
+        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other PIVX addresses after it matures.
+To Add: enter percentage to give and PIVX address to add to the MultiSend vector.
 To Delete: Enter address to delete and press delete.
 MultiSend will not be activated unless you have clicked Activate</source>
-        <translation>MultiSend stelt je in staat om automatisch tot 100% van uw stake of masternode beloning automatisch te verzenden naar een lijst van andere WISPR adressen nadat het volwassen is.
-Toevoegen: voer het te geven percentage in en WISPR adres om toe te voegen aan de MultiSend vector.
+        <translation>MultiSend stelt je in staat om automatisch tot 100% van uw stake of masternode beloning automatisch te verzenden naar een lijst van andere PIVX adressen nadat het volwassen is. 
+Toevoegen: voer het te geven percentage in en PIVX adres om toe te voegen aan de MultiSend vector.
 Verwijderen: Voer adres in om te verwijderen en druk op delete.
 MultiSend zal niet worden geactiveerd tenzij je op Activeer hebt geklikt</translation>
     </message>
@@ -1542,48 +1553,74 @@ MultiSend zal niet worden geactiveerd tenzij je op Activeer hebt geklikt</transl
         <translation>(geen label)</translation>
     </message>
     <message>
-        <source>The entered address:
-</source>
-        <translation>Het ingevoerde adres:
-</translation>
+        <source>MultiSend Active for Stakes and Masternode Rewards</source>
+        <translation>MultiSend Actief voor Stakes en Masternodebeloningen</translation>
     </message>
     <message>
-        <source> is invalid.
+        <source>MultiSend Active for Stakes</source>
+        <translation>MultiSend Actief voor Stakes</translation>
+    </message>
+    <message>
+        <source>MultiSend Active for Masternode Rewards</source>
+        <translation>MultiSend Actief voor Masternodebeloningen</translation>
+    </message>
+    <message>
+        <source>MultiSend Not Active</source>
+        <translation>MultiSend Niet Actief</translation>
+    </message>
+    <message>
+        <source>The entered address: %1 is invalid.
 Please check the address and try again.</source>
-        <translation>is ongeldig.
-Controleer het adres alsjeblieft en probeer het opnieuw.</translation>
+        <translation>Het ingevoerde adres: %1 is ongeldig.
+Controleer het adres en probeer opnieuw.</translation>
     </message>
     <message>
-        <source>The total amount of your MultiSend vector is over 100% of your stake reward
-</source>
-        <translation>De totale hoeveelheid van je MultiSend vector is meer dan 100% van je stake beloning
-</translation>
+        <source>The total amount of your MultiSend vector is over 100% of your stake reward</source>
+        <translation>De totale hoeveelheid van je MultiSend vector is meer dan 100% van je inzet beloning</translation>
+    </message>
+    <message>
+        <source>Saved the MultiSend to memory, but failed saving properties to the database.</source>
+        <translation>De MultiSend in het geheugen opgeslagen, maar mislukt om de eigenschappen op te slaan in de database.</translation>
+    </message>
+    <message>
+        <source>MultiSend Vector</source>
+        <translation>MultiSend Vector</translation>
+    </message>
+    <message>
+        <source>Removed %1</source>
+        <translation>Verwijderd %1</translation>
+    </message>
+    <message>
+        <source>Could not locate address</source>
+        <translation>Kan het adres niet lokaliseren</translation>
+    </message>
+    <message>
+        <source>Unable to activate MultiSend, check MultiSend vector</source>
+        <translation>Onmogelijk om MultiSend te activeren, controleer MultiSend vector</translation>
+    </message>
+    <message>
+        <source>MultiSend activated but writing settings to DB failed</source>
+        <translation>MultiSend geactiveerd maar instellingen naar DB wegschrijven mislukt</translation>
+    </message>
+    <message>
+        <source>MultiSend activated</source>
+        <translation>MultiSend geactiveerd</translation>
+    </message>
+    <message>
+        <source>First Address Not Valid</source>
+        <translation>Eerste Adres Niet Gevalideerd</translation>
+    </message>
+    <message>
+        <source>MultiSend deactivated but writing settings to DB failed</source>
+        <translation>MultiSend gedeactiveerd maar instellingen naar DB wegschrijven mislukt</translation>
+    </message>
+    <message>
+        <source>MultiSend deactivated</source>
+        <translation>MultiSend gedeactiveerd</translation>
     </message>
     <message>
         <source>Please Enter 1 - 100 for percent.</source>
         <translation>Vul alsjeblieft 1 - 100 voor procent in.</translation>
-    </message>
-    <message>
-        <source>Saved the MultiSend to memory, but failed saving properties to the database.
-</source>
-        <translation>De MultiSend in het geheugen opgeslagen, maar mislukt om de eigenschappen op te slaan in de database.
-</translation>
-    </message>
-    <message>
-        <source>MultiSend Vector
-</source>
-        <translation>MultiSend Vector
-</translation>
-    </message>
-    <message>
-        <source>Removed </source>
-        <translation>Verwijderd</translation>
-    </message>
-    <message>
-        <source>Could not locate address
-</source>
-        <translation>Kan het adres niet lokaliseren
-</translation>
     </message>
 </context>
 <context>
@@ -1681,8 +1718,8 @@ Waas alsjeblieft geduldig nadat u op importeren hebt geklikt.</translation>
         <translation>Adres / Bedrag:</translation>
     </message>
     <message>
-        <source>Add destinations to send WSP to</source>
-        <translation>Voeg bestemmingen toe om WSP naar te verzenden</translation>
+        <source>Add destinations to send PIV to</source>
+        <translation>Voeg bestemmingen toe om PIV naar te verzenden</translation>
     </message>
     <message>
         <source>Add &amp;Destination</source>
@@ -1780,48 +1817,48 @@ Waas alsjeblieft geduldig nadat u op importeren hebt geklikt.</translation>
         <translation>Selecteer de privacy level.</translation>
     </message>
     <message>
-        <source>Use 2 separate masternodes to mix funds up to 10000 WSP</source>
-        <translation>Gebruik 2 aparte masternodes om fondsen te mixen tot 10000 WSP</translation>
+        <source>Use 2 separate masternodes to mix funds up to 10000 PIV</source>
+        <translation>Gebruik 2 aparte masternodes om fondsen te mixen tot 10000 PIV</translation>
     </message>
     <message>
-        <source>Use 8 separate masternodes to mix funds up to 10000 WSP</source>
-        <translation>Gebruik 8 aparte masternodes om fondsen te mixen tot 10000 WSP</translation>
+        <source>Use 8 separate masternodes to mix funds up to 10000 PIV</source>
+        <translation>Gebruik 8 aparte masternodes om fondsen te mixen tot 10000 PIV</translation>
     </message>
     <message>
         <source>Use 16 separate masternodes</source>
         <translation>Gebruik 16 aparte masternodes</translation>
     </message>
     <message>
-        <source>This option is the quickest and will cost about ~0.025 WSP to anonymize 10000 WSP</source>
-        <translation>Deze optie is het snelst en kost ongeveer ~0,025 WSP om 10000 WSP te anonimiseren</translation>
+        <source>This option is the quickest and will cost about ~0.025 PIV to anonymize 10000 PIV</source>
+        <translation>Deze optie is het snelst en kost ongeveer ~0,025 PIV om 10000 PIV te anonimiseren</translation>
     </message>
     <message>
-        <source>This option is moderately fast and will cost about 0.05 WSP to anonymize 10000 WSP</source>
-        <translation>Deze optie is gematigd snel en kost ongeveer 0,05 WSP om 10000 WSP te anonimiseren</translation>
+        <source>This option is moderately fast and will cost about 0.05 PIV to anonymize 10000 PIV</source>
+        <translation>Deze optie is gematigd snel en kost ongeveer 0,05 PIV om 10000 PIV te anonimiseren</translation>
     </message>
     <message>
         <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
         <translation>Dit is de langzaamste en veiligste optie. Het gebruik van maximale anonimiteit kost</translation>
     </message>
     <message>
-        <source>0.1 WSP per 10000 WSP you anonymize.</source>
-        <translation>je anonimiseert 0,1 WSP per 10000 WSP.</translation>
+        <source>0.1 PIV per 10000 PIV you anonymize.</source>
+        <translation>je anonimiseert 0,1 PIV per 10000 PIV.</translation>
     </message>
     <message>
         <source>Obfuscation Configuration</source>
         <translation>Verduistering configuratie</translation>
     </message>
     <message>
-        <source>Obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening WISPR's configuration screen.</source>
-        <translation>Verduistering is succesvol ingesteld op basic (%1 en 2 rondes). Je kunt dit op elk gewenst moment wijzigen door het configuratiescherm van WISPR te openen.</translation>
+        <source>Obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening PIVX's configuration screen.</source>
+        <translation>Verduistering is succesvol ingesteld op basic (%1 en 2 rondes). Je kunt dit op elk gewenst moment wijzigen door het configuratiescherm van PIVX te openen.</translation>
     </message>
     <message>
-        <source>Obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening WISPR's configuration screen.</source>
-        <translation>Verduistering is succesvol ingesteld op hoog (%1 en 8 rondes). U kunt dit op elk gewenst moment wijzigen door het configuratiescherm van WISPR te openen.</translation>
+        <source>Obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening PIVX's configuration screen.</source>
+        <translation>Verduistering is succesvol ingesteld op hoog (%1 en 8 rondes). U kunt dit op elk gewenst moment wijzigen door het configuratiescherm van PIVX te openen.</translation>
     </message>
     <message>
-        <source>Obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening WISPR's configuration screen.</source>
-        <translation>Verduistering is succesvol ingesteld op hoog (%1 en 16 rondes). U kunt dit op elk gewenst moment wijzigen door het configuratiescherm van WISPR te openen.</translation>
+        <source>Obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening PIVX's configuration screen.</source>
+        <translation>Verduistering is succesvol ingesteld op hoog (%1 en 16 rondes). U kunt dit op elk gewenst moment wijzigen door het configuratiescherm van PIVX te openen.</translation>
     </message>
 </context>
 <context>
@@ -1882,8 +1919,8 @@ Waas alsjeblieft geduldig nadat u op importeren hebt geklikt.</translation>
         <translation>Als je de uitgaven van onbevestigde wijzigingen uitschakelt, de wijziging van een transactie&lt;br/&gt;kan niet worden gebruikt tot die transactie tenminste één bevestiging heeft.&lt;br/&gt;Dit beïnvloedt ook hoe uw saldo is berekend.</translation>
     </message>
     <message>
-        <source>Automatically open the WISPR client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Open de WISPR client poort automatisch op de router. Dit werkt alleen als je router UPnP ondersteunt en het is ingeschakeld.</translation>
+        <source>Automatically open the PIVX client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Open de PIVX client poort automatisch op de router. Dit werkt alleen als je router UPnP ondersteunt en het is ingeschakeld.</translation>
     </message>
     <message>
         <source>Accept connections from outside</source>
@@ -1902,12 +1939,12 @@ Waas alsjeblieft geduldig nadat u op importeren hebt geklikt.</translation>
         <translation>Expert</translation>
     </message>
     <message>
-        <source>Automatically start WISPR after logging in to the system.</source>
-        <translation>WISPR automatisch opstarten na inloggen op het systeem.</translation>
+        <source>Automatically start PIVX after logging in to the system.</source>
+        <translation>PIVX automatisch opstarten na inloggen op het systeem.</translation>
     </message>
     <message>
-        <source>&amp;Start WISPR on system login</source>
-        <translation>&amp;WISPR starten bij systeemlogin</translation>
+        <source>&amp;Start PIVX on system login</source>
+        <translation>&amp;PIVX starten bij systeemlogin</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
@@ -1934,50 +1971,50 @@ Waas alsjeblieft geduldig nadat u op importeren hebt geklikt.</translation>
         <translation>&amp;Netwerk</translation>
     </message>
     <message>
-        <source>The user interface language can be set here. This setting will take effect after restarting WISPR.</source>
-        <translation>De gebruikersinterface taal kan hier ingesteld worden. Deze instelling zal uitgevoerd na herstart van WISPR.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting PIVX.</source>
+        <translation>De gebruikersinterface taal kan hier ingesteld worden. Deze instelling zal uitgevoerd na herstart van PIVX.</translation>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/WisprProject/WisprProject-translations</source>
+https://www.transifex.com/pivx-project/pivx-project-translations</source>
         <translation>Taal ontbreekt of vertaling onvolledig? Help om bij te dragen aan vertalingen:
-https://www.transifex.com/WisprProject/WisprProject-translations</translation>
+https://www.transifex.com/pivx-project/pivx-project-translations</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
         <translation>Map poort gebruikt &amp;UPnP</translation>
     </message>
     <message>
-        <source>Enable automatic minting of WSP units to zWSP</source>
-        <translation>Schakel automatisch slaan van WSP-eenheden in op zWSP</translation>
+        <source>Enable automatic minting of PIV units to zPIV</source>
+        <translation>Schakel automatisch slaan van PIV-eenheden in op zPIV</translation>
     </message>
     <message>
-        <source>Enable zWSP Automint</source>
-        <translation>Schakel zWSP Automint in</translation>
+        <source>Enable zPIV Automint</source>
+        <translation>Schakel zPIV Automint in</translation>
     </message>
     <message>
-        <source>Percentage of incoming WSP which get automatically converted to zWSP via Zerocoin Protocol (min: 10%)</source>
-        <translation>Percentage inkomende WSP die automatisch wordt omgezet naar zWSP via Zerocoin Protocol (min: 10%)</translation>
+        <source>Percentage of incoming PIV which get automatically converted to zPIV via Zerocoin Protocol (min: 10%)</source>
+        <translation>Percentage inkomende PIV die automatisch wordt omgezet naar zPIV via Zerocoin Protocol (min: 10%)</translation>
     </message>
     <message>
-        <source>Percentage of autominted zWSP</source>
-        <translation>Percentage autominted zWSP</translation>
+        <source>Percentage of autominted zPIV</source>
+        <translation>Percentage autominted zPIV</translation>
     </message>
     <message>
-        <source>Wait with automatic conversion to Zerocoin until enough WSP for this denomination is available</source>
-        <translation>Wacht met automatische omzetting naar Zerocoin totdat er genoeg WSP voor deze denominatie beschikbaar is</translation>
+        <source>Wait with automatic conversion to Zerocoin until enough PIV for this denomination is available</source>
+        <translation>Wacht met automatische omzetting naar Zerocoin totdat er genoeg PIV voor deze denominatie beschikbaar is</translation>
     </message>
     <message>
-        <source>Preferred Automint zWSP Denomination</source>
-        <translation>Gewenste Automint zWSP denominatie</translation>
+        <source>Preferred Automint zPIV Denomination</source>
+        <translation>Gewenste Automint zPIV denominatie</translation>
     </message>
     <message>
         <source>Stake split threshold:</source>
         <translation>Inzet splitdrempel:</translation>
     </message>
     <message>
-        <source>Connect to the WISPR network through a SOCKS5 proxy.</source>
-        <translation>Maak verbinding met het WISPR netwerk via een SOCKS5 proxy.</translation>
+        <source>Connect to the PIVX network through a SOCKS5 proxy.</source>
+        <translation>Maak verbinding met het PIVX netwerk via een SOCKS5 proxy.</translation>
     </message>
     <message>
         <source>Proxy &amp;IP:</source>
@@ -2042,6 +2079,14 @@ https://www.transifex.com/WisprProject/WisprProject-translations</translation>
     <message>
         <source>Hide empty balances</source>
         <translation>Verberg lege saldi</translation>
+    </message>
+    <message>
+        <source>Hide orphan stakes in transaction lists</source>
+        <translation>Verberg orphan stakes in transactielijsten</translation>
+    </message>
+    <message>
+        <source>Hide orphan stakes</source>
+        <translation>Verberg orphan stakes</translation>
     </message>
     <message>
         <source>Third party URLs (e.g. a block explorer) that appear in the transactions tab as context menu items. %s in the URL is replaced by transaction hash. Multiple URLs are separated by vertical bar |.</source>
@@ -2131,8 +2176,8 @@ https://www.transifex.com/WisprProject/WisprProject-translations</translation>
         <translation>Totaal saldo, inclusief alle niet-beschikbare munten.</translation>
     </message>
     <message>
-        <source>WSP Balance</source>
-        <translation>WSP Saldi</translation>
+        <source>PIV Balance</source>
+        <translation>PIV Saldi</translation>
     </message>
     <message>
         <source>Pending:</source>
@@ -2155,16 +2200,16 @@ https://www.transifex.com/WisprProject/WisprProject-translations</translation>
         <translation>Huidige vergrendelde balans in alleen-lezen-adressen</translation>
     </message>
     <message>
-        <source>Your current WISPR balance, unconfirmed and immature transactions included</source>
-        <translation>Uw huidige WISPR-saldo, onbevestigde en onvolgroeide transacties inbegrepen</translation>
+        <source>Your current PIVX balance, unconfirmed and immature transactions included</source>
+        <translation>Uw huidige PIVX-saldo, onbevestigde en onvolgroeide transacties inbegrepen</translation>
     </message>
     <message>
-        <source>zWSP Balance</source>
-        <translation>zWSP-saldo</translation>
+        <source>zPIV Balance</source>
+        <translation>zPIV-saldo</translation>
     </message>
     <message>
         <source>Mature: more than 20 confirmation and more than 1 mint of the same denomination after it was minted.
-These zWSP are spendable.</source>
+These zPIV are spendable.</source>
         <translation>Volwassen: meer dan 20 bevestigingen en meer dan 1 mint van dezelfde denominatie nadat het gemint was.
 Deze zPIB zijn besteedbaar.</translation>
     </message>
@@ -2175,8 +2220,8 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
 Onvolwassen: bevestigd, maar minder dan 1 mint van dezelfde denominatie nadat het gemint was.</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the WISPR network after a connection is established, but this process has not completed yet.</source>
-        <translation>De weergegeven informatie kan verouderd zijn. Je portemonnee synchroniseert automatisch met het WISPR netwerk nadat een verbinding is opgezet, maar dit proces is nog niet afgerond.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the PIVX network after a connection is established, but this process has not completed yet.</source>
+        <translation>De weergegeven informatie kan verouderd zijn. Je portemonnee synchroniseert automatisch met het PIVX netwerk nadat een verbinding is opgezet, maar dit proces is nog niet afgerond.</translation>
     </message>
     <message>
         <source>OVERVIEW</source>
@@ -2219,8 +2264,8 @@ Onvolwassen: bevestigd, maar minder dan 1 mint van dezelfde denominatie nadat he
         <translation>Uitgeefbaar:</translation>
     </message>
     <message>
-        <source>Locked WSP or Masternode collaterals. These are excluded from zWSP minting.</source>
-        <translation>Vergrendelde WSP of Masternode onderpanden. Deze zijn uitgesloten van de zWSP muntage.</translation>
+        <source>Locked PIV or Masternode collaterals. These are excluded from zPIV minting.</source>
+        <translation>Vergrendelde PIV of Masternode onderpanden. Deze zijn uitgesloten van de zPIV muntage.</translation>
     </message>
     <message>
         <source>Locked:</source>
@@ -2231,8 +2276,8 @@ Onvolwassen: bevestigd, maar minder dan 1 mint van dezelfde denominatie nadat he
         <translation>Onbevestigd:</translation>
     </message>
     <message>
-        <source>Your current zWSP balance, unconfirmed and immature zWSP included.</source>
-        <translation>Uw huidige zWSP-saldo, onbevestigde en onvolgroeide zWSP inbegrepen.</translation>
+        <source>Your current zPIV balance, unconfirmed and immature zPIV included.</source>
+        <translation>Uw huidige zPIV-saldo, onbevestigde en onvolgroeide zPIV inbegrepen.</translation>
     </message>
     <message>
         <source>Recent transactions</source>
@@ -2243,10 +2288,10 @@ Onvolwassen: bevestigd, maar minder dan 1 mint van dezelfde denominatie nadat he
         <translation>niet gesynchroniseerd</translation>
     </message>
     <message>
-        <source>Current percentage of zWSP.
+        <source>Current percentage of zPIV.
 If AutoMint is enabled this percentage will settle around the configured AutoMint percentage (default = 10%).
 </source>
-        <translation>Huidige percentage van zWSP
+        <translation>Huidige percentage van zPIV
 Als AutoMint ingeschakeld is zal deze percentage afhangen van de geconfigureerde AutoMint percentage (standaard = 10%).
 </translation>
     </message>
@@ -2255,14 +2300,14 @@ Als AutoMint ingeschakeld is zal deze percentage afhangen van de geconfigureerde
         <translation>AutoMint is momenteel ingeschakeld en ingesteld op</translation>
     </message>
     <message>
-        <source>To disable AutoMint add 'enablezeromint=0' in wispr.conf.</source>
-        <translation>Om AutoMint uit te schakelen, voeg je 'enablezeromint=0' toe aan wispr.conf.</translation>
+        <source>To disable AutoMint add 'enablezeromint=0' in pivx.conf.</source>
+        <translation>Om AutoMint uit te schakelen, voeg je 'enablezeromint=0' toe aan pivx.conf.</translation>
     </message>
     <message>
         <source>AutoMint is currently disabled.
-To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in wispr.conf</source>
+To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in pivx.conf</source>
         <translation>AutoMint is momenteel uitgeschakeld.
-Om AutoMint in te schakelend verander je 'enablezeromint=0' naar 'enablezeromint=1' in wispr.conf</translation>
+Om AutoMint in te schakelend verander je 'enablezeromint=0' naar 'enablezeromint=1' in pivx.conf</translation>
     </message>
 </context>
 <context>
@@ -2288,12 +2333,12 @@ Om AutoMint in te schakelend verander je 'enablezeromint=0' naar 'enablezeromint
         <translation>Ongeldig betalingsadres %1</translation>
     </message>
     <message>
-        <source>Cannot start wispr: click-to-pay handler</source>
-        <translation>Kan wispr niet starten: click-to-pay handler</translation>
+        <source>Cannot start pivx: click-to-pay handler</source>
+        <translation>Kan pivx niet starten: click-to-pay handler</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid WISPR address or malformed URI parameters.</source>
-        <translation>URL kan niet ontleed worden! Dit kan worden veroorzaakt door een ongeldig WISPR adres of misvormde URL parameters.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid PIVX address or malformed URI parameters.</source>
+        <translation>URL kan niet ontleed worden! Dit kan worden veroorzaakt door een ongeldig PIVX adres of misvormde URL parameters.</translation>
     </message>
     <message>
         <source>Payment request file cannot be read! This can be caused by an invalid payment request file.</source>
@@ -2378,8 +2423,8 @@ Om AutoMint in te schakelend verander je 'enablezeromint=0' naar 'enablezeromint
         <translation>Zerocoin Acties:</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the WISPR network after a connection is established, but this process has not completed yet.</source>
-        <translation>De weergegeven informatie kan verouderd zijn. Je portemonnee synchroniseert automatisch met het WISPR netwerk nadat een verbinding is opgezet, maar dit proces is nog niet afgerond.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the PIVX network after a connection is established, but this process has not completed yet.</source>
+        <translation>De weergegeven informatie kan verouderd zijn. Je portemonnee synchroniseert automatisch met het PIVX netwerk nadat een verbinding is opgezet, maar dit proces is nog niet afgerond.</translation>
     </message>
     <message>
         <source>Mint Zerocoin</source>
@@ -2390,8 +2435,8 @@ Om AutoMint in te schakelend verander je 'enablezeromint=0' naar 'enablezeromint
         <translation>0</translation>
     </message>
     <message>
-        <source>zWSP</source>
-        <translation>zWSP</translation>
+        <source>zPIV</source>
+        <translation>zPIV</translation>
     </message>
     <message>
         <source>Available for minting are coins which are confirmed and not locked or Masternode collaterals.</source>
@@ -2402,8 +2447,8 @@ Om AutoMint in te schakelend verander je 'enablezeromint=0' naar 'enablezeromint
         <translation>Beschikbaar voor minting:</translation>
     </message>
     <message>
-        <source>0.000 000 00 WSP</source>
-        <translation>0.000 000 00 WSP</translation>
+        <source>0.000 000 00 PIV</source>
+        <translation>0.000 000 00 PIV</translation>
     </message>
     <message>
         <source>Reset Zerocoin Wallet DB. Deletes transactions that did not make it into the blockchain.</source>
@@ -2423,7 +2468,7 @@ Om AutoMint in te schakelend verander je 'enablezeromint=0' naar 'enablezeromint
     </message>
     <message>
         <source>Amount:</source>
-        <translation>Hoeveelheid:</translation>
+        <translation>Bedrag:</translation>
     </message>
     <message>
         <source>Rescan the complete blockchain for  Zerocoin mints and their meta-data.</source>
@@ -2442,16 +2487,16 @@ Om AutoMint in te schakelend verander je 'enablezeromint=0' naar 'enablezeromint
         <translation>PRIVACY</translation>
     </message>
     <message>
-        <source>Enter an amount of Wsp to convert to zWSP</source>
-        <translation>Vul het aantal WSP in om te converteren naar zWSP</translation>
+        <source>Enter an amount of Piv to convert to zPIV</source>
+        <translation>Vul het aantal PIV in om te converteren naar zPIV</translation>
     </message>
     <message>
-        <source>zWSP Control</source>
-        <translation>zWSP Control</translation>
+        <source>zPIV Control</source>
+        <translation>zPIV Control</translation>
     </message>
     <message>
-        <source>zWSP Selected:</source>
-        <translation>zWSP geselecteerd:</translation>
+        <source>zPIV Selected:</source>
+        <translation>zPIV geselecteerd:</translation>
     </message>
     <message>
         <source>Quantity Selected:</source>
@@ -2466,44 +2511,32 @@ Om AutoMint in te schakelend verander je 'enablezeromint=0' naar 'enablezeromint
         <translation>Besteed Zerocoin</translation>
     </message>
     <message>
-        <source>Available (mature and spendable) zWSP for spending</source>
-        <translation>Beschikbare (volwassen en uitgeefbaar) zWSP voor besteding</translation>
+        <source>Available (mature and spendable) zPIV for spending</source>
+        <translation>Beschikbare (volwassen en uitgeefbaar) zPIV voor besteding</translation>
     </message>
     <message>
         <source>Available Balance:</source>
         <translation>Beschikbaar saldo:</translation>
     </message>
     <message>
-        <source>Available (mature and spendable) zWSP for spending
+        <source>Available (mature and spendable) zPIV for spending
 
-zWSP are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
-        <translation>Beschikbare (volwwassen en uitgeefbaar) zWSP voor besteding
+zPIV are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
+        <translation>Beschikbare (volwwassen en uitgeefbaar) zPIV voor besteding
 
-zWsp zijn volwassen wanneer zij meer dan 20 bevestigingen hebben EN meer dan 2 muntages van dezelfde denominaties nadat zij gemunt zijn.</translation>
+zPiv zijn volwassen wanneer zij meer dan 20 bevestigingen hebben EN meer dan 2 muntages van dezelfde denominaties nadat zij gemunt zijn.</translation>
     </message>
     <message>
-        <source>0 zWSP</source>
-        <translation>0 zWSP</translation>
-    </message>
-    <message>
-        <source>Security Level for Zerocoin Transactions. More is better, but needs more time and resources.</source>
-        <translation>Beveiligingsniveau voor Zerocoin transacties. Meer is beter, maar heeft meer tijd en middelen nodig.</translation>
-    </message>
-    <message>
-        <source>Security Level:</source>
-        <translation>Beveiligings niveau:</translation>
-    </message>
-    <message>
-        <source>Security Level 1 - 100 (default: 42)</source>
-        <translation>Beveiligingsniveau 1 - 100 (standaard: 42)</translation>
+        <source>0 zPIV</source>
+        <translation>0 zPIV</translation>
     </message>
     <message>
         <source>Pay &amp;To:</source>
         <translation>Betaal &amp;Naar:</translation>
     </message>
     <message>
-        <source>The WISPR address to send the payment to. Creates local payment to yourself when empty.</source>
-        <translation>Het WISPR adres om de betaling naar te verzenden. Maakt lokale betaling aan jezelf als je leeg bent.</translation>
+        <source>The PIVX address to send the payment to. Creates local payment to yourself when empty.</source>
+        <translation>Het PIVX adres om de betaling naar te verzenden. Maakt lokale betaling aan jezelf als je leeg bent.</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2554,8 +2587,8 @@ zWsp zijn volwassen wanneer zij meer dan 20 bevestigingen hebben EN meer dan 2 m
         <translation>Zerocoin Statistieken:</translation>
     </message>
     <message>
-        <source>Total Balance including unconfirmed and immature zWSP</source>
-        <translation>Totale Saldi, inclusief onbevestigde en onvolwassen zWSP</translation>
+        <source>Total Balance including unconfirmed and immature zPIV</source>
+        <translation>Totale Saldi, inclusief onbevestigde en onvolwassen zPIV</translation>
     </message>
     <message>
         <source>Total Zerocoin  Balance:</source>
@@ -2576,24 +2609,24 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
 Onvolwassen: bevestigd, maar minder dan 1 mint van dezelfde denominatie nadat het gemint was.</translation>
     </message>
     <message>
-        <source>Show the current status of automatic zWSP minting.
+        <source>Show the current status of automatic zPIV minting.
 
 To change the status (restart required):
-- enable: add 'enablezeromint=1' to wispr.conf
-- disable: add 'enablezeromint=0' to wispr.conf
+- enable: add 'enablezeromint=1' to pivx.conf
+- disable: add 'enablezeromint=0' to pivx.conf
 
 To change the percentage (no restart required):
-- menu Settings-&gt;Options-&gt;Percentage of autominted zWSP
+- menu Settings-&gt;Options-&gt;Percentage of autominted zPIV
 
 </source>
-        <translation>Toon de huidige status van automatische zWSP-markering.
+        <translation>Toon de huidige status van automatische zPIV-markering.
 
 Om de status te wijzigen (opnieuw opstarten vereist): 
-- enable: voeg 'enablezeromint = 1' toe aan wispr.conf
-- uitschakelen: voeg 'enablezeromint = 0' toe aan wispr.conf
+- enable: voeg 'enablezeromint = 1' toe aan pivx.conf
+- uitschakelen: voeg 'enablezeromint = 0' toe aan pivx.conf
 
 Om het percentage te wijzigen (geen herstart vereist): 
-- menu Instellingen-&gt; Opties-&gt; Percentage van geautomatiseerde zWSP
+- menu Instellingen-&gt; Opties-&gt; Percentage van geautomatiseerde zPIV
 </translation>
     </message>
     <message>
@@ -2639,6 +2672,14 @@ Om het percentage te wijzigen (geen herstart vereist):
     <message>
         <source>0 x</source>
         <translation> 0 x</translation>
+    </message>
+    <message>
+        <source>Show zPIV denominations list</source>
+        <translation>Toon zPIV denominatielijst</translation>
+    </message>
+    <message>
+        <source>Show Denominations</source>
+        <translation>Toon Denominaties</translation>
     </message>
     <message>
         <source>Denominations with value 5:</source>
@@ -2697,6 +2738,10 @@ Om het percentage te wijzigen (geen herstart vereist):
         <translation>Denom. met waarde 5000:</translation>
     </message>
     <message>
+        <source>Hide Denominations</source>
+        <translation>Verberg Denominaties</translation>
+    </message>
+    <message>
         <source>Priority:</source>
         <translation>Prioriteit:</translation>
     </message>
@@ -2706,11 +2751,11 @@ Om het percentage te wijzigen (geen herstart vereist):
     </message>
     <message>
         <source>Fee:</source>
-        <translation>Kost:</translation>
+        <translation>Fee:</translation>
     </message>
     <message>
         <source>Dust:</source>
-        <translation>Stof:</translation>
+        <translation>Dust:</translation>
     </message>
     <message>
         <source>no</source>
@@ -2750,7 +2795,7 @@ Om het percentage te wijzigen (geen herstart vereist):
     </message>
     <message>
         <source>Change:</source>
-        <translation>Wijzig:</translation>
+        <translation>Wisselgeld:</translation>
     </message>
     <message>
         <source>out of sync</source>
@@ -2762,24 +2807,16 @@ Om het percentage te wijzigen (geen herstart vereist):
     </message>
     <message>
         <source>Copy quantity</source>
-        <translation>Kopieer kwanititeit</translation>
+        <translation>Kopieer kwantiteit</translation>
     </message>
     <message>
         <source>Copy amount</source>
-        <translation>Kopieer hoeveelheid</translation>
+        <translation>Kopieer bedrag</translation>
     </message>
     <message>
         <source>Starting ResetMintZerocoin: rescanning complete blockchain, this will need up to 30 minutes depending on your hardware.
 Please be patient...</source>
         <translation>Start ResetMintZerocoin: rescanning complete blockchain, dit zal tot 30 minuten nodig hebben, afhankelijk van uw hardware.
-Wees alsjeblieft geduldig...</translation>
-    </message>
-    <message>
-        <source>Spending Zerocoin.
-Computationally expensive, might need several minutes depending on the selected Security Level and your hardware.
-Please be patient...</source>
-        <translation>Zerocoin besteden.
-Computationeel duur, zou mogelijk enkele minuten nodig hebben, afhankelijk van het geselecteerde beveiligingsniveau en je hardware.
 Wees alsjeblieft geduldig...</translation>
     </message>
     <message>
@@ -2789,12 +2826,12 @@ Maximum allowed: </source>
 Maximaal toegestaan:</translation>
     </message>
     <message>
-        <source>zWSP Spend #: </source>
-        <translation>zWSP besteed #:</translation>
+        <source>zPIV Spend #: </source>
+        <translation>zPIV besteed #:</translation>
     </message>
     <message>
-        <source>zWSP Mint</source>
-        <translation>zWSP mint</translation>
+        <source>zPIV Mint</source>
+        <translation>zPIV mint</translation>
     </message>
     <message>
         <source> &lt;b&gt;enabled&lt;/b&gt;.</source>
@@ -2809,12 +2846,12 @@ Maximaal toegestaan:</translation>
         <translation>Geconfigureerd doelpercentage:&lt;b&gt;</translation>
     </message>
     <message>
-        <source>zWSP is currently disabled due to maintenance.</source>
-        <translation>zWSP is momenteel uitgeschakeld vanwege onderhoud.</translation>
+        <source>zPIV is currently disabled due to maintenance.</source>
+        <translation>zPIV is momenteel uitgeschakeld vanwege onderhoud.</translation>
     </message>
     <message>
-        <source>zWSP is currently undergoing maintenance.</source>
-        <translation>zWSP wordt momenteel onderhouden.</translation>
+        <source>zPIV is currently undergoing maintenance.</source>
+        <translation>zPIV wordt momenteel onderhouden.</translation>
     </message>
     <message>
         <source>Denom. with value &lt;b&gt;1&lt;/b&gt;:</source>
@@ -2901,8 +2938,8 @@ Maximaal toegestaan:</translation>
         <translation>Succesvol gemint</translation>
     </message>
     <message>
-        <source> zWSP in </source>
-        <translation> zWSP in </translation>
+        <source> zPIV in </source>
+        <translation> zPIV in </translation>
     </message>
     <message>
         <source> sec. Used denominations:
@@ -2929,8 +2966,8 @@ Maximaal toegestaan:</translation>
         <translation>Geen 'Betaal aan' adres verstrekt, lokale betaling wordt gemaakt</translation>
     </message>
     <message>
-        <source>Invalid Wispr Address</source>
-        <translation>Ongeldig Wispr addres</translation>
+        <source>Invalid Pivx Address</source>
+        <translation>Ongeldig Pivx addres</translation>
     </message>
     <message>
         <source>Invalid Send Amount</source>
@@ -2953,20 +2990,8 @@ Maximaal toegestaan:</translation>
         <translation>naar een nieuw gegenereerd (ongebruikt en dus anoniem) lokaal adres&lt;br /&gt;</translation>
     </message>
     <message>
-        <source>with Security Level </source>
-        <translation>met beveiligingsniveau</translation>
-    </message>
-    <message>
         <source>Confirm send coins</source>
         <translation>Bevestig verzending coins</translation>
-    </message>
-    <message>
-        <source>Version 1 zWSP require a security level of 100 to successfully spend.</source>
-        <translation>Versie 1 zWSP vereist een beveiligingsniveau van 100 om succesvol te besteden.</translation>
-    </message>
-    <message>
-        <source>Failed to spend zWSP</source>
-        <translation>Mislukt om zWSP te besteden.</translation>
     </message>
     <message>
         <source>Failed to fetch mint associated with serial hash</source>
@@ -2988,8 +3013,8 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     </message>
     <message numerus="yes">
         <source>PrivacyDialog</source>
-        <comment>Enter an amount of WSP to convert to zWSP</comment>
-        <translation><numerusform>PrivacyDialoog</numerusform><numerusform>PrivacyDialog</numerusform></translation>
+        <comment>Enter an amount of PIV to convert to zPIV</comment>
+        <translation><numerusform>PrivacyDialog</numerusform><numerusform>PrivacyDialog</numerusform></translation>
     </message>
     <message>
         <source>denomination: </source>
@@ -3025,14 +3050,17 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     </message>
 </context>
 <context>
+    <name>ProposalFrame</name>
+    </context>
+<context>
     <name>QObject</name>
     <message>
         <source>Amount</source>
-        <translation>Hoeveelheid</translation>
+        <translation>Bedrag</translation>
     </message>
     <message>
-        <source>Enter a WISPR address (e.g. %1)</source>
-        <translation>Voer een WISPR adres in (b.v. %1)</translation>
+        <source>Enter a PIVX address (e.g. %1)</source>
+        <translation>Voer een PIVX adres in (b.v. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -3074,7 +3102,11 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <source>%1 ms</source>
         <translation>%1 ms</translation>
     </message>
-</context>
+    <message>
+        <source>PIVX Core</source>
+        <translation>PIVX Core</translation>
+    </message>
+    </context>
 <context>
     <name>QRImageWidget</name>
     <message>
@@ -3169,8 +3201,8 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Blockchain</translation>
     </message>
     <message>
-        <source>Open the WISPR debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Open het WISPR debug log bestand uit de huidige data directory. Dit kan enkele seconden duren voor grote logbestanden.</translation>
+        <source>Open the PIVX debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Open het PIVX debug log bestand uit de huidige data directory. Dit kan enkele seconden duren voor grote logbestanden.</translation>
     </message>
     <message>
         <source>Number of Masternodes</source>
@@ -3305,8 +3337,8 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Aangepast back-up pad:</translation>
     </message>
     <message>
-        <source>Custom zWSP Backup Path:</source>
-        <translation>Aangepast zWSP back-up pad:</translation>
+        <source>Custom zPIV Backup Path:</source>
+        <translation>Aangepast zPIV back-up pad:</translation>
     </message>
     <message>
         <source>Custom Backups Threshold:</source>
@@ -3385,8 +3417,8 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Uit:</translation>
     </message>
     <message>
-        <source>Welcome to the WISPR RPC console.</source>
-        <translation>Welkom bij de WISPR RPC console.</translation>
+        <source>Welcome to the PIVX RPC console.</source>
+        <translation>Welkom bij de PIVX RPC console.</translation>
     </message>
     <message>
         <source>&amp;Disconnect Node</source>
@@ -3435,10 +3467,6 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     <message>
         <source>Confirm resync Blockchain</source>
         <translation>Bevestig hersynchronisering van Blockchain</translation>
-    </message>
-    <message>
-        <source>Use up and down arrows to navigate history, and &lt;b&gt;Ctrl-L&lt;/b&gt; to clear screen.</source>
-        <translation>Gebruik omhoog en omlaag pijlen om de geschiedenis te navigeren, en&lt;b&gt;Ctrl-L&lt;/b&gt;om scherm te wissen.</translation>
     </message>
     <message>
         <source>Type &lt;b&gt;help&lt;/b&gt; for an overview of available commands.</source>
@@ -3512,16 +3540,28 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Een optioneel label om te associëren met het nieuwe ontvangstadres.</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the WISPR network.</source>
-        <translation>Een optioneel bericht dat aan het betalingsverzoek wordt gehecht, dat wordt weergegeven wanneer het verzoek wordt geopend. Opmerking: het bericht wordt niet verzonden met de betaling via het WISPR netwerk.</translation>
+        <source>Your receiving address. You can copy and use it to receive coins on this wallet. A new one will be generated once it is used.</source>
+        <translation>Je ontvangstadres. Je kan deze kopieren en gebruiken om munten te ontvangen in deze portemonnee. Een nieuwe zal gegenereerd worden van zodra het gebruikt is.</translation>
+    </message>
+    <message>
+        <source>&amp;Address:</source>
+        <translation>&amp;Adres:</translation>
+    </message>
+    <message>
+        <source>A&amp;mount:</source>
+        <translation>&amp;Hoeveelheid:</translation>
+    </message>
+    <message>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the PIVX network.</source>
+        <translation>Een optioneel bericht dat aan het betalingsverzoek wordt gehecht, dat wordt weergegeven wanneer het verzoek wordt geopend. Opmerking: het bericht wordt niet verzonden met de betaling via het PIVX netwerk.</translation>
     </message>
     <message>
         <source>RECEIVE</source>
         <translation>ontvangen</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the WISPR network.</source>
-        <translation>Een optioneel bericht dat aan het betalingsverzoek wordt gehecht, dat wordt weergegeven wanneer het verzoek wordt geopend.&lt;br&gt;Opmerking: het bericht wordt niet verzonden met de betaling via het WISPR netwerk.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the PIVX network.</source>
+        <translation>Een optioneel bericht dat aan het betalingsverzoek wordt gehecht, dat wordt weergegeven wanneer het verzoek wordt geopend.&lt;br&gt;Opmerking: het bericht wordt niet verzonden met de betaling via het PIVX netwerk.</translation>
     </message>
     <message>
         <source>Use this form to request payments. All fields are &lt;b&gt;optional&lt;/b&gt;.</source>
@@ -3536,10 +3576,6 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Een optioneel bedrag om te vragen. Laat dit leeg of vul een nul in om geen specifiek bedrag te vragen.</translation>
     </message>
     <message>
-        <source>&amp;Amount:</source>
-        <translation>&amp;Hoeveelheid:</translation>
-    </message>
-    <message>
         <source>&amp;Request payment</source>
         <translation>&amp;Verzoek betaling</translation>
     </message>
@@ -3550,6 +3586,10 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     <message>
         <source>Clear</source>
         <translation>Leegmaken</translation>
+    </message>
+    <message>
+        <source>Receiving Addresses</source>
+        <translation>Ontvangstadressen</translation>
     </message>
     <message>
         <source>Requested payments history</source>
@@ -3581,7 +3621,11 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     </message>
     <message>
         <source>Copy amount</source>
-        <translation>Kopieer hoeveelheid</translation>
+        <translation>Kopieer bedrag</translation>
+    </message>
+    <message>
+        <source>Copy address</source>
+        <translation>Kopieer adres</translation>
     </message>
 </context>
 <context>
@@ -3620,7 +3664,7 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     </message>
     <message>
         <source>Amount</source>
-        <translation>Hoeveelheid</translation>
+        <translation>Bedrag</translation>
     </message>
     <message>
         <source>Label</source>
@@ -3654,8 +3698,12 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Bericht</translation>
     </message>
     <message>
+        <source>Address</source>
+        <translation>Adres</translation>
+    </message>
+    <message>
         <source>Amount</source>
-        <translation>Hoeveelheid</translation>
+        <translation>Bedrag</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -3698,7 +3746,7 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     </message>
     <message>
         <source>Amount:</source>
-        <translation>Hoeveelheid:</translation>
+        <translation>Bedrag:</translation>
     </message>
     <message>
         <source>Priority:</source>
@@ -3710,11 +3758,11 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     </message>
     <message>
         <source>Fee:</source>
-        <translation>Kost:</translation>
+        <translation>Fee:</translation>
     </message>
     <message>
         <source>Dust:</source>
-        <translation>Stof:</translation>
+        <translation>Dust:</translation>
     </message>
     <message>
         <source>no</source>
@@ -3722,11 +3770,11 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     </message>
     <message>
         <source>After Fee:</source>
-        <translation>Na de kost:</translation>
+        <translation>Na de fee:</translation>
     </message>
     <message>
         <source>Change:</source>
-        <translation>Wijzig:</translation>
+        <translation>Wisselgeld:</translation>
     </message>
     <message>
         <source>If this is activated, but the change address is empty or invalid, change will be sent to a newly generated address.</source>
@@ -3749,8 +3797,8 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>UTXO grootte:</translation>
     </message>
     <message>
-        <source>0 WSP</source>
-        <translation>0 WSP</translation>
+        <source>0 PIV</source>
+        <translation>0 PIV</translation>
     </message>
     <message>
         <source>Transaction Fee:</source>
@@ -3805,16 +3853,16 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Munten automatisch geselecteerd</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uWSPs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uWSPs in fee,&lt;br /&gt;while "at least" pays 1000 uWSPs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Als de aangepaste vergoeding is ingesteld op 1000 uWSPs en de transactie is slechts 250 bytes, dan betaalt per kilobyte alleen 250 uWSP's in vergoeding,&lt;br /&gt;terwijl "minstens" 1000 uWSP's betaalt. Voor transacties die groter zijn dan een kilobyte, betalen beiden per kilobyte.</translation>
+        <source>If the custom fee is set to 1000 uPIVs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uPIVs in fee,&lt;br /&gt;while "at least" pays 1000 uPIVs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>Als de aangepaste vergoeding is ingesteld op 1000 uPIVs en de transactie is slechts 250 bytes, dan betaalt per kilobyte alleen 250 uPIV's in vergoeding,&lt;br /&gt;terwijl "minstens" 1000 uPIV's betaalt. Voor transacties die groter zijn dan een kilobyte, betalen beiden per kilobyte.</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uWSPs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uWSPs in fee,&lt;br /&gt;while "total at least" pays 1000 uWSPs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Als de aangepaste vergoeding is ingesteld op 1000 uWSPs en de transactie is slechts 250 bytes, dan betaalt per kilobyte alleen 250 uWSP's in vergoeding,&lt;br /&gt;terwijl "totaal minstens" 1000 uWSP's betaalt. Voor transacties die groter zijn dan een kilobyte, betalen beiden per kilobyte.</translation>
+        <source>If the custom fee is set to 1000 uPIVs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uPIVs in fee,&lt;br /&gt;while "total at least" pays 1000 uPIVs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>Als de aangepaste vergoeding is ingesteld op 1000 uPIVs en de transactie is slechts 250 bytes, dan betaalt per kilobyte alleen 250 uPIV's in vergoeding,&lt;br /&gt;terwijl "totaal minstens" 1000 uPIV's betaalt. Voor transacties die groter zijn dan een kilobyte, betalen beiden per kilobyte.</translation>
     </message>
     <message>
-        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for WISPR transactions than the network can process.</source>
-        <translation>Alleen de minimale vergoeding betalen is prima, zolang er minder transactie volume is dan ruimte in de blokken. &lt;br /&gt;Maar wees ervan bewust dat dit kan leiden tot een nooit bevestigende transactie wanneer er meer vraag is naar WISPR transacties dan het netwerk kan verwerken.</translation>
+        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for PIVX transactions than the network can process.</source>
+        <translation>Alleen de minimale vergoeding betalen is prima, zolang er minder transactie volume is dan ruimte in de blokken. &lt;br /&gt;Maar wees ervan bewust dat dit kan leiden tot een nooit bevestigende transactie wanneer er meer vraag is naar PIVX transacties dan het netwerk kan verwerken.</translation>
     </message>
     <message>
         <source>normal</source>
@@ -3861,8 +3909,8 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Voeg &amp;ontvanger toe</translation>
     </message>
     <message>
-        <source>Anonymized WSP</source>
-        <translation>Geanonimiseerde WSP</translation>
+        <source>Anonymized PIV</source>
+        <translation>Geanonimiseerde PIV</translation>
     </message>
     <message>
         <source>Balance:</source>
@@ -3870,19 +3918,19 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     </message>
     <message>
         <source>Copy quantity</source>
-        <translation>Kopieer kwanititeit</translation>
+        <translation>Kopieer kwantiteit</translation>
     </message>
     <message>
         <source>Copy amount</source>
-        <translation>Kopieer hoeveelheid</translation>
+        <translation>Kopieer bedrag</translation>
     </message>
     <message>
         <source>Copy fee</source>
-        <translation>Kopiëer kost</translation>
+        <translation>Kopieer fee</translation>
     </message>
     <message>
         <source>Copy after fee</source>
-        <translation>Kopiëer na kost</translation>
+        <translation>Kopieer na fee</translation>
     </message>
     <message>
         <source>Copy bytes</source>
@@ -3909,8 +3957,8 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Het split block tool werkt niet met meerdere adressen. Probeer het nog eens.</translation>
     </message>
     <message>
-        <source>Warning: Invalid WISPR address</source>
-        <translation>Waarschuwing: Ongeldig WISPR adres</translation>
+        <source>Warning: Invalid PIVX address</source>
+        <translation>Waarschuwing: Ongeldig PIVX adres</translation>
     </message>
     <message>
         <source>%1 to %2</source>
@@ -4012,8 +4060,8 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Betaal &amp;Naar:</translation>
     </message>
     <message>
-        <source>The WISPR address to send the payment to</source>
-        <translation>Het WISPR adres om de betaling naar te verzenden</translation>
+        <source>The PIVX address to send the payment to</source>
+        <translation>Het PIVX adres om de betaling naar te verzenden</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -4052,8 +4100,8 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Bericht:</translation>
     </message>
     <message>
-        <source>A message that was attached to the WISPR: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the WISPR network.</source>
-        <translation>Een bericht dat is gehecht aan de WISPR: URI die bij de transactie wordt opgeslagen voor uw referentie. Opmerking: dit bericht wordt niet verzonden via het WISPR netwerk.</translation>
+        <source>A message that was attached to the PIVX: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the PIVX network.</source>
+        <translation>Een bericht dat is gehecht aan de PIVX: URI die bij de transactie wordt opgeslagen voor uw referentie. Opmerking: dit bericht wordt niet verzonden via het PIVX netwerk.</translation>
     </message>
     <message>
         <source>This is an unverified payment request.</source>
@@ -4079,8 +4127,8 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <source>WISPR Core is shutting down...</source>
-        <translation>WISPR Core is aan het afsluiten...</translation>
+        <source>PIVX Core is shutting down...</source>
+        <translation>PIVX Core is aan het afsluiten...</translation>
     </message>
     <message>
         <source>Do not shut down the computer until this window disappears.</source>
@@ -4102,8 +4150,8 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Je kunt berichten met je adressen ondertekenen om te bewijzen dat je ze bezit. Wees voorzichtig om niets vaags te ondertekenen, omdat phishing aanvallen je misschien kunnen proberen om je identiteit over te geven. Teken alleen volledig gedetailleerde verklaringen aan waar je mee akkoord gaat.</translation>
     </message>
     <message>
-        <source>The WISPR address to sign the message with</source>
-        <translation>Het WISPR adres om het bericht met te ondertekenen</translation>
+        <source>The PIVX address to sign the message with</source>
+        <translation>Het PIVX adres om het bericht met te ondertekenen</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -4134,16 +4182,16 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Kopieer de huidige handtekening naar het systeemklembord</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this WISPR address</source>
-        <translation>Onderteken het bericht om te bewijzen dat u het WISPR adres bezit</translation>
+        <source>Sign the message to prove you own this PIVX address</source>
+        <translation>Onderteken het bericht om te bewijzen dat u het PIVX adres bezit</translation>
     </message>
     <message>
-        <source>The WISPR address the message was signed with</source>
-        <translation>Het WISPR adres waarmee het bericht was ondertekend</translation>
+        <source>The PIVX address the message was signed with</source>
+        <translation>Het PIVX adres waarmee het bericht was ondertekend</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified WISPR address</source>
-        <translation>Controleer een bericht om te verifiëren dat het ondertekend is door het gespecificeerde WISPR adres</translation>
+        <source>Verify the message to ensure it was signed with the specified PIVX address</source>
+        <translation>Controleer een bericht om te verifiëren dat het ondertekend is door het gespecificeerde PIVX adres</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -4191,11 +4239,11 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     </message>
     <message>
         <source>Wallet unlock was cancelled.</source>
-        <translation>Portemonnee-ontsleuteling is geannuleerd.</translation>
+        <translation>Portemonnee ontsleuteling is geannuleerd.</translation>
     </message>
     <message>
         <source>Private key for the entered address is not available.</source>
-        <translation>Geheime sleutel voor het ingevoerde adres is niet beschikbaar.</translation>
+        <translation>Privé sleutel voor het ingevoerde adres is niet beschikbaar.</translation>
     </message>
     <message>
         <source>Message signing failed.</source>
@@ -4229,8 +4277,8 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>WISPR Core</source>
-        <translation>WISPR Kern</translation>
+        <source>PIVX Core</source>
+        <translation>PIVX Core</translation>
     </message>
     <message>
         <source>Version %1</source>
@@ -4247,10 +4295,6 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     <message>
         <source>The PIVX Core developers</source>
         <translation>De PIVX Kernontwikkelaars</translation>
-    </message>
-    <message>
-        <source>The WISPR Core developers</source>
-        <translation>De WISPR Kernontwikkelaars</translation>
     </message>
     <message>
         <source>[testnet]</source>
@@ -4440,7 +4484,7 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     </message>
     <message>
         <source>Amount</source>
-        <translation>Hoeveelheid</translation>
+        <translation>Bedrag</translation>
     </message>
     <message>
         <source>true</source>
@@ -4529,12 +4573,12 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Verkregen via verduistering</translation>
     </message>
     <message>
-        <source>WSP Stake</source>
-        <translation>WSP Stake</translation>
+        <source>PIV Stake</source>
+        <translation>PIV Stake</translation>
     </message>
     <message>
-        <source>zWSP Stake</source>
-        <translation>zWSP Stake</translation>
+        <source>zPIV Stake</source>
+        <translation>zPIV Stake</translation>
     </message>
     <message>
         <source>Obfuscation Denominate</source>
@@ -4553,32 +4597,32 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Verduistering creëert denominaties</translation>
     </message>
     <message>
-        <source>Converted WSP to zWSP</source>
-        <translation>Geconverteerde WSP naar zWSP</translation>
+        <source>Converted PIV to zPIV</source>
+        <translation>Geconverteerde PIV naar zPIV</translation>
     </message>
     <message>
-        <source>Spent zWSP</source>
-        <translation>Bestede zWSP</translation>
+        <source>Spent zPIV</source>
+        <translation>Bestede zPIV</translation>
     </message>
     <message>
-        <source>Received WSP from zWSP</source>
-        <translation>Ontvangen WSP van zWSP</translation>
+        <source>Received PIV from zPIV</source>
+        <translation>Ontvangen PIV van zPIV</translation>
     </message>
     <message>
-        <source>Minted Change as zWSP from zWSP Spend</source>
-        <translation>Gemint wisselgeld als zWSP van bestede zWSP</translation>
+        <source>Minted Change as zPIV from zPIV Spend</source>
+        <translation>Gemint wisselgeld als zPIV van bestede zPIV</translation>
     </message>
     <message>
-        <source>Converted zWSP to WSP</source>
-        <translation>Geconverteerde zWSP naar WSP</translation>
+        <source>Converted zPIV to PIV</source>
+        <translation>Geconverteerde zPIV naar PIV</translation>
     </message>
     <message>
-        <source>Anonymous (zWSP Transaction)</source>
-        <translation>Anonieme (zWSP transactie)</translation>
+        <source>Anonymous (zPIV Transaction)</source>
+        <translation>Anonieme (zPIV transactie)</translation>
     </message>
     <message>
-        <source>Anonymous (zWSP Stake)</source>
-        <translation>Anonieme (zWSP stake)</translation>
+        <source>Anonymous (zPIV Stake)</source>
+        <translation>Anonieme (zPIV stake)</translation>
     </message>
     <message>
         <source>Sent to</source>
@@ -4725,11 +4769,11 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     </message>
     <message>
         <source>Copy amount</source>
-        <translation>Kopieer hoeveelheid</translation>
+        <translation>Kopieer bedrag</translation>
     </message>
     <message>
         <source>Copy transaction ID</source>
-        <translation>Kopier transactie ID</translation>
+        <translation>Kopieer transactie ID</translation>
     </message>
     <message>
         <source>Edit label</source>
@@ -4738,6 +4782,10 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     <message>
         <source>Show transaction details</source>
         <translation>Bekijk transactiedetails</translation>
+    </message>
+    <message>
+        <source>Hide orphan stakes</source>
+        <translation>Verberg orphan stakes</translation>
     </message>
     <message>
         <source>Export Transaction History</source>
@@ -4788,12 +4836,12 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Exporteren succesvol</translation>
     </message>
     <message>
-        <source>Received WSP from zWSP</source>
-        <translation>Ontvangen WSP van zWSP</translation>
+        <source>Received PIV from zPIV</source>
+        <translation>Ontvangen PIV van zPIV</translation>
     </message>
     <message>
-        <source>Zerocoin Spend, Change in zWSP</source>
-        <translation>Zerocoin besteed, wisselgeld in zWSP</translation>
+        <source>Zerocoin Spend, Change in zPIV</source>
+        <translation>Zerocoin besteed, wisselgeld in zPIV</translation>
     </message>
     <message>
         <source>The transaction history was successfully saved to %1.</source>
@@ -4829,8 +4877,8 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Verzend Munten</translation>
     </message>
     <message>
-        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 WSP.</source>
-        <translation>SwiftTX ondersteunt geen verzendwaarden die zo hoog zijn. Transacties zijn momenteel beperkt tot %1 WSP.</translation>
+        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 PIV.</source>
+        <translation>SwiftTX ondersteunt geen verzendwaarden die zo hoog zijn. Transacties zijn momenteel beperkt tot %1 PIV.</translation>
     </message>
 </context>
 <context>
@@ -4861,10 +4909,10 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     </message>
 </context>
 <context>
-    <name>ZWspControlDialog</name>
+    <name>ZPivControlDialog</name>
     <message>
-        <source>Select zWSP to Spend</source>
-        <translation>Selecteer zWSP om te besteden</translation>
+        <source>Select zPIV to Spend</source>
+        <translation>Selecteer zPIV om te besteden</translation>
     </message>
     <message>
         <source>Quantity</source>
@@ -4875,20 +4923,16 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>0</translation>
     </message>
     <message>
-        <source>zWSP</source>
-        <translation>zWSP</translation>
+        <source>zPIV</source>
+        <translation>zPIV</translation>
     </message>
     <message>
         <source>Select/Deselect All</source>
         <translation>Selecteer/Deselecteer Alles</translation>
     </message>
-    <message>
-        <source>Is Spendable</source>
-        <translation>Is Uitgeefbaar</translation>
-    </message>
-</context>
+    </context>
 <context>
-    <name>wispr-core</name>
+    <name>pivx-core</name>
     <message>
         <source>(1 = keep tx meta data e.g. account owner and payment request information, 2 = drop tx meta data)</source>
         <translation>(1 = houd tx meta data, bijvoorbeeld account eigenaar en betalingsverzoek informatie, 2 = drop tx meta data)</translation>
@@ -4914,8 +4958,8 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Het berekende accumulatie controlepunt is niet wat wordt geregistreerd door de blokindex</translation>
     </message>
     <message>
-        <source>Cannot obtain a lock on data directory %s. WISPR Core is probably already running.</source>
-        <translation>Kan geen vergrendeling op data directory %s verkrijgen. WISPR Core loopt waarschijnlijk al.</translation>
+        <source>Cannot obtain a lock on data directory %s. PIVX Core is probably already running.</source>
+        <translation>Kan geen vergrendeling op data directory %s verkrijgen. PIVX Core loopt waarschijnlijk al.</translation>
     </message>
     <message>
         <source>Change automatic finalized budget voting behavior. mode=auto: Vote for only exact finalized budget match to my generated budget. (string, default: auto)</source>
@@ -4942,16 +4986,16 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Gedistribueerd onder de MIT software licentie, zie het bijgevoegde bestand COPYING of &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</translation>
     </message>
     <message>
-        <source>Enable automatic wallet backups triggered after each zWSP minting (0-1, default: %u)</source>
-        <translation>Schakel automatische portemonnee back-ups in geactiveerd na elke geminte zWSP (0-1, standaard: %u)</translation>
+        <source>Enable automatic wallet backups triggered after each zPIV minting (0-1, default: %u)</source>
+        <translation>Schakel automatische portemonnee back-ups in geactiveerd na elke geminte zPIV (0-1, standaard: %u)</translation>
     </message>
     <message>
-        <source>Enable or disable staking functionality for WSP inputs (0-1, default: %u)</source>
-        <translation>In- of uitschakelen staking functionaliteit voor WSP inputs (0-1, standaard: %u)</translation>
+        <source>Enable or disable staking functionality for PIV inputs (0-1, default: %u)</source>
+        <translation>In- of uitschakelen staking functionaliteit voor PIV inputs (0-1, standaard: %u)</translation>
     </message>
     <message>
-        <source>Enable or disable staking functionality for zWSP inputs (0-1, default: %u)</source>
-        <translation>In- of uitschakelen staking functionaliteit voor zWSP inputs (0-1, standaard: %u)</translation>
+        <source>Enable or disable staking functionality for zPIV inputs (0-1, default: %u)</source>
+        <translation>In- of uitschakelen staking functionaliteit voor zPIV inputs (0-1, standaard: %u)</translation>
     </message>
     <message>
         <source>Enable spork administration functionality with the appropriate private key.</source>
@@ -4986,12 +5030,12 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Uitvoeren commando wanneer het beste blok verandert (%s in cmd is vervangen door block hash)</translation>
     </message>
     <message>
-        <source>Fees (in WSP/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
-        <translation>Kosten (in WSP/Kb) kleiner dan dit worden beschouwd als zero fee voor heruitzending (standaard: %s)</translation>
+        <source>Fees (in PIV/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
+        <translation>Kosten (in PIV/Kb) kleiner dan dit worden beschouwd als zero fee voor heruitzending (standaard: %s)</translation>
     </message>
     <message>
-        <source>Fees (in WSP/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
-        <translation>Kosten (in WSP/Kb) kleiner dan dit worden beschouwd als zero fee voor transactie verrichting (standaard: %s)</translation>
+        <source>Fees (in PIV/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
+        <translation>Kosten (in PIV/Kb) kleiner dan dit worden beschouwd als zero fee voor transactie verrichting (standaard: %s)</translation>
     </message>
     <message>
         <source>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: %u)</source>
@@ -5090,20 +5134,20 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Dit product bevat software ontwikkeld door het OpenSSL Project voor gebruik in de OpenSSL Toolkit &lt;https://www.openssl.org/&gt; en cryptografische software geschreven door Eric Young en UPnP software geschreven door Thomas Bernard.</translation>
     </message>
     <message>
-        <source>Unable to bind to %s on this computer. WISPR Core is probably already running.</source>
-        <translation>Niet mogelijk te binden aan %s op deze computer. WISPR Core loopt waarschijnlijk al.</translation>
+        <source>Unable to bind to %s on this computer. PIVX Core is probably already running.</source>
+        <translation>Niet mogelijk te binden aan %s op deze computer. PIVX Core loopt waarschijnlijk al.</translation>
     </message>
     <message>
         <source>Unable to locate enough Obfuscation denominated funds for this transaction.</source>
         <translation>Kan niet genoeg verduistering gedenomineerde fondsen voor deze transactie vinden.</translation>
     </message>
     <message>
-        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 WSP.</source>
-        <translation>Kan niet genoeg verduistering niet gedenomineerde fondsen voor deze transactie vinden die niet gelijk zijn aan 10000 WSP.</translation>
+        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 PIV.</source>
+        <translation>Kan niet genoeg verduistering niet gedenomineerde fondsen voor deze transactie vinden die niet gelijk zijn aan 10000 PIV.</translation>
     </message>
     <message>
-        <source>Unable to locate enough funds for this transaction that are not equal 10000 WSP.</source>
-        <translation>Kan niet genoeg fondsen voor deze transactie vinden die niet gelijk zijn aan 10000 WSP.</translation>
+        <source>Unable to locate enough funds for this transaction that are not equal 10000 PIV.</source>
+        <translation>Kan niet genoeg fondsen voor deze transactie vinden die niet gelijk zijn aan 10000 PIV.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
@@ -5118,8 +5162,8 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Waarschuwing: -paytxfee is zeer hoog ingesteld! Dit zijn de transactie kosten die je betaalt als je een transactie verstuurt.</translation>
     </message>
     <message>
-        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong WISPR Core will not work properly.</source>
-        <translation>Waarschuwing: Controleer of de datum en tijd van je computer juist zijn! Als je klok verkeerd staat, werkt WISPR Core niet goed.</translation>
+        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong PIVX Core will not work properly.</source>
+        <translation>Waarschuwing: Controleer of de datum en tijd van je computer juist zijn! Als je klok verkeerd staat, werkt PIVX Core niet goed.</translation>
     </message>
     <message>
         <source>Warning: The network does not appear to fully agree! Some miners appear to be experiencing issues.</source>
@@ -5150,8 +5194,8 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Je moet een masternodeprivkey opgeven in de configuratie. Raadpleeg de documentatie voor hulp.</translation>
     </message>
     <message>
-        <source>(17000 could be used only on mainnet)</source>
-        <translation>(17000 kan alleen op mainnet worden gebruikt)</translation>
+        <source>(51472 could be used only on mainnet)</source>
+        <translation>(51472 kan alleen op mainnet worden gebruikt)</translation>
     </message>
     <message>
         <source>(default: %s)</source>
@@ -5162,8 +5206,8 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>(standaard: 1)</translation>
     </message>
     <message>
-        <source>(must be 17000 for mainnet)</source>
-        <translation>(moet 17000 voor mainnet zijn)</translation>
+        <source>(must be 51472 for mainnet)</source>
+        <translation>(moet 51472 voor mainnet zijn)</translation>
     </message>
     <message>
         <source>Accept command line and JSON-RPC commands</source>
@@ -5192,6 +5236,10 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     <message>
         <source>Always query for peer addresses via DNS lookup (default: %u)</source>
         <translation>Vraag altijd naar peer adressen via DNS lookup (standaard: %u)</translation>
+    </message>
+    <message>
+        <source>Append comment to the user agent string</source>
+        <translation>Voeg opmerking toe aan de user agent string</translation>
     </message>
     <message>
         <source>Attempt to recover private keys from a corrupt wallet.dat</source>
@@ -5272,10 +5320,6 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     <message>
         <source>Copyright (C) 2015-%i The PIVX Core Developers</source>
         <translation>Copyright (C) 2015-%i The PIVX Kernontwikkelaars</translation>
-    </message>
-    <message>
-        <source>Copyright (C) 2017-%i The WISPR Core Developers</source>
-        <translation>Copyright (C) 2017-%i The WISPR Kernontwikkelaars</translation>
     </message>
     <message>
         <source>Corrupted block database detected</source>
@@ -5362,8 +5406,8 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Error tijdens het laden van wallet.dat: Portemonnee corrupt</translation>
     </message>
     <message>
-        <source>Error loading wallet.dat: Wallet requires newer version of WISPR Core</source>
-        <translation>Fout bij het laden van wallet.dat: Portemonnee vereist een nieuwere versie van WISPR Core</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of PIVX Core</source>
+        <translation>Fout bij het laden van wallet.dat: Portemonnee vereist een nieuwere versie van PIVX Core</translation>
     </message>
     <message>
         <source>Error opening block database</source>
@@ -5376,6 +5420,10 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     <message>
         <source>Error recovering public key.</source>
         <translation>Fout bij het herstellen van de publieke sleutel.</translation>
+    </message>
+    <message>
+        <source>Error writing zerocoinDB to disk</source>
+        <translation>Fout bij het schrijven van zerocoinDB naar schijf</translation>
     </message>
     <message>
         <source>Error</source>
@@ -5414,12 +5462,16 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Niet gelukt om te luisteren op een poort. Gebruik -listen=0 als je dit wilt.</translation>
     </message>
     <message>
+        <source>Failed to parse host:port string</source>
+        <translation>Kan host: poortreeks niet parseren</translation>
+    </message>
+    <message>
         <source>Failed to read block</source>
         <translation>Mislukt om block te lezen</translation>
     </message>
     <message>
-        <source>Fee (in WSP/kB) to add to transactions you send (default: %s)</source>
-        <translation>Fee (in WSP/kB) om toe te voegen aan transacties die je verzendt (standaard: %s)</translation>
+        <source>Fee (in PIV/kB) to add to transactions you send (default: %s)</source>
+        <translation>Fee (in PIV/kB) om toe te voegen aan transacties die je verzendt (standaard: %s)</translation>
     </message>
     <message>
         <source>Finalizing transaction.</source>
@@ -5478,8 +5530,8 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Informatie</translation>
     </message>
     <message>
-        <source>Initialization sanity check failed. WISPR Core is shutting down.</source>
-        <translation>Initialisatie saniteitscontrole mislukt. WISPR Core wordt afgesloten.</translation>
+        <source>Initialization sanity check failed. PIVX Core is shutting down.</source>
+        <translation>Initialisatie saniteitscontrole mislukt. PIVX Core wordt afgesloten.</translation>
     </message>
     <message>
         <source>Input is not valid.</source>
@@ -5550,8 +5602,8 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Percentage automatisch geminte Zerocoin (10-100, standaard: %u)</translation>
     </message>
     <message>
-        <source>Reindex the WSP and zWSP money supply statistics</source>
-        <translation>Indexeer de WSP- en zWSP-geldvoorraadstatistieken opnieuw</translation>
+        <source>Reindex the PIV and zPIV money supply statistics</source>
+        <translation>Indexeer de PIV- en zPIV-geldvoorraadstatistieken opnieuw</translation>
     </message>
     <message>
         <source>Reindexing zerocoin database...</source>
@@ -5590,8 +5642,8 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
 </translation>
     </message>
     <message>
-        <source>Disable all WISPR specific functionality (Masternodes, Zerocoin, SwiftX, Budgeting) (0-1, default: %u)</source>
-        <translation>Schakel alle specifieke WISPR functionaliteit uit (Masternodes, Zerocoin, SwiftTX, Budgeting) (0-1, standaard: %u)</translation>
+        <source>Disable all PIVX specific functionality (Masternodes, Zerocoin, SwiftX, Budgeting) (0-1, default: %u)</source>
+        <translation>Schakel alle specifieke PIVX functionaliteit uit (Masternodes, Zerocoin, SwiftTX, Budgeting) (0-1, standaard: %u)</translation>
     </message>
     <message>
         <source>Enable SwiftX, show confirmations for locked transactions (bool, default: %s)</source>
@@ -5626,8 +5678,8 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Voorkeur denominatie voor automatisch minted Zerocoin (1/5/10/50/100/500/1000/5000), 0 voor geen voorkeur. standaard: %u)</translation>
     </message>
     <message>
-        <source>Specify custom backup path to add a copy of any automatic zWSP backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup. If backuppath is set as well, 4 backups will happen</source>
-        <translation>Specificeer aangepast back-up pad om een kopie van elke automatische zWSP back-up toe te voegen. Indien ingesteld als dir zal elke back-up een bestand genereren met een tijdstempel. Indien ingesteld als file zal elke back-up herschreven worden naar dat bestand. Indien backuppath ook is ingesteld zullen 4 back-ups gedaan worden.</translation>
+        <source>Specify custom backup path to add a copy of any automatic zPIV backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup. If backuppath is set as well, 4 backups will happen</source>
+        <translation>Specificeer aangepast back-up pad om een kopie van elke automatische zPIV back-up toe te voegen. Indien ingesteld als dir zal elke back-up een bestand genereren met een tijdstempel. Indien ingesteld als file zal elke back-up herschreven worden naar dat bestand. Indien backuppath ook is ingesteld zullen 4 back-ups gedaan worden.</translation>
     </message>
     <message>
         <source>Specify custom backup path to add a copy of any wallet backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup.</source>
@@ -5688,10 +5740,6 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     <message>
         <source>Failed to create mint</source>
         <translation>Het is niet gelukt om mint te maken</translation>
-    </message>
-    <message>
-        <source>Failed to deserialize</source>
-        <translation>Kan deserialiseren niet</translation>
     </message>
     <message>
         <source>Failed to find Zerocoins in wallet.dat</source>
@@ -6126,20 +6174,12 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Synchroniseren sporks...</translation>
     </message>
     <message>
-        <source>Syncing zWSP wallet...</source>
-        <translation>Synchroniseren zWSP portemonnee...</translation>
+        <source>Syncing zPIV wallet...</source>
+        <translation>Synchroniseren zPIV portemonnee...</translation>
     </message>
     <message>
         <source>The coin spend has been used</source>
         <translation>De muntuitgaven zijn gebruikt</translation>
-    </message>
-    <message>
-        <source>The new spend coin transaction did not verify</source>
-        <translation>De nieuwe uitgave voor uitgavengeld heeft niet geverifieerd</translation>
-    </message>
-    <message>
-        <source>The selected mint coin is an invalid coin</source>
-        <translation>De geselecteerde muntmunt is een ongeldige munt</translation>
     </message>
     <message>
         <source>The transaction did not verify</source>
@@ -6270,12 +6310,16 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Gebruik het test netwerk</translation>
     </message>
     <message>
+        <source>User Agent comment (%s) contains unsafe characters.</source>
+        <translation>User Agent opmerking (%s) bevat onveilige karakters.</translation>
+    </message>
+    <message>
         <source>Username for JSON-RPC connections</source>
         <translation>Gebruikersnaam voor JSON-RPC verbindingen</translation>
     </message>
     <message>
-        <source>Value is below the smallest available denomination (= 1) of zWSP</source>
-        <translation>Waarde is minder dan de kleinst beschikbare denominatie (=1) van zWSP</translation>
+        <source>Value is below the smallest available denomination (= 1) of zPIV</source>
+        <translation>Waarde is minder dan de kleinst beschikbare denominatie (=1) van zPIV</translation>
     </message>
     <message>
         <source>Value more than Obfuscation pool maximum allows.</source>
@@ -6290,10 +6334,6 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Portemonnee verifiëren...</translation>
     </message>
     <message>
-        <source>Version 1 zWSP require a security level of 100 to successfully spend.</source>
-        <translation>Versie 1 zWSP vereist een beveiligingsniveau van 100 om succesvol uit te geven.</translation>
-    </message>
-    <message>
         <source>Wallet %s resides outside data directory %s</source>
         <translation>Portemonnee %s verblijft buiten de data directory %s</translation>
     </message>
@@ -6302,8 +6342,8 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Portemonnee is vergrendeld.</translation>
     </message>
     <message>
-        <source>Wallet needed to be rewritten: restart WISPR Core to complete</source>
-        <translation>Wallet moest worden herschreven: start WISPR Core opnieuw om te voltooien</translation>
+        <source>Wallet needed to be rewritten: restart PIVX Core to complete</source>
+        <translation>Wallet moest worden herschreven: start PIVX Core opnieuw om te voltooien</translation>
     </message>
     <message>
         <source>Wallet options:</source>

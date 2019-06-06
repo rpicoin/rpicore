@@ -62,12 +62,12 @@
         <translation>Adresa primatelja</translation>
     </message>
     <message>
-        <source>These are your WISPR addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>To su vaše WISPR adrese za slanje plaćanja. Uvijek provjerite iznos i adresu primatelja prije slanja novca.</translation>
+        <source>These are your PIVX addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>To su vaše PIVX adrese za slanje plaćanja. Uvijek provjerite iznos i adresu primatelja prije slanja novca.</translation>
     </message>
     <message>
-        <source>These are your WISPR addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>To su vaše WISPR adrese za primanje uplata. Preporuča se upotreba nove adrese primatelja za svaku transakciju.</translation>
+        <source>These are your PIVX addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>To su vaše PIVX adrese za primanje uplata. Preporuča se upotreba nove adrese primatelja za svaku transakciju.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -176,16 +176,16 @@
         <translation>Potvrdi šifriranje novčanika</translation>
     </message>
     <message>
-        <source>WISPR will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your WSPs from being stolen by malware infecting your computer.</source>
-        <translation>WISPR se sada zatvara kako bi dovršio proces šifriranja. Ne zaboravite da šifriranje vašeg novčanika ne može u potpunosti zaštititi vaše WSP od krađe zlonamjernog softvera koji zarazi vaše računalo.</translation>
+        <source>PIVX will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your PIVs from being stolen by malware infecting your computer.</source>
+        <translation>PIVX se sada zatvara kako bi dovršio proces šifriranja. Ne zaboravite da šifriranje vašeg novčanika ne može u potpunosti zaštititi vaše PIV od krađe zlonamjernog softvera koji zarazi vaše računalo.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>Jeste li sigurni da želite šifrirati svoj novčanik?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR WSP&lt;/b&gt;!</source>
-        <translation>Upozorenje: Ako šifrirate svoj novčanik i izgubite zaporku, 1 izgubit ćete sve Vaše WSPove 1 !</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR PIV&lt;/b&gt;!</source>
+        <translation>Upozorenje: Ako šifrirate svoj novčanik i izgubite zaporku, 1 izgubit ćete sve Vaše PIVove 1 !</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -251,15 +251,15 @@
     </message>
     <message>
         <source>Address:</source>
-        <translation>Adresa:</translation>
+        <translation>Adresa: </translation>
     </message>
     <message>
-        <source>Enter a WISPR Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation>Unesite WISPR adresu koju želite šifrirati pomoću BIP 38. Unesite zaporku u srednjem okviru. Pritisnite šifriranje za izračunavanje šifriranog privatnog ključa.</translation>
+        <source>Enter a PIVX Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
+        <translation>Unesite PIVX adresu koju želite šifrirati pomoću BIP 38. Unesite zaporku u srednjem okviru. Pritisnite šifriranje za izračunavanje šifriranog privatnog ključa.</translation>
     </message>
     <message>
-        <source>The WISPR address to encrypt</source>
-        <translation>WISPR adresa za šifriranje</translation>
+        <source>The PIVX address to encrypt</source>
+        <translation>PIVX adresa za šifriranje</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -290,8 +290,8 @@
         <translation>Kopirajte trenutačni potpis u međuspremnik sustava</translation>
     </message>
     <message>
-        <source>Encrypt the private key for this WISPR address</source>
-        <translation>Šifriranje privatnog ključa za ovu WISPR adresu</translation>
+        <source>Encrypt the private key for this PIVX address</source>
+        <translation>Šifriranje privatnog ključa za ovu PIVX adresu</translation>
     </message>
     <message>
         <source>Reset all fields</source>
@@ -433,8 +433,8 @@
         <translation>Pregled povijesti transakcija</translation>
     </message>
     <message>
-        <source>Privacy Actions for zWSP</source>
-        <translation>Postavke privatnosti za zWSP</translation>
+        <source>Privacy Actions for zPIV</source>
+        <translation>Postavke privatnosti za zPIV</translation>
     </message>
     <message>
         <source>E&amp;xit</source>
@@ -608,10 +608,6 @@
         <source>&amp;Command-line options</source>
         <translation>Opcije naredbene linije</translation>
     </message>
-    <message numerus="yes">
-        <source>Processed %n blocks of transaction history.</source>
-        <translation><numerusform>Obrađeno %n blokova povijesti transakcija.</numerusform><numerusform>Obrađeno %n blokova povijesti transakcija.</numerusform><numerusform>Obrađeno %n blokova povijesti transakcija.</numerusform></translation>
-    </message>
     <message>
         <source>Synchronizing additional data: %p%</source>
         <translation>Usklađivanje dodatnih podataka: %p%</translation>
@@ -645,16 +641,16 @@
         <translation>Alatna traka kartica</translation>
     </message>
     <message>
-        <source>WISPR Core</source>
-        <translation>WISPR Core</translation>
+        <source>PIVX Core</source>
+        <translation>PIVX Core</translation>
     </message>
     <message>
-        <source>Send coins to a WISPR address</source>
-        <translation>Pošaljite kovanice na WISPR adresu</translation>
+        <source>Send coins to a PIVX address</source>
+        <translation>Pošaljite kovanice na PIVX adresu</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and wispr: URIs)</source>
-        <translation>Zahtjev za plaćanje (generira QR kodove i wispr: URI)</translation>
+        <source>Request payments (generates QR codes and pivx: URIs)</source>
+        <translation>Zahtjev za plaćanje (generira QR kodove i pivx: URI)</translation>
     </message>
     <message>
         <source>&amp;Privacy</source>
@@ -669,24 +665,24 @@
         <translation>Pretraži masternodes</translation>
     </message>
     <message>
-        <source>&amp;About WISPR Core</source>
-        <translation>O WISPR Core</translation>
+        <source>&amp;About PIVX Core</source>
+        <translation>O PIVX Core</translation>
     </message>
     <message>
-        <source>Show information about WISPR Core</source>
-        <translation>Prikaz informacija o WISPR Core-u</translation>
+        <source>Show information about PIVX Core</source>
+        <translation>Prikaz informacija o PIVX Core-u</translation>
     </message>
     <message>
-        <source>Modify configuration options for WISPR</source>
-        <translation>Izmijenite konfiguracijske opcije za WISPR</translation>
+        <source>Modify configuration options for PIVX</source>
+        <translation>Izmijenite konfiguracijske opcije za PIVX</translation>
     </message>
     <message>
-        <source>Sign messages with your WISPR addresses to prove you own them</source>
-        <translation>Potpišite poruke s vašim WISPR adresama kako biste dokazali da ih posjedujete</translation>
+        <source>Sign messages with your PIVX addresses to prove you own them</source>
+        <translation>Potpišite poruke s vašim PIVX adresama kako biste dokazali da ih posjedujete</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified WISPR addresses</source>
-        <translation>Potvrdite poruke kako biste bili sigurni da su potpisani s određenim WISPR adresama</translation>
+        <source>Verify messages to ensure they were signed with specified PIVX addresses</source>
+        <translation>Potvrdite poruke kako biste bili sigurni da su potpisani s određenim PIVX adresama</translation>
     </message>
     <message>
         <source>&amp;BIP38 tool</source>
@@ -717,8 +713,8 @@
         <translation>Otvori Masternode konfiguracijsku datoteku</translation>
     </message>
     <message>
-        <source>Open a WISPR: URI or payment request</source>
-        <translation>Otvori WISPR: URI zahtjev za plačanje</translation>
+        <source>Open a PIVX: URI or payment request</source>
+        <translation>Otvori PIVX: URI zahtjev za plačanje</translation>
     </message>
     <message>
         <source>&amp;Blockchain explorer</source>
@@ -729,16 +725,12 @@
         <translation>Prozor Block preglednika</translation>
     </message>
     <message>
-        <source>Show the WISPR Core help message to get a list with possible WISPR command-line options</source>
-        <translation>Pokažite poruku WISPR Core pomoći da biste dobili popis s mogućim WISPR opcijama naredbenog retka</translation>
+        <source>Show the PIVX Core help message to get a list with possible PIVX command-line options</source>
+        <translation>Pokažite poruku PIVX Core pomoći da biste dobili popis s mogućim PIVX opcijama naredbenog retka</translation>
     </message>
     <message>
-        <source>WISPR Core client</source>
-        <translation>WSPIX Core Klijent</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n active connection(s) to WISPR network</source>
-        <translation><numerusform>%n aktivne veze na WISPR mrežu</numerusform><numerusform>%n aktivne veze na WISPR mrežu</numerusform><numerusform>%n aktivne veze na WISPR mrežu</numerusform></translation>
+        <source>PIVX Core client</source>
+        <translation>PIVIX Core Klijent</translation>
     </message>
     <message>
         <source>Synchronizing with network...</source>
@@ -760,25 +752,9 @@
         <source>Up to date</source>
         <translation>Ažurirano</translation>
     </message>
-    <message numerus="yes">
-        <source>%n hour(s)</source>
-        <translation><numerusform>%n sati</numerusform><numerusform>%n sati</numerusform><numerusform>%n sati</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n day(s)</source>
-        <translation><numerusform>%n dana</numerusform><numerusform>%n dana</numerusform><numerusform>%n dana</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n week(s)</source>
-        <translation><numerusform>%n tjedni</numerusform><numerusform>%n tjedni</numerusform><numerusform>%n tjedni</numerusform></translation>
-    </message>
     <message>
         <source>%1 and %2</source>
         <translation>%1 i %2</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n year(s)</source>
-        <translation><numerusform>%n godine</numerusform><numerusform>%n godine</numerusform><numerusform>%n godine</numerusform></translation>
     </message>
     <message>
         <source>Catching up...</source>
@@ -836,7 +812,7 @@ Višestruko slanje: %1</translation>
     </message>
     <message>
         <source>Active</source>
-        <translation>Aktivno</translation>
+        <translation>Aktivno </translation>
     </message>
     <message>
         <source>Not Active</source>
@@ -864,7 +840,7 @@ Višestruko slanje: %1</translation>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>Novčanik je 1. šifriran 1. i trenutno 2. zaključan 2.</translation>
     </message>
-</context>
+    </context>
 <context>
     <name>BlockExplorer</name>
     <message>
@@ -892,8 +868,8 @@ Višestruko slanje: %1</translation>
         <translation>TextLabel</translation>
     </message>
     <message>
-        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (wispr.conf).</source>
-        <translation>Nisu prikazane sve transakcije. Za pregled svih transakcija morate postaviti txindex = 1 u konfiguracijskoj datoteci (wispr.conf).</translation>
+        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (pivx.conf).</source>
+        <translation>Nisu prikazane sve transakcije. Za pregled svih transakcija morate postaviti txindex = 1 u konfiguracijskoj datoteci (pivx.conf).</translation>
     </message>
 </context>
 <context>
@@ -1130,8 +1106,8 @@ Višestruko slanje: %1</translation>
         <translation>Ova oznaka postaje crvena ako neki primatelj prima iznos manji od %1.</translation>
     </message>
     <message>
-        <source>Can vary +/- %1 uwsp per input.</source>
-        <translation>Može varirati +/- %1 uwsp po unosu.</translation>
+        <source>Can vary +/- %1 upiv per input.</source>
+        <translation>Može varirati +/- %1 upiv po unosu.</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -1185,8 +1161,8 @@ Višestruko slanje: %1</translation>
         <translation>Uređivanje adrese slanja</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid WISPR address.</source>
-        <translation>Unesena adresa "%1" nije važeća WISPR adresa.</translation>
+        <source>The entered address "%1" is not a valid PIVX address.</source>
+        <translation>Unesena adresa "%1" nije važeća PIVX adresa.</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book.</source>
@@ -1225,22 +1201,33 @@ Višestruko slanje: %1</translation>
     </message>
 </context>
 <context>
+    <name>GovernancePage</name>
+    <message>
+        <source>Form</source>
+        <translation>Obrazac</translation>
+    </message>
+    <message>
+        <source>0</source>
+        <translation>0</translation>
+    </message>
+    </context>
+<context>
     <name>HelpMessageDialog</name>
     <message>
         <source>version</source>
         <translation>verzija</translation>
     </message>
     <message>
-        <source>WISPR Core</source>
-        <translation>WISPR Core</translation>
+        <source>PIVX Core</source>
+        <translation>PIVX Core</translation>
     </message>
     <message>
         <source>(%1-bit)</source>
         <translation>(%1-bit)</translation>
     </message>
     <message>
-        <source>About WISPR Core</source>
-        <translation>O WISPR Core</translation>
+        <source>About PIVX Core</source>
+        <translation>O PIVX Core</translation>
     </message>
     <message>
         <source>Command-line options</source>
@@ -1286,16 +1273,16 @@ Višestruko slanje: %1</translation>
         <translation>Dobrodošli</translation>
     </message>
     <message>
-        <source>Welcome to WISPR Core.</source>
-        <translation>Dobrodošli u WISPR Core.</translation>
+        <source>Welcome to PIVX Core.</source>
+        <translation>Dobrodošli u PIVX Core.</translation>
     </message>
     <message>
-        <source>As this is the first time the program is launched, you can choose where WISPR Core will store its data.</source>
-        <translation>Budući da je prvi put pokrenut program, možete odabrati gdje će WISPR Core pohraniti svoje podatke.</translation>
+        <source>As this is the first time the program is launched, you can choose where PIVX Core will store its data.</source>
+        <translation>Budući da je prvi put pokrenut program, možete odabrati gdje će PIVX Core pohraniti svoje podatke.</translation>
     </message>
     <message>
-        <source>WISPR Core will download and store a copy of the WISPR block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>WISPR Core preuzima i pohranjuje kopiju WISPR blok-lanca. Barem će %1GB podataka biti pohranjeno u ovom direktoriju i to će s vremenom rasti. Novčanik će također biti pohranjena u ovom direktoriju.</translation>
+        <source>PIVX Core will download and store a copy of the PIVX block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <translation>PIVX Core preuzima i pohranjuje kopiju PIVX blok-lanca. Barem će %1GB podataka biti pohranjeno u ovom direktoriju i to će s vremenom rasti. Novčanik će također biti pohranjena u ovom direktoriju.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -1306,8 +1293,8 @@ Višestruko slanje: %1</translation>
         <translation>Koristite prilagođeni direktorij podataka:</translation>
     </message>
     <message>
-        <source>WISPR Core</source>
-        <translation>WISPR Core</translation>
+        <source>PIVX Core</source>
+        <translation>PIVX Core</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -1448,12 +1435,12 @@ Višestruko slanje: %1</translation>
         <translation>Unesite adresu za slanje</translation>
     </message>
     <message>
-        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other WISPR addresses after it matures.
-To Add: enter percentage to give and WISPR address to add to the MultiSend vector.
+        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other PIVX addresses after it matures.
+To Add: enter percentage to give and PIVX address to add to the MultiSend vector.
 To Delete: Enter address to delete and press delete.
 MultiSend will not be activated unless you have clicked Activate</source>
-        <translation>MultiSend vam omogućuje da automatski pošaljete do 100% svoje nagrade za ulog ili masternode  nagrade na popis drugih WISPR adresa nakon što sazrijete.
-Za Dodaj: unesite postotak za davanje i WISPR adresu za dodavanje MultiSend vektoru.
+        <translation>MultiSend vam omogućuje da automatski pošaljete do 100% svoje nagrade za ulog ili masternode  nagrade na popis drugih PIVX adresa nakon što sazrijete.
+Za Dodaj: unesite postotak za davanje i PIVX adresu za dodavanje MultiSend vektoru.
 Za brisanje: Unesite adresu za brisanje i pritisnite Delete.
 MultiSend neće biti aktiviran dok ne kliknete Aktiviraj</translation>
     </message>
@@ -1542,45 +1529,8 @@ MultiSend neće biti aktiviran dok ne kliknete Aktiviraj</translation>
         <translation>(bez oznake)</translation>
     </message>
     <message>
-        <source>The entered address:
-</source>
-        <translation>Unesena adresa:</translation>
-    </message>
-    <message>
-        <source> is invalid.
-Please check the address and try again.</source>
-        <translation>je netočna.
-Provjerite adresu i pokušajte ponovo.</translation>
-    </message>
-    <message>
-        <source>The total amount of your MultiSend vector is over 100% of your stake reward
-</source>
-        <translation>Ukupna količina vašeg MultiSend vektora iznosi preko 100% vaše nagrade uloga
-</translation>
-    </message>
-    <message>
         <source>Please Enter 1 - 100 for percent.</source>
         <translation>Unesite 1 - 100 za postotak.</translation>
-    </message>
-    <message>
-        <source>Saved the MultiSend to memory, but failed saving properties to the database.
-</source>
-        <translation>Spremio je MultiSend u memoriju, ali nije spasio svojstva u bazi podataka.</translation>
-    </message>
-    <message>
-        <source>MultiSend Vector
-</source>
-        <translation>MultiSend Vektor
-</translation>
-    </message>
-    <message>
-        <source>Removed </source>
-        <translation>Uklonjeno</translation>
-    </message>
-    <message>
-        <source>Could not locate address
-</source>
-        <translation>Nije moguće pronaći adresu</translation>
     </message>
 </context>
 <context>
@@ -1679,8 +1629,8 @@ Budite strpljivi nakon što kliknete uvoz.</translation>
         <translation>Adresa / iznos:</translation>
     </message>
     <message>
-        <source>Add destinations to send WSP to</source>
-        <translation>Dodajte odredišta za slanje WSP
+        <source>Add destinations to send PIV to</source>
+        <translation>Dodajte odredišta za slanje PIV
 </translation>
     </message>
     <message>
@@ -1779,48 +1729,48 @@ Budite strpljivi nakon što kliknete uvoz.</translation>
         <translation>Odaberi razinu privatnosti.</translation>
     </message>
     <message>
-        <source>Use 2 separate masternodes to mix funds up to 10000 WSP</source>
-        <translation>Koristite 2 odvojene masternode za miješanje sredstava do 10000 WSP</translation>
+        <source>Use 2 separate masternodes to mix funds up to 10000 PIV</source>
+        <translation>Koristite 2 odvojene masternode za miješanje sredstava do 10000 PIV</translation>
     </message>
     <message>
-        <source>Use 8 separate masternodes to mix funds up to 10000 WSP</source>
-        <translation>Koristite 8 zasebnih masternoda za miješanje sredstava do 10000 WSP</translation>
+        <source>Use 8 separate masternodes to mix funds up to 10000 PIV</source>
+        <translation>Koristite 8 zasebnih masternoda za miješanje sredstava do 10000 PIV</translation>
     </message>
     <message>
         <source>Use 16 separate masternodes</source>
         <translation>Koristite 16 zasebnih masternodova</translation>
     </message>
     <message>
-        <source>This option is the quickest and will cost about ~0.025 WSP to anonymize 10000 WSP</source>
-        <translation>Ova je opcija najbrža i košta oko 0,025 WSP da anonimizira 10000 WSP</translation>
+        <source>This option is the quickest and will cost about ~0.025 PIV to anonymize 10000 PIV</source>
+        <translation>Ova je opcija najbrža i košta oko 0,025 PIV da anonimizira 10000 PIV</translation>
     </message>
     <message>
-        <source>This option is moderately fast and will cost about 0.05 WSP to anonymize 10000 WSP</source>
-        <translation>Ova je opcija umjereno brza i košta oko 0,05 WSP da anonimizira 10000 WSP</translation>
+        <source>This option is moderately fast and will cost about 0.05 PIV to anonymize 10000 PIV</source>
+        <translation>Ova je opcija umjereno brza i košta oko 0,05 PIV da anonimizira 10000 PIV</translation>
     </message>
     <message>
         <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
         <translation>Ovo je najsporiji i najsigurniji izbor. Korištenje maksimalne anonimnosti košta</translation>
     </message>
     <message>
-        <source>0.1 WSP per 10000 WSP you anonymize.</source>
-        <translation>0,1 WSP po 10000 WSP za anonimizaciju.</translation>
+        <source>0.1 PIV per 10000 PIV you anonymize.</source>
+        <translation>0,1 PIV po 10000 PIV za anonimizaciju.</translation>
     </message>
     <message>
         <source>Obfuscation Configuration</source>
         <translation>Obfuscation Konfiguracija</translation>
     </message>
     <message>
-        <source>Obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening WISPR's configuration screen.</source>
-        <translation>Obfuscation je uspješno postavljen na osnovne (%1 i 2 runde). To možete promijeniti u bilo kojem trenutku otvaranjem zaslona za konfiguraciju WISPR-a.</translation>
+        <source>Obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening PIVX's configuration screen.</source>
+        <translation>Obfuscation je uspješno postavljen na osnovne (%1 i 2 runde). To možete promijeniti u bilo kojem trenutku otvaranjem zaslona za konfiguraciju PIVX-a.</translation>
     </message>
     <message>
-        <source>Obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening WISPR's configuration screen.</source>
-        <translation>Obfuscation je uspješno postavljen na visoku razinu (%1 i 8 krugova). To možete promijeniti u bilo kojem trenutku otvaranjem zaslona za konfiguraciju WISPR-a</translation>
+        <source>Obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening PIVX's configuration screen.</source>
+        <translation>Obfuscation je uspješno postavljen na visoku razinu (%1 i 8 krugova). To možete promijeniti u bilo kojem trenutku otvaranjem zaslona za konfiguraciju PIVX-a</translation>
     </message>
     <message>
-        <source>Obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening WISPR's configuration screen.</source>
-        <translation>Obfuscation je uspješno postavljen na maksimalnu razinu (%1 i 16 krugova). To možete promijeniti u bilo kojem trenutku otvaranjem zaslona za konfiguraciju WISPR-a.</translation>
+        <source>Obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening PIVX's configuration screen.</source>
+        <translation>Obfuscation je uspješno postavljen na maksimalnu razinu (%1 i 16 krugova). To možete promijeniti u bilo kojem trenutku otvaranjem zaslona za konfiguraciju PIVX-a.</translation>
     </message>
 </context>
 <context>
@@ -1881,8 +1831,8 @@ Budite strpljivi nakon što kliknete uvoz.</translation>
         <translation>Ako onemogućite potrošnju nepotvrđenih promjena, promjena s transakcijskog kanala bit će upotrijebljena sve dok ta transakcija nema barem jednu potvrdu. To također utječe na izračun salda.</translation>
     </message>
     <message>
-        <source>Automatically open the WISPR client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Automatski otvorite WISPR klijentski priključak na rooteru. To funkcionira samo kada vaš rooter podržava UPnP i omogućen je.</translation>
+        <source>Automatically open the PIVX client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Automatski otvorite PIVX klijentski priključak na rooteru. To funkcionira samo kada vaš rooter podržava UPnP i omogućen je.</translation>
     </message>
     <message>
         <source>Accept connections from outside</source>
@@ -1901,12 +1851,12 @@ Budite strpljivi nakon što kliknete uvoz.</translation>
         <translation>Stručnjak</translation>
     </message>
     <message>
-        <source>Automatically start WISPR after logging in to the system.</source>
-        <translation>Automatski pokrenite WISPR nakon prijave u sustav.</translation>
+        <source>Automatically start PIVX after logging in to the system.</source>
+        <translation>Automatski pokrenite PIVX nakon prijave u sustav.</translation>
     </message>
     <message>
-        <source>&amp;Start WISPR on system login</source>
-        <translation>Pokrenite WISPR na prijavi u sustav</translation>
+        <source>&amp;Start PIVX on system login</source>
+        <translation>Pokrenite PIVX na prijavi u sustav</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
@@ -1933,14 +1883,14 @@ Budite strpljivi nakon što kliknete uvoz.</translation>
         <translation>Mreža</translation>
     </message>
     <message>
-        <source>The user interface language can be set here. This setting will take effect after restarting WISPR.</source>
-        <translation>Ovdje se može postaviti jezik korisničkog sučelja. Ova postavka će stupiti na snagu nakon ponovnog pokretanja WISPR-a.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting PIVX.</source>
+        <translation>Ovdje se može postaviti jezik korisničkog sučelja. Ova postavka će stupiti na snagu nakon ponovnog pokretanja PIVX-a.</translation>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/WisprProject/WisprProject-translations</source>
+https://www.transifex.com/pivx-project/pivx-project-translations</source>
         <translation>Jezik nedostaje ili prijevod nije potpun? Pomozite s prijevodima ovdje:
-https://www.transifex.com/WisprProject/WisprProject-translations</translation>
+https://www.transifex.com/pivx-project/pivx-project-translations</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -1948,36 +1898,36 @@ https://www.transifex.com/WisprProject/WisprProject-translations</translation>
 </translation>
     </message>
     <message>
-        <source>Enable automatic minting of WSP units to zWSP</source>
-        <translation>Omogućite automint WSP jedinica na zWSP</translation>
+        <source>Enable automatic minting of PIV units to zPIV</source>
+        <translation>Omogućite automint PIV jedinica na zPIV</translation>
     </message>
     <message>
-        <source>Enable zWSP Automint</source>
-        <translation>Omogući zWSP Automint</translation>
+        <source>Enable zPIV Automint</source>
+        <translation>Omogući zPIV Automint</translation>
     </message>
     <message>
-        <source>Percentage of incoming WSP which get automatically converted to zWSP via Zerocoin Protocol (min: 10%)</source>
-        <translation>Postotak dolaznih WSP koji se automatski pretvara u zWSP putem protokola Zerocoin (min: 10%)</translation>
+        <source>Percentage of incoming PIV which get automatically converted to zPIV via Zerocoin Protocol (min: 10%)</source>
+        <translation>Postotak dolaznih PIV koji se automatski pretvara u zPIV putem protokola Zerocoin (min: 10%)</translation>
     </message>
     <message>
-        <source>Percentage of autominted zWSP</source>
-        <translation>Postotak automatiziranog zWSP</translation>
+        <source>Percentage of autominted zPIV</source>
+        <translation>Postotak automatiziranog zPIV</translation>
     </message>
     <message>
-        <source>Wait with automatic conversion to Zerocoin until enough WSP for this denomination is available</source>
-        <translation>Pričekajte s automatskom pretvorbom u Zerocoin dok ne bude dostupno dovoljno WSP za apoen</translation>
+        <source>Wait with automatic conversion to Zerocoin until enough PIV for this denomination is available</source>
+        <translation>Pričekajte s automatskom pretvorbom u Zerocoin dok ne bude dostupno dovoljno PIV za apoen</translation>
     </message>
     <message>
-        <source>Preferred Automint zWSP Denomination</source>
-        <translation>Preferirana Automint zWSP denominacijad</translation>
+        <source>Preferred Automint zPIV Denomination</source>
+        <translation>Preferirana Automint zPIV denominacijad</translation>
     </message>
     <message>
         <source>Stake split threshold:</source>
         <translation>Prag razdvajanja Stake-a:</translation>
     </message>
     <message>
-        <source>Connect to the WISPR network through a SOCKS5 proxy.</source>
-        <translation>Povežite se s WISPR mrežom putem SOCKS5 proxy poslužitelja.</translation>
+        <source>Connect to the PIVX network through a SOCKS5 proxy.</source>
+        <translation>Povežite se s PIVX mrežom putem SOCKS5 proxy poslužitelja.</translation>
     </message>
     <message>
         <source>Proxy &amp;IP:</source>
@@ -2131,8 +2081,8 @@ https://www.transifex.com/WisprProject/WisprProject-translations</translation>
         <translation>Ukupni saldo, uključujući sve nedostupne kovanice.</translation>
     </message>
     <message>
-        <source>WSP Balance</source>
-        <translation>WSP Saldo</translation>
+        <source>PIV Balance</source>
+        <translation>PIV Saldo</translation>
     </message>
     <message>
         <source>Pending:</source>
@@ -2155,18 +2105,18 @@ https://www.transifex.com/WisprProject/WisprProject-translations</translation>
         <translation>Trenutačno zaključana ravnoteža u adresama samo za gledanje</translation>
     </message>
     <message>
-        <source>Your current WISPR balance, unconfirmed and immature transactions included</source>
-        <translation>Uključena je vaša trenutna bilanca WISPR, nepotvrđene i nezrele transakcije</translation>
+        <source>Your current PIVX balance, unconfirmed and immature transactions included</source>
+        <translation>Uključena je vaša trenutna bilanca PIVX, nepotvrđene i nezrele transakcije</translation>
     </message>
     <message>
-        <source>zWSP Balance</source>
-        <translation>zWSP Bilanca</translation>
+        <source>zPIV Balance</source>
+        <translation>zPIV Bilanca</translation>
     </message>
     <message>
         <source>Mature: more than 20 confirmation and more than 1 mint of the same denomination after it was minted.
-These zWSP are spendable.</source>
+These zPIV are spendable.</source>
         <translation>Mature: više od 20 potvrda i više od 1 mint od iste denominacije nakon što je mintan.
-Ti zWSPs se mogu potrošiti.</translation>
+Ti zPIVs se mogu potrošiti.</translation>
     </message>
     <message>
         <source>Unconfirmed: less than 20 confirmations
@@ -2175,8 +2125,8 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
 Nezreli: potvrđeno, ali manje od 1 minta iste denominacije nakon mintanja</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the WISPR network after a connection is established, but this process has not completed yet.</source>
-        <translation>Prikazane informacije mogu biti zastarjele. Vaš se novčanik automatski sinkronizira s WISPR mrežom nakon uspostavljanja veze, ali taj postupak još nije dovršen.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the PIVX network after a connection is established, but this process has not completed yet.</source>
+        <translation>Prikazane informacije mogu biti zastarjele. Vaš se novčanik automatski sinkronizira s PIVX mrežom nakon uspostavljanja veze, ali taj postupak još nije dovršen.</translation>
     </message>
     <message>
         <source>OVERVIEW</source>
@@ -2219,8 +2169,8 @@ Nezreli: potvrđeno, ali manje od 1 minta iste denominacije nakon mintanja</tran
         <translation>Po potrošiti:</translation>
     </message>
     <message>
-        <source>Locked WSP or Masternode collaterals. These are excluded from zWSP minting.</source>
-        <translation>Zaključani WSP ili Masternode kolateral. Oni su isključeni iz zWSP kovanja.</translation>
+        <source>Locked PIV or Masternode collaterals. These are excluded from zPIV minting.</source>
+        <translation>Zaključani PIV ili Masternode kolateral. Oni su isključeni iz zPIV kovanja.</translation>
     </message>
     <message>
         <source>Locked:</source>
@@ -2231,8 +2181,8 @@ Nezreli: potvrđeno, ali manje od 1 minta iste denominacije nakon mintanja</tran
         <translation>Nepotvrđeno:</translation>
     </message>
     <message>
-        <source>Your current zWSP balance, unconfirmed and immature zWSP included.</source>
-        <translation>Vaša trenutačna zWSP bilanca, nepotvrđena i nezrela zWSP.</translation>
+        <source>Your current zPIV balance, unconfirmed and immature zPIV included.</source>
+        <translation>Vaša trenutačna zPIV bilanca, nepotvrđena i nezrela zPIV.</translation>
     </message>
     <message>
         <source>Recent transactions</source>
@@ -2243,10 +2193,10 @@ Nezreli: potvrđeno, ali manje od 1 minta iste denominacije nakon mintanja</tran
         <translation>nije sinkronizirano</translation>
     </message>
     <message>
-        <source>Current percentage of zWSP.
+        <source>Current percentage of zPIV.
 If AutoMint is enabled this percentage will settle around the configured AutoMint percentage (default = 10%).
 </source>
-        <translation>Trenutni postotak zWSP.
+        <translation>Trenutni postotak zPIV.
 Ako je omogućeno automatsko navođenje, ovaj postotak će se podmiriti oko konfiguriranog postotka automatskog navođenja (zadano = 10%).
 </translation>
     </message>
@@ -2255,14 +2205,14 @@ Ako je omogućeno automatsko navođenje, ovaj postotak će se podmiriti oko konf
         <translation>AutoMint je trenutno omogućen i podešen na</translation>
     </message>
     <message>
-        <source>To disable AutoMint add 'enablezeromint=0' in wispr.conf.</source>
-        <translation>Da biste onemogućili AutoMint, dodajte 'enablezeromint=0' u wispr.conf.</translation>
+        <source>To disable AutoMint add 'enablezeromint=0' in pivx.conf.</source>
+        <translation>Da biste onemogućili AutoMint, dodajte 'enablezeromint=0' u pivx.conf.</translation>
     </message>
     <message>
         <source>AutoMint is currently disabled.
-To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in wispr.conf</source>
+To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in pivx.conf</source>
         <translation>AutoMint je trenutno onemogućen.
-Da biste omogućili, promjenite postavke AutoMint 'enablezeromint=0' na 'enablezeromint=1' u wispr.conf</translation>
+Da biste omogućili, promjenite postavke AutoMint 'enablezeromint=0' na 'enablezeromint=1' u pivx.conf</translation>
     </message>
 </context>
 <context>
@@ -2288,12 +2238,12 @@ Da biste omogućili, promjenite postavke AutoMint 'enablezeromint=0' na 'enablez
         <translation>Nevažeća adresa za plaćanje %1</translation>
     </message>
     <message>
-        <source>Cannot start wispr: click-to-pay handler</source>
-        <translation>Ne može se pokrenuti wispr: clik-to-pay handler</translation>
+        <source>Cannot start pivx: click-to-pay handler</source>
+        <translation>Ne može se pokrenuti pivx: clik-to-pay handler</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid WISPR address or malformed URI parameters.</source>
-        <translation>URI se ne može analizirati! To može biti uzrokovana nevažećom WISPR adresom ili nepravilnim URI parametrima.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid PIVX address or malformed URI parameters.</source>
+        <translation>URI se ne može analizirati! To može biti uzrokovana nevažećom PIVX adresom ili nepravilnim URI parametrima.</translation>
     </message>
     <message>
         <source>Payment request file cannot be read! This can be caused by an invalid payment request file.</source>
@@ -2378,8 +2328,8 @@ Da biste omogućili, promjenite postavke AutoMint 'enablezeromint=0' na 'enablez
         <translation>Zerocoin radnje:</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the WISPR network after a connection is established, but this process has not completed yet.</source>
-        <translation>Prikazane informacije mogu biti zastarjele. Vaš se novčanik automatski sinkronizira s WISPR mrežom nakon uspostavljanja veze, ali taj postupak još nije dovršen.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the PIVX network after a connection is established, but this process has not completed yet.</source>
+        <translation>Prikazane informacije mogu biti zastarjele. Vaš se novčanik automatski sinkronizira s PIVX mrežom nakon uspostavljanja veze, ali taj postupak još nije dovršen.</translation>
     </message>
     <message>
         <source>Mint Zerocoin</source>
@@ -2390,8 +2340,8 @@ Da biste omogućili, promjenite postavke AutoMint 'enablezeromint=0' na 'enablez
         <translation>0</translation>
     </message>
     <message>
-        <source>zWSP</source>
-        <translation>zWSP</translation>
+        <source>zPIV</source>
+        <translation>zPIV</translation>
     </message>
     <message>
         <source>Available for minting are coins which are confirmed and not locked or Masternode collaterals.</source>
@@ -2402,8 +2352,8 @@ Da biste omogućili, promjenite postavke AutoMint 'enablezeromint=0' na 'enablez
         <translation>Dostupno za Minting:</translation>
     </message>
     <message>
-        <source>0.000 000 00 WSP</source>
-        <translation>0.000 000 00 WSP</translation>
+        <source>0.000 000 00 PIV</source>
+        <translation>0.000 000 00 PIV</translation>
     </message>
     <message>
         <source>Reset Zerocoin Wallet DB. Deletes transactions that did not make it into the blockchain.</source>
@@ -2442,16 +2392,16 @@ Da biste omogućili, promjenite postavke AutoMint 'enablezeromint=0' na 'enablez
         <translation>PRIVATNOST</translation>
     </message>
     <message>
-        <source>Enter an amount of Wsp to convert to zWSP</source>
-        <translation>Unesite iznos Wsp za pretvorbu u zWSP</translation>
+        <source>Enter an amount of Piv to convert to zPIV</source>
+        <translation>Unesite iznos Piv za pretvorbu u zPIV</translation>
     </message>
     <message>
-        <source>zWSP Control</source>
-        <translation>Upravljanje zWSP</translation>
+        <source>zPIV Control</source>
+        <translation>Upravljanje zPIV</translation>
     </message>
     <message>
-        <source>zWSP Selected:</source>
-        <translation>zWSP Odabrani:</translation>
+        <source>zPIV Selected:</source>
+        <translation>zPIV Odabrani:</translation>
     </message>
     <message>
         <source>Quantity Selected:</source>
@@ -2466,44 +2416,32 @@ Da biste omogućili, promjenite postavke AutoMint 'enablezeromint=0' na 'enablez
         <translation>Potroši Zerocoin</translation>
     </message>
     <message>
-        <source>Available (mature and spendable) zWSP for spending</source>
-        <translation>Dostupni (zreli) zWSP za potrošnju</translation>
+        <source>Available (mature and spendable) zPIV for spending</source>
+        <translation>Dostupni (zreli) zPIV za potrošnju</translation>
     </message>
     <message>
         <source>Available Balance:</source>
         <translation>Dostupna Bilanca:</translation>
     </message>
     <message>
-        <source>Available (mature and spendable) zWSP for spending
+        <source>Available (mature and spendable) zPIV for spending
 
-zWSP are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
-        <translation>Dostupni (zreli) zWSP za potrošnju
+zPIV are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
+        <translation>Dostupni (zreli) zPIV za potrošnju
 
-zWSP su zreli kada imaju više od 20 potvrda I više od 2 mint od iste denominacije nakon što su bili mintani</translation>
+zPIV su zreli kada imaju više od 20 potvrda I više od 2 mint od iste denominacije nakon što su bili mintani</translation>
     </message>
     <message>
-        <source>0 zWSP</source>
-        <translation>0 zWSP</translation>
-    </message>
-    <message>
-        <source>Security Level for Zerocoin Transactions. More is better, but needs more time and resources.</source>
-        <translation>Razina sigurnosti za Zerocoin transakcije. Više je bolje, ali treba više vremena i resursa.</translation>
-    </message>
-    <message>
-        <source>Security Level:</source>
-        <translation>Razina sigurnosti:</translation>
-    </message>
-    <message>
-        <source>Security Level 1 - 100 (default: 42)</source>
-        <translation>Razina sigurnosti 1 - 100 (zadano: 42)</translation>
+        <source>0 zPIV</source>
+        <translation>0 zPIV</translation>
     </message>
     <message>
         <source>Pay &amp;To:</source>
         <translation>Platiti:</translation>
     </message>
     <message>
-        <source>The WISPR address to send the payment to. Creates local payment to yourself when empty.</source>
-        <translation>WISPR adresa za slanje uplate. Stvara lokalno plaćanje za sebe kada je prazno.</translation>
+        <source>The PIVX address to send the payment to. Creates local payment to yourself when empty.</source>
+        <translation>PIVX adresa za slanje uplate. Stvara lokalno plaćanje za sebe kada je prazno.</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2554,8 +2492,8 @@ zWSP su zreli kada imaju više od 20 potvrda I više od 2 mint od iste denominac
         <translation>Statistike Zerocoina:</translation>
     </message>
     <message>
-        <source>Total Balance including unconfirmed and immature zWSP</source>
-        <translation>Ukupni saldo uključujući nepotvrđeni i nedovršeni zWSP</translation>
+        <source>Total Balance including unconfirmed and immature zPIV</source>
+        <translation>Ukupni saldo uključujući nepotvrđeni i nedovršeni zPIV</translation>
     </message>
     <message>
         <source>Total Zerocoin  Balance:</source>
@@ -2576,24 +2514,24 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
 Nezreli: potvrđeno, ali manje od 1 minta iste denominacije nakon mintanja</translation>
     </message>
     <message>
-        <source>Show the current status of automatic zWSP minting.
+        <source>Show the current status of automatic zPIV minting.
 
 To change the status (restart required):
-- enable: add 'enablezeromint=1' to wispr.conf
-- disable: add 'enablezeromint=0' to wispr.conf
+- enable: add 'enablezeromint=1' to pivx.conf
+- disable: add 'enablezeromint=0' to pivx.conf
 
 To change the percentage (no restart required):
-- menu Settings-&gt;Options-&gt;Percentage of autominted zWSP
+- menu Settings-&gt;Options-&gt;Percentage of autominted zPIV
 
 </source>
-        <translation>Pokažite trenutačni status automatskog zWSP mintanja.
+        <translation>Pokažite trenutačni status automatskog zPIV mintanja.
 
 Da biste promijenili status (potrebno je ponovno pokretanje):
-- omogući: dodajte 'enablezeromint = 1' u wispr.conf
-- onemogućiti: dodajte 'enablezeromint = 0' na wispr.conf
+- omogući: dodajte 'enablezeromint = 1' u pivx.conf
+- onemogućiti: dodajte 'enablezeromint = 0' na pivx.conf
 
 Promjena postotka (nije potrebno ponovno pokretanje):
-- izbornik Postavke-&gt; Opcije-&gt; Postotak zWSP</translation>
+- izbornik Postavke-&gt; Opcije-&gt; Postotak zPIV</translation>
     </message>
     <message>
         <source>AutoMint Status</source>
@@ -2773,26 +2711,18 @@ Please be patient...</source>
         <translation>Pokretanje ResetMintZerocoin: ponovno skeniranje potpunog blockchain, to će trajati i do 30 minuta, ovisno o vašem hardveru.</translation>
     </message>
     <message>
-        <source>Spending Zerocoin.
-Computationally expensive, might need several minutes depending on the selected Security Level and your hardware.
-Please be patient...</source>
-        <translation>Potrošnja Zerocoina.
-Zahtjevan izračun, možda će trebati nekoliko minuta ovisno o odabranoj razini sigurnosti i vašem hardveru.
-Budite strpljivi ...</translation>
-    </message>
-    <message>
         <source>) needed.
 Maximum allowed: </source>
         <translation>) potrebno.
 Maksimalno dopušteno:</translation>
     </message>
     <message>
-        <source>zWSP Spend #: </source>
-        <translation>zWSP utrošeno #: </translation>
+        <source>zPIV Spend #: </source>
+        <translation>zPIV utrošeno #: </translation>
     </message>
     <message>
-        <source>zWSP Mint</source>
-        <translation>zWSP Mint</translation>
+        <source>zPIV Mint</source>
+        <translation>zPIV Mint</translation>
     </message>
     <message>
         <source> &lt;b&gt;enabled&lt;/b&gt;.</source>
@@ -2807,12 +2737,12 @@ Maksimalno dopušteno:</translation>
         <translation> Konfigirani ciljani postotak: &lt;b&gt;</translation>
     </message>
     <message>
-        <source>zWSP is currently disabled due to maintenance.</source>
-        <translation>Zbog održavanja zWSP je trenutačno onemogućen.</translation>
+        <source>zPIV is currently disabled due to maintenance.</source>
+        <translation>Zbog održavanja zPIV je trenutačno onemogućen.</translation>
     </message>
     <message>
-        <source>zWSP is currently undergoing maintenance.</source>
-        <translation>Radovi u tijeku na zWSP.</translation>
+        <source>zPIV is currently undergoing maintenance.</source>
+        <translation>Radovi u tijeku na zPIV.</translation>
     </message>
     <message>
         <source>Denom. with value &lt;b&gt;1&lt;/b&gt;:</source>
@@ -2899,8 +2829,8 @@ Maksimalno dopušteno:</translation>
         <translation>Uspješno mintano</translation>
     </message>
     <message>
-        <source> zWSP in </source>
-        <translation> ulazni zWSP </translation>
+        <source> zPIV in </source>
+        <translation> ulazni zPIV </translation>
     </message>
     <message>
         <source> sec. Used denominations:
@@ -2926,8 +2856,8 @@ Maksimalno dopušteno:</translation>
         <translation>Nije dodijeljena adresa "Plati", stvarajući lokalnu uplatu</translation>
     </message>
     <message>
-        <source>Invalid Wispr Address</source>
-        <translation>Nevažeća Wispr Adresa</translation>
+        <source>Invalid Pivx Address</source>
+        <translation>Nevažeća Pivx Adresa</translation>
     </message>
     <message>
         <source>Invalid Send Amount</source>
@@ -2950,20 +2880,8 @@ Maksimalno dopušteno:</translation>
         <translation>na novo generiranu (neiskorištenu i stoga anonimnu) lokalnu adresu</translation>
     </message>
     <message>
-        <source>with Security Level </source>
-        <translation>s razinom sigurnosti</translation>
-    </message>
-    <message>
         <source>Confirm send coins</source>
         <translation>Potvrdite slanje novca</translation>
-    </message>
-    <message>
-        <source>Version 1 zWSP require a security level of 100 to successfully spend.</source>
-        <translation>Verzija 1 zWSP zahtjeva sigurnosnu razinu 100 da se uspješno utroši.</translation>
-    </message>
-    <message>
-        <source>Failed to spend zWSP</source>
-        <translation>Neuspjelo trošenje zWSP</translation>
     </message>
     <message>
         <source>Failed to fetch mint associated with serial hash</source>
@@ -2981,11 +2899,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Spend Zerocoin failed with status = </source>
         <translation>Utrošak Zerocoina nije uspjela s statusom =</translation>
-    </message>
-    <message numerus="yes">
-        <source>PrivacyDialog</source>
-        <comment>Enter an amount of WSP to convert to zWSP</comment>
-        <translation><numerusform>PrivacyDialog</numerusform><numerusform>PrivacyDialog</numerusform><numerusform>PrivacyDialog</numerusform></translation>
     </message>
     <message>
         <source>denomination: </source>
@@ -3021,14 +2934,17 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
 </context>
 <context>
+    <name>ProposalFrame</name>
+    </context>
+<context>
     <name>QObject</name>
     <message>
         <source>Amount</source>
         <translation>Iznos</translation>
     </message>
     <message>
-        <source>Enter a WISPR address (e.g. %1)</source>
-        <translation>Unesite WISPR adresu (npr., %1)</translation>
+        <source>Enter a PIVX address (e.g. %1)</source>
+        <translation>Unesite PIVX adresu (npr., %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -3070,7 +2986,11 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <source>%1 ms</source>
         <translation>%1 ms</translation>
     </message>
-</context>
+    <message>
+        <source>PIVX Core</source>
+        <translation>PIVX Core</translation>
+    </message>
+    </context>
 <context>
     <name>QRImageWidget</name>
     <message>
@@ -3166,8 +3086,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Block chain</translation>
     </message>
     <message>
-        <source>Open the WISPR debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Otvorite WISPR debug log datoteku iz aktualnog direktorija podataka. To može potrajati nekoliko sekundi za velike datoteke zapisnika.</translation>
+        <source>Open the PIVX debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Otvorite PIVX debug log datoteku iz aktualnog direktorija podataka. To može potrajati nekoliko sekundi za velike datoteke zapisnika.</translation>
     </message>
     <message>
         <source>Number of Masternodes</source>
@@ -3302,8 +3222,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Put prilagođenog sigurnosnog kopiranja:</translation>
     </message>
     <message>
-        <source>Custom zWSP Backup Path:</source>
-        <translation>Prilagođeni put zWSP sigurnosne kopije:</translation>
+        <source>Custom zPIV Backup Path:</source>
+        <translation>Prilagođeni put zPIV sigurnosne kopije:</translation>
     </message>
     <message>
         <source>Custom Backups Threshold:</source>
@@ -3382,8 +3302,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Iz:</translation>
     </message>
     <message>
-        <source>Welcome to the WISPR RPC console.</source>
-        <translation>Dobrodošli na WISPR RPC konzolu.</translation>
+        <source>Welcome to the PIVX RPC console.</source>
+        <translation>Dobrodošli na PIVX RPC konzolu.</translation>
     </message>
     <message>
         <source>&amp;Disconnect Node</source>
@@ -3432,10 +3352,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Confirm resync Blockchain</source>
         <translation>Potvrdite resync Blockchain</translation>
-    </message>
-    <message>
-        <source>Use up and down arrows to navigate history, and &lt;b&gt;Ctrl-L&lt;/b&gt; to clear screen.</source>
-        <translation>Upotrijebite strelice gore i dolje za kretanje po povijesti, a Ctrl-L za brisanje zaslona.</translation>
     </message>
     <message>
         <source>Type &lt;b&gt;help&lt;/b&gt; for an overview of available commands.</source>
@@ -3509,16 +3425,20 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Dodatna oznaka za povezivanje s novom adresom primatelja.</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the WISPR network.</source>
-        <translation>Dodatna poruka priložena zahtjevu za plaćanje, koji će se prikazati kada se zahtjev otvori. Napomena: poruka neće biti poslana s plaćanjem putem WISPR mreže.</translation>
+        <source>A&amp;mount:</source>
+        <translation>Količina:</translation>
+    </message>
+    <message>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the PIVX network.</source>
+        <translation>Dodatna poruka priložena zahtjevu za plaćanje, koji će se prikazati kada se zahtjev otvori. Napomena: poruka neće biti poslana s plaćanjem putem PIVX mreže.</translation>
     </message>
     <message>
         <source>RECEIVE</source>
         <translation>PRIMI</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the WISPR network.</source>
-        <translation>Dodatna poruka za pridruživanje zahtjevu za plaćanje koja će se prikazati kada se zahtjev otvori.Napomena: poruka neće biti poslana s plaćanjem putem WISPR mreže.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the PIVX network.</source>
+        <translation>Dodatna poruka za pridruživanje zahtjevu za plaćanje koja će se prikazati kada se zahtjev otvori.Napomena: poruka neće biti poslana s plaćanjem putem PIVX mreže.</translation>
     </message>
     <message>
         <source>Use this form to request payments. All fields are &lt;b&gt;optional&lt;/b&gt;.</source>
@@ -3531,10 +3451,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>An optional amount to request. Leave this empty or zero to not request a specific amount.</source>
         <translation>Neobavezna količina za zahtjev. Ostavite ovo prazno ili nulu da ne zatražite određeni iznos.</translation>
-    </message>
-    <message>
-        <source>&amp;Amount:</source>
-        <translation>Iznos:</translation>
     </message>
     <message>
         <source>&amp;Request payment</source>
@@ -3579,6 +3495,10 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Copy amount</source>
         <translation>Kopiraj iznos</translation>
+    </message>
+    <message>
+        <source>Copy address</source>
+        <translation>Kopiraj adresu</translation>
     </message>
 </context>
 <context>
@@ -3650,6 +3570,10 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Message</source>
         <translation>Poruka</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresa</translation>
     </message>
     <message>
         <source>Amount</source>
@@ -3747,8 +3671,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Veličina UTXO:</translation>
     </message>
     <message>
-        <source>0 WSP</source>
-        <translation>0 WSP</translation>
+        <source>0 PIV</source>
+        <translation>0 PIV</translation>
     </message>
     <message>
         <source>Transaction Fee:</source>
@@ -3805,16 +3729,16 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Kovanice se automatski odabiru</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uWSPs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uWSPs in fee,&lt;br /&gt;while "at least" pays 1000 uWSPs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Ako je prilagođena naknada postavljena na 1000 uWSP-ova, a transakcija je samo 250 bajta, tada "po kilobajtu" se plaća samo 250 uWSP-a, dok se "barem" plaća 1000 uWSP-ova. Za transakcije veće od kilobajta, oboje plaćaju po kilobajtu.</translation>
+        <source>If the custom fee is set to 1000 uPIVs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uPIVs in fee,&lt;br /&gt;while "at least" pays 1000 uPIVs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>Ako je prilagođena naknada postavljena na 1000 uPIV-ova, a transakcija je samo 250 bajta, tada "po kilobajtu" se plaća samo 250 uPIV-a, dok se "barem" plaća 1000 uPIV-ova. Za transakcije veće od kilobajta, oboje plaćaju po kilobajtu.</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uWSPs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uWSPs in fee,&lt;br /&gt;while "total at least" pays 1000 uWSPs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Ako je prilagođena naknada postavljena na 1000 uWSP, a transakcija je samo 250 bajta, tada "po kilobajtu" plaća se samo 250 uWSP-ova, a "ukupno barem" plaća 1000 uWSP-ova. Za transakcije veće od kilobajta, oboje plaćaju po kilobajtu.</translation>
+        <source>If the custom fee is set to 1000 uPIVs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uPIVs in fee,&lt;br /&gt;while "total at least" pays 1000 uPIVs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>Ako je prilagođena naknada postavljena na 1000 uPIV, a transakcija je samo 250 bajta, tada "po kilobajtu" plaća se samo 250 uPIV-ova, a "ukupno barem" plaća 1000 uPIV-ova. Za transakcije veće od kilobajta, oboje plaćaju po kilobajtu.</translation>
     </message>
     <message>
-        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for WISPR transactions than the network can process.</source>
-        <translation>Plaćanje samo minimalne naknade je sasvim u redu sve dok j obujma transakcija manji od prostora u blokovima. No, budite svjesni da to može dovesti do transakcije koja nikada se ne potvrđuje kada se pojavi više zahtjeva za WISPR transakcijama nego što mreža može obraditi.</translation>
+        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for PIVX transactions than the network can process.</source>
+        <translation>Plaćanje samo minimalne naknade je sasvim u redu sve dok j obujma transakcija manji od prostora u blokovima. No, budite svjesni da to može dovesti do transakcije koja nikada se ne potvrđuje kada se pojavi više zahtjeva za PIVX transakcijama nego što mreža može obraditi.</translation>
     </message>
     <message>
         <source>normal</source>
@@ -3861,8 +3785,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Dodaj primatelja</translation>
     </message>
     <message>
-        <source>Anonymized WSP</source>
-        <translation>Anonimiziran WSP</translation>
+        <source>Anonymized PIV</source>
+        <translation>Anonimiziran PIV</translation>
     </message>
     <message>
         <source>Balance:</source>
@@ -3909,8 +3833,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Alat za podjelu blocka ne funkcionira s više adresa. Pokušajte ponovo.</translation>
     </message>
     <message>
-        <source>Warning: Invalid WISPR address</source>
-        <translation>Upozorenje: Nevažeća WISPR adresa</translation>
+        <source>Warning: Invalid PIVX address</source>
+        <translation>Upozorenje: Nevažeća PIVX adresa</translation>
     </message>
     <message>
         <source>%1 to %2</source>
@@ -3935,10 +3859,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>A fee %1 times higher than %2 per kB is considered an insanely high fee.</source>
         <translation>Naknada %1 puta veća od %2 po kB smatra se nerazumljivo visokom naknadom.</translation>
-    </message>
-    <message numerus="yes">
-        <source>Estimated to begin confirmation within %n block(s).</source>
-        <translation><numerusform>Procijenjeno za početak potvrde u%n blokova.</numerusform><numerusform>Procijenjeno za početak potvrde u%n blokova.</numerusform><numerusform>Procijenjeno za početak potvrde u %n blokova.</numerusform></translation>
     </message>
     <message>
         <source>The recipient address is not valid, please recheck.</source>
@@ -4012,8 +3932,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Platiti:</translation>
     </message>
     <message>
-        <source>The WISPR address to send the payment to</source>
-        <translation>WISPR adresa za slanje uplate</translation>
+        <source>The PIVX address to send the payment to</source>
+        <translation>PIVX adresa za slanje uplate</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -4052,8 +3972,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Poruka:</translation>
     </message>
     <message>
-        <source>A message that was attached to the WISPR: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the WISPR network.</source>
-        <translation>Poruka koja je bila povezana s WISPR: URI koji će biti pohranjen s transakcijom za vašu referencu. Napomena: ova poruka neće biti poslana preko WISPR mreže.</translation>
+        <source>A message that was attached to the PIVX: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the PIVX network.</source>
+        <translation>Poruka koja je bila povezana s PIVX: URI koji će biti pohranjen s transakcijom za vašu referencu. Napomena: ova poruka neće biti poslana preko PIVX mreže.</translation>
     </message>
     <message>
         <source>This is an unverified payment request.</source>
@@ -4079,8 +3999,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <source>WISPR Core is shutting down...</source>
-        <translation>WISPR Core se zatvara ...</translation>
+        <source>PIVX Core is shutting down...</source>
+        <translation>PIVX Core se zatvara ...</translation>
     </message>
     <message>
         <source>Do not shut down the computer until this window disappears.</source>
@@ -4102,8 +4022,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Možete potpisati poruke s vašim adresama kako biste dokazali da ih posjedujete. Pazite da ne potpišete ništa nejasno, jer napadi za krađu identiteta mogu Vas pokušati uvjeriti da vam potpišu identitet. Potpišite samo detalje oko kojih se slažete.</translation>
     </message>
     <message>
-        <source>The WISPR address to sign the message with</source>
-        <translation>WISPR adresa za potpisivanje poruke</translation>
+        <source>The PIVX address to sign the message with</source>
+        <translation>PIVX adresa za potpisivanje poruke</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -4134,16 +4054,16 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Kopirajte trenutačni potpis u međuspremnik sustava</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this WISPR address</source>
-        <translation>Potpišite poruku da biste dokazali da ste vlasnik ove WISPR adrese</translation>
+        <source>Sign the message to prove you own this PIVX address</source>
+        <translation>Potpišite poruku da biste dokazali da ste vlasnik ove PIVX adrese</translation>
     </message>
     <message>
-        <source>The WISPR address the message was signed with</source>
-        <translation>WISPR adresa s kojom je potpisana poruka</translation>
+        <source>The PIVX address the message was signed with</source>
+        <translation>PIVX adresa s kojom je potpisana poruka</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified WISPR address</source>
-        <translation>Potvrdite poruku kako biste bili sigurni da je potpisana s navedenom WISPR adresom</translation>
+        <source>Verify the message to ensure it was signed with the specified PIVX address</source>
+        <translation>Potvrdite poruku kako biste bili sigurni da je potpisana s navedenom PIVX adresom</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -4229,8 +4149,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>WISPR Core</source>
-        <translation>WISPR Core</translation>
+        <source>PIVX Core</source>
+        <translation>PIVX Core</translation>
     </message>
     <message>
         <source>Version %1</source>
@@ -4249,10 +4169,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>PIVX Core programeri</translation>
     </message>
     <message>
-        <source>The WISPR Core developers</source>
-        <translation>WISPR Core programeri</translation>
-    </message>
-    <message>
         <source>[testnet]</source>
         <translation>[testnet]</translation>
     </message>
@@ -4266,10 +4182,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
 </context>
 <context>
     <name>TransactionDesc</name>
-    <message numerus="yes">
-        <source>Open for %n more block(s)</source>
-        <translation><numerusform>Otvori se za %n više blokova</numerusform><numerusform>Otvori se za %n više blokova</numerusform><numerusform>Otvori se za %n više blokova</numerusform></translation>
-    </message>
     <message>
         <source>Open until %1</source>
         <translation>Otvori dok %1</translation>
@@ -4330,10 +4242,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <source>, has not been successfully broadcast yet</source>
         <translation>, još nije uspješno emitiran</translation>
     </message>
-    <message numerus="yes">
-        <source>, broadcast through %n node(s)</source>
-        <translation><numerusform>, emitiraju se preko %n čvorova</numerusform><numerusform>, emitiraju se preko %n čvorova</numerusform><numerusform>, emitiraju se preko %n čvorova</numerusform></translation>
-    </message>
     <message>
         <source>Date</source>
         <translation>Datum</translation>
@@ -4373,10 +4281,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Credit</source>
         <translation>Kredit</translation>
-    </message>
-    <message numerus="yes">
-        <source>matures in %n more block(s)</source>
-        <translation><numerusform>sazrijeva se u %n više blokova</numerusform><numerusform>sazrijeva se u %n više blokova</numerusform><numerusform>sazrijeva se u %n više blokova</numerusform></translation>
     </message>
     <message>
         <source>not accepted</source>
@@ -4477,10 +4381,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <source>Address</source>
         <translation>Adresa</translation>
     </message>
-    <message numerus="yes">
-        <source>Open for %n more block(s)</source>
-        <translation><numerusform>Otvori se za %n više blokova</numerusform><numerusform>Otvori se za %n više blokova</numerusform><numerusform>Otvori se za %n više blokova</numerusform></translation>
-    </message>
     <message>
         <source>Open until %1</source>
         <translation>Otvori dok %1</translation>
@@ -4530,12 +4430,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Zaprimljeno preko Zametanja</translation>
     </message>
     <message>
-        <source>WSP Stake</source>
-        <translation>WSP Stake</translation>
+        <source>PIV Stake</source>
+        <translation>PIV Stake</translation>
     </message>
     <message>
-        <source>zWSP Stake</source>
-        <translation>zWSP Stake</translation>
+        <source>zPIV Stake</source>
+        <translation>zPIV Stake</translation>
     </message>
     <message>
         <source>Obfuscation Denominate</source>
@@ -4554,32 +4454,32 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Prikrivanje Stvara Denominacije</translation>
     </message>
     <message>
-        <source>Converted WSP to zWSP</source>
-        <translation>Pretvoreni WSP u zWSP</translation>
+        <source>Converted PIV to zPIV</source>
+        <translation>Pretvoreni PIV u zPIV</translation>
     </message>
     <message>
-        <source>Spent zWSP</source>
-        <translation>Utrošeni zWSP</translation>
+        <source>Spent zPIV</source>
+        <translation>Utrošeni zPIV</translation>
     </message>
     <message>
-        <source>Received WSP from zWSP</source>
-        <translation>Primljeni WSP od zWSP</translation>
+        <source>Received PIV from zPIV</source>
+        <translation>Primljeni PIV od zPIV</translation>
     </message>
     <message>
-        <source>Minted Change as zWSP from zWSP Spend</source>
-        <translation>Mintana razlika zWSP od zWSP Utroška</translation>
+        <source>Minted Change as zPIV from zPIV Spend</source>
+        <translation>Mintana razlika zPIV od zPIV Utroška</translation>
     </message>
     <message>
-        <source>Converted zWSP to WSP</source>
-        <translation>Pretvoreni zWSP u WSP</translation>
+        <source>Converted zPIV to PIV</source>
+        <translation>Pretvoreni zPIV u PIV</translation>
     </message>
     <message>
-        <source>Anonymous (zWSP Transaction)</source>
-        <translation>Anonimno (zWSP Transakcija)</translation>
+        <source>Anonymous (zPIV Transaction)</source>
+        <translation>Anonimno (zPIV Transakcija)</translation>
     </message>
     <message>
-        <source>Anonymous (zWSP Stake)</source>
-        <translation>Anonimno (zWSP Stake)</translation>
+        <source>Anonymous (zPIV Stake)</source>
+        <translation>Anonimno (zPIV Stake)</translation>
     </message>
     <message>
         <source>Sent to</source>
@@ -4789,12 +4689,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Izvoz uspješan</translation>
     </message>
     <message>
-        <source>Received WSP from zWSP</source>
-        <translation>Primljeni WSP od zWSP</translation>
+        <source>Received PIV from zPIV</source>
+        <translation>Primljeni PIV od zPIV</translation>
     </message>
     <message>
-        <source>Zerocoin Spend, Change in zWSP</source>
-        <translation>Zerocoin Utrošeno, Razlika (ostatak) u zWSP</translation>
+        <source>Zerocoin Spend, Change in zPIV</source>
+        <translation>Zerocoin Utrošeno, Razlika (ostatak) u zPIV</translation>
     </message>
     <message>
         <source>The transaction history was successfully saved to %1.</source>
@@ -4830,8 +4730,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Salji novac</translation>
     </message>
     <message>
-        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 WSP.</source>
-        <translation>SwiftX ne podržava slanje visokih vrijednosti. Transakcije su trenutačno ograničene na %1 WSP.</translation>
+        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 PIV.</source>
+        <translation>SwiftX ne podržava slanje visokih vrijednosti. Transakcije su trenutačno ograničene na %1 PIV.</translation>
     </message>
 </context>
 <context>
@@ -4862,10 +4762,10 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
 </context>
 <context>
-    <name>ZWspControlDialog</name>
+    <name>ZPivControlDialog</name>
     <message>
-        <source>Select zWSP to Spend</source>
-        <translation>Odabrani zWSP za utrošiti</translation>
+        <source>Select zPIV to Spend</source>
+        <translation>Odabrani zPIV za utrošiti</translation>
     </message>
     <message>
         <source>Quantity</source>
@@ -4876,20 +4776,16 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>0</translation>
     </message>
     <message>
-        <source>zWSP</source>
-        <translation>zWSP</translation>
+        <source>zPIV</source>
+        <translation>zPIV</translation>
     </message>
     <message>
         <source>Select/Deselect All</source>
         <translation>Odaberite/poništi odabir za Sve</translation>
     </message>
-    <message>
-        <source>Is Spendable</source>
-        <translation>Je moguće utrošiti</translation>
-    </message>
-</context>
+    </context>
 <context>
-    <name>wispr-core</name>
+    <name>pivx-core</name>
     <message>
         <source>(1 = keep tx meta data e.g. account owner and payment request information, 2 = drop tx meta data)</source>
         <translation>(1 = zadržite metapodatke tx, npr. Vlasnika računa i podatke o zahtjevu za plaćanje, 2 = odbaci meta podataka tx)</translation>
@@ -4915,8 +4811,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Izračunata kontrolna točka akumulatora nije ono što se bilježi indeksom blokova</translation>
     </message>
     <message>
-        <source>Cannot obtain a lock on data directory %s. WISPR Core is probably already running.</source>
-        <translation>Nije moguće dobiti zaključavanje na direktoriju podataka %s. WISPR Core vjerojatno već radi.</translation>
+        <source>Cannot obtain a lock on data directory %s. PIVX Core is probably already running.</source>
+        <translation>Nije moguće dobiti zaključavanje na direktoriju podataka %s. PIVX Core vjerojatno već radi.</translation>
     </message>
     <message>
         <source>Change automatic finalized budget voting behavior. mode=auto: Vote for only exact finalized budget match to my generated budget. (string, default: auto)</source>
@@ -4943,16 +4839,16 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Distribuirano pod MIT softverskom licencom, pogledajte priloženu datoteku COPYING ili &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</translation>
     </message>
     <message>
-        <source>Enable automatic wallet backups triggered after each zWSP minting (0-1, default: %u)</source>
-        <translation>Omogući automatsko sigurnosno kopiranje novčanika nakon svakog zWSP mintanja (0-1, default: %u)</translation>
+        <source>Enable automatic wallet backups triggered after each zPIV minting (0-1, default: %u)</source>
+        <translation>Omogući automatsko sigurnosno kopiranje novčanika nakon svakog zPIV mintanja (0-1, default: %u)</translation>
     </message>
     <message>
-        <source>Enable or disable staking functionality for WSP inputs (0-1, default: %u)</source>
-        <translation>Omogući ili onemogući staking funkcionalnosti za WSP unose (0-1, default: %u)</translation>
+        <source>Enable or disable staking functionality for PIV inputs (0-1, default: %u)</source>
+        <translation>Omogući ili onemogući staking funkcionalnosti za PIV unose (0-1, default: %u)</translation>
     </message>
     <message>
-        <source>Enable or disable staking functionality for zWSP inputs (0-1, default: %u)</source>
-        <translation>Omogući ili onemogući staking funkcionalnosti za zWSP unose (0-1, default: %u)</translation>
+        <source>Enable or disable staking functionality for zPIV inputs (0-1, default: %u)</source>
+        <translation>Omogući ili onemogući staking funkcionalnosti za zPIV unose (0-1, default: %u)</translation>
     </message>
     <message>
         <source>Enable spork administration functionality with the appropriate private key.</source>
@@ -4987,12 +4883,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Izvrši naredbu kada se promijeni najbolji blok (%s u cmd zamjenjuje se blokovskim raspršivanjem)</translation>
     </message>
     <message>
-        <source>Fees (in WSP/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
-        <translation>Naknade (u WSP / Kb) manje od toga smatraju se nulom naknadom za prosljeđivanje (zadano: %s)</translation>
+        <source>Fees (in PIV/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
+        <translation>Naknade (u PIV / Kb) manje od toga smatraju se nulom naknadom za prosljeđivanje (zadano: %s)</translation>
     </message>
     <message>
-        <source>Fees (in WSP/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
-        <translation>Naknade (u WSP / Kb) manje od toga smatraju se nulom naknadom za izradu transakcija (zadano: %s)</translation>
+        <source>Fees (in PIV/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
+        <translation>Naknade (u PIV / Kb) manje od toga smatraju se nulom naknadom za izradu transakcija (zadano: %s)</translation>
     </message>
     <message>
         <source>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: %u)</source>
@@ -5091,20 +4987,20 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Ovaj proizvod uključuje softver razvijen od strane OpenSSL projekta za uporabu u OpenSSL Toolkitu i kriptografskom softveru kojeg je napisao Eric Young i UPnP softver koji je napisao Thomas Bernard.</translation>
     </message>
     <message>
-        <source>Unable to bind to %s on this computer. WISPR Core is probably already running.</source>
-        <translation>Nije moguće vezati se na %s na ovom računalu. WISPR Core vjerojatno već radi.</translation>
+        <source>Unable to bind to %s on this computer. PIVX Core is probably already running.</source>
+        <translation>Nije moguće vezati se na %s na ovom računalu. PIVX Core vjerojatno već radi.</translation>
     </message>
     <message>
         <source>Unable to locate enough Obfuscation denominated funds for this transaction.</source>
         <translation>Nije moguće locirati dovoljno sredstava s domenom Prikrivanja za tu transakciju.</translation>
     </message>
     <message>
-        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 WSP.</source>
-        <translation>Nije moguće pronaći dovoljno prikrivenih sredstava koja nisu denominirana za ovu transakciju koja nisu jednaka 10000 WSP.</translation>
+        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 PIV.</source>
+        <translation>Nije moguće pronaći dovoljno prikrivenih sredstava koja nisu denominirana za ovu transakciju koja nisu jednaka 10000 PIV.</translation>
     </message>
     <message>
-        <source>Unable to locate enough funds for this transaction that are not equal 10000 WSP.</source>
-        <translation>Nije moguće pronaći dovoljno sredstava za ovu transakciju koja nije jednaka 10000 WSP.</translation>
+        <source>Unable to locate enough funds for this transaction that are not equal 10000 PIV.</source>
+        <translation>Nije moguće pronaći dovoljno sredstava za ovu transakciju koja nije jednaka 10000 PIV.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
@@ -5119,8 +5015,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Upozorenje: -paytxfee je vrlo visoka! To je transakcijska naknada koju ćete platiti ako šaljete transakciju.</translation>
     </message>
     <message>
-        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong WISPR Core will not work properly.</source>
-        <translation>Upozorenje: Provjerite jesu li datum i vrijeme vašeg računala točni! Ako je vaš sat pogrešan, WISPR Core neće raditi ispravno.</translation>
+        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong PIVX Core will not work properly.</source>
+        <translation>Upozorenje: Provjerite jesu li datum i vrijeme vašeg računala točni! Ako je vaš sat pogrešan, PIVX Core neće raditi ispravno.</translation>
     </message>
     <message>
         <source>Warning: The network does not appear to fully agree! Some miners appear to be experiencing issues.</source>
@@ -5151,8 +5047,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Morate odrediti masternodeprivkey u konfiguraciji. Za pomoć pogledajte dokumentaciju.</translation>
     </message>
     <message>
-        <source>(17000 could be used only on mainnet)</source>
-        <translation>(17000 se može koristiti samo na mainnetu)</translation>
+        <source>(51472 could be used only on mainnet)</source>
+        <translation>(51472 se može koristiti samo na mainnetu)</translation>
     </message>
     <message>
         <source>(default: %s)</source>
@@ -5163,8 +5059,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>(default: 1)</translation>
     </message>
     <message>
-        <source>(must be 17000 for mainnet)</source>
-        <translation>(mora biti 17000 za glavnu mrežu)</translation>
+        <source>(must be 51472 for mainnet)</source>
+        <translation>(mora biti 51472 za glavnu mrežu)</translation>
     </message>
     <message>
         <source>Accept command line and JSON-RPC commands</source>
@@ -5275,10 +5171,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Autorska prava (C) 2015-%i The PIVX Core Developers</translation>
     </message>
     <message>
-        <source>Copyright (C) 2017-%i The WISPR Core Developers</source>
-        <translation>Autorska prava (C) 2017-%i The WISPR Core Developers</translation>
-    </message>
-    <message>
         <source>Corrupted block database detected</source>
         <translation>Otkriven oštećen blok podataka</translation>
     </message>
@@ -5364,8 +5256,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Pogreška pri učitavanju wallet.dat: novčanik oštećen</translation>
     </message>
     <message>
-        <source>Error loading wallet.dat: Wallet requires newer version of WISPR Core</source>
-        <translation>Pogreška prilikom učitavanja wallet.dat: Novčanik zahtijeva noviju verziju WISPR jezgre</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of PIVX Core</source>
+        <translation>Pogreška prilikom učitavanja wallet.dat: Novčanik zahtijeva noviju verziju PIVX jezgre</translation>
     </message>
     <message>
         <source>Error opening block database</source>
@@ -5378,6 +5270,10 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Error recovering public key.</source>
         <translation>Pogreška prilikom vraćanja javnog ključa.</translation>
+    </message>
+    <message>
+        <source>Error writing zerocoinDB to disk</source>
+        <translation>Greška u zapisivanju zerocoinDB na disk</translation>
     </message>
     <message>
         <source>Error</source>
@@ -5420,8 +5316,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Greška čitanja bloka</translation>
     </message>
     <message>
-        <source>Fee (in WSP/kB) to add to transactions you send (default: %s)</source>
-        <translation>Naknada (u WSP / kB) za dodavanje transakcija koje šaljete (zadano: %s)</translation>
+        <source>Fee (in PIV/kB) to add to transactions you send (default: %s)</source>
+        <translation>Naknada (u PIV / kB) za dodavanje transakcija koje šaljete (zadano: %s)</translation>
     </message>
     <message>
         <source>Finalizing transaction.</source>
@@ -5480,8 +5376,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Informacije</translation>
     </message>
     <message>
-        <source>Initialization sanity check failed. WISPR Core is shutting down.</source>
-        <translation>Provjera ispravnosti inicijalizacije nije uspjela. WISPR Core se zatvara.</translation>
+        <source>Initialization sanity check failed. PIVX Core is shutting down.</source>
+        <translation>Provjera ispravnosti inicijalizacije nije uspjela. PIVX Core se zatvara.</translation>
     </message>
     <message>
         <source>Input is not valid.</source>
@@ -5552,8 +5448,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Postotak automatskog kovanog Zerocoina (1-100, zadano: %u)</translation>
     </message>
     <message>
-        <source>Reindex the WSP and zWSP money supply statistics</source>
-        <translation>Ponovno indeksirati statistiku WSP i zWSP ponude novca</translation>
+        <source>Reindex the PIV and zPIV money supply statistics</source>
+        <translation>Ponovno indeksirati statistiku PIV i zPIV ponude novca</translation>
     </message>
     <message>
         <source>Reindexing zerocoin database...</source>
@@ -5591,8 +5487,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>uklonjene nepotvrđene transakcije</translation>
     </message>
     <message>
-        <source>Disable all WISPR specific functionality (Masternodes, Zerocoin, SwiftX, Budgeting) (0-1, default: %u)</source>
-        <translation>Onemogući sve specifične funkcije WISPR (Masternodes, Zerocoin, SwiftX, Budgeting) (0-1, zadano: %u)</translation>
+        <source>Disable all PIVX specific functionality (Masternodes, Zerocoin, SwiftX, Budgeting) (0-1, default: %u)</source>
+        <translation>Onemogući sve specifične funkcije PIVX (Masternodes, Zerocoin, SwiftX, Budgeting) (0-1, zadano: %u)</translation>
     </message>
     <message>
         <source>Enable SwiftX, show confirmations for locked transactions (bool, default: %s)</source>
@@ -5627,8 +5523,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Preferirana denominacija za automatski ovjereni Zerocoin (1/5/10/50/100/500/1000/5000), 0 bez preferencije. zadana vrijednost: %u)</translation>
     </message>
     <message>
-        <source>Specify custom backup path to add a copy of any automatic zWSP backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup. If backuppath is set as well, 4 backups will happen</source>
-        <translation>Navedite put prilagođenog sigurnosnog kopiranja da biste dodali kopiju bilo koje automatske zWSP sigurnosne kopije. Ako je postavljeno kao dir, svaka sigurnosna kopija generira vremensku datoteku. Ako je postavljen kao datoteka, prepisat će na tu datoteku svaku kopiju. Ako je postavljen backuppath, dogodit će se 4 sigurnosne kopije</translation>
+        <source>Specify custom backup path to add a copy of any automatic zPIV backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup. If backuppath is set as well, 4 backups will happen</source>
+        <translation>Navedite put prilagođenog sigurnosnog kopiranja da biste dodali kopiju bilo koje automatske zPIV sigurnosne kopije. Ako je postavljeno kao dir, svaka sigurnosna kopija generira vremensku datoteku. Ako je postavljen kao datoteka, prepisat će na tu datoteku svaku kopiju. Ako je postavljen backuppath, dogodit će se 4 sigurnosne kopije</translation>
     </message>
     <message>
         <source>Specify custom backup path to add a copy of any wallet backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup.</source>
@@ -5689,10 +5585,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Failed to create mint</source>
         <translation>Nije uspjelo kovanje</translation>
-    </message>
-    <message>
-        <source>Failed to deserialize</source>
-        <translation>Deserializiranje nije uspjelo</translation>
     </message>
     <message>
         <source>Failed to find Zerocoins in wallet.dat</source>
@@ -6127,20 +6019,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Sinkronizacija sporka...</translation>
     </message>
     <message>
-        <source>Syncing zWSP wallet...</source>
-        <translation>Sinkronizacija zWSP novčanika...</translation>
+        <source>Syncing zPIV wallet...</source>
+        <translation>Sinkronizacija zPIV novčanika...</translation>
     </message>
     <message>
         <source>The coin spend has been used</source>
         <translation>Korištena je potrošnja novčića</translation>
-    </message>
-    <message>
-        <source>The new spend coin transaction did not verify</source>
-        <translation>Nova transakcija potrošnje novca nije potvrđena</translation>
-    </message>
-    <message>
-        <source>The selected mint coin is an invalid coin</source>
-        <translation>Odabrano je kovanje novčića za nevažeći novčić</translation>
     </message>
     <message>
         <source>The transaction did not verify</source>
@@ -6275,8 +6159,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Korisničko ime za JSON-RPC veze</translation>
     </message>
     <message>
-        <source>Value is below the smallest available denomination (= 1) of zWSP</source>
-        <translation>Vrijednost je niža od najmanje dostupne denominacije (= 1) zWSP-a</translation>
+        <source>Value is below the smallest available denomination (= 1) of zPIV</source>
+        <translation>Vrijednost je niža od najmanje dostupne denominacije (= 1) zPIV-a</translation>
     </message>
     <message>
         <source>Value more than Obfuscation pool maximum allows.</source>
@@ -6291,10 +6175,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Provjera novčanika...</translation>
     </message>
     <message>
-        <source>Version 1 zWSP require a security level of 100 to successfully spend.</source>
-        <translation>Verzija 1 zWSP zahtjeva sigurnosnu razinu 100 da se uspješno utroši.</translation>
-    </message>
-    <message>
         <source>Wallet %s resides outside data directory %s</source>
         <translation>Novčanik %s nalazi se izvan direktorija podataka %s</translation>
     </message>
@@ -6303,8 +6183,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Novčanik zaključan.</translation>
     </message>
     <message>
-        <source>Wallet needed to be rewritten: restart WISPR Core to complete</source>
-        <translation>Potrebno je prepisati novčanik: ponovo pokrenite WISPR Core</translation>
+        <source>Wallet needed to be rewritten: restart PIVX Core to complete</source>
+        <translation>Potrebno je prepisati novčanik: ponovo pokrenite PIVX Core</translation>
     </message>
     <message>
         <source>Wallet options:</source>

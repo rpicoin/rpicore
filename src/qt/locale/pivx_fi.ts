@@ -62,12 +62,12 @@
         <translation>Vastaanottavat osoitteet</translation>
     </message>
     <message>
-        <source>These are your WISPR addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Nämä ovat sinun WISPR osoitteesi maksujen lähetystä varten. Tarkista aina määrä ja vastaanottava osoite ennen kolikoiden lähettämistä.</translation>
+        <source>These are your PIVX addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Nämä ovat sinun PIVX osoitteesi maksujen lähetystä varten. Tarkista aina määrä ja vastaanottava osoite ennen kolikoiden lähettämistä.</translation>
     </message>
     <message>
-        <source>These are your WISPR addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Nämä ovat sinun WISPR osoitteesi maksujen vastaanottamista varten. On suositeltavaa käyttää uutta vastaanottavaa osoitetta jokaiselle uudelle rahansiirrolle.</translation>
+        <source>These are your PIVX addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Nämä ovat sinun PIVX osoitteesi maksujen vastaanottamista varten. On suositeltavaa käyttää uutta vastaanottavaa osoitetta jokaiselle uudelle rahansiirrolle.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -172,16 +172,16 @@
         <translation>Vahvista lompakon salaus</translation>
     </message>
     <message>
-        <source>WISPR will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your WSPs from being stolen by malware infecting your computer.</source>
-        <translation>WISPR sulkeutuu salausprosessin ajaksi. Muista, että lompakon salaus ei voi täysin suojella WSPien varkaudelta, jos tietokoneesi sisältää haittaohjelmia.</translation>
+        <source>PIVX will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your PIVs from being stolen by malware infecting your computer.</source>
+        <translation>PIVX sulkeutuu salausprosessin ajaksi. Muista, että lompakon salaus ei voi täysin suojella PIVien varkaudelta, jos tietokoneesi sisältää haittaohjelmia.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>Oletko varma että tahdot salata lompakkosi?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR WSP&lt;/b&gt;!</source>
-        <translation>Varoitus: Jos salaat lompakkosi ja unohdat salausavaimesi, &lt;b&gt;menetät kaikki WSPisi&lt;/b&gt;</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR PIV&lt;/b&gt;!</source>
+        <translation>Varoitus: Jos salaat lompakkosi ja unohdat salausavaimesi, &lt;b&gt;menetät kaikki PIVisi&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -565,16 +565,16 @@
         <translation>&amp;Apua</translation>
     </message>
     <message>
-        <source>WISPR Core</source>
-        <translation>WISPR Ydin</translation>
+        <source>PIVX Core</source>
+        <translation>PIVX Ydin</translation>
     </message>
     <message>
-        <source>Send coins to a WISPR address</source>
-        <translation>Lähetä kolikkoja WISPR osoitteeseen</translation>
+        <source>Send coins to a PIVX address</source>
+        <translation>Lähetä kolikkoja PIVX osoitteeseen</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and wispr: URIs)</source>
-        <translation>Pyydä maksuja (Generoi QR koodeja ja wispr: URIja)</translation>
+        <source>Request payments (generates QR codes and pivx: URIs)</source>
+        <translation>Pyydä maksuja (Generoi QR koodeja ja pivx: URIja)</translation>
     </message>
     <message>
         <source>&amp;Masternodes</source>
@@ -585,24 +585,24 @@
         <translation>Selaa masternodeja</translation>
     </message>
     <message>
-        <source>&amp;About WISPR Core</source>
-        <translation>WISPR Core &amp;ytimestä</translation>
+        <source>&amp;About PIVX Core</source>
+        <translation>PIVX Core &amp;ytimestä</translation>
     </message>
     <message>
-        <source>Show information about WISPR Core</source>
-        <translation>Näytä tietoja WISPR Ytimestä</translation>
+        <source>Show information about PIVX Core</source>
+        <translation>Näytä tietoja PIVX Ytimestä</translation>
     </message>
     <message>
-        <source>Modify configuration options for WISPR</source>
-        <translation>Muokkaa konfiguraatio vaihtoehtoja WISPR:lle</translation>
+        <source>Modify configuration options for PIVX</source>
+        <translation>Muokkaa konfiguraatio vaihtoehtoja PIVX:lle</translation>
     </message>
     <message>
-        <source>Sign messages with your WISPR addresses to prove you own them</source>
+        <source>Sign messages with your PIVX addresses to prove you own them</source>
         <translation>Allekirjoita viestejä todistaaksesi, että omistat ne.</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified WISPR addresses</source>
-        <translation>Vahvista viestit varmistaaksesi, että ne allekirjoitettiin tietyllä WISPR osoiteella.</translation>
+        <source>Verify messages to ensure they were signed with specified PIVX addresses</source>
+        <translation>Vahvista viestit varmistaaksesi, että ne allekirjoitettiin tietyllä PIVX osoiteella.</translation>
     </message>
     <message>
         <source>&amp;BIP38 tool</source>
@@ -633,8 +633,8 @@
         <translation>Avaa Masternode konfiguraatiotiedosto</translation>
     </message>
     <message>
-        <source>Open a WISPR: URI or payment request</source>
-        <translation>Avaa WISPR: URI tai pyydä maksua</translation>
+        <source>Open a PIVX: URI or payment request</source>
+        <translation>Avaa PIVX: URI tai pyydä maksua</translation>
     </message>
     <message>
         <source>&amp;Blockchain explorer</source>
@@ -645,12 +645,12 @@
         <translation>Lohkon tutkija näkymä</translation>
     </message>
     <message>
-        <source>Show the WISPR Core help message to get a list with possible WISPR command-line options</source>
-        <translation>Näytä WISPR Ydin apuviesti saadaksesi lista mahdollisista WISPR komentolinja komennoista.</translation>
+        <source>Show the PIVX Core help message to get a list with possible PIVX command-line options</source>
+        <translation>Näytä PIVX Ydin apuviesti saadaksesi lista mahdollisista PIVX komentolinja komennoista.</translation>
     </message>
     <message>
-        <source>WISPR Core client</source>
-        <translation>WISPR Ydin asiakasohjelma</translation>
+        <source>PIVX Core client</source>
+        <translation>PIVX Ydin asiakasohjelma</translation>
     </message>
     <message>
         <source>Synchronizing with network...</source>
@@ -906,10 +906,21 @@
     </message>
     </context>
 <context>
+    <name>GovernancePage</name>
+    <message>
+        <source>Form</source>
+        <translation>Lomake</translation>
+    </message>
+    <message>
+        <source>0</source>
+        <translation>0</translation>
+    </message>
+    </context>
+<context>
     <name>HelpMessageDialog</name>
     <message>
-        <source>WISPR Core</source>
-        <translation>WISPR Ydin</translation>
+        <source>PIVX Core</source>
+        <translation>PIVX Ydin</translation>
     </message>
     <message>
         <source>Usage:</source>
@@ -927,12 +938,12 @@
         <translation>Tervetuloa</translation>
     </message>
     <message>
-        <source>Welcome to WISPR Core.</source>
-        <translation>Tervetuloa WISPR Ytimeen.</translation>
+        <source>Welcome to PIVX Core.</source>
+        <translation>Tervetuloa PIVX Ytimeen.</translation>
     </message>
     <message>
-        <source>WISPR Core</source>
-        <translation>WISPR Ydin</translation>
+        <source>PIVX Core</source>
+        <translation>PIVX Ydin</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1057,37 +1068,8 @@
         <translation>(ei nimikettä)</translation>
     </message>
     <message>
-        <source>The entered address:
-</source>
-        <translation>Syötetty osoite:</translation>
-    </message>
-    <message>
-        <source> is invalid.
-Please check the address and try again.</source>
-        <translation>on invalidi. Ole hyvä ja tarkista osoite.</translation>
-    </message>
-    <message>
-        <source>The total amount of your MultiSend vector is over 100% of your stake reward
-</source>
-        <translation>MultiSend vektorisi kokonaismäärä on yli 100% panoksesi lohkopalkkiosta.</translation>
-    </message>
-    <message>
         <source>Please Enter 1 - 100 for percent.</source>
         <translation>Syötä 1 - 100 prosenttia</translation>
-    </message>
-    <message>
-        <source>MultiSend Vector
-</source>
-        <translation>MultiSend vektori</translation>
-    </message>
-    <message>
-        <source>Removed </source>
-        <translation>Poistettu</translation>
-    </message>
-    <message>
-        <source>Could not locate address
-</source>
-        <translation>Osoitetta ei löytynyt</translation>
     </message>
 </context>
 <context>
@@ -1128,32 +1110,32 @@ Please check the address and try again.</source>
         <translation>Valitse yksityisyyden taso.</translation>
     </message>
     <message>
-        <source>Use 2 separate masternodes to mix funds up to 10000 WSP</source>
-        <translation>Käytä 2 erillistä masternodea sekoittaaksesi enintään 10000 WISPR</translation>
+        <source>Use 2 separate masternodes to mix funds up to 10000 PIV</source>
+        <translation>Käytä 2 erillistä masternodea sekoittaaksesi enintään 10000 PIVX</translation>
     </message>
     <message>
-        <source>Use 8 separate masternodes to mix funds up to 10000 WSP</source>
-        <translation>Käytä 8 erillistä masternodea sekoittaaksesi enintään 10000 WISPR</translation>
+        <source>Use 8 separate masternodes to mix funds up to 10000 PIV</source>
+        <translation>Käytä 8 erillistä masternodea sekoittaaksesi enintään 10000 PIVX</translation>
     </message>
     <message>
         <source>Use 16 separate masternodes</source>
         <translation>Käytä 16 erillistä masternodea</translation>
     </message>
     <message>
-        <source>This option is the quickest and will cost about ~0.025 WSP to anonymize 10000 WSP</source>
-        <translation>Tämä vaihtoehto on nopein ja maksaa noin ~0.025 WSP anonymoidaksesi 10000 WISPR</translation>
+        <source>This option is the quickest and will cost about ~0.025 PIV to anonymize 10000 PIV</source>
+        <translation>Tämä vaihtoehto on nopein ja maksaa noin ~0.025 PIV anonymoidaksesi 10000 PIVX</translation>
     </message>
     <message>
-        <source>This option is moderately fast and will cost about 0.05 WSP to anonymize 10000 WSP</source>
-        <translation>Tämä vaihtoehto on suhteellisen nopea ja maksaa 0.05 WISPR anonymoidaksesi 10000 WISPR</translation>
+        <source>This option is moderately fast and will cost about 0.05 PIV to anonymize 10000 PIV</source>
+        <translation>Tämä vaihtoehto on suhteellisen nopea ja maksaa 0.05 PIVX anonymoidaksesi 10000 PIVX</translation>
     </message>
     <message>
         <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
         <translation>Tämä on hitain ja turvallisin vaihtoehto. Täydesti anonymisoiminen ei maksa mitään.</translation>
     </message>
     <message>
-        <source>0.1 WSP per 10000 WSP you anonymize.</source>
-        <translation>0.1 per 10000 WISPR, jotka anonymisoit.</translation>
+        <source>0.1 PIV per 10000 PIV you anonymize.</source>
+        <translation>0.1 per 10000 PIVX, jotka anonymisoit.</translation>
     </message>
     <message>
         <source>Obfuscation Configuration</source>
@@ -1202,12 +1184,12 @@ Please check the address and try again.</source>
         <translation>Ekspertti</translation>
     </message>
     <message>
-        <source>Automatically start WISPR after logging in to the system.</source>
-        <translation>Automaattisesti käynnistä WISPR kun kirjaudut sisään.</translation>
+        <source>Automatically start PIVX after logging in to the system.</source>
+        <translation>Automaattisesti käynnistä PIVX kun kirjaudut sisään.</translation>
     </message>
     <message>
-        <source>&amp;Start WISPR on system login</source>
-        <translation>&amp;Aloita WISPR järjestelmän kirjautumisessa</translation>
+        <source>&amp;Start PIVX on system login</source>
+        <translation>&amp;Aloita PIVX järjestelmän kirjautumisessa</translation>
     </message>
     <message>
         <source>Enable coin &amp;control features</source>
@@ -1226,12 +1208,12 @@ Please check the address and try again.</source>
         <translation>&amp;Verkko</translation>
     </message>
     <message>
-        <source>The user interface language can be set here. This setting will take effect after restarting WISPR.</source>
+        <source>The user interface language can be set here. This setting will take effect after restarting PIVX.</source>
         <translation>Käyttöliittymän kielen voi säätää täällä. Tämä asetus tulee voimaan uudelleenkäynnistettyäsi lompakon.</translation>
     </message>
     <message>
-        <source>Connect to the WISPR network through a SOCKS5 proxy.</source>
-        <translation>Yhdistä WISPR verkkoon SOCKS5 proxyn kautta</translation>
+        <source>Connect to the PIVX network through a SOCKS5 proxy.</source>
+        <translation>Yhdistä PIVX verkkoon SOCKS5 proxyn kautta</translation>
     </message>
     <message>
         <source>Proxy &amp;IP:</source>
@@ -1475,10 +1457,17 @@ Please check the address and try again.</source>
     </message>
     </context>
 <context>
+    <name>ProposalFrame</name>
+    </context>
+<context>
     <name>QObject</name>
     <message>
         <source>Amount</source>
         <translation>Määrä</translation>
+    </message>
+    <message>
+        <source>PIVX Core</source>
+        <translation>PIVX Ydin</translation>
     </message>
     </context>
 <context>
@@ -1535,8 +1524,8 @@ Please check the address and try again.</source>
         <translation>Lohko ketju</translation>
     </message>
     <message>
-        <source>Open the WISPR debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Avaa WISPR debug loki nykyisestä sijainnista. Tämä voi kestää muutaman sekunnin suurille lokeille</translation>
+        <source>Open the PIVX debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Avaa PIVX debug loki nykyisestä sijainnista. Tämä voi kestää muutaman sekunnin suurille lokeille</translation>
     </message>
     <message>
         <source>Number of Masternodes</source>
@@ -1647,8 +1636,8 @@ Please check the address and try again.</source>
         <translation>Ulos:</translation>
     </message>
     <message>
-        <source>Welcome to the WISPR RPC console.</source>
-        <translation>Tervetuloa WISPR RPC konsoliin.</translation>
+        <source>Welcome to the PIVX RPC console.</source>
+        <translation>Tervetuloa PIVX RPC konsoliin.</translation>
     </message>
     <message>
         <source>never</source>
@@ -1686,12 +1675,16 @@ Please check the address and try again.</source>
         <translation>Vaihtoehtoinen nimike uudelle vastaanottavalle osoitteelle</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the WISPR network.</source>
-        <translation>Vaihtoehtoinen viesti joka liitetään maksupyyntöön, joka näytetään kun pyyntö avataan. Huomio: Viestiä ei lähetetä maksun mukana WISPR verkolle.</translation>
+        <source>A&amp;mount:</source>
+        <translation>M&amp;äärä:</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the WISPR network.</source>
-        <translation>Vaihtoehtoinen viesti, joka liitetään maksupyyntöö, joka näytetään kun pyyntö avataan. &lt;br&gt; Huomio: Tätä viestiä ei lähetetä maksun mukana WISPR  verkolle.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the PIVX network.</source>
+        <translation>Vaihtoehtoinen viesti joka liitetään maksupyyntöön, joka näytetään kun pyyntö avataan. Huomio: Viestiä ei lähetetä maksun mukana PIVX verkolle.</translation>
+    </message>
+    <message>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the PIVX network.</source>
+        <translation>Vaihtoehtoinen viesti, joka liitetään maksupyyntöö, joka näytetään kun pyyntö avataan. &lt;br&gt; Huomio: Tätä viestiä ei lähetetä maksun mukana PIVX  verkolle.</translation>
     </message>
     <message>
         <source>Use this form to request payments. All fields are &lt;b&gt;optional&lt;/b&gt;.</source>
@@ -1704,10 +1697,6 @@ Please check the address and try again.</source>
     <message>
         <source>An optional amount to request. Leave this empty or zero to not request a specific amount.</source>
         <translation>Pyydä vaihtoehtoinen määrä. Jätä tämä tyhjäksi tai 0, jos haluat pyytää ennaltamääräämättömän summan</translation>
-    </message>
-    <message>
-        <source>&amp;Amount:</source>
-        <translation>&amp;Määrä:</translation>
     </message>
     <message>
         <source>&amp;Request payment</source>
@@ -1752,6 +1741,10 @@ Please check the address and try again.</source>
     <message>
         <source>Copy amount</source>
         <translation>Kopioi määrä</translation>
+    </message>
+    <message>
+        <source>Copy address</source>
+        <translation>Kopioi osoite</translation>
     </message>
 </context>
 <context>
@@ -1824,6 +1817,10 @@ Please check the address and try again.</source>
         <translation>Viesti</translation>
     </message>
     <message>
+        <source>Address</source>
+        <translation>Osoite</translation>
+    </message>
+    <message>
         <source>Amount</source>
         <translation>Määrä</translation>
     </message>
@@ -1887,8 +1884,8 @@ Please check the address and try again.</source>
         <translation>Muutos:</translation>
     </message>
     <message>
-        <source>0 WSP</source>
-        <translation>0 WSP</translation>
+        <source>0 PIV</source>
+        <translation>0 PIV</translation>
     </message>
     <message>
         <source>Choose...</source>
@@ -1963,8 +1960,8 @@ Please check the address and try again.</source>
         <translation>Kopioi taksa</translation>
     </message>
     <message>
-        <source>Warning: Invalid WISPR address</source>
-        <translation>Varoitus: Virheellinen WISPR osoite</translation>
+        <source>Warning: Invalid PIVX address</source>
+        <translation>Varoitus: Virheellinen PIVX osoite</translation>
     </message>
     <message>
         <source>Are you sure you want to send?</source>
@@ -2014,8 +2011,8 @@ Please check the address and try again.</source>
         <translation>Tämä on normaali maksu.</translation>
     </message>
     <message>
-        <source>The WISPR address to send the payment to</source>
-        <translation>WISPR osoite johon maksu lähetetään</translation>
+        <source>The PIVX address to send the payment to</source>
+        <translation>PIVX osoite johon maksu lähetetään</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2057,8 +2054,8 @@ Please check the address and try again.</source>
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <source>WISPR Core is shutting down...</source>
-        <translation>WISPR core sammuu...</translation>
+        <source>PIVX Core is shutting down...</source>
+        <translation>PIVX core sammuu...</translation>
     </message>
     <message>
         <source>Do not shut down the computer until this window disappears.</source>
@@ -2076,8 +2073,8 @@ Please check the address and try again.</source>
         <translation>Voit allekirjoittaa viestejä osoitteillasi todistaaksesi, että omistat ne. Ole varovainen ettet allekirjoita mitään kummallista, sillä kalasteluyritykset saattavat yrittää huijata sinut luovuttamaan tietoja. Allekirjoita vain täysin yksityiskohtaisia sanomia, jotka hyväksyt.</translation>
     </message>
     <message>
-        <source>The WISPR address to sign the message with</source>
-        <translation>WISPR osoite, jolla viesti allekirjoitetaan</translation>
+        <source>The PIVX address to sign the message with</source>
+        <translation>PIVX osoite, jolla viesti allekirjoitetaan</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2108,16 +2105,16 @@ Please check the address and try again.</source>
         <translation>Kopioi nykyinen allekirjoitus järjestelmän leikepöydälle</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this WISPR address</source>
-        <translation>Allekirjoita viesti todistaaksesi, että omistat tämän WISPR osoitteen</translation>
+        <source>Sign the message to prove you own this PIVX address</source>
+        <translation>Allekirjoita viesti todistaaksesi, että omistat tämän PIVX osoitteen</translation>
     </message>
     <message>
-        <source>The WISPR address the message was signed with</source>
-        <translation>WISPR osoite, jolla viesti allekirjoitettiin</translation>
+        <source>The PIVX address the message was signed with</source>
+        <translation>PIVX osoite, jolla viesti allekirjoitettiin</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified WISPR address</source>
-        <translation>Vahvista että viesti on allekirjoitettu kyseessä olevalla WISPR osoitteella.</translation>
+        <source>Verify the message to ensure it was signed with the specified PIVX address</source>
+        <translation>Vahvista että viesti on allekirjoitettu kyseessä olevalla PIVX osoitteella.</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -2199,8 +2196,8 @@ Please check the address and try again.</source>
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>WISPR Core</source>
-        <translation>WISPR Ydin</translation>
+        <source>PIVX Core</source>
+        <translation>PIVX Ydin</translation>
     </message>
     <message>
         <source>Version %1</source>
@@ -2217,10 +2214,6 @@ Please check the address and try again.</source>
     <message>
         <source>The PIVX Core developers</source>
         <translation>PIVX core kehittäjät</translation>
-    </message>
-    <message>
-        <source>The WISPR Core developers</source>
-        <translation>WISPR core kehittäjät</translation>
     </message>
     <message>
         <source>[testnet]</source>
@@ -2515,14 +2508,14 @@ Please check the address and try again.</source>
     </message>
 </context>
 <context>
-    <name>ZWspControlDialog</name>
+    <name>ZPivControlDialog</name>
     <message>
         <source>0</source>
         <translation>0</translation>
     </message>
     </context>
 <context>
-    <name>wispr-core</name>
+    <name>pivx-core</name>
     <message>
         <source>Warning: The network does not appear to fully agree! Some miners appear to be experiencing issues.</source>
         <translation>Varoitus: Verkko ei näytä olevan samaa mieltä! Jotkin mainaajat saattavat kokea ongelmia.</translation>
@@ -2572,8 +2565,8 @@ Please check the address and try again.</source>
         <translation>Virhe ladattaessa wallet.dat tiedostoa: Lompakko korruptoitunut</translation>
     </message>
     <message>
-        <source>Error loading wallet.dat: Wallet requires newer version of WISPR Core</source>
-        <translation>Virhe ladattaessa wallet.dat tiedostoa: Lompakko vaatii uudemman version WISPR Coresta</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of PIVX Core</source>
+        <translation>Virhe ladattaessa wallet.dat tiedostoa: Lompakko vaatii uudemman version PIVX Coresta</translation>
     </message>
     <message>
         <source>Error reading from database, shutting down.</source>

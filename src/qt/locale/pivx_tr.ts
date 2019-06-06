@@ -62,12 +62,12 @@
         <translation>Alıcı Adres</translation>
     </message>
     <message>
-        <source>These are your WISPR addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Bunlar ödemeleri göndermek için olan WISPR adreslerinizdir.Coinleri göndermeden önce her zaman gönderilen miktarı ve adresi kontrol edin</translation>
+        <source>These are your PIVX addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Bunlar ödemeleri göndermek için olan PIVX adreslerinizdir.Coinleri göndermeden önce her zaman gönderilen miktarı ve adresi kontrol edin</translation>
     </message>
     <message>
-        <source>These are your WISPR addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Bunlar ödemeleri almak için olan WISPR adreslerinizdirHer işlem için yeni bir adres kullanmanız önerilir.</translation>
+        <source>These are your PIVX addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Bunlar ödemeleri almak için olan PIVX adreslerinizdirHer işlem için yeni bir adres kullanmanız önerilir.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -176,15 +176,15 @@
         <translation>cüzdan şifrelemesini onayla</translation>
     </message>
     <message>
-        <source>WISPR will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your WSPs from being stolen by malware infecting your computer.</source>
-        <translation>WISPR şifreleme işlemini tamamlamak için şimdi kapanacaktır. Cüzdanınızı şifrelemenin, WSP'lerinizi bilgisayarınıza bulaşan kötücül yazılımlar tarafından çalınmasına tamamen engelleyemediğini unutmayın</translation>
+        <source>PIVX will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your PIVs from being stolen by malware infecting your computer.</source>
+        <translation>PIVX şifreleme işlemini tamamlamak için şimdi kapanacaktır. Cüzdanınızı şifrelemenin, PIV'lerinizi bilgisayarınıza bulaşan kötücül yazılımlar tarafından çalınmasına tamamen engelleyemediğini unutmayın</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>Cüzdanınızı şifrelemek istediğinizden emin misiniz?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR WSP&lt;/b&gt;!</source>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR PIV&lt;/b&gt;!</source>
         <translation>Dikkat! Eğer cüzdanınızı şifrelerseniz ve şifrenizi unutursanız &lt;b&gt;Tüm Pıvlerinizi kaybedersiniz&lt;/b&gt;!</translation>
     </message>
     <message>
@@ -254,12 +254,12 @@
         <translation>adres</translation>
     </message>
     <message>
-        <source>Enter a WISPR Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation>BIP 38 ile şifrelemek isteğiniz WISPR Adresini giriniz. Ortadaki kutucuğa bir parola giriniz. Şifrelenmiş özel anahtarı hesaplamak için şifrele tuşuna basınız. </translation>
+        <source>Enter a PIVX Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
+        <translation>BIP 38 ile şifrelemek isteğiniz PIVX Adresini giriniz. Ortadaki kutucuğa bir parola giriniz. Şifrelenmiş özel anahtarı hesaplamak için şifrele tuşuna basınız. </translation>
     </message>
     <message>
-        <source>The WISPR address to encrypt</source>
-        <translation>Şifrelenecek WISPR adresi</translation>
+        <source>The PIVX address to encrypt</source>
+        <translation>Şifrelenecek PIVX adresi</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -290,8 +290,8 @@
         <translation>Geçerli imzayı sistem panosuna kopyala</translation>
     </message>
     <message>
-        <source>Encrypt the private key for this WISPR address</source>
-        <translation>Bu WISPR adresinin özel anahtarını şifreleyin</translation>
+        <source>Encrypt the private key for this PIVX address</source>
+        <translation>Bu PIVX adresinin özel anahtarını şifreleyin</translation>
     </message>
     <message>
         <source>Reset all fields</source>
@@ -433,8 +433,8 @@
         <translation>İşlem geçmişini ara</translation>
     </message>
     <message>
-        <source>Privacy Actions for zWSP</source>
-        <translation>Gizlilik Aksiyonları zWSP</translation>
+        <source>Privacy Actions for zPIV</source>
+        <translation>Gizlilik Aksiyonları zPIV</translation>
     </message>
     <message>
         <source>E&amp;xit</source>
@@ -617,6 +617,14 @@
         <translation>%1 geride. blok tarıyor %2</translation>
     </message>
     <message>
+        <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt; for anonymization and staking only</source>
+        <translation>Cüzdan şifrelenmiştirve şu anda sadece anonimleştirme ve staking yapılabilmesi amacıyla kilitsiz&lt;/b&gt; hale getirilmiştir.</translation>
+    </message>
+    <message>
+        <source>Tor is &lt;b&gt;enabled&lt;/b&gt;: %1</source>
+        <translation>Tor &lt;b&gt;etkin&lt;/b&gt; hale getirilmiştir: %1</translation>
+    </message>
+    <message>
         <source>&amp;File</source>
         <translation>&amp;Dosya</translation>
     </message>
@@ -637,16 +645,16 @@
         <translation>Sekme tablosu</translation>
     </message>
     <message>
-        <source>WISPR Core</source>
-        <translation>WISPR CORE</translation>
+        <source>PIVX Core</source>
+        <translation>PIVX CORE</translation>
     </message>
     <message>
-        <source>Send coins to a WISPR address</source>
-        <translation>Koinleri WISPR adresine gönder</translation>
+        <source>Send coins to a PIVX address</source>
+        <translation>Koinleri PIVX adresine gönder</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and wispr: URIs)</source>
-        <translation>Ödeme talep etme (QR kodları ve wispr üretir: URI'ler)</translation>
+        <source>Request payments (generates QR codes and pivx: URIs)</source>
+        <translation>Ödeme talep etme (QR kodları ve pivx üretir: URI'ler)</translation>
     </message>
     <message>
         <source>&amp;Privacy</source>
@@ -661,24 +669,24 @@
         <translation>Masternodları ara</translation>
     </message>
     <message>
-        <source>&amp;About WISPR Core</source>
+        <source>&amp;About PIVX Core</source>
         <translation>Pıvx core Hakkında</translation>
     </message>
     <message>
-        <source>Show information about WISPR Core</source>
+        <source>Show information about PIVX Core</source>
         <translation>Pıvx Core hakkında bilgi göster</translation>
     </message>
     <message>
-        <source>Modify configuration options for WISPR</source>
-        <translation>WISPR için yapılandırma seçeneklerini değiştirin</translation>
+        <source>Modify configuration options for PIVX</source>
+        <translation>PIVX için yapılandırma seçeneklerini değiştirin</translation>
     </message>
     <message>
-        <source>Sign messages with your WISPR addresses to prove you own them</source>
-        <translation>Sahip olduğunuzu kanıtlamak için mesajlarınızı WISPR adresleriyle imzalayın</translation>
+        <source>Sign messages with your PIVX addresses to prove you own them</source>
+        <translation>Sahip olduğunuzu kanıtlamak için mesajlarınızı PIVX adresleriyle imzalayın</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified WISPR addresses</source>
-        <translation>Belirtilen WISPR adresleriyle imzalanmış olduklarından emin olmak için iletileri doğrulayın</translation>
+        <source>Verify messages to ensure they were signed with specified PIVX addresses</source>
+        <translation>Belirtilen PIVX adresleriyle imzalanmış olduklarından emin olmak için iletileri doğrulayın</translation>
     </message>
     <message>
         <source>&amp;BIP38 tool</source>
@@ -709,8 +717,8 @@
         <translation>Açık Masternode yapılandırma dosyası</translation>
     </message>
     <message>
-        <source>Open a WISPR: URI or payment request</source>
-        <translation>Bir WISPR: URI veya ödeme isteği açın</translation>
+        <source>Open a PIVX: URI or payment request</source>
+        <translation>Bir PIVX: URI veya ödeme isteği açın</translation>
     </message>
     <message>
         <source>&amp;Blockchain explorer</source>
@@ -721,12 +729,12 @@
         <translation>Kaşif penceresini engelle</translation>
     </message>
     <message>
-        <source>Show the WISPR Core help message to get a list with possible WISPR command-line options</source>
-        <translation>Olası WISPR komut satırı seçeneklerine sahip bir liste almak için WISPR Core yardım mesajını gösterin</translation>
+        <source>Show the PIVX Core help message to get a list with possible PIVX command-line options</source>
+        <translation>Olası PIVX komut satırı seçeneklerine sahip bir liste almak için PIVX Core yardım mesajını gösterin</translation>
     </message>
     <message>
-        <source>WISPR Core client</source>
-        <translation>WISPR Core istemci</translation>
+        <source>PIVX Core client</source>
+        <translation>PIVX Core istemci</translation>
     </message>
     <message>
         <source>Synchronizing with network...</source>
@@ -786,7 +794,7 @@
     </message>
     <message>
         <source>Sent MultiSend transaction</source>
-        <translation>MultiSend işlemi gönderildi</translation>
+        <translation>ÇokluGönderi işlemi gönderildi</translation>
     </message>
     <message>
         <source>Date: %1
@@ -804,7 +812,7 @@ Adres: %4
         <source>Staking is active
  MultiSend: %1</source>
         <translation>Staking aktif
- Multisend: %1</translation>
+ ÇokluGönderi: %1</translation>
     </message>
     <message>
         <source>Active</source>
@@ -817,8 +825,8 @@ Adres: %4
     <message>
         <source>Staking is not active
  MultiSend: %1</source>
-        <translation>staking inaktif
- Multisend: %1</translation>
+        <translation>Staking etkin değildir
+ÇokluGönderi: %1</translation>
     </message>
     <message>
         <source>AutoMint is currently enabled and set to </source>
@@ -836,7 +844,7 @@ Adres: %4
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>Cüzdan&lt;b&gt;şifreli&lt;/b&gt;ve şu anda&lt;b&gt;kilitli&lt;/b&gt;</translation>
     </message>
-</context>
+    </context>
 <context>
     <name>BlockExplorer</name>
     <message>
@@ -864,8 +872,8 @@ Adres: %4
         <translation>TextLabel</translation>
     </message>
     <message>
-        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (wispr.conf).</source>
-        <translation>Tüm işlemler gösterilmez. Tüm işlemleri görmek için yapılandırma dosyasında txindex = 1 ayarlamanız gerekir (wispr.conf).
+        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (pivx.conf).</source>
+        <translation>Tüm işlemler gösterilmez. Tüm işlemleri görmek için yapılandırma dosyasında txindex = 1 ayarlamanız gerekir (pivx.conf).
 </translation>
     </message>
 </context>
@@ -1154,8 +1162,8 @@ Adres: %4
         <translation>Gönderen adresini düzenle</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid WISPR address.</source>
-        <translation>Girilen "%1" adresi geçerli bir WISPR adresi değil.</translation>
+        <source>The entered address "%1" is not a valid PIVX address.</source>
+        <translation>Girilen "%1" adresi geçerli bir PIVX adresi değil.</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book.</source>
@@ -1194,22 +1202,33 @@ Adres: %4
     </message>
 </context>
 <context>
+    <name>GovernancePage</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>0</source>
+        <translation>0</translation>
+    </message>
+    </context>
+<context>
     <name>HelpMessageDialog</name>
     <message>
         <source>version</source>
         <translation>versiyon</translation>
     </message>
     <message>
-        <source>WISPR Core</source>
-        <translation>WISPR CORE</translation>
+        <source>PIVX Core</source>
+        <translation>PIVX CORE</translation>
     </message>
     <message>
         <source>(%1-bit)</source>
         <translation>(%1-bit)</translation>
     </message>
     <message>
-        <source>About WISPR Core</source>
-        <translation>hakkında WISPR Core</translation>
+        <source>About PIVX Core</source>
+        <translation>hakkında PIVX Core</translation>
     </message>
     <message>
         <source>Command-line options</source>
@@ -1255,16 +1274,16 @@ Adres: %4
         <translation>Hoşgeldiniz</translation>
     </message>
     <message>
-        <source>Welcome to WISPR Core.</source>
-        <translation>WISPR Core'a hoşgeldiniz.</translation>
+        <source>Welcome to PIVX Core.</source>
+        <translation>PIVX Core'a hoşgeldiniz.</translation>
     </message>
     <message>
-        <source>As this is the first time the program is launched, you can choose where WISPR Core will store its data.</source>
-        <translation>Program ilk başlatıldığında WISPR Core'un verilerini nerede saklayacağını seçebilirsiniz.</translation>
+        <source>As this is the first time the program is launched, you can choose where PIVX Core will store its data.</source>
+        <translation>Program ilk başlatıldığında PIVX Core'un verilerini nerede saklayacağını seçebilirsiniz.</translation>
     </message>
     <message>
-        <source>WISPR Core will download and store a copy of the WISPR block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>WISPR Core, WISPR blok zincirinin bir kopyasını indirecek ve depolayacaktır. Bu dizinde en az %1GB veri saklanacak ve zamanla büyüyecek. Cüzdan ayrıca bu dizinde saklanır.</translation>
+        <source>PIVX Core will download and store a copy of the PIVX block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <translation>PIVX Core, PIVX blok zincirinin bir kopyasını indirecek ve depolayacaktır. Bu dizinde en az %1GB veri saklanacak ve zamanla büyüyecek. Cüzdan ayrıca bu dizinde saklanır.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -1275,8 +1294,8 @@ Adres: %4
         <translation>Özel bir veri dizini kullanın:</translation>
     </message>
     <message>
-        <source>WISPR Core</source>
-        <translation>WISPR CORE</translation>
+        <source>PIVX Core</source>
+        <translation>PIVX CORE</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -1402,7 +1421,7 @@ Adres: %4
     <name>MultiSendDialog</name>
     <message>
         <source>MultiSend</source>
-        <translation>MultiSend</translation>
+        <translation>ÇokluGönderi</translation>
     </message>
     <message>
         <source>Enter whole numbers 1 - 100</source>
@@ -1417,18 +1436,8 @@ Adres: %4
         <translation>Gönderim adresi girin</translation>
     </message>
     <message>
-        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other WISPR addresses after it matures.
-To Add: enter percentage to give and WISPR address to add to the MultiSend vector.
-To Delete: Enter address to delete and press delete.
-MultiSend will not be activated unless you have clicked Activate</source>
-        <translation>MultiSend, olgunlaştıktan sonra diğer WISPR adreslerinin bir listesine otomatik olarak kazancınızın 100% 'ünü veya grup yazınızı ödüllendirmenize olanak tanır.
-Eklemek için: Verilecek yüzdeyi ve MultiSend vektörüne eklemek için WISPR adresi girin.
-Silme: Silinecek adresi girin ve silmek için basın.
-MultiSend, Etkinleştir'i tıklamadığınız sürece etkinleştirilmeyecektir</translation>
-    </message>
-    <message>
         <source>Add to MultiSend Vector</source>
-        <translation>Ekle MultiSend Vector</translation>
+        <translation>ÇokluGönderi Vektörüne Ekle</translation>
     </message>
     <message>
         <source>Add</source>
@@ -1436,7 +1445,7 @@ MultiSend, Etkinleştir'i tıklamadığınız sürece etkinleştirilmeyecektir</
     </message>
     <message>
         <source>Deactivate MultiSend</source>
-        <translation>Deaktif et MultiSend</translation>
+        <translation>ÇokluGönderi'yi Etkisiz hale getir</translation>
     </message>
     <message>
         <source>Deactivate</source>
@@ -1476,7 +1485,7 @@ MultiSend, Etkinleştir'i tıklamadığınız sürece etkinleştirilmeyecektir</
     </message>
     <message>
         <source>Delete Address From MultiSend Vector</source>
-        <translation>MultiSend Vector den adresi sil</translation>
+        <translation>ÇokluGönderi Vektöründen Adresi Sil</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -1484,7 +1493,7 @@ MultiSend, Etkinleştir'i tıklamadığınız sürece etkinleştirilmeyecektir</
     </message>
     <message>
         <source>Activate MultiSend</source>
-        <translation>aktifle MultiSend</translation>
+        <translation>ÇokluGönderi'yi Etkinleştir</translation>
     </message>
     <message>
         <source>Activate</source>
@@ -1492,11 +1501,11 @@ MultiSend, Etkinleştir'i tıklamadığınız sürece etkinleştirilmeyecektir</
     </message>
     <message>
         <source>View MultiSend Vector</source>
-        <translation>GösterMultiSend Vector</translation>
+        <translation>ÇokluGönderi Vektörünü Görüntüle</translation>
     </message>
     <message>
         <source>View MultiSend</source>
-        <translation>Göster multisend</translation>
+        <translation>ÇokluGönderi'yi Görüntüle</translation>
     </message>
     <message>
         <source>Send For Stakes</source>
@@ -1511,42 +1520,42 @@ MultiSend, Etkinleştir'i tıklamadığınız sürece etkinleştirilmeyecektir</
         <translation>(etiket yok)</translation>
     </message>
     <message>
-        <source>The entered address:
-</source>
-        <translation>Girilen adres:
-</translation>
+        <source>MultiSend Active for Stakes and Masternode Rewards</source>
+        <translation>Masternode Ödülleri için ÇokluGönderi Etkinleştirilmiştir</translation>
     </message>
     <message>
-        <source> is invalid.
+        <source>MultiSend Active for Masternode Rewards</source>
+        <translation>Masternode Ödülleri için ÇokluGönderi Etkinleştirilmiştir</translation>
+    </message>
+    <message>
+        <source>MultiSend Not Active</source>
+        <translation>ÇokluGönderi Etkin değildir</translation>
+    </message>
+    <message>
+        <source>The entered address: %1 is invalid.
 Please check the address and try again.</source>
-        <translation>geçersiz.
-Lütfen adresi kontrol edin ve tekrar deneyin.</translation>
+        <translation>Girili adres: %1 geçersiz.
+Lütfen adresi kontrol ediniz ve tekrar deneyiniz.</translation>
     </message>
     <message>
-        <source>The total amount of your MultiSend vector is over 100% of your stake reward
-</source>
-        <translation> MultiSend vectorünüzün toplam miktarı stake ödülünün  100% ünden fazla 
-</translation>
+        <source>Removed %1</source>
+        <translation>Kaldırıldı %1</translation>
+    </message>
+    <message>
+        <source>Could not locate address</source>
+        <translation>Adres bulunamadı.</translation>
+    </message>
+    <message>
+        <source>MultiSend activated</source>
+        <translation>ÇokluGönderi geçerli hale getirildi</translation>
+    </message>
+    <message>
+        <source>First Address Not Valid</source>
+        <translation>İlk Adres Geçersiz</translation>
     </message>
     <message>
         <source>Please Enter 1 - 100 for percent.</source>
         <translation>Lütfen 1 - 100 arası yüzdelik miktarı girin</translation>
-    </message>
-    <message>
-        <source>MultiSend Vector
-</source>
-        <translation>MultiSend Vector
-</translation>
-    </message>
-    <message>
-        <source>Removed </source>
-        <translation>Silindi</translation>
-    </message>
-    <message>
-        <source>Could not locate address
-</source>
-        <translation>Adres bulunamıyor
-</translation>
     </message>
 </context>
 <context>
@@ -1644,8 +1653,8 @@ Unutmayın, cüzdan, yeni adresi içeren işlemleri bulmak için blok zinciri ye
         <translation>Address /miktar:</translation>
     </message>
     <message>
-        <source>Add destinations to send WSP to</source>
-        <translation>WSP göndermek için varış yerleri ekleyin</translation>
+        <source>Add destinations to send PIV to</source>
+        <translation>PIV göndermek için varış yerleri ekleyin</translation>
     </message>
     <message>
         <source>Add &amp;Destination</source>
@@ -1743,48 +1752,48 @@ Unutmayın, cüzdan, yeni adresi içeren işlemleri bulmak için blok zinciri ye
         <translation>Lütfen bir gizlilik düzeyi seçin.</translation>
     </message>
     <message>
-        <source>Use 2 separate masternodes to mix funds up to 10000 WSP</source>
-        <translation>10000 WSP'e kadar fonları karıştırmak için 2 ayrı matternod kullanın</translation>
+        <source>Use 2 separate masternodes to mix funds up to 10000 PIV</source>
+        <translation>10000 PIV'e kadar fonları karıştırmak için 2 ayrı matternod kullanın</translation>
     </message>
     <message>
-        <source>Use 8 separate masternodes to mix funds up to 10000 WSP</source>
-        <translation>10000 WSP'ye kadar olan fonları karıştırmak için 8 ayrı matternod kullanın</translation>
+        <source>Use 8 separate masternodes to mix funds up to 10000 PIV</source>
+        <translation>10000 PIV'ye kadar olan fonları karıştırmak için 8 ayrı matternod kullanın</translation>
     </message>
     <message>
         <source>Use 16 separate masternodes</source>
         <translation>16 ayrı matternod kullan</translation>
     </message>
     <message>
-        <source>This option is the quickest and will cost about ~0.025 WSP to anonymize 10000 WSP</source>
-        <translation>Bu seçenek en hızlıdır ve 10000 WSP'yi anonimleştirmek için ~ 0.025 WSP'lik bir maliyeti olacaktır</translation>
+        <source>This option is the quickest and will cost about ~0.025 PIV to anonymize 10000 PIV</source>
+        <translation>Bu seçenek en hızlıdır ve 10000 PIV'yi anonimleştirmek için ~ 0.025 PIV'lik bir maliyeti olacaktır</translation>
     </message>
     <message>
-        <source>This option is moderately fast and will cost about 0.05 WSP to anonymize 10000 WSP</source>
-        <translation>Bu seçenek orta derecede hızlıdır ve 10000 WSP'yi anonimleştirmek için yaklaşık 0.05 WSP'e mal olur</translation>
+        <source>This option is moderately fast and will cost about 0.05 PIV to anonymize 10000 PIV</source>
+        <translation>Bu seçenek orta derecede hızlıdır ve 10000 PIV'yi anonimleştirmek için yaklaşık 0.05 PIV'e mal olur</translation>
     </message>
     <message>
         <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
         <translation>Bu en yavaş ve en güvenli seçenektir. Maksimum anonimlik kullanmak maliyete gelecek</translation>
     </message>
     <message>
-        <source>0.1 WSP per 10000 WSP you anonymize.</source>
-        <translation>0.1 WSP her 10000 WSP anonimleştirmeye.</translation>
+        <source>0.1 PIV per 10000 PIV you anonymize.</source>
+        <translation>0.1 PIV her 10000 PIV anonimleştirmeye.</translation>
     </message>
     <message>
         <source>Obfuscation Configuration</source>
         <translation>Şaşırtma ayarlama</translation>
     </message>
     <message>
-        <source>Obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening WISPR's configuration screen.</source>
-        <translation>Şaşırtma başarıyla temele ayarlandı. (%1 ve  2 turlar) Bunu istediğiniz zaman değiştirmek için WISPR in ayarlar ekranını açmanız yeterli</translation>
+        <source>Obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening PIVX's configuration screen.</source>
+        <translation>Şaşırtma başarıyla temele ayarlandı. (%1 ve  2 turlar) Bunu istediğiniz zaman değiştirmek için PIVX in ayarlar ekranını açmanız yeterli</translation>
     </message>
     <message>
-        <source>Obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening WISPR's configuration screen.</source>
-        <translation>Şaşırtma başarıyla Yüksek e ayarlandı. (%1 ve 8 turlar) Bunu istediğiniz zaman değiştirmek için WISPR in ayarlar ekranını açmanız yeterli</translation>
+        <source>Obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening PIVX's configuration screen.</source>
+        <translation>Şaşırtma başarıyla Yüksek e ayarlandı. (%1 ve 8 turlar) Bunu istediğiniz zaman değiştirmek için PIVX in ayarlar ekranını açmanız yeterli</translation>
     </message>
     <message>
-        <source>Obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening WISPR's configuration screen.</source>
-        <translation>Şaşırtma başarıyla maksimuma ayarlandı. (%1 ve 16 turlar) Bunu istediğiniz zaman değiştirmek için WISPR in ayarlar ekranını açmanız yeterli</translation>
+        <source>Obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening PIVX's configuration screen.</source>
+        <translation>Şaşırtma başarıyla maksimuma ayarlandı. (%1 ve 16 turlar) Bunu istediğiniz zaman değiştirmek için PIVX in ayarlar ekranını açmanız yeterli</translation>
     </message>
 </context>
 <context>
@@ -1845,8 +1854,8 @@ Unutmayın, cüzdan, yeni adresi içeren işlemleri bulmak için blok zinciri ye
         <translation>Doğrulanmamış değişikliğin harcamasını devre dışı bırakırsanız, bir işlemdeki değişiklik&lt;br/&gt;Bu işlem en az bir onay alıncaya kadar kullanılamaz.&lt;br/&gt;Bu aynı zamanda bakiyenizin nasıl hesaplandığını etkiler.</translation>
     </message>
     <message>
-        <source>Automatically open the WISPR client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Yönelticideki WISPR istemci bağlantı noktasını otomatik olarak açın. Bu, yalnızca yönlendiriciniz UPnP'yi destekliyorsa ve etkinleştirilmişse çalışır.</translation>
+        <source>Automatically open the PIVX client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Yönelticideki PIVX istemci bağlantı noktasını otomatik olarak açın. Bu, yalnızca yönlendiriciniz UPnP'yi destekliyorsa ve etkinleştirilmişse çalışır.</translation>
     </message>
     <message>
         <source>Accept connections from outside</source>
@@ -1865,12 +1874,12 @@ Unutmayın, cüzdan, yeni adresi içeren işlemleri bulmak için blok zinciri ye
         <translation>Uzman</translation>
     </message>
     <message>
-        <source>Automatically start WISPR after logging in to the system.</source>
-        <translation>Sisteme giriş yaptıktan sonra otomatik olarak WISPR'i başlatın.</translation>
+        <source>Automatically start PIVX after logging in to the system.</source>
+        <translation>Sisteme giriş yaptıktan sonra otomatik olarak PIVX'i başlatın.</translation>
     </message>
     <message>
-        <source>&amp;Start WISPR on system login</source>
-        <translation>&amp; Sistem oturum açma işleminde WISPR'i başlat</translation>
+        <source>&amp;Start PIVX on system login</source>
+        <translation>&amp; Sistem oturum açma işleminde PIVX'i başlat</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
@@ -1897,42 +1906,46 @@ Unutmayın, cüzdan, yeni adresi içeren işlemleri bulmak için blok zinciri ye
         <translation>&amp;ağ</translation>
     </message>
     <message>
-        <source>The user interface language can be set here. This setting will take effect after restarting WISPR.</source>
-        <translation>Kullanıcı arabirimi dili burada ayarlanabilir. Bu ayar, WISPR yeniden başlatıldıktan sonra geçerli olur.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting PIVX.</source>
+        <translation>Kullanıcı arabirimi dili burada ayarlanabilir. Bu ayar, PIVX yeniden başlatıldıktan sonra geçerli olur.</translation>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/WisprProject/WisprProject-translations</source>
+https://www.transifex.com/pivx-project/pivx-project-translations</source>
         <translation>Dil eksik veya çeviri tamamlanmamış mı? Katkıda bulunan çevirilere yardımcı olun:
-https://www.transifex.com/WisprProject/WisprProject-translations</translation>
+https://www.transifex.com/pivx-project/pivx-project-translations</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
         <translation>Map port using &amp;UPnP</translation>
     </message>
     <message>
-        <source>Enable zWSP Automint</source>
-        <translation>zWSP Otomatik basımı etkinleştir</translation>
+        <source>Enable automatic minting of PIV units to zPIV</source>
+        <translation>PIV birimlerinin zPIV'e otomatik basımını ektinleştir</translation>
     </message>
     <message>
-        <source>Percentage of incoming WSP which get automatically converted to zWSP via Zerocoin Protocol (min: 10%)</source>
-        <translation>Zerocoin Protokolü üzerinden otomatik olarak zWSP'ye dönüştürülen gelen WSP yüzdesi (dakika: 10%)</translation>
+        <source>Enable zPIV Automint</source>
+        <translation>zPIV Otomatik basımı etkinleştir</translation>
     </message>
     <message>
-        <source>Percentage of autominted zWSP</source>
-        <translation>Otomatikleştirilmiş zWSP yüzdesi</translation>
+        <source>Percentage of incoming PIV which get automatically converted to zPIV via Zerocoin Protocol (min: 10%)</source>
+        <translation>Zerocoin Protokolü üzerinden otomatik olarak zPIV'ye dönüştürülen gelen PIV yüzdesi (dakika: 10%)</translation>
     </message>
     <message>
-        <source>Wait with automatic conversion to Zerocoin until enough WSP for this denomination is available</source>
-        <translation>Bu mezhebi için yeterli WSP bulunana kadar Zerocoin'e otomatik dönüşümle birlikte bekleyin</translation>
+        <source>Percentage of autominted zPIV</source>
+        <translation>Otomatikleştirilmiş zPIV yüzdesi</translation>
     </message>
     <message>
-        <source>Preferred Automint zWSP Denomination</source>
-        <translation>Tercih edilen Automint zWSP Nominal değeri</translation>
+        <source>Wait with automatic conversion to Zerocoin until enough PIV for this denomination is available</source>
+        <translation>Bu mezhebi için yeterli PIV bulunana kadar Zerocoin'e otomatik dönüşümle birlikte bekleyin</translation>
     </message>
     <message>
-        <source>Connect to the WISPR network through a SOCKS5 proxy.</source>
-        <translation>Bir SOCKS5 proxy vasıtasıyla WISPR ağına bağlanın.</translation>
+        <source>Preferred Automint zPIV Denomination</source>
+        <translation>Tercih edilen Automint zPIV Nominal değeri</translation>
+    </message>
+    <message>
+        <source>Connect to the PIVX network through a SOCKS5 proxy.</source>
+        <translation>Bir SOCKS5 proxy vasıtasıyla PIVX ağına bağlanın.</translation>
     </message>
     <message>
         <source>Proxy &amp;IP:</source>
@@ -2058,7 +2071,15 @@ https://www.transifex.com/WisprProject/WisprProject-translations</translation>
         <source>The supplied proxy address is invalid.</source>
         <translation>Verilen proxy adresi geçersiz.</translation>
     </message>
-    </context>
+    <message>
+        <source>The supplied proxy port is invalid.</source>
+        <translation>Verilen proxy port adresi geçersiz.</translation>
+    </message>
+    <message>
+        <source>The supplied proxy settings are invalid.</source>
+        <translation>Verilen proxy seçenekleri geçersiz.</translation>
+    </message>
+</context>
 <context>
     <name>OverviewPage</name>
     <message>
@@ -2078,8 +2099,8 @@ https://www.transifex.com/WisprProject/WisprProject-translations</translation>
         <translation>Toplam Bakiye, mevcut olmayan tüm paralar dahil.</translation>
     </message>
     <message>
-        <source>WSP Balance</source>
-        <translation>WSP Bakiyesi</translation>
+        <source>PIV Balance</source>
+        <translation>PIV Bakiyesi</translation>
     </message>
     <message>
         <source>Pending:</source>
@@ -2098,16 +2119,32 @@ https://www.transifex.com/WisprProject/WisprProject-translations</translation>
         <translation>Staklanmış veya masternod ödülleri henüz olgunlaşmamış</translation>
     </message>
     <message>
-        <source>Your current WISPR balance, unconfirmed and immature transactions included</source>
-        <translation>Güncel WISPR bakiyeniz, onaylanmamış ve olgunlaşmamış işlemler dahil</translation>
+        <source>Current locked balance in watch-only addresses</source>
+        <translation>Mevcut kilitli bakiye sadece görüntülenebilir adreslerde.</translation>
     </message>
     <message>
-        <source>zWSP Balance</source>
-        <translation>zWSP Bakiyesi</translation>
+        <source>Your current PIVX balance, unconfirmed and immature transactions included</source>
+        <translation>Güncel PIVX bakiyeniz, onaylanmamış ve olgunlaşmamış işlemler dahil</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the WISPR network after a connection is established, but this process has not completed yet.</source>
-        <translation>Görüntülenen bilgiler güncelliğini yitirmiş olabilir. Bir bağlantı kurulduktan sonra M-cüzdanınız otomatik olarak WISPR şebekesiyle senkronize edilir, ancak bu işlem henüz tamamlanmadı.</translation>
+        <source>zPIV Balance</source>
+        <translation>zPIV Bakiyesi</translation>
+    </message>
+    <message>
+        <source>Mature: more than 20 confirmation and more than 1 mint of the same denomination after it was minted.
+These zPIV are spendable.</source>
+        <translation>Olgun: basılmış olduktan sonra 20'den fazla onay alınmış ve aynı ölçü biriminden 1 kereden fazla basılmış.
+Bu zPIV ler harcanabilir.</translation>
+    </message>
+    <message>
+        <source>Unconfirmed: less than 20 confirmations
+Immature: confirmed, but less than 1 mint of the same denomination after it was minted</source>
+        <translation>Doğrulanmamış: 20'den az doğrulama
+Olgunlaşmamış: onaylandı, ancak basıldıktan sonra aynı ölçü biriminden 1 taneden daha az basım bulunmakta.</translation>
+    </message>
+    <message>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the PIVX network after a connection is established, but this process has not completed yet.</source>
+        <translation>Görüntülenen bilgiler güncelliğini yitirmiş olabilir. Bir bağlantı kurulduktan sonra M-cüzdanınız otomatik olarak PIVX şebekesiyle senkronize edilir, ancak bu işlem henüz tamamlanmadı.</translation>
     </message>
     <message>
         <source>OVERVIEW</source>
@@ -2150,8 +2187,8 @@ https://www.transifex.com/WisprProject/WisprProject-translations</translation>
         <translation>Harcanabilir:</translation>
     </message>
     <message>
-        <source>Locked WSP or Masternode collaterals. These are excluded from zWSP minting.</source>
-        <translation>Kilitli WSP veya Masternode teminatları. Bunlar zWSP matlaştırmadan çıkarılır.</translation>
+        <source>Locked PIV or Masternode collaterals. These are excluded from zPIV minting.</source>
+        <translation>Kilitli PIV veya Masternode teminatları. Bunlar zPIV matlaştırmadan çıkarılır.</translation>
     </message>
     <message>
         <source>Locked:</source>
@@ -2162,8 +2199,8 @@ https://www.transifex.com/WisprProject/WisprProject-translations</translation>
         <translation>onaylanmamış:</translation>
     </message>
     <message>
-        <source>Your current zWSP balance, unconfirmed and immature zWSP included.</source>
-        <translation>Güncel zWSP bakiyeniz, onaylanmamış ve olgunlaşmamış zWSP'ler dahil.</translation>
+        <source>Your current zPIV balance, unconfirmed and immature zPIV included.</source>
+        <translation>Güncel zPIV bakiyeniz, onaylanmamış ve olgunlaşmamış zPIV'ler dahil.</translation>
     </message>
     <message>
         <source>Recent transactions</source>
@@ -2174,10 +2211,10 @@ https://www.transifex.com/WisprProject/WisprProject-translations</translation>
         <translation>senkronizasyon dışı</translation>
     </message>
     <message>
-        <source>Current percentage of zWSP.
+        <source>Current percentage of zPIV.
 If AutoMint is enabled this percentage will settle around the configured AutoMint percentage (default = 10%).
 </source>
-        <translation>Mevcut zWSP yüzdesi.
+        <translation>Mevcut zPIV yüzdesi.
 AutoMint etkinleştirilirse, bu yüzde, yapılandırılmış AutoMint yüzdesi etrafında düzelir (varsayılan = 10%).
 </translation>
     </message>
@@ -2186,14 +2223,14 @@ AutoMint etkinleştirilirse, bu yüzde, yapılandırılmış AutoMint yüzdesi e
         <translation>AutoMint şu anda etkinleştirilmiş ve</translation>
     </message>
     <message>
-        <source>To disable AutoMint add 'enablezeromint=0' in wispr.conf.</source>
-        <translation>AutoMint kapatmak için ekle  'enablezeromint=0'  wispr.conf. dosyasına</translation>
+        <source>To disable AutoMint add 'enablezeromint=0' in pivx.conf.</source>
+        <translation>AutoMint kapatmak için ekle  'enablezeromint=0'  pivx.conf. dosyasına</translation>
     </message>
     <message>
         <source>AutoMint is currently disabled.
-To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in wispr.conf</source>
+To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in pivx.conf</source>
         <translation>AutoMint şu anda aktif değil.
- AutoMint aktive etmek için  değiştir 'enablezeromint=0' yazan kısmı 'enablezeromint=1' şeklinde wispr.conf dosyasında</translation>
+ AutoMint aktive etmek için  değiştir 'enablezeromint=0' yazan kısmı 'enablezeromint=1' şeklinde pivx.conf dosyasında</translation>
     </message>
 </context>
 <context>
@@ -2219,12 +2256,12 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in wispr.conf
         <translation>Geçersiz ödeme adresi %1</translation>
     </message>
     <message>
-        <source>Cannot start wispr: click-to-pay handler</source>
-        <translation>Wispr başlatılamıyor: tıkla ve ödeme işleyicisi</translation>
+        <source>Cannot start pivx: click-to-pay handler</source>
+        <translation>Pivx başlatılamıyor: tıkla ve ödeme işleyicisi</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid WISPR address or malformed URI parameters.</source>
-        <translation>URI ayrıştırılamaz! Bunun nedeni, geçersiz bir WISPR adresi veya hatalı biçimlendirilmiş URI parametrelerinden kaynaklanabilir.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid PIVX address or malformed URI parameters.</source>
+        <translation>URI ayrıştırılamaz! Bunun nedeni, geçersiz bir PIVX adresi veya hatalı biçimlendirilmiş URI parametrelerinden kaynaklanabilir.</translation>
     </message>
     <message>
         <source>Payment request file cannot be read! This can be caused by an invalid payment request file.</source>
@@ -2309,8 +2346,8 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in wispr.conf
         <translation>Zerocoin Actions:</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the WISPR network after a connection is established, but this process has not completed yet.</source>
-        <translation>Görüntülenen bilgiler güncelliğini yitirmiş olabilir. Bir bağlantı kurulduktan sonra M-cüzdanınız otomatik olarak WISPR şebekesiyle senkronize edilir, ancak bu işlem henüz tamamlanmadı.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the PIVX network after a connection is established, but this process has not completed yet.</source>
+        <translation>Görüntülenen bilgiler güncelliğini yitirmiş olabilir. Bir bağlantı kurulduktan sonra M-cüzdanınız otomatik olarak PIVX şebekesiyle senkronize edilir, ancak bu işlem henüz tamamlanmadı.</translation>
     </message>
     <message>
         <source>Mint Zerocoin</source>
@@ -2321,8 +2358,8 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in wispr.conf
         <translation>0</translation>
     </message>
     <message>
-        <source>zWSP</source>
-        <translation>zWSP</translation>
+        <source>zPIV</source>
+        <translation>zPIV</translation>
     </message>
     <message>
         <source>Available for minting are coins which are confirmed and not locked or Masternode collaterals.</source>
@@ -2333,8 +2370,8 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in wispr.conf
         <translation>Mintinge hazır</translation>
     </message>
     <message>
-        <source>0.000 000 00 WSP</source>
-        <translation>0.000 000 00 WSP</translation>
+        <source>0.000 000 00 PIV</source>
+        <translation>0.000 000 00 PIV</translation>
     </message>
     <message>
         <source>Reset Zerocoin Wallet DB. Deletes transactions that did not make it into the blockchain.</source>
@@ -2373,6 +2410,18 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in wispr.conf
         <translation>GİZLİLİK</translation>
     </message>
     <message>
+        <source>Enter an amount of Piv to convert to zPIV</source>
+        <translation>ZPiv'e dönüştürmek için bir miktar Piv girin</translation>
+    </message>
+    <message>
+        <source>zPIV Control</source>
+        <translation>zPIV Kontrolü</translation>
+    </message>
+    <message>
+        <source>zPIV Selected:</source>
+        <translation>zPiv Seçildi:</translation>
+    </message>
+    <message>
         <source>Quantity Selected:</source>
         <translation>Seçilen miktar:</translation>
     </message>
@@ -2385,44 +2434,32 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in wispr.conf
         <translation>Harca Zerocoin</translation>
     </message>
     <message>
-        <source>Available (mature and spendable) zWSP for spending</source>
-        <translation>Mevcut (olgun ve harcanabilir) harcama için zWSP</translation>
+        <source>Available (mature and spendable) zPIV for spending</source>
+        <translation>Mevcut (olgun ve harcanabilir) harcama için zPIV</translation>
     </message>
     <message>
         <source>Available Balance:</source>
         <translation>Kullanılabilir Bakiye:</translation>
     </message>
     <message>
-        <source>Available (mature and spendable) zWSP for spending
+        <source>Available (mature and spendable) zPIV for spending
 
-zWSP are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
-        <translation>Mevcut (olgun ve harcanabilir) harcama için zWSP
+zPIV are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
+        <translation>Mevcut (olgun ve harcanabilir) harcama için zPIV
 
-zWSP, 20'den fazla teyit bulunduğunda olgunlaşır ve bundan sonra aynı mezhepten 2 kat fazla darphane çekilir.</translation>
+zPIV, 20'den fazla teyit bulunduğunda olgunlaşır ve bundan sonra aynı mezhepten 2 kat fazla darphane çekilir.</translation>
     </message>
     <message>
-        <source>0 zWSP</source>
-        <translation>0 zWSP</translation>
-    </message>
-    <message>
-        <source>Security Level for Zerocoin Transactions. More is better, but needs more time and resources.</source>
-        <translation>Zerocoin İşlemleri için Güvenlik Seviyesi. Daha fazlası iyidir, ancak daha fazla zaman ve kaynak gerekmektedir.</translation>
-    </message>
-    <message>
-        <source>Security Level:</source>
-        <translation>Güvenlik seviyesi:</translation>
-    </message>
-    <message>
-        <source>Security Level 1 - 100 (default: 42)</source>
-        <translation>Güvenlik seviyesi 1 - 100 (varsayılan: 42)</translation>
+        <source>0 zPIV</source>
+        <translation>0 zPIV</translation>
     </message>
     <message>
         <source>Pay &amp;To:</source>
         <translation>şuna öde:</translation>
     </message>
     <message>
-        <source>The WISPR address to send the payment to. Creates local payment to yourself when empty.</source>
-        <translation>Ödemeyi göndermek için WISPR adresi. Boş olduğunda kendinize yerel ödeme oluşturur.</translation>
+        <source>The PIVX address to send the payment to. Creates local payment to yourself when empty.</source>
+        <translation>Ödemeyi göndermek için PIVX adresi. Boş olduğunda kendinize yerel ödeme oluşturur.</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2473,8 +2510,8 @@ zWSP, 20'den fazla teyit bulunduğunda olgunlaşır ve bundan sonra aynı mezhep
         <translation>Zerocoin durumu:</translation>
     </message>
     <message>
-        <source>Total Balance including unconfirmed and immature zWSP</source>
-        <translation>Doğrulanmamış ve olgunlaşmamış zWSP dahil toplam bakiye</translation>
+        <source>Total Balance including unconfirmed and immature zPIV</source>
+        <translation>Doğrulanmamış ve olgunlaşmamış zPIV dahil toplam bakiye</translation>
     </message>
     <message>
         <source>Total Zerocoin  Balance:</source>
@@ -2487,6 +2524,12 @@ zWSP, 20'den fazla teyit bulunduğunda olgunlaşır ve bundan sonra aynı mezhep
     <message>
         <source>Denom. with value 1:</source>
         <translation>Denom. değer 1 ile:</translation>
+    </message>
+    <message>
+        <source>Unconfirmed: less than 20 confirmations
+Immature: confirmed, but less than 1 mint of the same denomination after it was minted</source>
+        <translation>Doğrulanmamış: 20'den az doğrulama
+Olgunlaşmamış: onaylandı, ancak basıldıktan sonra aynı ölçü biriminden 1 basım daha az miktarda.</translation>
     </message>
     <message>
         <source>AutoMint Status</source>
@@ -2635,26 +2678,18 @@ Please be patient...</source>
 Lütfen sabırlı olun...</translation>
     </message>
     <message>
-        <source>Spending Zerocoin.
-Computationally expensive, might need several minutes depending on the selected Security Level and your hardware.
-Please be patient...</source>
-        <translation>Harcanıyor Zerocoin.
-Hesaplaması pahalı, biraz fazla  hardware. ve seçili güvenlik seviyesine bağlı olarak.
-Lütfen sabırlı olun...</translation>
-    </message>
-    <message>
         <source>) needed.
 Maximum allowed: </source>
         <translation>) gerekli.
 Maksimum bırakılan: </translation>
     </message>
     <message>
-        <source>zWSP is currently disabled due to maintenance.</source>
-        <translation>zWSP bakım nedeniyle şu an kullanıma kapalı.</translation>
+        <source>zPIV is currently disabled due to maintenance.</source>
+        <translation>zPIV bakım nedeniyle şu an kullanıma kapalı.</translation>
     </message>
     <message>
-        <source>zWSP is currently undergoing maintenance.</source>
-        <translation>zWSP halen bakım alıyor.</translation>
+        <source>zPIV is currently undergoing maintenance.</source>
+        <translation>zPIV halen bakım alıyor.</translation>
     </message>
     <message>
         <source>AutoMint Status:</source>
@@ -2677,8 +2712,8 @@ Maksimum bırakılan: </translation>
         <translation>Başarılı şekilde mint edildi</translation>
     </message>
     <message>
-        <source> zWSP in </source>
-        <translation> zWSP in </translation>
+        <source> zPIV in </source>
+        <translation> zPIV in </translation>
     </message>
     <message>
         <source> sec. Used denominations:
@@ -2705,8 +2740,8 @@ Maksimum bırakılan: </translation>
         <translation>Sağlanan 'Ödeme Yapmak İçin' adresi yok, yerel ödeme oluşturun</translation>
     </message>
     <message>
-        <source>Invalid Wispr Address</source>
-        <translation>Geçersiz Wispr Adresi</translation>
+        <source>Invalid Pivx Address</source>
+        <translation>Geçersiz Pivx Adresi</translation>
     </message>
     <message>
         <source>Invalid Send Amount</source>
@@ -2727,10 +2762,6 @@ Maksimum bırakılan: </translation>
     <message>
         <source> to a newly generated (unused and therefore anonymous) local address &lt;br /&gt;</source>
         <translation>yeni üretilen (kullanılmayan ve bu nedenle isimsiz) yerel adrese &lt;br /&gt;</translation>
-    </message>
-    <message>
-        <source>with Security Level </source>
-        <translation>Güvenlik seviyesi ile</translation>
     </message>
     <message>
         <source>Confirm send coins</source>
@@ -2784,14 +2815,17 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
     </message>
 </context>
 <context>
+    <name>ProposalFrame</name>
+    </context>
+<context>
     <name>QObject</name>
     <message>
         <source>Amount</source>
         <translation>Miktar</translation>
     </message>
     <message>
-        <source>Enter a WISPR address (e.g. %1)</source>
-        <translation>Gir bir WISPR addres (e.g. %1)</translation>
+        <source>Enter a PIVX address (e.g. %1)</source>
+        <translation>Gir bir PIVX addres (e.g. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -2833,7 +2867,11 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
         <source>%1 ms</source>
         <translation>%1 ms</translation>
     </message>
-</context>
+    <message>
+        <source>PIVX Core</source>
+        <translation>PIVX CORE</translation>
+    </message>
+    </context>
 <context>
     <name>QRImageWidget</name>
     <message>
@@ -2928,8 +2966,8 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
         <translation>Block chain</translation>
     </message>
     <message>
-        <source>Open the WISPR debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Geçerli veri dizininden WISPR hata ayıklama günlük dosyasını açın. Bu, büyük günlük dosyaları için birkaç saniye sürebilir.</translation>
+        <source>Open the PIVX debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Geçerli veri dizininden PIVX hata ayıklama günlük dosyasını açın. Bu, büyük günlük dosyaları için birkaç saniye sürebilir.</translation>
     </message>
     <message>
         <source>Number of Masternodes</source>
@@ -3112,8 +3150,8 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
         <translation>Dışa:</translation>
     </message>
     <message>
-        <source>Welcome to the WISPR RPC console.</source>
-        <translation>WISPR RPC konsola hoşgeldiniz</translation>
+        <source>Welcome to the PIVX RPC console.</source>
+        <translation>PIVX RPC konsola hoşgeldiniz</translation>
     </message>
     <message>
         <source>This will delete your local blockchain folders and the wallet will synchronize the complete Blockchain from scratch.&lt;br /&gt;&lt;br /&gt;</source>
@@ -3134,10 +3172,6 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
     <message>
         <source>Confirm resync Blockchain</source>
         <translation>Blockchaini resenkronize etmeyi onaylayın</translation>
-    </message>
-    <message>
-        <source>Use up and down arrows to navigate history, and &lt;b&gt;Ctrl-L&lt;/b&gt; to clear screen.</source>
-        <translation>Geçmişi görmek için ukarı ve aşağı okları kullanın, ve &lt;b&gt;Ctrl-L&lt;/b&gt; ekranı silmek için.</translation>
     </message>
     <message>
         <source>Type &lt;b&gt;help&lt;/b&gt; for an overview of available commands.</source>
@@ -3199,12 +3233,16 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
         <translation>Yeni alma adresi ile ilişkilendirilebilecek isteğe bağlı bir etiket.</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the WISPR network.</source>
-        <translation>Talep açıldığında görüntülenecek ödeme isteğine eklemek için isteğe bağlı bir mesaj. Not: Mesaj, ödemenin WISPR şebekesi üzerinden gönderilmeyecektir.</translation>
+        <source>A&amp;mount:</source>
+        <translation>Miktar:</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the WISPR network.</source>
-        <translation>Talep açıldığında görüntülenecek, ödeme isteğine eklemek için isteğe bağlı bir mesaj.&lt;br&gt;Not: Mesaj, ödemenin WISPR şebekesi üzerinden gönderilmeyecektir.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the PIVX network.</source>
+        <translation>Talep açıldığında görüntülenecek ödeme isteğine eklemek için isteğe bağlı bir mesaj. Not: Mesaj, ödemenin PIVX şebekesi üzerinden gönderilmeyecektir.</translation>
+    </message>
+    <message>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the PIVX network.</source>
+        <translation>Talep açıldığında görüntülenecek, ödeme isteğine eklemek için isteğe bağlı bir mesaj.&lt;br&gt;Not: Mesaj, ödemenin PIVX şebekesi üzerinden gönderilmeyecektir.</translation>
     </message>
     <message>
         <source>Use this form to request payments. All fields are &lt;b&gt;optional&lt;/b&gt;.</source>
@@ -3217,10 +3255,6 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
     <message>
         <source>An optional amount to request. Leave this empty or zero to not request a specific amount.</source>
         <translation>İsteğe bağlı olarak isteğe bağlı bir miktar. Belirli bir miktar talep etmemek için bu boş bırakın veya sıfırlayın.</translation>
-    </message>
-    <message>
-        <source>&amp;Amount:</source>
-        <translation>miktar:</translation>
     </message>
     <message>
         <source>&amp;Request payment</source>
@@ -3265,6 +3299,10 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
     <message>
         <source>Copy amount</source>
         <translation>Miktarı kopyala</translation>
+    </message>
+    <message>
+        <source>Copy address</source>
+        <translation>Adresi Kopyala</translation>
     </message>
 </context>
 <context>
@@ -3335,6 +3373,10 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
     <message>
         <source>Message</source>
         <translation>Mesaj</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>adres</translation>
     </message>
     <message>
         <source>Amount</source>
@@ -3428,8 +3470,8 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
         <translation>UTXO Boyutu:</translation>
     </message>
     <message>
-        <source>0 WSP</source>
-        <translation>0 WSP</translation>
+        <source>0 PIV</source>
+        <translation>0 PIV</translation>
     </message>
     <message>
         <source>Transaction Fee:</source>
@@ -3484,16 +3526,16 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
         <translation>Koinler otomatik seçildi</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uWSPs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uWSPs in fee,&lt;br /&gt;while "at least" pays 1000 uWSPs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Özel ücret 1000 uWSP olarak ayarlanmış ve işlem sadece 250 bayt ise, "kilobayt başına" ücret karşılığında yalnızca 250 uWSP öder,&lt;br /&gt;"en az" ise 1000 uWSP öder. Bir kilobayttan daha büyük işlemler için kilobayt ödersiniz.</translation>
+        <source>If the custom fee is set to 1000 uPIVs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uPIVs in fee,&lt;br /&gt;while "at least" pays 1000 uPIVs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>Özel ücret 1000 uPIV olarak ayarlanmış ve işlem sadece 250 bayt ise, "kilobayt başına" ücret karşılığında yalnızca 250 uPIV öder,&lt;br /&gt;"en az" ise 1000 uPIV öder. Bir kilobayttan daha büyük işlemler için kilobayt ödersiniz.</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uWSPs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uWSPs in fee,&lt;br /&gt;while "total at least" pays 1000 uWSPs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Özel ücret 1000 uWSP olarak ayarlanırsa ve işlem sadece 250 bayt ise, "kilobayt başına" ücret karşılığında yalnızca 250 uWSP ücreti verilir,&lt;br /&gt;"toplam en az" ise 1000 uWSP ödüyor. Bir kilobayttan daha büyük işlemler için kilobayt ödersiniz.</translation>
+        <source>If the custom fee is set to 1000 uPIVs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uPIVs in fee,&lt;br /&gt;while "total at least" pays 1000 uPIVs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>Özel ücret 1000 uPIV olarak ayarlanırsa ve işlem sadece 250 bayt ise, "kilobayt başına" ücret karşılığında yalnızca 250 uPIV ücreti verilir,&lt;br /&gt;"toplam en az" ise 1000 uPIV ödüyor. Bir kilobayttan daha büyük işlemler için kilobayt ödersiniz.</translation>
     </message>
     <message>
-        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for WISPR transactions than the network can process.</source>
-        <translation>Yalnızca minimum ücreti ödemek, işlem hacmi bloklardaki alana göre daha az olduğu sürece iyidir.&lt;br /&gt;Ancak, bunun, WISPR işlemleri için ağın işleyebileceğinden daha fazla talep olması durumunda, onaylama işleminde asla sonuçlanamayacağına dikkat edin.</translation>
+        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for PIVX transactions than the network can process.</source>
+        <translation>Yalnızca minimum ücreti ödemek, işlem hacmi bloklardaki alana göre daha az olduğu sürece iyidir.&lt;br /&gt;Ancak, bunun, PIVX işlemleri için ağın işleyebileceğinden daha fazla talep olması durumunda, onaylama işleminde asla sonuçlanamayacağına dikkat edin.</translation>
     </message>
     <message>
         <source>normal</source>
@@ -3540,8 +3582,8 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
         <translation>Alıcı ekle</translation>
     </message>
     <message>
-        <source>Anonymized WSP</source>
-        <translation>anonim edilmiş WSP</translation>
+        <source>Anonymized PIV</source>
+        <translation>anonim edilmiş PIV</translation>
     </message>
     <message>
         <source>Balance:</source>
@@ -3588,8 +3630,8 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
         <translation>Bloğu böl aygıtı multipl adresle çalışmaz Tekrar deneyin</translation>
     </message>
     <message>
-        <source>Warning: Invalid WISPR address</source>
-        <translation>Uyarı: Geçersiz WISPR adresi</translation>
+        <source>Warning: Invalid PIVX address</source>
+        <translation>Uyarı: Geçersiz PIVX adresi</translation>
     </message>
     <message>
         <source>%1 to %2</source>
@@ -3683,8 +3725,8 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
         <translation>şuna öde:</translation>
     </message>
     <message>
-        <source>The WISPR address to send the payment to</source>
-        <translation>Ödemeyi göndermek için WISPR adresi</translation>
+        <source>The PIVX address to send the payment to</source>
+        <translation>Ödemeyi göndermek için PIVX adresi</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -3723,8 +3765,8 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
         <translation>Mesaj:</translation>
     </message>
     <message>
-        <source>A message that was attached to the WISPR: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the WISPR network.</source>
-        <translation>WISPR e eklenmiş olan bir mesaj: İşleminizle beraber saklanacak olan URI hatırlamanız için. Not: Bu mesaj WISPR ağında yayınlanmayacak.</translation>
+        <source>A message that was attached to the PIVX: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the PIVX network.</source>
+        <translation>PIVX e eklenmiş olan bir mesaj: İşleminizle beraber saklanacak olan URI hatırlamanız için. Not: Bu mesaj PIVX ağında yayınlanmayacak.</translation>
     </message>
     <message>
         <source>This is an unverified payment request.</source>
@@ -3750,8 +3792,8 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <source>WISPR Core is shutting down...</source>
-        <translation>WISPR Core kapanıyor ...</translation>
+        <source>PIVX Core is shutting down...</source>
+        <translation>PIVX Core kapanıyor ...</translation>
     </message>
     <message>
         <source>Do not shut down the computer until this window disappears.</source>
@@ -3773,8 +3815,8 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
         <translation>Sahip olduğunuzu kanıtlamak için adreslerinizle mesaj imzalayabilirsiniz. Kimlik avı saldırıları sizi kimliğini onlara yazmaya kandırmaya çalışabilir, çünkü belirsiz bir şey imzalamamaya dikkat edin. Kabul ettiğiniz tamamen ayrıntılı ifadeleri yalnızca imzalayın.</translation>
     </message>
     <message>
-        <source>The WISPR address to sign the message with</source>
-        <translation>Ile mesaj imzalamak için WISPR adresi</translation>
+        <source>The PIVX address to sign the message with</source>
+        <translation>Ile mesaj imzalamak için PIVX adresi</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -3805,16 +3847,16 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
         <translation>Geçerli imzayı sistem panosuna kopyala</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this WISPR address</source>
-        <translation>Bu WISPR adresinin sahibi olduğunuzu kanıtlamak için mesajı imzala</translation>
+        <source>Sign the message to prove you own this PIVX address</source>
+        <translation>Bu PIVX adresinin sahibi olduğunuzu kanıtlamak için mesajı imzala</translation>
     </message>
     <message>
-        <source>The WISPR address the message was signed with</source>
-        <translation>Mesajın imzalandığı WISPR adresi</translation>
+        <source>The PIVX address the message was signed with</source>
+        <translation>Mesajın imzalandığı PIVX adresi</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified WISPR address</source>
-        <translation>Belirtilen WISPR adresi ile imzalanmış olduğundan emin olmak için iletiyi doğrulayın</translation>
+        <source>Verify the message to ensure it was signed with the specified PIVX address</source>
+        <translation>Belirtilen PIVX adresi ile imzalanmış olduğundan emin olmak için iletiyi doğrulayın</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -3900,8 +3942,8 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>WISPR Core</source>
-        <translation>WISPR CORE</translation>
+        <source>PIVX Core</source>
+        <translation>PIVX CORE</translation>
     </message>
     <message>
         <source>Version %1</source>
@@ -3918,10 +3960,6 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
     <message>
         <source>The PIVX Core developers</source>
         <translation>The PIVX Core developers</translation>
-    </message>
-    <message>
-        <source>The WISPR Core developers</source>
-        <translation>The WISPR Core developers</translation>
     </message>
     <message>
         <source>[testnet]</source>
@@ -4440,8 +4478,8 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
         <translation>Koinleri göder</translation>
     </message>
     <message>
-        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 WSP.</source>
-        <translation>SwiftX yüksek değerler göndermeyi desteklemiyor. İşlemler şu anda %1 WSP ile sınırlıdır.</translation>
+        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 PIV.</source>
+        <translation>SwiftX yüksek değerler göndermeyi desteklemiyor. İşlemler şu anda %1 PIV ile sınırlıdır.</translation>
     </message>
 </context>
 <context>
@@ -4468,7 +4506,7 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
     </message>
 </context>
 <context>
-    <name>ZWspControlDialog</name>
+    <name>ZPivControlDialog</name>
     <message>
         <source>Quantity</source>
         <translation>Adet</translation>
@@ -4478,20 +4516,16 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
         <translation>0</translation>
     </message>
     <message>
-        <source>zWSP</source>
-        <translation>zWSP</translation>
+        <source>zPIV</source>
+        <translation>zPIV</translation>
     </message>
     <message>
         <source>Select/Deselect All</source>
         <translation>Seç/Çıkar Hepsini</translation>
     </message>
-    <message>
-        <source>Is Spendable</source>
-        <translation>Harcanabilir</translation>
-    </message>
-</context>
+    </context>
 <context>
-    <name>wispr-core</name>
+    <name>pivx-core</name>
     <message>
         <source>(1 = keep tx meta data e.g. account owner and payment request information, 2 = drop tx meta data)</source>
         <translation>(1 = tx meta verileri, örneğin hesap sahibi ve ödeme talebi bilgileri, 2 = tx meta verileri bırak)</translation>
@@ -4517,8 +4551,8 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
         <translation>Hesaplanan akümülatör kontrol noktası, blok indeksiyle kaydedilen kontrol noktası değildir.</translation>
     </message>
     <message>
-        <source>Cannot obtain a lock on data directory %s. WISPR Core is probably already running.</source>
-        <translation>Veri dizini %s üzerinde bir kilit elde edemiyor. WISPR Core muhtemelen zaten çalışıyor.</translation>
+        <source>Cannot obtain a lock on data directory %s. PIVX Core is probably already running.</source>
+        <translation>Veri dizini %s üzerinde bir kilit elde edemiyor. PIVX Core muhtemelen zaten çalışıyor.</translation>
     </message>
     <message>
         <source>Change automatic finalized budget voting behavior. mode=auto: Vote for only exact finalized budget match to my generated budget. (string, default: auto)</source>
@@ -4569,12 +4603,12 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
         <translation>En iyi blok değiştirildiğinde komutu yürütün (cmd'deki %s yerine blok karması verilir)</translation>
     </message>
     <message>
-        <source>Fees (in WSP/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
-        <translation>Bundan daha küçük ücretler (WSP / Kb cinsinden), aktarma için sıfır ücret olarak kabul edilir (varsayılan: %s)</translation>
+        <source>Fees (in PIV/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
+        <translation>Bundan daha küçük ücretler (PIV / Kb cinsinden), aktarma için sıfır ücret olarak kabul edilir (varsayılan: %s)</translation>
     </message>
     <message>
-        <source>Fees (in WSP/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
-        <translation>Bundan daha küçük ücretler (WSP / Kb cinsinden), işlem yaratmada sıfır ücret olarak kabul edilir (varsayılan: %s)</translation>
+        <source>Fees (in PIV/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
+        <translation>Bundan daha küçük ücretler (PIV / Kb cinsinden), işlem yaratmada sıfır ücret olarak kabul edilir (varsayılan: %s)</translation>
     </message>
     <message>
         <source>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: %u)</source>

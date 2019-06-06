@@ -80,12 +80,12 @@
     </message>
     <message>
         <location line="+7"/>
-        <source>These are your WISPR addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your PIVX addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+4"/>
-        <source>These are your WISPR addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <source>These are your PIVX addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -221,7 +221,7 @@
     </message>
     <message>
         <location line="+9"/>
-        <source>WISPR will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your WSPs from being stolen by malware infecting your computer.</source>
+        <source>PIVX will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your PIVs from being stolen by malware infecting your computer.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -231,7 +231,7 @@
     </message>
     <message>
         <location line="+0"/>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR WSP&lt;/b&gt;!</source>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR PIV&lt;/b&gt;!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -326,12 +326,12 @@
     </message>
     <message>
         <location line="-424"/>
-        <source>Enter a WISPR Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
+        <source>Enter a PIVX Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+31"/>
-        <source>The WISPR address to encrypt</source>
+        <source>The PIVX address to encrypt</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -375,7 +375,7 @@
     </message>
     <message>
         <location line="+18"/>
-        <source>Encrypt the private key for this WISPR address</source>
+        <source>Encrypt the private key for this PIVX address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -516,7 +516,7 @@
 <context>
     <name>BitcoinGUI</name>
     <message>
-        <location filename="../bitcoingui.cpp" line="+122"/>
+        <location filename="../bitcoingui.cpp" line="+123"/>
         <source>Wallet</source>
         <translation>Wallet</translation>
     </message>
@@ -557,11 +557,21 @@
     </message>
     <message>
         <location line="+11"/>
-        <source>Privacy Actions for zWSP</source>
+        <source>Privacy Actions for zPIV</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+42"/>
+        <location line="+28"/>
+        <source>&amp;Governance</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Show Proposals</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+25"/>
         <source>E&amp;xit</source>
         <translation>E&amp;xit</translation>
     </message>
@@ -776,7 +786,7 @@
         <translation>&amp;Command-line options</translation>
     </message>
     <message numerus="yes">
-        <location line="+482"/>
+        <location line="+490"/>
         <source>Processed %n blocks of transaction history.</source>
         <translation>
             <numerusform>Processed %n block of transaction history.</numerusform>
@@ -794,7 +804,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+233"/>
+        <location line="+242"/>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt; for anonymization and staking only</source>
         <translation type="unfinished"></translation>
     </message>
@@ -804,7 +814,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-762"/>
+        <location line="-779"/>
         <source>&amp;File</source>
         <translation>&amp;File</translation>
     </message>
@@ -829,19 +839,19 @@
         <translation>Tabs toolbar</translation>
     </message>
     <message>
-        <location line="-436"/>
-        <location line="+918"/>
-        <source>WISPR Core</source>
+        <location line="-448"/>
+        <location line="+938"/>
+        <source>PIVX Core</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-722"/>
-        <source>Send coins to a WISPR address</source>
+        <location line="-742"/>
+        <source>Send coins to a PIVX address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+11"/>
-        <source>Request payments (generates QR codes and wispr: URIs)</source>
+        <source>Request payments (generates QR codes and pivx: URIs)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -860,28 +870,28 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+31"/>
-        <source>&amp;About WISPR Core</source>
+        <location line="+43"/>
+        <source>&amp;About PIVX Core</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Show information about WISPR Core</source>
+        <source>Show information about PIVX Core</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+6"/>
-        <source>Modify configuration options for WISPR</source>
+        <source>Modify configuration options for PIVX</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+16"/>
-        <source>Sign messages with your WISPR addresses to prove you own them</source>
+        <source>Sign messages with your PIVX addresses to prove you own them</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Verify messages to ensure they were signed with specified WISPR addresses</source>
+        <source>Verify messages to ensure they were signed with specified PIVX addresses</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -921,7 +931,7 @@
     </message>
     <message>
         <location line="+17"/>
-        <source>Open a WISPR: URI or payment request</source>
+        <source>Open a PIVX: URI or payment request</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -936,17 +946,17 @@
     </message>
     <message>
         <location line="+4"/>
-        <source>Show the WISPR Core help message to get a list with possible WISPR command-line options</source>
+        <source>Show the PIVX Core help message to get a list with possible PIVX command-line options</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+233"/>
-        <source>WISPR Core client</source>
+        <location line="+234"/>
+        <source>PIVX Core client</source>
         <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
-        <location line="+212"/>
-        <source>%n active connection(s) to WISPR network</source>
+        <location line="+219"/>
+        <source>%n active connection(s) to PIVX network</source>
         <translation type="unfinished">
             <numerusform></numerusform>
             <numerusform></numerusform>
@@ -1074,20 +1084,20 @@ Address: %4
 </translation>
     </message>
     <message>
-        <location line="+52"/>
+        <location line="+54"/>
         <source>Staking is active
  MultiSend: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+0"/>
-        <location line="+4"/>
+        <location line="+6"/>
         <source>Active</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-4"/>
-        <location line="+4"/>
+        <location line="-6"/>
+        <location line="+6"/>
         <source>Not Active</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1098,17 +1108,17 @@ Address: %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+12"/>
         <source>AutoMint is currently enabled and set to </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+5"/>
         <source>AutoMint is disabled</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+29"/>
+        <location line="+30"/>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</source>
         <translation>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</translation>
     </message>
@@ -1116,6 +1126,11 @@ Address: %4
         <location line="+20"/>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <location filename="../pivx.cpp" line="+478"/>
+        <source>A fatal error occurred. PIVX can no longer continue safely and will quit.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1152,7 +1167,7 @@ Address: %4
     </message>
     <message>
         <location filename="../blockexplorer.cpp" line="+480"/>
-        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (wispr.conf).</source>
+        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (pivx.conf).</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1452,7 +1467,7 @@ Address: %4
     </message>
     <message>
         <location line="+8"/>
-        <source>Can vary +/- %1 uwsp per input.</source>
+        <source>Can vary +/- %1 upiv per input.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1521,7 +1536,7 @@ Address: %4
     </message>
     <message>
         <location line="+67"/>
-        <source>The entered address &quot;%1&quot; is not a valid WISPR address.</source>
+        <source>The entered address &quot;%1&quot; is not a valid PIVX address.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1569,6 +1584,64 @@ Address: %4
     </message>
 </context>
 <context>
+    <name>GovernancePage</name>
+    <message>
+        <location filename="../forms/governancepage.ui" line="+14"/>
+        <source>Form</source>
+        <translation type="unfinished">Form</translation>
+    </message>
+    <message>
+        <location line="+59"/>
+        <source>GOVERNANCE</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+168"/>
+        <source>Update Proposals</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+33"/>
+        <source>Next super block:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <location line="+14"/>
+        <location line="+14"/>
+        <location line="+14"/>
+        <location line="+14"/>
+        <location line="+14"/>
+        <source>0</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-63"/>
+        <source>Blocks to next super block:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+14"/>
+        <source>Days to budget payout (estimate):</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+14"/>
+        <source>Allotted budget:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+14"/>
+        <source>Budget left:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+14"/>
+        <source>Masternodes count:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>HelpMessageDialog</name>
     <message>
         <location filename="../utilitydialog.cpp" line="+37"/>
@@ -1577,7 +1650,7 @@ Address: %4
     </message>
     <message>
         <location line="+0"/>
-        <source>WISPR Core</source>
+        <source>PIVX Core</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1588,7 +1661,7 @@ Address: %4
     </message>
     <message>
         <location line="+4"/>
-        <source>About WISPR Core</source>
+        <source>About PIVX Core</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1646,17 +1719,17 @@ Address: %4
     </message>
     <message>
         <location line="+9"/>
-        <source>Welcome to WISPR Core.</source>
+        <source>Welcome to PIVX Core.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+26"/>
-        <source>As this is the first time the program is launched, you can choose where WISPR Core will store its data.</source>
+        <source>As this is the first time the program is launched, you can choose where PIVX Core will store its data.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+10"/>
-        <source>WISPR Core will download and store a copy of the WISPR block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <source>PIVX Core will download and store a copy of the PIVX block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1671,7 +1744,7 @@ Address: %4
     </message>
     <message>
         <location filename="../intro.cpp" line="+77"/>
-        <source>WISPR Core</source>
+        <source>PIVX Core</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1847,8 +1920,8 @@ Address: %4
     </message>
     <message>
         <location line="-106"/>
-        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other WISPR addresses after it matures.
-To Add: enter percentage to give and WISPR address to add to the MultiSend vector.
+        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other PIVX addresses after it matures.
+To Add: enter percentage to give and PIVX address to add to the MultiSend vector.
 To Delete: Enter address to delete and press delete.
 MultiSend will not be activated unless you have clicked Activate</source>
         <translation type="unfinished"></translation>
@@ -2169,7 +2242,7 @@ Please be patient after clicking import.</source>
     </message>
     <message>
         <location line="+13"/>
-        <source>Add destinations to send WSP to</source>
+        <source>Add destinations to send PIV to</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2292,12 +2365,12 @@ Please be patient after clicking import.</source>
     </message>
     <message>
         <location line="+13"/>
-        <source>Use 2 separate masternodes to mix funds up to 10000 WSP</source>
+        <source>Use 2 separate masternodes to mix funds up to 10000 PIV</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+13"/>
-        <source>Use 8 separate masternodes to mix funds up to 10000 WSP</source>
+        <source>Use 8 separate masternodes to mix funds up to 10000 PIV</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2307,12 +2380,12 @@ Please be patient after clicking import.</source>
     </message>
     <message>
         <location line="+13"/>
-        <source>This option is the quickest and will cost about ~0.025 WSP to anonymize 10000 WSP</source>
+        <source>This option is the quickest and will cost about ~0.025 PIV to anonymize 10000 PIV</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+13"/>
-        <source>This option is moderately fast and will cost about 0.05 WSP to anonymize 10000 WSP</source>
+        <source>This option is moderately fast and will cost about 0.05 PIV to anonymize 10000 PIV</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2322,7 +2395,7 @@ Please be patient after clicking import.</source>
     </message>
     <message>
         <location line="+13"/>
-        <source>0.1 WSP per 10000 WSP you anonymize.</source>
+        <source>0.1 PIV per 10000 PIV you anonymize.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2334,17 +2407,17 @@ Please be patient after clicking import.</source>
     </message>
     <message>
         <location line="-27"/>
-        <source>Obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening WISPR&apos;s configuration screen.</source>
+        <source>Obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening PIVX&apos;s configuration screen.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+14"/>
-        <source>Obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening WISPR&apos;s configuration screen.</source>
+        <source>Obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening PIVX&apos;s configuration screen.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+14"/>
-        <source>Obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening WISPR&apos;s configuration screen.</source>
+        <source>Obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening PIVX&apos;s configuration screen.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2409,7 +2482,7 @@ Please be patient after clicking import.</source>
         <translation>(0 = auto, &lt;0 = leave that many cores free)</translation>
     </message>
     <message>
-        <location line="+115"/>
+        <location line="+132"/>
         <source>W&amp;allet</source>
         <translation>W&amp;allet</translation>
     </message>
@@ -2420,7 +2493,7 @@ Please be patient after clicking import.</source>
     </message>
     <message>
         <location line="+33"/>
-        <source>Automatically open the WISPR client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <source>Automatically open the PIVX client port on the router. This only works when your router supports UPnP and it is enabled.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2444,17 +2517,17 @@ Please be patient after clicking import.</source>
         <translation>Expert</translation>
     </message>
     <message>
-        <location line="-210"/>
-        <source>Automatically start WISPR after logging in to the system.</source>
+        <location line="-227"/>
+        <source>Automatically start PIVX after logging in to the system.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Start WISPR on system login</source>
+        <source>&amp;Start PIVX on system login</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+213"/>
+        <location line="+230"/>
         <source>Whether to show coin control features or not.</source>
         <translation>Whether to show coin control features or not.</translation>
     </message>
@@ -2485,13 +2558,13 @@ Please be patient after clicking import.</source>
     </message>
     <message>
         <location line="+192"/>
-        <source>The user interface language can be set here. This setting will take effect after restarting WISPR.</source>
+        <source>The user interface language can be set here. This setting will take effect after restarting PIVX.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+21"/>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/WisprProject/WisprProject-translations</source>
+https://www.transifex.com/pivx-project/pivx-project-translations</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2500,34 +2573,44 @@ https://www.transifex.com/WisprProject/WisprProject-translations</source>
         <translation>Map port using &amp;UPnP</translation>
     </message>
     <message>
-        <location line="-169"/>
-        <source>Enable automatic minting of WSP units to zWSP</source>
+        <location line="-184"/>
+        <source>Enable automatic minting of PIV units to zPIV</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+6"/>
-        <source>Enable zWSP Automint</source>
+        <source>Enable zPIV Automint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+9"/>
-        <source>Percentage of incoming WSP which get automatically converted to zWSP via Zerocoin Protocol (min: 10%)</source>
+        <location line="+7"/>
+        <source>Enable automatic zPIV minting from specific addresses</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Enable Automint Addresses</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>Percentage of incoming PIV which get automatically converted to zPIV via Zerocoin Protocol (min: 10%)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Percentage of autominted zWSP</source>
+        <source>Percentage of autominted zPIV</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+30"/>
         <location line="+16"/>
-        <source>Wait with automatic conversion to Zerocoin until enough WSP for this denomination is available</source>
+        <source>Wait with automatic conversion to Zerocoin until enough PIV for this denomination is available</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="-13"/>
-        <source>Preferred Automint zWSP Denomination</source>
+        <source>Preferred Automint zPIV Denomination</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2537,7 +2620,7 @@ https://www.transifex.com/WisprProject/WisprProject-translations</source>
     </message>
     <message>
         <location line="+98"/>
-        <source>Connect to the WISPR network through a SOCKS5 proxy.</source>
+        <source>Connect to the PIVX network through a SOCKS5 proxy.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2683,7 +2766,7 @@ https://www.transifex.com/WisprProject/WisprProject-translations</source>
         <translation>none</translation>
     </message>
     <message>
-        <location line="+96"/>
+        <location line="+98"/>
         <source>Confirm options reset</source>
         <translation>Confirm options reset</translation>
     </message>
@@ -2746,7 +2829,7 @@ https://www.transifex.com/WisprProject/WisprProject-translations</source>
     </message>
     <message>
         <location line="+71"/>
-        <source>WSP Balance</source>
+        <source>PIV Balance</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2778,19 +2861,19 @@ https://www.transifex.com/WisprProject/WisprProject-translations</source>
     <message>
         <location line="+16"/>
         <location line="+19"/>
-        <source>Your current WISPR balance, unconfirmed and immature transactions included</source>
+        <source>Your current PIVX balance, unconfirmed and immature transactions included</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+96"/>
-        <source>zWSP Balance</source>
+        <source>zPIV Balance</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+53"/>
         <location line="+17"/>
         <source>Mature: more than 20 confirmation and more than 1 mint of the same denomination after it was minted.
-These zWSP are spendable.</source>
+These zPIV are spendable.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2805,7 +2888,7 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
     <message>
         <location line="-725"/>
         <location line="+852"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the WISPR network after a connection is established, but this process has not completed yet.</source>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the PIVX network after a connection is established, but this process has not completed yet.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2863,7 +2946,7 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
     <message>
         <location line="+191"/>
         <location line="+19"/>
-        <source>Locked WSP or Masternode collaterals. These are excluded from zWSP minting.</source>
+        <source>Locked PIV or Masternode collaterals. These are excluded from zPIV minting.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2879,7 +2962,7 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
     <message>
         <location line="+58"/>
         <location line="+19"/>
-        <source>Your current zWSP balance, unconfirmed and immature zWSP included.</source>
+        <source>Your current zPIV balance, unconfirmed and immature zPIV included.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2895,7 +2978,7 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
     </message>
     <message>
         <location line="+111"/>
-        <source>Current percentage of zWSP.
+        <source>Current percentage of zPIV.
 If AutoMint is enabled this percentage will settle around the configured AutoMint percentage (default = 10%).
 </source>
         <translation type="unfinished"></translation>
@@ -2907,20 +2990,20 @@ If AutoMint is enabled this percentage will settle around the configured AutoMin
     </message>
     <message>
         <location line="+1"/>
-        <source>To disable AutoMint add &apos;enablezeromint=0&apos; in wispr.conf.</source>
+        <source>To disable AutoMint add &apos;enablezeromint=0&apos; in pivx.conf.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
         <source>AutoMint is currently disabled.
-To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1&apos; in wispr.conf</source>
+To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1&apos; in pivx.conf</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>PaymentServer</name>
     <message>
-        <location filename="../paymentserver.cpp" line="+292"/>
+        <location filename="../paymentserver.cpp" line="+291"/>
         <location line="+205"/>
         <location line="+33"/>
         <location line="+104"/>
@@ -2953,12 +3036,12 @@ To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1
     </message>
     <message>
         <location line="-104"/>
-        <source>Cannot start wispr: click-to-pay handler</source>
+        <source>Cannot start pivx: click-to-pay handler</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+110"/>
-        <source>URI cannot be parsed! This can be caused by an invalid WISPR address or malformed URI parameters.</source>
+        <source>URI cannot be parsed! This can be caused by an invalid PIVX address or malformed URI parameters.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3066,12 +3149,12 @@ To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1
     </message>
     <message>
         <location line="+10"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the WISPR network after a connection is established, but this process has not completed yet.</source>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the PIVX network after a connection is established, but this process has not completed yet.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+190"/>
-        <location filename="../privacydialog.cpp" line="+172"/>
+        <location filename="../privacydialog.cpp" line="+163"/>
         <location line="+112"/>
         <source>Mint Zerocoin</source>
         <translation type="unfinished"></translation>
@@ -3085,12 +3168,12 @@ To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1
     </message>
     <message>
         <location line="-371"/>
-        <location line="+651"/>
-        <source>zWSP</source>
+        <location line="+600"/>
+        <source>zPIV</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-644"/>
+        <location line="-593"/>
         <source>Available for minting are coins which are confirmed and not locked or Masternode collaterals.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3101,7 +3184,7 @@ To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1
     </message>
     <message>
         <location line="+19"/>
-        <source>0.000 000 00 WSP</source>
+        <source>0.000&#x2009;000&#x2009;00 PIV</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3152,17 +3235,17 @@ To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1
     <message>
         <location line="+308"/>
         <location line="+52"/>
-        <source>Enter an amount of Wsp to convert to zWSP</source>
+        <source>Enter an amount of Piv to convert to zPIV</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+301"/>
-        <source>zWSP Control</source>
+        <source>zPIV Control</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>zWSP Selected:</source>
+        <source>zPIV Selected:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3172,25 +3255,23 @@ To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1
     </message>
     <message>
         <location line="+37"/>
-        <location filename="../privacydialog.cpp" line="+563"/>
+        <location filename="../privacydialog.cpp" line="+542"/>
         <source>Spend Zerocoin. Without &apos;Pay To:&apos; address creates payments to yourself.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
-        <location filename="../privacydialog.cpp" line="-514"/>
+        <location filename="../privacydialog.cpp" line="-493"/>
         <location line="+4"/>
         <location line="+12"/>
-        <location line="+84"/>
-        <location line="+32"/>
-        <location line="+11"/>
+        <location line="+106"/>
         <location line="+4"/>
         <source>Spend Zerocoin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Available (mature and spendable) zWSP for spending</source>
+        <source>Available (mature and spendable) zPIV for spending</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3200,16 +3281,16 @@ To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1
     </message>
     <message>
         <location line="+16"/>
-        <source>Available (mature and spendable) zWSP for spending
+        <source>Available (mature and spendable) zPIV for spending
 
-zWSP are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
+zPIV are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="-548"/>
         <location line="+49"/>
         <location line="+504"/>
-        <location line="+421"/>
+        <location line="+370"/>
         <location line="+544"/>
         <location line="+31"/>
         <location line="+31"/>
@@ -3219,32 +3300,17 @@ zWSP are mature when they have more than 20 confirmations AND more than 2 mints 
         <location line="+31"/>
         <location line="+31"/>
         <location line="+31"/>
-        <source>0 zWSP</source>
+        <source>0 zPIV</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-1190"/>
-        <source>Security Level for Zerocoin Transactions. More is better, but needs more time and resources.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+6"/>
-        <source>Security Level:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+18"/>
-        <source>Security Level 1 - 100 (default: 42)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+40"/>
+        <location line="-1126"/>
         <source>Pay &amp;To:</source>
         <translation type="unfinished">Pay &amp;To:</translation>
     </message>
     <message>
         <location line="+27"/>
-        <source>The WISPR address to send the payment to. Creates local payment to yourself when empty.</source>
+        <source>The PIVX address to send the payment to. Creates local payment to yourself when empty.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3308,16 +3374,16 @@ zWSP are mature when they have more than 20 confirmations AND more than 2 mints 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-893"/>
+        <location line="-842"/>
         <location line="+25"/>
-        <location line="+936"/>
+        <location line="+885"/>
         <location line="+38"/>
-        <source>Total Balance including unconfirmed and immature zWSP</source>
+        <source>Total Balance including unconfirmed and immature zPIV</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-996"/>
-        <location line="+961"/>
+        <location line="-945"/>
+        <location line="+910"/>
         <source>Total Zerocoin  Balance:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3346,14 +3412,14 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
     </message>
     <message>
         <location line="+40"/>
-        <source>Show the current status of automatic zWSP minting.
+        <source>Show the current status of automatic zPIV minting.
 
 To change the status (restart required):
-- enable: add &apos;enablezeromint=1&apos; to wispr.conf
-- disable: add &apos;enablezeromint=0&apos; to wispr.conf
+- enable: add &apos;enablezeromint=1&apos; to pivx.conf
+- disable: add &apos;enablezeromint=0&apos; to pivx.conf
 
 To change the percentage (no restart required):
-- menu Settings-&gt;Options-&gt;Percentage of autominted zWSP
+- menu Settings-&gt;Options-&gt;Percentage of autominted zPIV
 
 </source>
         <translation type="unfinished"></translation>
@@ -3364,8 +3430,8 @@ To change the percentage (no restart required):
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-1410"/>
-        <location line="+1459"/>
+        <location line="-1359"/>
+        <location line="+1408"/>
         <source>Global Supply:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3422,8 +3488,8 @@ To change the percentage (no restart required):
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-1324"/>
-        <source>Show zWSP denominations list</source>
+        <location line="-1273"/>
+        <source>Show zPIV denominations list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3432,7 +3498,7 @@ To change the percentage (no restart required):
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+967"/>
+        <location line="+916"/>
         <source>Denominations with value 5:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3543,9 +3609,9 @@ To change the percentage (no restart required):
     </message>
     <message>
         <location line="+75"/>
-        <location filename="../privacydialog.cpp" line="-438"/>
+        <location filename="../privacydialog.cpp" line="-408"/>
         <location line="+1"/>
-        <location line="+545"/>
+        <location line="+515"/>
         <location line="+1"/>
         <source>Coins automatically selected</source>
         <translation type="unfinished"></translation>
@@ -3581,18 +3647,18 @@ To change the percentage (no restart required):
         <translation type="unfinished">Change:</translation>
     </message>
     <message>
-        <location filename="../privacydialog.cpp" line="-545"/>
+        <location filename="../privacydialog.cpp" line="-515"/>
         <source>out of sync</source>
         <translation type="unfinished">out of sync</translation>
     </message>
     <message>
         <location line="+6"/>
-        <location line="+129"/>
+        <location line="+120"/>
         <source>Mint Status: Okay</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-123"/>
+        <location line="-114"/>
         <source>Copy quantity</source>
         <translation type="unfinished">Copy quantity</translation>
     </message>
@@ -3602,32 +3668,25 @@ To change the percentage (no restart required):
         <translation type="unfinished">Copy amount</translation>
     </message>
     <message>
-        <location line="+192"/>
+        <location line="+183"/>
         <source>Starting ResetMintZerocoin: rescanning complete blockchain, this will need up to 30 minutes depending on your hardware.
 Please be patient...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+171"/>
-        <source>Spending Zerocoin.
-Computationally expensive, might need several minutes depending on the selected Security Level and your hardware.
-Please be patient...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+54"/>
+        <location line="+204"/>
         <source>) needed.
 Maximum allowed: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+34"/>
-        <source>zWSP Spend #: </source>
+        <source>zPIV Spend #: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+16"/>
-        <source>zWSP Mint</source>
+        <source>zPIV Mint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3648,17 +3707,17 @@ Maximum allowed: </source>
     <message>
         <location line="+12"/>
         <location line="+4"/>
-        <source>zWSP is currently disabled due to maintenance.</source>
+        <source>zPIV is currently disabled due to maintenance.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-666"/>
+        <location line="-645"/>
         <location line="+112"/>
-        <source>zWSP is currently undergoing maintenance.</source>
+        <source>zPIV is currently undergoing maintenance.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-221"/>
+        <location line="-212"/>
         <source>Denom. with value &lt;b&gt;1&lt;/b&gt;:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3699,12 +3758,12 @@ Maximum allowed: </source>
     </message>
     <message>
         <location line="+3"/>
-        <location line="+740"/>
+        <location line="+710"/>
         <source>AutoMint Status:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-737"/>
+        <location line="-707"/>
         <source>Denom. &lt;b&gt;1&lt;/b&gt;:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3744,7 +3803,7 @@ Maximum allowed: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+103"/>
+        <location line="+94"/>
         <source>Error: Your wallet is locked. Please enter the wallet passphrase first.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3765,7 +3824,7 @@ Maximum allowed: </source>
     </message>
     <message>
         <location line="+0"/>
-        <source> zWSP in </source>
+        <source> zPIV in </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3777,20 +3836,20 @@ Maximum allowed: </source>
     <message>
         <location line="+35"/>
         <location line="+15"/>
-        <location line="+260"/>
+        <location line="+239"/>
         <source>Duration: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-275"/>
+        <location line="-254"/>
         <location line="+15"/>
-        <location line="+260"/>
+        <location line="+239"/>
         <source> sec.
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-265"/>
+        <location line="-244"/>
         <source>Starting ResetSpentZerocoin: </source>
         <translation type="unfinished"></translation>
     </message>
@@ -3801,7 +3860,7 @@ Maximum allowed: </source>
     </message>
     <message>
         <location line="+4"/>
-        <source>Invalid Wispr Address</source>
+        <source>Invalid Pivx Address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3815,7 +3874,7 @@ Maximum allowed: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+25"/>
+        <location line="+21"/>
         <source>Are you sure you want to send?&lt;br /&gt;&lt;br /&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3830,34 +3889,17 @@ Maximum allowed: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+3"/>
-        <source>with Security Level </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+4"/>
+        <location line="+6"/>
         <source>Confirm send coins</source>
         <translation type="unfinished">Confirm send coins</translation>
     </message>
     <message>
-        <location line="+24"/>
-        <location line="+32"/>
-        <source>Version 1 zWSP require a security level of 100 to successfully spend.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-31"/>
-        <location line="+32"/>
-        <source>Failed to spend zWSP</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-25"/>
+        <location line="+23"/>
         <source>Failed to fetch mint associated with serial hash</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+33"/>
+        <location line="+26"/>
         <source>Too much inputs (</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3876,7 +3918,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message numerus="yes">
         <location line="+362"/>
         <source>PrivacyDialog</source>
-        <comment>Enter an amount of WSP to convert to zWSP</comment>
+        <comment>Enter an amount of PIV to convert to zPIV</comment>
         <translation type="unfinished">
             <numerusform></numerusform>
             <numerusform></numerusform>
@@ -3888,7 +3930,14 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="-73"/>
+        <source>Spending Zerocoin.
+Computationally expensive, might need several minutes depending on your hardware.
+Please be patient...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+74"/>
         <source>serial: </source>
         <translation type="unfinished"></translation>
     </message>
@@ -3924,6 +3973,90 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
 </context>
 <context>
+    <name>ProposalFrame</name>
+    <message>
+        <location filename="../proposalframe.cpp" line="+92"/>
+        <source>Open proposal page in browser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+16"/>
+        <source> remaining payment(s).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+14"/>
+        <source>Yes:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <source>Abstain:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <source>No:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+42"/>
+        <source>A proposal URL can be used for phishing, scams and computer viruses. Open this link only if you trust the following URL.
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Open link</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Copy link</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+50"/>
+        <source>Wallet Locked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>You must unlock your wallet to vote.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Do you want to vote %1 on</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>using all your masternodes?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Proposal Hash:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Proposal URL:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Confirm Vote</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+64"/>
+        <source>Vote Results</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>QObject</name>
     <message>
         <location filename="../bitcoinunits.cpp" line="+252"/>
@@ -3932,7 +4065,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location filename="../guiutil.cpp" line="+105"/>
-        <source>Enter a WISPR address (e.g. %1)</source>
+        <source>Enter a PIVX address (e.g. %1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3952,18 +4085,23 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+2"/>
-        <location line="+40"/>
+        <location line="+43"/>
         <source>%1 s</source>
         <translation>%1 s</translation>
     </message>
     <message>
-        <location line="-25"/>
+        <location line="-28"/>
         <source>NETWORK</source>
         <translation>NETWORK</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>BLOOM</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>ZK_BLOOM</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3985,6 +4123,39 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <location line="+0"/>
         <source>%1 ms</source>
         <translation>%1 ms</translation>
+    </message>
+    <message>
+        <location filename="../pivx.cpp" line="+75"/>
+        <location line="+7"/>
+        <location line="+13"/>
+        <location line="+19"/>
+        <source>PIVX Core</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-38"/>
+        <source>Error: Specified data directory &quot;%1&quot; does not exist.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Error: Cannot parse configuration file: %1. Only use key=value syntax.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+12"/>
+        <source>Error: Invalid combination of -regtest and -testnet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+20"/>
+        <source>Error reading masternode configuration file: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+40"/>
+        <source>PIVX Core didn&apos;t yet exit safely...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4135,7 +4306,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+79"/>
-        <source>Open the WISPR debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <source>Open the PIVX debug log file from the current data directory. This can take a few seconds for large log files.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4307,7 +4478,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+29"/>
-        <source>Custom zWSP Backup Path:</source>
+        <source>Custom zPIV Backup Path:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4407,7 +4578,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="-39"/>
-        <source>Welcome to the WISPR RPC console.</source>
+        <source>Welcome to the PIVX RPC console.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4592,7 +4763,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+26"/>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the WISPR network.</source>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the PIVX network.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4602,7 +4773,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+191"/>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the WISPR network.</source>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the PIVX network.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4900,12 +5071,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+7"/>
-        <source>0 WSP</source>
+        <source>0 PIV</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+167"/>
-        <source>SwiftX technology allows for near instant transactions - A flat fee of 0.01 WSP applies</source>
+        <source>SwiftX technology allows for near instant transactions - A flat fee of 0.01 PIV applies</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4975,18 +5146,18 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1062"/>
-        <source>If the custom fee is set to 1000 uWSPs and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 uWSPs in fee,&lt;br /&gt;while &quot;at least&quot; pays 1000 uWSPs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <source>If the custom fee is set to 1000 uPIVs and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 uPIVs in fee,&lt;br /&gt;while &quot;at least&quot; pays 1000 uPIVs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+16"/>
-        <source>If the custom fee is set to 1000 uWSPs and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 uWSPs in fee,&lt;br /&gt;while &quot;total at least&quot; pays 1000 uWSPs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <source>If the custom fee is set to 1000 uPIVs and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 uPIVs in fee,&lt;br /&gt;while &quot;total at least&quot; pays 1000 uPIVs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+33"/>
         <location line="+13"/>
-        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for WISPR transactions than the network can process.</source>
+        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for PIVX transactions than the network can process.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5046,7 +5217,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+35"/>
-        <source>Anonymized WSP</source>
+        <source>Anonymized PIV</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5106,7 +5277,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+653"/>
-        <source>Warning: Invalid WISPR address</source>
+        <source>Warning: Invalid PIVX address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5245,7 +5416,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+18"/>
-        <source>The WISPR address to send the payment to</source>
+        <source>The PIVX address to send the payment to</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5299,7 +5470,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+10"/>
-        <source>A message that was attached to the WISPR: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the WISPR network.</source>
+        <source>A message that was attached to the PIVX: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the PIVX network.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5334,7 +5505,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <name>ShutdownWindow</name>
     <message>
         <location filename="../utilitydialog.cpp" line="+75"/>
-        <source>WISPR Core is shutting down...</source>
+        <source>PIVX Core is shutting down...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5362,7 +5533,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+15"/>
-        <source>The WISPR address to sign the message with</source>
+        <source>The PIVX address to sign the message with</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5404,17 +5575,17 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+18"/>
-        <source>Sign the message to prove you own this WISPR address</source>
+        <source>Sign the message to prove you own this PIVX address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+103"/>
-        <source>The WISPR address the message was signed with</source>
+        <source>The PIVX address the message was signed with</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+34"/>
-        <source>Verify the message to ensure it was signed with the specified WISPR address</source>
+        <source>Verify the message to ensure it was signed with the specified PIVX address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5529,7 +5700,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <name>SplashScreen</name>
     <message>
         <location filename="../splashscreen.cpp" line="+36"/>
-        <source>WISPR Core</source>
+        <source>PIVX Core</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5549,12 +5720,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1"/>
-        <source>The WISPR Core developers</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>The WISPR Core developers</source>
+        <source>The PIVX Core developers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5931,12 +6097,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+7"/>
-        <source>WSP Stake</source>
+        <source>PIV Stake</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>zWSP Stake</source>
+        <source>zPIV Stake</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5961,37 +6127,37 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+4"/>
-        <source>Converted WSP to zWSP</source>
+        <source>Converted PIV to zPIV</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Spent zWSP</source>
+        <source>Spent zPIV</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Received WSP from zWSP</source>
+        <source>Received PIV from zPIV</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Minted Change as zWSP from zWSP Spend</source>
+        <source>Minted Change as zPIV from zPIV Spend</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Converted zWSP to WSP</source>
+        <source>Converted zPIV to PIV</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+56"/>
-        <source>Anonymous (zWSP Transaction)</source>
+        <source>Anonymous (zPIV Transaction)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Anonymous (zWSP Stake)</source>
+        <source>Anonymous (zPIV Stake)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6260,12 +6426,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="-310"/>
-        <source>Received WSP from zWSP</source>
+        <source>Received PIV from zPIV</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Zerocoin Spend, Change in zWSP</source>
+        <source>Zerocoin Spend, Change in zPIV</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6312,14 +6478,14 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <location line="-18"/>
         <location line="+9"/>
-        <source>SwiftX doesn&apos;t support sending values that high yet. Transactions are currently limited to %1 WSP.</source>
+        <source>SwiftX doesn&apos;t support sending values that high yet. Transactions are currently limited to %1 PIV.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>WalletView</name>
     <message>
-        <location filename="../walletview.cpp" line="+63"/>
+        <location filename="../walletview.cpp" line="+64"/>
         <source>HISTORY</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6339,7 +6505,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Selected amount:</translation>
     </message>
     <message>
-        <location line="+257"/>
+        <location line="+265"/>
         <source>Backup Wallet</source>
         <translation>Backup Wallet</translation>
     </message>
@@ -6350,10 +6516,10 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
 </context>
 <context>
-    <name>ZWspControlDialog</name>
+    <name>ZPivControlDialog</name>
     <message>
-        <location filename="../forms/zwspcontroldialog.ui" line="+20"/>
-        <source>Select zWSP to Spend</source>
+        <location filename="../forms/zpivcontroldialog.ui" line="+20"/>
+        <source>Select zPIV to Spend</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6369,7 +6535,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="-7"/>
-        <source>zWSP</source>
+        <source>zPIV</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6378,15 +6544,15 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+74"/>
-        <source>Is Spendable</source>
+        <location line="+79"/>
+        <source>Spendable?</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
-    <name>wispr-core</name>
+    <name>pivx-core</name>
     <message>
-        <location filename="../wisprstrings.cpp" line="+15"/>
+        <location filename="../pivxstrings.cpp" line="+15"/>
         <source>(1 = keep tx meta data e.g. account owner and payment request information, 2 = drop tx meta data)</source>
         <translation type="unfinished">(1 = keep tx meta data e.g. account owner and payment request information, 2 = drop tx meta data)</translation>
     </message>
@@ -6417,7 +6583,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+2"/>
-        <source>Cannot obtain a lock on data directory %s. WISPR Core is probably already running.</source>
+        <source>Cannot obtain a lock on data directory %s. PIVX Core is probably already running.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6452,17 +6618,22 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+5"/>
-        <source>Enable automatic wallet backups triggered after each zWSP minting (0-1, default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Enable or disable staking functionality for WSP inputs (0-1, default: %u)</source>
+        <source>Enable automatic Zerocoin minting from specific addresses (0-1, default: %u)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Enable or disable staking functionality for zWSP inputs (0-1, default: %u)</source>
+        <source>Enable automatic wallet backups triggered after each zPIV minting (0-1, default: %u)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Enable or disable staking functionality for PIV inputs (0-1, default: %u)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Enable or disable staking functionality for zPIV inputs (0-1, default: %u)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6507,12 +6678,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+8"/>
-        <source>Fees (in WSP/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
+        <source>Fees (in PIV/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Fees (in WSP/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
+        <source>Fees (in PIV/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6562,11 +6733,21 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+3"/>
+        <source>Maximum average size of an index occurrence in the block spam filter (default: %u)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
         <source>Maximum size of data in data carrier transactions we relay and mine (default: %u)</source>
         <translation type="unfinished">Maximum size of data in data carrier transactions we relay and mine (default: %u)</translation>
     </message>
     <message>
         <location line="+3"/>
+        <source>Maximum size of the list of indexes in the block spam filter (default: %u)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
         <source>Maximum total fees to use in a single wallet transaction, setting too low may abort large transactions (default: %s)</source>
         <translation type="unfinished">Maximum total fees to use in a single wallet transaction, setting too low may abort large transactions (default: %s)</translation>
     </message>
@@ -6612,6 +6793,11 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+2"/>
+        <source>Set the number of included blocks to precompute per cycle. (minimum: %d) (maximum: %d) (default: %d)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
         <source>Set the number of script verification threads (%u to %d, 0 = auto, &lt;0 = leave that many cores free, default: %d)</source>
         <translation type="unfinished">Set the number of script verification threads (%u to %d, 0 = auto, &lt;0 = leave that many cores free, default: %d)</translation>
     </message>
@@ -6631,6 +6817,11 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location line="+5"/>
+        <source>The block database contains a block which appears to be from the future. This may be due to your computer&apos;s date and time being set incorrectly. Only rebuild the block database if you are sure that your computer&apos;s date and time are correct</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location line="+8"/>
         <source>This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit &lt;https://www.openssl.org/&gt; and cryptographic software written by Eric Young and UPnP software written by Thomas Bernard.</source>
         <translation type="unfinished">This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit &lt;https://www.openssl.org/&gt; and cryptographic software written by Eric Young and UPnP software written by Thomas Bernard.</translation>
@@ -6642,7 +6833,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+3"/>
-        <source>Unable to bind to %s on this computer. WISPR Core is probably already running.</source>
+        <source>Unable to bind to %s on this computer. PIVX Core is probably already running.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6652,12 +6843,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+2"/>
-        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 WSP.</source>
+        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 PIV.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Unable to locate enough funds for this transaction that are not equal 10000 WSP.</source>
+        <source>Unable to locate enough funds for this transaction that are not equal 10000 PIV.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6677,7 +6868,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+3"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong WISPR Core will not work properly.</source>
+        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong PIVX Core will not work properly.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6717,8 +6908,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+3"/>
-        <source>(17000 could be used only on mainnet)</source>
-        <translation type="unfinished">(17000 could be used only on mainnet)</translation>
+        <source>(51472 could be used only on mainnet)</source>
+        <translation type="unfinished">(51472 could be used only on mainnet)</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -6732,7 +6923,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1"/>
-        <source>(must be 17000 for mainnet)</source>
+        <source>(must be 51472 for mainnet)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6754,6 +6945,11 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <location line="+1"/>
         <source>Add a node to connect to and attempt to keep the connection open</source>
         <translation type="unfinished">Add a node to connect to and attempt to keep the connection open</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Adding Wrapped Serials supply...</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
@@ -6837,6 +7033,11 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+2"/>
+        <source>CoinSpend: failed check</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source>Collateral not valid.</source>
         <translation type="unfinished">Collateral not valid.</translation>
     </message>
@@ -6872,12 +7073,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1"/>
-        <source>Copyright (C) 2015-%i The WISPR Core Developers</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Copyright (C) 2017-%i The WISPR Core Developers</source>
+        <source>Copyright (C) 2015-%i The PIVX Core Developers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6889,6 +7085,11 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <location line="+1"/>
         <source>Could not parse masternode.conf</source>
         <translation type="unfinished">Could not parse masternode.conf</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Couldn&apos;t generate the accumulator witness</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
@@ -6933,6 +7134,11 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <location line="+1"/>
         <source>Enable automatic Zerocoin minting (0-1, default: %u)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Enable precomputation of zPIV spends and stakes (0-1, default %u)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6987,7 +7193,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of WISPR Core</source>
+        <source>Error loading wallet.dat: Wallet requires newer version of PIVX Core</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7051,7 +7257,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+3"/>
         <source>Failed to listen on any port. Use -listen=0 if you want this.</source>
         <translation type="unfinished">Failed to listen on any port. Use -listen=0 if you want this.</translation>
     </message>
@@ -7067,7 +7273,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+4"/>
-        <source>Fee (in WSP/kB) to add to transactions you send (default: %s)</source>
+        <source>Fee (in PIV/kB) to add to transactions you send (default: %s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7142,7 +7348,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1"/>
-        <source>Initialization sanity check failed. WISPR Core is shutting down.</source>
+        <source>Initialization sanity check failed. PIVX Core is shutting down.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7231,8 +7437,23 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+9"/>
-        <source>Reindex the WSP and zWSP money supply statistics</source>
+        <location line="+8"/>
+        <source>Recalculating PIV supply...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Recalculating minted ZPIV...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Recalculating spent ZPIV...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Reindex the PIV and zPIV money supply statistics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7252,16 +7473,21 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+32"/>
+        <source>Support the zerocoin light node protocol (default: %u)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source>SwiftX options:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-274"/>
+        <location line="-281"/>
         <source>This is a pre-release test build - use at your own risk - do not use for staking or merchant applications!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-175"/>
+        <location line="-190"/>
         <source> mints deleted
 </source>
         <translation type="unfinished"></translation>
@@ -7279,7 +7505,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+38"/>
-        <source>Disable all WISPR specific functionality (Masternodes, Zerocoin, SwiftX, Budgeting) (0-1, default: %u)</source>
+        <source>Disable all PIVX specific functionality (Masternodes, Zerocoin, SwiftX, Budgeting) (0-1, default: %u)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7288,7 +7514,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="+20"/>
         <source>Error: The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7318,13 +7544,13 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+32"/>
+        <location line="+37"/>
         <source>Preferred Denomination for automatically minted Zerocoin  (1/5/10/50/100/500/1000/5000), 0 for no preference. default: %u)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+24"/>
-        <source>Specify custom backup path to add a copy of any automatic zWSP backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup. If backuppath is set as well, 4 backups will happen</source>
+        <location line="+27"/>
+        <source>Specify custom backup path to add a copy of any automatic zPIV backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup. If backuppath is set as well, 4 backups will happen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7338,12 +7564,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+61"/>
+        <location line="+66"/>
         <source>&lt;category&gt; can be:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+10"/>
         <source>Attempt to force blockchain corruption recovery</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7353,7 +7579,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+16"/>
+        <location line="+18"/>
         <source>Display the stake modifier calculations in the debug.log file.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7363,7 +7589,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+6"/>
         <source>Enable publish hash block in &lt;address&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7400,11 +7626,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <location line="+5"/>
         <source>Failed to create mint</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Failed to deserialize</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7668,12 +7889,22 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished">Password for JSON-RPC connections</translation>
     </message>
     <message>
-        <location line="+122"/>
+        <location line="+98"/>
+        <source>Use block spam filter (default: %u)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+25"/>
+        <source>could not get lock on cs_spendcache</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source>isValid(): Invalid -proxy address or hostname: &apos;%s&apos;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-120"/>
+        <location line="-122"/>
         <source>Preparing for resync...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7708,7 +7939,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished">Rebuild block chain index from current blk000??.dat files</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+4"/>
         <source>Receive and display P2P network alerts (default: %u)</source>
         <translation type="unfinished">Receive and display P2P network alerts (default: %u)</translation>
     </message>
@@ -7913,7 +8144,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished">Submitted to masternode, waiting in queue %s</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+3"/>
         <source>Synchronization failed</source>
         <translation type="unfinished">Synchronization failed</translation>
     </message>
@@ -7949,22 +8180,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1"/>
-        <source>Syncing zWSP wallet...</source>
+        <source>Syncing zPIV wallet...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
         <source>The coin spend has been used</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>The new spend coin transaction did not verify</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>The selected mint coin is an invalid coin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -8064,11 +8285,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1"/>
-        <source>Try to spend with a higher security level to include more coins</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Trying to spend an already spent serial #, try again.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8123,7 +8339,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>Use the test network</source>
         <translation type="unfinished">Use the test network</translation>
     </message>
@@ -8139,7 +8355,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1"/>
-        <source>Value is below the smallest available denomination (= 1) of zWSP</source>
+        <source>Value is below the smallest available denomination (= 1) of zPIV</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -8159,11 +8375,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1"/>
-        <source>Version 1 zWSP require a security level of 100 to successfully spend.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Wallet %s resides outside data directory %s</source>
         <translation type="unfinished">Wallet %s resides outside data directory %s</translation>
     </message>
@@ -8174,7 +8385,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1"/>
-        <source>Wallet needed to be rewritten: restart WISPR Core to complete</source>
+        <source>Wallet needed to be rewritten: restart PIVX Core to complete</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -8248,7 +8459,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+3"/>
         <source>on startup</source>
         <translation type="unfinished">on startup</translation>
     </message>

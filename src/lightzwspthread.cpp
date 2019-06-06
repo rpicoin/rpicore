@@ -54,7 +54,6 @@ void CLightWorker::ThreadLightZWSPSimplified() {
                                 genWit.getFilter(),
                                 accumulator,
                                 witness,
-                                100,
                                 nMintsAdded,
                                 strFailReason,
                                 ret,

@@ -127,6 +127,23 @@ public:
     int Zerocoin_RequiredStakeDepth() const { return consensus.nZerocoinRequiredStakeDepth; }
 
     /** Height or Time Based Activations **/
+    int ModifierUpgradeBlock() const { return nModifierUpdateBlock; }
+    int LAST_POW_BLOCK() const { return nLastPOWBlock; }
+    int Zerocoin_StartHeight() const { return nZerocoinStartHeight; }
+    int Zerocoin_Block_EnforceSerialRange() const { return nBlockEnforceSerialRange; }
+    int Zerocoin_Block_RecalculateAccumulators() const { return nBlockRecalculateAccumulators; }
+    int Zerocoin_Block_FirstFraudulent() const { return nBlockFirstFraudulent; }
+    int Zerocoin_Block_LastGoodCheckpoint() const { return nBlockLastGoodCheckpoint; }
+    int Zerocoin_StartTime() const { return nZerocoinStartTime; }
+    int Block_Enforce_Invalid() const { return nBlockEnforceInvalidUTXO; }
+    int Zerocoin_Block_V2_Start() const { return nBlockZerocoinV2; }
+
+    // fake serial attack
+    int Zerocoin_Block_EndFakeSerial() const { return nFakeSerialBlockheightEnd; }
+    CAmount GetSupplyBeforeFakeSerial() const { return nSupplyBeforeFakeSerial; }
+
+    int Zerocoin_Block_Double_Accumulated() const { return nBlockDoubleAccumulated; }
+    CAmount InvalidAmountFiltered() const { return nInvalidAmountFiltered; };
     int LAST_POW_BLOCK() const { return consensus.nLastPOWBlock; }
     int NEW_PROTOCOLS_STARTHEIGHT() const { return consensus.nNewProtocolStartHeight; }
     int NEW_PROTOCOLS_STARTTIME() const { return consensus.nNewProtocolStartTime; }
@@ -153,6 +170,43 @@ protected:
     bool fMineBlocksOnDemand;
     bool fTestnetToBeDeprecatedFieldRPC;
     bool fHeadersFirstSyncingActive;
+
+    int nBlockDoubleAccumulated;
+
+    // fake serial attack
+    int nFakeSerialBlockheightEnd = 0;
+    CAmount nSupplyBeforeFakeSerial = 0;
+    int nPoolMaxTransactions;
+    std::string strSporkKey;
+    std::string strSporkKeyOld;
+    int64_t nEnforceNewSporkKey;
+    int64_t nRejectOldSporkKey;
+    std::string strObfuscationPoolDummyAddress;
+    int64_t nStartMasternodePayments;
+    std::string zerocoinModulus;
+    int nMaxZerocoinSpendsPerTransaction;
+    CAmount nMinZerocoinMintFee;
+    CAmount nInvalidAmountFiltered;
+    int nMintRequiredConfirmations;
+    int nRequiredAccumulation;
+    int nDefaultSecurityLevel;
+    int nZerocoinHeaderVersion;
+    int64_t nBudget_Fee_Confirmations;
+    int nZerocoinStartHeight;
+    int nZerocoinStartTime;
+    int nZerocoinRequiredStakeDepth;
+
+    int nBlockEnforceSerialRange;
+    int nBlockRecalculateAccumulators;
+    int nBlockFirstFraudulent;
+    int nBlockLastGoodCheckpoint;
+    int nBlockEnforceInvalidUTXO;
+    int nBlockZerocoinV2;
+    int nBlockDoubleAccumulated;
+
+    // fake serial attack
+    int nFakeSerialBlockheightEnd = 0;
+    CAmount nSupplyBeforeFakeSerial = 0;
 };
 
 /**

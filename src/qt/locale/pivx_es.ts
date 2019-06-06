@@ -62,12 +62,12 @@
         <translation>Direcciones de recepción</translation>
     </message>
     <message>
-        <source>These are your WISPR addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Estas son sus direcciones WISPR para realizar pagos. Verifique siempre la cantidad y la dirección de recepción antes de enviar monedas.</translation>
+        <source>These are your PIVX addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Estas son sus direcciones PIVX para realizar pagos. Verifique siempre la cantidad y la dirección de recepción antes de enviar monedas.</translation>
     </message>
     <message>
-        <source>These are your WISPR addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Estas son sus direcciones WISPR para recibir pagos. Es recomendable usar una nueva dirección de recepción para cada transacción.</translation>
+        <source>These are your PIVX addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Estas son sus direcciones PIVX para recibir pagos. Es recomendable usar una nueva dirección de recepción para cada transacción.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -176,16 +176,16 @@
         <translation>Confirme el cifrado del monedero</translation>
     </message>
     <message>
-        <source>WISPR will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your WSPs from being stolen by malware infecting your computer.</source>
-        <translation>WISPR se cerrará para finalizar el proceso de cifrado. Recuerde que cifrar su monedero no garantiza que sus WSPs no sean robados mediante malware de su ordenador.</translation>
+        <source>PIVX will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your PIVs from being stolen by malware infecting your computer.</source>
+        <translation>PIVX se cerrará para finalizar el proceso de cifrado. Recuerde que cifrar su monedero no garantiza que sus PIVs no sean robados mediante malware de su ordenador.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>¿Está seguro de que desea cifrar su monedero?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR WSP&lt;/b&gt;!</source>
-        <translation>Atención: Si cifra su monedero y pierde su contraseña, perderá &lt;b&gt; TODOS SUS WSP&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR PIV&lt;/b&gt;!</source>
+        <translation>Atención: Si cifra su monedero y pierde su contraseña, perderá &lt;b&gt; TODOS SUS PIV&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -254,12 +254,12 @@
         <translation>Dirección:</translation>
     </message>
     <message>
-        <source>Enter a WISPR Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation>Introduzca la dirección WISPR que querría cifrar usando BIP 38. Introduzca una contraseña en el campo central. Haga clic en cifrar para generar la clave privada cifrada.</translation>
+        <source>Enter a PIVX Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
+        <translation>Introduzca la dirección PIVX que querría cifrar usando BIP 38. Introduzca una contraseña en el campo central. Haga clic en cifrar para generar la clave privada cifrada.</translation>
     </message>
     <message>
-        <source>The WISPR address to encrypt</source>
-        <translation>La dirección WISPR a cifrar</translation>
+        <source>The PIVX address to encrypt</source>
+        <translation>La dirección PIVX a cifrar</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -267,7 +267,7 @@
     </message>
     <message>
         <source>Alt+A</source>
-        <translation>Alt + A</translation>
+        <translation>Alt+A</translation>
     </message>
     <message>
         <source>Paste address from clipboard</source>
@@ -275,7 +275,7 @@
     </message>
     <message>
         <source>Alt+P</source>
-        <translation>Alt + P</translation>
+        <translation>Alt+P</translation>
     </message>
     <message>
         <source>Passphrase: </source>
@@ -290,8 +290,8 @@
         <translation>Copiar la firma actual al portapapeles del sistema</translation>
     </message>
     <message>
-        <source>Encrypt the private key for this WISPR address</source>
-        <translation>Cifrar la llave privada para esta dirección WISPR</translation>
+        <source>Encrypt the private key for this PIVX address</source>
+        <translation>Cifrar la llave privada para esta dirección PIVX</translation>
     </message>
     <message>
         <source>Reset all fields</source>
@@ -433,8 +433,8 @@
         <translation>Navegar por el historial de transacciones</translation>
     </message>
     <message>
-        <source>Privacy Actions for zWSP</source>
-        <translation>Acciones de privacidad para zWSP</translation>
+        <source>Privacy Actions for zPIV</source>
+        <translation>Acciones de privacidad para zPIV</translation>
     </message>
     <message>
         <source>E&amp;xit</source>
@@ -608,10 +608,6 @@
         <source>&amp;Command-line options</source>
         <translation>&amp;Opciones de linea de comandos</translation>
     </message>
-    <message numerus="yes">
-        <source>Processed %n blocks of transaction history.</source>
-        <translation><numerusform>Procesados %n bloques del histórico de transacciones.</numerusform><numerusform>Procesados %n bloques del histórico de transacciones.</numerusform></translation>
-    </message>
     <message>
         <source>Synchronizing additional data: %p%</source>
         <translation>Sincronizando datos adicionales: %p%</translation>
@@ -645,15 +641,15 @@
         <translation>Herramienta de pestañas</translation>
     </message>
     <message>
-        <source>WISPR Core</source>
-        <translation>WISPR Core</translation>
+        <source>PIVX Core</source>
+        <translation>PIVX Core</translation>
     </message>
     <message>
-        <source>Send coins to a WISPR address</source>
-        <translation>Enviar monedas a una dirección WISPR</translation>
+        <source>Send coins to a PIVX address</source>
+        <translation>Enviar monedas a una dirección PIVX</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and wispr: URIs)</source>
+        <source>Request payments (generates QR codes and pivx: URIs)</source>
         <translation>Solicitud de pago (genera un código QR y URIs)</translation>
     </message>
     <message>
@@ -669,24 +665,24 @@
         <translation>Explorar masternodes</translation>
     </message>
     <message>
-        <source>&amp;About WISPR Core</source>
-        <translation>&amp;Sobre WISPR Core</translation>
+        <source>&amp;About PIVX Core</source>
+        <translation>&amp;Sobre PIVX Core</translation>
     </message>
     <message>
-        <source>Show information about WISPR Core</source>
-        <translation>Mostrar información sobre WISPR Core</translation>
+        <source>Show information about PIVX Core</source>
+        <translation>Mostrar información sobre PIVX Core</translation>
     </message>
     <message>
-        <source>Modify configuration options for WISPR</source>
-        <translation>Modificar las opciones de configuración de WISPR</translation>
+        <source>Modify configuration options for PIVX</source>
+        <translation>Modificar las opciones de configuración de PIVX</translation>
     </message>
     <message>
-        <source>Sign messages with your WISPR addresses to prove you own them</source>
-        <translation>Firmar mensajes con sus direcciones WISPR para demostrar que le pertenecen</translation>
+        <source>Sign messages with your PIVX addresses to prove you own them</source>
+        <translation>Firmar mensajes con sus direcciones PIVX para demostrar que le pertenecen</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified WISPR addresses</source>
-        <translation>Verificar mensajes para asegurar que están firmados con la dirección WISPR especificada</translation>
+        <source>Verify messages to ensure they were signed with specified PIVX addresses</source>
+        <translation>Verificar mensajes para asegurar que están firmados con la dirección PIVX especificada</translation>
     </message>
     <message>
         <source>&amp;BIP38 tool</source>
@@ -717,8 +713,8 @@
         <translation>Abrir fichero de Configuración de masternodes</translation>
     </message>
     <message>
-        <source>Open a WISPR: URI or payment request</source>
-        <translation>Abrir un WISPR: URI o solicitud de pago</translation>
+        <source>Open a PIVX: URI or payment request</source>
+        <translation>Abrir un PIVX: URI o solicitud de pago</translation>
     </message>
     <message>
         <source>&amp;Blockchain explorer</source>
@@ -729,16 +725,12 @@
         <translation>Ventana del explorador de bloques</translation>
     </message>
     <message>
-        <source>Show the WISPR Core help message to get a list with possible WISPR command-line options</source>
-        <translation>Mostrar la ayuda de WISPR Core para obtener una lista de posibles opciones en línea de comandos</translation>
+        <source>Show the PIVX Core help message to get a list with possible PIVX command-line options</source>
+        <translation>Mostrar la ayuda de PIVX Core para obtener una lista de posibles opciones en línea de comandos</translation>
     </message>
     <message>
-        <source>WISPR Core client</source>
-        <translation>Cliente WISPR Core</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n active connection(s) to WISPR network</source>
-        <translation><numerusform>%n conexión(es) activas a la red WISPR</numerusform><numerusform>%n conexión(es) activas a la red WISPR</numerusform></translation>
+        <source>PIVX Core client</source>
+        <translation>Cliente PIVX Core</translation>
     </message>
     <message>
         <source>Synchronizing with network...</source>
@@ -762,7 +754,7 @@
     </message>
     <message numerus="yes">
         <source>%n hour(s)</source>
-        <translation><numerusform>%n horas</numerusform><numerusform>%n horas</numerusform></translation>
+        <translation><numerusform>%n hora</numerusform><numerusform>%n horas</numerusform></translation>
     </message>
     <message numerus="yes">
         <source>%n day(s)</source>
@@ -770,7 +762,7 @@
     </message>
     <message numerus="yes">
         <source>%n week(s)</source>
-        <translation><numerusform>%n semanas</numerusform><numerusform>%n semanas</numerusform></translation>
+        <translation><numerusform>%n semana</numerusform><numerusform>%n semanas</numerusform></translation>
     </message>
     <message>
         <source>%1 and %2</source>
@@ -778,7 +770,7 @@
     </message>
     <message numerus="yes">
         <source>%n year(s)</source>
-        <translation><numerusform>%n años</numerusform><numerusform>%n años</numerusform></translation>
+        <translation><numerusform>%n año</numerusform><numerusform>%n años</numerusform></translation>
     </message>
     <message>
         <source>Catching up...</source>
@@ -864,7 +856,7 @@ MultiEnvío: %1</translation>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>El monedero está &lt;b&gt;encriptado&lt;/b&gt; y actualmente &lt;b&gt;bloqueado&lt;/b&gt;</translation>
     </message>
-</context>
+    </context>
 <context>
     <name>BlockExplorer</name>
     <message>
@@ -892,8 +884,8 @@ MultiEnvío: %1</translation>
         <translation>EtiquetaDeTexto</translation>
     </message>
     <message>
-        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (wispr.conf).</source>
-        <translation>No se muestran todas las transacciones. Para ver todas las transacciones introduzca la línea "txindex=1" en el archivo de configuración (wispr.conf).</translation>
+        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (pivx.conf).</source>
+        <translation>No se muestran todas las transacciones. Para ver todas las transacciones introduzca la línea "txindex=1" en el archivo de configuración (pivx.conf).</translation>
     </message>
 </context>
 <context>
@@ -915,11 +907,11 @@ MultiEnvío: %1</translation>
     </message>
     <message>
         <source>Bytes:</source>
-        <translation>Octetos:</translation>
+        <translation>Bytes:</translation>
     </message>
     <message>
         <source>Amount:</source>
-        <translation>Cantidad:</translation>
+        <translation>Suma:</translation>
     </message>
     <message>
         <source>Priority:</source>
@@ -1130,8 +1122,8 @@ MultiEnvío: %1</translation>
         <translation>Esta etiqueta se vuelve roja, si algún destinatario recibe una cantidad menor que %1.</translation>
     </message>
     <message>
-        <source>Can vary +/- %1 uwsp per input.</source>
-        <translation>Puede variar +/- %1 uwsp por entrada.</translation>
+        <source>Can vary +/- %1 upiv per input.</source>
+        <translation>Puede variar +/- %1 upiv por entrada.</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -1185,8 +1177,8 @@ MultiEnvío: %1</translation>
         <translation>Editar dirección de envío</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid WISPR address.</source>
-        <translation>La dirección introducida "%1" no es una dirección WISPR válida.</translation>
+        <source>The entered address "%1" is not a valid PIVX address.</source>
+        <translation>La dirección introducida "%1" no es una dirección PIVX válida.</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book.</source>
@@ -1225,22 +1217,33 @@ MultiEnvío: %1</translation>
     </message>
 </context>
 <context>
+    <name>GovernancePage</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulario</translation>
+    </message>
+    <message>
+        <source>0</source>
+        <translation>0</translation>
+    </message>
+    </context>
+<context>
     <name>HelpMessageDialog</name>
     <message>
         <source>version</source>
         <translation>versión</translation>
     </message>
     <message>
-        <source>WISPR Core</source>
-        <translation>WISPR Core</translation>
+        <source>PIVX Core</source>
+        <translation>PIVX Core</translation>
     </message>
     <message>
         <source>(%1-bit)</source>
         <translation>(%1-bit)</translation>
     </message>
     <message>
-        <source>About WISPR Core</source>
-        <translation>Acerca de WISPR Core</translation>
+        <source>About PIVX Core</source>
+        <translation>Acerca de PIVX Core</translation>
     </message>
     <message>
         <source>Command-line options</source>
@@ -1286,16 +1289,16 @@ MultiEnvío: %1</translation>
         <translation>Bienvenido/a</translation>
     </message>
     <message>
-        <source>Welcome to WISPR Core.</source>
-        <translation>Bienvenido/a a WISPR Core.</translation>
+        <source>Welcome to PIVX Core.</source>
+        <translation>Bienvenido/a a PIVX Core.</translation>
     </message>
     <message>
-        <source>As this is the first time the program is launched, you can choose where WISPR Core will store its data.</source>
-        <translation>Al ser la primera vez que se inicia el programa, usted puede elegir dónde guardará WISPR Core sus datos.</translation>
+        <source>As this is the first time the program is launched, you can choose where PIVX Core will store its data.</source>
+        <translation>Al ser la primera vez que se inicia el programa, usted puede elegir dónde guardará PIVX Core sus datos.</translation>
     </message>
     <message>
-        <source>WISPR Core will download and store a copy of the WISPR block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>WISPR Core descargará y guardará una copia de la cadena de bloques WISPR. Por lo menos %1GB de datos serán guardados en esta carpeta, y crecerá con el tiempo. El monedero también se guardará en esta carpeta.</translation>
+        <source>PIVX Core will download and store a copy of the PIVX block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <translation>PIVX Core descargará y guardará una copia de la cadena de bloques PIVX. Por lo menos %1GB de datos serán guardados en esta carpeta, y crecerá con el tiempo. El monedero también se guardará en esta carpeta.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -1306,8 +1309,8 @@ MultiEnvío: %1</translation>
         <translation>Usar una carpeta de datos personalizada:</translation>
     </message>
     <message>
-        <source>WISPR Core</source>
-        <translation>WISPR Core</translation>
+        <source>PIVX Core</source>
+        <translation>PIVX Core</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -1448,12 +1451,12 @@ MultiEnvío: %1</translation>
         <translation>Introduzca Dirección a la cual Enviar</translation>
     </message>
     <message>
-        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other WISPR addresses after it matures.
-To Add: enter percentage to give and WISPR address to add to the MultiSend vector.
+        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other PIVX addresses after it matures.
+To Add: enter percentage to give and PIVX address to add to the MultiSend vector.
 To Delete: Enter address to delete and press delete.
 MultiSend will not be activated unless you have clicked Activate</source>
-        <translation>MultiEnvío le permite enviar automáticamente hasta el 100% de recompensa de participación o de nodo maestro a una lista de otras direcciones WISPR después de su maduración.
-Para Añadir: introduzca porcentaje a enviar y las direcciones WISPR a añadir al vector MultiEnvío.
+        <translation>MultiEnvío le permite enviar automáticamente hasta el 100% de recompensa de participación o de nodo maestro a una lista de otras direcciones PIVX después de su maduración.
+Para Añadir: introduzca porcentaje a enviar y las direcciones PIVX a añadir al vector MultiEnvío.
 Para Eliminar: Introduzca la dirección a eliminar y pulse la tecla delete.
 MultiEnvío no se activará a menos que haga usted click en Activar</translation>
     </message>
@@ -1542,48 +1545,54 @@ MultiEnvío no se activará a menos que haga usted click en Activar</translation
         <translation>(sin etiqueta)</translation>
     </message>
     <message>
-        <source>The entered address:
-</source>
-        <translation>La dirección introducida:
-</translation>
+        <source>MultiSend Active for Stakes and Masternode Rewards</source>
+        <translation>MultiSend Activado para las recompensas de Stakes y Masternode</translation>
     </message>
     <message>
-        <source> is invalid.
+        <source>MultiSend Active for Stakes</source>
+        <translation>MultiSend Activado para Stakes</translation>
+    </message>
+    <message>
+        <source>MultiSend Active for Masternode Rewards</source>
+        <translation>MultiSend Activado para las recompensas de Masternode</translation>
+    </message>
+    <message>
+        <source>MultiSend Not Active</source>
+        <translation>MultiSend Desactivado </translation>
+    </message>
+    <message>
+        <source>The entered address: %1 is invalid.
 Please check the address and try again.</source>
-        <translation>es inválida.
-Por favor compruebe la dirección e inténtelo de nuevo.</translation>
+        <translation>La dirección introducida: %1 es inválida.
+Por favor comprueba la dirección e inténtalo nuevamente.</translation>
     </message>
     <message>
-        <source>The total amount of your MultiSend vector is over 100% of your stake reward
-</source>
-        <translation>La cantidad total de su vector MultiEnvío es superior al 100% de su recompensa de stake
-</translation>
+        <source>The total amount of your MultiSend vector is over 100% of your stake reward</source>
+        <translation>La cantidad total de tu vector de MultiEnvío es superior al 100% de tu recompensa de Stake</translation>
+    </message>
+    <message>
+        <source>Saved the MultiSend to memory, but failed saving properties to the database.</source>
+        <translation>El MultiSend se guardó en la memoria, pero se produjo un error al guardar las propiedades en la base de datos.</translation>
+    </message>
+    <message>
+        <source>MultiSend Vector</source>
+        <translation>Vector de MultiSend</translation>
+    </message>
+    <message>
+        <source>Removed %1</source>
+        <translation>Removido %1</translation>
+    </message>
+    <message>
+        <source>Could not locate address</source>
+        <translation>No se pudo localizar la dirección</translation>
+    </message>
+    <message>
+        <source>Unable to activate MultiSend, check MultiSend vector</source>
+        <translation>No fue posible activar el MultiSend, verifica el vector de MultiSend</translation>
     </message>
     <message>
         <source>Please Enter 1 - 100 for percent.</source>
         <translation>Por favor Introduzca 1 - 100 por ciento.</translation>
-    </message>
-    <message>
-        <source>Saved the MultiSend to memory, but failed saving properties to the database.
-</source>
-        <translation>Se guardó MultiEnvío en la memoria, pero se produjo un error al guardar las propiedades en la base de datos.
-</translation>
-    </message>
-    <message>
-        <source>MultiSend Vector
-</source>
-        <translation>Vector MultiEnvío
-</translation>
-    </message>
-    <message>
-        <source>Removed </source>
-        <translation>Borrado</translation>
-    </message>
-    <message>
-        <source>Could not locate address
-</source>
-        <translation>No se pudo localizar la dirección
-</translation>
     </message>
 </context>
 <context>
@@ -1666,7 +1675,7 @@ Por favor, tenga paciencia después de hacer clic en importar.</translation>
     </message>
     <message>
         <source>Amount:</source>
-        <translation>Cantidad:</translation>
+        <translation>Suma:</translation>
     </message>
     <message>
         <source>Add an input to fund the outputs</source>
@@ -1681,8 +1690,8 @@ Por favor, tenga paciencia después de hacer clic en importar.</translation>
         <translation>Dirección / Cantidad:</translation>
     </message>
     <message>
-        <source>Add destinations to send WSP to</source>
-        <translation>Agregue los destinos para enviar WSP</translation>
+        <source>Add destinations to send PIV to</source>
+        <translation>Agregue los destinos para enviar PIV</translation>
     </message>
     <message>
         <source>Add &amp;Destination</source>
@@ -1780,48 +1789,48 @@ Por favor, tenga paciencia después de hacer clic en importar.</translation>
         <translation>Por favor seleccione un nivel de privacidad.</translation>
     </message>
     <message>
-        <source>Use 2 separate masternodes to mix funds up to 10000 WSP</source>
-        <translation>Use 2 masterdodes diferentes para mezclar los fondos hasta los 10000 WSP</translation>
+        <source>Use 2 separate masternodes to mix funds up to 10000 PIV</source>
+        <translation>Use 2 masterdodes diferentes para mezclar los fondos hasta los 10000 PIV</translation>
     </message>
     <message>
-        <source>Use 8 separate masternodes to mix funds up to 10000 WSP</source>
-        <translation>Use 8 masternodes diferentes para mezclar fondos hasta los 10000 WSP</translation>
+        <source>Use 8 separate masternodes to mix funds up to 10000 PIV</source>
+        <translation>Use 8 masternodes diferentes para mezclar fondos hasta los 10000 PIV</translation>
     </message>
     <message>
         <source>Use 16 separate masternodes</source>
         <translation>Use 16 masternodes diferentes</translation>
     </message>
     <message>
-        <source>This option is the quickest and will cost about ~0.025 WSP to anonymize 10000 WSP</source>
-        <translation>Esta opción es la más rápida y costará alrededor de ~0.025 WSP para anonimizar 10000 WSP</translation>
+        <source>This option is the quickest and will cost about ~0.025 PIV to anonymize 10000 PIV</source>
+        <translation>Esta opción es la más rápida y costará alrededor de ~0.025 PIV para anonimizar 10000 PIV</translation>
     </message>
     <message>
-        <source>This option is moderately fast and will cost about 0.05 WSP to anonymize 10000 WSP</source>
-        <translation>Esta opción es moderadamente rápida y costará cerca de 0.05 WSP para anonimizar 10000 WSP</translation>
+        <source>This option is moderately fast and will cost about 0.05 PIV to anonymize 10000 PIV</source>
+        <translation>Esta opción es moderadamente rápida y costará cerca de 0.05 PIV para anonimizar 10000 PIV</translation>
     </message>
     <message>
         <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
         <translation>Esta es la opción más lenta pero más segura. Usar el máximo anonimato costará</translation>
     </message>
     <message>
-        <source>0.1 WSP per 10000 WSP you anonymize.</source>
-        <translation>0.1 WSP por 10000 WSP que anonimizas.</translation>
+        <source>0.1 PIV per 10000 PIV you anonymize.</source>
+        <translation>0.1 PIV por 10000 PIV que anonimizas.</translation>
     </message>
     <message>
         <source>Obfuscation Configuration</source>
         <translation>Configuración de Ofuscación</translation>
     </message>
     <message>
-        <source>Obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening WISPR's configuration screen.</source>
-        <translation>La Ofuscación se configuró correctamente en modo básico (%1 y 2 rondas). Puedes cambiar esto en cualquier momento accediendo a la ventana de configuración de WISPR.</translation>
+        <source>Obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening PIVX's configuration screen.</source>
+        <translation>La Ofuscación se configuró correctamente en modo básico (%1 y 2 rondas). Puedes cambiar esto en cualquier momento accediendo a la ventana de configuración de PIVX.</translation>
     </message>
     <message>
-        <source>Obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening WISPR's configuration screen.</source>
-        <translation>La Ofuscación se activó correctamente en modo alto (%1 y 8 rondas). Usted puede cambiar esto en cualquier momento abriendo la ventana de configuración de WISPR.</translation>
+        <source>Obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening PIVX's configuration screen.</source>
+        <translation>La Ofuscación se activó correctamente en modo alto (%1 y 8 rondas). Usted puede cambiar esto en cualquier momento abriendo la ventana de configuración de PIVX.</translation>
     </message>
     <message>
-        <source>Obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening WISPR's configuration screen.</source>
-        <translation>La Ofuscación se activó correctamente en su grado máximo (%1 y 16 rondas). Usted puede cambiar ésto en cualquier momento en la ventana de configuración de WISPR.</translation>
+        <source>Obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening PIVX's configuration screen.</source>
+        <translation>La Ofuscación se activó correctamente en su grado máximo (%1 y 16 rondas). Usted puede cambiar ésto en cualquier momento en la ventana de configuración de PIVX.</translation>
     </message>
 </context>
 <context>
@@ -1882,8 +1891,8 @@ Por favor, tenga paciencia después de hacer clic en importar.</translation>
         <translation>Si deselecciona el gasto de cambio no confirmado, las entradas de una transacción&lt;br/&gt;no podrán ser usadas hasta que esa transacción tenga al menos una confirmación.&lt;br/&gt;Esto también afecta a cómo se calcula su balance actual.</translation>
     </message>
     <message>
-        <source>Automatically open the WISPR client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Abrir automáticamente el puerto del cliente WISPR en el enrutador. Ésto sólo funciona si su enrutador soporta UPnP y esta función está activada.</translation>
+        <source>Automatically open the PIVX client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Abrir automáticamente el puerto del cliente PIVX en el enrutador. Ésto sólo funciona si su enrutador soporta UPnP y esta función está activada.</translation>
     </message>
     <message>
         <source>Accept connections from outside</source>
@@ -1902,12 +1911,12 @@ Por favor, tenga paciencia después de hacer clic en importar.</translation>
         <translation>Experto</translation>
     </message>
     <message>
-        <source>Automatically start WISPR after logging in to the system.</source>
-        <translation>Arrancar WISPR automáticamente después de identificarse en el sistema.</translation>
+        <source>Automatically start PIVX after logging in to the system.</source>
+        <translation>Arrancar PIVX automáticamente después de identificarse en el sistema.</translation>
     </message>
     <message>
-        <source>&amp;Start WISPR on system login</source>
-        <translation>&amp;Arrancar WISPR al inicio del sistema</translation>
+        <source>&amp;Start PIVX on system login</source>
+        <translation>&amp;Arrancar PIVX al inicio del sistema</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
@@ -1934,50 +1943,50 @@ Por favor, tenga paciencia después de hacer clic en importar.</translation>
         <translation>&amp;Red</translation>
     </message>
     <message>
-        <source>The user interface language can be set here. This setting will take effect after restarting WISPR.</source>
-        <translation>El idioma de interface de usuario puede seleccionarse aquí. Este ajuste tomará efecto después de reiniciar WISPR.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting PIVX.</source>
+        <translation>El idioma de interface de usuario puede seleccionarse aquí. Este ajuste tomará efecto después de reiniciar PIVX.</translation>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/WisprProject/WisprProject-translations</source>
+https://www.transifex.com/pivx-project/pivx-project-translations</source>
         <translation>¿Falta su lenguaje o la traducción está incompleta? Contribuya con las traducciones aquí:
-https://www.transifex.com/WisprProject/WisprProject-translations</translation>
+https://www.transifex.com/pivx-project/pivx-project-translations</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
         <translation>Mapear un puerto utilizando &amp;UPnP</translation>
     </message>
     <message>
-        <source>Enable automatic minting of WSP units to zWSP</source>
-        <translation>Activar el minting automática de unidades WSP a zWSP</translation>
+        <source>Enable automatic minting of PIV units to zPIV</source>
+        <translation>Activar el minting automática de unidades PIV a zPIV</translation>
     </message>
     <message>
-        <source>Enable zWSP Automint</source>
-        <translation>Activar zWSP Automint</translation>
+        <source>Enable zPIV Automint</source>
+        <translation>Activar zPIV Automint</translation>
     </message>
     <message>
-        <source>Percentage of incoming WSP which get automatically converted to zWSP via Zerocoin Protocol (min: 10%)</source>
-        <translation>Porcentaje de WSP entrantes que serán automáticamente convertidos a zWSP a través del Protocolo Zerocoin (mín: 10%)</translation>
+        <source>Percentage of incoming PIV which get automatically converted to zPIV via Zerocoin Protocol (min: 10%)</source>
+        <translation>Porcentaje de PIV entrantes que serán automáticamente convertidos a zPIV a través del Protocolo Zerocoin (mín: 10%)</translation>
     </message>
     <message>
-        <source>Percentage of autominted zWSP</source>
-        <translation>Porcentaje de zWSP autogenerados</translation>
+        <source>Percentage of autominted zPIV</source>
+        <translation>Porcentaje de zPIV autogenerados</translation>
     </message>
     <message>
-        <source>Wait with automatic conversion to Zerocoin until enough WSP for this denomination is available</source>
-        <translation>Esperar con la conversión automática a Zerocoin hasta que hayan suficientes WSP disponibles para este tamaño de billete</translation>
+        <source>Wait with automatic conversion to Zerocoin until enough PIV for this denomination is available</source>
+        <translation>Esperar con la conversión automática a Zerocoin hasta que hayan suficientes PIV disponibles para este tamaño de billete</translation>
     </message>
     <message>
-        <source>Preferred Automint zWSP Denomination</source>
-        <translation>Tamaño de billete zWSP preferido en la creación automática de dinero</translation>
+        <source>Preferred Automint zPIV Denomination</source>
+        <translation>Tamaño de billete zPIV preferido en la creación automática de dinero</translation>
     </message>
     <message>
         <source>Stake split threshold:</source>
         <translation>Parte limite de stake:</translation>
     </message>
     <message>
-        <source>Connect to the WISPR network through a SOCKS5 proxy.</source>
-        <translation>Conectar a la red WISPR mediante un proxy SOCKS5.</translation>
+        <source>Connect to the PIVX network through a SOCKS5 proxy.</source>
+        <translation>Conectar a la red PIVX mediante un proxy SOCKS5.</translation>
     </message>
     <message>
         <source>Proxy &amp;IP:</source>
@@ -2131,8 +2140,8 @@ https://www.transifex.com/WisprProject/WisprProject-translations</translation>
         <translation>Balance Total, incluidas todas las monedas no disponibles.</translation>
     </message>
     <message>
-        <source>WSP Balance</source>
-        <translation>Balance WSP</translation>
+        <source>PIV Balance</source>
+        <translation>Balance PIV</translation>
     </message>
     <message>
         <source>Pending:</source>
@@ -2155,18 +2164,18 @@ https://www.transifex.com/WisprProject/WisprProject-translations</translation>
         <translation>Saldo bloqueado actual en direcciones solo de lectura</translation>
     </message>
     <message>
-        <source>Your current WISPR balance, unconfirmed and immature transactions included</source>
-        <translation>Su balance WISPR actual, transacciones no confirmadas e inmaduras incluidas</translation>
+        <source>Your current PIVX balance, unconfirmed and immature transactions included</source>
+        <translation>Su balance PIVX actual, transacciones no confirmadas e inmaduras incluidas</translation>
     </message>
     <message>
-        <source>zWSP Balance</source>
-        <translation>Balance zWSP</translation>
+        <source>zPIV Balance</source>
+        <translation>Balance zPIV</translation>
     </message>
     <message>
         <source>Mature: more than 20 confirmation and more than 1 mint of the same denomination after it was minted.
-These zWSP are spendable.</source>
+These zPIV are spendable.</source>
         <translation>Maduración: más de 20 confirmaciones y más de 1 acuñación de la misma denominación después de acuñarse.
-Estas zWSP son utilizables.</translation>
+Estas zPIV son utilizables.</translation>
     </message>
     <message>
         <source>Unconfirmed: less than 20 confirmations
@@ -2175,8 +2184,8 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
 Inmaduro: confirmado, pero menos de 1 acuñación de la misma denominación después de ser acuñado</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the WISPR network after a connection is established, but this process has not completed yet.</source>
-        <translation>La información mostrada puede estar desactualizada. Su monedero se sincroniza automáticamente con la red WISPR después de establecer una conexión, pero este proceso aún no se ha completado.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the PIVX network after a connection is established, but this process has not completed yet.</source>
+        <translation>La información mostrada puede estar desactualizada. Su monedero se sincroniza automáticamente con la red PIVX después de establecer una conexión, pero este proceso aún no se ha completado.</translation>
     </message>
     <message>
         <source>OVERVIEW</source>
@@ -2219,8 +2228,8 @@ Inmaduro: confirmado, pero menos de 1 acuñación de la misma denominación desp
         <translation>Disponible:</translation>
     </message>
     <message>
-        <source>Locked WSP or Masternode collaterals. These are excluded from zWSP minting.</source>
-        <translation>WSP bloqueado o Masternode colaterales. Estos están excluidos de minting zWSP.</translation>
+        <source>Locked PIV or Masternode collaterals. These are excluded from zPIV minting.</source>
+        <translation>PIV bloqueado o Masternode colaterales. Estos están excluidos de minting zPIV.</translation>
     </message>
     <message>
         <source>Locked:</source>
@@ -2231,8 +2240,8 @@ Inmaduro: confirmado, pero menos de 1 acuñación de la misma denominación desp
         <translation>Sin confirmar:</translation>
     </message>
     <message>
-        <source>Your current zWSP balance, unconfirmed and immature zWSP included.</source>
-        <translation>Su balance zWSP actual, zWSP inmaduro e inmaduro incluido.</translation>
+        <source>Your current zPIV balance, unconfirmed and immature zPIV included.</source>
+        <translation>Su balance zPIV actual, zPIV inmaduro e inmaduro incluido.</translation>
     </message>
     <message>
         <source>Recent transactions</source>
@@ -2243,10 +2252,10 @@ Inmaduro: confirmado, pero menos de 1 acuñación de la misma denominación desp
         <translation>desincronizado</translation>
     </message>
     <message>
-        <source>Current percentage of zWSP.
+        <source>Current percentage of zPIV.
 If AutoMint is enabled this percentage will settle around the configured AutoMint percentage (default = 10%).
 </source>
-        <translation>Porcentaje actual de zWSP.
+        <translation>Porcentaje actual de zPIV.
 Si AutoMint está habilitado, este porcentaje se establecerá alrededor del porcentaje de AutoMint configurado (predeterminado = 10%).
 </translation>
     </message>
@@ -2255,14 +2264,14 @@ Si AutoMint está habilitado, este porcentaje se establecerá alrededor del porc
         <translation>AutoMint está actualmente habilitado y configurado en</translation>
     </message>
     <message>
-        <source>To disable AutoMint add 'enablezeromint=0' in wispr.conf.</source>
-        <translation>Para desactivar AutoMint agrega 'enablezeromint=0' en wispr.conf.</translation>
+        <source>To disable AutoMint add 'enablezeromint=0' in pivx.conf.</source>
+        <translation>Para desactivar AutoMint agrega 'enablezeromint=0' en pivx.conf.</translation>
     </message>
     <message>
         <source>AutoMint is currently disabled.
-To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in wispr.conf</source>
+To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in pivx.conf</source>
         <translation>AutoMint está actualmente desactivado.
-Para habilitar AutoMint cambie 'enablezeromint = 0' a 'enablezeromint = 1' en wispr.conf</translation>
+Para habilitar AutoMint cambie 'enablezeromint = 0' a 'enablezeromint = 1' en pivx.conf</translation>
     </message>
 </context>
 <context>
@@ -2288,12 +2297,12 @@ Para habilitar AutoMint cambie 'enablezeromint = 0' a 'enablezeromint = 1' en wi
         <translation>Dirección de pago inválida %1</translation>
     </message>
     <message>
-        <source>Cannot start wispr: click-to-pay handler</source>
-        <translation>No se puede iniciar wispr: módulo click-to-pay</translation>
+        <source>Cannot start pivx: click-to-pay handler</source>
+        <translation>No se puede iniciar pivx: módulo click-to-pay</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid WISPR address or malformed URI parameters.</source>
-        <translation>¡El identificador de la dirección no puede ser analizado! Esto puede ser causado por una dirección WISPR inválida o parámetros del identificador malformados.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid PIVX address or malformed URI parameters.</source>
+        <translation>¡El identificador de la dirección no puede ser analizado! Esto puede ser causado por una dirección PIVX inválida o parámetros del identificador malformados.</translation>
     </message>
     <message>
         <source>Payment request file cannot be read! This can be caused by an invalid payment request file.</source>
@@ -2378,8 +2387,8 @@ Para habilitar AutoMint cambie 'enablezeromint = 0' a 'enablezeromint = 1' en wi
         <translation>Acciones Zerocoin:</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the WISPR network after a connection is established, but this process has not completed yet.</source>
-        <translation>La información mostrada puede estar desactualizada. Su monedero se sincroniza automáticamente con la red WISPR después de establecer una conexión, pero este proceso aún no se ha completado.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the PIVX network after a connection is established, but this process has not completed yet.</source>
+        <translation>La información mostrada puede estar desactualizada. Su monedero se sincroniza automáticamente con la red PIVX después de establecer una conexión, pero este proceso aún no se ha completado.</translation>
     </message>
     <message>
         <source>Mint Zerocoin</source>
@@ -2390,8 +2399,8 @@ Para habilitar AutoMint cambie 'enablezeromint = 0' a 'enablezeromint = 1' en wi
         <translation>0</translation>
     </message>
     <message>
-        <source>zWSP</source>
-        <translation>zWSP</translation>
+        <source>zPIV</source>
+        <translation>zPIV</translation>
     </message>
     <message>
         <source>Available for minting are coins which are confirmed and not locked or Masternode collaterals.</source>
@@ -2402,8 +2411,8 @@ Para habilitar AutoMint cambie 'enablezeromint = 0' a 'enablezeromint = 1' en wi
         <translation>Disponible para minting:</translation>
     </message>
     <message>
-        <source>0.000 000 00 WSP</source>
-        <translation>0.000 000 00 WSP</translation>
+        <source>0.000 000 00 PIV</source>
+        <translation>0.000 000 00 PIV</translation>
     </message>
     <message>
         <source>Reset Zerocoin Wallet DB. Deletes transactions that did not make it into the blockchain.</source>
@@ -2442,16 +2451,16 @@ Para habilitar AutoMint cambie 'enablezeromint = 0' a 'enablezeromint = 1' en wi
         <translation>PRIVACIDAD</translation>
     </message>
     <message>
-        <source>Enter an amount of Wsp to convert to zWSP</source>
-        <translation>Introduzca la cantidad de WSP que desea convertir a zWsp</translation>
+        <source>Enter an amount of Piv to convert to zPIV</source>
+        <translation>Introduzca la cantidad de PIV que desea convertir a zPiv</translation>
     </message>
     <message>
-        <source>zWSP Control</source>
-        <translation>Control zWSP</translation>
+        <source>zPIV Control</source>
+        <translation>Control zPIV</translation>
     </message>
     <message>
-        <source>zWSP Selected:</source>
-        <translation>zWSP Seleccionados:</translation>
+        <source>zPIV Selected:</source>
+        <translation>zPIV Seleccionados:</translation>
     </message>
     <message>
         <source>Quantity Selected:</source>
@@ -2466,44 +2475,32 @@ Para habilitar AutoMint cambie 'enablezeromint = 0' a 'enablezeromint = 1' en wi
         <translation>Gastar Zerocoin</translation>
     </message>
     <message>
-        <source>Available (mature and spendable) zWSP for spending</source>
-        <translation>zWSP disponible (maduro y gastable) para gastar</translation>
+        <source>Available (mature and spendable) zPIV for spending</source>
+        <translation>zPIV disponible (maduro y gastable) para gastar</translation>
     </message>
     <message>
         <source>Available Balance:</source>
         <translation>Balance disponible:</translation>
     </message>
     <message>
-        <source>Available (mature and spendable) zWSP for spending
+        <source>Available (mature and spendable) zPIV for spending
 
-zWSP are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
-        <translation>zWSP disponible (maduro y gastable) para gastar
+zPIV are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
+        <translation>zPIV disponible (maduro y gastable) para gastar
 
-zWSP son maduros cuando tienen más de 20 confirmaciones Y más de 2 mints de la misma denominación después que ellos fueron minted</translation>
+zPIV son maduros cuando tienen más de 20 confirmaciones Y más de 2 mints de la misma denominación después que ellos fueron minted</translation>
     </message>
     <message>
-        <source>0 zWSP</source>
-        <translation>0 zWSP</translation>
-    </message>
-    <message>
-        <source>Security Level for Zerocoin Transactions. More is better, but needs more time and resources.</source>
-        <translation>Nivel de Seguridad para Transacciones Zerocoin. Cuanto más mejor, pero necesitará más tiempo y recursos.</translation>
-    </message>
-    <message>
-        <source>Security Level:</source>
-        <translation>Nivel de Seguridad:</translation>
-    </message>
-    <message>
-        <source>Security Level 1 - 100 (default: 42)</source>
-        <translation>Nivel de Seguridad 1 - 100 (por defecto: 42)</translation>
+        <source>0 zPIV</source>
+        <translation>0 zPIV</translation>
     </message>
     <message>
         <source>Pay &amp;To:</source>
         <translation>Pagar &amp;A:</translation>
     </message>
     <message>
-        <source>The WISPR address to send the payment to. Creates local payment to yourself when empty.</source>
-        <translation>La dirección WISPR a la que enviar el pago. Si se deja en blanco, crea un pago a usted mismo.</translation>
+        <source>The PIVX address to send the payment to. Creates local payment to yourself when empty.</source>
+        <translation>La dirección PIVX a la que enviar el pago. Si se deja en blanco, crea un pago a usted mismo.</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2531,7 +2528,7 @@ zWSP son maduros cuando tienen más de 20 confirmaciones Y más de 2 mints de la
     </message>
     <message>
         <source>A&amp;mount:</source>
-        <translation>C&amp;antidad:</translation>
+        <translation>Cantidad:</translation>
     </message>
     <message>
         <source>Convert Change to Zerocoin (might cost additional fees)</source>
@@ -2554,8 +2551,8 @@ zWSP son maduros cuando tienen más de 20 confirmaciones Y más de 2 mints de la
         <translation>Estadísticas Zerocoin:</translation>
     </message>
     <message>
-        <source>Total Balance including unconfirmed and immature zWSP</source>
-        <translation>Balance total incluyendo zWSP no confirmado e inmaduro</translation>
+        <source>Total Balance including unconfirmed and immature zPIV</source>
+        <translation>Balance total incluyendo zPIV no confirmado e inmaduro</translation>
     </message>
     <message>
         <source>Total Zerocoin  Balance:</source>
@@ -2576,24 +2573,24 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
 Inmaduro: confirmado, pero menos de 1 acuñación de la misma denominación después de ser acuñado</translation>
     </message>
     <message>
-        <source>Show the current status of automatic zWSP minting.
+        <source>Show the current status of automatic zPIV minting.
 
 To change the status (restart required):
-- enable: add 'enablezeromint=1' to wispr.conf
-- disable: add 'enablezeromint=0' to wispr.conf
+- enable: add 'enablezeromint=1' to pivx.conf
+- disable: add 'enablezeromint=0' to pivx.conf
 
 To change the percentage (no restart required):
-- menu Settings-&gt;Options-&gt;Percentage of autominted zWSP
+- menu Settings-&gt;Options-&gt;Percentage of autominted zPIV
 
 </source>
-        <translation>Muestra el estado actual de zWSP minting automática.
+        <translation>Muestra el estado actual de zPIV minting automática.
 
 Para cambiar el estado (reinicio requerido):
-- activar: añade 'enablezeromint = 1' en wispr.conf
-- desctivar: añade 'enablezeromint = 0' en wispr.conf
+- activar: añade 'enablezeromint = 1' en pivx.conf
+- desctivar: añade 'enablezeromint = 0' en pivx.conf
 
 Para cambiar el porcentaje (no se requiere reiniciar):
-- menú Configuración-&gt;Opciones-&gt;Porcentaje de zWSP automint
+- menú Configuración-&gt;Opciones-&gt;Porcentaje de zPIV automint
 </translation>
     </message>
     <message>
@@ -2718,7 +2715,7 @@ Para cambiar el porcentaje (no se requiere reiniciar):
     </message>
     <message>
         <source>Bytes:</source>
-        <translation>Octetos:</translation>
+        <translation>Bytes:</translation>
     </message>
     <message>
         <source>Insufficient funds!</source>
@@ -2775,26 +2772,18 @@ Please be patient...</source>
 Por favor espere...</translation>
     </message>
     <message>
-        <source>Spending Zerocoin.
-Computationally expensive, might need several minutes depending on the selected Security Level and your hardware.
-Please be patient...</source>
-        <translation>Gastando Zerocoin.
-Esto es computacionalmente intensivo, puede necesitar varios minutos dependiendo del Nivel de Seguridad elegido y el hardware de su máquina.
-Por favor tenga paciencia...</translation>
-    </message>
-    <message>
         <source>) needed.
 Maximum allowed: </source>
         <translation>) necesario.
 Máximo permitido:</translation>
     </message>
     <message>
-        <source>zWSP Spend #: </source>
-        <translation>Gastar zWSP #: </translation>
+        <source>zPIV Spend #: </source>
+        <translation>Gastar zPIV #: </translation>
     </message>
     <message>
-        <source>zWSP Mint</source>
-        <translation>Acuñar zWSP</translation>
+        <source>zPIV Mint</source>
+        <translation>Acuñar zPIV</translation>
     </message>
     <message>
         <source> &lt;b&gt;enabled&lt;/b&gt;.</source>
@@ -2809,12 +2798,12 @@ Máximo permitido:</translation>
         <translation>Porcentaje objetivo configurado:</translation>
     </message>
     <message>
-        <source>zWSP is currently disabled due to maintenance.</source>
-        <translation>zWSP actualmente está desactivado debido al mantenimiento.</translation>
+        <source>zPIV is currently disabled due to maintenance.</source>
+        <translation>zPIV actualmente está desactivado debido al mantenimiento.</translation>
     </message>
     <message>
-        <source>zWSP is currently undergoing maintenance.</source>
-        <translation>zWSP se encuentra actualmente en mantenimiento.</translation>
+        <source>zPIV is currently undergoing maintenance.</source>
+        <translation>zPIV se encuentra actualmente en mantenimiento.</translation>
     </message>
     <message>
         <source>Denom. with value &lt;b&gt;1&lt;/b&gt;:</source>
@@ -2901,8 +2890,8 @@ Máximo permitido:</translation>
         <translation>Minted correctamente</translation>
     </message>
     <message>
-        <source> zWSP in </source>
-        <translation>zWSP en</translation>
+        <source> zPIV in </source>
+        <translation>zPIV en</translation>
     </message>
     <message>
         <source> sec. Used denominations:
@@ -2929,8 +2918,8 @@ Máximo permitido:</translation>
         <translation>No se especificó drección 'Pagar A', por lo que asumimos un pago local</translation>
     </message>
     <message>
-        <source>Invalid Wispr Address</source>
-        <translation>Dirección WISPR Inválida</translation>
+        <source>Invalid Pivx Address</source>
+        <translation>Dirección PIVX Inválida</translation>
     </message>
     <message>
         <source>Invalid Send Amount</source>
@@ -2953,20 +2942,8 @@ Máximo permitido:</translation>
         <translation>a una dirección local recién generada (no utilizada y, por lo tanto, anónima)&lt;br /&gt;</translation>
     </message>
     <message>
-        <source>with Security Level </source>
-        <translation>con Nivel de Seguridad</translation>
-    </message>
-    <message>
         <source>Confirm send coins</source>
         <translation>Confirmar enviar monedas</translation>
-    </message>
-    <message>
-        <source>Version 1 zWSP require a security level of 100 to successfully spend.</source>
-        <translation>La versión 1 zWSP requiere un nivel de seguridad de 100 para gastar exitosamente.</translation>
-    </message>
-    <message>
-        <source>Failed to spend zWSP</source>
-        <translation>Error al enviar zWSP</translation>
     </message>
     <message>
         <source>Failed to fetch mint associated with serial hash</source>
@@ -2985,11 +2962,6 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
     <message>
         <source>Spend Zerocoin failed with status = </source>
         <translation>Gastar Zerocoin falló con estado =</translation>
-    </message>
-    <message numerus="yes">
-        <source>PrivacyDialog</source>
-        <comment>Enter an amount of WSP to convert to zWSP</comment>
-        <translation><numerusform>PrivacyDialog</numerusform><numerusform>PrivacyDialog</numerusform></translation>
     </message>
     <message>
         <source>denomination: </source>
@@ -3025,14 +2997,17 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
     </message>
 </context>
 <context>
+    <name>ProposalFrame</name>
+    </context>
+<context>
     <name>QObject</name>
     <message>
         <source>Amount</source>
         <translation>Cantidad</translation>
     </message>
     <message>
-        <source>Enter a WISPR address (e.g. %1)</source>
-        <translation>Introduzca una dirección WISPR (p.e. %1)</translation>
+        <source>Enter a PIVX address (e.g. %1)</source>
+        <translation>Introduzca una dirección PIVX (p.e. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -3074,7 +3049,11 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <source>%1 ms</source>
         <translation>%1 ms</translation>
     </message>
-</context>
+    <message>
+        <source>PIVX Core</source>
+        <translation>PIVX Core</translation>
+    </message>
+    </context>
 <context>
     <name>QRImageWidget</name>
     <message>
@@ -3169,8 +3148,8 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <translation>Blockchain</translation>
     </message>
     <message>
-        <source>Open the WISPR debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Abrir el fichero de depuración WISPR en el directorio actual de datos. Esto puede llevar unos segundos para ficheros de depuración grandes.</translation>
+        <source>Open the PIVX debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Abrir el fichero de depuración PIVX en el directorio actual de datos. Esto puede llevar unos segundos para ficheros de depuración grandes.</translation>
     </message>
     <message>
         <source>Number of Masternodes</source>
@@ -3305,8 +3284,8 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <translation>Ruta personalizada de la copia de seguridad:</translation>
     </message>
     <message>
-        <source>Custom zWSP Backup Path:</source>
-        <translation>Ruta personalizada de la copia de seguridad zWSP:</translation>
+        <source>Custom zPIV Backup Path:</source>
+        <translation>Ruta personalizada de la copia de seguridad zPIV:</translation>
     </message>
     <message>
         <source>Custom Backups Threshold:</source>
@@ -3385,8 +3364,8 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <translation>Fuera:</translation>
     </message>
     <message>
-        <source>Welcome to the WISPR RPC console.</source>
-        <translation>Bienvenido a la consola RPC de WISPR.</translation>
+        <source>Welcome to the PIVX RPC console.</source>
+        <translation>Bienvenido a la consola RPC de PIVX.</translation>
     </message>
     <message>
         <source>&amp;Disconnect Node</source>
@@ -3435,10 +3414,6 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
     <message>
         <source>Confirm resync Blockchain</source>
         <translation>Confirmar resincronización del Blockchain</translation>
-    </message>
-    <message>
-        <source>Use up and down arrows to navigate history, and &lt;b&gt;Ctrl-L&lt;/b&gt; to clear screen.</source>
-        <translation>Use las teclas arriba y abajo para navegar por la historia, y &lt;b&gt;Ctrl-L&lt;/b&gt; para limpiar la pantalla.</translation>
     </message>
     <message>
         <source>Type &lt;b&gt;help&lt;/b&gt; for an overview of available commands.</source>
@@ -3512,16 +3487,20 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <translation>Una etiqueta opcional a asociar con la nueva dirección de recepción.</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the WISPR network.</source>
-        <translation>Un mensaje opcional a adjuntar a la solicitud de pago, que será mostrado cuando se abra la solicitud. Nota: El mensaje no se envía junto al pago por la red WISPR.</translation>
+        <source>A&amp;mount:</source>
+        <translation>Cantidad:</translation>
+    </message>
+    <message>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the PIVX network.</source>
+        <translation>Un mensaje opcional a adjuntar a la solicitud de pago, que será mostrado cuando se abra la solicitud. Nota: El mensaje no se envía junto al pago por la red PIVX.</translation>
     </message>
     <message>
         <source>RECEIVE</source>
         <translation>RECIBIR</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the WISPR network.</source>
-        <translation>Un mensaje opcional a adjuntar a la solicitud de pago, que será mostrado cuando se abra la solicitud. &lt;br&gt;Nota: El mensaje no se envía junto al pago por la red WISPR.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the PIVX network.</source>
+        <translation>Un mensaje opcional a adjuntar a la solicitud de pago, que será mostrado cuando se abra la solicitud. &lt;br&gt;Nota: El mensaje no se envía junto al pago por la red PIVX.</translation>
     </message>
     <message>
         <source>Use this form to request payments. All fields are &lt;b&gt;optional&lt;/b&gt;.</source>
@@ -3534,10 +3513,6 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
     <message>
         <source>An optional amount to request. Leave this empty or zero to not request a specific amount.</source>
         <translation>Una cantidad opcional a solicitar. Deje esto vacío o en cero para no pedir una cantidad específica.</translation>
-    </message>
-    <message>
-        <source>&amp;Amount:</source>
-        <translation>&amp;Cantidad:</translation>
     </message>
     <message>
         <source>&amp;Request payment</source>
@@ -3582,6 +3557,10 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
     <message>
         <source>Copy amount</source>
         <translation>Copiar cantidad</translation>
+    </message>
+    <message>
+        <source>Copy address</source>
+        <translation>Copiar dirección</translation>
     </message>
 </context>
 <context>
@@ -3654,6 +3633,10 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <translation>Mensaje</translation>
     </message>
     <message>
+        <source>Address</source>
+        <translation>Dirección</translation>
+    </message>
+    <message>
         <source>Amount</source>
         <translation>Cantidad</translation>
     </message>
@@ -3698,7 +3681,7 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
     </message>
     <message>
         <source>Amount:</source>
-        <translation>Cantidad:</translation>
+        <translation>Suma:</translation>
     </message>
     <message>
         <source>Priority:</source>
@@ -3749,8 +3732,8 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <translation>Tamaño de UTXO:</translation>
     </message>
     <message>
-        <source>0 WSP</source>
-        <translation>0 WSP</translation>
+        <source>0 PIV</source>
+        <translation>0 PIV</translation>
     </message>
     <message>
         <source>Transaction Fee:</source>
@@ -3805,16 +3788,16 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <translation>Monedas seleccionadas automáticamente</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uWSPs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uWSPs in fee,&lt;br /&gt;while "at least" pays 1000 uWSPs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Si la comisión personalizada se fija en 1000 uWSPs y la transacción necesita sólo 250 bytes, entonces la opción "por kilobyte" sólo pagará 250 uWSPs de comisión,&lt;br/&gt;mientras "por lo menos" pagará 1000 uWSPs. Para transacciones que midan más de un kilobyte ambas pagan por kilobyte.</translation>
+        <source>If the custom fee is set to 1000 uPIVs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uPIVs in fee,&lt;br /&gt;while "at least" pays 1000 uPIVs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>Si la comisión personalizada se fija en 1000 uPIVs y la transacción necesita sólo 250 bytes, entonces la opción "por kilobyte" sólo pagará 250 uPIVs de comisión,&lt;br/&gt;mientras "por lo menos" pagará 1000 uPIVs. Para transacciones que midan más de un kilobyte ambas pagan por kilobyte.</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uWSPs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uWSPs in fee,&lt;br /&gt;while "total at least" pays 1000 uWSPs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Si la comisión personalizada se fija en 1000 uWSPs y la transacción necesita sólo 250 bytes, entonces la opción "por kilobyte" sólo pagará 250 uWSPs de comisión,&lt;br/&gt;mientras "por lo menos" pagará 1000 uWSPs. Para transacciones que midan más de un kilobyte ambas pagan por kilobyte.</translation>
+        <source>If the custom fee is set to 1000 uPIVs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uPIVs in fee,&lt;br /&gt;while "total at least" pays 1000 uPIVs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>Si la comisión personalizada se fija en 1000 uPIVs y la transacción necesita sólo 250 bytes, entonces la opción "por kilobyte" sólo pagará 250 uPIVs de comisión,&lt;br/&gt;mientras "por lo menos" pagará 1000 uPIVs. Para transacciones que midan más de un kilobyte ambas pagan por kilobyte.</translation>
     </message>
     <message>
-        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for WISPR transactions than the network can process.</source>
-        <translation>Pagar sólo la comisión mínima está bien mientras haya menos volumen de transacciones que espacio en los bloques.&lt;br/&gt;Pero tenga en cuenta que esto podría acabar en una transacción que nunca se confirme si hay más demanda de transacciones WISPR de las que la red puede procesar.</translation>
+        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for PIVX transactions than the network can process.</source>
+        <translation>Pagar sólo la comisión mínima está bien mientras haya menos volumen de transacciones que espacio en los bloques.&lt;br/&gt;Pero tenga en cuenta que esto podría acabar en una transacción que nunca se confirme si hay más demanda de transacciones PIVX de las que la red puede procesar.</translation>
     </message>
     <message>
         <source>normal</source>
@@ -3861,8 +3844,8 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <translation>Añadir Destinatario</translation>
     </message>
     <message>
-        <source>Anonymized WSP</source>
-        <translation>WSP anonimizados</translation>
+        <source>Anonymized PIV</source>
+        <translation>PIV anonimizados</translation>
     </message>
     <message>
         <source>Balance:</source>
@@ -3909,8 +3892,8 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <translation>La herramienta de división de bloques no funciona con varias direcciones. Inténtelo otra vez.</translation>
     </message>
     <message>
-        <source>Warning: Invalid WISPR address</source>
-        <translation>Advertencia: Direcciones WISPR inválidas</translation>
+        <source>Warning: Invalid PIVX address</source>
+        <translation>Advertencia: Direcciones PIVX inválidas</translation>
     </message>
     <message>
         <source>%1 to %2</source>
@@ -3935,10 +3918,6 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
     <message>
         <source>A fee %1 times higher than %2 per kB is considered an insanely high fee.</source>
         <translation>Una comisión %1 veces más alta que %2 por kB se considera exageradamente alta.</translation>
-    </message>
-    <message numerus="yes">
-        <source>Estimated to begin confirmation within %n block(s).</source>
-        <translation><numerusform>Estimamos que empezará la confirmación en %n bloques.</numerusform><numerusform>Estimamos que empezará la confirmación en %n bloques.</numerusform></translation>
     </message>
     <message>
         <source>The recipient address is not valid, please recheck.</source>
@@ -4012,8 +3991,8 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <translation>Pagar &amp;A:</translation>
     </message>
     <message>
-        <source>The WISPR address to send the payment to</source>
-        <translation>La dirección WISPR a la cual enviar el pago</translation>
+        <source>The PIVX address to send the payment to</source>
+        <translation>La dirección PIVX a la cual enviar el pago</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -4021,7 +4000,7 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
     </message>
     <message>
         <source>Alt+A</source>
-        <translation>Alt + A</translation>
+        <translation>Alt+A</translation>
     </message>
     <message>
         <source>Paste address from clipboard</source>
@@ -4029,7 +4008,7 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
     </message>
     <message>
         <source>Alt+P</source>
-        <translation>Alt + P</translation>
+        <translation>Alt+P</translation>
     </message>
     <message>
         <source>Remove this entry</source>
@@ -4052,8 +4031,8 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <translation>Mensaje:</translation>
     </message>
     <message>
-        <source>A message that was attached to the WISPR: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the WISPR network.</source>
-        <translation>Un mensaje adjunto al WISPR: En recurso web especificado será guardado junto a la transacción para su referencia. Nota: Este mensaje no se enviará por la red WISPR.</translation>
+        <source>A message that was attached to the PIVX: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the PIVX network.</source>
+        <translation>Un mensaje adjunto al PIVX: En recurso web especificado será guardado junto a la transacción para su referencia. Nota: Este mensaje no se enviará por la red PIVX.</translation>
     </message>
     <message>
         <source>This is an unverified payment request.</source>
@@ -4079,8 +4058,8 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <source>WISPR Core is shutting down...</source>
-        <translation>El programa WISPR se está cerrando...</translation>
+        <source>PIVX Core is shutting down...</source>
+        <translation>El programa PIVX se está cerrando...</translation>
     </message>
     <message>
         <source>Do not shut down the computer until this window disappears.</source>
@@ -4102,8 +4081,8 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <translation>Usted puede firmar mensajes con su dirección para probar que son auténticos. Tenga cuidado con firmar algo corto o vago como "hola", pues los ataques de phising pueden engañarle para que firme su identidad para ellos. Sólo firme textos detallados con los que esté de acuerdo.</translation>
     </message>
     <message>
-        <source>The WISPR address to sign the message with</source>
-        <translation>La dirección WISPR con la que desee firmar el mensaje</translation>
+        <source>The PIVX address to sign the message with</source>
+        <translation>La dirección PIVX con la que desee firmar el mensaje</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -4111,7 +4090,7 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
     </message>
     <message>
         <source>Alt+A</source>
-        <translation>Alt + A</translation>
+        <translation>Alt+A</translation>
     </message>
     <message>
         <source>Paste address from clipboard</source>
@@ -4119,7 +4098,7 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
     </message>
     <message>
         <source>Alt+P</source>
-        <translation>Alt + P</translation>
+        <translation>Alt+P</translation>
     </message>
     <message>
         <source>Enter the message you want to sign here</source>
@@ -4134,16 +4113,16 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <translation>Copiar la firma actual al portapapeles del sistema</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this WISPR address</source>
-        <translation>Firme el mensaje para demostrar que eres el propietario de esta dirección WISPR</translation>
+        <source>Sign the message to prove you own this PIVX address</source>
+        <translation>Firme el mensaje para demostrar que eres el propietario de esta dirección PIVX</translation>
     </message>
     <message>
-        <source>The WISPR address the message was signed with</source>
-        <translation>La dirección WISPR con la que se firmó el mensaje</translation>
+        <source>The PIVX address the message was signed with</source>
+        <translation>La dirección PIVX con la que se firmó el mensaje</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified WISPR address</source>
-        <translation>Verifica el mensaje para asegurar que fue firmado con la dirección WISPR especificada</translation>
+        <source>Verify the message to ensure it was signed with the specified PIVX address</source>
+        <translation>Verifica el mensaje para asegurar que fue firmado con la dirección PIVX especificada</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -4229,8 +4208,8 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>WISPR Core</source>
-        <translation>WISPR Core</translation>
+        <source>PIVX Core</source>
+        <translation>PIVX Core</translation>
     </message>
     <message>
         <source>Version %1</source>
@@ -4249,10 +4228,6 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <translation>Los desarrolladores de PIVX Core</translation>
     </message>
     <message>
-        <source>The WISPR Core developers</source>
-        <translation>Los desarrolladores de WISPR Core</translation>
-    </message>
-    <message>
         <source>[testnet]</source>
         <translation>[testnet]</translation>
     </message>
@@ -4266,10 +4241,6 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
 </context>
 <context>
     <name>TransactionDesc</name>
-    <message numerus="yes">
-        <source>Open for %n more block(s)</source>
-        <translation><numerusform>Abierto para %n bloques más</numerusform><numerusform>Abierto para %n bloques más</numerusform></translation>
-    </message>
     <message>
         <source>Open until %1</source>
         <translation>Abierto hasta %1</translation>
@@ -4330,10 +4301,6 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <source>, has not been successfully broadcast yet</source>
         <translation>, no ha sido correctamente transmitida todavía</translation>
     </message>
-    <message numerus="yes">
-        <source>, broadcast through %n node(s)</source>
-        <translation><numerusform>, retransmitido a través de %n nodos</numerusform><numerusform>, retransmitido a través de %n nodos</numerusform></translation>
-    </message>
     <message>
         <source>Date</source>
         <translation>Fecha</translation>
@@ -4373,10 +4340,6 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
     <message>
         <source>Credit</source>
         <translation>Crédito</translation>
-    </message>
-    <message numerus="yes">
-        <source>matures in %n more block(s)</source>
-        <translation><numerusform>madura en %n bloques más</numerusform><numerusform>maduracíon en %n bloques más</numerusform></translation>
     </message>
     <message>
         <source>not accepted</source>
@@ -4476,10 +4439,6 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <source>Address</source>
         <translation>Dirección</translation>
     </message>
-    <message numerus="yes">
-        <source>Open for %n more block(s)</source>
-        <translation><numerusform>Abierto para %n bloques más</numerusform><numerusform>Abierto para %n bloques más</numerusform></translation>
-    </message>
     <message>
         <source>Open until %1</source>
         <translation>Abierto hasta %1</translation>
@@ -4529,12 +4488,12 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <translation>Recibido por medio de Ofuscación</translation>
     </message>
     <message>
-        <source>WSP Stake</source>
-        <translation>Stake WSP</translation>
+        <source>PIV Stake</source>
+        <translation>Stake PIV</translation>
     </message>
     <message>
-        <source>zWSP Stake</source>
-        <translation>Stake zWSP</translation>
+        <source>zPIV Stake</source>
+        <translation>Stake zPIV</translation>
     </message>
     <message>
         <source>Obfuscation Denominate</source>
@@ -4553,32 +4512,32 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <translation>Ofuscación Crea Billetes</translation>
     </message>
     <message>
-        <source>Converted WSP to zWSP</source>
-        <translation>WSP convertidos a zWSP</translation>
+        <source>Converted PIV to zPIV</source>
+        <translation>PIV convertidos a zPIV</translation>
     </message>
     <message>
-        <source>Spent zWSP</source>
-        <translation>Gastar zWSP</translation>
+        <source>Spent zPIV</source>
+        <translation>Gastar zPIV</translation>
     </message>
     <message>
-        <source>Received WSP from zWSP</source>
-        <translation>WSP recibidos desde zWSP </translation>
+        <source>Received PIV from zPIV</source>
+        <translation>PIV recibidos desde zPIV</translation>
     </message>
     <message>
-        <source>Minted Change as zWSP from zWSP Spend</source>
-        <translation>Cambio de acuñación en zWSP al Gastar zWSP</translation>
+        <source>Minted Change as zPIV from zPIV Spend</source>
+        <translation>Cambio de acuñación en zPIV al Gastar zPIV</translation>
     </message>
     <message>
-        <source>Converted zWSP to WSP</source>
-        <translation>zWSP convertidos a WSP</translation>
+        <source>Converted zPIV to PIV</source>
+        <translation>zPIV convertidos a PIV</translation>
     </message>
     <message>
-        <source>Anonymous (zWSP Transaction)</source>
-        <translation>Anónimo (Transacción zWSP)</translation>
+        <source>Anonymous (zPIV Transaction)</source>
+        <translation>Anónimo (Transacción zPIV)</translation>
     </message>
     <message>
-        <source>Anonymous (zWSP Stake)</source>
-        <translation>Anónimo (Stake zWSP)</translation>
+        <source>Anonymous (zPIV Stake)</source>
+        <translation>Anónimo (Stake zPIV)</translation>
     </message>
     <message>
         <source>Sent to</source>
@@ -4788,12 +4747,12 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <translation>Exportación Correcta</translation>
     </message>
     <message>
-        <source>Received WSP from zWSP</source>
-        <translation>WSP recibidos desde zWSP</translation>
+        <source>Received PIV from zPIV</source>
+        <translation>PIV recibidos desde zPIV</translation>
     </message>
     <message>
-        <source>Zerocoin Spend, Change in zWSP</source>
-        <translation>Gastar Zerocoin, Cambio en zWSP</translation>
+        <source>Zerocoin Spend, Change in zPIV</source>
+        <translation>Gastar Zerocoin, Cambio en zPIV</translation>
     </message>
     <message>
         <source>The transaction history was successfully saved to %1.</source>
@@ -4829,8 +4788,8 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <translation>Enviar Monedas</translation>
     </message>
     <message>
-        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 WSP.</source>
-        <translation>SwiftTX no soporta el envío de importes tan altos todavía. Las transacciones están actualmente limitadas a %1 WSP.</translation>
+        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 PIV.</source>
+        <translation>SwiftTX no soporta el envío de importes tan altos todavía. Las transacciones están actualmente limitadas a %1 PIV.</translation>
     </message>
 </context>
 <context>
@@ -4861,10 +4820,10 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
     </message>
 </context>
 <context>
-    <name>ZWspControlDialog</name>
+    <name>ZPivControlDialog</name>
     <message>
-        <source>Select zWSP to Spend</source>
-        <translation>Selecciona zWSP para Gastar</translation>
+        <source>Select zPIV to Spend</source>
+        <translation>Selecciona zPIV para Gastar</translation>
     </message>
     <message>
         <source>Quantity</source>
@@ -4875,20 +4834,16 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <translation>0</translation>
     </message>
     <message>
-        <source>zWSP</source>
-        <translation>zWSP</translation>
+        <source>zPIV</source>
+        <translation>zPIV</translation>
     </message>
     <message>
         <source>Select/Deselect All</source>
         <translation>Seleccionar/Deseleccionar Todos</translation>
     </message>
-    <message>
-        <source>Is Spendable</source>
-        <translation>Es Gastable</translation>
-    </message>
-</context>
+    </context>
 <context>
-    <name>wispr-core</name>
+    <name>pivx-core</name>
     <message>
         <source>(1 = keep tx meta data e.g. account owner and payment request information, 2 = drop tx meta data)</source>
         <translation>(1= mantener los metadatos tx p.e. dueño de la cuenta e información de la solicitud de pago, 2 = ignorar metadatos tx)</translation>
@@ -4914,8 +4869,8 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <translation>El punto de chequeo del acumulador que hemos calculado no coincide con lo guardado en el índice de bloques</translation>
     </message>
     <message>
-        <source>Cannot obtain a lock on data directory %s. WISPR Core is probably already running.</source>
-        <translation>No se puede obtener un bloqueo sobre el directorio de datos %s. WISPR Core esta probablemente en ejecución.</translation>
+        <source>Cannot obtain a lock on data directory %s. PIVX Core is probably already running.</source>
+        <translation>No se puede obtener un bloqueo sobre el directorio de datos %s. PIVX Core esta probablemente en ejecución.</translation>
     </message>
     <message>
         <source>Change automatic finalized budget voting behavior. mode=auto: Vote for only exact finalized budget match to my generated budget. (string, default: auto)</source>
@@ -4942,16 +4897,16 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <translation>Distribuido bajo licencia MIT software license, ver el archivo adjunto COPYING or &lt;http://www.opensource.org/licenses/mit-license.php&gt;</translation>
     </message>
     <message>
-        <source>Enable automatic wallet backups triggered after each zWSP minting (0-1, default: %u)</source>
-        <translation>Habilite copias de seguridad automáticas del monedero que se activan después de cada acuñación zWSP (0-1, predeterminado: %u)</translation>
+        <source>Enable automatic wallet backups triggered after each zPIV minting (0-1, default: %u)</source>
+        <translation>Habilite copias de seguridad automáticas del monedero que se activan después de cada acuñación zPIV (0-1, predeterminado: %u)</translation>
     </message>
     <message>
-        <source>Enable or disable staking functionality for WSP inputs (0-1, default: %u)</source>
-        <translation>Habilitar o deshabilitar la funcionalidad de staking para las entradas WSP (0-1, predeterminado: %u)</translation>
+        <source>Enable or disable staking functionality for PIV inputs (0-1, default: %u)</source>
+        <translation>Habilitar o deshabilitar la funcionalidad de staking para las entradas PIV (0-1, predeterminado: %u)</translation>
     </message>
     <message>
-        <source>Enable or disable staking functionality for zWSP inputs (0-1, default: %u)</source>
-        <translation>Habilitar o deshabilitar la funcionalidad de staking para las entradas zWSP (0-1, predeterminado: %u)</translation>
+        <source>Enable or disable staking functionality for zPIV inputs (0-1, default: %u)</source>
+        <translation>Habilitar o deshabilitar la funcionalidad de staking para las entradas zPIV (0-1, predeterminado: %u)</translation>
     </message>
     <message>
         <source>Enable spork administration functionality with the appropriate private key.</source>
@@ -4986,12 +4941,12 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <translation>Ejecutar comando cuando el mejor bloque cambie (%s en cmd es reemplazado por el block hash)</translation>
     </message>
     <message>
-        <source>Fees (in WSP/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
-        <translation>Comisiones (en WSP/Kb) menores a esta son consideradas gratuitas para la propagación de la transacción (default: %s)</translation>
+        <source>Fees (in PIV/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
+        <translation>Comisiones (en PIV/Kb) menores a esta son consideradas gratuitas para la propagación de la transacción (default: %s)</translation>
     </message>
     <message>
-        <source>Fees (in WSP/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
-        <translation>Comisiones (en WSP/Kb) menores a esta son consideradas gratuitas para la creación de la transacción (default: %s)</translation>
+        <source>Fees (in PIV/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
+        <translation>Comisiones (en PIV/Kb) menores a esta son consideradas gratuitas para la creación de la transacción (default: %s)</translation>
     </message>
     <message>
         <source>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: %u)</source>
@@ -5090,20 +5045,20 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <translation>Este producto incluye software desarrollado por el Proyecto OpenSSL para uso en OpenSSL Toolkit &lt;https://www.openssl.org/&gt; y software de cifrado escrito por Eric Young y software de UPnP escrito por Thomas Bernard.</translation>
     </message>
     <message>
-        <source>Unable to bind to %s on this computer. WISPR Core is probably already running.</source>
-        <translation>Imposible conectar a %s en esta computadora. Es probable que WISPR Core ya este corriendo.</translation>
+        <source>Unable to bind to %s on this computer. PIVX Core is probably already running.</source>
+        <translation>Imposible conectar a %s en esta computadora. Es probable que PIVX Core ya este corriendo.</translation>
     </message>
     <message>
         <source>Unable to locate enough Obfuscation denominated funds for this transaction.</source>
         <translation>Imposible localizar suficientes fondos denominados de Ofuscación para esta transacción.</translation>
     </message>
     <message>
-        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 WSP.</source>
-        <translation>Imposible localizar suficientes fondos no-denominados de Ofuscación para esta transacción que no es igual a 10000 WSP.</translation>
+        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 PIV.</source>
+        <translation>Imposible localizar suficientes fondos no-denominados de Ofuscación para esta transacción que no es igual a 10000 PIV.</translation>
     </message>
     <message>
-        <source>Unable to locate enough funds for this transaction that are not equal 10000 WSP.</source>
-        <translation>Imposible localizar fondos suficientes para esta transacción que no es igual a 10000 WSP.</translation>
+        <source>Unable to locate enough funds for this transaction that are not equal 10000 PIV.</source>
+        <translation>Imposible localizar fondos suficientes para esta transacción que no es igual a 10000 PIV.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
@@ -5118,8 +5073,8 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <translation>Advertencia: -paytxfee esta muy alta! Esta es la comisión de transacción que pagarás si envías una transacción.</translation>
     </message>
     <message>
-        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong WISPR Core will not work properly.</source>
-        <translation>Advertencia: Por favor verifique que la fecha y hora de su computadora sean correctas! Si su reloj esta fuera de hora WISPR Core no funcionará adecuadamente.</translation>
+        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong PIVX Core will not work properly.</source>
+        <translation>Advertencia: Por favor verifique que la fecha y hora de su computadora sean correctas! Si su reloj esta fuera de hora PIVX Core no funcionará adecuadamente.</translation>
     </message>
     <message>
         <source>Warning: The network does not appear to fully agree! Some miners appear to be experiencing issues.</source>
@@ -5150,8 +5105,8 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <translation>Debes especificar un masternodeprivkey en la configuración. Por favor mira la documentación por ayuda.</translation>
     </message>
     <message>
-        <source>(17000 could be used only on mainnet)</source>
-        <translation>(17000 puede ser utilizado solo en mainnet)</translation>
+        <source>(51472 could be used only on mainnet)</source>
+        <translation>(51472 puede ser utilizado solo en mainnet)</translation>
     </message>
     <message>
         <source>(default: %s)</source>
@@ -5162,8 +5117,8 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <translation>(predeterminado: 1)</translation>
     </message>
     <message>
-        <source>(must be 17000 for mainnet)</source>
-        <translation>(debe ser 17000 para un mainnet)</translation>
+        <source>(must be 51472 for mainnet)</source>
+        <translation>(debe ser 51472 para un mainnet)</translation>
     </message>
     <message>
         <source>Accept command line and JSON-RPC commands</source>
@@ -5274,10 +5229,6 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <translation>Copyright (C) 2015-%i The PIVX Core Developers</translation>
     </message>
     <message>
-        <source>Copyright (C) 2017-%i The WISPR Core Developers</source>
-        <translation>Copyright (C) 2017-%i The WISPR Core Developers</translation>
-    </message>
-    <message>
         <source>Corrupted block database detected</source>
         <translation>Se detectó base de datos de bloques dañado</translation>
     </message>
@@ -5362,8 +5313,8 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <translation>Error al cargar wallet.dat: Monedero dañado</translation>
     </message>
     <message>
-        <source>Error loading wallet.dat: Wallet requires newer version of WISPR Core</source>
-        <translation>Error al cargar wallet.dat: El monedero requiere una nueva versión del WISPR Core</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of PIVX Core</source>
+        <translation>Error al cargar wallet.dat: El monedero requiere una nueva versión del PIVX Core</translation>
     </message>
     <message>
         <source>Error opening block database</source>
@@ -5376,6 +5327,10 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
     <message>
         <source>Error recovering public key.</source>
         <translation>Error al recuperar clave pública.</translation>
+    </message>
+    <message>
+        <source>Error writing zerocoinDB to disk</source>
+        <translation>Error al escribir zerocoinDB en el disco</translation>
     </message>
     <message>
         <source>Error</source>
@@ -5414,12 +5369,16 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <translation>Falló la escucha en cualquiera de los puertos. Usar -listen=0 si quieres esto.</translation>
     </message>
     <message>
+        <source>Failed to parse host:port string</source>
+        <translation>Error al analizar el host: cadena del puerto</translation>
+    </message>
+    <message>
         <source>Failed to read block</source>
         <translation>Falló al leer el bloque</translation>
     </message>
     <message>
-        <source>Fee (in WSP/kB) to add to transactions you send (default: %s)</source>
-        <translation>Comisión (en WSP/kB) para agregar a la transacción que envías (predeterminado: %s)</translation>
+        <source>Fee (in PIV/kB) to add to transactions you send (default: %s)</source>
+        <translation>Comisión (en PIV/kB) para agregar a la transacción que envías (predeterminado: %s)</translation>
     </message>
     <message>
         <source>Finalizing transaction.</source>
@@ -5478,8 +5437,8 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <translation>Información</translation>
     </message>
     <message>
-        <source>Initialization sanity check failed. WISPR Core is shutting down.</source>
-        <translation>La prueba de salud de inicialización ha fallado. WISPR Core se cerrará.</translation>
+        <source>Initialization sanity check failed. PIVX Core is shutting down.</source>
+        <translation>La prueba de salud de inicialización ha fallado. PIVX Core se cerrará.</translation>
     </message>
     <message>
         <source>Input is not valid.</source>
@@ -5550,8 +5509,8 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <translation>Porcentaje de Zerocoin creadas automáticamente (10-100, por defecto: %u)</translation>
     </message>
     <message>
-        <source>Reindex the WSP and zWSP money supply statistics</source>
-        <translation>Reindexar as estatísticas de fornecimento de dinheiro WSP e zWSP</translation>
+        <source>Reindex the PIV and zPIV money supply statistics</source>
+        <translation>Reindexar as estatísticas de fornecimento de dinheiro PIV e zPIV</translation>
     </message>
     <message>
         <source>Reindexing zerocoin database...</source>
@@ -5590,8 +5549,8 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
 </translation>
     </message>
     <message>
-        <source>Disable all WISPR specific functionality (Masternodes, Zerocoin, SwiftX, Budgeting) (0-1, default: %u)</source>
-        <translation>Desabilitar toda la funcionalidad especifica WISPR (Masternodes, Obfuscation, SwiftTX, Budgeting) (0-1, predeterminado: %u)</translation>
+        <source>Disable all PIVX specific functionality (Masternodes, Zerocoin, SwiftX, Budgeting) (0-1, default: %u)</source>
+        <translation>Desabilitar toda la funcionalidad especifica PIVX (Masternodes, Obfuscation, SwiftTX, Budgeting) (0-1, predeterminado: %u)</translation>
     </message>
     <message>
         <source>Enable SwiftX, show confirmations for locked transactions (bool, default: %s)</source>
@@ -5626,8 +5585,8 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <translation>Denominación preferida para acuñado automatico de Zerocoin (1/5/10/50/100/500/1000/5000), 0 para ninguna preferencia. predeterminado: %u)</translation>
     </message>
     <message>
-        <source>Specify custom backup path to add a copy of any automatic zWSP backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup. If backuppath is set as well, 4 backups will happen</source>
-        <translation>Especifique la ruta de copia de seguridad personalizada para agregar una copia de cualquier copia de seguridad zWSP automática. Si se establece como directorio, cada copia de seguridad genera un archivo con marcas de tiempo. Si se establece como archivo, se reescribirá en ese archivo cada copia de seguridad. Si también se establece backuppath, se realizarán 4 copias de seguridad</translation>
+        <source>Specify custom backup path to add a copy of any automatic zPIV backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup. If backuppath is set as well, 4 backups will happen</source>
+        <translation>Especifique la ruta de copia de seguridad personalizada para agregar una copia de cualquier copia de seguridad zPIV automática. Si se establece como directorio, cada copia de seguridad genera un archivo con marcas de tiempo. Si se establece como archivo, se reescribirá en ese archivo cada copia de seguridad. Si también se establece backuppath, se realizarán 4 copias de seguridad</translation>
     </message>
     <message>
         <source>Specify custom backup path to add a copy of any wallet backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup.</source>
@@ -5688,10 +5647,6 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
     <message>
         <source>Failed to create mint</source>
         <translation>Error al acuñar</translation>
-    </message>
-    <message>
-        <source>Failed to deserialize</source>
-        <translation>Error al deserializar</translation>
     </message>
     <message>
         <source>Failed to find Zerocoins in wallet.dat</source>
@@ -6126,20 +6081,12 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <translation>Sincronizando con la red... </translation>
     </message>
     <message>
-        <source>Syncing zWSP wallet...</source>
-        <translation>Sincronizando el monedero zWSP...</translation>
+        <source>Syncing zPIV wallet...</source>
+        <translation>Sincronizando el monedero zPIV...</translation>
     </message>
     <message>
         <source>The coin spend has been used</source>
         <translation>El gasto de moneda se ha usado</translation>
-    </message>
-    <message>
-        <source>The new spend coin transaction did not verify</source>
-        <translation>La nueva transacción de gasto de moneda no se verificó</translation>
-    </message>
-    <message>
-        <source>The selected mint coin is an invalid coin</source>
-        <translation>La moneda acuñada seleccionada es una moneda no válida</translation>
     </message>
     <message>
         <source>The transaction did not verify</source>
@@ -6274,8 +6221,8 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <translation>Nombre de usuario para conexiones JSON-RPC</translation>
     </message>
     <message>
-        <source>Value is below the smallest available denomination (= 1) of zWSP</source>
-        <translation>El valor está por debajo de la denominación más pequeña disponible (= 1) de zWSP</translation>
+        <source>Value is below the smallest available denomination (= 1) of zPIV</source>
+        <translation>El valor está por debajo de la denominación más pequeña disponible (= 1) de zPIV</translation>
     </message>
     <message>
         <source>Value more than Obfuscation pool maximum allows.</source>
@@ -6290,10 +6237,6 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <translation>Verificando el monedero...</translation>
     </message>
     <message>
-        <source>Version 1 zWSP require a security level of 100 to successfully spend.</source>
-        <translation>La versión 1 zWSP requiere un nivel de seguridad de 100 para gastar exitosamente.</translation>
-    </message>
-    <message>
         <source>Wallet %s resides outside data directory %s</source>
         <translation>El monedero %s esta ubicada fuera del directorio de datos %s</translation>
     </message>
@@ -6302,8 +6245,8 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <translation>Monedero bloqueado.</translation>
     </message>
     <message>
-        <source>Wallet needed to be rewritten: restart WISPR Core to complete</source>
-        <translation>El Monedero necesita ser reescrito: reinicie WISPR Core para completar</translation>
+        <source>Wallet needed to be rewritten: restart PIVX Core to complete</source>
+        <translation>El Monedero necesita ser reescrito: reinicie PIVX Core para completar</translation>
     </message>
     <message>
         <source>Wallet options:</source>
