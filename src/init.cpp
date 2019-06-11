@@ -1534,12 +1534,12 @@ bool AppInit2()
 
                 // Recalculate money supply for blocks that are impacted by accounting issue after zerocoin activation
                 if (GetBoolArg("-reindexmoneysupply", false) || reindexZerocoin) {
-                    if (chainHeight > Params().Zerocoin_StartHeight()) {
+                    if (chainHeight > Params().NEW_PROTOCOLS_STARTHEIGHT()) {
                         RecalculateZWSPMinted();
                         RecalculateZWSPSpent();
                     }
                     // Recalculate from the zerocoin activation or from scratch.
-                    RecalculateWSPSupply(reindexZerocoin ? Params().Zerocoin_StartHeight() : 1);
+                    RecalculateWSPSupply(reindexZerocoin ? Params().NEW_PROTOCOLS_STARTHEIGHT() : 1);
                 }
 
                 // Check Recalculation result
@@ -1552,8 +1552,8 @@ bool AppInit2()
 
                 // Force recalculation of accumulators.
                 if (GetBoolArg("-reindexaccumulators", false)) {
-                    if (chainHeight > Params().Zerocoin_Block_V2_Start()) {
-                        CBlockIndex *pindex = chainActive[Params().Zerocoin_Block_V2_Start()];
+                    if (chainHeight > Params().NEW_PROTOCOLS_STARTHEIGHT()) {
+                        CBlockIndex *pindex = chainActive[Params().NEW_PROTOCOLS_STARTHEIGHT()];
                         while (pindex->nHeight < chainActive.Height()) {
                             if (!count(listAccCheckpointsNoDB.begin(), listAccCheckpointsNoDB.end(),
                                        pindex->nAccumulatorCheckpoint))

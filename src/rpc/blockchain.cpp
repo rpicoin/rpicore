@@ -1396,8 +1396,8 @@ UniValue getserials(const UniValue& params, bool fHelp) {
     int nBestHeight = chainActive.Height();
 
     int heightStart = params[0].get_int();
-    if (heightStart < Params().Zerocoin_StartHeight())
-        heightStart = Params().Zerocoin_StartHeight();
+    if (heightStart < Params().NEW_PROTOCOLS_STARTHEIGHT())
+        heightStart = Params().NEW_PROTOCOLS_STARTHEIGHT();
 
     int range = params[1].get_int();
     if (range < 1)

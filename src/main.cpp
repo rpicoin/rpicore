@@ -2523,7 +2523,7 @@ void RecalculateZWSPMinted()
         // Log Message and feedback message every 1000 blocks
         if (pindex->nHeight % 1000 == 0) {
             LogPrintf("%s : block %d...\n", __func__, pindex->nHeight);
-            int percent = std::max(1, std::min(99, (int)((double)(pindex->nHeight - Params().Zerocoin_StartHeight()) * 100 / (chainActive.Height() - Params().Zerocoin_StartHeight()))));
+            int percent = std::max(1, std::min(99, (int)((double)(pindex->nHeight - Params().NEW_PROTOCOLS_STARTHEIGHT()) * 100 / (chainActive.Height() - Params().NEW_PROTOCOLS_STARTHEIGHT()))));
             uiInterface.ShowProgress(_("Recalculating minted ZWSP..."), percent);
         }
 
@@ -2554,7 +2554,7 @@ void RecalculateZWSPSpent()
     while (true) {
         if (pindex->nHeight % 1000 == 0) {
             LogPrintf("%s : block %d...\n", __func__, pindex->nHeight);
-            int percent = std::max(1, std::min(99, (int)((double)(pindex->nHeight - Params().Zerocoin_StartHeight()) * 100 / (chainActive.Height() - Params().Zerocoin_StartHeight()))));
+            int percent = std::max(1, std::min(99, (int)((double)(pindex->nHeight - Params().NEW_PROTOCOLS_STARTHEIGHT()) * 100 / (chainActive.Height() - Params().NEW_PROTOCOLS_STARTHEIGHT()))));
             uiInterface.ShowProgress(_("Recalculating spent ZWSP..."), percent);
         }
 
@@ -3017,7 +3017,7 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
     }
 
     // Ensure that accumulator checkpoints are valid and in the same state as this instance of the chain
-    AccumulatorMap mapAccumulators(Params().Zerocoin_Params(pindex->nHeight < Params().Zerocoin_Block_V2_Start()));
+    AccumulatorMap mapAccumulators(Params().Zerocoin_Params(pindex->nHeight < Params().NEW_PROTOCOLS_STARTHEIGHT()));
     if (!ValidateAccumulatorCheckpoint(block, pindex, mapAccumulators)) {
         if (!ShutdownRequested()) {
             return state.DoS(100, error("%s: Failed to validate accumulator checkpoint for block=%s height=%d", __func__,
@@ -3946,7 +3946,7 @@ bool CheckBlockHeader(const CBlockHeader& block, CValidationState& state, bool f
         return state.DoS(50, error("CheckBlockHeader() : proof of work failed"),
                          REJECT_INVALID, "high-hash");
 
-    // Version 4 header must be used after Params().Zerocoin_StartHeight(). And never before.
+    // Version 4 header must be used after Params().NEW_PROTOCOLS_STARTHEIGHT(). And never before.
     if (chainActive.Height() + 1 >= Params().NEW_PROTOCOLS_STARTHEIGHT()) {
         if(block.nVersion < Params().Zerocoin_HeaderVersion() && Params().NetworkID() != CBaseChainParams::REGTEST)
             return state.DoS(50, error("CheckBlockHeader() : block version must be above 7 after ZerocoinStartHeight"),
@@ -4085,7 +4085,7 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
         if (!CheckTransaction(
                 tx,
                 fZerocoinActive,
-                blockHeight >= Params().Zerocoin_Block_EnforceSerialRange(),
+                blockHeight >= Params().NEW_PROTOCOLS_STARTHEIGHT(),
                 state,
                 isBlockBetweenFakeSerialAttackRange(blockHeight)
         ))
@@ -4460,7 +4460,7 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
         vector<CBigNum> inBlockSerials;
         for (const CTransaction& tx : block.vtx) {
             for (const CTxIn& in: tx.vin) {
-                if(nHeight >= Params().Zerocoin_StartHeight()) {
+                if(nHeight >= Params().NEW_PROTOCOLS_STARTHEIGHT()) {
                     if (in.scriptSig.IsZerocoinSpend()) {
                         CoinSpend spend = TxInToZerocoinSpend(in);
                         // Check for serials double spending in the same block
@@ -4574,7 +4574,7 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
                         return state.DoS(100, error("%s: stake zerocoinspend not ready to be spent", __func__));
                     }
 
-                    Accumulator accumulator(Params().Zerocoin_Params(chainActive.Height() < Params().Zerocoin_Block_V2_Start()),
+                    Accumulator accumulator(Params().Zerocoin_Params(chainActive.Height() < Params().NEW_PROTOCOLS_STARTHEIGHT()),
                                             spend.getDenomination(), bnAccumulatorValue);
 
                     //Check that the coinspend is valid

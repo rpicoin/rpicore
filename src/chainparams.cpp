@@ -153,8 +153,8 @@ public:
         nBlockDoubleAccumulated = 1050010;
 
         // Fake Serial Attack
-        nFakeSerialBlockheightEnd = 1686229;
-        nSupplyBeforeFakeSerial = 4131563 * COIN;   // zerocoin supply at block nFakeSerialBlockheightEnd
+        nFakeSerialBlockheightEnd = -1;
+        nSupplyBeforeFakeSerial = 0;   // zerocoin supply at block nFakeSerialBlockheightEnd
 
         /**
          * Build the genesis block. Note that the output of the genesis coinbase cannot
