@@ -166,11 +166,11 @@ static bool SelectBlockFromCandidates(
 uint256 ComputeStakeModifier(const CBlockIndex *pindexPrev, const uint256 &kernel) {
     if (!pindexPrev)
         return 0;  // genesis block's modifier is 0
-    LogPrintf("ComputeStakeModifier: kernel=%s, bnStakeModifierV2=%s\n", kernel.ToString().c_str(), pindexPrev->bnStakeModifierV2.ToString().c_str());
+//    LogPrintf("ComputeStakeModifier: kernel=%s, bnStakeModifierV2=%s\n", kernel.ToString().c_str(), pindexPrev->bnStakeModifierV2.ToString().c_str());
     CDataStream ss(SER_GETHASH, 0);
     ss << kernel << pindexPrev->bnStakeModifierV2;
     uint256 hash = Hash(ss.begin(), ss.end());
-    LogPrintf("ComputeStakeModifier: hash=%s\n", hash.ToString().c_str());
+//    LogPrintf("ComputeStakeModifier: hash=%s\n", hash.ToString().c_str());
     return hash;
 }
 
@@ -369,6 +369,7 @@ bool CheckStakeV1(unsigned int nTxPrevTime, const COutPoint &prevout,
     ss << bnStakeModifierV2;
     ss << nTxPrevTime << prevout.hash << prevout.n << nTimeTx;
     hashProofOfStake = Hash(ss.begin(), ss.end());
+//    LogPrintf("%s: modifier:%d nTimeBlockFrom:%d nTimeTx:%d hash:%s\n", __func__, nStakeModifier, nTimeBlockFrom, nTimeTx, hashProofOfStake.ToString());
 
     return stakeTargetHitOld(hashProofOfStake, bnTarget);
 }
@@ -484,8 +485,8 @@ bool CheckProofOfStake(const CBlock block, uint256& hashProofOfStake, std::uniqu
         }
     } else {
         if (!CheckStakeV1(txPrev.nTime, txin.prevout, tx.nTime, hashProofOfStake, nValueIn, pindexOld, block.nBits)) {
-            return error("CheckProofOfStake() : INFO: old bnStakeModifierV2 check kernel failed on coinstake %s, hashProof=%s \n",
-                         tx.GetHash().ToString(), hashProofOfStake.ToString());
+            return error("CheckProofOfStake() : INFO: old bnStakeModifierV2 check kernel failed on coinstake %s, hashProof=%s \n block:\n%s\n",
+                         tx.GetHash().ToString(), hashProofOfStake.ToString(), block.ToString().c_str());
         }
     }
     return true;

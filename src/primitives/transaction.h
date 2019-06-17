@@ -236,8 +236,6 @@ public:
     inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
         READWRITE(*const_cast<int32_t*>(&this->nVersion));
         nVersion = this->nVersion;
-//        int newProtocolTime = !GetBoolArg("-testnet", false) ? 1538567022 : 1537448663;
-//        nVersion = GetAdjustedTime() >= newProtocolTime ? this->nVersion : 1;
         if(nVersion < 2){
             READWRITE(*const_cast<unsigned int *>(&nTime));
         }

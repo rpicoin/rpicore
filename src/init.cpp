@@ -1510,23 +1510,23 @@ bool AppInit2()
                 bool reindexDueWrappedSerials = false;
                 bool reindexZerocoin = false;
                 int chainHeight = chainActive.Height();
-                if(Params().NetworkID() == CBaseChainParams::MAIN && chainHeight > Params().Zerocoin_Block_EndFakeSerial()) {
-
-                    // Supply needs to be exactly GetSupplyBeforeFakeSerial + GetWrapppedSerialInflationAmount
-                    CBlockIndex* pblockindex = chainActive[Params().Zerocoin_Block_EndFakeSerial() + 1];
-                    CAmount zpivSupplyCheckpoint = Params().GetSupplyBeforeFakeSerial() + GetWrapppedSerialInflationAmount();
-
-                    if (pblockindex->GetZerocoinSupply() < zpivSupplyCheckpoint) {
-                        // Trigger reindex due wrapping serials
-                        LogPrintf("Current GetZerocoinSupply: %d vs %d\n", pblockindex->GetZerocoinSupply()/COIN , zpivSupplyCheckpoint/COIN);
-                        reindexDueWrappedSerials = true;
-                    } else if (pblockindex->GetZerocoinSupply() > zpivSupplyCheckpoint) {
-                        // Trigger global zWSP reindex
-                        reindexZerocoin = true;
-                        LogPrintf("Current GetZerocoinSupply: %d vs %d\n", pblockindex->GetZerocoinSupply()/COIN , zpivSupplyCheckpoint/COIN);
-                    }
-
-                }
+//                if(Params().NetworkID() == CBaseChainParams::MAIN && chainHeight > Params().Zerocoin_Block_EndFakeSerial()) {
+//
+//                    // Supply needs to be exactly GetSupplyBeforeFakeSerial + GetWrapppedSerialInflationAmount
+//                    CBlockIndex* pblockindex = chainActive[Params().Zerocoin_Block_EndFakeSerial() + 1];
+//                    CAmount zpivSupplyCheckpoint = Params().GetSupplyBeforeFakeSerial() + GetWrapppedSerialInflationAmount();
+//
+//                    if (pblockindex->GetZerocoinSupply() < zpivSupplyCheckpoint) {
+//                        // Trigger reindex due wrapping serials
+//                        LogPrintf("Current GetZerocoinSupply: %d vs %d\n", pblockindex->GetZerocoinSupply()/COIN , zpivSupplyCheckpoint/COIN);
+//                        reindexDueWrappedSerials = true;
+//                    } else if (pblockindex->GetZerocoinSupply() > zpivSupplyCheckpoint) {
+//                        // Trigger global zWSP reindex
+//                        reindexZerocoin = true;
+//                        LogPrintf("Current GetZerocoinSupply: %d vs %d\n", pblockindex->GetZerocoinSupply()/COIN , zpivSupplyCheckpoint/COIN);
+//                    }
+//
+//                }
 
                 // Reindex only for wrapped serials inflation.
                 if (reindexDueWrappedSerials)
@@ -1543,12 +1543,12 @@ bool AppInit2()
                 }
 
                 // Check Recalculation result
-                if(Params().NetworkID() == CBaseChainParams::MAIN && chainHeight > Params().Zerocoin_Block_EndFakeSerial()) {
-                    CBlockIndex* pblockindex = chainActive[Params().Zerocoin_Block_EndFakeSerial() + 1];
-                    CAmount zpivSupplyCheckpoint = Params().GetSupplyBeforeFakeSerial() + GetWrapppedSerialInflationAmount();
-                    if (pblockindex->GetZerocoinSupply() != zpivSupplyCheckpoint)
-                        return InitError(strprintf("ZerocoinSupply Recalculation failed: %d vs %d", pblockindex->GetZerocoinSupply()/COIN , zpivSupplyCheckpoint/COIN));
-                }
+//                if(Params().NetworkID() == CBaseChainParams::MAIN && chainHeight > Params().Zerocoin_Block_EndFakeSerial()) {
+//                    CBlockIndex* pblockindex = chainActive[Params().Zerocoin_Block_EndFakeSerial() + 1];
+//                    CAmount zpivSupplyCheckpoint = Params().GetSupplyBeforeFakeSerial() + GetWrapppedSerialInflationAmount();
+//                    if (pblockindex->GetZerocoinSupply() != zpivSupplyCheckpoint)
+//                        return InitError(strprintf("ZerocoinSupply Recalculation failed: %d vs %d", pblockindex->GetZerocoinSupply()/COIN , zpivSupplyCheckpoint/COIN));
+//                }
 
                 // Force recalculation of accumulators.
                 if (GetBoolArg("-reindexaccumulators", false)) {
