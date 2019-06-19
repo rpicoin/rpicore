@@ -81,18 +81,13 @@ void OptionsModel::Init()
         settings.setValue("fCoinControlFeatures", false);
     fCoinControlFeatures = settings.value("fCoinControlFeatures", false).toBool();
 
-    bool newProtocolStart = GetAdjustedTime() >= Params().NEW_PROTOCOLS_STARTTIME();
-    if (!settings.contains("fZeromintEnable")) {
-        if(newProtocolStart){
-            settings.setValue("fZeromintEnable", true);
-        }else{
-            settings.setValue("fZeromintEnable", false);
-        }
-    }
-    fEnableZeromint = settings.value("fZeromintEnable").toBool();
+    if (!settings.contains("fZeromintEnable"))
+        settings.setValue("fZeromintEnable", false);
+//    fEnableZeromint = settings.value("fZeromintEnable").toBool();
+    fEnableZeromint = false;
 
     if (!settings.contains("fEnableAutoConvert"))
-        settings.setValue("fEnableAutoConvert", true);
+        settings.setValue("fEnableAutoConvert", false);
     fEnableAutoConvert = settings.value("fEnableAutoConvert").toBool();
 
     if (!settings.contains("nZeromintPercentage"))

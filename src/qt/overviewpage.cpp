@@ -242,13 +242,8 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
 
     // Adjust bubble-help according to AutoMint settings
     QString automintHelp = tr("Current percentage of zWSP.\nIf AutoMint is enabled this percentage will settle around the configured AutoMint percentage (default = 10%).\n");
-    bool newProtocolStart = GetAdjustedTime() >= Params().NEW_PROTOCOLS_STARTTIME();
-    if(newProtocolStart){
-        bool fEnableZeromint = GetBoolArg("-enablezeromint", true);
-    }else{
-        bool fEnableZeromint = false;
-    }
-//    bool fEnableZeromint = GetBoolArg("-enablezeromint", false);
+//    bool fEnableZeromint = GetBoolArg("-enablezeromint", true);
+    bool fEnableZeromint = false;
     int nZeromintPercentage = GetArg("-zeromintpercentage", 10);
     if (fEnableZeromint) {
         automintHelp += tr("AutoMint is currently enabled and set to ") + QString::number(nZeromintPercentage) + "%.\n";

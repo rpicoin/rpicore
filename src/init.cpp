@@ -1921,12 +1921,8 @@ bool AppInit2()
         }
     }
 
-    bool newProtocolStart = GetAdjustedTime() >= Params().NEW_PROTOCOLS_STARTTIME();
-    if(newProtocolStart){
-        fEnableZeromint = GetBoolArg("-enablezeromint", true);
-    }else{
-        fEnableZeromint = false;
-    }
+//    fEnableZeromint = GetBoolArg("-enablezeromint", false);
+    fEnableZeromint = false;
 
     nZeromintPercentage = GetArg("-zeromintpercentage", 10);
     if (nZeromintPercentage > 100) nZeromintPercentage = 100;
