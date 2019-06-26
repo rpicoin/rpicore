@@ -176,16 +176,16 @@
         <translation>Confirme el cifrado del monedero</translation>
     </message>
     <message>
-        <source>WISPR will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your PIVs from being stolen by malware infecting your computer.</source>
-        <translation>WISPR se cerrará para finalizar el proceso de cifrado. Recuerde que cifrar su monedero no garantiza que sus PIVs no sean robados mediante malware de su ordenador.</translation>
+        <source>WISPR will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your WSPs from being stolen by malware infecting your computer.</source>
+        <translation>WISPR se cerrará para finalizar el proceso de cifrado. Recuerde que cifrar su monedero no garantiza que sus WSPs no sean robados mediante malware de su ordenador.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>¿Está seguro de que desea cifrar su monedero?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR PIV&lt;/b&gt;!</source>
-        <translation>Atención: Si cifra su monedero y pierde su contraseña, perderá &lt;b&gt; TODOS SUS PIV&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR WSP&lt;/b&gt;!</source>
+        <translation>Atención: Si cifra su monedero y pierde su contraseña, perderá &lt;b&gt; TODOS SUS WSP&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -1678,8 +1678,8 @@ Por favor, tenga paciencia después de hacer clic en importar.</translation>
         <translation>Dirección / Cantidad:</translation>
     </message>
     <message>
-        <source>Add destinations to send PIV to</source>
-        <translation>Agregue los destinos para enviar PIV</translation>
+        <source>Add destinations to send WSP to</source>
+        <translation>Agregue los destinos para enviar WSP</translation>
     </message>
     <message>
         <source>Add &amp;Destination</source>
@@ -1878,24 +1878,24 @@ https://www.transifex.com/WisprProject/core-project-translations</translation>
         <translation>Mapear un puerto utilizando &amp;UPnP</translation>
     </message>
     <message>
-        <source>Enable automatic minting of PIV units to zWSP</source>
-        <translation>Activar el minting automática de unidades PIV a zWSP</translation>
+        <source>Enable automatic minting of WSP units to zWSP</source>
+        <translation>Activar el minting automática de unidades WSP a zWSP</translation>
     </message>
     <message>
         <source>Enable zWSP Automint</source>
         <translation>Activar zWSP Automint</translation>
     </message>
     <message>
-        <source>Percentage of incoming PIV which get automatically converted to zWSP via Zerocoin Protocol (min: 10%)</source>
-        <translation>Porcentaje de PIV entrantes que serán automáticamente convertidos a zWSP a través del Protocolo Zerocoin (mín: 10%)</translation>
+        <source>Percentage of incoming WSP which get automatically converted to zWSP via Zerocoin Protocol (min: 10%)</source>
+        <translation>Porcentaje de WSP entrantes que serán automáticamente convertidos a zWSP a través del Protocolo Zerocoin (mín: 10%)</translation>
     </message>
     <message>
         <source>Percentage of autominted zWSP</source>
         <translation>Porcentaje de zWSP autogenerados</translation>
     </message>
     <message>
-        <source>Wait with automatic conversion to Zerocoin until enough PIV for this denomination is available</source>
-        <translation>Esperar con la conversión automática a Zerocoin hasta que hayan suficientes PIV disponibles para este tamaño de billete</translation>
+        <source>Wait with automatic conversion to Zerocoin until enough WSP for this denomination is available</source>
+        <translation>Esperar con la conversión automática a Zerocoin hasta que hayan suficientes WSP disponibles para este tamaño de billete</translation>
     </message>
     <message>
         <source>Preferred Automint zWSP Denomination</source>
@@ -2057,8 +2057,8 @@ https://www.transifex.com/WisprProject/core-project-translations</translation>
         <translation>Balance Total, incluidas todas las monedas no disponibles.</translation>
     </message>
     <message>
-        <source>PIV Balance</source>
-        <translation>Balance PIV</translation>
+        <source>WSP Balance</source>
+        <translation>Balance WSP</translation>
     </message>
     <message>
         <source>Pending:</source>
@@ -2145,8 +2145,8 @@ Inmaduro: confirmado, pero menos de 1 acuñación de la misma denominación desp
         <translation>Disponible:</translation>
     </message>
     <message>
-        <source>Locked PIV or Masternode collaterals. These are excluded from zWSP minting.</source>
-        <translation>PIV bloqueado o Masternode colaterales. Estos están excluidos de minting zWSP.</translation>
+        <source>Locked WSP or Masternode collaterals. These are excluded from zWSP minting.</source>
+        <translation>WSP bloqueado o Masternode colaterales. Estos están excluidos de minting zWSP.</translation>
     </message>
     <message>
         <source>Locked:</source>
@@ -3571,8 +3571,8 @@ Por favor espere...</translation>
         <translation>Tamaño de UTXO:</translation>
     </message>
     <message>
-        <source>0 PIV</source>
-        <translation>0 PIV</translation>
+        <source>0 WSP</source>
+        <translation>0 WSP</translation>
     </message>
     <message>
         <source>Transaction Fee:</source>
@@ -3627,12 +3627,12 @@ Por favor espere...</translation>
         <translation>Monedas seleccionadas automáticamente</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uPIVs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uPIVs in fee,&lt;br /&gt;while "at least" pays 1000 uPIVs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Si la comisión personalizada se fija en 1000 uPIVs y la transacción necesita sólo 250 bytes, entonces la opción "por kilobyte" sólo pagará 250 uPIVs de comisión,&lt;br/&gt;mientras "por lo menos" pagará 1000 uPIVs. Para transacciones que midan más de un kilobyte ambas pagan por kilobyte.</translation>
+        <source>If the custom fee is set to 1000 uWSPs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uWSPs in fee,&lt;br /&gt;while "at least" pays 1000 uWSPs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>Si la comisión personalizada se fija en 1000 uWSPs y la transacción necesita sólo 250 bytes, entonces la opción "por kilobyte" sólo pagará 250 uWSPs de comisión,&lt;br/&gt;mientras "por lo menos" pagará 1000 uWSPs. Para transacciones que midan más de un kilobyte ambas pagan por kilobyte.</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uPIVs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uPIVs in fee,&lt;br /&gt;while "total at least" pays 1000 uPIVs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Si la comisión personalizada se fija en 1000 uPIVs y la transacción necesita sólo 250 bytes, entonces la opción "por kilobyte" sólo pagará 250 uPIVs de comisión,&lt;br/&gt;mientras "por lo menos" pagará 1000 uPIVs. Para transacciones que midan más de un kilobyte ambas pagan por kilobyte.</translation>
+        <source>If the custom fee is set to 1000 uWSPs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uWSPs in fee,&lt;br /&gt;while "total at least" pays 1000 uWSPs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>Si la comisión personalizada se fija en 1000 uWSPs y la transacción necesita sólo 250 bytes, entonces la opción "por kilobyte" sólo pagará 250 uWSPs de comisión,&lt;br/&gt;mientras "por lo menos" pagará 1000 uWSPs. Para transacciones que midan más de un kilobyte ambas pagan por kilobyte.</translation>
     </message>
     <message>
         <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for WISPR transactions than the network can process.</source>
@@ -3683,8 +3683,8 @@ Por favor espere...</translation>
         <translation>Añadir Destinatario</translation>
     </message>
     <message>
-        <source>Anonymized PIV</source>
-        <translation>PIV anonimizados</translation>
+        <source>Anonymized WSP</source>
+        <translation>WSP anonimizados</translation>
     </message>
     <message>
         <source>Balance:</source>
@@ -4327,8 +4327,8 @@ Por favor espere...</translation>
         <translation>Recibido por medio de Ofuscación</translation>
     </message>
     <message>
-        <source>PIV Stake</source>
-        <translation>Stake PIV</translation>
+        <source>WSP Stake</source>
+        <translation>Stake WSP</translation>
     </message>
     <message>
         <source>zWSP Stake</source>
@@ -4351,24 +4351,24 @@ Por favor espere...</translation>
         <translation>Ofuscación Crea Billetes</translation>
     </message>
     <message>
-        <source>Converted PIV to zWSP</source>
-        <translation>PIV convertidos a zWSP</translation>
+        <source>Converted WSP to zWSP</source>
+        <translation>WSP convertidos a zWSP</translation>
     </message>
     <message>
         <source>Spent zWSP</source>
         <translation>Gastar zWSP</translation>
     </message>
     <message>
-        <source>Received PIV from zWSP</source>
-        <translation>PIV recibidos desde zWSP</translation>
+        <source>Received WSP from zWSP</source>
+        <translation>WSP recibidos desde zWSP</translation>
     </message>
     <message>
         <source>Minted Change as zWSP from zWSP Spend</source>
         <translation>Cambio de acuñación en zWSP al Gastar zWSP</translation>
     </message>
     <message>
-        <source>Converted zWSP to PIV</source>
-        <translation>zWSP convertidos a PIV</translation>
+        <source>Converted zWSP to WSP</source>
+        <translation>zWSP convertidos a WSP</translation>
     </message>
     <message>
         <source>Anonymous (zWSP Transaction)</source>
@@ -4586,8 +4586,8 @@ Por favor espere...</translation>
         <translation>Exportación Correcta</translation>
     </message>
     <message>
-        <source>Received PIV from zWSP</source>
-        <translation>PIV recibidos desde zWSP</translation>
+        <source>Received WSP from zWSP</source>
+        <translation>WSP recibidos desde zWSP</translation>
     </message>
     <message>
         <source>Zerocoin Spend, Change in zWSP</source>
@@ -4627,8 +4627,8 @@ Por favor espere...</translation>
         <translation>Enviar Monedas</translation>
     </message>
     <message>
-        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 PIV.</source>
-        <translation>SwiftTX no soporta el envío de importes tan altos todavía. Las transacciones están actualmente limitadas a %1 PIV.</translation>
+        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 WSP.</source>
+        <translation>SwiftTX no soporta el envío de importes tan altos todavía. Las transacciones están actualmente limitadas a %1 WSP.</translation>
     </message>
 </context>
 <context>
@@ -4740,8 +4740,8 @@ Por favor espere...</translation>
         <translation>Habilite copias de seguridad automáticas del monedero que se activan después de cada acuñación zWSP (0-1, predeterminado: %u)</translation>
     </message>
     <message>
-        <source>Enable or disable staking functionality for PIV inputs (0-1, default: %u)</source>
-        <translation>Habilitar o deshabilitar la funcionalidad de staking para las entradas PIV (0-1, predeterminado: %u)</translation>
+        <source>Enable or disable staking functionality for WSP inputs (0-1, default: %u)</source>
+        <translation>Habilitar o deshabilitar la funcionalidad de staking para las entradas WSP (0-1, predeterminado: %u)</translation>
     </message>
     <message>
         <source>Enable or disable staking functionality for zWSP inputs (0-1, default: %u)</source>
@@ -4780,12 +4780,12 @@ Por favor espere...</translation>
         <translation>Ejecutar comando cuando el mejor bloque cambie (%s en cmd es reemplazado por el block hash)</translation>
     </message>
     <message>
-        <source>Fees (in PIV/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
-        <translation>Comisiones (en PIV/Kb) menores a esta son consideradas gratuitas para la propagación de la transacción (default: %s)</translation>
+        <source>Fees (in WSP/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
+        <translation>Comisiones (en WSP/Kb) menores a esta son consideradas gratuitas para la propagación de la transacción (default: %s)</translation>
     </message>
     <message>
-        <source>Fees (in PIV/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
-        <translation>Comisiones (en PIV/Kb) menores a esta son consideradas gratuitas para la creación de la transacción (default: %s)</translation>
+        <source>Fees (in WSP/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
+        <translation>Comisiones (en WSP/Kb) menores a esta son consideradas gratuitas para la creación de la transacción (default: %s)</translation>
     </message>
     <message>
         <source>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: %u)</source>
@@ -4888,12 +4888,12 @@ Por favor espere...</translation>
         <translation>Imposible localizar suficientes fondos denominados de Ofuscación para esta transacción.</translation>
     </message>
     <message>
-        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 PIV.</source>
-        <translation>Imposible localizar suficientes fondos no-denominados de Ofuscación para esta transacción que no es igual a 10000 PIV.</translation>
+        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 WSP.</source>
+        <translation>Imposible localizar suficientes fondos no-denominados de Ofuscación para esta transacción que no es igual a 10000 WSP.</translation>
     </message>
     <message>
-        <source>Unable to locate enough funds for this transaction that are not equal 10000 PIV.</source>
-        <translation>Imposible localizar fondos suficientes para esta transacción que no es igual a 10000 PIV.</translation>
+        <source>Unable to locate enough funds for this transaction that are not equal 10000 WSP.</source>
+        <translation>Imposible localizar fondos suficientes para esta transacción que no es igual a 10000 WSP.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
@@ -5176,8 +5176,8 @@ Por favor espere...</translation>
         <translation>Falló al leer el bloque</translation>
     </message>
     <message>
-        <source>Fee (in PIV/kB) to add to transactions you send (default: %s)</source>
-        <translation>Comisión (en PIV/kB) para agregar a la transacción que envías (predeterminado: %s)</translation>
+        <source>Fee (in WSP/kB) to add to transactions you send (default: %s)</source>
+        <translation>Comisión (en WSP/kB) para agregar a la transacción que envías (predeterminado: %s)</translation>
     </message>
     <message>
         <source>Force safe mode (default: %u)</source>
@@ -5280,8 +5280,8 @@ Por favor espere...</translation>
         <translation>Porcentaje de Zerocoin creadas automáticamente (10-100, por defecto: %u)</translation>
     </message>
     <message>
-        <source>Reindex the PIV and zWSP money supply statistics</source>
-        <translation>Reindexar as estatísticas de fornecimento de dinheiro PIV e zWSP</translation>
+        <source>Reindex the WSP and zWSP money supply statistics</source>
+        <translation>Reindexar as estatísticas de fornecimento de dinheiro WSP e zWSP</translation>
     </message>
     <message>
         <source>Reindexing zerocoin database...</source>

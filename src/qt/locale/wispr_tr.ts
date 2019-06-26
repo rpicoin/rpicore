@@ -176,15 +176,15 @@
         <translation>cüzdan şifrelemesini onayla</translation>
     </message>
     <message>
-        <source>WISPR will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your PIVs from being stolen by malware infecting your computer.</source>
-        <translation>WISPR şifreleme işlemini tamamlamak için şimdi kapanacaktır. Cüzdanınızı şifrelemenin, PIV'lerinizi bilgisayarınıza bulaşan kötücül yazılımlar tarafından çalınmasına tamamen engelleyemediğini unutmayın</translation>
+        <source>WISPR will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your WSPs from being stolen by malware infecting your computer.</source>
+        <translation>WISPR şifreleme işlemini tamamlamak için şimdi kapanacaktır. Cüzdanınızı şifrelemenin, WSP'lerinizi bilgisayarınıza bulaşan kötücül yazılımlar tarafından çalınmasına tamamen engelleyemediğini unutmayın</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>Cüzdanınızı şifrelemek istediğinizden emin misiniz?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR PIV&lt;/b&gt;!</source>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR WSP&lt;/b&gt;!</source>
         <translation>Dikkat! Eğer cüzdanınızı şifrelerseniz ve şifrenizi unutursanız &lt;b&gt;Tüm Pıvlerinizi kaybedersiniz&lt;/b&gt;!</translation>
     </message>
     <message>
@@ -1663,8 +1663,8 @@ Unutmayın, cüzdan, yeni adresi içeren işlemleri bulmak için blok zinciri ye
         <translation>Address /miktar:</translation>
     </message>
     <message>
-        <source>Add destinations to send PIV to</source>
-        <translation>PIV göndermek için varış yerleri ekleyin</translation>
+        <source>Add destinations to send WSP to</source>
+        <translation>WSP göndermek için varış yerleri ekleyin</translation>
     </message>
     <message>
         <source>Add &amp;Destination</source>
@@ -1863,24 +1863,24 @@ https://www.transifex.com/WisprProject/core-project-translations</translation>
         <translation>Map port using &amp;UPnP</translation>
     </message>
     <message>
-        <source>Enable automatic minting of PIV units to zWSP</source>
-        <translation>PIV birimlerinin zWSP'e otomatik basımını ektinleştir</translation>
+        <source>Enable automatic minting of WSP units to zWSP</source>
+        <translation>WSP birimlerinin zWSP'e otomatik basımını ektinleştir</translation>
     </message>
     <message>
         <source>Enable zWSP Automint</source>
         <translation>zWSP Otomatik basımı etkinleştir</translation>
     </message>
     <message>
-        <source>Percentage of incoming PIV which get automatically converted to zWSP via Zerocoin Protocol (min: 10%)</source>
-        <translation>Zerocoin Protokolü üzerinden otomatik olarak zWSP'ye dönüştürülen gelen PIV yüzdesi (dakika: 10%)</translation>
+        <source>Percentage of incoming WSP which get automatically converted to zWSP via Zerocoin Protocol (min: 10%)</source>
+        <translation>Zerocoin Protokolü üzerinden otomatik olarak zWSP'ye dönüştürülen gelen WSP yüzdesi (dakika: 10%)</translation>
     </message>
     <message>
         <source>Percentage of autominted zWSP</source>
         <translation>Otomatikleştirilmiş zWSP yüzdesi</translation>
     </message>
     <message>
-        <source>Wait with automatic conversion to Zerocoin until enough PIV for this denomination is available</source>
-        <translation>Bu mezhebi için yeterli PIV bulunana kadar Zerocoin'e otomatik dönüşümle birlikte bekleyin</translation>
+        <source>Wait with automatic conversion to Zerocoin until enough WSP for this denomination is available</source>
+        <translation>Bu mezhebi için yeterli WSP bulunana kadar Zerocoin'e otomatik dönüşümle birlikte bekleyin</translation>
     </message>
     <message>
         <source>Preferred Automint zWSP Denomination</source>
@@ -2038,8 +2038,8 @@ https://www.transifex.com/WisprProject/core-project-translations</translation>
         <translation>Toplam Bakiye, mevcut olmayan tüm paralar dahil.</translation>
     </message>
     <message>
-        <source>PIV Balance</source>
-        <translation>PIV Bakiyesi</translation>
+        <source>WSP Balance</source>
+        <translation>WSP Bakiyesi</translation>
     </message>
     <message>
         <source>Pending:</source>
@@ -2126,8 +2126,8 @@ Olgunlaşmamış: onaylandı, ancak basıldıktan sonra aynı ölçü biriminden
         <translation>Harcanabilir:</translation>
     </message>
     <message>
-        <source>Locked PIV or Masternode collaterals. These are excluded from zWSP minting.</source>
-        <translation>Kilitli PIV veya Masternode teminatları. Bunlar zWSP matlaştırmadan çıkarılır.</translation>
+        <source>Locked WSP or Masternode collaterals. These are excluded from zWSP minting.</source>
+        <translation>Kilitli WSP veya Masternode teminatları. Bunlar zWSP matlaştırmadan çıkarılır.</translation>
     </message>
     <message>
         <source>Locked:</source>
@@ -3331,8 +3331,8 @@ Lütfen sabırlı olun...</translation>
         <translation>UTXO Boyutu:</translation>
     </message>
     <message>
-        <source>0 PIV</source>
-        <translation>0 PIV</translation>
+        <source>0 WSP</source>
+        <translation>0 WSP</translation>
     </message>
     <message>
         <source>Transaction Fee:</source>
@@ -3387,12 +3387,12 @@ Lütfen sabırlı olun...</translation>
         <translation>Koinler otomatik seçildi</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uPIVs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uPIVs in fee,&lt;br /&gt;while "at least" pays 1000 uPIVs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Özel ücret 1000 uPIV olarak ayarlanmış ve işlem sadece 250 bayt ise, "kilobayt başına" ücret karşılığında yalnızca 250 uPIV öder,&lt;br /&gt;"en az" ise 1000 uPIV öder. Bir kilobayttan daha büyük işlemler için kilobayt ödersiniz.</translation>
+        <source>If the custom fee is set to 1000 uWSPs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uWSPs in fee,&lt;br /&gt;while "at least" pays 1000 uWSPs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>Özel ücret 1000 uWSP olarak ayarlanmış ve işlem sadece 250 bayt ise, "kilobayt başına" ücret karşılığında yalnızca 250 uWSP öder,&lt;br /&gt;"en az" ise 1000 uWSP öder. Bir kilobayttan daha büyük işlemler için kilobayt ödersiniz.</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uPIVs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uPIVs in fee,&lt;br /&gt;while "total at least" pays 1000 uPIVs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Özel ücret 1000 uPIV olarak ayarlanırsa ve işlem sadece 250 bayt ise, "kilobayt başına" ücret karşılığında yalnızca 250 uPIV ücreti verilir,&lt;br /&gt;"toplam en az" ise 1000 uPIV ödüyor. Bir kilobayttan daha büyük işlemler için kilobayt ödersiniz.</translation>
+        <source>If the custom fee is set to 1000 uWSPs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uWSPs in fee,&lt;br /&gt;while "total at least" pays 1000 uWSPs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>Özel ücret 1000 uWSP olarak ayarlanırsa ve işlem sadece 250 bayt ise, "kilobayt başına" ücret karşılığında yalnızca 250 uWSP ücreti verilir,&lt;br /&gt;"toplam en az" ise 1000 uWSP ödüyor. Bir kilobayttan daha büyük işlemler için kilobayt ödersiniz.</translation>
     </message>
     <message>
         <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for WISPR transactions than the network can process.</source>
@@ -3443,8 +3443,8 @@ Lütfen sabırlı olun...</translation>
         <translation>Alıcı ekle</translation>
     </message>
     <message>
-        <source>Anonymized PIV</source>
-        <translation>anonim edilmiş PIV</translation>
+        <source>Anonymized WSP</source>
+        <translation>anonim edilmiş WSP</translation>
     </message>
     <message>
         <source>Balance:</source>
@@ -4339,8 +4339,8 @@ Lütfen sabırlı olun...</translation>
         <translation>Koinleri göder</translation>
     </message>
     <message>
-        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 PIV.</source>
-        <translation>SwiftX yüksek değerler göndermeyi desteklemiyor. İşlemler şu anda %1 PIV ile sınırlıdır.</translation>
+        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 WSP.</source>
+        <translation>SwiftX yüksek değerler göndermeyi desteklemiyor. İşlemler şu anda %1 WSP ile sınırlıdır.</translation>
     </message>
 </context>
 <context>
@@ -4464,12 +4464,12 @@ Lütfen sabırlı olun...</translation>
         <translation>En iyi blok değiştirildiğinde komutu yürütün (cmd'deki %s yerine blok karması verilir)</translation>
     </message>
     <message>
-        <source>Fees (in PIV/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
-        <translation>Bundan daha küçük ücretler (PIV / Kb cinsinden), aktarma için sıfır ücret olarak kabul edilir (varsayılan: %s)</translation>
+        <source>Fees (in WSP/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
+        <translation>Bundan daha küçük ücretler (WSP / Kb cinsinden), aktarma için sıfır ücret olarak kabul edilir (varsayılan: %s)</translation>
     </message>
     <message>
-        <source>Fees (in PIV/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
-        <translation>Bundan daha küçük ücretler (PIV / Kb cinsinden), işlem yaratmada sıfır ücret olarak kabul edilir (varsayılan: %s)</translation>
+        <source>Fees (in WSP/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
+        <translation>Bundan daha küçük ücretler (WSP / Kb cinsinden), işlem yaratmada sıfır ücret olarak kabul edilir (varsayılan: %s)</translation>
     </message>
     <message>
         <source>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: %u)</source>

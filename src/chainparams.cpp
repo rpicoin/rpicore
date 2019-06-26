@@ -150,14 +150,14 @@ public:
         vAlertPubKey=ParseHex("0411f84b889c61c1842ec84a15e3093d7dd99d955ab797b24c984cdcfe3aca23f04ec06bd840e8093aaf83488c039027ecc4ad704261245be30289be166f667c61");
         nDefaultPort = 17000;
         nMinerThreads = 0;
-        nBlockDoubleAccumulated = -1;
+        consensus.nBlockDoubleAccumulated = -1;
 
         // Public coin spend enforcement
-        nPublicZCSpends = 800000;
+        consensus.nPublicZCSpends = 900000;
 
         // Fake Serial Attack
-        nFakeSerialBlockheightEnd = -1;
-        nSupplyBeforeFakeSerial = 0;   // zerocoin supply at block nFakeSerialBlockheightEnd
+        consensus.nFakeSerialBlockheightEnd = -1;
+        consensus.nSupplyBeforeFakeSerial = 0;   // zerocoin supply at block nFakeSerialBlockheightEnd
 
         /**
          * Build the genesis block. Note that the output of the genesis coinbase cannot
@@ -238,7 +238,7 @@ public:
         consensus.nZerocoinRequiredStakeDepth = 200; //The required confirmations for a zwsp to be stakable
 
         consensus.nBudget_Fee_Confirmations = 6; // Number of confirmations for the finalization fee
-        nProposalEstablishmentTime = 60 * 60 * 24; // Proposals must be at least a day old to make it into a budget
+        consensus.nProposalEstablishmentTime = 60 * 60 * 24; // Proposals must be at least a day old to make it into a budget
     }
 
     const Checkpoints::CCheckpointData& Checkpoints() const
@@ -299,11 +299,11 @@ public:
         txNew2.vout[0].SetEmpty();
 
         // Public coin spend enforcement
-        nPublicZCSpends = 1106100;
+        consensus.nPublicZCSpends = 1106100;
 
         // Fake Serial Attack
-        nFakeSerialBlockheightEnd = -1;
-        nSupplyBeforeFakeSerial = 0;
+        consensus.nFakeSerialBlockheightEnd = -1;
+        consensus.nSupplyBeforeFakeSerial = 0;
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis.vtx.push_back(txNew2);
@@ -350,7 +350,7 @@ public:
         consensus.nStartMasternodePayments = consensus.nNewProtocolStartTime;
         consensus.nBudget_Fee_Confirmations = 3; // Number of confirmations for the finalization fee. We have to make this very short
         // here because we only have a 8 block finalization window on testnet
-        nProposalEstablishmentTime = 60 * 5; // Proposals must be at least 5 mns old to make it into a test budget
+        consensus.nProposalEstablishmentTime = 60 * 5; // Proposals must be at least 5 mns old to make it into a test budget
 
     }
     const Checkpoints::CCheckpointData& Checkpoints() const
@@ -384,16 +384,16 @@ public:
         consensus.fAllowMinDifficultyBlocks = true;
 
 
-        nBlockEnforceSerialRange = 1; //Enforce serial range starting this block
-        nBlockRecalculateAccumulators = 999999999; //Trigger a recalculation of accumulators
-        nBlockFirstFraudulent = 999999999; //First block that bad serials emerged
-        nBlockLastGoodCheckpoint = 999999999; //Last valid accumulator checkpoint
+        consensus.nBlockEnforceSerialRange = 1; //Enforce serial range starting this block
+        consensus.nBlockRecalculateAccumulators = 999999999; //Trigger a recalculation of accumulators
+        consensus.nBlockFirstFraudulent = 999999999; //First block that bad serials emerged
+        consensus.nBlockLastGoodCheckpoint = 999999999; //Last valid accumulator checkpoint
 
         // Public coin spend enforcement
-        nPublicZCSpends = 350;
+        consensus.nPublicZCSpends = 350;
 
         // Fake Serial Attack
-        nFakeSerialBlockheightEnd = -1;
+        consensus.nFakeSerialBlockheightEnd = -1;
 
         pchMessageStart[0] = 0xFF;
         pchMessageStart[1] = 0xAF;

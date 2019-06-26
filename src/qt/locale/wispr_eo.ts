@@ -176,15 +176,15 @@
         <translation>Konfirmi monerĉifrado</translation>
     </message>
     <message>
-        <source>WISPR will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your PIVs from being stolen by malware infecting your computer.</source>
-        <translation>WISPR fermos nun por fini ĉifran procezon. Memoru ke ĉifri vian monujon ne povas plene protekti viajn PIVs de esti ŝtelita per malware infektanta vian komputilon.</translation>
+        <source>WISPR will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your WSPs from being stolen by malware infecting your computer.</source>
+        <translation>WISPR fermos nun por fini ĉifran procezon. Memoru ke ĉifri vian monujon ne povas plene protekti viajn WSPs de esti ŝtelita per malware infektanta vian komputilon.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>Ĉu vi certas ke vi volas ĉifri vian monujon?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR PIV&lt;/b&gt;!</source>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR WSP&lt;/b&gt;!</source>
         <translation>Averto: se vi ĉifras vian monujo kaj perdi vian pasfrazon, vi &lt;b&gt;PERDOS VIAN TUTAN MONON&lt;/b&gt;!</translation>
     </message>
     <message>
@@ -1514,8 +1514,8 @@ Muktisendi: %1</translation>
         <translation>Adreso / Kvanto:</translation>
     </message>
     <message>
-        <source>Add destinations to send PIV to</source>
-        <translation>Aldonu destinoj por sendi PIV al</translation>
+        <source>Add destinations to send WSP to</source>
+        <translation>Aldonu destinoj por sendi WSP al</translation>
     </message>
     <message>
         <source>Add &amp;Destination</source>
@@ -1705,8 +1705,8 @@ https://www.transifex.com/WisprProject/core-project-translations</translation>
         <translation>Via aktuala elspezebla saldo</translation>
     </message>
     <message>
-        <source>PIV Balance</source>
-        <translation>PIV kvanto</translation>
+        <source>WSP Balance</source>
+        <translation>WSP kvanto</translation>
     </message>
     <message>
         <source>Immature:</source>
@@ -2194,8 +2194,8 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
         <translation>Se estas aktiva sed ŝanĝo-adreso estas malpleniĝa au nevalida, ŝanĝo sendos al nova generita adreson.</translation>
     </message>
     <message>
-        <source>0 PIV</source>
-        <translation>0 PIV</translation>
+        <source>0 WSP</source>
+        <translation>0 WSP</translation>
     </message>
     <message>
         <source>Open Coin Control...</source>
@@ -2270,7 +2270,7 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
     </message>
     <message>
         <source>The WISPR address to send the payment to</source>
-        <translation>PIVC adreso por sendi la pago al</translation>
+        <translation>WSPC adreso por sendi la pago al</translation>
     </message>
     <message>
         <source>Choose previously used address</source>

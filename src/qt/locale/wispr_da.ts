@@ -176,7 +176,7 @@
         <translation>Bekræft, og tegnebogen krypteres.</translation>
     </message>
     <message>
-        <source>WISPR will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your PIVs from being stolen by malware infecting your computer.</source>
+        <source>WISPR will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your WSPs from being stolen by malware infecting your computer.</source>
         <translation>WISPR vil lukke ned for at færdiggøre kryptograferingsprocesserne. Husk at kryptering alene ikke sikrer mod tyveri af mønterne fra malware eller virus på computeren.</translation>
     </message>
     <message>
@@ -184,8 +184,8 @@
         <translation>Er du sikker på, at du vil kryptere din tegnebog?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR PIV&lt;/b&gt;!</source>
-        <translation>Advarsel! Hvis du krypterer din tegnebog og mister dit password vil du &lt;b&gt;MISTE ALLE DINE PIV&lt;/b&gt;. Passworded kan ikke genskabes.</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR WSP&lt;/b&gt;!</source>
+        <translation>Advarsel! Hvis du krypterer din tegnebog og mister dit password vil du &lt;b&gt;MISTE ALLE DINE WSP&lt;/b&gt;. Passworded kan ikke genskabes.</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -1646,8 +1646,8 @@ Vær tålmodig efter at du har klikket på import.</translation>
         <translation>Adresse / Beløb:</translation>
     </message>
     <message>
-        <source>Add destinations to send PIV to</source>
-        <translation>Tilføj destinationer for at sende PIV til</translation>
+        <source>Add destinations to send WSP to</source>
+        <translation>Tilføj destinationer for at sende WSP til</translation>
     </message>
     <message>
         <source>Add &amp;Destination</source>
@@ -1846,24 +1846,24 @@ https://www.transifex.com/WisprProject/core-project-translations</translation>
         <translation>MAP port ved hjælp af UPnP</translation>
     </message>
     <message>
-        <source>Enable automatic minting of PIV units to zWSP</source>
-        <translation>Aktivér automatisk mintning af PIV-enheder til zWSP</translation>
+        <source>Enable automatic minting of WSP units to zWSP</source>
+        <translation>Aktivér automatisk mintning af WSP-enheder til zWSP</translation>
     </message>
     <message>
         <source>Enable zWSP Automint</source>
         <translation>Aktivér zWSP Automint</translation>
     </message>
     <message>
-        <source>Percentage of incoming PIV which get automatically converted to zWSP via Zerocoin Protocol (min: 10%)</source>
-        <translation>Procentdelen af indkommende PIV, som automatisk konverteres til zWSP via Zerocoin Protocol (min: 10%)</translation>
+        <source>Percentage of incoming WSP which get automatically converted to zWSP via Zerocoin Protocol (min: 10%)</source>
+        <translation>Procentdelen af indkommende WSP, som automatisk konverteres til zWSP via Zerocoin Protocol (min: 10%)</translation>
     </message>
     <message>
         <source>Percentage of autominted zWSP</source>
         <translation>Procentdel af automatiseret zWSP</translation>
     </message>
     <message>
-        <source>Wait with automatic conversion to Zerocoin until enough PIV for this denomination is available</source>
-        <translation>Vent med automatisk konvertering til Zerocoin, indtil nok PIV til denne betegnelse er tilgængelig</translation>
+        <source>Wait with automatic conversion to Zerocoin until enough WSP for this denomination is available</source>
+        <translation>Vent med automatisk konvertering til Zerocoin, indtil nok WSP til denne betegnelse er tilgængelig</translation>
     </message>
     <message>
         <source>Preferred Automint zWSP Denomination</source>
@@ -2025,8 +2025,8 @@ https://www.transifex.com/WisprProject/core-project-translations</translation>
         <translation>Samlet saldo, inklusive alle utilgængelige mønter.</translation>
     </message>
     <message>
-        <source>PIV Balance</source>
-        <translation>PIV Balance</translation>
+        <source>WSP Balance</source>
+        <translation>WSP Balance</translation>
     </message>
     <message>
         <source>Pending:</source>
@@ -2113,8 +2113,8 @@ Uplettet: bekræftet, men mindre end 1 minutter med samme betegnelse, efter at d
         <translation>Brugbare:</translation>
     </message>
     <message>
-        <source>Locked PIV or Masternode collaterals. These are excluded from zWSP minting.</source>
-        <translation>Låste PIV eller Masternode collaterals. Disse er udelukket fra zWSP-mintning.</translation>
+        <source>Locked WSP or Masternode collaterals. These are excluded from zWSP minting.</source>
+        <translation>Låste WSP eller Masternode collaterals. Disse er udelukket fra zWSP-mintning.</translation>
     </message>
     <message>
         <source>Locked:</source>
@@ -3542,8 +3542,8 @@ Vær tålmodig...</translation>
         <translation>UTXO størrelse:</translation>
     </message>
     <message>
-        <source>0 PIV</source>
-        <translation>0 PIV</translation>
+        <source>0 WSP</source>
+        <translation>0 WSP</translation>
     </message>
     <message>
         <source>Transaction Fee:</source>
@@ -3598,12 +3598,12 @@ Vær tålmodig...</translation>
         <translation>Mønter vælges automatisk</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uPIVs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uPIVs in fee,&lt;br /&gt;while "at least" pays 1000 uPIVs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Hvis den brugerfastsatte gebyrbetaling er sat til 1000 uPIVs og transaktionen kun fylder 250 bytes, så vil "pr. kilobyte" kun udbetale 250 uPIV i gebyr, &lt;br /&gt; mens "mindst" udbetaler 1000 uPIVs. For transaktioner større end en kilobyte betales i begge tilfælde i forhold til antallet af kilobytes </translation>
+        <source>If the custom fee is set to 1000 uWSPs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uWSPs in fee,&lt;br /&gt;while "at least" pays 1000 uWSPs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>Hvis den brugerfastsatte gebyrbetaling er sat til 1000 uWSPs og transaktionen kun fylder 250 bytes, så vil "pr. kilobyte" kun udbetale 250 uWSP i gebyr, &lt;br /&gt; mens "mindst" udbetaler 1000 uWSPs. For transaktioner større end en kilobyte betales i begge tilfælde i forhold til antallet af kilobytes </translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uPIVs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uPIVs in fee,&lt;br /&gt;while "total at least" pays 1000 uPIVs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Hvis den brugerfastsatte gebyrbetaling er sat til 1000 uPIVs og transaktionen kun fylder 250 bytes, så vil "pr. kilobyte" kun udbetale 250 uPIV i gebyr, &lt;br /&gt; mens "Total-mindst" udbetaler 1000 uPIVs. For transaktioner større end en kilobyte betales i begge tilfælde i forhold til antallet af kilobytes </translation>
+        <source>If the custom fee is set to 1000 uWSPs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uWSPs in fee,&lt;br /&gt;while "total at least" pays 1000 uWSPs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>Hvis den brugerfastsatte gebyrbetaling er sat til 1000 uWSPs og transaktionen kun fylder 250 bytes, så vil "pr. kilobyte" kun udbetale 250 uWSP i gebyr, &lt;br /&gt; mens "Total-mindst" udbetaler 1000 uWSPs. For transaktioner større end en kilobyte betales i begge tilfælde i forhold til antallet af kilobytes </translation>
     </message>
     <message>
         <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for WISPR transactions than the network can process.</source>
@@ -3654,8 +3654,8 @@ Vær tålmodig...</translation>
         <translation>Tilføj &amp;Modtager</translation>
     </message>
     <message>
-        <source>Anonymized PIV</source>
-        <translation>Tilsløret PIV</translation>
+        <source>Anonymized WSP</source>
+        <translation>Tilsløret WSP</translation>
     </message>
     <message>
         <source>Balance:</source>
@@ -4298,8 +4298,8 @@ Vær tålmodig...</translation>
         <translation>Modtaget via tilsløring</translation>
     </message>
     <message>
-        <source>PIV Stake</source>
-        <translation>PIV Stake</translation>
+        <source>WSP Stake</source>
+        <translation>WSP Stake</translation>
     </message>
     <message>
         <source>zWSP Stake</source>
@@ -4322,24 +4322,24 @@ Vær tålmodig...</translation>
         <translation>Opret tilsløret designering</translation>
     </message>
     <message>
-        <source>Converted PIV to zWSP</source>
-        <translation>Konverteret PIV til zWSP</translation>
+        <source>Converted WSP to zWSP</source>
+        <translation>Konverteret WSP til zWSP</translation>
     </message>
     <message>
         <source>Spent zWSP</source>
         <translation>Brugt zWsp</translation>
     </message>
     <message>
-        <source>Received PIV from zWSP</source>
-        <translation>Modtaget Piv fra zWsp</translation>
+        <source>Received WSP from zWSP</source>
+        <translation>Modtaget Wsp fra zWsp</translation>
     </message>
     <message>
         <source>Minted Change as zWSP from zWSP Spend</source>
         <translation>Minted Change som zWSP fra zWSP Spend</translation>
     </message>
     <message>
-        <source>Converted zWSP to PIV</source>
-        <translation>Konverteret PIV til zWSP</translation>
+        <source>Converted zWSP to WSP</source>
+        <translation>Konverteret WSP til zWSP</translation>
     </message>
     <message>
         <source>Anonymous (zWSP Transaction)</source>
@@ -4557,8 +4557,8 @@ Vær tålmodig...</translation>
         <translation>Eksporteret!</translation>
     </message>
     <message>
-        <source>Received PIV from zWSP</source>
-        <translation>Modtaget Piv fra zWsp</translation>
+        <source>Received WSP from zWSP</source>
+        <translation>Modtaget Wsp fra zWsp</translation>
     </message>
     <message>
         <source>Zerocoin Spend, Change in zWSP</source>
@@ -4598,8 +4598,8 @@ Vær tålmodig...</translation>
         <translation>Send mønter</translation>
     </message>
     <message>
-        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 PIV.</source>
-        <translation>SwiftTx understøtter ikke afsendelse af så store beløb endnu. Transaktioner er for tiden begrænsede til %1PIV.</translation>
+        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 WSP.</source>
+        <translation>SwiftTx understøtter ikke afsendelse af så store beløb endnu. Transaktioner er for tiden begrænsede til %1WSP.</translation>
     </message>
 </context>
 <context>
@@ -4712,8 +4712,8 @@ Vær tålmodig...</translation>
         <translation>Aktivér automatiske wallet-sikkerhedskopier udløst efter hver zWsp-mintning (0-1, standard: %u)</translation>
     </message>
     <message>
-        <source>Enable or disable staking functionality for PIV inputs (0-1, default: %u)</source>
-        <translation>Aktiver eller deaktiver staking-funktionalitet for PIV-indgange (0-1, standard: %u)</translation>
+        <source>Enable or disable staking functionality for WSP inputs (0-1, default: %u)</source>
+        <translation>Aktiver eller deaktiver staking-funktionalitet for WSP-indgange (0-1, standard: %u)</translation>
     </message>
     <message>
         <source>Enable or disable staking functionality for zWSP inputs (0-1, default: %u)</source>
@@ -4752,12 +4752,12 @@ Vær tålmodig...</translation>
         <translation>Udfør en kommando når den bedste blok ændres (%s in cmd erstattes med blok hashen)</translation>
     </message>
     <message>
-        <source>Fees (in PIV/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
-        <translation>Gebyrer (in PIV/kb) lavere end dette betragtes som et nul-gebyr for at videresende (default: %s)</translation>
+        <source>Fees (in WSP/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
+        <translation>Gebyrer (in WSP/kb) lavere end dette betragtes som et nul-gebyr for at videresende (default: %s)</translation>
     </message>
     <message>
-        <source>Fees (in PIV/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
-        <translation>Gebyrer (in PIV/kb) lavere end dette betragtes som et nul-gebyr for at oprette en transaktion (default: %s)</translation>
+        <source>Fees (in WSP/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
+        <translation>Gebyrer (in WSP/kb) lavere end dette betragtes som et nul-gebyr for at oprette en transaktion (default: %s)</translation>
     </message>
     <message>
         <source>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: %u)</source>
@@ -4860,12 +4860,12 @@ Vær tålmodig...</translation>
         <translation>Det er ikke muligt at allokere tilstrækkeligt med tilsløret designeret indestående for at gennemføre denne transaktion.</translation>
     </message>
     <message>
-        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 PIV.</source>
-        <translation>Det er ikke muligt at allokere tilstrækkeligt med tilsløret  ikke-designeret indestående for at gennemføre denne transaktion, der ikke ækvivalerer 10000 PIV.</translation>
+        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 WSP.</source>
+        <translation>Det er ikke muligt at allokere tilstrækkeligt med tilsløret  ikke-designeret indestående for at gennemføre denne transaktion, der ikke ækvivalerer 10000 WSP.</translation>
     </message>
     <message>
-        <source>Unable to locate enough funds for this transaction that are not equal 10000 PIV.</source>
-        <translation>Det var ikke muligt at allokere tilstrækkelige midler til denne transaktion som er forskellig fra 10000 PIV.</translation>
+        <source>Unable to locate enough funds for this transaction that are not equal 10000 WSP.</source>
+        <translation>Det var ikke muligt at allokere tilstrækkelige midler til denne transaktion som er forskellig fra 10000 WSP.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
@@ -5148,8 +5148,8 @@ Vær tålmodig...</translation>
         <translation>Læsning af blokken mislykkedes</translation>
     </message>
     <message>
-        <source>Fee (in PIV/kB) to add to transactions you send (default: %s)</source>
-        <translation>Gebyr (i PIV/kB) som skal tilføjes transaktionen der sendes (default: %s)</translation>
+        <source>Fee (in WSP/kB) to add to transactions you send (default: %s)</source>
+        <translation>Gebyr (i WSP/kB) som skal tilføjes transaktionen der sendes (default: %s)</translation>
     </message>
     <message>
         <source>Force safe mode (default: %u)</source>
@@ -5252,8 +5252,8 @@ Vær tålmodig...</translation>
         <translation>Procentdel af automatisk mintede Zerocoin (10-100, standard: %u)</translation>
     </message>
     <message>
-        <source>Reindex the PIV and zWSP money supply statistics</source>
-        <translation>Reindex PIV og zWSP pengemængde statistikker</translation>
+        <source>Reindex the WSP and zWSP money supply statistics</source>
+        <translation>Reindex WSP og zWSP pengemængde statistikker</translation>
     </message>
     <message>
         <source>Reindexing zerocoin database...</source>

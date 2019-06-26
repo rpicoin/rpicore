@@ -176,16 +176,16 @@
         <translation>Conferma cifratura portafoglio</translation>
     </message>
     <message>
-        <source>WISPR will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your PIVs from being stolen by malware infecting your computer.</source>
-        <translation>WISPR verrà ora chiuso per completare il processo di cifratura. Ricorda che crittografare il tuo portafoglio non protegge completamente i tuoi PIV dal furto da parte di software malevoli che potrebbero infettare il tuo computer.</translation>
+        <source>WISPR will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your WSPs from being stolen by malware infecting your computer.</source>
+        <translation>WISPR verrà ora chiuso per completare il processo di cifratura. Ricorda che crittografare il tuo portafoglio non protegge completamente i tuoi WSP dal furto da parte di software malevoli che potrebbero infettare il tuo computer.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>Confermi di voler crittografare il portafoglio?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR PIV&lt;/b&gt;!</source>
-        <translation>Attenzione: Se crittografi il portafoglio e poi perdi la parola d'ordine, &lt;b&gt;PERDERAI TUTTI I TUOI PIV&lt;7b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR WSP&lt;/b&gt;!</source>
+        <translation>Attenzione: Se crittografi il portafoglio e poi perdi la parola d'ordine, &lt;b&gt;PERDERAI TUTTI I TUOI WSP&lt;7b&gt;!</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -1103,7 +1103,7 @@ MultiSend: %1</translation>
     </message>
     <message>
         <source>Can vary +/- %1 upiv per input.</source>
-        <translation>Può variare di +/- %1 uPIV per input.</translation>
+        <translation>Può variare di +/- %1 uWSP per input.</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -1262,7 +1262,7 @@ MultiSend: %1</translation>
     </message>
     <message>
         <source>Welcome to WISPR Core.</source>
-        <translation>Benvenuto in PIVIX Core.</translation>
+        <translation>Benvenuto in WSPIX Core.</translation>
     </message>
     <message>
         <source>As this is the first time the program is launched, you can choose where WISPR Core will store its data.</source>
@@ -1638,16 +1638,16 @@ MultiSend non verrà attivato a meno che tu non prema su Attiva</translation>
         <translation>Mappa la porta utilizzando &amp;UPnP</translation>
     </message>
     <message>
-        <source>Enable automatic minting of PIV units to zWSP</source>
-        <translation>Attiva il conio automatico di unità PIV in zWSP</translation>
+        <source>Enable automatic minting of WSP units to zWSP</source>
+        <translation>Attiva il conio automatico di unità WSP in zWSP</translation>
     </message>
     <message>
         <source>Enable zWSP Automint</source>
         <translation>Attiva Conio automatico zWSP</translation>
     </message>
     <message>
-        <source>Percentage of incoming PIV which get automatically converted to zWSP via Zerocoin Protocol (min: 10%)</source>
-        <translation>Percentuale di PIV in entrata che viene automaticamente convertita in zWSP attraverso il protocollo Zerocoin (min: 10%)</translation>
+        <source>Percentage of incoming WSP which get automatically converted to zWSP via Zerocoin Protocol (min: 10%)</source>
+        <translation>Percentuale di WSP in entrata che viene automaticamente convertita in zWSP attraverso il protocollo Zerocoin (min: 10%)</translation>
     </message>
     <message>
         <source>Percentage of autominted zWSP</source>
@@ -1717,8 +1717,8 @@ MultiSend non verrà attivato a meno che tu non prema su Attiva</translation>
         <translation>Saldo totale, inclusi tutte le monete non disponibili.</translation>
     </message>
     <message>
-        <source>PIV Balance</source>
-        <translation>Bilancio PIV</translation>
+        <source>WSP Balance</source>
+        <translation>Bilancio WSP</translation>
     </message>
     <message>
         <source>Immature:</source>
@@ -1771,8 +1771,8 @@ Questi zWSP sono spendibili.</translation>
         <translation>Spendibili:</translation>
     </message>
     <message>
-        <source>Locked PIV or Masternode collaterals. These are excluded from zWSP minting.</source>
-        <translation>PIV bloccati o collaterali Masternodo. Questi sono esclusi dal conio di zWSP.</translation>
+        <source>Locked WSP or Masternode collaterals. These are excluded from zWSP minting.</source>
+        <translation>WSP bloccati o collaterali Masternodo. Questi sono esclusi dal conio di zWSP.</translation>
     </message>
     <message>
         <source>Locked:</source>

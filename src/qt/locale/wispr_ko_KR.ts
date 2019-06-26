@@ -176,16 +176,16 @@
         <translation>지갑 암호화 확인</translation>
     </message>
     <message>
-        <source>WISPR will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your PIVs from being stolen by malware infecting your computer.</source>
-        <translation>WISPR는 이제 암호화 프로세스를 마치기 위해 닫힐것입니다. 지갑을 암호화하더라도 맬웨어로 인한 PIVs 의 도난당하는 것을 완벽하게 보호 할 수는 없습니다.</translation>
+        <source>WISPR will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your WSPs from being stolen by malware infecting your computer.</source>
+        <translation>WISPR는 이제 암호화 프로세스를 마치기 위해 닫힐것입니다. 지갑을 암호화하더라도 맬웨어로 인한 WSPs 의 도난당하는 것을 완벽하게 보호 할 수는 없습니다.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>지갑을 암호화 하시겠습니까?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR PIV&lt;/b&gt;!</source>
-        <translation>경고: 지갑 암호화 후 암호를 분실하게 되면 &lt;b&gt;모든 PIV를 잃게 됩니다&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR WSP&lt;/b&gt;!</source>
+        <translation>경고: 지갑 암호화 후 암호를 분실하게 되면 &lt;b&gt;모든 WSP를 잃게 됩니다&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -1632,8 +1632,8 @@ Please be patient after clicking import.</source>
         <translation>주소 / 금액:</translation>
     </message>
     <message>
-        <source>Add destinations to send PIV to</source>
-        <translation>PIV를 보낼 목적지 추가</translation>
+        <source>Add destinations to send WSP to</source>
+        <translation>WSP를 보낼 목적지 추가</translation>
     </message>
     <message>
         <source>Add &amp;Destination</source>
@@ -1832,24 +1832,24 @@ https://www.transifex.com/WisprProject/core-project-translations</translation>
         <translation>&amp;UPnp를 사용하여 포트 매핑</translation>
     </message>
     <message>
-        <source>Enable automatic minting of PIV units to zWSP</source>
-        <translation>보상받은 PIV를 zWSP로 자동변환 활성화</translation>
+        <source>Enable automatic minting of WSP units to zWSP</source>
+        <translation>보상받은 WSP를 zWSP로 자동변환 활성화</translation>
     </message>
     <message>
         <source>Enable zWSP Automint</source>
         <translation>zWSP 자동생성 활성화</translation>
     </message>
     <message>
-        <source>Percentage of incoming PIV which get automatically converted to zWSP via Zerocoin Protocol (min: 10%)</source>
-        <translation>PIV수신시 자동변환 zWSP 비율 (최소값:10%)</translation>
+        <source>Percentage of incoming WSP which get automatically converted to zWSP via Zerocoin Protocol (min: 10%)</source>
+        <translation>WSP수신시 자동변환 zWSP 비율 (최소값:10%)</translation>
     </message>
     <message>
         <source>Percentage of autominted zWSP</source>
         <translation>자동 변환되는 zWSP 비율</translation>
     </message>
     <message>
-        <source>Wait with automatic conversion to Zerocoin until enough PIV for this denomination is available</source>
-        <translation>이 디노미네이션의 PIV가 충분해질 때까지 Zerocoin으로 자동전환은 보류됩니다.</translation>
+        <source>Wait with automatic conversion to Zerocoin until enough WSP for this denomination is available</source>
+        <translation>이 디노미네이션의 WSP가 충분해질 때까지 Zerocoin으로 자동전환은 보류됩니다.</translation>
     </message>
     <message>
         <source>Preferred Automint zWSP Denomination</source>
@@ -2011,8 +2011,8 @@ https://www.transifex.com/WisprProject/core-project-translations</translation>
         <translation>전체 잔액, (현재 전송이 불가능한 코인 포함)</translation>
     </message>
     <message>
-        <source>PIV Balance</source>
-        <translation>PIV 잔액</translation>
+        <source>WSP Balance</source>
+        <translation>WSP 잔액</translation>
     </message>
     <message>
         <source>Pending:</source>
@@ -2099,8 +2099,8 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
         <translation>출금 가능 액수:</translation>
     </message>
     <message>
-        <source>Locked PIV or Masternode collaterals. These are excluded from zWSP minting.</source>
-        <translation>잠금 PIV 또는 Masternode collaterals. 이들은 zWSP minting에서 제외됩니다.</translation>
+        <source>Locked WSP or Masternode collaterals. These are excluded from zWSP minting.</source>
+        <translation>잠금 WSP 또는 Masternode collaterals. 이들은 zWSP minting에서 제외됩니다.</translation>
     </message>
     <message>
         <source>Locked:</source>
@@ -2342,7 +2342,7 @@ zWSP는 성명서가 20 개 이상 있고 명칭이 동일하지 않은 2 개 �
     </message>
     <message>
         <source>The WISPR address to send the payment to. Creates local payment to yourself when empty.</source>
-        <translation>PIV를 전송할 WISPR 주소입니다. 비어있을 때 자신에게 지불할 주소를 생성합니다.</translation>
+        <translation>WSP를 전송할 WISPR 주소입니다. 비어있을 때 자신에게 지불할 주소를 생성합니다.</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -3526,8 +3526,8 @@ Please be patient...</source>
         <translation>UTXO 크기:</translation>
     </message>
     <message>
-        <source>0 PIV</source>
-        <translation>0 PIV</translation>
+        <source>0 WSP</source>
+        <translation>0 WSP</translation>
     </message>
     <message>
         <source>Transaction Fee:</source>
@@ -3582,12 +3582,12 @@ Please be patient...</source>
         <translation>자동으로 선택됩니다.</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uPIVs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uPIVs in fee,&lt;br /&gt;while "at least" pays 1000 uPIVs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>트랜잭션이 250바이트 인 경우 사용자 지정 수수료가 1000 uPIVs로 설정되고,&lt;br /&gt;1000 uPIVs 안에는 최소 "킬로바이트당" 250 uPIVs 만 지불합니다. 1 킬로바이트보다 큰 트랜잭션의 경우 모두 킬로바이트 단위로 지불합니다.</translation>
+        <source>If the custom fee is set to 1000 uWSPs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uWSPs in fee,&lt;br /&gt;while "at least" pays 1000 uWSPs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>트랜잭션이 250바이트 인 경우 사용자 지정 수수료가 1000 uWSPs로 설정되고,&lt;br /&gt;1000 uWSPs 안에는 최소 "킬로바이트당" 250 uWSPs 만 지불합니다. 1 킬로바이트보다 큰 트랜잭션의 경우 모두 킬로바이트 단위로 지불합니다.</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uPIVs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uPIVs in fee,&lt;br /&gt;while "total at least" pays 1000 uPIVs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>트랜잭션이 250바이트 인 경우 사용자 지정 수수료가 1000 uPIVs로 설정되고,&lt;br /&gt;1000 uPIVs 안에는 전체에서 최소 "킬로바이트당" 250 uPIVs 만 지불합니다. 1 킬로바이트보다 큰 트랜잭션의 경우 모두 킬로바이트 단위로 지불합니다.</translation>
+        <source>If the custom fee is set to 1000 uWSPs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uWSPs in fee,&lt;br /&gt;while "total at least" pays 1000 uWSPs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>트랜잭션이 250바이트 인 경우 사용자 지정 수수료가 1000 uWSPs로 설정되고,&lt;br /&gt;1000 uWSPs 안에는 전체에서 최소 "킬로바이트당" 250 uWSPs 만 지불합니다. 1 킬로바이트보다 큰 트랜잭션의 경우 모두 킬로바이트 단위로 지불합니다.</translation>
     </message>
     <message>
         <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for WISPR transactions than the network can process.</source>
@@ -3638,8 +3638,8 @@ Please be patient...</source>
         <translation>&amp;받는 사람 추가</translation>
     </message>
     <message>
-        <source>Anonymized PIV</source>
-        <translation>익명화된 PIV</translation>
+        <source>Anonymized WSP</source>
+        <translation>익명화된 WSP</translation>
     </message>
     <message>
         <source>Balance:</source>
@@ -4283,8 +4283,8 @@ Please be patient...</source>
         <translation>난독화를 통해 수신 됨</translation>
     </message>
     <message>
-        <source>PIV Stake</source>
-        <translation>PIV stake</translation>
+        <source>WSP Stake</source>
+        <translation>WSP stake</translation>
     </message>
     <message>
         <source>zWSP Stake</source>
@@ -4307,24 +4307,24 @@ Please be patient...</source>
         <translation>난독화 표시 만들기</translation>
     </message>
     <message>
-        <source>Converted PIV to zWSP</source>
-        <translation>PIV를 zWSP로 변환</translation>
+        <source>Converted WSP to zWSP</source>
+        <translation>WSP를 zWSP로 변환</translation>
     </message>
     <message>
         <source>Spent zWSP</source>
         <translation>zWSP 사용</translation>
     </message>
     <message>
-        <source>Received PIV from zWSP</source>
-        <translation>zWSP를 PIV로 받음</translation>
+        <source>Received WSP from zWSP</source>
+        <translation>zWSP를 WSP로 받음</translation>
     </message>
     <message>
         <source>Minted Change as zWSP from zWSP Spend</source>
         <translation>zWSP 전송후 남은 zWSP로 잔돈 생성</translation>
     </message>
     <message>
-        <source>Converted zWSP to PIV</source>
-        <translation>zWSP를 PIV로 변환</translation>
+        <source>Converted zWSP to WSP</source>
+        <translation>zWSP를 WSP로 변환</translation>
     </message>
     <message>
         <source>Anonymous (zWSP Transaction)</source>
@@ -4542,8 +4542,8 @@ Please be patient...</source>
         <translation>내보내기 성공</translation>
     </message>
     <message>
-        <source>Received PIV from zWSP</source>
-        <translation>zWSP를 PIV로 받음</translation>
+        <source>Received WSP from zWSP</source>
+        <translation>zWSP를 WSP로 받음</translation>
     </message>
     <message>
         <source>Zerocoin Spend, Change in zWSP</source>
@@ -4583,8 +4583,8 @@ Please be patient...</source>
         <translation>코인 전송 </translation>
     </message>
     <message>
-        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 PIV.</source>
-        <translation>SwiftTX는 아직 높은 값을 전송하는 것을 지원하지 않습니다. 트랜잭션은 현재 %1 PIV로 제한됩니다.</translation>
+        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 WSP.</source>
+        <translation>SwiftTX는 아직 높은 값을 전송하는 것을 지원하지 않습니다. 트랜잭션은 현재 %1 WSP로 제한됩니다.</translation>
     </message>
 </context>
 <context>
@@ -4696,8 +4696,8 @@ Please be patient...</source>
         <translation>Enable automatic wallet backups triggered after each zWSP minting (0-1, default: %u)</translation>
     </message>
     <message>
-        <source>Enable or disable staking functionality for PIV inputs (0-1, default: %u)</source>
-        <translation>Enable or disable staking functionality for PIV inputs (0-1, default: %u)</translation>
+        <source>Enable or disable staking functionality for WSP inputs (0-1, default: %u)</source>
+        <translation>Enable or disable staking functionality for WSP inputs (0-1, default: %u)</translation>
     </message>
     <message>
         <source>Enable or disable staking functionality for zWSP inputs (0-1, default: %u)</source>
@@ -4736,12 +4736,12 @@ Please be patient...</source>
         <translation>최고 블록이 변경될 경우 명령을 실행하십시오 (명령 내 %s 는 블록 해시로 대체 되었습니다)</translation>
     </message>
     <message>
-        <source>Fees (in PIV/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
-        <translation>이것보다 작은 수수료 (PIV/Kb)는 중계 수수료가 없는 것으로 간주됩니다 (기본값: %s)</translation>
+        <source>Fees (in WSP/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
+        <translation>이것보다 작은 수수료 (WSP/Kb)는 중계 수수료가 없는 것으로 간주됩니다 (기본값: %s)</translation>
     </message>
     <message>
-        <source>Fees (in PIV/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
-        <translation>이것보다 작은 수수료 (PIV/Kb)는 트랜잭션 생성 수수료가 없는 것으로 간주됩니다 (기본값: %s)</translation>
+        <source>Fees (in WSP/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
+        <translation>이것보다 작은 수수료 (WSP/Kb)는 트랜잭션 생성 수수료가 없는 것으로 간주됩니다 (기본값: %s)</translation>
     </message>
     <message>
         <source>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: %u)</source>
@@ -4844,12 +4844,12 @@ Please be patient...</source>
         <translation>이 트랜잭션를 위해 난독화 표기된 충분한 금액을 찾을 수 없습니다.</translation>
     </message>
     <message>
-        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 PIV.</source>
-        <translation>이 트랜잭션를 위해 난독화 표기가 안된 충분한 금액을 찾을 수 없습니다. 10000 PIV과 일치하지 않음.</translation>
+        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 WSP.</source>
+        <translation>이 트랜잭션를 위해 난독화 표기가 안된 충분한 금액을 찾을 수 없습니다. 10000 WSP과 일치하지 않음.</translation>
     </message>
     <message>
-        <source>Unable to locate enough funds for this transaction that are not equal 10000 PIV.</source>
-        <translation>트랜잭션에 대한 충분한 금액을 찾을 수 없습니다. 10000 PIV와 같지 않음</translation>
+        <source>Unable to locate enough funds for this transaction that are not equal 10000 WSP.</source>
+        <translation>트랜잭션에 대한 충분한 금액을 찾을 수 없습니다. 10000 WSP와 같지 않음</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
@@ -5132,8 +5132,8 @@ Please be patient...</source>
         <translation>블록을 받아오는데 실패했습니다.</translation>
     </message>
     <message>
-        <source>Fee (in PIV/kB) to add to transactions you send (default: %s)</source>
-        <translation>당신이 보내는 트랜잭션에 추가 할 수수료 (PIV/kB) (기본값: %s)</translation>
+        <source>Fee (in WSP/kB) to add to transactions you send (default: %s)</source>
+        <translation>당신이 보내는 트랜잭션에 추가 할 수수료 (WSP/kB) (기본값: %s)</translation>
     </message>
     <message>
         <source>Force safe mode (default: %u)</source>
@@ -5236,8 +5236,8 @@ Please be patient...</source>
         <translation>자동생성 zWSP 비율  (1-100, default: %u)</translation>
     </message>
     <message>
-        <source>Reindex the PIV and zWSP money supply statistics</source>
-        <translation>PIV 및 zWSP 공급량 다시 색인</translation>
+        <source>Reindex the WSP and zWSP money supply statistics</source>
+        <translation>WSP 및 zWSP 공급량 다시 색인</translation>
     </message>
     <message>
         <source>Reindexing zerocoin database...</source>

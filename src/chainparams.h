@@ -107,8 +107,8 @@ public:
     virtual const Checkpoints::CCheckpointData& Checkpoints() const = 0;
     int PoolMaxTransactions() const { return consensus.nPoolMaxTransactions; }
     /** Return the number of blocks in a budget cycle */
-    int GetBudgetCycleBlocks() const { return nBudgetCycleBlocks; }
-    int64_t GetProposalEstablishmentTime() const { return nProposalEstablishmentTime; }
+    int GetBudgetCycleBlocks() const { return consensus.nBudgetCycleBlocks; }
+    int64_t GetProposalEstablishmentTime() const { return consensus.nProposalEstablishmentTime; }
 
     /** Spork key and Masternode Handling **/
     std::string SporkKey() const { return consensus.strSporkKey; }
@@ -132,26 +132,26 @@ public:
 
     /** Height or Time Based Activations **/
 //    int ModifierUpgradeBlock() const { return nModifierUpdateBlock; }
-    int Zerocoin_StartHeight() const { return nZerocoinStartHeight; }
-    int Zerocoin_Block_EnforceSerialRange() const { return nBlockEnforceSerialRange; }
-    int Zerocoin_Block_RecalculateAccumulators() const { return nBlockRecalculateAccumulators; }
-    int Zerocoin_Block_FirstFraudulent() const { return nBlockFirstFraudulent; }
-    int Zerocoin_Block_LastGoodCheckpoint() const { return nBlockLastGoodCheckpoint; }
-    int Zerocoin_StartTime() const { return nZerocoinStartTime; }
-    int Block_Enforce_Invalid() const { return nBlockEnforceInvalidUTXO; }
-    int Zerocoin_Block_V2_Start() const { return nBlockZerocoinV2; }
+    int Zerocoin_StartHeight() const { return consensus.nZerocoinStartHeight; }
+    int Zerocoin_Block_EnforceSerialRange() const { return consensus.nBlockEnforceSerialRange; }
+    int Zerocoin_Block_RecalculateAccumulators() const { return consensus.nBlockRecalculateAccumulators; }
+    int Zerocoin_Block_FirstFraudulent() const { return consensus.nBlockFirstFraudulent; }
+    int Zerocoin_Block_LastGoodCheckpoint() const { return consensus.nBlockLastGoodCheckpoint; }
+    int Zerocoin_StartTime() const { return consensus.nZerocoinStartTime; }
+    int Block_Enforce_Invalid() const { return consensus.nBlockEnforceInvalidUTXO; }
+    int Zerocoin_Block_V2_Start() const { return consensus.nBlockZerocoinV2; }
 
     // fake serial attack
-    int Zerocoin_Block_EndFakeSerial() const { return nFakeSerialBlockheightEnd; }
-    CAmount GetSupplyBeforeFakeSerial() const { return nSupplyBeforeFakeSerial; }
+    int Zerocoin_Block_EndFakeSerial() const { return consensus.nFakeSerialBlockheightEnd; }
+    CAmount GetSupplyBeforeFakeSerial() const { return consensus.nSupplyBeforeFakeSerial; }
 
-    int Zerocoin_Block_Double_Accumulated() const { return nBlockDoubleAccumulated; }
-    CAmount InvalidAmountFiltered() const { return nInvalidAmountFiltered; };
+    int Zerocoin_Block_Double_Accumulated() const { return consensus.nBlockDoubleAccumulated; }
+    CAmount InvalidAmountFiltered() const { return consensus.nInvalidAmountFiltered; };
     int LAST_POW_BLOCK() const { return consensus.nLastPOWBlock; }
     int NEW_PROTOCOLS_STARTHEIGHT() const { return consensus.nNewProtocolStartHeight; }
     int NEW_PROTOCOLS_STARTTIME() const { return consensus.nNewProtocolStartTime; }
 
-    int Zerocoin_Block_Public_Spend_Enabled() const { return nPublicZCSpends; }
+    int Zerocoin_Block_Public_Spend_Enabled() const { return consensus.nPublicZCSpends; }
 
 protected:
     CChainParams() {}
@@ -176,7 +176,6 @@ protected:
     bool fTestnetToBeDeprecatedFieldRPC;
     bool fHeadersFirstSyncingActive;
     int nPoolMaxTransactions;
-    int nBudgetCycleBlocks;
     std::string strSporkKey;
     std::string strSporkKeyOld;
     int64_t nEnforceNewSporkKey;
@@ -184,32 +183,7 @@ protected:
     std::string strObfuscationPoolDummyAddress;
     int64_t nStartMasternodePayments;
     std::string zerocoinModulus;
-    int nMaxZerocoinSpendsPerTransaction;
-    int nMaxZerocoinPublicSpendsPerTransaction;
-    CAmount nMinZerocoinMintFee;
-    CAmount nInvalidAmountFiltered;
-    int nMintRequiredConfirmations;
-    int nRequiredAccumulation;
-    int nDefaultSecurityLevel;
-    int nZerocoinHeaderVersion;
-    int64_t nBudget_Fee_Confirmations;
-    int nZerocoinStartHeight;
-    int nZerocoinStartTime;
-    int nZerocoinRequiredStakeDepth;
-    int64_t nProposalEstablishmentTime;
 
-    int nBlockEnforceSerialRange;
-    int nBlockRecalculateAccumulators;
-    int nBlockFirstFraudulent;
-    int nBlockLastGoodCheckpoint;
-    int nBlockEnforceInvalidUTXO;
-    int nBlockZerocoinV2;
-    int nBlockDoubleAccumulated;
-    int nPublicZCSpends;
-
-    // fake serial attack
-    int nFakeSerialBlockheightEnd = 0;
-    CAmount nSupplyBeforeFakeSerial = 0;
 };
 
 /**

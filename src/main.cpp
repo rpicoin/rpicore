@@ -88,7 +88,6 @@ bool fClearSpendCache = false;
 /* If the tip is older than this (in seconds), the node is considered to be in initial block download. */
 int64_t nMaxTipAge = DEFAULT_MAX_TIP_AGE;
 
-unsigned int nStakeMinAge = 60 * 60;
 int64_t nReserveBalance = 0;
 
 /** Fees smaller than this (in uwsp) are considered zero fee (for relaying and mining)
@@ -392,8 +391,9 @@ private:
             AddressCurrentlyConnected(state->address);
         }
 
-    for (const QueuedBlock& entry : state->vBlocksInFlight)
-        mapBlocksInFlight.erase(entry.hash);
+        for (const QueuedBlock& entry : state->vBlocksInFlight){
+            mapBlocksInFlight.erase(entry.hash);
+        }
         EraseOrphansFor(nodeid);
         nPreferredDownload -= state->fPreferredDownload;
 
@@ -4542,17 +4542,17 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
         CTransaction &stakeTxIn = block.vtx[1];
 
         // Inputs
-        std::vector<CTxIn> pivInputs;
+        std::vector<CTxIn> wspInputs;
         std::vector<CTxIn> zWSPInputs;
 
         for (const CTxIn& stakeIn : stakeTxIn.vin) {
             if(stakeIn.IsZerocoinSpend()){
                 zWSPInputs.push_back(stakeIn);
             }else{
-                pivInputs.push_back(stakeIn);
+                wspInputs.push_back(stakeIn);
             }
         }
-        const bool hasPIVInputs = !pivInputs.empty();
+        const bool hasWSPInputs = !wspInputs.empty();
         const bool hasZWSPInputs = !zWSPInputs.empty();
 
         // ZC started after PoS.
@@ -4591,10 +4591,10 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
                     }
                 }
                 if(tx.IsCoinStake()) continue;
-                if(hasPIVInputs)
+                if(hasWSPInputs)
                     // Check if coinstake input is double spent inside the same block
-                    for (const CTxIn& pivIn : pivInputs){
-                        if(pivIn.prevout == in.prevout){
+                    for (const CTxIn& wspIn : wspInputs){
+                        if(wspIn.prevout == in.prevout){
                             // double spent coinstake input inside block
                             return error("%s: double spent coinstake input inside block", __func__);
                         }
@@ -4631,11 +4631,11 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
                 for (const CTransaction &t : bl.vtx) {
                     for (const CTxIn &in: t.vin) {
                         // Loop through every input of the staking tx
-                        for (const CTxIn &stakeIn : pivInputs) {
+                        for (const CTxIn &stakeIn : wspInputs) {
                             // if it's already spent
 
                             // First regular staking check
-                            if (hasPIVInputs) {
+                            if (hasWSPInputs) {
                                 if (stakeIn.prevout == in.prevout) {
                                     return state.DoS(100, error("%s: input already spent on a previous block",
                                                                 __func__));

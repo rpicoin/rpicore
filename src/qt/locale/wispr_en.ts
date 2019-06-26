@@ -221,7 +221,7 @@
     </message>
     <message>
         <location line="+9"/>
-        <source>WISPR will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your PIVs from being stolen by malware infecting your computer.</source>
+        <source>WISPR will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your WSPs from being stolen by malware infecting your computer.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -231,7 +231,7 @@
     </message>
     <message>
         <location line="+0"/>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR PIV&lt;/b&gt;!</source>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR WSP&lt;/b&gt;!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2242,7 +2242,7 @@ Please be patient after clicking import.</source>
     </message>
     <message>
         <location line="+13"/>
-        <source>Add destinations to send PIV to</source>
+        <source>Add destinations to send WSP to</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2489,7 +2489,7 @@ https://www.transifex.com/WisprProject/core-project-translations</source>
     </message>
     <message>
         <location line="-187"/>
-        <source>Enable automatic minting of PIV units to zWSP</source>
+        <source>Enable automatic minting of WSP units to zWSP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2509,7 +2509,7 @@ https://www.transifex.com/WisprProject/core-project-translations</source>
     </message>
     <message>
         <location line="+11"/>
-        <source>Percentage of incoming PIV which get automatically converted to zWSP via Zerocoin Protocol (min: 10%)</source>
+        <source>Percentage of incoming WSP which get automatically converted to zWSP via Zerocoin Protocol (min: 10%)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2520,7 +2520,7 @@ https://www.transifex.com/WisprProject/core-project-translations</source>
     <message>
         <location line="+30"/>
         <location line="+16"/>
-        <source>Wait with automatic conversion to Zerocoin until enough PIV for this denomination is available</source>
+        <source>Wait with automatic conversion to Zerocoin until enough WSP for this denomination is available</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2744,7 +2744,7 @@ https://www.transifex.com/WisprProject/core-project-translations</source>
     </message>
     <message>
         <location line="+71"/>
-        <source>PIV Balance</source>
+        <source>WSP Balance</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2861,7 +2861,7 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
     <message>
         <location line="+191"/>
         <location line="+19"/>
-        <source>Locked PIV or Masternode collaterals. These are excluded from zWSP minting.</source>
+        <source>Locked WSP or Masternode collaterals. These are excluded from zWSP minting.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4880,12 +4880,12 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+7"/>
-        <source>0 PIV</source>
+        <source>0 WSP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+149"/>
-        <source>SwiftX technology allows for near instant transactions - A flat fee of 0.01 PIV applies</source>
+        <source>SwiftX technology allows for near instant transactions - A flat fee of 0.01 WSP applies</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4955,12 +4955,12 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+1026"/>
-        <source>If the custom fee is set to 1000 uPIVs and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 uPIVs in fee,&lt;br /&gt;while &quot;at least&quot; pays 1000 uPIVs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <source>If the custom fee is set to 1000 uWSPs and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 uWSPs in fee,&lt;br /&gt;while &quot;at least&quot; pays 1000 uWSPs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+16"/>
-        <source>If the custom fee is set to 1000 uPIVs and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 uPIVs in fee,&lt;br /&gt;while &quot;total at least&quot; pays 1000 uPIVs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <source>If the custom fee is set to 1000 uWSPs and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 uWSPs in fee,&lt;br /&gt;while &quot;total at least&quot; pays 1000 uWSPs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5026,7 +5026,7 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+35"/>
-        <source>Anonymized PIV</source>
+        <source>Anonymized WSP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5906,7 +5906,7 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+7"/>
-        <source>PIV Stake</source>
+        <source>WSP Stake</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5936,7 +5936,7 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+4"/>
-        <source>Converted PIV to zWSP</source>
+        <source>Converted WSP to zWSP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5946,7 +5946,7 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+2"/>
-        <source>Received PIV from zWSP</source>
+        <source>Received WSP from zWSP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5956,7 +5956,7 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+2"/>
-        <source>Converted zWSP to PIV</source>
+        <source>Converted zWSP to WSP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6235,7 +6235,7 @@ Please be patient...</source>
     </message>
     <message>
         <location line="-310"/>
-        <source>Received PIV from zWSP</source>
+        <source>Received WSP from zWSP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6287,7 +6287,7 @@ Please be patient...</source>
     <message>
         <location line="-18"/>
         <location line="+9"/>
-        <source>SwiftX doesn&apos;t support sending values that high yet. Transactions are currently limited to %1 PIV.</source>
+        <source>SwiftX doesn&apos;t support sending values that high yet. Transactions are currently limited to %1 WSP.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6437,7 +6437,7 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+3"/>
-        <source>Enable or disable staking functionality for PIV inputs (0-1, default: %u)</source>
+        <source>Enable or disable staking functionality for WSP inputs (0-1, default: %u)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6487,12 +6487,12 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+8"/>
-        <source>Fees (in PIV/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
+        <source>Fees (in WSP/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Fees (in PIV/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
+        <source>Fees (in WSP/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6647,12 +6647,12 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+2"/>
-        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 PIV.</source>
+        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 WSP.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Unable to locate enough funds for this transaction that are not equal 10000 PIV.</source>
+        <source>Unable to locate enough funds for this transaction that are not equal 10000 WSP.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7032,7 +7032,7 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+4"/>
-        <source>Fee (in PIV/kB) to add to transactions you send (default: %s)</source>
+        <source>Fee (in WSP/kB) to add to transactions you send (default: %s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7162,7 +7162,7 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+9"/>
-        <source>Recalculating PIV supply...</source>
+        <source>Recalculating WSP supply...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7177,7 +7177,7 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+2"/>
-        <source>Reindex the PIV and zWSP money supply statistics</source>
+        <source>Reindex the WSP and zWSP money supply statistics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

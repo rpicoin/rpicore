@@ -46,7 +46,8 @@ struct Params {
   int nRequiredAccumulation;
   int nDefaultSecurityLevel;
   int nZerocoinHeaderVersion;
-  int64_t nBudget_Fee_Confirmations;
+    int nBudgetCycleBlocks;
+    int64_t nBudget_Fee_Confirmations;
   int nZerocoinStartHeight;
   int nNewProtocolStartHeight;
 
@@ -54,7 +55,22 @@ struct Params {
   int nNewProtocolStartTime;
   int nZerocoinRequiredStakeDepth;
   uint256 stakeLimit;
+    int nMaxZerocoinPublicSpendsPerTransaction;
+    CAmount nInvalidAmountFiltered;
+    int64_t nProposalEstablishmentTime;
 
+    int nBlockEnforceSerialRange;
+    int nBlockRecalculateAccumulators;
+    int nBlockFirstFraudulent;
+    int nBlockLastGoodCheckpoint;
+    int nBlockEnforceInvalidUTXO;
+    int nBlockZerocoinV2;
+    int nBlockDoubleAccumulated;
+    int nPublicZCSpends;
+
+    // fake serial attack
+    int nFakeSerialBlockheightEnd = 0;
+    CAmount nSupplyBeforeFakeSerial = 0;
 };
 } // namespace Consensus
 

@@ -176,16 +176,16 @@
         <translation>Bekräfta plånboks krypering</translation>
     </message>
     <message>
-        <source>WISPR will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your PIVs from being stolen by malware infecting your computer.</source>
-        <translation>WISPR kommer att stängas ner nu för att färdigställa kryperingsprocessen. Kom ihåg att kryptering av din plånbok inte kan säkerställa dina PIVs från att bli stulna av skadeprogram som infekterat din dator.</translation>
+        <source>WISPR will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your WSPs from being stolen by malware infecting your computer.</source>
+        <translation>WISPR kommer att stängas ner nu för att färdigställa kryperingsprocessen. Kom ihåg att kryptering av din plånbok inte kan säkerställa dina WSPs från att bli stulna av skadeprogram som infekterat din dator.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>Är du säker på att du vill kryptera din plånbok?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR PIV&lt;/b&gt;!</source>
-        <translation>Varning: om du krypterar din plånbok och tappar bort din lösenfras kommer du &lt;b&gt; FÖRLORA ALLA DINA PIV&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR WSP&lt;/b&gt;!</source>
+        <translation>Varning: om du krypterar din plånbok och tappar bort din lösenfras kommer du &lt;b&gt; FÖRLORA ALLA DINA WSP&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -1770,8 +1770,8 @@ Var god vänta efter att du trycker på importera.</translation>
         <translation>Adress / Mängd:</translation>
     </message>
     <message>
-        <source>Add destinations to send PIV to</source>
-        <translation>Lägg till destination att skicka PIV till</translation>
+        <source>Add destinations to send WSP to</source>
+        <translation>Lägg till destination att skicka WSP till</translation>
     </message>
     <message>
         <source>Add &amp;Destination</source>
@@ -1970,8 +1970,8 @@ https://www.transifex.com/WisprProject/core-project-translations</translation>
         <translation>Kartlägg port med &amp;UPnP</translation>
     </message>
     <message>
-        <source>Enable automatic minting of PIV units to zWSP</source>
-        <translation>Tillåt automatisk prägling med PIV enheter till zWSP</translation>
+        <source>Enable automatic minting of WSP units to zWSP</source>
+        <translation>Tillåt automatisk prägling med WSP enheter till zWSP</translation>
     </message>
     <message>
         <source>Enable zWSP Automint</source>
@@ -1986,16 +1986,16 @@ https://www.transifex.com/WisprProject/core-project-translations</translation>
         <translation>Aktivera autopräglingsadresser</translation>
     </message>
     <message>
-        <source>Percentage of incoming PIV which get automatically converted to zWSP via Zerocoin Protocol (min: 10%)</source>
-        <translation>Procent av inkommande PIV som automatiskt konverteras till zWSP via Zerocoin Protokollet (min: 10%)</translation>
+        <source>Percentage of incoming WSP which get automatically converted to zWSP via Zerocoin Protocol (min: 10%)</source>
+        <translation>Procent av inkommande WSP som automatiskt konverteras till zWSP via Zerocoin Protokollet (min: 10%)</translation>
     </message>
     <message>
         <source>Percentage of autominted zWSP</source>
         <translation>Procent av autopräglade zWSP</translation>
     </message>
     <message>
-        <source>Wait with automatic conversion to Zerocoin until enough PIV for this denomination is available</source>
-        <translation>Vänta med automatisk omvandling till Zerocoin tills tillräckligt många PIV för denna valör är tillgängliga</translation>
+        <source>Wait with automatic conversion to Zerocoin until enough WSP for this denomination is available</source>
+        <translation>Vänta med automatisk omvandling till Zerocoin tills tillräckligt många WSP för denna valör är tillgängliga</translation>
     </message>
     <message>
         <source>Preferred Automint zWSP Denomination</source>
@@ -2165,8 +2165,8 @@ https://www.transifex.com/WisprProject/core-project-translations</translation>
         <translation>Totalt saldo, inkluderar alla otillgängliga mynt.</translation>
     </message>
     <message>
-        <source>PIV Balance</source>
-        <translation>PIV Saldo</translation>
+        <source>WSP Balance</source>
+        <translation>WSP Saldo</translation>
     </message>
     <message>
         <source>Pending:</source>
@@ -2253,8 +2253,8 @@ Omogna: bekräftade men under 1 myntning av samma valör efter den blev präglad
         <translation>Spenderbar:</translation>
     </message>
     <message>
-        <source>Locked PIV or Masternode collaterals. These are excluded from zWSP minting.</source>
-        <translation>Låsta PIV eller masternode som säkerhet. Dessa är uteslutna från zWSP minting.</translation>
+        <source>Locked WSP or Masternode collaterals. These are excluded from zWSP minting.</source>
+        <translation>Låsta WSP eller masternode som säkerhet. Dessa är uteslutna från zWSP minting.</translation>
     </message>
     <message>
         <source>Locked:</source>
@@ -3804,12 +3804,12 @@ Var tålmodig...</translation>
         <translation>UTXO Storlek:</translation>
     </message>
     <message>
-        <source>0 PIV</source>
-        <translation>0 PIV</translation>
+        <source>0 WSP</source>
+        <translation>0 WSP</translation>
     </message>
     <message>
-        <source>SwiftX technology allows for near instant transactions - A flat fee of 0.01 PIV applies</source>
-        <translation>SwiftX teknologi tillåter nästan omedelbara transaktioner - En fast avgift på 0.01PIV tillkommer</translation>
+        <source>SwiftX technology allows for near instant transactions - A flat fee of 0.01 WSP applies</source>
+        <translation>SwiftX teknologi tillåter nästan omedelbara transaktioner - En fast avgift på 0.01WSP tillkommer</translation>
     </message>
     <message>
         <source>Transaction Fee:</source>
@@ -3864,12 +3864,12 @@ Var tålmodig...</translation>
         <translation>Mynt automatiskt valda</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uPIVs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uPIVs in fee,&lt;br /&gt;while "at least" pays 1000 uPIVs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Om 1000 uPIVs är den valda skräddarsydda avgiften och transaktionen är bara 250 bytes så kommer "per kilobyte" bara betala 250 uPIVs i avgift,&lt;br /&gt;medans "minst" betalar 1000 uPIVs. För transaktioner större än en kilobyte så betalar båda per kilobyte.</translation>
+        <source>If the custom fee is set to 1000 uWSPs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uWSPs in fee,&lt;br /&gt;while "at least" pays 1000 uWSPs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>Om 1000 uWSPs är den valda skräddarsydda avgiften och transaktionen är bara 250 bytes så kommer "per kilobyte" bara betala 250 uWSPs i avgift,&lt;br /&gt;medans "minst" betalar 1000 uWSPs. För transaktioner större än en kilobyte så betalar båda per kilobyte.</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uPIVs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uPIVs in fee,&lt;br /&gt;while "total at least" pays 1000 uPIVs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Om 1000 uPIVs är den valda skräddarsydda avgiften och transaktionen är bara 250 bytes så kommer "per kilobyte" bara betala 250 uPIVs i avgift,&lt;br /&gt;medans "minst totalt" betalar 1000 uPIVs. För transaktioner större än en kilobyte så betalar båda per kilobyte.</translation>
+        <source>If the custom fee is set to 1000 uWSPs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uWSPs in fee,&lt;br /&gt;while "total at least" pays 1000 uWSPs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>Om 1000 uWSPs är den valda skräddarsydda avgiften och transaktionen är bara 250 bytes så kommer "per kilobyte" bara betala 250 uWSPs i avgift,&lt;br /&gt;medans "minst totalt" betalar 1000 uWSPs. För transaktioner större än en kilobyte så betalar båda per kilobyte.</translation>
     </message>
     <message>
         <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for WISPR transactions than the network can process.</source>
@@ -3920,8 +3920,8 @@ Var tålmodig...</translation>
         <translation>Lägg till &amp;Mottagare</translation>
     </message>
     <message>
-        <source>Anonymized PIV</source>
-        <translation>Anonymiserade PIV</translation>
+        <source>Anonymized WSP</source>
+        <translation>Anonymiserade WSP</translation>
     </message>
     <message>
         <source>Balance:</source>
@@ -4580,8 +4580,8 @@ Var tålmodig...</translation>
         <translation>Mottaget via Fördunkling</translation>
     </message>
     <message>
-        <source>PIV Stake</source>
-        <translation>PIV staking</translation>
+        <source>WSP Stake</source>
+        <translation>WSP staking</translation>
     </message>
     <message>
         <source>zWSP Stake</source>
@@ -4604,24 +4604,24 @@ Var tålmodig...</translation>
         <translation>Obfuscation Skapa tecken</translation>
     </message>
     <message>
-        <source>Converted PIV to zWSP</source>
-        <translation>Konvertera PIV till zWSP</translation>
+        <source>Converted WSP to zWSP</source>
+        <translation>Konvertera WSP till zWSP</translation>
     </message>
     <message>
         <source>Spent zWSP</source>
         <translation>Spendera zWSP</translation>
     </message>
     <message>
-        <source>Received PIV from zWSP</source>
-        <translation>Mottog PIV från zWSP</translation>
+        <source>Received WSP from zWSP</source>
+        <translation>Mottog WSP från zWSP</translation>
     </message>
     <message>
         <source>Minted Change as zWSP from zWSP Spend</source>
         <translation>Myntad Växel som zWSP från zWSP Spendering</translation>
     </message>
     <message>
-        <source>Converted zWSP to PIV</source>
-        <translation>Konverterad zWSP till PIV</translation>
+        <source>Converted zWSP to WSP</source>
+        <translation>Konverterad zWSP till WSP</translation>
     </message>
     <message>
         <source>Anonymous (zWSP Transaction)</source>
@@ -4843,8 +4843,8 @@ Var tålmodig...</translation>
         <translation>Exportering Lyckat</translation>
     </message>
     <message>
-        <source>Received PIV from zWSP</source>
-        <translation>Mottog PIV från zWSP</translation>
+        <source>Received WSP from zWSP</source>
+        <translation>Mottog WSP från zWSP</translation>
     </message>
     <message>
         <source>Zerocoin Spend, Change in zWSP</source>
@@ -4884,8 +4884,8 @@ Var tålmodig...</translation>
         <translation>Skicka Mynt</translation>
     </message>
     <message>
-        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 PIV.</source>
-        <translation>wiftX stödjer inte att skicka så höga värden än. Transaktioner är för nuvarande begränsade till %1 PIV.</translation>
+        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 WSP.</source>
+        <translation>wiftX stödjer inte att skicka så höga värden än. Transaktioner är för nuvarande begränsade till %1 WSP.</translation>
     </message>
 </context>
 <context>
@@ -4997,8 +4997,8 @@ Var tålmodig...</translation>
         <translation>Aktivera automatisk plånboksbackup efter varje zWSP minting (0-1, standard: %u)</translation>
     </message>
     <message>
-        <source>Enable or disable staking functionality for PIV inputs (0-1, default: %u)</source>
-        <translation>Aktivera eller avaktivera staking funktionalitet för PIV inmatningar (0-1, standard: %u)</translation>
+        <source>Enable or disable staking functionality for WSP inputs (0-1, default: %u)</source>
+        <translation>Aktivera eller avaktivera staking funktionalitet för WSP inmatningar (0-1, standard: %u)</translation>
     </message>
     <message>
         <source>Enable or disable staking functionality for zWSP inputs (0-1, default: %u)</source>
@@ -5037,12 +5037,12 @@ Var tålmodig...</translation>
         <translation>Exekvera kommando när den bästa block ändras (%s i cmd är utbytt mot block hash)</translation>
     </message>
     <message>
-        <source>Fees (in PIV/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
-        <translation>Avgifter (i PIV/Kb) mindre än detta anses vara noll avgift i vidarebefodring (standard: %s)</translation>
+        <source>Fees (in WSP/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
+        <translation>Avgifter (i WSP/Kb) mindre än detta anses vara noll avgift i vidarebefodring (standard: %s)</translation>
     </message>
     <message>
-        <source>Fees (in PIV/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
-        <translation>Avgifter (i PIV/Kb) mindre än detta anses vara noll avgift i transaktionsskapelse (standard: %s)</translation>
+        <source>Fees (in WSP/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
+        <translation>Avgifter (i WSP/Kb) mindre än detta anses vara noll avgift i transaktionsskapelse (standard: %s)</translation>
     </message>
     <message>
         <source>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: %u)</source>
@@ -5149,12 +5149,12 @@ Var tålmodig...</translation>
         <translation>Kan ej lokalisera tillräckligt Fördunklingsdenominationerade pengar för denna transaktion.</translation>
     </message>
     <message>
-        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 PIV.</source>
-        <translation>Kan ej lokalisera tillräckligt Fördunkling icke-denominationerade pengar för denna transaktion som inte är 10000 PIV.</translation>
+        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 WSP.</source>
+        <translation>Kan ej lokalisera tillräckligt Fördunkling icke-denominationerade pengar för denna transaktion som inte är 10000 WSP.</translation>
     </message>
     <message>
-        <source>Unable to locate enough funds for this transaction that are not equal 10000 PIV.</source>
-        <translation>Kan inte hitta tillräckligt med pengar för denna transaktion som inte är 10000 PIV.</translation>
+        <source>Unable to locate enough funds for this transaction that are not equal 10000 WSP.</source>
+        <translation>Kan inte hitta tillräckligt med pengar för denna transaktion som inte är 10000 WSP.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
@@ -5441,8 +5441,8 @@ Var tålmodig...</translation>
         <translation>Misslyckades läsa block</translation>
     </message>
     <message>
-        <source>Fee (in PIV/kB) to add to transactions you send (default: %s)</source>
-        <translation>Avgift (i PIV/kB) för att lägga till transaktioner you skicka (standard: %s)</translation>
+        <source>Fee (in WSP/kB) to add to transactions you send (default: %s)</source>
+        <translation>Avgift (i WSP/kB) för att lägga till transaktioner you skicka (standard: %s)</translation>
     </message>
     <message>
         <source>Force safe mode (default: %u)</source>
@@ -5545,8 +5545,8 @@ Var tålmodig...</translation>
         <translation>Procent automatiskt mintad Zerocoin (1-100, default: %u)</translation>
     </message>
     <message>
-        <source>Reindex the PIV and zWSP money supply statistics</source>
-        <translation>Indexera PIV och zWSP pengarna tillgång statistik på nytt</translation>
+        <source>Reindex the WSP and zWSP money supply statistics</source>
+        <translation>Indexera WSP och zWSP pengarna tillgång statistik på nytt</translation>
     </message>
     <message>
         <source>Reindexing zerocoin database...</source>

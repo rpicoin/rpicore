@@ -2288,7 +2288,6 @@ bool CWallet::CreateTransaction(const vector<pair<CScript, CAmount> >& vecSend,
                 dPriority = wtxNew.ComputePriority(dPriority, nBytes);
 
                 // Can we complete this as a free transaction?
-                bool newProtocolStart = chainActive.Height() >= Params().NEW_PROTOCOLS_STARTHEIGHT();
                 if (fSendFreeTransactions && nBytes <= MAX_FREE_TRANSACTION_CREATE_SIZE) {
                     // Not enough fee: enough priority?
                     double dPriorityNeeded = mempool.estimatePriority(nTxConfirmTarget);

@@ -1,6 +1,6 @@
 [Desktop Entry]
-Encoding=UTF-8
-Name=WISPR
+Version=1.0
+Name=WISPR Core
 Comment=WISPR P2P Cryptocurrency
 Comment[fr]=WISPR, monnaie virtuelle cryptographique pair à pair
 Comment[tr]=WISPR, eşten eşe kriptografik sanal para birimi
@@ -10,3 +10,4 @@ Type=Application
 Icon=wispr128
 MimeType=x-scheme-handler/wispr;
 Categories=Office;Finance;
+StartupWMClass=Wispr-qt
