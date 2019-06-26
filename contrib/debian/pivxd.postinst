@@ -1,15 +1,15 @@
 
 #!/bin/sh
 
-# setup pivx account, homedir etc
+# setup wispr account, homedir etc
 
 set -e
 
-BCUSER="pivx"
-BCHOME="/var/lib/pivx"
+BCUSER="wispr"
+BCHOME="/var/lib/wispr"
 
 if [ "$1" = "configure" ]; then
-	# Add pivx user/group - this will gracefully abort if the user already exists.
+	# Add wispr user/group - this will gracefully abort if the user already exists.
 	# A homedir is never created.
 	set +e
 	adduser --system --home "${BCHOME}" --no-create-home --group "${BCUSER}" 2>/dev/null

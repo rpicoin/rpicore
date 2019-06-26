@@ -1,8 +1,8 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2018 The PIVX developers
-// Copyright (c) 2018 The WISPR developers
+// Copyright (c) 2015-2019 The PIVX developers
+// Copyright (c) 2018-2019 The WISPR developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -150,7 +150,10 @@ public:
         vAlertPubKey=ParseHex("0411f84b889c61c1842ec84a15e3093d7dd99d955ab797b24c984cdcfe3aca23f04ec06bd840e8093aaf83488c039027ecc4ad704261245be30289be166f667c61");
         nDefaultPort = 17000;
         nMinerThreads = 0;
-        nBlockDoubleAccumulated = 1050010;
+        nBlockDoubleAccumulated = -1;
+
+        // Public coin spend enforcement
+        nPublicZCSpends = 800000;
 
         // Fake Serial Attack
         nFakeSerialBlockheightEnd = -1;
@@ -213,6 +216,7 @@ public:
         fHeadersFirstSyncingActive = true;
 
         consensus.nPoolMaxTransactions = 3;
+        consensus.nBudgetCycleBlocks = 43200; //!< Amount of blocks in a months period of time (using 1 minutes per) = (60*24*30)
         consensus.strSporkKey = "04ac60266c909c22b95415270278b8ea90bec852922d3b2bd110cfba62fc4da20f7d5d6c7f109c9604a421c6e75e47a3c8963dcd1b9b7ca71aaeef3d410e4cc65a";
         consensus.strObfuscationPoolDummyAddress = "WYCSnxDBqGkcruCwreLtBfpXtSMgoo5yUJ";
         consensus.nStartMasternodePayments = consensus.nNewProtocolStartTime; // July 2, 2018
@@ -225,6 +229,7 @@ public:
                           "8441436038339044149526344321901146575444541784240209246165157233507787077498171257724679629263863563732899121548"
                           "31438167899885040445364023527381951378636564391212010397122822120720357";
         consensus.nMaxZerocoinSpendsPerTransaction = 7; // Assume about 20kb each
+        consensus.nMaxZerocoinPublicSpendsPerTransaction = 637; // Assume about 220 bytes each input
         consensus.nMinZerocoinMintFee = 1 * CENT; //high fee required for zerocoin mints
         consensus.nMintRequiredConfirmations = 20; //the maximum amount of confirmations until accumulated in 19
         consensus.nRequiredAccumulation = 1;
@@ -233,6 +238,7 @@ public:
         consensus.nZerocoinRequiredStakeDepth = 200; //The required confirmations for a zwsp to be stakable
 
         consensus.nBudget_Fee_Confirmations = 6; // Number of confirmations for the finalization fee
+        nProposalEstablishmentTime = 60 * 60 * 24; // Proposals must be at least a day old to make it into a budget
     }
 
     const Checkpoints::CCheckpointData& Checkpoints() const
@@ -292,6 +298,9 @@ public:
         txNew2.vin[0].scriptSig = CScript() << 0 << CScriptNum(42) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
         txNew2.vout[0].SetEmpty();
 
+        // Public coin spend enforcement
+        nPublicZCSpends = 1106100;
+
         // Fake Serial Attack
         nFakeSerialBlockheightEnd = -1;
         nSupplyBeforeFakeSerial = 0;
@@ -335,11 +344,14 @@ public:
         fTestnetToBeDeprecatedFieldRPC = true;
 
         consensus.nPoolMaxTransactions = 2;
+        consensus.nBudgetCycleBlocks = 144; //!< Ten cycles per day on testnet
         consensus.strSporkKey = "04e175173ea919f973cf4bf00d10e1c29c8ef75568c59056630d5a5cce8f6d8ac6edf0bb21baa2a24ecff17ce83b9863a88a54c54ca87c709c8a3f1dfef9d268e6";
         consensus.strObfuscationPoolDummyAddress = "mbTYaNZm7TaPt5Du65aPsL8FNTktufYydC";
         consensus.nStartMasternodePayments = consensus.nNewProtocolStartTime;
         consensus.nBudget_Fee_Confirmations = 3; // Number of confirmations for the finalization fee. We have to make this very short
         // here because we only have a 8 block finalization window on testnet
+        nProposalEstablishmentTime = 60 * 5; // Proposals must be at least 5 mns old to make it into a test budget
+
     }
     const Checkpoints::CCheckpointData& Checkpoints() const
     {
@@ -376,6 +388,9 @@ public:
         nBlockRecalculateAccumulators = 999999999; //Trigger a recalculation of accumulators
         nBlockFirstFraudulent = 999999999; //First block that bad serials emerged
         nBlockLastGoodCheckpoint = 999999999; //Last valid accumulator checkpoint
+
+        // Public coin spend enforcement
+        nPublicZCSpends = 350;
 
         // Fake Serial Attack
         nFakeSerialBlockheightEnd = -1;

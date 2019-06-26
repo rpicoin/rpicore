@@ -1,8 +1,9 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
-// Copyright (c) 2017 The PIVX developers
+// Copyright (c) 2017-2019 The PIVX developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
+
 #include "interpreter.h"
 
 #include "primitives/transaction.h"
@@ -815,10 +816,10 @@ bool EvalScript(vector<vector<unsigned char> >& stack, const CScript& script, un
                         CHash160().Write(vch.data(), vch.size()).Finalize(vchHash.data());
                         else if (opcode == OP_HASH256)
                         CHash256().Write(vch.data(), vch.size()).Finalize(vchHash.data());
-                        popstack(stack);
-                        stack.push_back(vchHash);
-                    }
-                        break;
+                    popstack(stack);
+                    stack.push_back(vchHash);
+                }
+                break;
 
                     case OP_CODESEPARATOR:
                     {

@@ -1,6 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
-// Copyright (c) 2017 The PIVX developers
+// Copyright (c) 2017-2019 The PIVX developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -10,7 +10,6 @@
 #include "script/script.h"
 #include "util.h"
 #include "utilstrencodings.h"
-
 
 
 using namespace std;
@@ -66,7 +65,7 @@ bool Solver(const CScript& scriptPubKey, txnouttype& typeRet, vector<vector<unsi
     }
 
     // Zerocoin
-    if (scriptPubKey.IsZerocoinMint()){
+    if (scriptPubKey.IsZerocoinMint()) {
         typeRet = TX_ZEROCOINMINT;
         if(scriptPubKey.size() > 150) return false;
         vector<unsigned char> hashBytes(scriptPubKey.begin()+2, scriptPubKey.end());

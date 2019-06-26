@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# Copyright (c) 2019 The WISPR developers
+# Distributed under the MIT software license, see the accompanying
+# file COPYING or http://www.opensource.org/licenses/mit-license.php.
 # -*- coding: utf-8 -*-
 
 import subprocess
@@ -12,7 +15,7 @@ from test_framework.util import wait_until
 ''' -------------------------------------------------------------------------
 TestNode CLASS --------------------------------------------------------------
 
-A peer we use to send messsages to pivxd and store responses
+A peer we use to send messsages to wisprd and store responses
 Extends P2PInterface.
 '''
 

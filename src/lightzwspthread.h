@@ -1,11 +1,10 @@
-//
-// Copyright (c) 2015-2018 The PIVX developers
+// Copyright (c) 2015-2019 The PIVX developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 //
 
-#ifndef PIVX_LIGHTZWSPTHREAD_H
-#define PIVX_LIGHTZWSPTHREAD_H
+#ifndef WISPR_LIGHTZWSPTHREAD_H
+#define WISPR_LIGHTZWSPTHREAD_H
 
 #include <atomic>
 #include "genwit.h"
@@ -43,7 +42,7 @@ public:
 
     bool addWitWork(CGenWit wit) {
         if (!isWorkerRunning) {
-            LogPrintf("%s not running trying to add wit work \n", "pivx-light-thread");
+            LogPrintf("%s not running trying to add wit work \n", "wispr-light-thread");
             return false;
         }
         requestsQueue.push(wit);
@@ -51,13 +50,13 @@ public:
     }
 
     void StartLightZwspThread(boost::thread_group& threadGroup) {
-        LogPrintf("%s thread start\n", "pivx-light-thread");
+        LogPrintf("%s thread start\n", "wispr-light-thread");
         threadIns = boost::thread(boost::bind(&CLightWorker::ThreadLightZWSPSimplified, this));
     }
 
     void StopLightZwspThread() {
         threadIns.interrupt();
-        LogPrintf("%s thread interrupted\n", "pivx-light-thread");
+        LogPrintf("%s thread interrupted\n", "wispr-light-thread");
     }
 
 private:

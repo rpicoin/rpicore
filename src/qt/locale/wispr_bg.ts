@@ -176,7 +176,7 @@
         <translation>Потвърдете шифрирането на портфейла</translation>
     </message>
     <message>
-        <source>WISPR will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your WSPs from being stolen by malware infecting your computer.</source>
+        <source>WISPR will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your PIVs from being stolen by malware infecting your computer.</source>
         <translation>WISPR сега ще се затвори, за да довърши процеса по шифриране. Запомнете, че шифрирането на вашия портфейл не може напълно да защити вашия WISPR от това, да бъде откраднат чрез злонамерен софутуер, инфектирал вашия компютър.</translation>
     </message>
     <message>
@@ -184,8 +184,8 @@
         <translation>Сигурни ли сте, че искате да шифрирате вашия портфейл?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR WSP&lt;/b&gt;!</source>
-        <translation>&lt;b&gt;Внимание: Ако шифрирате вашия портфейл и загубите вашата парола, вие ще ЗАГУБИТЕ ВСИЧКИТЕ ВИ WSP&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR PIV&lt;/b&gt;!</source>
+        <translation>&lt;b&gt;Внимание: Ако шифрирате вашия портфейл и загубите вашата парола, вие ще ЗАГУБИТЕ ВСИЧКИТЕ ВИ PIV&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -1106,8 +1106,8 @@ Address: %4
         <translation>Етикета става червен, когато получателя ще получи сума по-малка от %1.</translation>
     </message>
     <message>
-        <source>Can vary +/- %1 uwsp per input.</source>
-        <translation>Може да има разлика от +/- %1 uwsp на вх.</translation>
+        <source>Can vary +/- %1 upiv per input.</source>
+        <translation>Може да има разлика от +/- %1 upiv на вх.</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -1628,8 +1628,8 @@ Please be patient after clicking import.</source>
         <translation>Адрес / Сума:</translation>
     </message>
     <message>
-        <source>Add destinations to send WSP to</source>
-        <translation>Добави получател на WSP</translation>
+        <source>Add destinations to send PIV to</source>
+        <translation>Добави получател на PIV</translation>
     </message>
     <message>
         <source>Add &amp;Destination</source>
@@ -1702,73 +1702,6 @@ Please be patient after clicking import.</source>
     <message>
         <source>Maximum (15)</source>
         <translation>Максимум (15)</translation>
-    </message>
-</context>
-<context>
-    <name>ObfuscationConfig</name>
-    <message>
-        <source>Configure Obfuscation</source>
-        <translation>Конфигурирай Обфускацията</translation>
-    </message>
-    <message>
-        <source>Basic Privacy</source>
-        <translation>Елементарна Поверителност</translation>
-    </message>
-    <message>
-        <source>High Privacy</source>
-        <translation>Високо ниво на Поверителност</translation>
-    </message>
-    <message>
-        <source>Maximum Privacy</source>
-        <translation>Максимална Поверителност</translation>
-    </message>
-    <message>
-        <source>Please select a privacy level.</source>
-        <translation>Изберете ниво на поверителност.</translation>
-    </message>
-    <message>
-        <source>Use 2 separate masternodes to mix funds up to 10000 WSP</source>
-        <translation>Използвай 2 различни мастърноуда за смесване на средства над 10000 WSP</translation>
-    </message>
-    <message>
-        <source>Use 8 separate masternodes to mix funds up to 10000 WSP</source>
-        <translation>Използвай 8 различни мастърноуда за да смесите средства до 10000 WSP</translation>
-    </message>
-    <message>
-        <source>Use 16 separate masternodes</source>
-        <translation>Използвай 16 различни мастърноуда</translation>
-    </message>
-    <message>
-        <source>This option is the quickest and will cost about ~0.025 WSP to anonymize 10000 WSP</source>
-        <translation>Това е най-бързия метод и ще струва около 0.025 WSP за да скриете 10000 WSP</translation>
-    </message>
-    <message>
-        <source>This option is moderately fast and will cost about 0.05 WSP to anonymize 10000 WSP</source>
-        <translation>Тази опция е сравнително бърза и ще струва около 0.05 WSP за да скриете 10000 WSP</translation>
-    </message>
-    <message>
-        <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
-        <translation>Това е най-бавния и най-сигурен вариант за скриване на WSP. Използването й ще струва</translation>
-    </message>
-    <message>
-        <source>0.1 WSP per 10000 WSP you anonymize.</source>
-        <translation>0.1 WSP за 10000 скрити WSP</translation>
-    </message>
-    <message>
-        <source>Obfuscation Configuration</source>
-        <translation>Конфигурация на Обфускацията</translation>
-    </message>
-    <message>
-        <source>Obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening WISPR's configuration screen.</source>
-        <translation>Обфускацията е успешно конфигурирана на елементарно ниво (%1 и 2 кръга). Moжете да промените тази настройка по всяко време от същото място.</translation>
-    </message>
-    <message>
-        <source>Obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening WISPR's configuration screen.</source>
-        <translation>Обфускацията е успешно конфигурирана на високо ниво (%1 и 8 кръга). Moжете да промените тази настройка по всяко време от същото място.</translation>
-    </message>
-    <message>
-        <source>Obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening WISPR's configuration screen.</source>
-        <translation>Обфускацията е успешно конфигурирана на максимално ниво (%1 и 16 кръга). Moжете да промените тази настройка по всяко време от същото място.</translation>
     </message>
 </context>
 <context>
@@ -1886,33 +1819,33 @@ Please be patient after clicking import.</source>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/WisprProject/WisprProject-translations</source>
+https://www.transifex.com/WisprProject/core-project-translations</source>
         <translation>Липсващ език или непълен превод? Помогнете с преводите тук:
-https://www.transifex.com/WisprProject/WisprProject-translations</translation>
+https://www.transifex.com/WisprProject/core-project-translations</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
         <translation>Картографирай портовете използвайки &amp;UPnP</translation>
     </message>
     <message>
-        <source>Enable automatic minting of WSP units to zWSP</source>
-        <translation>Включи автоматичното емитиране на WSP единици в zWSP</translation>
+        <source>Enable automatic minting of PIV units to zWSP</source>
+        <translation>Включи автоматичното емитиране на PIV единици в zWSP</translation>
     </message>
     <message>
         <source>Enable zWSP Automint</source>
         <translation>Включи Автоматично емитиране на zWSP</translation>
     </message>
     <message>
-        <source>Percentage of incoming WSP which get automatically converted to zWSP via Zerocoin Protocol (min: 10%)</source>
-        <translation>Процент от входящите WSP, който автоматично да се конвертира в zWSP посредтвом Zerocoin Протокола (мин: 10%)</translation>
+        <source>Percentage of incoming PIV which get automatically converted to zWSP via Zerocoin Protocol (min: 10%)</source>
+        <translation>Процент от входящите PIV, който автоматично да се конвертира в zWSP посредтвом Zerocoin Протокола (мин: 10%)</translation>
     </message>
     <message>
         <source>Percentage of autominted zWSP</source>
         <translation>Процент автоматично сечени zWSP</translation>
     </message>
     <message>
-        <source>Wait with automatic conversion to Zerocoin until enough WSP for this denomination is available</source>
-        <translation>Не бързай с автоматичното конвертиране в zWSP докато не се съберат достатъчно WSP за тази деноминация</translation>
+        <source>Wait with automatic conversion to Zerocoin until enough PIV for this denomination is available</source>
+        <translation>Не бързай с автоматичното конвертиране в zWSP докато не се съберат достатъчно PIV за тази деноминация</translation>
     </message>
     <message>
         <source>Preferred Automint zWSP Denomination</source>
@@ -1973,10 +1906,6 @@ https://www.transifex.com/WisprProject/WisprProject-translations</translation>
     <message>
         <source>User Interface Theme:</source>
         <translation>Тема на интерфейса:</translation>
-    </message>
-    <message>
-        <source>&amp;Unit to show amounts in:</source>
-        <translation>Мерни единици:</translation>
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
@@ -2078,8 +2007,8 @@ https://www.transifex.com/WisprProject/WisprProject-translations</translation>
         <translation>Обща Наличност, включително и неналичните монети.</translation>
     </message>
     <message>
-        <source>WSP Balance</source>
-        <translation>WSP Наличности</translation>
+        <source>PIV Balance</source>
+        <translation>PIV Наличности</translation>
     </message>
     <message>
         <source>Pending:</source>
@@ -2166,8 +2095,8 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
         <translation>Налични за харчене:</translation>
     </message>
     <message>
-        <source>Locked WSP or Masternode collaterals. These are excluded from zWSP minting.</source>
-        <translation>Заключен WSP или допълнителни гаранции в Главни Възли. Тези не са включени в zWSP емитирането.</translation>
+        <source>Locked PIV or Masternode collaterals. These are excluded from zWSP minting.</source>
+        <translation>Заключен PIV или допълнителни гаранции в Главни Възли. Тези не са включени в zWSP емитирането.</translation>
     </message>
     <message>
         <source>Locked:</source>
@@ -2333,36 +2262,12 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in wispr.conf
         <translation>zWSP</translation>
     </message>
     <message>
-        <source>Available for minting are coins which are confirmed and not locked or Masternode collaterals.</source>
-        <translation>Наличните за емитиране са онези монети, които са биле потвърдени и не са заключени като гаранция в Главни Възли.</translation>
-    </message>
-    <message>
-        <source>Available for Minting:</source>
-        <translation>Налични за сечене:</translation>
-    </message>
-    <message>
-        <source>0.000 000 00 WSP</source>
-        <translation>0.000 000 00 WSP</translation>
-    </message>
-    <message>
         <source>Reset Zerocoin Wallet DB. Deletes transactions that did not make it into the blockchain.</source>
         <translation>Ресетна базата данни на Zerocoin Портфейла. Изтрива преводите, които не са успели да се качат на блокчена.</translation>
     </message>
     <message>
         <source>Reset</source>
         <translation>Ресет</translation>
-    </message>
-    <message>
-        <source>Coin Control...</source>
-        <translation>Монетен контрол...</translation>
-    </message>
-    <message>
-        <source>Quantity:</source>
-        <translation>Количество:</translation>
-    </message>
-    <message>
-        <source>Amount:</source>
-        <translation>Сума:</translation>
     </message>
     <message>
         <source>Rescan the complete blockchain for  Zerocoin mints and their meta-data.</source>
@@ -2379,10 +2284,6 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in wispr.conf
     <message>
         <source>PRIVACY</source>
         <translation>КОНФИДЕНЦИАЛНОСТ</translation>
-    </message>
-    <message>
-        <source>Enter an amount of Wsp to convert to zWSP</source>
-        <translation>Въведете колко WSP  да се конвертират в zWSP</translation>
     </message>
     <message>
         <source>zWSP Control</source>
@@ -2688,24 +2589,10 @@ To change the percentage (no restart required):
         <translation>Състояние на монето-сечене: OK</translation>
     </message>
     <message>
-        <source>Copy quantity</source>
-        <translation>Копирай количеството</translation>
-    </message>
-    <message>
-        <source>Copy amount</source>
-        <translation>Копирай сумата</translation>
-    </message>
-    <message>
         <source>Starting ResetMintZerocoin: rescanning complete blockchain, this will need up to 30 minutes depending on your hardware.
 Please be patient...</source>
         <translation>Стартиране на ResetMintZerocoin: сканираме цялия блокчейн, това ще изисква около 30 минути, в зависимост от вашия компютър.
 Моля изчакате...</translation>
-    </message>
-    <message>
-        <source>) needed.
-Maximum allowed: </source>
-        <translation>) нужни.
-Максимум позволени:</translation>
     </message>
     <message>
         <source>zWSP Spend #: </source>
@@ -2804,32 +2691,6 @@ Maximum allowed: </source>
         <translation>Деноминация. &lt;b&gt;5000&lt;/b&gt;:</translation>
     </message>
     <message>
-        <source>Error: Your wallet is locked. Please enter the wallet passphrase first.</source>
-        <translation>Грешка: Портфейла е заключен. Моля първо въведете Вашата парола.</translation>
-    </message>
-    <message>
-        <source>Message: Enter an amount &gt; 0.</source>
-        <translation>Съобщение: Въведете стойност &gt; 0.</translation>
-    </message>
-    <message>
-        <source>Minting </source>
-        <translation>Сечене</translation>
-    </message>
-    <message>
-        <source>Successfully minted </source>
-        <translation>Успешно изсечени</translation>
-    </message>
-    <message>
-        <source> zWSP in </source>
-        <translation>zWSP в</translation>
-    </message>
-    <message>
-        <source> sec. Used denominations:
-</source>
-        <translation>сек. Използвани деноминации:
-</translation>
-    </message>
-    <message>
         <source>Duration: </source>
         <translation>Времетраене:</translation>
     </message>
@@ -2878,16 +2739,6 @@ Maximum allowed: </source>
     <message>
         <source>Failed to fetch mint associated with serial hash</source>
         <translation>Неуспешно извличане на мента, свързана със сериен хеш</translation>
-    </message>
-    <message>
-        <source>Too much inputs (</source>
-        <translation>Твърде много входящи (</translation>
-    </message>
-    <message>
-        <source>
-Either mint higher denominations (so fewer inputs are needed) or reduce the amount to spend.</source>
-        <translation>
-Или емитирайте по-големи деноминации (за да се ползват по малко входящи) или намалете сумата за плащане.</translation>
     </message>
     <message>
         <source>Spend Zerocoin failed with status = </source>
@@ -2980,8 +2831,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>%1 милисек.</translation>
     </message>
     <message>
-        <source>PIVX Core</source>
-        <translation>PIVX Ядро</translation>
+        <source>WISPR Core</source>
+        <translation>WISPR Ядро</translation>
     </message>
     </context>
 <context>
@@ -3421,8 +3272,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Сума:</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the PIVX network.</source>
-        <translation>Съобщение свободен текст, което да се прикачи към платежното нареждане, за да бъде показано когато нареждането се отвори от клиента на когото е изпратено. Обърнете внимание, че съобщението няма да бъде изпратено заедно с плащането по PIVX мрежата.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the WISPR network.</source>
+        <translation>Съобщение свободен текст, което да се прикачи към платежното нареждане, за да бъде показано когато нареждането се отвори от клиента на когото е изпратено. Обърнете внимание, че съобщението няма да бъде изпратено заедно с плащането по WISPR мрежата.</translation>
     </message>
     <message>
         <source>RECEIVE</source>
@@ -3662,8 +3513,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Размер на UTXO:</translation>
     </message>
     <message>
-        <source>0 WSP</source>
-        <translation>0 WSP</translation>
+        <source>0 PIV</source>
+        <translation>0 PIV</translation>
     </message>
     <message>
         <source>Transaction Fee:</source>
@@ -3718,12 +3569,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Автоматично избрани монети</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uWSPs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uWSPs in fee,&lt;br /&gt;while "at least" pays 1000 uWSPs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Ако собствената такса е настроена на 1000 uWSP и превода е само 250 байта, то тогава "за килобайт" само плаща 250 uWSP входяща такса, &lt;br /&gt;докато "минимална сума" плаща 1000 uWSP. За транзакции по-големи от килобайт, и двете плащат за килобайт.</translation>
+        <source>If the custom fee is set to 1000 uPIVs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uPIVs in fee,&lt;br /&gt;while "at least" pays 1000 uPIVs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>Ако собствената такса е настроена на 1000 uPIV и превода е само 250 байта, то тогава "за килобайт" само плаща 250 uPIV входяща такса, &lt;br /&gt;докато "минимална сума" плаща 1000 uPIV. За транзакции по-големи от килобайт, и двете плащат за килобайт.</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uWSPs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uWSPs in fee,&lt;br /&gt;while "total at least" pays 1000 uWSPs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Ако собствената такса е настроена на 1000 uWSP и превода е само 250 байта, то тогава "за килобайт" само плаща 250 uWSP входяща такса,&lt;br /&gt; докато "минимална сума" плаща 1000 uWSP. За транзакции по-големи от килобайт, и двете плащат за килобайт.</translation>
+        <source>If the custom fee is set to 1000 uPIVs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uPIVs in fee,&lt;br /&gt;while "total at least" pays 1000 uPIVs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>Ако собствената такса е настроена на 1000 uPIV и превода е само 250 байта, то тогава "за килобайт" само плаща 250 uPIV входяща такса,&lt;br /&gt; докато "минимална сума" плаща 1000 uPIV. За транзакции по-големи от килобайт, и двете плащат за килобайт.</translation>
     </message>
     <message>
         <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for WISPR transactions than the network can process.</source>
@@ -3774,8 +3625,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Добави Получател</translation>
     </message>
     <message>
-        <source>Anonymized WSP</source>
-        <translation>Анонимизиран WSP</translation>
+        <source>Anonymized PIV</source>
+        <translation>Анонимизиран PIV</translation>
     </message>
     <message>
         <source>Balance:</source>
@@ -3823,7 +3674,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <source>Warning: Invalid WISPR address</source>
-        <translation>Предупреждение: Невалиден WSP адрес</translation>
+        <translation>Предупреждение: Невалиден PIV адрес</translation>
     </message>
     <message>
         <source>%1 to %2</source>
@@ -4154,10 +4005,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Dash Core разработчици</translation>
     </message>
     <message>
-        <source>The PIVX Core developers</source>
-        <translation>PIVX Core разработчици</translation>
-    </message>
-    <message>
         <source>The WISPR Core developers</source>
         <translation>WISPR Core разработчици</translation>
     </message>
@@ -4422,8 +4269,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Получен посредством обфускация</translation>
     </message>
     <message>
-        <source>WSP Stake</source>
-        <translation>WSP Stake</translation>
+        <source>PIV Stake</source>
+        <translation>PIV Stake</translation>
     </message>
     <message>
         <source>zWSP Stake</source>
@@ -4446,24 +4293,24 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Обфускация и направа на Деноминации</translation>
     </message>
     <message>
-        <source>Converted WSP to zWSP</source>
-        <translation>Конвертиран WSP във zWSP</translation>
+        <source>Converted PIV to zWSP</source>
+        <translation>Конвертиран PIV във zWSP</translation>
     </message>
     <message>
         <source>Spent zWSP</source>
         <translation>Похарчени zWSP</translation>
     </message>
     <message>
-        <source>Received WSP from zWSP</source>
-        <translation>Получен WSP от zWSP</translation>
+        <source>Received PIV from zWSP</source>
+        <translation>Получен PIV от zWSP</translation>
     </message>
     <message>
         <source>Minted Change as zWSP from zWSP Spend</source>
         <translation>Исечено ресто като zWSP от похарчените zWSP</translation>
     </message>
     <message>
-        <source>Converted zWSP to WSP</source>
-        <translation>Конвертиран zWSP във WSP</translation>
+        <source>Converted zWSP to PIV</source>
+        <translation>Конвертиран zWSP във PIV</translation>
     </message>
     <message>
         <source>Anonymous (zWSP Transaction)</source>
@@ -4681,8 +4528,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Експортирането Успешно</translation>
     </message>
     <message>
-        <source>Received WSP from zWSP</source>
-        <translation>Получен WSP от zWSP</translation>
+        <source>Received PIV from zWSP</source>
+        <translation>Получен PIV от zWSP</translation>
     </message>
     <message>
         <source>Zerocoin Spend, Change in zWSP</source>
@@ -4722,8 +4569,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Изпрати Монети</translation>
     </message>
     <message>
-        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 WSP.</source>
-        <translation>SwiftTX не подържа изпращането на толкова големи суми. Превода е ограничен до %1 WSP.</translation>
+        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 PIV.</source>
+        <translation>SwiftTX не подържа изпращането на толкова големи суми. Превода е ограничен до %1 PIV.</translation>
     </message>
 </context>
 <context>
@@ -4831,8 +4678,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Разпространява се пот MIT софтуерен лиценз, виж съпровождащия файл от &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</translation>
     </message>
     <message>
-        <source>Enable or disable staking functionality for WSP inputs (0-1, default: %u)</source>
-        <translation>Активиране или деактивиране на функцията за зареждане за WSP входове (0-1, по подразбиране: %u)</translation>
+        <source>Enable automatic wallet backups triggered after each zWSP minting (0-1, default: %u)</source>
+        <translation>Включи автоматичните бекъпи на портфейла след всяко zWSP емитиране (0-1, по подразбиране: %u)</translation>
+    </message>
+    <message>
+        <source>Enable or disable staking functionality for PIV inputs (0-1, default: %u)</source>
+        <translation>Активиране или деактивиране на функцията за зареждане за PIV входове (0-1, по подразбиране: %u)</translation>
     </message>
     <message>
         <source>Enable or disable staking functionality for zWSP inputs (0-1, default: %u)</source>
@@ -4871,20 +4722,16 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Командата влиза в сила, когато най-добрия блок се промени (%s в cmd се замества от хаш на блока)</translation>
     </message>
     <message>
-        <source>Fees (in WSP/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
-        <translation>Такси (в WSP/Кб) по-малки от това се считат за нулеви при препращане (default: %s)</translation>
+        <source>Fees (in PIV/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
+        <translation>Такси (в PIV/Кб) по-малки от това се считат за нулеви при препращане (default: %s)</translation>
     </message>
     <message>
-        <source>Fees (in WSP/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
-        <translation>Такси (в WSP/Кб) по-малки от това се считат за нулеви при създаване на предовда (default: %s)</translation>
+        <source>Fees (in PIV/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
+        <translation>Такси (в PIV/Кб) по-малки от това се считат за нулеви при създаване на предовда (default: %s)</translation>
     </message>
     <message>
         <source>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: %u)</source>
         <translation>Изпразни паметта за дейности по базата данни в лог файл на диска на всеки &lt;n&gt; мегабайта (default: %u)</translation>
-    </message>
-    <message>
-        <source>Found unconfirmed denominated outputs, will wait till they confirm to continue.</source>
-        <translation>Намерени са непотвърдени деноминации, ще изчакаме докато се потвърдят преди да продължим.</translation>
     </message>
     <message>
         <source>If paytxfee is not set, include enough fee so transactions begin confirmation on average within n blocks (default: %u)</source>
@@ -4983,12 +4830,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Не намираме достатъчно Обфускационно деноминирани средства за този превод.</translation>
     </message>
     <message>
-        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 WSP.</source>
-        <translation>Не можем да намерим достатъчно Обфускационно не-деноминирани средства за този превод, които да не са равни на 10000 WSP.</translation>
+        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 PIV.</source>
+        <translation>Не можем да намерим достатъчно Обфускационно не-деноминирани средства за този превод, които да не са равни на 10000 PIV.</translation>
     </message>
     <message>
-        <source>Unable to locate enough funds for this transaction that are not equal 10000 WSP.</source>
-        <translation>Не намираме достатъчно средства за този превод, които да не са равни на 10000 WSP.</translation>
+        <source>Unable to locate enough funds for this transaction that are not equal 10000 PIV.</source>
+        <translation>Не намираме достатъчно средства за този превод, които да не са равни на 10000 PIV.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
@@ -5035,8 +4882,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Трябва да зададете masternodeprivkey в конфигурационния файл. Консултирайте се с документацията за повече помощ.</translation>
     </message>
     <message>
-        <source>(17000 could be used only on mainnet)</source>
-        <translation>(17000 може да се ползва само в mainnet)</translation>
+        <source>(51472 could be used only on mainnet)</source>
+        <translation>(51472 може да се ползва само в mainnet)</translation>
     </message>
     <message>
         <source>(default: %s)</source>
@@ -5047,8 +4894,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>(по подразбиране: 1)</translation>
     </message>
     <message>
-        <source>(must be 17000 for mainnet)</source>
-        <translation>(трябва да е 17000 за mainnet)</translation>
+        <source>(must be 51472 for mainnet)</source>
+        <translation>(трябва да е 51472 за mainnet)</translation>
     </message>
     <message>
         <source>Accept command line and JSON-RPC commands</source>
@@ -5071,10 +4918,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Позволявай DNS запитвания за -addnote, -seednode и -connect</translation>
     </message>
     <message>
-        <source>Already have that input.</source>
-        <translation>Този въвод вече съществува.</translation>
-    </message>
-    <message>
         <source>Always query for peer addresses via DNS lookup (default: %u)</source>
         <translation>Винаги извършвай запитване за пиъри посредствим DNS търсене (по подразбиране: %u)</translation>
     </message>
@@ -5095,18 +4938,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Изчислява липсващите акумулатори...</translation>
     </message>
     <message>
-        <source>Can't denominate: no compatible inputs left.</source>
-        <translation>Не може да деноминира: не са останали съвместими входящи.</translation>
-    </message>
-    <message>
-        <source>Can't find random Masternode.</source>
-        <translation>Не откривам случан Главен възел.</translation>
-    </message>
-    <message>
-        <source>Can't mix while sync in progress.</source>
-        <translation>Не може да се миксира по време на синхронизация.</translation>
-    </message>
-    <message>
         <source>Cannot downgrade wallet</source>
         <translation>Променяне софтуерната версия на портфейла към по-ниска е невъзможно.</translation>
     </message>
@@ -5125,10 +4956,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Cannot write default address</source>
         <translation>Не можем да запишем адреса по подразбиране</translation>
-    </message>
-    <message>
-        <source>Collateral not valid.</source>
-        <translation>Гаранцията е невалидна.</translation>
     </message>
     <message>
         <source>Connect only to the specified node(s)</source>
@@ -5155,12 +4982,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Всички права запазени (c) 2014-%i Dash Core разработчици</translation>
     </message>
     <message>
-        <source>Copyright (C) 2015-%i The PIVX Core Developers</source>
-        <translation>Всички права запазени (c) 2015-%i PIVX Core разработчици</translation>
-    </message>
-    <message>
-        <source>Copyright (C) 2017-%i The WISPR Core Developers</source>
-        <translation>Всички права запазени (c) 2017-%i WISPR Core разработчици</translation>
+        <source>Copyright (C) 2015-%i The WISPR Core Developers</source>
+        <translation>Всички права запазени (c) 2015-%i WISPR Core разработчици</translation>
     </message>
     <message>
         <source>Corrupted block database detected</source>
@@ -5219,14 +5042,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Вкл. клиента да действа като влаген възел (0-1, по подразбиране: %u)</translation>
     </message>
     <message>
-        <source>Entries are full.</source>
-        <translation>Запълнени полета.</translation>
-    </message>
-    <message>
-        <source>Error connecting to Masternode.</source>
-        <translation>Грешка при свързването с Главен възел.</translation>
-    </message>
-    <message>
         <source>Error initializing block database</source>
         <translation>Грешка при стартирането на блок базата данни</translation>
     </message>
@@ -5271,10 +5086,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Грешка: Фатална вътрешна грешка, вижте debug.log за повече подробности.</translation>
     </message>
     <message>
-        <source>Error: Can't select current denominated inputs</source>
-        <translation>Грешка: Така зададените деноминации не могат да бъдат избрани</translation>
-    </message>
-    <message>
         <source>Error: Disk space is low!</source>
         <translation>Грешка: Намаляващо Дисково пространство!</translation>
     </message>
@@ -5285,10 +5096,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Error: Wallet locked, unable to create transaction!</source>
         <translation>Грешка: Портфейла е заключен, неуспешен превод!</translation>
-    </message>
-    <message>
-        <source>Error: You already have pending entries in the Obfuscation pool</source>
-        <translation>Грешка: Вече имате изчакващи входящи в басейна за Обфускация</translation>
     </message>
     <message>
         <source>Failed to calculate accumulator checkpoint</source>
@@ -5303,24 +5110,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Неуспешно четене на блок</translation>
     </message>
     <message>
-        <source>Fee (in WSP/kB) to add to transactions you send (default: %s)</source>
-        <translation>Такса (в WSP/kB), която да се добави към изходящи преводи (по подразбиране: %s)</translation>
-    </message>
-    <message>
-        <source>Finalizing transaction.</source>
-        <translation>Приключване на превода.</translation>
+        <source>Fee (in PIV/kB) to add to transactions you send (default: %s)</source>
+        <translation>Такса (в PIV/kB), която да се добави към изходящи преводи (по подразбиране: %s)</translation>
     </message>
     <message>
         <source>Force safe mode (default: %u)</source>
         <translation>Предизвикай безопасен режим (по подразбиране: %u)</translation>
-    </message>
-    <message>
-        <source>Found enough users, signing ( waiting %s )</source>
-        <translation>Имаме достатъчно потребители, подписване ( изчаква %s )</translation>
-    </message>
-    <message>
-        <source>Found enough users, signing ...</source>
-        <translation>Имаме достатучно потребители, подписване ...</translation>
     </message>
     <message>
         <source>Generate coins (default: %u)</source>
@@ -5347,14 +5142,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Включи и IP адресите при дебъг (по подразбиране: %u)</translation>
     </message>
     <message>
-        <source>Incompatible mode.</source>
-        <translation>Несъвместим режим.</translation>
-    </message>
-    <message>
-        <source>Incompatible version.</source>
-        <translation>Несъвместима версия.</translation>
-    </message>
-    <message>
         <source>Incorrect or no genesis block found. Wrong datadir for network?</source>
         <translation>Няма намерен генезис блок или намерения е несъвместим. Грешен datadlr за мрежата?</translation>
     </message>
@@ -5365,10 +5152,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Initialization sanity check failed. WISPR Core is shutting down.</source>
         <translation>Стартирането на проверка на здравословното състояние на портфейла се провали. Изключваме Портфейла.</translation>
-    </message>
-    <message>
-        <source>Input is not valid.</source>
-        <translation>Зададените стойности са невалидни.</translation>
     </message>
     <message>
         <source>Insufficient funds</source>
@@ -5427,16 +5210,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Грешен личен ключ.</translation>
     </message>
     <message>
-        <source>Invalid script detected.</source>
-        <translation>Невалиден скрипт, засечен.</translation>
-    </message>
-    <message>
         <source>Percentage of automatically minted Zerocoin  (1-100, default: %u)</source>
         <translation>Процент автоматично емитирани Zerocoin (1-100, по подразбиране: %u)</translation>
     </message>
     <message>
-        <source>Reindex the WSP and zWSP money supply statistics</source>
-        <translation>Индексирай наново WSP и zWSP данните по наличности</translation>
+        <source>Reindex the PIV and zWSP money supply statistics</source>
+        <translation>Индексирай наново PIV и zWSP данните по наличности</translation>
     </message>
     <message>
         <source>Reindexing zerocoin database...</source>
@@ -5595,14 +5374,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Пази най-много &lt;n&gt; несвързани превода в паметта (по подразбиране: %u)</translation>
     </message>
     <message>
-        <source>Last Obfuscation was too recent.</source>
-        <translation>Последната обфускация бе твърде скоро.</translation>
-    </message>
-    <message>
-        <source>Last successful Obfuscation action was too recent.</source>
-        <translation>Последното действие по Обфускация е било твърде скоро.</translation>
-    </message>
-    <message>
         <source>Limit size of signature cache to &lt;n&gt; entries (default: %u)</source>
         <translation>Ограничи размера на подписния кеш до &lt;n&gt; задания (по подразбиране: %u)</translation>
     </message>
@@ -5655,10 +5426,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Местоположение на оторизационната бисквитка (по подразбиране: data dir)</translation>
     </message>
     <message>
-        <source>Lock is already in place.</source>
-        <translation>Вече е заключен.</translation>
-    </message>
-    <message>
         <source>Lock masternodes from masternode configuration file (default: %u)</source>
         <translation>Заключи главен възел от конфигурационния файл (по подразбиране: %u)</translation>
     </message>
@@ -5675,14 +5442,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Опции за Главни възли</translation>
     </message>
     <message>
-        <source>Masternode queue is full.</source>
-        <translation>Опашката за Главни възли е пълна.</translation>
-    </message>
-    <message>
-        <source>Masternode:</source>
-        <translation>Главен Възел:</translation>
-    </message>
-    <message>
         <source>Maximum per-connection receive buffer, &lt;n&gt;*1000 bytes (default: %u)</source>
         <translation>Максимум буфер за Получаване, за връзка, &lt;n&gt;*1000 байта (по подразбиране: %u)</translation>
     </message>
@@ -5695,14 +5454,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Емисията не успя да се включи в блокчейна</translation>
     </message>
     <message>
-        <source>Missing input transaction information.</source>
-        <translation>Липсваща вх. информация за превода.</translation>
-    </message>
-    <message>
-        <source>Mixing in progress...</source>
-        <translation>В момента тече смесване...</translation>
-    </message>
-    <message>
         <source>Need address because change is not exact</source>
         <translation>Необходим е адрес, понеже рестото не е кръгла сума</translation>
     </message>
@@ -5711,40 +5462,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Нужно е да се зададе порт с -whitebind: '%s'</translation>
     </message>
     <message>
-        <source>No Masternodes detected.</source>
-        <translation>Не се засичат Мастърноудове.</translation>
-    </message>
-    <message>
-        <source>No compatible Masternode found.</source>
-        <translation>Не е намерен съвместим Мастърноуд.</translation>
-    </message>
-    <message>
-        <source>No funds detected in need of denominating.</source>
-        <translation>Не засякохме средства, които да имат нужда от деноминация.</translation>
-    </message>
-    <message>
-        <source>No matching denominations found for mixing.</source>
-        <translation>Не намерихме съвпадащи деноминации за смесване.</translation>
-    </message>
-    <message>
         <source>Node relay options:</source>
         <translation>Опции на възел релето:</translation>
     </message>
     <message>
-        <source>Non-standard public key detected.</source>
-        <translation>Засякохме нестандартен публичен ключ.</translation>
-    </message>
-    <message>
-        <source>Not compatible with existing transactions.</source>
-        <translation>Несъвместимост със съществуващите преводи.</translation>
-    </message>
-    <message>
         <source>Not enough file descriptors available.</source>
         <translation>Недостатъчно налични файл описания.</translation>
-    </message>
-    <message>
-        <source>Not in the Masternode list.</source>
-        <translation>Не е в списъка с Главни възли.</translation>
     </message>
     <message>
         <source>Number of automatic wallet backups (default: 10)</source>
@@ -5753,18 +5476,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Number of custom location backups to retain (default: %d)</source>
         <translation>Брой запазени резервни копия за местоположението (по подразбиране: %d)</translation>
-    </message>
-    <message>
-        <source>Obfuscation is idle.</source>
-        <translation>Обфускацията е в режим на изчакване.</translation>
-    </message>
-    <message>
-        <source>Obfuscation request complete:</source>
-        <translation>Обфускацията приключи.</translation>
-    </message>
-    <message>
-        <source>Obfuscation request incomplete:</source>
-        <translation>Обфускацията не успя да приключи.</translation>
     </message>
     <message>
         <source>Only accept block chain matching built-in checkpoints (default: %u)</source>
@@ -5857,10 +5568,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Send transactions as zero-fee transactions if possible (default: %u)</source>
         <translation>Ако е възможно, изпращай транзакциите като нулево-таксуван превод (по подразбиране: %u)</translation>
-    </message>
-    <message>
-        <source>Session not complete!</source>
-        <translation>Недовърешна сесия!</translation>
     </message>
     <message>
         <source>Session timed out.</source>
@@ -5967,18 +5674,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Изключи се след импортирането на блоквоете от диска (default: %u)</translation>
     </message>
     <message>
-        <source>Submitted following entries to masternode: %u / %d</source>
-        <translation>Следните са изпратени до главния възел: %u / %d</translation>
-    </message>
-    <message>
-        <source>Submitted to masternode, waiting for more entries ( %u / %d ) %s</source>
-        <translation>Изпратени до главния възел, чакаме още ( %u %d ) %s</translation>
-    </message>
-    <message>
-        <source>Submitted to masternode, waiting in queue %s</source>
-        <translation>Изпратено до главния възел, чака си реда %s</translation>
-    </message>
-    <message>
         <source>Synchronization failed</source>
         <translation>Неуспешна синхронизация</translation>
     </message>
@@ -6031,10 +5726,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Това е за регресионен тест и софтуерна разработка.</translation>
     </message>
     <message>
-        <source>This is not a Masternode.</source>
-        <translation>Това не е Главен Възел.</translation>
-    </message>
-    <message>
         <source>Threshold for disconnecting misbehaving peers (default: %u)</source>
         <translation>Праг за разкачване на пиъри с лошо поведение (по подразбиране: %u)</translation>
     </message>
@@ -6067,18 +5758,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Преводните суми трябва да са положително число</translation>
     </message>
     <message>
-        <source>Transaction created successfully.</source>
-        <translation>Превода е създаден успешно</translation>
-    </message>
-    <message>
-        <source>Transaction fees are too high.</source>
-        <translation>Преводните таски са твърде високи.</translation>
-    </message>
-    <message>
-        <source>Transaction not valid.</source>
-        <translation>Превода е невалиден.</translation>
-    </message>
-    <message>
         <source>Transaction too large for fee policy</source>
         <translation>Твърде голям превод за таксионната политика</translation>
     </message>
@@ -6087,24 +5766,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Твърде голям превод</translation>
     </message>
     <message>
-        <source>Transmitting final transaction.</source>
-        <translation>Изпращане на последния превод.</translation>
-    </message>
-    <message>
-        <source>Try to spend with a higher security level to include more coins</source>
-        <translation>Опитайте да платите с по-високо ниво на сигурност, за да включите повече монети.</translation>
-    </message>
-    <message>
         <source>Trying to spend an already spent serial #, try again.</source>
         <translation>Опитвате се да похарчите, вече похарчен сериен номер. Опитайте отново.</translation>
     </message>
     <message>
         <source>Unable to bind to %s on this computer (bind returned error %s)</source>
         <translation>Не можем да прикачим %s към този компютър (прикачването даде грешка %s)</translation>
-    </message>
-    <message>
-        <source>Unable to find transaction containing mint</source>
-        <translation>Не можем да намерим превод, който съдържа емисията</translation>
     </message>
     <message>
         <source>Unable to sign spork message, wrong key?</source>
@@ -6117,10 +5784,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Unknown network specified in -onlynet: '%s'</source>
         <translation>Непозната мрежа е зададена в -onlynet: '%s'</translation>
-    </message>
-    <message>
-        <source>Unknown state: id = %u</source>
-        <translation>Непознато състояние: id = %u</translation>
     </message>
     <message>
         <source>Upgrade wallet to latest format</source>
@@ -6151,10 +5814,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Стойността е под най-малката налична деноминация (= 1) в zWSP</translation>
     </message>
     <message>
-        <source>Value more than Obfuscation pool maximum allows.</source>
-        <translation>Стойността е по-голяма от позволената от басейна Обфускация.</translation>
-    </message>
-    <message>
         <source>Verifying blocks...</source>
         <translation>Проверява блоковете...</translation>
     </message>
@@ -6165,10 +5824,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Wallet %s resides outside data directory %s</source>
         <translation>Портфейла %s е извън папката с данни %s</translation>
-    </message>
-    <message>
-        <source>Wallet is locked.</source>
-        <translation>Портфейла е заключен.</translation>
     </message>
     <message>
         <source>Wallet needed to be rewritten: restart WISPR Core to complete</source>
@@ -6199,24 +5854,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Внимание: Неподдържанния аргумент -debugnet бе игнориран, използвайте -debug=net.</translation>
     </message>
     <message>
-        <source>Will retry...</source>
-        <translation>Ще опита...</translation>
-    </message>
-    <message>
         <source>You don't have enough Zerocoins in your wallet</source>
         <translation>Нямате достатъчно Zerocoin в портфейла си</translation>
     </message>
     <message>
         <source>You need to rebuild the database using -reindex to change -txindex</source>
         <translation>Трябва да построите базата данни наново, използвайки -reindex вместо -txindex</translation>
-    </message>
-    <message>
-        <source>Your entries added successfully.</source>
-        <translation>Въведени успешно.</translation>
-    </message>
-    <message>
-        <source>Your transaction was accepted into the pool!</source>
-        <translation>Превода е приет в басейна!</translation>
     </message>
     <message>
         <source>Zapping all transactions from wallet...</source>

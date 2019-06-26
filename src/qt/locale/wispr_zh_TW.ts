@@ -711,9 +711,6 @@
     <name>MultisigDialog</name>
     </context>
 <context>
-    <name>ObfuscationConfig</name>
-    </context>
-<context>
     <name>OpenURIDialog</name>
     </context>
 <context>
@@ -757,8 +754,8 @@
 <context>
     <name>QObject</name>
     <message>
-        <source>PIVX Core</source>
-        <translation>PIVX Core</translation>
+        <source>WISPR Core</source>
+        <translation>WISPR Core</translation>
     </message>
     </context>
 <context>

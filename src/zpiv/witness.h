@@ -1,5 +1,9 @@
-#ifndef PIVX_WITNESS_H
-#define PIVX_WITNESS_H
+// Copyright (c) 2018 The PIVX developers
+// Distributed under the MIT software license, see the accompanying
+// file COPYING or http://www.opensource.org/licenses/mit-license.php.
+
+#ifndef WISPR_WITNESS_H
+#define WISPR_WITNESS_H
 
 
 #include <libzerocoin/Accumulator.h>

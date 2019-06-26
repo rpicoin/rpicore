@@ -1,7 +1,7 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2018 The PIVX developers
+// Copyright (c) 2015-2019 The PIVX developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -12,13 +12,12 @@
 #include "main.h"
 #include "random.h"
 #include "sync.h"
-#include "ui_interface.h"
+#include "guiinterface.h"
 #include "util.h"
 #include "utilstrencodings.h"
 
 #include <boost/bind.hpp>
 #include <boost/filesystem.hpp>
-
 #include <boost/iostreams/concepts.hpp>
 #include <boost/iostreams/stream.hpp>
 #include <boost/shared_ptr.hpp>
@@ -75,7 +74,7 @@ void RPCTypeCheck(const UniValue& params,
                   bool fAllowNull)
 {
     unsigned int i = 0;
-    for(UniValue::VType t: typesExpected) {
+    for (UniValue::VType t : typesExpected) {
         if (params.size() <= i)
             break;
 
@@ -305,6 +304,7 @@ static const CRPCCommand vRPCCommands[] =
         {"blockchain", "findserial", &findserial, true, false, false},
         {"blockchain", "getaccumulatorvalues", &getaccumulatorvalues, true, false, false},
         {"blockchain", "getaccumulatorwitness", &getaccumulatorwitness, true, false, false},
+        {"blockchain", "getblockindexstats", &getblockindexstats, true, false, false},
         {"blockchain", "getmintsinblocks", &getmintsinblocks, true, false, false},
         {"blockchain", "getserials", &getserials, true, false, false},
         {"blockchain", "getblockchaininfo", &getblockchaininfo, true, false, false},
@@ -365,7 +365,6 @@ static const CRPCCommand vRPCCommands[] =
         { "hidden",             "waitforblockheight",     &waitforblockheight,     true,  true,  false  },
 
         /* WISPR features */
-        {"wispr", "masternode", &masternode, true, true, false},
         {"wispr", "listmasternodes", &listmasternodes, true, true, false},
         {"wispr", "getmasternodecount", &getmasternodecount, true, true, false},
         {"wispr", "masternodeconnect", &masternodeconnect, true, true, false},
@@ -381,7 +380,6 @@ static const CRPCCommand vRPCCommands[] =
         {"wispr", "getmasternodestatus", &getmasternodestatus, true, true, false},
         {"wispr", "getmasternodewinners", &getmasternodewinners, true, true, false},
         {"wispr", "getmasternodescores", &getmasternodescores, true, true, false},
-        {"wispr", "mnbudget", &mnbudget, true, true, false},
         {"wispr", "preparebudget", &preparebudget, true, true, false},
         {"wispr", "submitbudget", &submitbudget, true, true, false},
         {"wispr", "mnbudgetvote", &mnbudgetvote, true, true, false},
@@ -449,6 +447,7 @@ static const CRPCCommand vRPCCommands[] =
         {"wallet", "walletpassphrase", &walletpassphrase, true, false, true},
 
         {"zerocoin", "createrawzerocoinstake", &createrawzerocoinstake, false, false, true},
+        {"zerocoin", "createrawzerocoinpublicspend", &createrawzerocoinpublicspend, false, false, true},
         {"zerocoin", "getzerocoinbalance", &getzerocoinbalance, false, false, true},
         {"zerocoin", "listmintedzerocoins", &listmintedzerocoins, false, false, true},
         {"zerocoin", "listspentzerocoins", &listspentzerocoins, false, false, true},

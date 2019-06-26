@@ -15,10 +15,11 @@
 #include "util.h"
 #include "utilstrencodings.h"
 
+#include "test/test_bitcoin.h"
+
 #include <fstream>
 
 #include <boost/filesystem/operations.hpp>
-
 #include <boost/test/unit_test.hpp>
 
 #if 0
@@ -78,7 +79,7 @@
 }
 #endif
 
-struct ReadAlerts
+struct ReadAlerts : public TestingSetup
 {
     ReadAlerts()
     {

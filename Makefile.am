@@ -51,14 +51,14 @@ DIST_SHARE = \
 BIN_CHECKS=$(top_srcdir)/contrib/devtools/symbol-check.py \
            $(top_srcdir)/contrib/devtools/security-check.py
 
-WINDOWS_PACKAGING = $(top_srcdir)/share/pixmaps/pivx.ico \
+WINDOWS_PACKAGING = $(top_srcdir)/share/pixmaps/wispr.ico \
   $(top_srcdir)/share/pixmaps/nsis-header.bmp \
   $(top_srcdir)/share/pixmaps/nsis-wizard.bmp \
   $(top_srcdir)/doc/README_windows.txt
 
-LINUX_PACKAGING = $(top_srcdir)/share/pixmaps/pivx16.xpm \
-  $(top_srcdir)/share/pixmaps/pivx32.xpm \
-  $(top_srcdir)/share/pixmaps/pivx128.png
+LINUX_PACKAGING = $(top_srcdir)/share/pixmaps/wispr16.xpm \
+  $(top_srcdir)/share/pixmaps/wispr32.xpm \
+  $(top_srcdir)/share/pixmaps/wispr128.png
 
 OSX_PACKAGING = $(OSX_DEPLOY_SCRIPT) $(OSX_FANCY_PLIST) $(OSX_INSTALLER_ICONS) \
   $(top_srcdir)/contrib/macdeploy/$(OSX_BACKGROUND_SVG) \

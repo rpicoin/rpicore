@@ -1,13 +1,13 @@
-// Copyright (c) 2017-2018 The PIVX developers
+// Copyright (c) 2017-2019 The PIVX developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "zwspwallet.h"
 #include "main.h"
 #include "txdb.h"
-#include "walletdb.h"
+#include "wallet/walletdb.h"
 #include "init.h"
-#include "wallet.h"
+#include "wallet/wallet.h"
 #include "deterministicmint.h"
 #include "zwspchain.h"
 
@@ -229,7 +229,7 @@ void CzWSPWallet::SyncWithChain(bool fGenerateMintPool)
                 bool fFoundMint = false;
                 CBigNum bnValue = 0;
                 for (const CTxOut& out : tx.vout) {
-                    if (!out.scriptPubKey.IsZerocoinMint())
+                    if (!out.IsZerocoinMint())
                         continue;
 
                     PublicCoin pubcoin(Params().Zerocoin_Params(false));

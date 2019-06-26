@@ -3292,8 +3292,8 @@ https://www.transifex.com/WisprProject/WisprProject-translations</translation>
         <translation>The Dash Core developers</translation>
     </message>
     <message>
-        <source>The PIVX Core developers</source>
-        <translation>The PIVX Core developers</translation>
+        <source>The WISPR Core developers</source>
+        <translation>The WISPR Core developers</translation>
     </message>
     <message>
         <source>The WISPR Core developers</source>
@@ -4286,8 +4286,8 @@ for example: alertnotify=echo %%s | mail -s "WISPR Alert" admin@foo.com
         <translation>Copyright (C) 2014-%i The Dash Core Developers</translation>
     </message>
     <message>
-        <source>Copyright (C) 2015-%i The PIVX Core Developers</source>
-        <translation>Copyright (C) 2015-%i The PIVX Core Developers</translation>
+        <source>Copyright (C) 2015-%i The WISPR Core Developers</source>
+        <translation>Copyright (C) 2015-%i The WISPR Core Developers</translation>
     </message>
     <message>
         <source>Copyright (C) 2017-%i The WISPR Core Developers</source>
