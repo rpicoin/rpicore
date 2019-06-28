@@ -91,7 +91,9 @@ void ReceiveCoinsDialog::setModel(WalletModel* model)
         address = settings.value("current_receive_address").toString();
         if (address.isEmpty())
             address = getAddress();
-        ui->reqAddress->setText(address);
+//        ui->reqAddress->setText(address);
+        ui->reqAddress->setPlaceholderText(QObject::tr("A new address will be generated in this field or you can use the reuse option and enter an address yourself."));
+
 
         connect(model, SIGNAL(notifyReceiveAddressChanged()), this, SLOT(receiveAddressUsed()));
     }
