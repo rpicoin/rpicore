@@ -65,11 +65,18 @@ static Checkpoints::MapCheckpoints mapCheckpoints =
                 (250000, uint256("40ee22bd8b2cc23f83e16d19a53aa8591617772f9722c56b86d16163b2a10416")) // Block 250.000
                 (300000, uint256("700c33f9bf03c018f33167c2c455f05762b49e1f1f06e14833a5e8e269beebe7")) // Block 300.000
                 (350000, uint256("ffb49991aa635992305029cb629037cf5d08e945d2027c79f4f737c11e7d680e")) // Block 350.000
-                (400000, uint256("cf86529d0243cb653da92cbbaddc7f0a4f275bcf557cc112d03c33b756af25d3")); // Block 400.000
+                (400000, uint256("cf86529d0243cb653da92cbbaddc7f0a4f275bcf557cc112d03c33b756af25d3")) // Block 400.000
+                (450000, uint256("041e77f69b429b5e25005fd1dfe0557fec65cefc2b3fc6c496dd1800f0bb9107")) // Block 450.000
+                (500000, uint256("c448d7cc589ea2f93a1cbe901ec95b6f0093303d5899679ab6ef5e52cb7114bd")) // Block 500.000
+                (550000, uint256("f8794aaf9f766d4b50900be64e7e1e937d358feef2260c45bbb490d589667610")) // Block 550.000
+                (600000, uint256("30f3a9dc4316a84586b428b0f8d110c52077f96f3159d5305fe30cf20afd0eef")) // Block 600.000
+                (650000, uint256("ffbbe82b867c86463a07bffaf0b7ec232db5bf31703114e5e8dc94f8eb0afe47")) // Block 650.000
+                (700000, uint256("6ccf493bd1ac07b0b064fd0a39cf2d699d8ac8183632b6ad3e2f665f759a79db")) // Block 700.000
+                (750000, uint256("d0cbba7201e402f13d2c6963765f2fcdb0a455c7157ee6b611d466ff60e108ed")); // Block 750.000
 static const Checkpoints::CCheckpointData data = {
         &mapCheckpoints,
-        1540087953, // * UNIX timestamp of last checkpoint block (Done)
-        815060,    // * total number of transactions between genesis and last checkpoint TODO: keep using correct number
+        1561363307, // * UNIX timestamp of last checkpoint block (Done)
+        1557114,    // * total number of transactions between genesis and last checkpoint TODO: keep using correct number
         //   (the tx=... number in the SetBestChain debug.log lines)
         2000        // * estimated number of transactions per day after checkpoint
 };
