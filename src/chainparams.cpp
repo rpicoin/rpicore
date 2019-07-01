@@ -151,6 +151,10 @@ public:
         nDefaultPort = 17000;
         nMinerThreads = 0;
         consensus.nBlockDoubleAccumulated = -1;
+        consensus.nBlockEnforceSerialRange = consensus.nNewProtocolStartHeight; //Enforce serial range starting this block
+        consensus.nBlockRecalculateAccumulators = consensus.nNewProtocolStartHeight; //Trigger a recalculation of accumulators
+        consensus.nBlockFirstFraudulent = -1; //First block that bad serials emerged
+        consensus.nBlockLastGoodCheckpoint = consensus.nNewProtocolStartHeight; //Last valid accumulator checkpoint
 
         // Public coin spend enforcement
         consensus.nPublicZCSpends = 900000;
