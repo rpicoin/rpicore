@@ -32,7 +32,7 @@ unsigned int getIntervalVersion(bool fTestNet)
         return MODIFIER_INTERVAL_TESTNETV1;
     }else {
         if(newVersion){
-            return MODIFIER_INTERVAL_TESTNETV2;
+            return MODIFIER_INTERVALV2;
         }
         return MODIFIER_INTERVALV1;
     }
@@ -267,7 +267,7 @@ bool ComputeNextStakeModifier(const CBlockIndex* pindexPrev, uint64_t& nStakeMod
                 strSelectionMap.replace(pindex->nHeight - nHeightFirstCandidate, 1, "=");
             pindex = pindex->pprev;
         }
-        for (const std::pair<uint256, const CBlockIndex*> & item: mapSelectedBlocks) {
+        for (const std::pair<const uint256, const CBlockIndex*> &item : mapSelectedBlocks) {
             // 'S' indicates selected proof-of-stake blocks
             // 'W' indicates selected proof-of-work blocks
             strSelectionMap.replace(item.second->nHeight - nHeightFirstCandidate, 1, item.second->IsProofOfStake() ? "S" : "W");
