@@ -29,7 +29,7 @@ std::string GetMainCheckpoints() {
                                      "    \"500\": \"b11c1ead0ca762e90fbe49f5229f9bdf7f56ebb1081a7af2017b502190ce5c07ffc84137047ccb24994bb32ac6ba0ad12d4ef8cf8872317b0ad8c87c10f6c1063163b6ea33ef1b719f4fd736d5e02ede89aa48d6c301855a42a946ec012eb17b84e80bae9f91bc712425d13545e2975b47e616ea34fb93c42048574a0283fb1b\",\n"
                                      "    \"1000\": \"ce2af48b6e270499e69aed438af1bba0874acfe381d4fab2e67d030f4e3ccdb232520c249bb8065a5b716de60ebeaa7134968bd131e1ec3460a253f5057cd47b753fe7b2118697e9968b07107bd151dc20a8f6a3278416514aab9bcdcb2642a5ebd26cfbe28d545ed2a383efec4d7287e53d18ae2ea56dac5b62cf6e54035dc3\",\n"
                                      "    \"5000\": \"1a38ac28dce1d2e52d81bef524cd5bb80754a40704ae3b157763d9d4b304c24d37b85639ffed8fd6eff7d0c53230c0697e9fed4eba8ac7aca20ed199a26b5b4ce1d6d70f1528657b95ce18f217dec87e626d6b626ef03fc0d9128ca51dcf120100b642f98c606fa8749e00ae2fec7fdeaf82b567a513ccc1db8e03f0d5eed21d\"\n"
-                                     "  },\n"
+                                     "  }\n"
                                      "]";
     return strMainCheckpoints;
 }
