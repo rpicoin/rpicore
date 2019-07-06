@@ -1,9 +1,0 @@
-# List of fixed seed nodes for testnet
-
-# IPv4 nodes
-165.227.218.139
-206.189.48.24
-
-# IPv6 nodes
-
-# Onion nodes
