@@ -23,7 +23,7 @@
 using namespace boost;
 
 const int BITCOIN_IPC_CONNECT_TIMEOUT = 1000; // milliseconds
-const QString BITCOIN_IPC_PREFIX("Wispr:");
+const QString BITCOIN_IPC_PREFIX("Rpicoin:");
 
 //
 // Create a name that is unique for:
@@ -32,7 +32,7 @@ const QString BITCOIN_IPC_PREFIX("Wispr:");
 //
 static QString ipcServerName()
 {
-    QString name("WisprQt");
+    QString name("RpicoinQt");
 
     // Append a simple hash of the datadir
     // Note that GetDataDir(true) returns a different path
@@ -104,7 +104,7 @@ PaymentServer::PaymentServer(QApplication* parent) : QObject(parent), saveURIs(t
     uriServer = new QLocalServer(this);
 
     if (!uriServer->listen(name))
-        qDebug() << tr("Cannot start Wispr: click-to-pay handler");
+        qDebug() << tr("Cannot start Rpicoin: click-to-pay handler");
     else
         connect(uriServer, SIGNAL(newConnection()), this, SLOT(handleURIConnection()));
 }

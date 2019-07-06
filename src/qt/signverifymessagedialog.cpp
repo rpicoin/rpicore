@@ -24,11 +24,11 @@ SignVerifyMessageDialog::SignVerifyMessageDialog(QWidget *parent) :
 
 #if (QT_VERSION >= 0x040700)
     /* Do not move this to the XML file, Qt before 4.7 will choke on it */
-    ui->addressIn_SM->setPlaceholderText(tr("Enter a Wispr address (e.g. WiyoBkzfbHKt79GxCVwSpHoEyxbL1X49XZ)"));
+    ui->addressIn_SM->setPlaceholderText(tr("Enter a Rpicoin address (e.g. RE192AaKksqTK484jnyn2TUJj2nz9Q5YcL)"));
     ui->signatureOut_SM->setPlaceholderText(tr("Click \"Sign Message\" to generate signature"));
 
-    ui->addressIn_VM->setPlaceholderText(tr("Enter a Wispr address (e.g. WiyoBkzfbHKt79GxCVwSpHoEyxbL1X49XZ)"));
-    ui->signatureIn_VM->setPlaceholderText(tr("Enter Wispr signature"));
+    ui->addressIn_VM->setPlaceholderText(tr("Enter a Rpicoin address (e.g. RE192AaKksqTK484jnyn2TUJj2nz9Q5YcL)"));
+    ui->signatureIn_VM->setPlaceholderText(tr("Enter Rpicoin signature"));
 #endif
 
     GUIUtil::setupAddressWidget(ui->addressIn_SM, this);

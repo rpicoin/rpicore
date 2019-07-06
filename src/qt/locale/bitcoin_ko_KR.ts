@@ -3,20 +3,20 @@
     <name>AboutDialog</name>
     <message>
         <location filename="../forms/aboutdialog.ui" line="+14"/>
-        <source>About Wispr</source>
-        <translation>Wispr 정보</translation>
+        <source>About Rpicoin</source>
+        <translation>Rpicoin 정보</translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>&lt;b&gt;Wispr&lt;/b&gt; version</source>
-        <translation>&lt;b&gt;Wispr&lt;/b&gt; 버전</translation>
+        <source>&lt;b&gt;Rpicoin&lt;/b&gt; version</source>
+        <translation>&lt;b&gt;Rpicoin&lt;/b&gt; 버전</translation>
     </message>
     <message>
         <location line="+41"/>
         <source>Copyright © 2009-2017 The Bitcoin developers
 Copyright © 2012-2014 The NovaCoin developers
 Copyright © 2014-2017 The Blackcoin developers
-Copyright © 2017 The Wispr developers</source>
+Copyright © 2017 The Rpicoin developers</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -28,9 +28,9 @@ Distributed under the MIT/X11 software license, see the accompanying file COPYIN
 
 This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit (&lt;a href=&quot;https://www.openssl.org/&quot;&gt;https://www.openssl.org/&lt;/a&gt;) and cryptographic software written by Eric Young (&lt;a href=&quot;mailto:eay@cryptsoft.com&quot;&gt;eay@cryptsoft.com&lt;/a&gt;) and UPnP software written by Thomas Bernard.</source>
         <translation>
-이것은 실험용 소프트웨어입니다.&lt;br&gt;
+이것은 실험용 소프트웨어입니다.
 
-MIT/X11 소프트웨어 라이센스 하에 배포된 첨부 파일 COPYING 또는 &lt;a href=&quot;http://www.opensource.org/licenses/mit-license.php&quot;&gt;http://www.opensource.org/licenses/mit-license.php&lt;/a&gt;를 참고하시기 바랍니다.&lt;br&gt;
+MIT/X11 소프트웨어 라이센스 하에 배포된 첨부 파일 COPYING 또는 &lt;a href=&quot;http://www.opensource.org/licenses/mit-license.php&quot;&gt;http://www.opensource.org/licenses/mit-license.php&lt;/a&gt;를 참고하시기 바랍니다.
 
 이 제품은 OpenSSL 툴킷을 사용하기 위하여 OpenSSL 프로젝트에 의해 개발된 소프트웨어와(&lt;a href=&quot;https://www.openssl.org/&quot;&gt;https://www.openssl.org/&lt;/a&gt;)  Eric Young에 의해 작성된 크립토 그래픽 소프트웨어(&lt;a href=&quot;mailto:eay@cryptsoft.com&quot;&gt;eay@cryptsoft.com&lt;/a&gt;) 그리고 Thomas Bernard에 의해 작성된 UPnP 소프트웨어(&lt;a href=&quot;https://www.openssl.org/&quot;&gt;https://www.openssl.org/&lt;/a&gt;)가 포함되어 있습니다 </translation>    
 	</message>
@@ -64,8 +64,8 @@ MIT/X11 소프트웨어 라이센스 하에 배포된 첨부 파일 COPYING 또�
     </message>
     <message>
         <location line="-43"/>
-        <source>These are your Wispr addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
-        <translation>송금을 받기 위한 Wispr 주소입니다. 송금하는 사람을 추적, 기록할 수 하기 위하여 서로 다른 송금 주소와 라벨을 설정할수 있습니다. </translation>
+        <source>These are your Rpicoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
+        <translation>이것들은 지불을 받기 위한 Rpicoin 주소들입니다. 당신에게 지불하는 사람을 추적, 기록할 수 하기 위해서, 당신은 각각의 송금하는 사람에게 다른 주소를 보내고 싶어할 지도 모릅니다. </translation>
     </message>
     <message>
         <location line="+53"/>
@@ -79,8 +79,8 @@ MIT/X11 소프트웨어 라이센스 하에 배포된 첨부 파일 COPYING 또�
     </message>
     <message>
         <location line="+7"/>
-        <source>Sign a message to prove you own a Wispr address</source>
-        <translation>소유하고 있는 Wispr 주소를 증명하기 위해 메시지에 서명</translation>
+        <source>Sign a message to prove you own a Rpicoin address</source>
+        <translation>소유하고 있는 Rpicoin 주소를 증명하기 위해 메시지에 서명하세요.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -94,8 +94,8 @@ MIT/X11 소프트웨어 라이센스 하에 배포된 첨부 파일 COPYING 또�
     </message>
     <message>
         <location line="-10"/>
-        <source>Verify a message to ensure it was signed with a specified Wispr address</source>
-        <translation>특정한 Wispr 주소로 서명되었는지 메시지를 확인</translation>
+        <source>Verify a message to ensure it was signed with a specified Rpicoin address</source>
+        <translation>특정한 Rpicoin 주소로 서명되었는지 메시지를 확인 하십시오.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -130,12 +130,12 @@ MIT/X11 소프트웨어 라이센스 하에 배포된 첨부 파일 COPYING 또�
     <message>
         <location line="+13"/>
         <source>Error exporting</source>
-<translation>오류 내보내는 중</translation>
+		<translation>오류 내보내는 중</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Could not write to file %1.</source>
-        <translation>%1 파일을 쓸 수 없음</translation>
+        <translation>%1 파일을 쓸 수 없음.</translation>
     </message>
 </context>
 <context>
@@ -231,7 +231,7 @@ MIT/X11 소프트웨어 라이센스 하에 배포된 첨부 파일 COPYING 또�
     <message>
         <location line="+1"/>
         <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR COINS&lt;/b&gt;!</source>
-        <source>경고: 당신의 지갑을 암호화하고 암호를 잃어버리면, &lt;b&gt;당신의 모든 코인을 잃을 수 있습니다. &lt;/b&gt;</source>
+        <translation>경고: 당신의 지갑을 암호화한 후 암호를 잃어버리면, &lt;b&gt;당신의 모든 코인을 잃게 될 것입니다. &lt;/b&gt;!</translation>
     </message>
     <message>
         <location line="+0"/>
@@ -262,8 +262,8 @@ MIT/X11 소프트웨어 라이센스 하에 배포된 첨부 파일 COPYING 또�
     </message>
     <message>
         <location line="+82"/>
-        <source>Wispr will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
-        <translation>Wispr는 암호화 과정을 끝내고 지금 닫혀질 것입니다. 당신의 지갑을 암호화한다는 것으로 멀웨어에 의해 감염된 당신의 컴퓨터로부터 코인이 도난 당하는 것을 완벽하게 방지할 수 없다는 것을 기억하시기 바랍니다.</translation>
+        <source>Rpicoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
+        <translation>Rpicoin는 암호화 과정을 끝내고 지금 닫혀질 것입니다. 당신의 지갑을 암호화한다는 것으로 멜웨어에 의해 감염된 당신의 컴퓨터로부터 코인이 도난 당하는 것을 완벽하게 방지할 수 없다는 것을 기억하시기 바랍니다.</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -317,7 +317,7 @@ MIT/X11 소프트웨어 라이센스 하에 배포된 첨부 파일 COPYING 또�
     <message>
         <location line="-64"/>
         <source>Show general overview of wallet</source>
-        <translation>지갑의 일반적 개요를 보기</translation>
+        <translation>지갑의 일반적 개요를 보여 줍니다.</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -327,7 +327,7 @@ MIT/X11 소프트웨어 라이센스 하에 배포된 첨부 파일 COPYING 또�
     <message>
         <location line="+1"/>
         <source>Browse transaction history</source>
-        <translation>거래내역을 검색</translation>
+        <translation>거래내역을 검색합니다.</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -356,8 +356,8 @@ MIT/X11 소프트웨어 라이센스 하에 배포된 첨부 파일 COPYING 또�
     </message>
     <message>
         <location line="+4"/>
-        <source>Show information about Wispr</source>
-        <translation>Wispr 정보 보기</translation>
+        <source>Show information about Rpicoin</source>
+        <translation>Rpicoin 정보 보기</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -396,13 +396,13 @@ MIT/X11 소프트웨어 라이센스 하에 배포된 첨부 파일 COPYING 또�
     </message>
     <message>
         <location line="-55"/>
-        <source>Send coins to a Wispr address</source>
-        <translation>Wispr 주소로 코인 보내기</translation>
+        <source>Send coins to a Rpicoin address</source>
+        <translation>Rpicoin 주소로 코인 보내기</translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>Modify configuration options for Wispr</source>
-        <translation>Wispr 구성 옵션 수정</translation>
+        <source>Modify configuration options for Rpicoin</source>
+        <translation>Rpicoin 구성 옵션 수정</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -422,7 +422,7 @@ MIT/X11 소프트웨어 라이센스 하에 배포된 첨부 파일 COPYING 또�
     <message>
         <location line="+2"/>
         <source>Change the passphrase used for wallet encryption</source>
-        <translation>지갑 암호화에 사용되는 암호 변경</translation>
+        <translation>지갑 암호화에 사용되는 암호를 변경합니다</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -432,7 +432,7 @@ MIT/X11 소프트웨어 라이센스 하에 배포된 첨부 파일 COPYING 또�
     <message>
         <location line="+1"/>
         <source>Open debugging and diagnostic console</source>
-        <translation>디버깅 및 진단 콘솔 열기</translation>
+        <translation>디버깅 및 진단 콘솔을 엽니다</translation>
     </message>
     <message>
         <location line="-5"/>
@@ -442,8 +442,8 @@ MIT/X11 소프트웨어 라이센스 하에 배포된 첨부 파일 COPYING 또�
     <message>
         <location line="-214"/>
         <location line="+555"/>
-        <source>Wispr</source>
-        <translation>Wispr</translation>
+        <source>Rpicoin</source>
+        <translation>Rpicoin</translation>
     </message>
     <message>
         <location line="-555"/>
@@ -452,8 +452,8 @@ MIT/X11 소프트웨어 라이센스 하에 배포된 첨부 파일 COPYING 또�
     </message>
     <message>
         <location line="+193"/>
-        <source>&amp;About Wispr</source>
-        <translation>Wispr 정보</translation>
+        <source>&amp;About Rpicoin</source>
+        <translation>Rpicoin 정보</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -504,38 +504,38 @@ MIT/X11 소프트웨어 라이센스 하에 배포된 첨부 파일 COPYING 또�
     <message>
         <location line="+0"/>
         <location line="+58"/>
-        <source>Wispr client</source>
-        <translation>Wispr 클라이언트</translation>
+        <source>Rpicoin client</source>
+        <translation>Rpicoin 클라이언트</translation>
     </message>
     <message>
         <location line="+70"/>
-        <source>%n active connection(s) to Wispr network</source>
-        <translation>%n개의 활성화된 Wispr 네트워크와 연결</translation>
+        <source>%n active connection(s) to Rpicoin network</source>
+        <translation>%n 개의 Rpicoin 네트워크 활성 연결 </translation>
     </message>
     <message>
         <location line="+488"/>
         <source>Staking.&lt;br&gt;Your weight is %1&lt;br&gt;Network weight is %2&lt;br&gt;Expected time to earn reward is %3</source>
-        <translation>스테이킹 중.&lt;br&gt;지갑의 웨이트: %1 &lt;br&gt; 네트워크 웨이트: %2 &lt;br&gt; 보상을 받기 위한 기대 시간: %3</translation>
+        <translation>스테이킹.&lt;br&gt;지갑의 웨이트는 %1&lt;br&gt; 입니다. 네트워크 웨이트는 %2&lt;br&gt; 입니다. 보상을 받기 위한 기대 시간은 %3 입니다.</translation>
     </message>
     <message>
         <location line="+6"/>   
         <source>Not staking because wallet is locked</source>
-        <translation>지갑이 잠겨 있어서 스테이킹을 하지 않고 있습니다.</translation>
+        <translation>지갑이 잠겨 있어서 스테이킹 하지 않습니다.</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Not staking because wallet is offline</source>
-        <translation>지갑이 오프라인이어서 스테이킹을 하지 않고 있습니다.</translation>
+        <translation>지갑이 오프라인이어서 스테이킹 하지 않습니다.</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Not staking because wallet is syncing</source>
-        <translation>지갑이 동기화하는 중이어서 스테이킹을 하지 않고 있습니다.</translation>
+        <translation>지갑이 동기화하는 중이어서 스테이킹 하지 않습니다.</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Not staking because you don&apos;t have mature coins</source>
-        <translation>코인이 아직 사용가능하지 않아서 스테이킹을 하지 않고 있습니다.</translation>
+        <translation>코인이 아직 사용가능하지 않는 중이어서 스테이킹 하지 않습니다.</translation>
     </message>
     <message>
         <location line="-812"/>
@@ -604,8 +604,8 @@ Address: %4
     <message>
         <location line="-15"/>
         <location line="+15"/>
-        <source>URI can not be parsed! This can be caused by an invalid Wispr address or malformed URI parameters.</source>
-        <translation>URI를 분석 할 수 없습니다. 이는 부적절한 Wispr 주소 또는 잘못된 형식의 URI 파라메터에 의해 발생될 수 있습니다. </translation>
+        <source>URI can not be parsed! This can be caused by an invalid Rpicoin address or malformed URI parameters.</source>
+        <translation>URI를 분석 할 수 없습니다. 이는 부적절한 Rpicoin 주소 또는 잘못된 형식의 URI 파라메터에 의해 발생될 수 있습니다. </translation>
     </message>
     <message>
         <location line="+9"/>
@@ -615,12 +615,12 @@ Address: %4
     <message>
         <location line="+8"/>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</source>
-        <translation>지갑이 암호화 되었고, 현재 잠금해제 되었습니다</translation>
+        <translation>지갑이 암호화 되었고 현재 잠금해제 되었습니다</translation>
     </message>
     <message>
         <location line="+8"/>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
-        <translation>지갑이 암호화 되었고, 현재 잠겨져 있습니다</translation>
+        <translation>지갑이 암호화 되었고 현재 잠겨져 있습니다</translation>
     </message>
     <message>
         <location line="+24"/>
@@ -698,7 +698,7 @@ Address: %4
     <message>
         <location line="+2"/>
         <source>Transactions after this will not yet be visible.</source>
-        <translation>이 이후의 거래는 아직 표시되지 않을 것입니다.</translation>
+        <translation>이 이후에 거래는 아직 표시되지 않을 것입니다.</translation>
     </message>
     <message>
         <location line="+23"/>
@@ -727,8 +727,8 @@ Address: %4
     </message>
     <message>
         <location filename="../bitcoin.cpp" line="+104"/>
-        <source>A fatal error occurred. Wispr can no longer continue safely and will quit.</source>
-        <translation>심각한 오류가 발생했습니다. Wispr가 더 이상 안전하게 진행될 수 없어서 중단될 것입니다.</translation>
+        <source>A fatal error occurred. Rpicoin can no longer continue safely and will quit.</source>
+        <translation>심각한 오류가 발생했습니다. Rpicoin는 더 이상 안전하게 진행할 수 없어서 중단될 것입니다.</translation>
     </message>
 </context>
 <context>
@@ -999,8 +999,8 @@ Address: %4
     </message>
     <message>
         <location line="-5"/>
-        <source>The entered address &quot;%1&quot; is not a valid Wispr address.</source>
-        <translation>입력된 주소 &quot;%1&quot;는 유효한 Wispr 주소가 아닙니다.</translation>
+        <source>The entered address &quot;%1&quot; is not a valid Rpicoin address.</source>
+        <translation>입력된 주소 &quot;%1&quot;는 유효한 Rpicoin 주소가 아닙니다.</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1018,8 +1018,8 @@ Address: %4
     <message>
         <location filename="../guiutil.cpp" line="+426"/>
         <location line="+12"/>
-        <source>Wispr-Qt</source>
-        <translation>Wispr-Qt</translation>
+        <source>Rpicoin-Qt</source>
+        <translation>Rpicoin-Qt</translation>
     </message>
     <message>
         <location line="-12"/>
@@ -1072,7 +1072,7 @@ Address: %4
     <message>
         <location line="+6"/>
         <source>Optional transaction fee per kB that helps make sure your transactions are processed quickly. Most transactions are 1 kB. Fee 0.01 recommended.</source>
-        <translation>거래가 빨리 처리되게 하는 KB 당의 옵션적 거래 수수료. 대부분의 거래는 1KB입니다. 0.01 수수료를 권장합니다.</translation>
+        <translation>거래가 빨리 처리되게 하는 kB 당의 옵션적 거래 수수료. 대부분의 거래는 1kB입니다. 0.01 수수료를 권장합니다.</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -1082,7 +1082,7 @@ Address: %4
     <message>
         <location line="+31"/>
         <source>Reserved amount does not participate in staking and is therefore spendable at any time.</source>
-        <translation>예정된 금액은 스테이킹에 포함되지 않아서 언제나 사용 가능합니다.</translation>
+        <translation>예정된 금액은 스테이킹에 참여하지 않아서 언제나 사용 가능합니다.</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -1091,13 +1091,13 @@ Address: %4
     </message>
     <message>
         <location line="+31"/>
-        <source>Automatically start Wispr after logging in to the system.</source>
-        <translation>시스템에 로그인 후, Wispr 자동 실행></translation>
+        <source>Automatically start Rpicoin after logging in to the system.</source>
+        <translation>시스템에 로그인 후, Rpicoin 자동 실행></translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Start Wispr on system login</source>
-        <translation>&amp;시스템 로그인 시, Wispr 시작</translation>
+        <source>&amp;Start Rpicoin on system login</source>
+        <translation>&amp;시스템 로그인시, Rpicoin 시작</translation>
     </message>
     <message>
         <location line="+21"/>
@@ -1106,8 +1106,8 @@ Address: %4
     </message>
     <message>
         <location line="+6"/>
-        <source>Automatically open the Wispr client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>라우터의 Wispr 클라이언트 포트를 자동 오픈. 이 작업은 라우터가 UPnP를 지원하고 활성되었을 때만 작동합니다.</translation>
+        <source>Automatically open the Rpicoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>라우터의 Rpicoin 클라이언트 포트를 자동 오픈. 이 작업은 라우터가 UPnP를 지원하고 활성되었을 때만 작동합니다.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1122,7 +1122,7 @@ Address: %4
     <message>
         <location line="+19"/>
         <source>IP address of the proxy (e.g. 127.0.0.1)</source>
-        <translation>프록시의 IP 주소</translation>
+        <translation>프록시의 IP address</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -1136,8 +1136,8 @@ Address: %4
     </message>
     <message>
         <location line="-57"/>
-        <source>Connect to the Wispr network through a SOCKS5 proxy (e.g. when connecting through Tor).</source>
-        <translation>SOCKS5 프록시를 통해 Wispr 네트워크를 연결(예: Tor를 통해 연결되었을 때)</translation>
+        <source>Connect to the Rpicoin network through a SOCKS5 proxy (e.g. when connecting through Tor).</source>
+        <translation>SOCKS5 프록시를 통해 Rpicoin 네트워크를 연결(예: Tor를 통해 연결되었을 때)</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1181,8 +1181,8 @@ Address: %4
     </message>
     <message>
         <location line="+13"/>
-        <source>The user interface language can be set here. This setting will take effect after restarting Wispr.</source>
-        <translation>사용자 인터페이스 언어를 여기서 설정할 수 있습니다. 이 설정은 Wispr를 다시 시작한 후 적용됩니다.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting Rpicoin.</source>
+        <translation>사용자 인터페이스 언어를 여기서 설정할 수 있습니다. 이 설정은 Rpicoin를 다시 시작한 후 적용됩니다.</translation>
     </message>
     <message>
         <location line="+11"/>
@@ -1202,12 +1202,12 @@ Address: %4
     <message>
         <location line="+3"/>
         <source>Display coin &amp;control features (experts only!)</source>
-        <translation>코인 제어 기능 표시(전문가용)</translation>
+        <translation>코인 제어 기능 표시(전문가용!)</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>Use black visual theme (requires restart)</source>
-        <translation>블랙의 시각적 테마 사용(지갑 재시작 필요)</translation>
+        <translation>블랙의 시각적 테마 사용</translation>
     </message>
     <message>
         <location line="+71"/>
@@ -1238,8 +1238,8 @@ Address: %4
     <message>
         <location line="-9"/>
         <location line="+9"/>
-        <source>This setting will take effect after restarting Wispr.</source>
-        <translation>이 설정은 Wispr를 재시작한 후, 적용됩니다.</translation>
+        <source>This setting will take effect after restarting Rpicoin.</source>
+        <translation>이 설정은 Rpicoin를 재시작한 후, 적용됩니다.</translation>
     </message>
     <message>
         <location line="+29"/>
@@ -1257,8 +1257,8 @@ Address: %4
     <message>
         <location line="+46"/>
         <location line="+247"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Wispr network after a connection is established, but this process has not completed yet.</source>
-        <translation>표시된 정보는 기간이 경과되었을 수도 있습니다. Wispr 네트워크는 연결이 이루어진 후, 자동으로 동기화 됩니다. 그러나, 이 프로세스는 아직 완료되지 않았습니다.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Rpicoin network after a connection is established, but this process has not completed yet.</source>
+        <translation>표시된 정보는 기간이 경과되었을 수도 있습니다. Rpicoin 네트워크는 연결이 이루어진 후, 자동으로 동기화 됩니다. 그러나, 이 프로세스는 아직 완료되지 않았습니다.</translation>
     </message>
     <message>
         <location line="-173"/>
@@ -1324,15 +1324,15 @@ Address: %4
         <location filename="../overviewpage.cpp" line="+116"/>
         <location line="+1"/>
         <source>out of sync</source>
-        <translation>Sync가 되지 않고 있습니다.</translation>
+        <translation>Sync가 않되고 있음</translation>
     </message>
 </context>
 <context>
     <name>PaymentServer</name>
     <message>
         <location filename="../paymentserver.cpp" line="+107"/>
-        <source>Cannot start Wispr: Click-to-pay handler</source>
-        <translation>Wispr를 시작할 수 없습니다: click-to-pay handler</translation>
+        <source>Cannot start Rpicoin: click-to-pay handler</source>
+        <translation>Rpicoin를 시작할 수 없슴: click-to-pay handler</translation>
     </message>
 </context>
 <context>
@@ -1360,7 +1360,7 @@ Address: %4
     <message>
         <location line="+19"/>
         <source>Message:</source>
-        <translation>메시지:</translation>
+        <translation>메시지</translation>
     </message>
     <message>
         <location line="+71"/>
@@ -1380,7 +1380,7 @@ Address: %4
     <message>
         <location line="+23"/>
         <source>Resulting URI too long, try to reduce the text for label / message.</source>
-        <translation>URI가 너무 많이 입력되었으니 라벨/메시지를 위해 텍스트를 줄여 주세요.</translation>
+        <translation>URI가 너무 길어서 라벨/메시지를 위한 텍스트를 줄여 주세요.</translation>
     </message>
     <message>
         <location line="+25"/>
@@ -1501,8 +1501,8 @@ Address: %4
     </message>
     <message>
         <location line="+7"/>
-        <source>Show the Wispr-Qt help message to get a list with possible Wispr command-line options.</source>
-        <translation>가능한 Wispr 명령 라인 옵션 리스트를 위한 Wispr-QT 도움 메시지 보기</translation>
+        <source>Show the Rpicoin-Qt help message to get a list with possible Rpicoin command-line options.</source>
+        <translation>가능한 Rpicoin 명령 라인 옵션 리스트를 위한 Rpicoin-QT 도움 메시지 보기</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1521,13 +1521,13 @@ Address: %4
     </message>
     <message>
         <location line="-104"/>
-        <source>Wispr - Debug window</source>
+        <source>Rpicoin - Debug window</source>
         <translation>Wipsp - 디버그 창</translation>
     </message>
     <message>
         <location line="+25"/>
-        <source>Wispr Core</source>
-        <translation>Wispr 코어</translation>
+        <source>Rpicoin Core</source>
+        <translation>Rpicoin 코어</translation>
     </message>
     <message>
         <location line="+256"/>
@@ -1536,8 +1536,8 @@ Address: %4
     </message>
     <message>
         <location line="+7"/>
-        <source>Open the Wispr debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>현재 데이타 목록에서 Wispr 디버그 로그 파일 열기. 큰 로그 파일은 몇 초가 소요될 수 있습니다.</translation>
+        <source>Open the Rpicoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>현재 데이타 목록에서 Rpicoin 디버그 로그 파일 열기. 큰 로그 파일은 몇 초가 소요될 수 있습니다.</translation>
     </message>
     <message>
         <location line="+102"/>
@@ -1546,8 +1546,8 @@ Address: %4
     </message>
     <message>
         <location filename="../rpcconsole.cpp" line="-28"/>
-        <source>Welcome to the Wispr RPC console.</source>
-        <translation>Wispr RPC 콘솔에 오신 것을 환영합니다.</translation>
+        <source>Welcome to the Rpicoin RPC console.</source>
+        <translation>Rpicoin RPC 콘솔에 오신 것을 환영합니다.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -1592,7 +1592,7 @@ Address: %4
     <message>
         <location line="+2"/>
         <source>%1 h %2 m</source>
-        <translation>%1 h %2 m</translation>
+        <translation>>%1 h %2 m</translation>
     </message>
 </context>
 <context>
@@ -1612,12 +1612,12 @@ Address: %4
     <message>
         <location line="+76"/>
         <source>Coin Control Features</source>
-        <translation>코인 콘트롤 기능</translation>
+        <translation>코인 컨트롤 기능</translation>
     </message>
     <message>
         <location line="+20"/>
         <source>Inputs...</source>
-        <translation>코인 수량 입력</translation>
+        <translation>...을 입력</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -1643,7 +1643,7 @@ Address: %4
     <message>
         <location line="-19"/>
         <source>Bytes:</source>
-        <translation>바이트:</translation>
+        <translation>Bytes:</translation>
     </message>
     <message>
         <location line="+51"/>
@@ -1663,7 +1663,7 @@ Address: %4
     <message>
         <location line="+19"/>
         <source>no</source>
-        <translation>아니요.</translation>
+        <translation>no</translation>
     </message>
     <message>
         <location line="+32"/>
@@ -1717,8 +1717,8 @@ Address: %4
     </message>
     <message>
         <location filename="../sendcoinsdialog.cpp" line="-171"/>
-        <source>Enter a Wispr address (e.g. WiyoBkzfbHKt79GxCVwSpHoEyxbL1X49XZ)</source>
-        <translation>Wispr 주소 입력 (예: WiyoBkzfbHKt79GxCVwSpHoEyxbL1X49XZ)</translation>
+        <source>Enter a Rpicoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <translation>Rpicoin 주소 입력 (예: B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -1812,8 +1812,8 @@ Address: %4
     </message>
     <message>
         <location line="+241"/>
-        <source>WARNING: Invalid Wispr address</source>
-        <translation>경고: 유효하지 않은 Wispr 주소</translation>
+        <source>WARNING: Invalid Rpicoin address</source>
+        <translation>경고: 유효하지 않은 Rpicoin 주소</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -1841,18 +1841,18 @@ Address: %4
     <message>
         <location line="+13"/>
         <source>Pay &amp;To:</source>
-        <translation>수신자 주소:</translation>
+        <translation>지급&amp;수신:</translation>
     </message>
     <message>
         <location line="+34"/>
-        <source>The address to send the payment to (e.g. WiyoBkzfbHKt79GxCVwSpHoEyxbL1X49XZ)</source>
-        <translation>지불할 주소(예: WiyoBkzfbHKt79GxCVwSpHoEyxbL1X49XZ)</translation>
+        <source>The address to send the payment to (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <translation>지불할 주소(예: B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
     </message>
     <message>
         <location line="+60"/>
         <location filename="../sendcoinsentry.cpp" line="+26"/>
         <source>Enter a label for this address to add it to your address book</source>
-        <translation>당신의 주소록에 이 주소를 추가하기 위하여 라벨을 입력하세요.</translation>
+        <translation>당신의 주소록에 이 주소를 추가하기 위하여 라벨을 입역하세요 </translation>
     </message>
     <message>
         <location line="-78"/>
@@ -1872,7 +1872,7 @@ Address: %4
     <message>
         <location line="+7"/>
         <source>Paste address from clipboard</source>
-        <translation>클립보드로부터 주소를 붙이기</translation>
+        <translation>클립보드로 부터 주소를 붙이세요.</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1882,12 +1882,12 @@ Address: %4
     <message>
         <location line="+7"/>
         <source>Remove this recipient</source>
-        <translation>수신자를 삭제</translation>
+        <translation>수신자를 삭제하세요.</translation>
     </message>
     <message>
         <location filename="../sendcoinsentry.cpp" line="+1"/>
-        <source>Enter a Wispr address (e.g. WiyoBkzfbHKt79GxCVwSpHoEyxbL1X49XZ)</source>
-        <translation>Wispr 주소를 입력하세요. (예: WiyoBkzfbHKt79GxCVwSpHoEyxbL1X49XZ)</translation>
+        <source>Enter a Rpicoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <translation>Rpicoin 주소 입력하세요. (예: B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
     </message>
 </context>
 <context>
@@ -1895,7 +1895,7 @@ Address: %4
     <message>
         <location filename="../forms/signverifymessagedialog.ui" line="+14"/>
         <source>Signatures - Sign / Verify a Message</source>
-        <translation>서명 - 서명 / 메시지 확인</translation>
+        <translation>서명 - 싸인 / 메시지 확인</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -1906,12 +1906,12 @@ Address: %4
     <message>
         <location line="-118"/>
         <source>You can sign messages with your addresses to prove you own them. Be careful not to sign anything vague, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
-        <translation>여러분 자신을 증명하기 위해 주소를 첨가하고 서명할 수 있습니다. 피싱 공격은 당신의 신원을 피싱에 서명하게 속일 수 있으므로, 어떤 모호한 요소에 대해 서명하지 않도록 주의 하십시오. 동의하는 완전 무결한 조항에만 서명 하십시오.</translation>
+        <translation>여러분 자신을 증명하기 위해 주소를 첨가하고 서명할 수 있습니다. 피싱 공격으로 말미암아 여러분의 서명을 통해 속아 넘어가게 할 수 있으므로, 서명하지 않은 어떤 모호한 요소든 주의 하십시오. 동의하는 완전 무결한 조항에만 서명 하십시오.</translation>
     </message>
     <message>
         <location line="+18"/>
-        <source>The address to sign the message with (e.g. WiyoBkzfbHKt79GxCVwSpHoEyxbL1X49XZ)</source>
-        <translation>메시지에 서명할 주소 (예: WiyoBkzfbHKt79GxCVwSpHoEyxbL1X49XZ)</translation>
+        <source>The address to sign the message with (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <translation>메시지에 서명할 주소 (예: B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1938,7 +1938,7 @@ Address: %4
     <message>
         <location line="+12"/>
         <source>Enter the message you want to sign here</source>
-        <translation>서명하려는 메시지를 입력 하세요.</translation>
+        <translation>여기에 서명하려는 메시지를 입력 하십시오.</translation>
     </message>
     <message>
         <location line="+24"/>
@@ -1947,8 +1947,8 @@ Address: %4
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this Wispr address</source>
-        <translation>당신 소유의 Wispr주소를 증명하기 위한 메시지를 입력 하십시오.</translation>
+        <source>Sign the message to prove you own this Rpicoin address</source>
+        <translation>당신 소유의 Rpicoin주소를 증명하기 위한 메시지를 입력 하십시오.</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -1970,17 +1970,17 @@ Address: %4
     <message>
         <location line="-64"/>
         <source>Enter the signing address, message (ensure you copy line breaks, spaces, tabs, etc. exactly) and signature below to verify the message. Be careful not to read more into the signature than what is in the signed message itself, to avoid being tricked by a man-in-the-middle attack.</source>
-        <translation>서명 주소, 메시지(줄 바꿈, 스페이스, 탭 등을 정확하게 복사하세요.), 그리고 메시지를 확인할 서명을 입력하세요. 미들맨 어택에 속지 않기 위하여 서명된 메시지 그 자체보다 서명 안의 내용을 더 자세히 읽지 않도록 주의하세요.</translation>
+        <translation>서명 주소, 메시지(줄 바꿈, 스페이스, 탭 등을 정확하게 복사하세요.), 그리고 메시지를 확인할 아래의 서명을 입력하세요. 미들맨 어택에 속지 않기 위해서 서명된 메시지 자체보다 서명을 더 자세히 읽지 않도록 주의하세요.</translation>
     </message>
     <message>
         <location line="+21"/>
-        <source>The address the message was signed with (e.g. WiyoBkzfbHKt79GxCVwSpHoEyxbL1X49XZ)</source>
-        <translation>메시지가 서명된 주소 (예: WiyoBkzfbHKt79GxCVwSpHoEyxbL1X49XZ)</translation>
+        <source>The address the message was signed with (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <translation>메시지가 서명된 주소 (예: B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
     </message>
     <message>
         <location line="+40"/>
-        <source>Verify the message to ensure it was signed with the specified Wispr address</source>
-        <translation>지정된 Wispr 주소에 사인된 메시지를 확인</translation>
+        <source>Verify the message to ensure it was signed with the specified Rpicoin address</source>
+        <translation>지정된 Rpicoin 주소에 사인된 메시지를 확인</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -1990,8 +1990,8 @@ Address: %4
     <message>
         <location filename="../signverifymessagedialog.cpp" line="+27"/>
         <location line="+3"/>
-        <source>Enter a Wispr address (e.g. WiyoBkzfbHKt79GxCVwSpHoEyxbL1X49XZ)</source>
-        <translation>Wispr 주소를 입력하세요. (예: WiyoBkzfbHKt79GxCVwSpHoEyxbL1X49XZ)</translation>
+        <source>Enter a Rpicoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <translation>Rpicoin 주소를 입력하세요. (예: B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
     </message>
     <message>
         <location line="-2"/>
@@ -2000,8 +2000,8 @@ Address: %4
     </message>
     <message>
         <location line="+3"/>
-        <source>Enter Wispr signature</source>
-        <translation>Wispr 서명을 입력</translation>
+        <source>Enter Rpicoin signature</source>
+        <translation>Rpicoin 사인을 입력</translation>
     </message>
     <message>
         <location line="+85"/>
@@ -2118,7 +2118,7 @@ Address: %4
     <message>
         <location line="+4"/>
         <source>Date</source>
-        <translation>날자</translation>
+        <translation>날짜</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -2128,20 +2128,20 @@ Address: %4
     <message>
         <location line="+0"/>
         <source>Generated</source>
-        <translation>채굴됨</translation>
+        <translation>생성됨</translation>
     </message>
     <message>
         <location line="+5"/>
         <location line="+13"/>
         <source>From</source>
-        <translation>다음으로부터 받음</translation>
+        <translation>로부터</translation>
     </message>
     <message>
         <location line="+1"/>
         <location line="+19"/>
         <location line="+58"/>
         <source>To</source>
-        <translation>다음에게 보내짐</translation>
+        <translation>에게</translation>
     </message>
     <message>
         <location line="-74"/>
@@ -2161,7 +2161,7 @@ Address: %4
         <location line="+17"/>
         <location line="+30"/>
         <source>Credit</source>
-        <translation>보낸 금액</translation>
+        <translation>보낼 금액</translation>
     </message>
     <message>
         <location line="-102"/>
@@ -2179,7 +2179,7 @@ Address: %4
         <location line="+15"/>
         <location line="+30"/>
         <source>Debit</source>
-        <translation>받는 금액</translation>
+        <translation>받을 금액</translation>
     </message>
     <message>
         <location line="-39"/>
@@ -2189,7 +2189,7 @@ Address: %4
     <message>
         <location line="+16"/>
         <source>Net amount</source>
-        <translation>총금액</translation>
+        <translation>총액</translation>
     </message>
     <message>
         <location line="+6"/>
@@ -2208,8 +2208,8 @@ Address: %4
     </message>
     <message>
         <location line="+3"/>
-        <source>Generated coins must mature a considerable amount blocks before they can be spent. When you generated this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to &quot;not accepted&quot; and it won&apos;t be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
-        <translation>생성된 코인은 상당량의 블럭이 지나야 사용가능합니다. 이 블럭이 생성되었을 떄, 생성된 코인은 블럭체인에 포함되어 네트워크를 통해 브로드캐스트 되었습니다. 체인에 포함되는 것이 실패하면, 상태가 &quot;승인되지 않음&quot;으로 변경되며 사용 불가능 해집니다. 이것은 다른 노드가 몇 초안에 블럭을 생성하면 가끔 발생할 수 있습니다.</translation>
+        <source>Generated coins must mature 510 blocks before they can be spent. When you generated this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to &quot;not accepted&quot; and it won&apos;t be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
+        <translation>생성된 코인은 510블럭이 지나야 사용가능합니다. 이 블럭이 생성되었을 떄, 생성된 코인은 블럭체인에 포함되어 네트워크를 통해 브로드캐스트 되었습니다. 체인에 포함되는 것이 실패하면, 상태가 &quot;승인되지 않음&quot;으로 변경되며 사용 불가능 해집니다. 이것은 다른 노드가 몇 초안에 블럭을 생성하면 가끔 발생할 수 있습니다.</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -2580,8 +2580,8 @@ Address: %4
     <name>bitcoin-core</name>
     <message>
         <location filename="../bitcoinstrings.cpp" line="+8"/>
-        <source>Wispr version</source>
-        <translation>Wispr 버전</translation>
+        <source>Rpicoin version</source>
+        <translation>Rpicoin 버전</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2590,8 +2590,8 @@ Address: %4
     </message>
     <message>
         <location line="+1"/>
-        <source>Send command to -server or Wisprd</source>
-        <translation> -server 또는 Wisprd에 명령 보내기</translation>
+        <source>Send command to -server or Rpicoind</source>
+        <translation> -server 또는 Rpicoind에 명령 보내기</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2610,13 +2610,13 @@ Address: %4
     </message>
     <message>
         <location line="+2"/>
-        <source>Specify configuration file (default: Wispr.conf)</source>
-        <translation>구성 파일 지정(기본값: Wispr.conf)</translation>
+        <source>Specify configuration file (default: Rpicoin.conf)</source>
+        <translation>구성 파일 지정(기본값: Rpicoin.conf)</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Specify pid file (default: Wisprd.pid)</source>
-        <translation>pid 파일 지정 (기본값: Wisprd.pid)</translation>
+        <source>Specify pid file (default: Rpicoind.pid)</source>
+        <translation>pid 파일 지정 (기본값: Rpicoind.pid)</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -2633,24 +2633,24 @@ Address: %4
         <source>%s, you must set a rpcpassword in the configuration file:
 %s
 It is recommended you use the following random password:
-rpcuser=Wisprrpc
+rpcuser=Rpicoinrpc
 rpcpassword=%s
 (you do not need to remember this password)
 The username and password MUST NOT be the same.
 If the file does not exist, create it with owner-readable-only file permissions.
 It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s &quot;Wispr Alert&quot; admin@foo.com
+for example: alertnotify=echo %%s | mail -s &quot;Rpicoin Alert&quot; admin@foo.com
 </source>
         <translation>%s, 구성파일에 rpcpassword를 사용해야 합니다.:
 %s
 다음과 같이 불구틱한 암호 사용을 권장합니다.:
-rpcuser=Wisprrpc
+rpcuser=Rpicoinrpc
 rpcpassword=%s
 (이 암호를 외울 필요는 없습니다.)
 사용자 이름과 암호는 절대 같아서는 안 됩니다.
 파일이 존재하지 않으면, owner-readable-only 파일 퍼미션으로 파일을 생성하세요.
 문제들로부터 알림을 받을 수 있는 경고 알림을 설정하세요.;
-(예: alertnotify=echo %%s | mail -s &quot;Wispr Alert&quot; admin@foo.com)</translation>
+(예: alertnotify=echo %%s | mail -s &quot;Rpicoin Alert&quot; admin@foo.com)</translation>
     </message>
     <message>
         <location line="-161"/>
@@ -2664,8 +2664,8 @@ rpcpassword=%s
     </message>
     <message>
         <location line="+5"/>
-        <source>Listen for connections on &lt;port&gt; (default: 15714 or testnet: 25714)</source>
-        <translation>&lt;포트&gt;에서 연결을 수신 (기본값: 15714 또는 testnet: 25714)</translation>
+        <source>Listen for connections on &lt;port&gt; (default: 18000 or testnet: 18002)</source>
+        <translation>&lt;포트&gt;에서 연결을 수신 (기본값: 18000 또는 testnet: 18002)</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2714,8 +2714,8 @@ rpcpassword=%s
     </message>
     <message>
         <location line="-126"/>
-        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 17001 or testnet: 17003)</source>
-        <translation>&lt;port&gt;의 JSON-RPC 연결을 수신 (기본값: 17001 or testnet: 17003)</translation>
+        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 18001 or testnet: 18003)</source>
+        <translation>&lt;port&gt;의 JSON-RPC 연결을 수신 (기본값: 18001 or testnet: 18003)</translation>
     </message>
     <message>
         <location line="-16"/>
@@ -2749,8 +2749,8 @@ rpcpassword=%s
     </message>
     <message>
         <location line="+46"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong Wispr will not work properly.</source>
-        <translation>경고: 컴퓨터의 날자와 시간이 맞는지 확인하세요. 만약 시계가 틀리다면 Wispr가 맞게 작동하지 않습니다.</translation>
+        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong Rpicoin will not work properly.</source>
+        <translation>경고: 컴퓨터의 날자와 시간이 맞는지 확인하세요. 만약 시계가 틀리다면 Rpicoin가 맞게 작동하지 않습니다.</translation>
     </message>
     <message>
         <location line="-19"/>
@@ -3045,8 +3045,8 @@ rpcpassword=%s
     </message>
     <message>
         <location line="+8"/>
-        <source>Initialization sanity check failed. Wispr is shutting down.</source>
-        <translation>초기화 정상 여부 검사에 실패하였습니다. Wispr가 종료되는 중 입니다.</translation>
+        <source>Initialization sanity check failed. Rpicoin is shutting down.</source>
+        <translation>초기화 정상 여부 검사에 실패하였습니다. Rpicoin가 종료되는 중 입니다.</translation>
     </message>
     <message>
         <location line="+20"/>
@@ -3100,13 +3100,13 @@ rpcpassword=%s
     </message>
     <message>
         <location line="+4"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of Wispr</source>
-        <translation>wallet.dat를 로딩 중 에러: 새로운 Wispr 버전의 지갑이 필요합니다.</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of Rpicoin</source>
+        <translation>wallet.dat를 로딩 중 에러: 새로운 Rpicoin 버전의 지갑이 필요합니다.</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Wallet needed to be rewritten: restart Wispr to complete</source>
-        <translation>지갑을 다시 작성해야 했습니다. 완료하기 위해 Wispr를 다시 시작하세요.</translation>
+        <source>Wallet needed to be rewritten: restart Rpicoin to complete</source>
+        <translation>지갑을 다시 작성해야 했습니다. 완료하기 위해 Rpicoin를 다시 시작하세요.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -3165,8 +3165,8 @@ rpcpassword=%s
     </message>
     <message>
         <location line="+131"/>
-        <source>Unable to bind to %s on this computer. Wispr is probably already running.</source>
-        <translation>컴퓨터에 %s로 바인딩 할 수 없습니다. Wispr가 이미 실행 중입니다.</translation>
+        <source>Unable to bind to %s on this computer. Rpicoin is probably already running.</source>
+        <translation>컴퓨터에 %s로 바인딩 할 수 없습니다. Rpicoin가 이미 실행 중입니다.</translation>
     </message>
     <message>
         <location line="-108"/>
@@ -3195,8 +3195,8 @@ rpcpassword=%s
     </message>
     <message>
         <location line="+3"/>
-        <source>Cannot obtain a lock on data directory %s. Wispr is probably already running.</source>
-        <translation>데이타 항목 %s에 잠금을 할 수 없습니다. Wispr가 아마도 이미 실행 중일 겁니다.</translation>
+        <source>Cannot obtain a lock on data directory %s. Rpicoin is probably already running.</source>
+        <translation>데이타 항목 %s에 잠금을 할 수 없습니다. Rpicoin가 아마도 이미 실행 중일 겁니다.</translation>
     </message>
     <message>
         <location line="+4"/>

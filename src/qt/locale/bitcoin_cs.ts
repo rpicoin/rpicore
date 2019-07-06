@@ -3,20 +3,20 @@
     <name>AboutDialog</name>
     <message>
         <location filename="../forms/aboutdialog.ui" line="+14"/>
-        <source>About Wispr</source>
-        <translation>O Wispru</translation>
+        <source>About Rpicoin</source>
+        <translation>O Rpicoinu</translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>&lt;b&gt;Wispr&lt;/b&gt; version</source>
-        <translation>Verze &lt;b&gt;Wispru&lt;/b&gt; </translation>
+        <source>&lt;b&gt;Rpicoin&lt;/b&gt; version</source>
+        <translation>Verze &lt;b&gt;Rpicoinu&lt;/b&gt; </translation>
     </message>
     <message>
         <location line="+41"/>
         <source>Copyright © 2009-2017 The Bitcoin developers
 Copyright © 2012-2014 The NovaCoin developers
 Copyright © 2014-2017 The Blackcoin developers
-Copyright © 2017 The Wispr developers</source>
+Copyright © 2017 The Rpicoin developers</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -59,8 +59,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-43"/>
-        <source>These are your Wispr addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
-        <translation>Tato jsou tvé Wispr adresy pro příjem plateb. Každému odesílateli můžeš dát jinou adresu, aby jsi mohl sledovat, kdo ti platí.</translation>
+        <source>These are your Rpicoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
+        <translation>Tato jsou tvé Rpicoin adresy pro příjem plateb. Každému odesílateli můžeš dát jinou adresu, aby jsi mohl sledovat, kdo ti platí.</translation>
     </message>
     <message>
         <location line="+53"/>
@@ -74,8 +74,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+7"/>
-        <source>Sign a message to prove you own a Wispr address</source>
-        <translation>Podepiš zprávu, aby jsi dokázal, že vlastníš tuto Wispr adresu.</translation>
+        <source>Sign a message to prove you own a Rpicoin address</source>
+        <translation>Podepiš zprávu, aby jsi dokázal, že vlastníš tuto Rpicoin adresu.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -89,8 +89,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-10"/>
-        <source>Verify a message to ensure it was signed with a specified Wispr address</source>
-        <translation>Ověř zprávu, aby jsi zajistil, že byla podepsaná určitou Wispr adresou.</translation>
+        <source>Verify a message to ensure it was signed with a specified Rpicoin address</source>
+        <translation>Ověř zprávu, aby jsi zajistil, že byla podepsaná určitou Rpicoin adresou.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -257,8 +257,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+82"/>
-        <source>Wispr will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
-        <translation>Pro dokončení procesu šifrování se Wispr nyní zavře, Pamatuj, že zašifrování tvé peněženky nemůže plně ochránit tvé mince před krádeží, pokud máš počítač infikován malwerem.</translation>
+        <source>Rpicoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
+        <translation>Pro dokončení procesu šifrování se Rpicoin nyní zavře, Pamatuj, že zašifrování tvé peněženky nemůže plně ochránit tvé mince před krádeží, pokud máš počítač infikován malwerem.</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -351,8 +351,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+4"/>
-        <source>Show information about Wispr</source>
-        <translation>Zobraz informace a Wispru</translation>
+        <source>Show information about Rpicoin</source>
+        <translation>Zobraz informace a Rpicoinu</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -391,13 +391,13 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-55"/>
-        <source>Send coins to a Wispr address</source>
-        <translation>Odešli mince na Wispr adresu</translation>
+        <source>Send coins to a Rpicoin address</source>
+        <translation>Odešli mince na Rpicoin adresu</translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>Modify configuration options for Wispr</source>
-        <translation>Uprav možnosti konfigurace pro Wispr</translation>
+        <source>Modify configuration options for Rpicoin</source>
+        <translation>Uprav možnosti konfigurace pro Rpicoin</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -437,8 +437,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location line="-214"/>
         <location line="+555"/>
-        <source>Wispr</source>
-        <translation>Wispr</translation>
+        <source>Rpicoin</source>
+        <translation>Rpicoin</translation>
     </message>
     <message>
         <location line="-555"/>
@@ -447,8 +447,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+193"/>
-        <source>&amp;About Wispr</source>
-        <translation>&amp;O Wispru</translation>
+        <source>&amp;About Rpicoin</source>
+        <translation>&amp;O Rpicoinu</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -499,13 +499,13 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location line="+0"/>
         <location line="+58"/>
-        <source>Wispr client</source>
-        <translation>Wispr klient</translation>
+        <source>Rpicoin client</source>
+        <translation>Rpicoin klient</translation>
     </message>
     <message numerus="yes">
         <location line="+70"/>
-        <source>%n active connection(s) to Wispr network</source>
-        <translation><numerusform>%n aktivní spojení do Wispr sítě</numerusform><numerusform>%n aktivních spojení do Wispr sítě</numerusform><numerusform>%n aktivních spojení do Wispr sítě</numerusform></translation>
+        <source>%n active connection(s) to Rpicoin network</source>
+        <translation><numerusform>%n aktivní spojení do Rpicoin sítě</numerusform><numerusform>%n aktivních spojení do Rpicoin sítě</numerusform><numerusform>%n aktivních spojení do Rpicoin sítě</numerusform></translation>
     </message>
     <message>
         <location line="+488"/>
@@ -599,8 +599,8 @@ Adresa: %4
     <message>
         <location line="-15"/>
         <location line="+15"/>
-        <source>URI can not be parsed! This can be caused by an invalid Wispr address or malformed URI parameters.</source>
-        <translation>URI nejde rozparsovat! To může být způsobeno neplatnou Wispr adresou nebo chybnými URI parametry.</translation>
+        <source>URI can not be parsed! This can be caused by an invalid Rpicoin address or malformed URI parameters.</source>
+        <translation>URI nejde rozparsovat! To může být způsobeno neplatnou Rpicoin adresou nebo chybnými URI parametry.</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -722,8 +722,8 @@ Adresa: %4
     </message>
     <message>
         <location filename="../bitcoin.cpp" line="+104"/>
-        <source>A fatal error occurred. Wispr can no longer continue safely and will quit.</source>
-        <translation>Došlo k závažné chybě. Wispr již nemůže dále bezpečně pokračovat a bude ukončen.</translation>
+        <source>A fatal error occurred. Rpicoin can no longer continue safely and will quit.</source>
+        <translation>Došlo k závažné chybě. Rpicoin již nemůže dále bezpečně pokračovat a bude ukončen.</translation>
     </message>
 </context>
 <context>
@@ -998,8 +998,8 @@ To znamená, že je potřebný poplatek ve výši nejméně %2.</translation>
     </message>
     <message>
         <location line="-5"/>
-        <source>The entered address &quot;%1&quot; is not a valid Wispr address.</source>
-        <translation>Zadaná adresa &quot;%1&quot; není platná Wispr adresa.</translation>
+        <source>The entered address &quot;%1&quot; is not a valid Rpicoin address.</source>
+        <translation>Zadaná adresa &quot;%1&quot; není platná Rpicoin adresa.</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1017,8 +1017,8 @@ To znamená, že je potřebný poplatek ve výši nejméně %2.</translation>
     <message>
         <location filename="../guiutil.cpp" line="+426"/>
         <location line="+12"/>
-        <source>Wispr-Qt</source>
-        <translation>Wispr-Qt</translation>
+        <source>Rpicoin-Qt</source>
+        <translation>Rpicoin-Qt</translation>
     </message>
     <message>
         <location line="-12"/>
@@ -1090,13 +1090,13 @@ To znamená, že je potřebný poplatek ve výši nejméně %2.</translation>
     </message>
     <message>
         <location line="+31"/>
-        <source>Automatically start Wispr after logging in to the system.</source>
-        <translation>Automaticky spustit Wispr po přihlášení do systému.</translation>
+        <source>Automatically start Rpicoin after logging in to the system.</source>
+        <translation>Automaticky spustit Rpicoin po přihlášení do systému.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Start Wispr on system login</source>
-        <translation>&amp;Spustit Wispr při přihlášení do systému</translation>
+        <source>&amp;Start Rpicoin on system login</source>
+        <translation>&amp;Spustit Rpicoin při přihlášení do systému</translation>
     </message>
     <message>
         <location line="+21"/>
@@ -1105,8 +1105,8 @@ To znamená, že je potřebný poplatek ve výši nejméně %2.</translation>
     </message>
     <message>
         <location line="+6"/>
-        <source>Automatically open the Wispr client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Automaticky otevřít port Wispr klienta na routeru. Funguje to jen tehdy, když router podporuje UPnP a je povoleno.</translation>
+        <source>Automatically open the Rpicoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Automaticky otevřít port Rpicoin klienta na routeru. Funguje to jen tehdy, když router podporuje UPnP a je povoleno.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1135,7 +1135,7 @@ To znamená, že je potřebný poplatek ve výši nejméně %2.</translation>
     </message>
     <message>
         <location line="-57"/>
-        <source>Connect to the Wispr network through a SOCKS5 proxy (e.g. when connecting through Tor).</source>
+        <source>Connect to the Rpicoin network through a SOCKS5 proxy (e.g. when connecting through Tor).</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1180,8 +1180,8 @@ To znamená, že je potřebný poplatek ve výši nejméně %2.</translation>
     </message>
     <message>
         <location line="+13"/>
-        <source>The user interface language can be set here. This setting will take effect after restarting Wispr.</source>
-        <translation>Zde můžeš nastavit jazyk uživatelského rozhraní. Nastavení se projeví až po restartu Wispru.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting Rpicoin.</source>
+        <translation>Zde můžeš nastavit jazyk uživatelského rozhraní. Nastavení se projeví až po restartu Rpicoinu.</translation>
     </message>
     <message>
         <location line="+11"/>
@@ -1237,8 +1237,8 @@ To znamená, že je potřebný poplatek ve výši nejméně %2.</translation>
     <message>
         <location line="-9"/>
         <location line="+9"/>
-        <source>This setting will take effect after restarting Wispr.</source>
-        <translation>Nastavení se projeví až po restartu Wispru.</translation>
+        <source>This setting will take effect after restarting Rpicoin.</source>
+        <translation>Nastavení se projeví až po restartu Rpicoinu.</translation>
     </message>
     <message>
         <location line="+29"/>
@@ -1256,8 +1256,8 @@ To znamená, že je potřebný poplatek ve výši nejméně %2.</translation>
     <message>
         <location line="+46"/>
         <location line="+247"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Wispr network after a connection is established, but this process has not completed yet.</source>
-        <translation>Zobrazené informace můžou být zastaralé. Tvá peněženka se automaticky synchronizuje s Wispr sítí po navázaní spojení, ale tento proces ještě není dokončený.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Rpicoin network after a connection is established, but this process has not completed yet.</source>
+        <translation>Zobrazené informace můžou být zastaralé. Tvá peněženka se automaticky synchronizuje s Rpicoin sítí po navázaní spojení, ale tento proces ještě není dokončený.</translation>
     </message>
     <message>
         <location line="-173"/>
@@ -1330,7 +1330,7 @@ To znamená, že je potřebný poplatek ve výši nejméně %2.</translation>
     <name>PaymentServer</name>
     <message>
         <location filename="../paymentserver.cpp" line="+107"/>
-        <source>Cannot start Wispr: click-to-pay handler</source>
+        <source>Cannot start Rpicoin: click-to-pay handler</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -1500,8 +1500,8 @@ To znamená, že je potřebný poplatek ve výši nejméně %2.</translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Show the Wispr-Qt help message to get a list with possible Wispr command-line options.</source>
-        <translation>Zobrazit Wispr-Qt nápovědu pro zobrazení seznam dostupným možností příkazového řádku.</translation>
+        <source>Show the Rpicoin-Qt help message to get a list with possible Rpicoin command-line options.</source>
+        <translation>Zobrazit Rpicoin-Qt nápovědu pro zobrazení seznam dostupným možností příkazového řádku.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1520,13 +1520,13 @@ To znamená, že je potřebný poplatek ve výši nejméně %2.</translation>
     </message>
     <message>
         <location line="-104"/>
-        <source>Wispr - Debug window</source>
-        <translation>Wispr - Ladící okno</translation>
+        <source>Rpicoin - Debug window</source>
+        <translation>Rpicoin - Ladící okno</translation>
     </message>
     <message>
         <location line="+25"/>
-        <source>Wispr Core</source>
-        <translation>Jádro Wispru</translation>
+        <source>Rpicoin Core</source>
+        <translation>Jádro Rpicoinu</translation>
     </message>
     <message>
         <location line="+256"/>
@@ -1535,8 +1535,8 @@ To znamená, že je potřebný poplatek ve výši nejméně %2.</translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Open the Wispr debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Otevři logovací soubor Wispru z aktuálního datového adresáře. Pro velké logy to může trvat několik sekund.</translation>
+        <source>Open the Rpicoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Otevři logovací soubor Rpicoinu z aktuálního datového adresáře. Pro velké logy to může trvat několik sekund.</translation>
     </message>
     <message>
         <location line="+102"/>
@@ -1545,8 +1545,8 @@ To znamená, že je potřebný poplatek ve výši nejméně %2.</translation>
     </message>
     <message>
         <location filename="../rpcconsole.cpp" line="-28"/>
-        <source>Welcome to the Wispr RPC console.</source>
-        <translation>Vítej v Wispr RPC konzoli.</translation>
+        <source>Welcome to the Rpicoin RPC console.</source>
+        <translation>Vítej v Rpicoin RPC konzoli.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -1716,8 +1716,8 @@ To znamená, že je potřebný poplatek ve výši nejméně %2.</translation>
     </message>
     <message>
         <location filename="../sendcoinsdialog.cpp" line="-171"/>
-        <source>Enter a Wispr address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
-        <translation>Napiš Wispr adresu (např. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
+        <source>Enter a Rpicoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <translation>Napiš Rpicoin adresu (např. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -1811,8 +1811,8 @@ To znamená, že je potřebný poplatek ve výši nejméně %2.</translation>
     </message>
     <message>
         <location line="+241"/>
-        <source>WARNING: Invalid Wispr address</source>
-        <translation>UPOZORNĚNÍ: Neplatná Wispr adresa</translation>
+        <source>WARNING: Invalid Rpicoin address</source>
+        <translation>UPOZORNĚNÍ: Neplatná Rpicoin adresa</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -1885,8 +1885,8 @@ To znamená, že je potřebný poplatek ve výši nejméně %2.</translation>
     </message>
     <message>
         <location filename="../sendcoinsentry.cpp" line="+1"/>
-        <source>Enter a Wispr address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
-        <translation>Zadej Wispr adresu (např. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
+        <source>Enter a Rpicoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <translation>Zadej Rpicoin adresu (např. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
     </message>
 </context>
 <context>
@@ -1946,8 +1946,8 @@ To znamená, že je potřebný poplatek ve výši nejméně %2.</translation>
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this Wispr address</source>
-        <translation>Podepiš zprávu jako důkaz, že vlastníš tuto Wispr adresu</translation>
+        <source>Sign the message to prove you own this Rpicoin address</source>
+        <translation>Podepiš zprávu jako důkaz, že vlastníš tuto Rpicoin adresu</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -1978,8 +1978,8 @@ To znamená, že je potřebný poplatek ve výši nejméně %2.</translation>
     </message>
     <message>
         <location line="+40"/>
-        <source>Verify the message to ensure it was signed with the specified Wispr address</source>
-        <translation>Ověř zprávu, aby ses ujistil, že byla podepsána danou Wispr adresou</translation>
+        <source>Verify the message to ensure it was signed with the specified Rpicoin address</source>
+        <translation>Ověř zprávu, aby ses ujistil, že byla podepsána danou Rpicoin adresou</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -1989,8 +1989,8 @@ To znamená, že je potřebný poplatek ve výši nejméně %2.</translation>
     <message>
         <location filename="../signverifymessagedialog.cpp" line="+27"/>
         <location line="+3"/>
-        <source>Enter a Wispr address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
-        <translation>Zadej Wispr adresu (např. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
+        <source>Enter a Rpicoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <translation>Zadej Rpicoin adresu (např. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
     </message>
     <message>
         <location line="-2"/>
@@ -1999,8 +1999,8 @@ To znamená, že je potřebný poplatek ve výši nejméně %2.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Enter Wispr signature</source>
-        <translation>Zadej Wispr podpis</translation>
+        <source>Enter Rpicoin signature</source>
+        <translation>Zadej Rpicoin podpis</translation>
     </message>
     <message>
         <location line="+85"/>
@@ -2578,8 +2578,8 @@ To znamená, že je potřebný poplatek ve výši nejméně %2.</translation>
     <name>bitcoin-core</name>
     <message>
         <location filename="../bitcoinstrings.cpp" line="+8"/>
-        <source>Wispr version</source>
-        <translation>Verze Wispru</translation>
+        <source>Rpicoin version</source>
+        <translation>Verze Rpicoinu</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2588,8 +2588,8 @@ To znamená, že je potřebný poplatek ve výši nejméně %2.</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Send command to -server or Wisprd</source>
-        <translation>Pošli příkaz na -server nebo Wisprd</translation>
+        <source>Send command to -server or Rpicoind</source>
+        <translation>Pošli příkaz na -server nebo Rpicoind</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2608,13 +2608,13 @@ To znamená, že je potřebný poplatek ve výši nejméně %2.</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Specify configuration file (default: Wispr.conf)</source>
-        <translation>Urči konfigurační soubor (výchozí: Wispr.conf)</translation>
+        <source>Specify configuration file (default: Rpicoin.conf)</source>
+        <translation>Urči konfigurační soubor (výchozí: Rpicoin.conf)</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Specify pid file (default: Wisprd.pid)</source>
-        <translation>Urči pid soubor (výchozí: Wisprd.pid)</translation>
+        <source>Specify pid file (default: Rpicoind.pid)</source>
+        <translation>Urči pid soubor (výchozí: Rpicoind.pid)</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -2631,13 +2631,13 @@ To znamená, že je potřebný poplatek ve výši nejméně %2.</translation>
         <source>%s, you must set a rpcpassword in the configuration file:
 %s
 It is recommended you use the following random password:
-rpcuser=Wisprrpc
+rpcuser=Rpicoinrpc
 rpcpassword=%s
 (you do not need to remember this password)
 The username and password MUST NOT be the same.
 If the file does not exist, create it with owner-readable-only file permissions.
 It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s &quot;Wispr Alert&quot; admin@foo.com
+for example: alertnotify=echo %%s | mail -s &quot;Rpicoin Alert&quot; admin@foo.com
 </source>
         <translation type="unfinished"/>
     </message>
@@ -2653,8 +2653,8 @@ for example: alertnotify=echo %%s | mail -s &quot;Wispr Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="+5"/>
-        <source>Listen for connections on &lt;port&gt; (default: 17000 or testnet: 17002)</source>
-        <translation>Naslouchej připojením na &lt;port&gt; (výchozí: 17000 nebo testovací síť: 17002)</translation>
+        <source>Listen for connections on &lt;port&gt; (default: 18000 or testnet: 18002)</source>
+        <translation>Naslouchej připojením na &lt;port&gt; (výchozí: 18000 nebo testovací síť: 18002)</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2703,8 +2703,8 @@ for example: alertnotify=echo %%s | mail -s &quot;Wispr Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="-126"/>
-        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 17001 or testnet: 17003)</source>
-        <translation>Naslouchej JSON-RPC připojením na &lt;port&gt; (výchozí: 17001 nebo testovací síť: 17003)</translation>
+        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 18001 or testnet: 18003)</source>
+        <translation>Naslouchej JSON-RPC připojením na &lt;port&gt; (výchozí: 18001 nebo testovací síť: 18003)</translation>
     </message>
     <message>
         <location line="-16"/>
@@ -2738,8 +2738,8 @@ for example: alertnotify=echo %%s | mail -s &quot;Wispr Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="+46"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong Wispr will not work properly.</source>
-        <translation>Upozornění: Zkontroluj prosím datum a čas tvého počítače! Pokud jdou tvé hodiny špatně, tak Wispr nebude pracovat správně. </translation>
+        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong Rpicoin will not work properly.</source>
+        <translation>Upozornění: Zkontroluj prosím datum a čas tvého počítače! Pokud jdou tvé hodiny špatně, tak Rpicoin nebude pracovat správně. </translation>
     </message>
     <message>
         <location line="-19"/>
@@ -3003,8 +3003,8 @@ for example: alertnotify=echo %%s | mail -s &quot;Wispr Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="+1"/>
-        <source>Imports blocks from external wsp000?.dat file</source>
-        <translation>Importuj bloky z externího wsp000?.dat souboru</translation>
+        <source>Imports blocks from external rpi000?.dat file</source>
+        <translation>Importuj bloky z externího rpi000?.dat souboru</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -3033,7 +3033,7 @@ for example: alertnotify=echo %%s | mail -s &quot;Wispr Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="+8"/>
-        <source>Initialization sanity check failed. Wispr is shutting down.</source>
+        <source>Initialization sanity check failed. Rpicoin is shutting down.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -3088,13 +3088,13 @@ for example: alertnotify=echo %%s | mail -s &quot;Wispr Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="+4"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of Wispr</source>
-        <translation>Chyba načítání wallet.dat: Peněženka vyžaduje novější verzi Wispru</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of Rpicoin</source>
+        <translation>Chyba načítání wallet.dat: Peněženka vyžaduje novější verzi Rpicoinu</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Wallet needed to be rewritten: restart Wispr to complete</source>
-        <translation>Peněženka by potřebovala být přepsána: restartuj Wispr pro dokončení</translation>
+        <source>Wallet needed to be rewritten: restart Rpicoin to complete</source>
+        <translation>Peněženka by potřebovala být přepsána: restartuj Rpicoin pro dokončení</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -3153,8 +3153,8 @@ for example: alertnotify=echo %%s | mail -s &quot;Wispr Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="+131"/>
-        <source>Unable to bind to %s on this computer. Wispr is probably already running.</source>
-        <translation>Nemůžu se svázat s %s na tomto počítači. Wispr nejspíše již běží.</translation>
+        <source>Unable to bind to %s on this computer. Rpicoin is probably already running.</source>
+        <translation>Nemůžu se svázat s %s na tomto počítači. Rpicoin nejspíše již běží.</translation>
     </message>
     <message>
         <location line="-108"/>
@@ -3183,7 +3183,7 @@ for example: alertnotify=echo %%s | mail -s &quot;Wispr Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="+3"/>
-        <source>Cannot obtain a lock on data directory %s. Wispr is probably already running.</source>
+        <source>Cannot obtain a lock on data directory %s. Rpicoin is probably already running.</source>
         <translation type="unfinished"/>
     </message>
     <message>

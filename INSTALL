@@ -1,9 +1,9 @@
-Building Wispr
+Building RPICoin
 
-See doc/readme-qt.rst for instructions on building Wispr QT,
+See doc/readme-qt.rst for instructions on building RPICoin QT,
 the intended-for-end-users, nice-graphical-interface, reference
-implementation of Wispr.
+implementation of RPICoin.
 
-See doc/build-*.txt for instructions on building wisprd,
+See doc/build-*.txt for instructions on building rpicoind,
 the intended-for-services, no-graphical-interface, reference
-implementation of Wispr.
+implementation of RPICoin.

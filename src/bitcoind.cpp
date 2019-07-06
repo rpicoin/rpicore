@@ -1,6 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2012 The Bitcoin developers
-// Copyright (c) 2017 The Wispr developers
+// Copyright (c) 2017 The Rpicoin developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -51,12 +51,12 @@ bool AppInit(int argc, char* argv[])
         if (mapArgs.count("-?") || mapArgs.count("--help"))
         {
             // First part of help message is specific to bitcoind / RPC client
-            std::string strUsage = _("Wispr version") + " " + FormatFullVersion() + "\n\n" +
+            std::string strUsage = _("Rpicoin version") + " " + FormatFullVersion() + "\n\n" +
                 _("Usage:") + "\n" +
-                  "  wisprd [options]                     " + "\n" +
-                  "  wisprd [options] <command> [params]  " + _("Send command to -server or wisprd") + "\n" +
-                  "  wisprd [options] help                " + _("List commands") + "\n" +
-                  "  wisprd [options] help <command>      " + _("Get help for a command") + "\n";
+                  "  rpicoind [options]                     " + "\n" +
+                  "  rpicoind [options] <command> [params]  " + _("Send command to -server or rpicoind") + "\n" +
+                  "  rpicoind [options] help                " + _("List commands") + "\n" +
+                  "  rpicoind [options] help <command>      " + _("Get help for a command") + "\n";
 
             strUsage += "\n" + HelpMessage();
 
@@ -66,7 +66,7 @@ bool AppInit(int argc, char* argv[])
 
         // Command-line RPC
         for (int i = 1; i < argc; i++)
-            if (!IsSwitchChar(argv[i][0]) && !boost::algorithm::istarts_with(argv[i], "wispr:"))
+            if (!IsSwitchChar(argv[i][0]) && !boost::algorithm::istarts_with(argv[i], "rpicoin:"))
                 fCommandLine = true;
 
         if (fCommandLine)

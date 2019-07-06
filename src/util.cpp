@@ -1,6 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2012 The Bitcoin developers
-// Copyright (c) 2017 The Wispr developers
+// Copyright (c) 2017 The Rpicoin developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -919,7 +919,7 @@ static std::string FormatException(std::exception* pex, const char* pszThread)
     char pszModule[MAX_PATH] = "";
     GetModuleFileNameA(NULL, pszModule, sizeof(pszModule));
 #else
-    const char* pszModule = "wispr";
+    const char* pszModule = "rpicoin";
 #endif
     if (pex)
         return strprintf(
@@ -949,13 +949,13 @@ void PrintExceptionContinue(std::exception* pex, const char* pszThread)
 boost::filesystem::path GetDefaultDataDir()
 {
     namespace fs = boost::filesystem;
-    // Windows < Vista: C:\Documents and Settings\Username\Application Data\Wispr
-    // Windows >= Vista: C:\Users\Username\AppData\Roaming\Wispr
-    // Mac: ~/Library/Application Support/Wispr
-    // Unix: ~/.wispr
+    // Windows < Vista: C:\Documents and Settings\Username\Application Data\Rpicoin
+    // Windows >= Vista: C:\Users\Username\AppData\Roaming\Rpicoin
+    // Mac: ~/Library/Application Support/Rpicoin
+    // Unix: ~/.rpicoin
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "Wispr";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "Rpicoin";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -967,10 +967,10 @@ boost::filesystem::path GetDefaultDataDir()
     // Mac
     pathRet /= "Library/Application Support";
     fs::create_directory(pathRet);
-    return pathRet / "Wispr";
+    return pathRet / "Rpicoin";
 #else
     // Unix
-    return pathRet / ".wispr";
+    return pathRet / ".rpicoin";
 #endif
 #endif
 }
@@ -1019,7 +1019,7 @@ void ClearDatadirCache()
 
 boost::filesystem::path GetConfigFile()
 {
-    boost::filesystem::path pathConfigFile(GetArg("-conf", "wispr.conf"));
+    boost::filesystem::path pathConfigFile(GetArg("-conf", "rpicoin.conf"));
     if (!pathConfigFile.is_complete()) pathConfigFile = GetDataDir(false) / pathConfigFile;
     return pathConfigFile;
 }
@@ -1052,7 +1052,7 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
 
 boost::filesystem::path GetPidFile()
 {
-    boost::filesystem::path pathPidFile(GetArg("-pid", "wisprd.pid"));
+    boost::filesystem::path pathPidFile(GetArg("-pid", "rpicoind.pid"));
     if (!pathPidFile.is_complete()) pathPidFile = GetDataDir() / pathPidFile;
     return pathPidFile;
 }

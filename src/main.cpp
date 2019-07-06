@@ -1,6 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2012 The Bitcoin developers
-// Copyright (c) 2017 The Wispr developers
+// Copyright (c) 2017 The Rpicoin developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -23,7 +23,7 @@ using namespace std;
 using namespace boost;
 
 #if defined(NDEBUG)
-# error "Wispr cannot be compiled without assertions."
+# error "Rpicoin cannot be compiled without assertions."
 #endif
 
 //
@@ -42,11 +42,11 @@ set<pair<COutPoint, unsigned int> > setStakeSeen;
 
 CBigNum bnProofOfStakeLimit(~uint256(0) >> 48);
 
-int nStakeMinConfirmations = 100;
-unsigned int nStakeMinAge = 8 * 60 * 60; // 8 hours
+int nStakeMinConfirmations = 60;
+unsigned int nStakeMinAge = 4 * 60 * 60; // 4 hours
 unsigned int nModifierInterval = 10 * 60; // time to elapse before new modifier is computed
 
-int nCoinbaseMaturity = 100;
+int nCoinbaseMaturity = 10;
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
 
@@ -77,7 +77,7 @@ map<uint256, set<uint256> > mapOrphanTransactionsByPrev;
 // Constant stuff for coinbase transactions we create:
 CScript COINBASE_FLAGS;
 
-const string strMessageMagic = "Wispr Signed Message:\n";
+const string strMessageMagic = "Rpicoin Signed Message:\n";
 
 //////////////////////////////////////////////////////////////////////////////
 //
@@ -788,7 +788,7 @@ int CMerkleTx::GetBlocksToMaturity() const
 {
     if (!(IsCoinBase() || IsCoinStake()))
         return 0;
-    return max(0, (nCoinbaseMaturity) - GetDepthInMainChain());
+    return max(0, (nCoinbaseMaturity+1) - GetDepthInMainChain());
 }
 
 
@@ -968,7 +968,7 @@ static CBigNum GetProofOfStakeLimit(int nHeight)
 // miner's coin base reward
 int64_t GetProofOfWorkReward(int64_t nFees)
 {
-    int64_t nSubsidy = 125000 * COIN;
+    int64_t nSubsidy = 8999676 * COIN; //premine 15% 
 
     LogPrint("creation", "GetProofOfWorkReward() : create=%s nSubsidy=%d\n", FormatMoney(nSubsidy), nSubsidy);
 
@@ -976,14 +976,16 @@ int64_t GetProofOfWorkReward(int64_t nFees)
 }
 
 // miner's coin stake reward
+
 int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, int64_t nFees)
 {
     int64_t nSubsidy;
-    nSubsidy = COIN * 5;
+    nSubsidy = COIN * 300;
     LogPrint("creation", "GetProofOfStakeReward(): create=%s nCoinAge=%d\n", FormatMoney(nSubsidy), nCoinAge);
 
     return nSubsidy + nFees;
 }
+const int64_t nTargetSpacing = 60; // 1 minute
 
 static const int64_t nTargetTimespan = 16 * 60;  // 16 mins
 
@@ -2359,7 +2361,7 @@ bool CheckDiskSpace(uint64_t nAdditionalBytes)
 
 static filesystem::path BlockFilePath(unsigned int nFile)
 {
-    string strBlockFn = strprintf("wsp%04u.dat", nFile);
+    string strBlockFn = strprintf("rpi%04u.dat", nFile);
     return GetDataDir() / strBlockFn;
 }
 
@@ -2524,15 +2526,15 @@ bool LoadExternalBlockFile(FILE* fileIn)
     int nLoaded = 0;
     {
         try {
-            CAutoFile wspdat(fileIn, SER_DISK, CLIENT_VERSION);
+            CAutoFile rpidat(fileIn, SER_DISK, CLIENT_VERSION);
             unsigned int nPos = 0;
-            while (nPos != (unsigned int)-1 && wspdat.good())
+            while (nPos != (unsigned int)-1 && rpidat.good())
             {
                 boost::this_thread::interruption_point();
                 unsigned char pchData[65536];
                 do {
-                    fseek(wspdat, nPos, SEEK_SET);
-                    int nRead = fread(pchData, 1, sizeof(pchData), wspdat);
+                    fseek(rpidat, nPos, SEEK_SET);
+                    int nRead = fread(pchData, 1, sizeof(pchData), rpidat);
                     if (nRead <= 8)
                     {
                         nPos = (unsigned int)-1;
@@ -2554,13 +2556,13 @@ bool LoadExternalBlockFile(FILE* fileIn)
                 } while(true);
                 if (nPos == (unsigned int)-1)
                     break;
-                fseek(wspdat, nPos, SEEK_SET);
+                fseek(rpidat, nPos, SEEK_SET);
                 unsigned int nSize;
-                wspdat >> nSize;
+                rpidat >> nSize;
                 if (nSize > 0 && nSize <= MAX_BLOCK_SIZE)
                 {
                     CBlock block;
-                    wspdat >> block;
+                    rpidat >> block;
                     LOCK(cs_main);
                     if (ProcessBlock(NULL,&block))
                     {
@@ -2594,7 +2596,7 @@ struct CImportingNow
 
 void ThreadImport(std::vector<boost::filesystem::path> vImportFiles)
 {
-    RenameThread("wispr-loadwsp");
+    RenameThread("rpicoin-loadrpi");
 
     CImportingNow imp;
 

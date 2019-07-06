@@ -1,9 +1,9 @@
 # Copyright (c) 2009-2010 Satoshi Nakamoto
-# Copyright (c) 2017 The Wispr developers
+# Copyright (c) 2017 The Rpicoin developers
 # Distributed under the MIT/X11 software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-USE_UPNP:=1
+USE_UPNP:=0
 USE_WALLET:=1
 
 LINK:=$(CXX)
@@ -149,7 +149,7 @@ ifeq (${USE_WALLET}, 1)
         obj/walletdb.o
 endif
 
-all: wisprd
+all: rpicoind
 
 LIBS += $(CURDIR)/leveldb/libleveldb.a $(CURDIR)/leveldb/libmemenv.a
 DEFS += $(addprefix -I,$(CURDIR)/leveldb/include)
@@ -183,11 +183,11 @@ obj/%.o: %.cpp
 	      -e '/^$$/ d' -e 's/$$/ :/' < $(@:%.o=%.d) >> $(@:%.o=%.P); \
 	  rm -f $(@:%.o=%.d)
 
-wisprd: $(OBJS:obj/%=obj/%)
+rpicoind: $(OBJS:obj/%=obj/%)
 	$(LINK) $(xCXXFLAGS) -o $@ $^ $(xLDFLAGS) $(LIBS)
 
 clean:
-	-rm -f wisprd
+	-rm -f rpicoind
 	-rm -f obj/*.o
 	-rm -f obj/*.P
 	-rm -f obj/build.h

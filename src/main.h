@@ -1,6 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2012 The Bitcoin developers
-// Copyright (c) 2017 The Wispr developers
+// Copyright (c) 2017 The Rpicoin developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 #ifndef BITCOIN_MAIN_H
@@ -48,12 +48,12 @@ static const int64_t MIN_TX_FEE = 10000;
 /** Fees smaller than this (in satoshi) are considered zero fee (for relaying) */
 static const int64_t MIN_RELAY_TX_FEE = MIN_TX_FEE;
 /** No amount larger than this (in satoshi) is valid */
-static const int64_t MAX_MONEY = 120000000 * COIN;
+static const int64_t MAX_MONEY = 5999991337 * COIN;
 inline bool MoneyRange(int64_t nValue) { return (nValue >= 0 && nValue <= MAX_MONEY); }
 /** Threshold for nLockTime: below this value it is interpreted as block number, otherwise as UNIX timestamp. */
 static const unsigned int LOCKTIME_THRESHOLD = 500000000; // Tue Nov  5 00:53:20 1985 UTC
 
-static const int64_t COIN_YEAR_REWARD = 25 * CENT; // 25% per year
+static const int64_t COIN_YEAR_REWARD = 45 * CENT; // 45% per year
 
 inline int64_t FutureDrift(int64_t nTime, int nHeight) { return (nHeight > 250) ? nTime + 15 : nTime + 10 * 60; }
 
@@ -568,7 +568,7 @@ public:
  * in the block is a special one that creates a new coin owned by the creator
  * of the block.
  *
- * Blocks are appended to wsp0001.dat files on disk.  Their location on disk
+ * Blocks are appended to rpi0001.dat files on disk.  Their location on disk
  * is indexed by CBlockIndex objects in memory.
  */
 class CBlock

@@ -3,20 +3,20 @@
     <name>AboutDialog</name>
     <message>
         <location filename="../forms/aboutdialog.ui" line="+14"/>
-        <source>About Wispr</source>
-        <translation>Wispr Hakkında</translation>
+        <source>About Rpicoin</source>
+        <translation>Rpicoin Hakkında</translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>&lt;b&gt;Wispr&lt;/b&gt; version</source>
-        <translation>&lt;b&gt;Wispr&lt;/b&gt; versiyonu</translation>
+        <source>&lt;b&gt;Rpicoin&lt;/b&gt; version</source>
+        <translation>&lt;b&gt;Rpicoin&lt;/b&gt; versiyonu</translation>
     </message>
     <message>
         <location line="+41"/>
         <source>Copyright © 2009-2017 The Bitcoin developers
 Copyright © 2012-2014 The NovaCoin developers
 Copyright © 2014-2017 The Blackcoin developers
-Copyright © 2017 The Wispr developers</source>
+Copyright © 2017 The Rpicoin developers</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -64,8 +64,8 @@ Bu ürün, OpenSSL projesi tarafından OpenSSL araç takımıThis product includ
     </message>
     <message>
         <location line="-43"/>
-        <source>These are your Wispr addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
-        <translation>Bunlar, ödeme almak için Wispr adreslerinizdir. Her bir göndericiye farklı birini verebilir, böylece size kimin ödeme yaptığını takip edebilirsiniz.</translation>
+        <source>These are your Rpicoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
+        <translation>Bunlar, ödeme almak için Rpicoin adreslerinizdir. Her bir göndericiye farklı birini verebilir, böylece size kimin ödeme yaptığını takip edebilirsiniz.</translation>
     </message>
     <message>
         <location line="+53"/>
@@ -79,8 +79,8 @@ Bu ürün, OpenSSL projesi tarafından OpenSSL araç takımıThis product includ
     </message>
     <message>
         <location line="+7"/>
-        <source>Sign a message to prove you own a Wispr address</source>
-        <translation>Bir Wispr adresine sahip olduğunu ispatlamak için bir mesaj imzala</translation>
+        <source>Sign a message to prove you own a Rpicoin address</source>
+        <translation>Bir Rpicoin adresine sahip olduğunu ispatlamak için bir mesaj imzala</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -94,8 +94,8 @@ Bu ürün, OpenSSL projesi tarafından OpenSSL araç takımıThis product includ
     </message>
     <message>
         <location line="-10"/>
-        <source>Verify a message to ensure it was signed with a specified Wispr address</source>
-        <translation>Mesajın, belirli bir Wispr adresiyle imzalandığından emin olmak için onu doğrula</translation>
+        <source>Verify a message to ensure it was signed with a specified Rpicoin address</source>
+        <translation>Mesajın, belirli bir Rpicoin adresiyle imzalandığından emin olmak için onu doğrula</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -262,8 +262,8 @@ Bu ürün, OpenSSL projesi tarafından OpenSSL araç takımıThis product includ
     </message>
     <message>
         <location line="+82"/>
-        <source>Wispr will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
-        <translation>Wispr, şifreleme işlemini tamamlamak için şimdi kapatılacak. Cüzdanınızı şifrelemenin; coinlerinizin, bilgisayarınızı etkileyen zararlı yazılımlar tarafından çalınmasını bütünüyle engelleyemeyebileceğini unutmayınız.</translation>
+        <source>Rpicoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
+        <translation>Rpicoin, şifreleme işlemini tamamlamak için şimdi kapatılacak. Cüzdanınızı şifrelemenin; coinlerinizin, bilgisayarınızı etkileyen zararlı yazılımlar tarafından çalınmasını bütünüyle engelleyemeyebileceğini unutmayınız.</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -356,8 +356,8 @@ Bu ürün, OpenSSL projesi tarafından OpenSSL araç takımıThis product includ
     </message>
     <message>
         <location line="+4"/>
-        <source>Show information about Wispr</source>
-        <translation>Wispr hakkındaki bilgiyi göster</translation>
+        <source>Show information about Rpicoin</source>
+        <translation>Rpicoin hakkındaki bilgiyi göster</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -396,13 +396,13 @@ Bu ürün, OpenSSL projesi tarafından OpenSSL araç takımıThis product includ
     </message>
     <message>
         <location line="-55"/>
-        <source>Send coins to a Wispr address</source>
-        <translation>Bir Wispr adresine coin gönder</translation>
+        <source>Send coins to a Rpicoin address</source>
+        <translation>Bir Rpicoin adresine coin gönder</translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>Modify configuration options for Wispr</source>
-        <translation>Wispr yapılandırma seçeneklerini değiştir</translation>
+        <source>Modify configuration options for Rpicoin</source>
+        <translation>Rpicoin yapılandırma seçeneklerini değiştir</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -442,8 +442,8 @@ Bu ürün, OpenSSL projesi tarafından OpenSSL araç takımıThis product includ
     <message>
         <location line="-214"/>
         <location line="+555"/>
-        <source>Wispr</source>
-        <translation>Wispr</translation>
+        <source>Rpicoin</source>
+        <translation>Rpicoin</translation>
     </message>
     <message>
         <location line="-555"/>
@@ -452,8 +452,8 @@ Bu ürün, OpenSSL projesi tarafından OpenSSL araç takımıThis product includ
     </message>
     <message>
         <location line="+193"/>
-        <source>&amp;About Wispr</source>
-        <translation>Wispr &amp;Hakkında</translation>
+        <source>&amp;About Rpicoin</source>
+        <translation>Rpicoin &amp;Hakkında</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -504,13 +504,13 @@ Bu ürün, OpenSSL projesi tarafından OpenSSL araç takımıThis product includ
     <message>
         <location line="+0"/>
         <location line="+58"/>
-        <source>Wispr client</source>
-        <translation>Wispr istemcisi</translation>
+        <source>Rpicoin client</source>
+        <translation>Rpicoin istemcisi</translation>
     </message>
     <message numerus="yes">
         <location line="+70"/>
-        <source>%n active connection(s) to Wispr network</source>
-        <translation><numerusform>Wispr ağına %n etkin bağlantı</numerusform><numerusform>Wispr ağına %n etkin bağlantı</numerusform></translation>
+        <source>%n active connection(s) to Rpicoin network</source>
+        <translation><numerusform>Rpicoin ağına %n etkin bağlantı</numerusform><numerusform>Rpicoin ağına %n etkin bağlantı</numerusform></translation>
     </message>
     <message>
         <location line="+488"/>
@@ -604,8 +604,8 @@ Adres: %4
     <message>
         <location line="-15"/>
         <location line="+15"/>
-        <source>URI can not be parsed! This can be caused by an invalid Wispr address or malformed URI parameters.</source>
-        <translation>URI ayrıştırılamadı! Bu, geçersiz bir Wispr adresi veya hatalı URI parametreleri nedeniyle olabilir.</translation>
+        <source>URI can not be parsed! This can be caused by an invalid Rpicoin address or malformed URI parameters.</source>
+        <translation>URI ayrıştırılamadı! Bu, geçersiz bir Rpicoin adresi veya hatalı URI parametreleri nedeniyle olabilir.</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -727,8 +727,8 @@ Adres: %4
     </message>
     <message>
         <location filename="../bitcoin.cpp" line="+104"/>
-        <source>A fatal error occurred. Wispr can no longer continue safely and will quit.</source>
-        <translation>Önemli bir hata oluştu. Wispr artık güvenli bir şekilde devam edemez ve şimdi kapatılacak.</translation>
+        <source>A fatal error occurred. Rpicoin can no longer continue safely and will quit.</source>
+        <translation>Önemli bir hata oluştu. Rpicoin artık güvenli bir şekilde devam edemez ve şimdi kapatılacak.</translation>
     </message>
 </context>
 <context>
@@ -1003,8 +1003,8 @@ Adres: %4
     </message>
     <message>
         <location line="-5"/>
-        <source>The entered address &quot;%1&quot; is not a valid Wispr address.</source>
-        <translation>Girilen %1 adresi, geçerli bir Wispr adresi değildir.</translation>
+        <source>The entered address &quot;%1&quot; is not a valid Rpicoin address.</source>
+        <translation>Girilen %1 adresi, geçerli bir Rpicoin adresi değildir.</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1022,8 +1022,8 @@ Adres: %4
     <message>
         <location filename="../guiutil.cpp" line="+426"/>
         <location line="+12"/>
-        <source>Wispr-Qt</source>
-        <translation>Wispr-Qt</translation>
+        <source>Rpicoin-Qt</source>
+        <translation>Rpicoin-Qt</translation>
     </message>
     <message>
         <location line="-12"/>
@@ -1095,13 +1095,13 @@ Adres: %4
     </message>
     <message>
         <location line="+31"/>
-        <source>Automatically start Wispr after logging in to the system.</source>
-        <translation>Sisteme giriş yaptıktan sonra Wispr&apos;i otomatik olarak başlat</translation>
+        <source>Automatically start Rpicoin after logging in to the system.</source>
+        <translation>Sisteme giriş yaptıktan sonra Rpicoin&apos;i otomatik olarak başlat</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Start Wispr on system login</source>
-        <translation>Sisteme girişte Wispr&apos;i &amp;başlat</translation>
+        <source>&amp;Start Rpicoin on system login</source>
+        <translation>Sisteme girişte Rpicoin&apos;i &amp;başlat</translation>
     </message>
     <message>
         <location line="+21"/>
@@ -1110,8 +1110,8 @@ Adres: %4
     </message>
     <message>
         <location line="+6"/>
-        <source>Automatically open the Wispr client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Yönelticide Wispr istemci portunu otomatik olarak aç. Bu, sadece yönelticiniz UPnP&apos;i desteklediğinde ve etkin olduğunda çalışır.</translation>
+        <source>Automatically open the Rpicoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Yönelticide Rpicoin istemci portunu otomatik olarak aç. Bu, sadece yönelticiniz UPnP&apos;i desteklediğinde ve etkin olduğunda çalışır.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1140,7 +1140,7 @@ Adres: %4
     </message>
     <message>
         <location line="-57"/>
-        <source>Connect to the Wispr network through a SOCKS5 proxy (e.g. when connecting through Tor).</source>
+        <source>Connect to the Rpicoin network through a SOCKS5 proxy (e.g. when connecting through Tor).</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1185,8 +1185,8 @@ Adres: %4
     </message>
     <message>
         <location line="+13"/>
-        <source>The user interface language can be set here. This setting will take effect after restarting Wispr.</source>
-        <translation>Kullanıcı arabirimi dili buradan ayarlanabilir. Ayar, Wispr yeniden başlatıldığında etkin olacaktır.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting Rpicoin.</source>
+        <translation>Kullanıcı arabirimi dili buradan ayarlanabilir. Ayar, Rpicoin yeniden başlatıldığında etkin olacaktır.</translation>
     </message>
     <message>
         <location line="+11"/>
@@ -1242,8 +1242,8 @@ Adres: %4
     <message>
         <location line="-9"/>
         <location line="+9"/>
-        <source>This setting will take effect after restarting Wispr.</source>
-        <translation>Bu ayar, Wispr&apos;i yeniden başlattıktan sonra etkin olacaktır.</translation>
+        <source>This setting will take effect after restarting Rpicoin.</source>
+        <translation>Bu ayar, Rpicoin&apos;i yeniden başlattıktan sonra etkin olacaktır.</translation>
     </message>
     <message>
         <location line="+29"/>
@@ -1261,8 +1261,8 @@ Adres: %4
     <message>
         <location line="+46"/>
         <location line="+247"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Wispr network after a connection is established, but this process has not completed yet.</source>
-        <translation>Görüntülenen bilginin tarihi geçmiş olabilir. Cüzdanınız, bağlantı kurulduktan sonra otomatik olarak Wispr ağı ile senkronize olur ancak bu süreç, henüz tamamlanmamıştır.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Rpicoin network after a connection is established, but this process has not completed yet.</source>
+        <translation>Görüntülenen bilginin tarihi geçmiş olabilir. Cüzdanınız, bağlantı kurulduktan sonra otomatik olarak Rpicoin ağı ile senkronize olur ancak bu süreç, henüz tamamlanmamıştır.</translation>
     </message>
     <message>
         <location line="-173"/>
@@ -1335,8 +1335,8 @@ Adres: %4
     <name>PaymentServer</name>
     <message>
         <location filename="../paymentserver.cpp" line="+107"/>
-        <source>Cannot start Wispr: click-to-pay handler</source>
-        <translation>Wispr: tıkla-ve-öde işleyicisi başlatılamıyor</translation>
+        <source>Cannot start Rpicoin: click-to-pay handler</source>
+        <translation>Rpicoin: tıkla-ve-öde işleyicisi başlatılamıyor</translation>
     </message>
 </context>
 <context>
@@ -1505,8 +1505,8 @@ Adres: %4
     </message>
     <message>
         <location line="+7"/>
-        <source>Show the Wispr-Qt help message to get a list with possible Wispr command-line options.</source>
-        <translation>Muhtemel Wispr komut satırı seçeneklerinin bir listesini getirmek için Wispr-Qt yardım mesajını göster</translation>
+        <source>Show the Rpicoin-Qt help message to get a list with possible Rpicoin command-line options.</source>
+        <translation>Muhtemel Rpicoin komut satırı seçeneklerinin bir listesini getirmek için Rpicoin-Qt yardım mesajını göster</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1525,13 +1525,13 @@ Adres: %4
     </message>
     <message>
         <location line="-104"/>
-        <source>Wispr - Debug window</source>
-        <translation>Wispr - Hata ayıklama penceresi</translation>
+        <source>Rpicoin - Debug window</source>
+        <translation>Rpicoin - Hata ayıklama penceresi</translation>
     </message>
     <message>
         <location line="+25"/>
-        <source>Wispr Core</source>
-        <translation>Wispr Core</translation>
+        <source>Rpicoin Core</source>
+        <translation>Rpicoin Core</translation>
     </message>
     <message>
         <location line="+256"/>
@@ -1540,8 +1540,8 @@ Adres: %4
     </message>
     <message>
         <location line="+7"/>
-        <source>Open the Wispr debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Wispr hata ayıklama günlük kütüğü dosyasını, mevcut veri klasöründen aç. Bu işlem, büyük günlük kütüğü dosyaları için birkaç saniye sürebilir.</translation>
+        <source>Open the Rpicoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Rpicoin hata ayıklama günlük kütüğü dosyasını, mevcut veri klasöründen aç. Bu işlem, büyük günlük kütüğü dosyaları için birkaç saniye sürebilir.</translation>
     </message>
     <message>
         <location line="+102"/>
@@ -1550,8 +1550,8 @@ Adres: %4
     </message>
     <message>
         <location filename="../rpcconsole.cpp" line="-28"/>
-        <source>Welcome to the Wispr RPC console.</source>
-        <translation>Wispr RPC konsoluna hoş geldiniz.</translation>
+        <source>Welcome to the Rpicoin RPC console.</source>
+        <translation>Rpicoin RPC konsoluna hoş geldiniz.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -1721,8 +1721,8 @@ Adres: %4
     </message>
     <message>
         <location filename="../sendcoinsdialog.cpp" line="-171"/>
-        <source>Enter a Wispr address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
-        <translation>Bir Wispr adresi gir (örn: B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
+        <source>Enter a Rpicoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <translation>Bir Rpicoin adresi gir (örn: B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -1816,8 +1816,8 @@ Adres: %4
     </message>
     <message>
         <location line="+241"/>
-        <source>WARNING: Invalid Wispr address</source>
-        <translation>UYARI: Geçersiz Wispr adresi</translation>
+        <source>WARNING: Invalid Rpicoin address</source>
+        <translation>UYARI: Geçersiz Rpicoin adresi</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -1890,8 +1890,8 @@ Adres: %4
     </message>
     <message>
         <location filename="../sendcoinsentry.cpp" line="+1"/>
-        <source>Enter a Wispr address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
-        <translation>Bir Wispr adresi girin (örn: B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
+        <source>Enter a Rpicoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <translation>Bir Rpicoin adresi girin (örn: B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
     </message>
 </context>
 <context>
@@ -1951,8 +1951,8 @@ Adres: %4
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this Wispr address</source>
-        <translation>Bu Wispr adresine sahip olduğunuzu ispatlamak için mesajı imzala</translation>
+        <source>Sign the message to prove you own this Rpicoin address</source>
+        <translation>Bu Rpicoin adresine sahip olduğunuzu ispatlamak için mesajı imzala</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -1983,8 +1983,8 @@ Adres: %4
     </message>
     <message>
         <location line="+40"/>
-        <source>Verify the message to ensure it was signed with the specified Wispr address</source>
-        <translation>Mesajın, belirtilen Wispr adresiyle imzalandığından emin olmak için onu doğrula</translation>
+        <source>Verify the message to ensure it was signed with the specified Rpicoin address</source>
+        <translation>Mesajın, belirtilen Rpicoin adresiyle imzalandığından emin olmak için onu doğrula</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -1994,8 +1994,8 @@ Adres: %4
     <message>
         <location filename="../signverifymessagedialog.cpp" line="+27"/>
         <location line="+3"/>
-        <source>Enter a Wispr address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
-        <translation>Bir Wispr adresi girin (örn: B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
+        <source>Enter a Rpicoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <translation>Bir Rpicoin adresi girin (örn: B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
     </message>
     <message>
         <location line="-2"/>
@@ -2004,8 +2004,8 @@ Adres: %4
     </message>
     <message>
         <location line="+3"/>
-        <source>Enter Wispr signature</source>
-        <translation>Wispr imzası gir</translation>
+        <source>Enter Rpicoin signature</source>
+        <translation>Rpicoin imzası gir</translation>
     </message>
     <message>
         <location line="+85"/>
@@ -2583,8 +2583,8 @@ Adres: %4
     <name>bitcoin-core</name>
     <message>
         <location filename="../bitcoinstrings.cpp" line="+8"/>
-        <source>Wispr version</source>
-        <translation>Wispr versiyonu</translation>
+        <source>Rpicoin version</source>
+        <translation>Rpicoin versiyonu</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2593,8 +2593,8 @@ Adres: %4
     </message>
     <message>
         <location line="+1"/>
-        <source>Send command to -server or Wisprd</source>
-        <translation>-sunucu veya Wisprd&apos;ye komut gönder</translation>
+        <source>Send command to -server or Rpicoind</source>
+        <translation>-sunucu veya Rpicoind&apos;ye komut gönder</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2613,13 +2613,13 @@ Adres: %4
     </message>
     <message>
         <location line="+2"/>
-        <source>Specify configuration file (default: Wispr.conf)</source>
-        <translation>Konfigürasyon dosyasını belirt (varsayılan: Wispr.conf)</translation>
+        <source>Specify configuration file (default: Rpicoin.conf)</source>
+        <translation>Konfigürasyon dosyasını belirt (varsayılan: Rpicoin.conf)</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Specify pid file (default: Wisprd.pid)</source>
-        <translation>pid dosyasını belirt (varsayılan: Wispr.pid)</translation>
+        <source>Specify pid file (default: Rpicoind.pid)</source>
+        <translation>pid dosyasını belirt (varsayılan: Rpicoin.pid)</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -2636,24 +2636,24 @@ Adres: %4
         <source>%s, you must set a rpcpassword in the configuration file:
 %s
 It is recommended you use the following random password:
-rpcuser=Wisprrpc
+rpcuser=Rpicoinrpc
 rpcpassword=%s
 (you do not need to remember this password)
 The username and password MUST NOT be the same.
 If the file does not exist, create it with owner-readable-only file permissions.
 It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s &quot;Wispr Alert&quot; admin@foo.com
+for example: alertnotify=echo %%s | mail -s &quot;Rpicoin Alert&quot; admin@foo.com
 </source>
         <translation>%s, konfigürasyon dosyasında bir rpcpassword belirlemelisiniz: 
 %s
 Aşağıdaki rastgele şifreyi kullanmanız tavsiye edilir:
-rpcuser=Wisprrpc
+rpcuser=Rpicoinrpc
 rpcpassword=%s
 (bu şifreyi hatırlamanız gerekmemektedir)
 Kullanıcı adı ve şifre aynı OLMAMALIDIR.
 Dosya mevcut değilse, sadece sahibi tarafından okunabilir yetkiyle yaratın.
 Ayrıca sorunlardan haberdar edilmek için alertnotify parametresini doldurmanız önerilir;
-örneğin: alertnotify=echo %%s | mail -s &quot;Wispr Alarmı&quot; admin@foo.com
+örneğin: alertnotify=echo %%s | mail -s &quot;Rpicoin Alarmı&quot; admin@foo.com
 </translation>
     </message>
     <message>
@@ -2668,8 +2668,8 @@ Ayrıca sorunlardan haberdar edilmek için alertnotify parametresini doldurmanı
     </message>
     <message>
         <location line="+5"/>
-        <source>Listen for connections on &lt;port&gt; (default: 17000 or testnet: 17002)</source>
-        <translation>&lt;port&gt; üzerinde bağlantıları dinle (varsayılan: 17000 veya testnet: 17002)</translation>
+        <source>Listen for connections on &lt;port&gt; (default: 18000 or testnet: 18002)</source>
+        <translation>&lt;port&gt; üzerinde bağlantıları dinle (varsayılan: 18000 veya testnet: 18002)</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2718,8 +2718,8 @@ Ayrıca sorunlardan haberdar edilmek için alertnotify parametresini doldurmanı
     </message>
     <message>
         <location line="-126"/>
-        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 17001 or testnet: 17003)</source>
-        <translation>&lt;port&gt; üzerinde JSON-RPC bağlantılarını dinle (varsayılan: 17001 veya testnet: 17003)</translation>
+        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 18001 or testnet: 18003)</source>
+        <translation>&lt;port&gt; üzerinde JSON-RPC bağlantılarını dinle (varsayılan: 18001 veya testnet: 18003)</translation>
     </message>
     <message>
         <location line="-16"/>
@@ -2753,8 +2753,8 @@ Ayrıca sorunlardan haberdar edilmek için alertnotify parametresini doldurmanı
     </message>
     <message>
         <location line="+46"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong Wispr will not work properly.</source>
-        <translation>Uyarı: Lütfen bilgisayarınızın tarih ve saatinin doğru olduğunu kontrol ediniz! Saatiniz yanlış ise, Wispr düzgün çalışmayacaktır.</translation>
+        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong Rpicoin will not work properly.</source>
+        <translation>Uyarı: Lütfen bilgisayarınızın tarih ve saatinin doğru olduğunu kontrol ediniz! Saatiniz yanlış ise, Rpicoin düzgün çalışmayacaktır.</translation>
     </message>
     <message>
         <location line="-19"/>
@@ -3018,8 +3018,8 @@ Ayrıca sorunlardan haberdar edilmek için alertnotify parametresini doldurmanı
     </message>
     <message>
         <location line="+1"/>
-        <source>Imports blocks from external wsp000?.dat file</source>
-        <translation>Harici wsp000?.dat dosyasından blok içeri aktar</translation>
+        <source>Imports blocks from external rpi000?.dat file</source>
+        <translation>Harici rpi000?.dat dosyasından blok içeri aktar</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -3048,8 +3048,8 @@ Ayrıca sorunlardan haberdar edilmek için alertnotify parametresini doldurmanı
     </message>
     <message>
         <location line="+8"/>
-        <source>Initialization sanity check failed. Wispr is shutting down.</source>
-        <translation>Başlangıç uygunluk kontrolü başarısız oldu. Wispr kapatılıyor.</translation>
+        <source>Initialization sanity check failed. Rpicoin is shutting down.</source>
+        <translation>Başlangıç uygunluk kontrolü başarısız oldu. Rpicoin kapatılıyor.</translation>
     </message>
     <message>
         <location line="+20"/>
@@ -3103,13 +3103,13 @@ Ayrıca sorunlardan haberdar edilmek için alertnotify parametresini doldurmanı
     </message>
     <message>
         <location line="+4"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of Wispr</source>
-        <translation>wallet.dat yüklenirken hata: Cüzdan, daha yeni bir Wispr versiyonuna ihtiyaç duyuyor.</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of Rpicoin</source>
+        <translation>wallet.dat yüklenirken hata: Cüzdan, daha yeni bir Rpicoin versiyonuna ihtiyaç duyuyor.</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Wallet needed to be rewritten: restart Wispr to complete</source>
-        <translation>Cüzdanın yeniden yazılması gerekmektedir: Tamamlamak için Wispr&apos;i yeniden başlatın</translation>
+        <source>Wallet needed to be rewritten: restart Rpicoin to complete</source>
+        <translation>Cüzdanın yeniden yazılması gerekmektedir: Tamamlamak için Rpicoin&apos;i yeniden başlatın</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -3168,8 +3168,8 @@ Ayrıca sorunlardan haberdar edilmek için alertnotify parametresini doldurmanı
     </message>
     <message>
         <location line="+131"/>
-        <source>Unable to bind to %s on this computer. Wispr is probably already running.</source>
-        <translation>Bu bilgisayarda %s bağlanamadı. Wispr muhtemelen halen çalışmaktadır.</translation>
+        <source>Unable to bind to %s on this computer. Rpicoin is probably already running.</source>
+        <translation>Bu bilgisayarda %s bağlanamadı. Rpicoin muhtemelen halen çalışmaktadır.</translation>
     </message>
     <message>
         <location line="-108"/>
@@ -3198,8 +3198,8 @@ Ayrıca sorunlardan haberdar edilmek için alertnotify parametresini doldurmanı
     </message>
     <message>
         <location line="+3"/>
-        <source>Cannot obtain a lock on data directory %s. Wispr is probably already running.</source>
-        <translation>Veri klasörü %s üzerinde kilit elde edilemedi. Wispr muhtemelen halen çalışmaktadır.</translation>
+        <source>Cannot obtain a lock on data directory %s. Rpicoin is probably already running.</source>
+        <translation>Veri klasörü %s üzerinde kilit elde edilemedi. Rpicoin muhtemelen halen çalışmaktadır.</translation>
     </message>
     <message>
         <location line="+4"/>

@@ -13,17 +13,17 @@
 	<key>CFBundleExecutable</key>
 	<string>Wispr-Qt</string>
 	<key>CFBundleIdentifier</key>
-	<string>co.wispr.Wispr-Qt</string>
+	<string>co.rpicoin.Rpicoin-Qt</string>
         <key>CFBundleURLTypes</key>
         <array>
           <dict>
             <key>CFBundleTypeRole</key>
             <string>Editor</string>
             <key>CFBundleURLName</key>
-            <string>co.wispr.WisprPayment</string>
+            <string>co.rpicoin.RpicoinPayment</string>
             <key>CFBundleURLSchemes</key>
             <array>
-              <string>wispr</string>
+              <string>rpicoin</string>
             </array>
           </dict>
         </array>

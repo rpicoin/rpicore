@@ -84,7 +84,7 @@ void setupAmountWidget(QLineEdit *widget, QWidget *parent)
 bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out)
 {
     // NovaCoin: check prefix
-    if(uri.scheme() != QString("Wispr"))
+    if(uri.scheme() != QString("Rpicoin"))
         return false;
 
     SendCoinsRecipient rv;
@@ -129,13 +129,13 @@ bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out)
 
 bool parseBitcoinURI(QString uri, SendCoinsRecipient *out)
 {
-    // Convert Wispr:// to Wispr:
+    // Convert Rpicoin:// to Rpicoin:
     //
     //    Cannot handle this later, because bitcoin:// will cause Qt to see the part after // as host,
     //    which will lower-case it (and thus invalidate the address).
-    if(uri.startsWith("Wispr://"))
+    if(uri.startsWith("Rpicoin://"))
     {
-        uri.replace(0, 12, "Wispr:");
+        uri.replace(0, 12, "Rpicoin:");
     }
     QUrl uriInstance(uri);
     return parseBitcoinURI(uriInstance, out);
@@ -279,7 +279,7 @@ bool ToolTipToRichTextFilter::eventFilter(QObject *obj, QEvent *evt)
 #ifdef WIN32
 boost::filesystem::path static StartupShortcutPath()
 {
-    return GetSpecialFolderPath(CSIDL_STARTUP) / "Wispr.lnk";
+    return GetSpecialFolderPath(CSIDL_STARTUP) / "Rpicoin.lnk";
 }
 
 bool GetStartOnSystemStartup()
@@ -361,7 +361,7 @@ boost::filesystem::path static GetAutostartDir()
 
 boost::filesystem::path static GetAutostartFilePath()
 {
-    return GetAutostartDir() / "Wispr.desktop";
+    return GetAutostartDir() / "Rpicoin.desktop";
 }
 
 bool GetStartOnSystemStartup()
@@ -402,7 +402,7 @@ bool SetStartOnSystemStartup(bool fAutoStart)
         // Write a bitcoin.desktop file to the autostart directory:
         optionFile << "[Desktop Entry]\n";
         optionFile << "Type=Application\n";
-        optionFile << "Name=Wispr\n";
+        optionFile << "Name=Rpicoin\n";
         optionFile << "Exec=" << pszExePath << " -min\n";
         optionFile << "Terminal=false\n";
         optionFile << "Hidden=false\n";
@@ -412,6 +412,9 @@ bool SetStartOnSystemStartup(bool fAutoStart)
 }
 #else
 
+// TODO: OSX startup stuff; see:
+// https://developer.apple.com/library/mac/#documentation/MacOSX/Conceptual/BPSystemStartup/Articles/CustomLogin.html
+
 bool GetStartOnSystemStartup() { return false; }
 bool SetStartOnSystemStartup(bool fAutoStart) { return false; }
 
@@ -420,10 +423,10 @@ bool SetStartOnSystemStartup(bool fAutoStart) { return false; }
 HelpMessageBox::HelpMessageBox(QWidget *parent) :
     QMessageBox(parent)
 {
-    header = tr("Wispr-Qt") + " " + tr("version") + " " +
+    header = tr("Rpicoin-Qt") + " " + tr("version") + " " +
         QString::fromStdString(FormatFullVersion()) + "\n\n" +
         tr("Usage:") + "\n" +
-        "  Wispr-qt [" + tr("command-line options") + "]                     " + "\n";
+        "  Rpicoin-qt [" + tr("command-line options") + "]                     " + "\n";
 
     coreOptions = QString::fromStdString(HelpMessage());
 
@@ -432,7 +435,7 @@ HelpMessageBox::HelpMessageBox(QWidget *parent) :
         "  -min                   " + tr("Start minimized") + "\n" +
         "  -splash                " + tr("Show splash screen on startup (default: 1)") + "\n";
 
-    setWindowTitle(tr("Wispr-Qt"));
+    setWindowTitle(tr("Rpicoin-Qt"));
     setTextFormat(Qt::PlainText);
     // setMinimumWidth is ignored for QMessageBox so put in non-breaking spaces to make it wider.
     setText(header + QString(QChar(0x2003)).repeated(50));
@@ -458,45 +461,45 @@ void HelpMessageBox::showOrPrint()
 }
 
 /*
- Main color pallet.
-Donker: #2d3245
-Groen: #2ebb89
-Licht-blauw: #4a5d97
-Blauw: #2e3e70
-Vaal-blauw: #3d4664
+Donker: #2d3245 383435
+Groen: #2ebb89 c95353
+Licht-blauw: #4a5d97 ffffff
+Blauw: #2e3e70 000000
+Vaal-blauw: #3d4664 000000
 */
 
-void SetWisprTheme(QApplication& app)
+void SetBlackThemeQSS(QApplication& app)
 {
-    app.setStyleSheet("QWidget        { background: #3d4664; color: #2ebb89; }"
+    app.setStyleSheet("QWidget        { background: #383435; color: #c95353; }"
                       "QFrame         { border: none; }"
                       "QComboBox      { color: #ffffff; }"
                       "QComboBox QAbstractItemView::item { color: #ffffff; }"
-                      "QPushButton    { background: #2ebb89; color: #ffffff; }"
-                      "QDoubleSpinBox { background: #3d4664; color: #ffffff; border-color: #2ebb89; }"
-                      "QLineEdit      { background: #3d4664; color: #ffffff; border-color: #2ebb89; }"
-                      "QTextEdit      { background: #3d4664; color: #ffffff; }"
-                      "QPlainTextEdit { background: #3d4664; color: #ffffff; }"
-                      "QMenuBar       { background: #3d4664; color: #2ebb89; }"
-                      "QMenu          { background: #2d3245; color: #ffffff; }"
-                      "QMenu::item:selected { background-color: #2ebb89; }"
+                      "QPushButton    { background: #ffffff; color: #c95353; }"
+                      "QDoubleSpinBox { background: #ffffff; color: #000000; border-color: #c95353; }"
+                      "QLineEdit      { background: #ffffff; color: #000000; border-color: #c95353; }"
+                      "QTextEdit      { background: #ffffff; color: #000000; }"
+                      "QPlainTextEdit { background: #ffffff; color: #000000; }"
+                      "QMenuBar       { background: #383435; color: #c95353; }"
+                      "QMenu          { background: #ffffff; color: #000000; }"
+                      "QMenu::item:selected { background-color: #c95353; }"
+                      "QLabel         { color: #ffffff; }"
                       "QLabel         { color: #ffffff; }"
                       "QScrollBar     { color: #ffffff; }"
-                      "QCheckBox      { color: #2ebb89; }"
-                      "QRadioButton   { color: #2ebb89; }"
-                      "QTabBar::tab   { color: #2ebb89; border: 1px solid #2ebb89; border-bottom: none; padding: 5px; }"
-                      "QTabBar::tab:selected  { background: #3d4664; }"
-                      "QTabBar::tab:!selected { background: #3d4664; margin-top: 2px; }"
-                      "QTabWidget::pane { border: 1px solid #3d4664; }"
-                      "QToolButton    { background: #2d3245; color: #ffffff; border: none; margin: 5px; padding: 8px; border-left-style: solid; border-left-width: 3px; border-left-color: #2d3245; }"
-                      "QToolButton:checked { background: #2d3245; color: #2ebb89; border: none; border-left-style: solid; border-left-width: 3px; border-left-color: #2ebb89; }"
-                      "QProgressBar   { color: #ffffff; border-color: #2ebb89; border-width: 2px; border-style: solid; }"
-                      "QProgressBar::chunk { background: #2ebb89; }"
-                      "QTreeView::item { background: #3d4664; color: #2ebb89; }"
+                      "QCheckBox      { color: #ffffff; }"
+                      "QRadioButton   { color: #ffffff; }"
+                      "QTabBar::tab   { color: #000000; border: 1px solid #ffffff; border-bottom: none; padding: 5px; }"
+                      "QTabBar::tab:selected  { background: #ffffff; }"
+                      "QTabBar::tab:!selected { background: #ffffff; margin-top: 2px; }"
+                      "QTabWidget::pane { border: 1px solid #ffffff; }"
+                      "QToolButton    { background: #000000; color: #ffffff; border: none; margin: 5px; padding: 8px; border-left-style: solid; border-left-width: 3px; border-left-color: #000000; }"
+                      "QToolButton:checked { background: #000000; color: #c95353; border: none; border-left-style: solid; border-left-width: 3px; border-left-color: #c95353; }"
+                      "QProgressBar   { color: #ffffff; border-color: #ffffff; border-width: 2px; border-style: solid; }"
+                      "QProgressBar::chunk { background: #c95353; }"
+                      "QTreeView::item { background: #000000; color: #c95353; }"
                       "QTreeView::item:selected { background-color: #ffffff; }"
-                      "QTableView     { background: #3d4664; color: #ffffff; gridline-color: #2ebb89; }"
-                      "QHeaderView::section { background: #3d4664; color: #ffffff; }"
-                      "QToolBar       { background: #2d3245; color: #ffffff; border: none; }");
+                      "QTableView     { background: #ffffff; color: #000000; gridline-color: #2ebb89; }"
+                      "QHeaderView::section { background: #ffffff; color: #000000; }"
+                      "QToolBar       { background: #000000; color: #ffffff; border: none; }");
 }
 
 } // namespace GUIUtil

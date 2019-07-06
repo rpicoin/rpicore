@@ -5,20 +5,20 @@
     <name>AboutDialog</name>
     <message>
         <location filename="../forms/aboutdialog.ui" line="+14"/>
-        <source>About Wispr</source>
-        <translation>About Wispr</translation>
+        <source>About Rpicoin</source>
+        <translation>About Rpicoin</translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>&lt;b&gt;Wispr&lt;/b&gt; version</source>
-        <translation>&lt;b&gt;Wispr&lt;/b&gt; version</translation>
+        <source>&lt;b&gt;Rpicoin&lt;/b&gt; version</source>
+        <translation>&lt;b&gt;Rpicoin&lt;/b&gt; version</translation>
     </message>
     <message>
         <location line="+41"/>
         <source>Copyright © 2009-2017 The Bitcoin developers
 Copyright © 2012-2014 The NovaCoin developers
 Copyright © 2014-2017 The Blackcoin developers
-Copyright © 2017 The Wispr developers</source>
+Copyright © 2017 The Rpicoin developers</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -61,8 +61,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-43"/>
-        <source>These are your Wispr addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
-        <translation>These are your Wispr addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</translation>
+        <source>These are your Rpicoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
+        <translation>These are your Rpicoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</translation>
     </message>
     <message>
         <location line="+53"/>
@@ -76,8 +76,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+7"/>
-        <source>Sign a message to prove you own a Wispr address</source>
-        <translation>Sign a message to prove you own a Wispr address</translation>
+        <source>Sign a message to prove you own a Rpicoin address</source>
+        <translation>Sign a message to prove you own a Rpicoin address</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -91,8 +91,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-10"/>
-        <source>Verify a message to ensure it was signed with a specified Wispr address</source>
-        <translation>Verify a message to ensure it was signed with a specified Wispr address</translation>
+        <source>Verify a message to ensure it was signed with a specified Rpicoin address</source>
+        <translation>Verify a message to ensure it was signed with a specified Rpicoin address</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -259,8 +259,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+82"/>
-        <source>Wispr will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
-        <translation>Wispr will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</translation>
+        <source>Rpicoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
+        <translation>Rpicoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -353,8 +353,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+4"/>
-        <source>Show information about Wispr</source>
-        <translation>Show information about Wispr</translation>
+        <source>Show information about Rpicoin</source>
+        <translation>Show information about Rpicoin</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -393,13 +393,13 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-55"/>
-        <source>Send coins to a Wispr address</source>
-        <translation>Send coins to a Wispr address</translation>
+        <source>Send coins to a Rpicoin address</source>
+        <translation>Send coins to a Rpicoin address</translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>Modify configuration options for Wispr</source>
-        <translation>Modify configuration options for Wispr</translation>
+        <source>Modify configuration options for Rpicoin</source>
+        <translation>Modify configuration options for Rpicoin</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -439,8 +439,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location line="-214"/>
         <location line="+555"/>
-        <source>Wispr</source>
-        <translation>Wispr</translation>
+        <source>Rpicoin</source>
+        <translation>Rpicoin</translation>
     </message>
     <message>
         <location line="-555"/>
@@ -449,8 +449,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+193"/>
-        <source>&amp;About Wispr</source>
-        <translation>&amp;About Wispr</translation>
+        <source>&amp;About Rpicoin</source>
+        <translation>&amp;About Rpicoin</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -501,15 +501,15 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location line="+0"/>
         <location line="+58"/>
-        <source>Wispr client</source>
-        <translation>Wispr client</translation>
+        <source>Rpicoin client</source>
+        <translation>Rpicoin client</translation>
     </message>
     <message numerus="yes">
         <location line="+70"/>
-        <source>%n active connection(s) to Wispr network</source>
+        <source>%n active connection(s) to Rpicoin network</source>
         <translation>
-            <numerusform>%n active connection to Wispr network</numerusform>
-            <numerusform>%n active connections to Wispr network</numerusform>
+            <numerusform>%n active connection to Rpicoin network</numerusform>
+            <numerusform>%n active connections to Rpicoin network</numerusform>
         </translation>
     </message>
     <message>
@@ -604,8 +604,8 @@ Address: %4
     <message>
         <location line="-15"/>
         <location line="+15"/>
-        <source>URI can not be parsed! This can be caused by an invalid Wispr address or malformed URI parameters.</source>
-        <translation>URI can not be parsed! This can be caused by an invalid Wispr address or malformed URI parameters.</translation>
+        <source>URI can not be parsed! This can be caused by an invalid Rpicoin address or malformed URI parameters.</source>
+        <translation>URI can not be parsed! This can be caused by an invalid Rpicoin address or malformed URI parameters.</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -745,8 +745,8 @@ Address: %4
     </message>
     <message>
         <location filename="../bitcoin.cpp" line="+104"/>
-        <source>A fatal error occurred. Wispr can no longer continue safely and will quit.</source>
-        <translation>A fatal error occurred. Wispr can no longer continue safely and will quit.</translation>
+        <source>A fatal error occurred. Rpicoin can no longer continue safely and will quit.</source>
+        <translation>A fatal error occurred. Rpicoin can no longer continue safely and will quit.</translation>
     </message>
 </context>
 <context>
@@ -1011,8 +1011,8 @@ Address: %4
     </message>
     <message>
         <location line="-5"/>
-        <source>The entered address &quot;%1&quot; is not a valid Wispr address.</source>
-        <translation>The entered address &quot;%1&quot; is not a valid Wispr address.</translation>
+        <source>The entered address &quot;%1&quot; is not a valid Rpicoin address.</source>
+        <translation>The entered address &quot;%1&quot; is not a valid Rpicoin address.</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1030,8 +1030,8 @@ Address: %4
     <message>
         <location filename="../guiutil.cpp" line="+426"/>
         <location line="+12"/>
-        <source>Wispr-Qt</source>
-        <translation>Wispr-Qt</translation>
+        <source>Rpicoin-Qt</source>
+        <translation>Rpicoin-Qt</translation>
     </message>
     <message>
         <location line="-12"/>
@@ -1103,13 +1103,13 @@ Address: %4
     </message>
     <message>
         <location line="+31"/>
-        <source>Automatically start Wispr after logging in to the system.</source>
-        <translation>Automatically start Wispr after logging in to the system.</translation>
+        <source>Automatically start Rpicoin after logging in to the system.</source>
+        <translation>Automatically start Rpicoin after logging in to the system.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Start Wispr on system login</source>
-        <translation>&amp;Start Wispr on system login</translation>
+        <source>&amp;Start Rpicoin on system login</source>
+        <translation>&amp;Start Rpicoin on system login</translation>
     </message>
     <message>
         <location line="+21"/>
@@ -1118,8 +1118,8 @@ Address: %4
     </message>
     <message>
         <location line="+6"/>
-        <source>Automatically open the Wispr client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Automatically open the Wispr client port on the router. This only works when your router supports UPnP and it is enabled.</translation>
+        <source>Automatically open the Rpicoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Automatically open the Rpicoin client port on the router. This only works when your router supports UPnP and it is enabled.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1148,7 +1148,7 @@ Address: %4
     </message>
     <message>
         <location line="-57"/>
-        <source>Connect to the Wispr network through a SOCKS5 proxy (e.g. when connecting through Tor).</source>
+        <source>Connect to the Rpicoin network through a SOCKS5 proxy (e.g. when connecting through Tor).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1193,8 +1193,8 @@ Address: %4
     </message>
     <message>
         <location line="+13"/>
-        <source>The user interface language can be set here. This setting will take effect after restarting Wispr.</source>
-        <translation>The user interface language can be set here. This setting will take effect after restarting Wispr.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting Rpicoin.</source>
+        <translation>The user interface language can be set here. This setting will take effect after restarting Rpicoin.</translation>
     </message>
     <message>
         <location line="+11"/>
@@ -1250,8 +1250,8 @@ Address: %4
     <message>
         <location line="-9"/>
         <location line="+9"/>
-        <source>This setting will take effect after restarting Wispr.</source>
-        <translation>This setting will take effect after restarting Wispr.</translation>
+        <source>This setting will take effect after restarting Rpicoin.</source>
+        <translation>This setting will take effect after restarting Rpicoin.</translation>
     </message>
     <message>
         <location line="+29"/>
@@ -1269,8 +1269,8 @@ Address: %4
     <message>
         <location line="+46"/>
         <location line="+247"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Wispr network after a connection is established, but this process has not completed yet.</source>
-        <translation>The displayed information may be out of date. Your wallet automatically synchronizes with the Wispr network after a connection is established, but this process has not completed yet.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Rpicoin network after a connection is established, but this process has not completed yet.</source>
+        <translation>The displayed information may be out of date. Your wallet automatically synchronizes with the Rpicoin network after a connection is established, but this process has not completed yet.</translation>
     </message>
     <message>
         <location line="-173"/>
@@ -1343,7 +1343,7 @@ Address: %4
     <name>PaymentServer</name>
     <message>
         <location filename="../paymentserver.cpp" line="+107"/>
-        <source>Cannot start Wispr: click-to-pay handler</source>
+        <source>Cannot start Rpicoin: click-to-pay handler</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1513,8 +1513,8 @@ Address: %4
     </message>
     <message>
         <location line="+7"/>
-        <source>Show the Wispr-Qt help message to get a list with possible Wispr command-line options.</source>
-        <translation>Show the Wispr-Qt help message to get a list with possible Wispr command-line options.</translation>
+        <source>Show the Rpicoin-Qt help message to get a list with possible Rpicoin command-line options.</source>
+        <translation>Show the Rpicoin-Qt help message to get a list with possible Rpicoin command-line options.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1533,13 +1533,13 @@ Address: %4
     </message>
     <message>
         <location line="-104"/>
-        <source>Wispr - Debug window</source>
-        <translation>Wispr - Debug window</translation>
+        <source>Rpicoin - Debug window</source>
+        <translation>Rpicoin - Debug window</translation>
     </message>
     <message>
         <location line="+25"/>
-        <source>Wispr Core</source>
-        <translation>Wispr Core</translation>
+        <source>Rpicoin Core</source>
+        <translation>Rpicoin Core</translation>
     </message>
     <message>
         <location line="+256"/>
@@ -1548,8 +1548,8 @@ Address: %4
     </message>
     <message>
         <location line="+7"/>
-        <source>Open the Wispr debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Open the Wispr debug log file from the current data directory. This can take a few seconds for large log files.</translation>
+        <source>Open the Rpicoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Open the Rpicoin debug log file from the current data directory. This can take a few seconds for large log files.</translation>
     </message>
     <message>
         <location line="+102"/>
@@ -1558,8 +1558,8 @@ Address: %4
     </message>
     <message>
         <location filename="../rpcconsole.cpp" line="-28"/>
-        <source>Welcome to the Wispr RPC console.</source>
-        <translation>Welcome to the Wispr RPC console.</translation>
+        <source>Welcome to the Rpicoin RPC console.</source>
+        <translation>Welcome to the Rpicoin RPC console.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -1729,8 +1729,8 @@ Address: %4
     </message>
     <message>
         <location filename="../sendcoinsdialog.cpp" line="-171"/>
-        <source>Enter a Wispr address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
-        <translation>Enter a Wispr address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
+        <source>Enter a Rpicoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <translation>Enter a Rpicoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -1824,7 +1824,7 @@ Address: %4
     </message>
     <message>
         <location line="+241"/>
-        <source>WARNING: Invalid Wispr address</source>
+        <source>WARNING: Invalid Rpicoin address</source>
         <translation></translation>
     </message>
     <message>
@@ -1898,8 +1898,8 @@ Address: %4
     </message>
     <message>
         <location filename="../sendcoinsentry.cpp" line="+1"/>
-        <source>Enter a Wispr address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
-        <translation>Enter a Wispr address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
+        <source>Enter a Rpicoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <translation>Enter a Rpicoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
     </message>
 </context>
 <context>
@@ -1959,8 +1959,8 @@ Address: %4
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this Wispr address</source>
-        <translation>Sign the message to prove you own this Wispr address</translation>
+        <source>Sign the message to prove you own this Rpicoin address</source>
+        <translation>Sign the message to prove you own this Rpicoin address</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -1991,8 +1991,8 @@ Address: %4
     </message>
     <message>
         <location line="+40"/>
-        <source>Verify the message to ensure it was signed with the specified Wispr address</source>
-        <translation>Verify the message to ensure it was signed with the specified Wispr address</translation>
+        <source>Verify the message to ensure it was signed with the specified Rpicoin address</source>
+        <translation>Verify the message to ensure it was signed with the specified Rpicoin address</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -2002,8 +2002,8 @@ Address: %4
     <message>
         <location filename="../signverifymessagedialog.cpp" line="+27"/>
         <location line="+3"/>
-        <source>Enter a Wispr address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
-        <translation>Enter a Wispr address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
+        <source>Enter a Rpicoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <translation>Enter a Rpicoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
     </message>
     <message>
         <location line="-2"/>
@@ -2012,8 +2012,8 @@ Address: %4
     </message>
     <message>
         <location line="+3"/>
-        <source>Enter Wispr signature</source>
-        <translation>Enter Wispr signature</translation>
+        <source>Enter Rpicoin signature</source>
+        <translation>Enter Rpicoin signature</translation>
     </message>
     <message>
         <location line="+85"/>
@@ -2603,8 +2603,8 @@ Address: %4
     <name>bitcoin-core</name>
     <message>
         <location filename="../bitcoinstrings.cpp" line="+8"/>
-        <source>Wispr version</source>
-        <translation>Wispr version</translation>
+        <source>Rpicoin version</source>
+        <translation>Rpicoin version</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2613,8 +2613,8 @@ Address: %4
     </message>
     <message>
         <location line="+1"/>
-        <source>Send command to -server or Wisprd</source>
-        <translation>Send command to -server or Wisprd</translation>
+        <source>Send command to -server or Rpicoind</source>
+        <translation>Send command to -server or Rpicoind</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2633,13 +2633,13 @@ Address: %4
     </message>
     <message>
         <location line="+2"/>
-        <source>Specify configuration file (default: Wispr.conf)</source>
-        <translation>Specify configuration file (default: Wispr.conf)</translation>
+        <source>Specify configuration file (default: Rpicoin.conf)</source>
+        <translation>Specify configuration file (default: Rpicoin.conf)</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Specify pid file (default: Wisprd.pid)</source>
-        <translation>Specify pid file (default: Wisprd.pid)</translation>
+        <source>Specify pid file (default: Rpicoind.pid)</source>
+        <translation>Specify pid file (default: Rpicoind.pid)</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -2656,13 +2656,13 @@ Address: %4
         <source>%s, you must set a rpcpassword in the configuration file:
 %s
 It is recommended you use the following random password:
-rpcuser=Wisprrpc
+rpcuser=Rpicoinrpc
 rpcpassword=%s
 (you do not need to remember this password)
 The username and password MUST NOT be the same.
 If the file does not exist, create it with owner-readable-only file permissions.
 It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s &quot;Wispr Alert&quot; admin@foo.com
+for example: alertnotify=echo %%s | mail -s &quot;Rpicoin Alert&quot; admin@foo.com
 </source>
         <translation type="unfinished"></translation>
     </message>
@@ -2678,8 +2678,8 @@ for example: alertnotify=echo %%s | mail -s &quot;Wispr Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="+5"/>
-        <source>Listen for connections on &lt;port&gt; (default: 17000 or testnet: 17002)</source>
-        <translation>Listen for connections on &lt;port&gt; (default: 17000 or testnet: 17002)</translation>
+        <source>Listen for connections on &lt;port&gt; (default: 18000 or testnet: 18002)</source>
+        <translation>Listen for connections on &lt;port&gt; (default: 18000 or testnet: 18002)</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2728,7 +2728,7 @@ for example: alertnotify=echo %%s | mail -s &quot;Wispr Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="-126"/>
-        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 17001 or testnet: 17003)</source>
+        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 18001 or testnet: 18003)</source>
         <translation></translation>
     </message>
     <message>
@@ -2763,8 +2763,8 @@ for example: alertnotify=echo %%s | mail -s &quot;Wispr Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="+46"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong Wispr will not work properly.</source>
-        <translation>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong Wispr will not work properly.</translation>
+        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong Rpicoin will not work properly.</source>
+        <translation>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong Rpicoin will not work properly.</translation>
     </message>
     <message>
         <location line="-19"/>
@@ -3028,8 +3028,8 @@ for example: alertnotify=echo %%s | mail -s &quot;Wispr Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="+1"/>
-        <source>Imports blocks from external wsp000?.dat file</source>
-        <translation>Imports blocks from external wsp000?.dat file</translation>
+        <source>Imports blocks from external rpi000?.dat file</source>
+        <translation>Imports blocks from external rpi000?.dat file</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -3058,7 +3058,7 @@ for example: alertnotify=echo %%s | mail -s &quot;Wispr Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="+8"/>
-        <source>Initialization sanity check failed. Wispr is shutting down.</source>
+        <source>Initialization sanity check failed. Rpicoin is shutting down.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3113,13 +3113,13 @@ for example: alertnotify=echo %%s | mail -s &quot;Wispr Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="+4"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of Wispr</source>
-        <translation>Error loading wallet.dat: Wallet requires newer version of Wispr</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of Rpicoin</source>
+        <translation>Error loading wallet.dat: Wallet requires newer version of Rpicoin</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Wallet needed to be rewritten: restart Wispr to complete</source>
-        <translation>Wallet needed to be rewritten: restart Wispr to complete</translation>
+        <source>Wallet needed to be rewritten: restart Rpicoin to complete</source>
+        <translation>Wallet needed to be rewritten: restart Rpicoin to complete</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -3178,8 +3178,8 @@ for example: alertnotify=echo %%s | mail -s &quot;Wispr Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="+131"/>
-        <source>Unable to bind to %s on this computer. Wispr is probably already running.</source>
-        <translation>Unable to bind to %s on this computer. Wispr is probably already running.</translation>
+        <source>Unable to bind to %s on this computer. Rpicoin is probably already running.</source>
+        <translation>Unable to bind to %s on this computer. Rpicoin is probably already running.</translation>
     </message>
     <message>
         <location line="-108"/>
@@ -3208,7 +3208,7 @@ for example: alertnotify=echo %%s | mail -s &quot;Wispr Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="+3"/>
-        <source>Cannot obtain a lock on data directory %s. Wispr is probably already running.</source>
+        <source>Cannot obtain a lock on data directory %s. Rpicoin is probably already running.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

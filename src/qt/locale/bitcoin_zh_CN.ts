@@ -3,12 +3,12 @@
     <name>AboutDialog</name>
     <message>
         <location filename="../forms/aboutdialog.ui" line="+14"/>
-        <source>About Wispr</source>
+        <source>About Rpicoin</source>
         <translation>关于黑币</translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>&lt;b&gt;Wispr&lt;/b&gt; version</source>
+        <source>&lt;b&gt;Rpicoin&lt;/b&gt; version</source>
         <translation>&lt;b&gt;黑币客户端&lt;/b&gt; 版本</translation>
     </message>
     <message>
@@ -16,7 +16,7 @@
         <source>Copyright © 2009-2017 The Bitcoin developers
 Copyright © 2012-2014 The NovaCoin developers
 Copyright © 2014-2017 The Blackcoin developers
-Copyright © 2017 The Wispr developers</source>
+Copyright © 2017 The Rpicoin developers</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -64,7 +64,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-43"/>
-        <source>These are your Wispr addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
+        <source>These are your Rpicoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
         <translation>这是您用来接收支付的黑币地址列表。为不同的支付方建立不同的地址以便于了解支付来源。</translation>
     </message>
     <message>
@@ -79,7 +79,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+7"/>
-        <source>Sign a message to prove you own a Wispr address</source>
+        <source>Sign a message to prove you own a Rpicoin address</source>
         <translation>对信息进行签名以证明您对该黑币地址的所有权</translation>
     </message>
     <message>
@@ -94,7 +94,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-10"/>
-        <source>Verify a message to ensure it was signed with a specified Wispr address</source>
+        <source>Verify a message to ensure it was signed with a specified Rpicoin address</source>
         <translation>验证信息以保证其经过指定黑币地址的签名</translation>
     </message>
     <message>
@@ -262,7 +262,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+82"/>
-        <source>Wispr will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
+        <source>Rpicoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
         <translation>黑币客户端即将关闭以完成加密过程。请记住，加密钱包并不能完全防止您的电子货币被入侵您计算机的木马软件盗窃。</translation>
     </message>
     <message>
@@ -356,7 +356,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+4"/>
-        <source>Show information about Wispr</source>
+        <source>Show information about Rpicoin</source>
         <translation>显示关于黑币的信息</translation>
     </message>
     <message>
@@ -396,12 +396,12 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-55"/>
-        <source>Send coins to a Wispr address</source>
+        <source>Send coins to a Rpicoin address</source>
         <translation>向指定的地址发送黑币</translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>Modify configuration options for Wispr</source>
+        <source>Modify configuration options for Rpicoin</source>
         <translation>更改设置选项</translation>
     </message>
     <message>
@@ -442,7 +442,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location line="-214"/>
         <location line="+555"/>
-        <source>Wispr</source>
+        <source>Rpicoin</source>
         <translation>黑币</translation>
     </message>
     <message>
@@ -452,7 +452,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+193"/>
-        <source>&amp;About Wispr</source>
+        <source>&amp;About Rpicoin</source>
         <translation>关于黑币(&amp;A)</translation>
     </message>
     <message>
@@ -504,12 +504,12 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location line="+0"/>
         <location line="+58"/>
-        <source>Wispr client</source>
+        <source>Rpicoin client</source>
         <translation>黑币客户端</translation>
     </message>
     <message numerus="yes">
         <location line="+70"/>
-        <source>%n active connection(s) to Wispr network</source>
+        <source>%n active connection(s) to Rpicoin network</source>
         <translation><numerusform>与黑币网络建立了 %n 个连接</numerusform></translation>
     </message>
     <message>
@@ -604,7 +604,7 @@ Address: %4
     <message>
         <location line="-15"/>
         <location line="+15"/>
-        <source>URI can not be parsed! This can be caused by an invalid Wispr address or malformed URI parameters.</source>
+        <source>URI can not be parsed! This can be caused by an invalid Rpicoin address or malformed URI parameters.</source>
         <translation>无法解析URI：无效的黑币地址或错误的URI参数。</translation>
     </message>
     <message>
@@ -727,7 +727,7 @@ Address: %4
     </message>
     <message>
         <location filename="../bitcoin.cpp" line="+104"/>
-        <source>A fatal error occurred. Wispr can no longer continue safely and will quit.</source>
+        <source>A fatal error occurred. Rpicoin can no longer continue safely and will quit.</source>
         <translation>发生严重错误，黑币客户端即将关闭。</translation>
     </message>
 </context>
@@ -998,7 +998,7 @@ Address: %4
     </message>
     <message>
         <location line="-5"/>
-        <source>The entered address &quot;%1&quot; is not a valid Wispr address.</source>
+        <source>The entered address &quot;%1&quot; is not a valid Rpicoin address.</source>
         <translation>“%1” 不是有效的黑币地址。</translation>
     </message>
     <message>
@@ -1017,8 +1017,8 @@ Address: %4
     <message>
         <location filename="../guiutil.cpp" line="+426"/>
         <location line="+12"/>
-        <source>Wispr-Qt</source>
-        <translation>黑币客户端Wispr-Qt</translation>
+        <source>Rpicoin-Qt</source>
+        <translation>黑币客户端Rpicoin-Qt</translation>
     </message>
     <message>
         <location line="-12"/>
@@ -1090,12 +1090,12 @@ Address: %4
     </message>
     <message>
         <location line="+31"/>
-        <source>Automatically start Wispr after logging in to the system.</source>
+        <source>Automatically start Rpicoin after logging in to the system.</source>
         <translation>开机自动启动黑币客户端</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Start Wispr on system login</source>
+        <source>&amp;Start Rpicoin on system login</source>
         <translation>开机时自动启动黑币客户端(&amp;S)</translation>
     </message>
     <message>
@@ -1105,7 +1105,7 @@ Address: %4
     </message>
     <message>
         <location line="+6"/>
-        <source>Automatically open the Wispr client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <source>Automatically open the Rpicoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
         <translation>路由器自动打开黑币客户端端口。该功能仅在路由器开启UPnP支持时有效。</translation>
     </message>
     <message>
@@ -1135,7 +1135,7 @@ Address: %4
     </message>
     <message>
         <location line="-57"/>
-        <source>Connect to the Wispr network through a SOCKS5 proxy (e.g. when connecting through Tor).</source>
+        <source>Connect to the Rpicoin network through a SOCKS5 proxy (e.g. when connecting through Tor).</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1180,7 +1180,7 @@ Address: %4
     </message>
     <message>
         <location line="+13"/>
-        <source>The user interface language can be set here. This setting will take effect after restarting Wispr.</source>
+        <source>The user interface language can be set here. This setting will take effect after restarting Rpicoin.</source>
         <translation>在此设置用户界面语言。重启黑币客户端后设置生效。</translation>
     </message>
     <message>
@@ -1237,7 +1237,7 @@ Address: %4
     <message>
         <location line="-9"/>
         <location line="+9"/>
-        <source>This setting will take effect after restarting Wispr.</source>
+        <source>This setting will take effect after restarting Rpicoin.</source>
         <translation>重启客户端后设置生效</translation>
     </message>
     <message>
@@ -1256,7 +1256,7 @@ Address: %4
     <message>
         <location line="+46"/>
         <location line="+247"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Wispr network after a connection is established, but this process has not completed yet.</source>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Rpicoin network after a connection is established, but this process has not completed yet.</source>
         <translation>所显示的信息尚未更新，建立连接后钱包客户端会自动和网络进行同步，但目前该过程尚未完成。</translation>
     </message>
     <message>
@@ -1330,7 +1330,7 @@ Address: %4
     <name>PaymentServer</name>
     <message>
         <location filename="../paymentserver.cpp" line="+107"/>
-        <source>Cannot start Wispr: click-to-pay handler</source>
+        <source>Cannot start Rpicoin: click-to-pay handler</source>
         <translation>无法启动黑币: 点击支付处理器</translation>
     </message>
 </context>
@@ -1500,7 +1500,7 @@ Address: %4
     </message>
     <message>
         <location line="+7"/>
-        <source>Show the Wispr-Qt help message to get a list with possible Wispr command-line options.</source>
+        <source>Show the Rpicoin-Qt help message to get a list with possible Rpicoin command-line options.</source>
         <translation>显示关于命令行选项的帮助信息。</translation>
     </message>
     <message>
@@ -1520,12 +1520,12 @@ Address: %4
     </message>
     <message>
         <location line="-104"/>
-        <source>Wispr - Debug window</source>
+        <source>Rpicoin - Debug window</source>
         <translation>黑币客户端-调试窗口</translation>
     </message>
     <message>
         <location line="+25"/>
-        <source>Wispr Core</source>
+        <source>Rpicoin Core</source>
         <translation>黑币核心进程</translation>
     </message>
     <message>
@@ -1535,7 +1535,7 @@ Address: %4
     </message>
     <message>
         <location line="+7"/>
-        <source>Open the Wispr debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <source>Open the Rpicoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
         <translation>打开调试日志文件，对于较大的文件，这可能持续几秒钟。</translation>
     </message>
     <message>
@@ -1545,7 +1545,7 @@ Address: %4
     </message>
     <message>
         <location filename="../rpcconsole.cpp" line="-28"/>
-        <source>Welcome to the Wispr RPC console.</source>
+        <source>Welcome to the Rpicoin RPC console.</source>
         <translation>欢迎使用黑币RPC控制台。</translation>
     </message>
     <message>
@@ -1716,7 +1716,7 @@ Address: %4
     </message>
     <message>
         <location filename="../sendcoinsdialog.cpp" line="-171"/>
-        <source>Enter a Wispr address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <source>Enter a Rpicoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
         <translation>输入黑币地址(例如：B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
     </message>
     <message>
@@ -1811,7 +1811,7 @@ Address: %4
     </message>
     <message>
         <location line="+241"/>
-        <source>WARNING: Invalid Wispr address</source>
+        <source>WARNING: Invalid Rpicoin address</source>
         <translation>警告：无效的黑币地址</translation>
     </message>
     <message>
@@ -1885,7 +1885,7 @@ Address: %4
     </message>
     <message>
         <location filename="../sendcoinsentry.cpp" line="+1"/>
-        <source>Enter a Wispr address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <source>Enter a Rpicoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
         <translation>输入一个黑币地址 (例：B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
     </message>
 </context>
@@ -1946,7 +1946,7 @@ Address: %4
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this Wispr address</source>
+        <source>Sign the message to prove you own this Rpicoin address</source>
         <translation>对该消息进行签名以证明您对该黑币地址的所有权</translation>
     </message>
     <message>
@@ -1978,7 +1978,7 @@ Address: %4
     </message>
     <message>
         <location line="+40"/>
-        <source>Verify the message to ensure it was signed with the specified Wispr address</source>
+        <source>Verify the message to ensure it was signed with the specified Rpicoin address</source>
         <translation>确认该消息以保证它经由指定的黑币地址签名</translation>
     </message>
     <message>
@@ -1989,7 +1989,7 @@ Address: %4
     <message>
         <location filename="../signverifymessagedialog.cpp" line="+27"/>
         <location line="+3"/>
-        <source>Enter a Wispr address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <source>Enter a Rpicoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
         <translation>输入黑币地址(例： B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
     </message>
     <message>
@@ -1999,7 +1999,7 @@ Address: %4
     </message>
     <message>
         <location line="+3"/>
-        <source>Enter Wispr signature</source>
+        <source>Enter Rpicoin signature</source>
         <translation>输入黑币签名</translation>
     </message>
     <message>
@@ -2578,7 +2578,7 @@ Address: %4
     <name>bitcoin-core</name>
     <message>
         <location filename="../bitcoinstrings.cpp" line="+8"/>
-        <source>Wispr version</source>
+        <source>Rpicoin version</source>
         <translation>黑币客户端 版本</translation>
     </message>
     <message>
@@ -2588,8 +2588,8 @@ Address: %4
     </message>
     <message>
         <location line="+1"/>
-        <source>Send command to -server or Wisprd</source>
-        <translation>向-server服务器或Wisprd发送命令</translation>
+        <source>Send command to -server or Rpicoind</source>
+        <translation>向-server服务器或Rpicoind发送命令</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2611,13 +2611,13 @@ Address: %4
     </message>
     <message>
         <location line="+2"/>
-        <source>Specify configuration file (default: Wispr.conf)</source>
-        <translation>指定配置文件(默认: Wispr.conf)</translation>
+        <source>Specify configuration file (default: Rpicoin.conf)</source>
+        <translation>指定配置文件(默认: Rpicoin.conf)</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Specify pid file (default: Wisprd.pid)</source>
-        <translation>指定pid文件(默认: Wisprd.pid)</translation>
+        <source>Specify pid file (default: Rpicoind.pid)</source>
+        <translation>指定pid文件(默认: Rpicoind.pid)</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -2635,24 +2635,24 @@ Address: %4
         <source>%s, you must set a rpcpassword in the configuration file:
 %s
 It is recommended you use the following random password:
-rpcuser=Wisprrpc
+rpcuser=Rpicoinrpc
 rpcpassword=%s
 (you do not need to remember this password)
 The username and password MUST NOT be the same.
 If the file does not exist, create it with owner-readable-only file permissions.
 It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s &quot;Wispr Alert&quot; admin@foo.com
+for example: alertnotify=echo %%s | mail -s &quot;Rpicoin Alert&quot; admin@foo.com
 </source>
         <translation>%s, 必须在配置文件里设置rpc密码:
  %s
 建议使用如下的随机密码:
-rpcuser=Wisprrpc
+rpcuser=Rpicoinrpc
 rpcpassword=%s
 (不需要记住该密码)
 用户名和密码不能重复。
 如果该文件不存在，请自行创建并设为用户本身只读权限。
 建议创建提示以监测可能的问题，如：
-alertnotify=echo %%s | mail -s &quot;Wispr Alert&quot; admin@foo.com
+alertnotify=echo %%s | mail -s &quot;Rpicoin Alert&quot; admin@foo.com
 </translation>
     </message>
     <message>
@@ -2667,8 +2667,8 @@ alertnotify=echo %%s | mail -s &quot;Wispr Alert&quot; admin@foo.com
     </message>
     <message>
         <location line="+5"/>
-        <source>Listen for connections on &lt;port&gt; (default: 17000 or testnet: 17002)</source>
-        <translation>监听&lt;port&gt;端口的连接 (默认: 17000 测试网: 17002)</translation>
+        <source>Listen for connections on &lt;port&gt; (default: 18000 or testnet: 18002)</source>
+        <translation>监听&lt;port&gt;端口的连接 (默认: 18000 测试网: 18002)</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2717,8 +2717,8 @@ alertnotify=echo %%s | mail -s &quot;Wispr Alert&quot; admin@foo.com
     </message>
     <message>
         <location line="-126"/>
-        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 17001 or testnet: 17003)</source>
-        <translation>监听 &lt;port&gt; 端口的JSON-RPC连接 (默认: 17001 测试网: 17003)</translation>
+        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 18001 or testnet: 18003)</source>
+        <translation>监听 &lt;port&gt; 端口的JSON-RPC连接 (默认: 18001 测试网: 18003)</translation>
     </message>
     <message>
         <location line="-16"/>
@@ -2756,7 +2756,7 @@ alertnotify=echo %%s | mail -s &quot;Wispr Alert&quot; admin@foo.com
     </message>
     <message>
         <location line="+46"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong Wispr will not work properly.</source>
+        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong Rpicoin will not work properly.</source>
         <translation>警告：请确认您计算机的本地时间。如果时钟错误，黑币客户端将不能正常工作。</translation>
     </message>
     <message>
@@ -3023,8 +3023,8 @@ alertnotify=echo %%s | mail -s &quot;Wispr Alert&quot; admin@foo.com
     </message>
     <message>
         <location line="+1"/>
-        <source>Imports blocks from external wsp000?.dat file</source>
-        <translation>从外部 wsp000?.dat 文件导入区块</translation>
+        <source>Imports blocks from external rpi000?.dat file</source>
+        <translation>从外部 rpi000?.dat 文件导入区块</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -3055,7 +3055,7 @@ alertnotify=echo %%s | mail -s &quot;Wispr Alert&quot; admin@foo.com
     </message>
     <message>
         <location line="+8"/>
-        <source>Initialization sanity check failed. Wispr is shutting down.</source>
+        <source>Initialization sanity check failed. Rpicoin is shutting down.</source>
         <translation>初始化完整性检查失败。 黑币客户端即将关闭。</translation>
     </message>
     <message>
@@ -3111,12 +3111,12 @@ alertnotify=echo %%s | mail -s &quot;Wispr Alert&quot; admin@foo.com
     </message>
     <message>
         <location line="+4"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of Wispr</source>
+        <source>Error loading wallet.dat: Wallet requires newer version of Rpicoin</source>
         <translation>wallet.dat 钱包文件加载出错：需要新版本的客户端</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Wallet needed to be rewritten: restart Wispr to complete</source>
+        <source>Wallet needed to be rewritten: restart Rpicoin to complete</source>
         <translation>需要重写钱包，重启客户端以完成该操作。</translation>
     </message>
     <message>
@@ -3176,7 +3176,7 @@ alertnotify=echo %%s | mail -s &quot;Wispr Alert&quot; admin@foo.com
     </message>
     <message>
         <location line="+131"/>
-        <source>Unable to bind to %s on this computer. Wispr is probably already running.</source>
+        <source>Unable to bind to %s on this computer. Rpicoin is probably already running.</source>
         <translation>无法绑定到该计算机上的 %s. 黑币客户端可能已在运行中。</translation>
     </message>
     <message>
@@ -3206,7 +3206,7 @@ alertnotify=echo %%s | mail -s &quot;Wispr Alert&quot; admin@foo.com
     </message>
     <message>
         <location line="+3"/>
-        <source>Cannot obtain a lock on data directory %s. Wispr is probably already running.</source>
+        <source>Cannot obtain a lock on data directory %s. Rpicoin is probably already running.</source>
         <translation>无法从数据目录 %s 获得锁定.  黑币客户端可能已在运行中.</translation>
     </message>
     <message>
