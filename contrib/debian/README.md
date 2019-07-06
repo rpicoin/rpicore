@@ -14,7 +14,7 @@ To install:
 	sudo update-desktop-database
 
 If you build yourself, you will either need to modify the paths in
-the .desktop file or copy or symlink your wisprqt binary to `/usr/bin`
+the .desktop file or copy or symlink your wispr-qt binary to `/usr/bin`
 and the `../../share/pixmaps/wispr128.png` to `/usr/share/pixmaps`
 
 wispr-qt.protocol (KDE)

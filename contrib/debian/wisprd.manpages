@@ -1,2 +1,2 @@
-debian/manpages/wisprd.1
-debian/manpages/wispr.conf.5
+doc/man/wisprd.1
+doc/man/wispr-cli.1

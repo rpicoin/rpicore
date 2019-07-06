@@ -1,0 +1,20 @@
+{
+    "txid": "e67afdb292b68a7bc68a1da71c42db89722e69394f57b2bee54c4d5a4c9b0d7d",
+    "version": 2,
+    "size": 20,
+    "locktime": 0,
+    "vin": [
+    ],
+    "vout": [
+        {
+            "value": 0.00,
+            "n": 0,
+            "scriptPubKey": {
+                "asm": "OP_DROP",
+                "hex": "75",
+                "type": "nonstandard"
+            }
+        }
+    ],
+    "hex": "0200000000010000000000000000017500000000"
+}

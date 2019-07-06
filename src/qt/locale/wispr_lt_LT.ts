@@ -608,10 +608,6 @@
         <source>&amp;Command-line options</source>
         <translation>&amp;Komandinės eilutės parinktys</translation>
     </message>
-    <message numerus="yes">
-        <source>Processed %n blocks of transaction history.</source>
-        <translation><numerusform>Apdorota %n operacijų istorijos blokų.</numerusform><numerusform>Apdorota %n operacijų istorijos blokų.</numerusform><numerusform>Apdorota %n operacijų istorijos blokų.</numerusform><numerusform>Apdorota %n operacijų istorijos blokų.</numerusform></translation>
-    </message>
     <message>
         <source>Synchronizing additional data: %p%</source>
         <translation>Sinchronizuojami papildomi duomenys: %p%</translation>
@@ -736,10 +732,6 @@
         <source>WISPR Core client</source>
         <translation>WISPR Core piniginė</translation>
     </message>
-    <message numerus="yes">
-        <source>%n active connection(s) to WISPR network</source>
-        <translation><numerusform>%n aktyvių prisijungimų WISPR tinkle ()</numerusform><numerusform>%n aktyvių prisijungimų WISPR tinkle ()</numerusform><numerusform>%n aktyvių prisijungimų WISPR tinkle ()</numerusform><numerusform>%n aktyvių prisijungimų WISPR tinkle ()</numerusform></translation>
-    </message>
     <message>
         <source>Synchronizing with network...</source>
         <translation>Sinchronizuojama su tinklu ...</translation>
@@ -760,25 +752,9 @@
         <source>Up to date</source>
         <translation>Atnaujinta</translation>
     </message>
-    <message numerus="yes">
-        <source>%n hour(s)</source>
-        <translation><numerusform>%n valanda</numerusform><numerusform>%n valandų</numerusform><numerusform>%n valandų</numerusform><numerusform>%n valandų</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n day(s)</source>
-        <translation><numerusform>%n diena</numerusform><numerusform>%n dienų</numerusform><numerusform>%n dienų</numerusform><numerusform>%n dienų</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n week(s)</source>
-        <translation><numerusform>%n savaitė</numerusform><numerusform>%n savaičių</numerusform><numerusform>%n savaičių</numerusform><numerusform>%n savaičių</numerusform></translation>
-    </message>
     <message>
         <source>%1 and %2</source>
         <translation>%1 ir %2</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n year(s)</source>
-        <translation><numerusform>%n metai</numerusform><numerusform>%n metų</numerusform><numerusform>%n metų</numerusform><numerusform>%n metų</numerusform></translation>
     </message>
     <message>
         <source>Catching up...</source>
@@ -864,7 +840,7 @@ MultiSend: %1</translation>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>Piniginė yra &lt;b&gt;užšifruota&lt;/b&gt; ir šiuo metu &lt;b&gt;užrakinta&lt;/b&gt;</translation>
     </message>
-</context>
+    </context>
 <context>
     <name>BlockExplorer</name>
     <message>
@@ -1122,8 +1098,8 @@ MultiSend: %1</translation>
         <translation>Ši etiketė taps raudona, jei gavėjas gaus sumą mažesnę už %1</translation>
     </message>
     <message>
-        <source>Can vary +/- %1 uwsp per input.</source>
-        <translation>Gali skirtis +/- %1 uwsp kiekvienoje įvestyje.</translation>
+        <source>Can vary +/- %1 upiv per input.</source>
+        <translation>Gali skirtis +/- %1 upiv kiekvienoje įvestyje.</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -1216,6 +1192,17 @@ MultiSend: %1</translation>
         <translation>Sukurti duomenų katalogo čia negalima .</translation>
     </message>
 </context>
+<context>
+    <name>GovernancePage</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>0</source>
+        <translation>0</translation>
+    </message>
+    </context>
 <context>
     <name>HelpMessageDialog</name>
     <message>
@@ -1534,42 +1521,8 @@ MultiSend nebus aktyvuotas, nebent paspausite "Įjungti"</translation>
         <translation>(nėra etiketės)</translation>
     </message>
     <message>
-        <source>The entered address:
-</source>
-        <translation>Įvestas adresas: 
-</translation>
-    </message>
-    <message>
-        <source> is invalid.
-Please check the address and try again.</source>
-        <translation>yra netinkamas.
-Patikrinkite adresą ir bandykite dar kartą.</translation>
-    </message>
-    <message>
-        <source>The total amount of your MultiSend vector is over 100% of your stake reward
-</source>
-        <translation>Bendra MultiSend sąrašo suma yra didesnė nei 100% jūsų stake'inimo atlygio
-</translation>
-    </message>
-    <message>
         <source>Please Enter 1 - 100 for percent.</source>
         <translation>Įveskite 1-100 procentų</translation>
-    </message>
-    <message>
-        <source>MultiSend Vector
-</source>
-        <translation>MultiSend Sąrašas
-</translation>
-    </message>
-    <message>
-        <source>Removed </source>
-        <translation>Pašalintas</translation>
-    </message>
-    <message>
-        <source>Could not locate address
-</source>
-        <translation>Nepavyko rasti adreso
-</translation>
     </message>
 </context>
 <context>
@@ -1728,73 +1681,6 @@ Patikrinkite adresą ir bandykite dar kartą.</translation>
     </message>
 </context>
 <context>
-    <name>ObfuscationConfig</name>
-    <message>
-        <source>Configure Obfuscation</source>
-        <translation>Konfigūruoti Obfuscation</translation>
-    </message>
-    <message>
-        <source>Basic Privacy</source>
-        <translation>Pagrindinis Privatumas</translation>
-    </message>
-    <message>
-        <source>High Privacy</source>
-        <translation>Aukštas Privatumas</translation>
-    </message>
-    <message>
-        <source>Maximum Privacy</source>
-        <translation>Maksimalus Privatumas</translation>
-    </message>
-    <message>
-        <source>Please select a privacy level.</source>
-        <translation>Pasirinkite privatumo lygmenį.</translation>
-    </message>
-    <message>
-        <source>Use 2 separate masternodes to mix funds up to 10000 WSP</source>
-        <translation>Naudokite 2 atskirus masternod'us, kad sumaišytumėte lėšas iki 10 000 WSP</translation>
-    </message>
-    <message>
-        <source>Use 8 separate masternodes to mix funds up to 10000 WSP</source>
-        <translation>Naudokite 8 atskirus masternod'us, kad sumaišytumėte lėšas iki 10 000 WSP</translation>
-    </message>
-    <message>
-        <source>Use 16 separate masternodes</source>
-        <translation>Naudokite 16 atskirų masternod'ų</translation>
-    </message>
-    <message>
-        <source>This option is the quickest and will cost about ~0.025 WSP to anonymize 10000 WSP</source>
-        <translation>Ši parinktis yra greičiausia ir kainuos apie ~0.025 WSP, kad anonimizuotų 10000 WSP</translation>
-    </message>
-    <message>
-        <source>This option is moderately fast and will cost about 0.05 WSP to anonymize 10000 WSP</source>
-        <translation>Ši parinktis yra vidutiniškai greita ir kainuoja apie 0,05 WSP, kad anonimizuotų 10000 WSP</translation>
-    </message>
-    <message>
-        <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
-        <translation>Tai yra lėčiausias ir saugiausias variantas. Maksimalus anonimiškumas kainuos.</translation>
-    </message>
-    <message>
-        <source>0.1 WSP per 10000 WSP you anonymize.</source>
-        <translation>0.1 WSP kas 1000 WSP kuriuos anonimizuosite.</translation>
-    </message>
-    <message>
-        <source>Obfuscation Configuration</source>
-        <translation>Obfuscation Konfigūracija</translation>
-    </message>
-    <message>
-        <source>Obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening WISPR's configuration screen.</source>
-        <translation>Obfuscation buvo sėkmingai nustatytas į paprastą (%1 ir 2 raundai). Bet kada galite tai pakeisti, atidarę WISPR konfigūracijos ekraną.</translation>
-    </message>
-    <message>
-        <source>Obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening WISPR's configuration screen.</source>
-        <translation>Obfuscation buvo sėkmingai nustatytas į aukštą (%1 ir 8 raundai). Bet kada galite tai pakeisti, atidarę WISPR konfigūracijos ekraną.</translation>
-    </message>
-    <message>
-        <source>Obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening WISPR's configuration screen.</source>
-        <translation>Obfuscation buvo sėkmingai nustatytas į maksimumą (%1 ir 16 raundai). Bet kada galite tai pakeisti, atidarę WISPR konfigūracijos ekraną.</translation>
-    </message>
-</context>
-<context>
     <name>OpenURIDialog</name>
     <message>
         <source>Open URI</source>
@@ -1881,9 +1767,9 @@ Patikrinkite adresą ir bandykite dar kartą.</translation>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/WisprProject/WisprProject-translations</source>
+https://www.transifex.com/WisprProject/core-project-translations</source>
         <translation>Trūksta kalbos arba vertimas nebaigtas? Padėkite prisidėdami prie vertimų čia: 
-https://www.transifex.com/WisprProject/WisprProject-translations</translation>
+https://www.transifex.com/WisprProject/core-project-translations</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -2226,32 +2112,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo
         <translation>zWSP</translation>
     </message>
     <message>
-        <source>Available for minting are coins which are confirmed and not locked or Masternode collaterals.</source>
-        <translation>Galimos konvertavimui monetos, kurios yra patvirtintos ir neužrakintos, arba Masternod'ų užstatai.</translation>
-    </message>
-    <message>
-        <source>Available for Minting:</source>
-        <translation>Prieinama Konvertavimui:</translation>
-    </message>
-    <message>
-        <source>0.000 000 00 WSP</source>
-        <translation>0.000 000 00 WSP</translation>
-    </message>
-    <message>
         <source>Reset</source>
         <translation>Atitaisyti</translation>
-    </message>
-    <message>
-        <source>Coin Control...</source>
-        <translation>Monetų Kontrolė...</translation>
-    </message>
-    <message>
-        <source>Quantity:</source>
-        <translation>Kiekis:</translation>
-    </message>
-    <message>
-        <source>Amount:</source>
-        <translation>Suma:</translation>
     </message>
     <message>
         <source>Rescan the complete blockchain for  Zerocoin mints and their meta-data.</source>
@@ -2292,14 +2154,6 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo
     <message>
         <source>0 zWSP</source>
         <translation>0 zWSP</translation>
-    </message>
-    <message>
-        <source>Security Level:</source>
-        <translation>Saugumo Lygmuo:</translation>
-    </message>
-    <message>
-        <source>Security Level 1 - 100 (default: 42)</source>
-        <translation>Saugumo Lygmuo 1 - 100 (numatytas: 42)</translation>
     </message>
     <message>
         <source>Pay &amp;To:</source>
@@ -2357,7 +2211,7 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo
         <source>Unconfirmed: less than 20 confirmations
 Immature: confirmed, but less than 1 mint of the same denomination after it was minted</source>
         <translation>Nepatvirtinta: mažiau nei 20 patvirtinimų
-Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominalo po to, kai buvo konvertuota.</translation>
+Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo po to, kai buvo konvertuotas.</translation>
     </message>
     <message>
         <source>Denom. 1:</source>
@@ -2501,19 +2355,11 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
     </message>
     <message>
         <source>out of sync</source>
-        <translation>ne sinchronizuotas</translation>
+        <translation>nesinchronizuotas</translation>
     </message>
     <message>
         <source>Mint Status: Okay</source>
         <translation>Konvertavimo Statusas: Geras</translation>
-    </message>
-    <message>
-        <source>Copy quantity</source>
-        <translation>Kopijuoti kiekį</translation>
-    </message>
-    <message>
-        <source>Copy amount</source>
-        <translation>Kopijuoti sumą</translation>
     </message>
     <message>
         <source>zWSP Spend #: </source>
@@ -2600,10 +2446,6 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
         <translation>Nomin. &lt;b&gt;5000&lt;/b&gt;:</translation>
     </message>
     <message>
-        <source>Error: Your wallet is locked. Please enter the wallet passphrase first.</source>
-        <translation>Klaida: jūsų piniginė užrakinta. Pirmiausia įveskite piniginės slaptažodį.</translation>
-    </message>
-    <message>
         <source>Invalid Wispr Address</source>
         <translation>Netinkamas Wispr Adresas</translation>
     </message>
@@ -2624,14 +2466,6 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
         <translation>į adresą</translation>
     </message>
     <message>
-        <source>with Security Level </source>
-        <translation>su Saugumo Lygmeniu</translation>
-    </message>
-    <message>
-        <source>Failed to spend zWSP</source>
-        <translation>Nepavyko išleisti zWSP</translation>
-    </message>
-    <message>
         <source>serial: </source>
         <translation>serija:</translation>
     </message>
@@ -2644,6 +2478,9 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
         <translation>mokestis: </translation>
     </message>
 </context>
+<context>
+    <name>ProposalFrame</name>
+    </context>
 <context>
     <name>QObject</name>
     <message>
@@ -2685,6 +2522,10 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
     <message>
         <source>N/A</source>
         <translation>N/A</translation>
+    </message>
+    <message>
+        <source>WISPR Core</source>
+        <translation>WISPR Core</translation>
     </message>
     </context>
 <context>
@@ -2840,12 +2681,12 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
 <context>
     <name>ReceiveCoinsDialog</name>
     <message>
-        <source>&amp;Label:</source>
-        <translation>&amp;Etiketė:</translation>
+        <source>A&amp;mount:</source>
+        <translation>S&amp;uma:</translation>
     </message>
     <message>
-        <source>&amp;Amount:</source>
-        <translation>&amp;Suma:</translation>
+        <source>&amp;Label:</source>
+        <translation>&amp;Etiketė:</translation>
     </message>
     <message>
         <source>&amp;Request payment</source>
@@ -2882,6 +2723,10 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
     <message>
         <source>Copy amount</source>
         <translation>Kopijuoti sumą</translation>
+    </message>
+    <message>
+        <source>Copy address</source>
+        <translation>Kopijuoti adresą</translation>
     </message>
 </context>
 <context>
@@ -2928,6 +2773,10 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
     <message>
         <source>Message</source>
         <translation>Žinutė</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresas</translation>
     </message>
     <message>
         <source>Amount</source>
@@ -3470,16 +3319,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
         <translation>(numatytas: 1)</translation>
     </message>
     <message>
-        <source>Already have that input.</source>
-        <translation>Jau turi tą įvestį.</translation>
-    </message>
-    <message>
         <source>Done loading</source>
         <translation>Krovimas baigtas</translation>
-    </message>
-    <message>
-        <source>Entries are full.</source>
-        <translation>Įvestys pilnos.</translation>
     </message>
     <message>
         <source>Error loading block database</source>
@@ -3510,10 +3351,6 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
         <translation>Klaida: Įvyko vidinė klaida, dėl išsamesnės informacijos žr. Debug.log</translation>
     </message>
     <message>
-        <source>Error: Can't select current denominated inputs</source>
-        <translation>Klaida: Nepavyko pasirinkti esamų nominalo įvesčių</translation>
-    </message>
-    <message>
         <source>Error: Disk space is low!</source>
         <translation>Klaida: Diske mažai vietos!</translation>
     </message>
@@ -3522,28 +3359,12 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
         <translation>Klaida nuskaitant bloką</translation>
     </message>
     <message>
-        <source>Finalizing transaction.</source>
-        <translation>Sandoris užbaiginėjamas.</translation>
-    </message>
-    <message>
         <source>Importing...</source>
         <translation>Importuojama...</translation>
     </message>
     <message>
-        <source>Incompatible mode.</source>
-        <translation>Nesuderinamas režimas.</translation>
-    </message>
-    <message>
-        <source>Incompatible version.</source>
-        <translation>Nesuderinama versija.</translation>
-    </message>
-    <message>
         <source>Information</source>
         <translation>Informacija</translation>
-    </message>
-    <message>
-        <source>Input is not valid.</source>
-        <translation>Įvestis neteisinga.</translation>
     </message>
     <message>
         <source>Insufficient funds</source>
@@ -3562,16 +3383,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
         <translation>Neteisingas privatus raktas.</translation>
     </message>
     <message>
-        <source>Invalid script detected.</source>
-        <translation>Aptiktas netinkamas programos kodas.</translation>
-    </message>
-    <message>
         <source>SwiftX options:</source>
         <translation>SwiftX nustatymai:</translation>
-    </message>
-    <message>
-        <source>Failed to deserialize</source>
-        <translation>Nepavyko deserializuoti</translation>
     </message>
     <message>
         <source>Failed to select a zerocoin</source>
@@ -3612,14 +3425,6 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
     <message>
         <source>Masternode options:</source>
         <translation>Masternod'ų nustatymai:</translation>
-    </message>
-    <message>
-        <source>Masternode:</source>
-        <translation>Masternod'as:</translation>
-    </message>
-    <message>
-        <source>Not in the Masternode list.</source>
-        <translation>Nėra Masternod'ų sąraše.</translation>
     </message>
     <message>
         <source>Options:</source>
@@ -3682,24 +3487,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
         <translation>Sandorio sumos turi būti teigiamos</translation>
     </message>
     <message>
-        <source>Transaction created successfully.</source>
-        <translation>Sandoris sėkmingai sukurtas.</translation>
-    </message>
-    <message>
-        <source>Transaction fees are too high.</source>
-        <translation>Sandorio mokesčiai yra per dideli.</translation>
-    </message>
-    <message>
-        <source>Transaction not valid.</source>
-        <translation>Sandoris negalioja.</translation>
-    </message>
-    <message>
         <source>Transaction too large</source>
         <translation>Sandoris per didelis</translation>
-    </message>
-    <message>
-        <source>Transmitting final transaction.</source>
-        <translation>Perduodamas galutinis sandoris.</translation>
     </message>
     <message>
         <source>Upgrade wallet to latest format</source>
@@ -3720,10 +3509,6 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
     <message>
         <source>Wallet %s resides outside data directory %s</source>
         <translation>Piniginė %s yra ne duomenų kataloge %s</translation>
-    </message>
-    <message>
-        <source>Wallet is locked.</source>
-        <translation>Piniginė užrakinta.</translation>
     </message>
     <message>
         <source>Wallet needed to be rewritten: restart WISPR Core to complete</source>
@@ -3756,14 +3541,6 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
     <message>
         <source>You don't have enough Zerocoins in your wallet</source>
         <translation>Neturite pakankamai Zerocoin monetų savo piniginėje</translation>
-    </message>
-    <message>
-        <source>Your entries added successfully.</source>
-        <translation>Jūsų įrašai sėkmingai pridėti.</translation>
-    </message>
-    <message>
-        <source>Your transaction was accepted into the pool!</source>
-        <translation>Jūsų sandoris buvo priimtas į "baseiną"!</translation>
     </message>
     <message>
         <source>Zapping all transactions from wallet...</source>

@@ -9,7 +9,7 @@
 * @copyright  Copyright 2013 Ian Miers, Christina Garman and Matthew Green
 * @license    This project is released under the MIT license.
 **/
-// Copyright (c) 2017 The PIVX developers
+// Copyright (c) 2017-2019 The PIVX developers
 
 #ifndef SERIALNUMBERPROOF_H_
 #define SERIALNUMBERPROOF_H_
@@ -34,6 +34,7 @@ namespace libzerocoin {
  */
 class SerialNumberSignatureOfKnowledge {
 public:
+    SerialNumberSignatureOfKnowledge(){};
 	SerialNumberSignatureOfKnowledge(const ZerocoinParams* p);
 	/** Creates a Signature of knowledge object that a commitment to a coin contains a coin with serial number x
 	 *
@@ -49,7 +50,7 @@ public:
 	 * @param msghash hash of meta data to create a signature of knowledge on.
 	 * @return
 	 */
-	bool Verify(const CBigNum& coinSerialNumber, const CBigNum& valueOfCommitmentToCoin,const uint256 msghash) const;
+    bool Verify(const CBigNum& coinSerialNumber, const CBigNum& valueOfCommitmentToCoin,const uint256 msghash, bool isInParamsValidationRange = true) const;
 	ADD_SERIALIZE_METHODS;
   template <typename Stream, typename Operation>  inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
 	    READWRITE(s_notprime);

@@ -1,5 +1,5 @@
 // Copyright (c) 2015 The Bitcoin Core developers
-// Copyright (c) 2016-2017 The PIVX developers
+// Copyright (c) 2016-2018 The PIVX developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -48,7 +48,7 @@ QIcon ColorizeIcon(const QIcon& ico, const QColor& colorbase)
 {
     QIcon new_ico;
     QSize sz;
-    Q_FOREACH (sz, ico.availableSizes()) {
+    for (const QSize sz: ico.availableSizes()) {
         QImage img(ico.pixmap(sz).toImage());
         MakeSingleColorImage(img, colorbase);
         new_ico.addPixmap(QPixmap::fromImage(img));
@@ -136,5 +136,5 @@ const PlatformStyle* PlatformStyle::instantiate(const QString& platformId)
                 platform_styles[x].useExtraSpacing);
         }
     }
-    return 0;
+    return nullptr;
 }

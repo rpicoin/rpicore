@@ -1,6 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin Core developers
-// Copyright (c) 2017 The PIVX developers
+// Copyright (c) 2017-2018 The PIVX developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -55,6 +55,6 @@ void UnregisterAllValidationInterfaces() {
 // XX42    g_signals.EraseTransaction.disconnect_all_slots();
 }
 
-void SyncWithWallets(const CTransaction &tx, const CBlock *pblock = NULL) {
+void SyncWithWallets(const CTransaction &tx, const CBlock *pblock = nullptr) {
     g_signals.SyncTransaction(tx, pblock);
 }

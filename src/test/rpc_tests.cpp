@@ -1,5 +1,5 @@
 // Copyright (c) 2012-2013 The Bitcoin Core developers
-// Copyright (c) 2017 The PIVX developers
+// Copyright (c) 2017-2018 The PIVX developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -10,6 +10,8 @@
 #include "netbase.h"
 #include "util.h"
 
+#include "test/test_wispr.h"
+
 #include <boost/algorithm/string.hpp>
 #include <boost/test/unit_test.hpp>
 
@@ -18,7 +20,7 @@
 using namespace std;
 
 UniValue
-createArgs(int nRequired, const char* address1=NULL, const char* address2=NULL)
+createArgs(int nRequired, const char* address1= nullptr, const char* address2= nullptr)
 {
     UniValue result(UniValue::VARR);
     result.push_back(nRequired);
@@ -48,7 +50,7 @@ UniValue CallRPC(string args)
 }
 
 
-BOOST_AUTO_TEST_SUITE(rpc_tests)
+BOOST_FIXTURE_TEST_SUITE(rpc_tests, TestingSetup)
 
 BOOST_AUTO_TEST_CASE(rpc_rawparams)
 {

@@ -1,4 +1,4 @@
-// Copyright (c) 2017-2018 The PIVX developers
+// Copyright (c) 2017-2019 The PIVX developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -15,7 +15,7 @@
 #include "coins.h"
 #include "keystore.h"
 #include "init.h"
-#include "wallet.h"
+#include "wallet/wallet.h"
 #include "script/sign.h"
 #include "script/interpreter.h"
 #include "utilmoneystr.h"
@@ -38,7 +38,7 @@
 
 MultisigDialog::MultisigDialog(QWidget* parent) : QDialog(parent, Qt::WindowSystemMenuHint | Qt::WindowTitleHint | Qt::WindowCloseButtonHint),
                                                   ui(new Ui::MultisigDialog),
-                                                  model(0)
+                                                  model(nullptr)
 {
     ui->setupUi(this);
     multisigTx = CMutableTransaction();

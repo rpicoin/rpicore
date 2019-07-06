@@ -8,37 +8,38 @@ EXTRA_LIBRARIES += qt/libbitcoinqt.a
 # wispr qt core #
 QT_TS = \
   qt/locale/wispr_bg.ts \
-  qt/locale/wispr_ca.ts \
-  qt/locale/wispr_cs.ts \
-  qt/locale/wispr_da.ts \
-  qt/locale/wispr_de.ts \
-  qt/locale/wispr_en.ts \
-  qt/locale/wispr_en_US.ts \
-  qt/locale/wispr_eo.ts \
-  qt/locale/wispr_es.ts \
-  qt/locale/wispr_es_ES.ts \
-  qt/locale/wispr_fi.ts \
-  qt/locale/wispr_fr_FR.ts \
-  qt/locale/wispr_hi_IN.ts \
-  qt/locale/wispr_hr.ts \
-  qt/locale/wispr_hr_HR.ts \
-  qt/locale/wispr_it.ts \
-  qt/locale/wispr_ja.ts \
-  qt/locale/wispr_ko_KR.ts \
-  qt/locale/wispr_lt_LT.ts \
-  qt/locale/wispr_nl.ts \
-  qt/locale/wispr_pl.ts \
-  qt/locale/wispr_pt.ts \
-  qt/locale/wispr_pt_BR.ts \
-  qt/locale/wispr_ro_RO.ts \
-  qt/locale/wispr_ru.ts \
-  qt/locale/wispr_sk.ts \
-  qt/locale/wispr_sv.ts \
-  qt/locale/wispr_tr.ts \
-  qt/locale/wispr_uk.ts \
-  qt/locale/wispr_vi.ts \
-  qt/locale/wispr_zh_CN.ts \
-  qt/locale/wispr_zh_TW.ts
+   qt/locale/wispr_ca.ts \
+   qt/locale/wispr_cs.ts \
+   qt/locale/wispr_da.ts \
+   qt/locale/wispr_de.ts \
+   qt/locale/wispr_en.ts \
+   qt/locale/wispr_en_GB.ts \
+   qt/locale/wispr_en_US.ts \
+   qt/locale/wispr_eo.ts \
+   qt/locale/wispr_es.ts \
+   qt/locale/wispr_es_ES.ts \
+   qt/locale/wispr_fi.ts \
+   qt/locale/wispr_fr_FR.ts \
+   qt/locale/wispr_hi_IN.ts \
+   qt/locale/wispr_hr.ts \
+   qt/locale/wispr_hr_HR.ts \
+   qt/locale/wispr_it.ts \
+   qt/locale/wispr_ja.ts \
+   qt/locale/wispr_ko_KR.ts \
+   qt/locale/wispr_lt_LT.ts \
+   qt/locale/wispr_nl.ts \
+   qt/locale/wispr_pl.ts \
+   qt/locale/wispr_pt.ts \
+   qt/locale/wispr_pt_BR.ts \
+   qt/locale/wispr_ro_RO.ts \
+   qt/locale/wispr_ru.ts \
+   qt/locale/wispr_sk.ts \
+   qt/locale/wispr_sv.ts \
+   qt/locale/wispr_tr.ts \
+   qt/locale/wispr_uk.ts \
+   qt/locale/wispr_vi.ts \
+   qt/locale/wispr_zh_CN.ts \
+   qt/locale/wispr_zh_TW.ts
 
 QT_FORMS_UI = \
   qt/forms/addressbookpage.ui \
@@ -46,8 +47,8 @@ QT_FORMS_UI = \
   qt/forms/bip38tooldialog.ui \
   qt/forms/coincontroldialog.ui \
   qt/forms/blockexplorer.ui \
-  qt/forms/obfuscationconfig.ui \
   qt/forms/editaddressdialog.ui \
+  qt/forms/governancepage.ui \
   qt/forms/helpmessagedialog.ui \
   qt/forms/intro.ui \
   qt/forms/masternodelist.ui \
@@ -81,8 +82,8 @@ QT_MOC_CPP = \
   qt/moc_coincontroldialog.cpp \
   qt/moc_coincontroltreewidget.cpp \
   qt/moc_csvmodelwriter.cpp \
-  qt/moc_obfuscationconfig.cpp \
   qt/moc_editaddressdialog.cpp \
+  qt/moc_governancepage.cpp \
   qt/moc_guiutil.cpp \
   qt/moc_intro.cpp \
   qt/moc_macdockiconhandler.cpp \
@@ -101,6 +102,7 @@ QT_MOC_CPP = \
   qt/moc_qvaluecombobox.cpp \
   qt/moc_receivecoinsdialog.cpp \
   qt/moc_privacydialog.cpp \
+  qt/moc_proposalframe.cpp \
   qt/moc_receiverequestdialog.cpp \
   qt/moc_recentrequeststablemodel.cpp \
   qt/moc_rpcconsole.cpp \
@@ -155,8 +157,8 @@ BITCOIN_QT_H = \
   qt/coincontroldialog.h \
   qt/coincontroltreewidget.h \
   qt/csvmodelwriter.h \
-  qt/obfuscationconfig.h \
   qt/editaddressdialog.h \
+  qt/governancepage.h \
   qt/guiconstants.h \
   qt/guiutil.h \
   qt/intro.h \
@@ -175,6 +177,7 @@ BITCOIN_QT_H = \
   qt/paymentserver.h \
   qt/peertablemodel.h \
   qt/platformstyle.h \
+  qt/proposalframe.h \
   qt/qvalidatedlineedit.h \
   qt/qvaluecombobox.h \
   qt/receivecoinsdialog.h \
@@ -210,6 +213,7 @@ RES_ICONS = \
   qt/res/icons/bitcoin.png \
   qt/res/icons/bitcoin_testnet.ico \
   qt/res/icons/bitcoin_testnet.png \
+  qt/res/icons/bitcoin_regtest.png \
   qt/res/icons/browse.png \
   qt/res/icons/clock1.png \
   qt/res/icons/clock2.png \
@@ -247,6 +251,8 @@ RES_ICONS = \
   qt/res/icons/remove.png \
   qt/res/icons/send.png \
   qt/res/icons/send_dark.png \
+  qt/res/icons/governance.png \
+  qt/res/icons/governance_dark.png \
   qt/res/icons/staking_active.png \
   qt/res/icons/staking_inactive.png \
   qt/res/icons/synced.png \
@@ -263,9 +269,12 @@ RES_ICONS = \
   qt/res/icons/unit_uwispr.png \
   qt/res/icons/unit_twispr.png \
   qt/res/icons/unit_tmwispr.png \
-  qt/res/icons/unit_tuwispr.png
+  qt/res/icons/unit_tuwispr.png \
+  qt/res/icons/yesvote.png \
+  qt/res/icons/novote.png \
+  qt/res/icons/abstainvote.png
 
-BITCOIN_QT_CPP = \
+BITCOIN_QT_BASE_CPP = \
   qt/bantablemodel.cpp \
   qt/bitcoinaddressvalidator.cpp \
   qt/bitcoinamountfield.cpp \
@@ -290,12 +299,9 @@ BITCOIN_QT_CPP = \
   qt/trafficgraphwidget.cpp \
   qt/utilitydialog.cpp
 
-if TARGET_WINDOWS
-BITCOIN_QT_CPP += qt/winshutdownmonitor.cpp
-endif
+BITCOIN_QT_WINDOWS_CPP = qt/winshutdownmonitor.cpp
 
-if ENABLE_WALLET
-BITCOIN_QT_CPP += \
+BITCOIN_QT_WALLET_CPP = \
   qt/addressbookpage.cpp \
   qt/addresstablemodel.cpp \
   qt/askpassphrasedialog.cpp \
@@ -303,8 +309,8 @@ BITCOIN_QT_CPP += \
   qt/blockexplorer.cpp \
   qt/coincontroldialog.cpp \
   qt/coincontroltreewidget.cpp \
-  qt/obfuscationconfig.cpp \
   qt/editaddressdialog.cpp \
+  qt/governancepage.cpp \
   qt/masternodelist.cpp \
   qt/multisenddialog.cpp \
   qt/multisigdialog.cpp\
@@ -314,6 +320,7 @@ BITCOIN_QT_CPP += \
   qt/paymentserver.cpp \
   qt/receivecoinsdialog.cpp \
   qt/privacydialog.cpp \
+  qt/proposalframe.cpp \
   qt/receiverequestdialog.cpp \
   qt/recentrequeststablemodel.cpp \
   qt/sendcoinsdialog.cpp \
@@ -331,12 +338,19 @@ BITCOIN_QT_CPP += \
   qt/walletview.cpp \
   qt/zwspcontroldialog.cpp
 
+BITCOIN_QT_CPP = $(BITCOIN_QT_BASE_CPP)
+if TARGET_WINDOWS
+BITCOIN_QT_CPP += $(BITCOIN_QT_WINDOWS_CPP)
+endif
+if ENABLE_WALLET
+BITCOIN_QT_CPP += $(BITCOIN_QT_WALLET_CPP)
 endif
 
 RES_IMAGES = \
   qt/res/images/about.png \
   qt/res/images/splash.png \
   qt/res/images/splash_testnet.png \
+  qt/res/images/splash_regtest.png \
   qt/res/images/wispr_logo_horizontal.png \
   qt/res/images/downArrow_dark.png \
   qt/res/images/downArrow_small_dark.png \
@@ -345,10 +359,7 @@ RES_IMAGES = \
   qt/res/images/upArrow_small.png \
   qt/res/images/leftArrow_small_dark.png \
   qt/res/images/rightArrow_small_dark.png \
-  qt/res/images/qtreeview_selected.png \
-  qt/res/images/walletFrame.png \
-  qt/res/images/walletFrame_bg.png \
-  qt/res/images/walletFrame_bg.png
+  qt/res/images/qtreeview_selected.png
 
 RES_CSS = \
   qt/res/css/default.css
@@ -388,7 +399,6 @@ $(QT_MOC_CPP): $(PROTOBUF_H)
 qt_wispr_qt_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
   $(QT_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS)
 qt_wispr_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
-qt_bitcoin_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
 
 qt_wispr_qt_SOURCES = qt/wispr.cpp
 if TARGET_DARWIN
@@ -399,7 +409,7 @@ if TARGET_WINDOWS
 endif
 qt_wispr_qt_LDADD = qt/libbitcoinqt.a $(LIBBITCOIN_SERVER)
 if ENABLE_WALLET
-qt_wispr_qt_LDADD += $(LIBBITCOIN_WALLET)
+qt_wispr_qt_LDADD += $(LIBBITCOIN_UTIL) $(LIBBITCOIN_WALLET)
 endif
 if ENABLE_ZMQ
 qt_wispr_qt_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
@@ -408,7 +418,7 @@ qt_wispr_qt_LDADD += $(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) $
   $(BOOST_LIBS) $(QT_LIBS) $(QT_DBUS_LIBS) $(QR_LIBS) $(PROTOBUF_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(LIBSECP256K1) \
   $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
 qt_wispr_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-qt_wispr_qt_LIBTOOLFLAGS = --tag CXX
+qt_wispr_qt_LIBTOOLFLAGS = $(AM_LIBTOOLFLAGS) --tag CXX
 
 #locale/foo.ts -> locale/foo.qm
 QT_QM=$(QT_TS:.ts=.qm)
@@ -419,7 +429,7 @@ $(srcdir)/qt/wisprstrings.cpp: $(libbitcoin_server_a_SOURCES) $(libbitcoin_walle
 	@test -n $(XGETTEXT) || echo "xgettext is required for updating translations"
 	$(AM_V_GEN) cd $(srcdir); XGETTEXT=$(XGETTEXT) PACKAGE_NAME="$(PACKAGE_NAME)" $(PYTHON) ../share/qt/extract_strings_qt.py $^
 
-translate: $(srcdir)/qt/wisprstrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(BITCOIN_QT_CPP) $(BITCOIN_QT_H) $(BITCOIN_MM)
+translate: $(srcdir)/qt/wisprstrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(BITCOIN_QT_BASE_CPP) qt/wispr.cpp $(BITCOIN_QT_WINDOWS_CPP) $(BITCOIN_QT_WALLET_CPP) $(BITCOIN_QT_H) $(BITCOIN_MM)
 	@test -n $(LUPDATE) || echo "lupdate is required for updating translations"
 	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LUPDATE) $^ -locations relative -no-obsolete -ts $(srcdir)/qt/locale/wispr_en.ts
 

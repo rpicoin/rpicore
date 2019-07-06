@@ -1,10 +1,11 @@
 // Copyright (c) 2011-2014 The Bitcoin Core developers
-// Copyright (c) 2017 The PIVX developers
+// Copyright (c) 2017-2019 The PIVX developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "data/tx_invalid.json.h"
 #include "data/tx_valid.json.h"
+#include "test/test_wispr.h"
 
 #include "clientversion.h"
 #include "key.h"
@@ -13,6 +14,7 @@
 #include "script/script.h"
 #include "script/script_error.h"
 #include "core_io.h"
+#include "test_wispr.h"
 
 #include <map>
 #include <string>
@@ -32,15 +34,17 @@ using namespace boost::algorithm;
 extern UniValue read_json(const std::string& jsondata);
 
 static std::map<string, unsigned int> mapFlagNames = boost::assign::map_list_of
-        (string("NONE"), (unsigned int)SCRIPT_VERIFY_NONE)
-        (string("P2SH"), (unsigned int)SCRIPT_VERIFY_P2SH)
-        (string("STRICTENC"), (unsigned int)SCRIPT_VERIFY_STRICTENC)
-        (string("DERSIG"), (unsigned int)SCRIPT_VERIFY_DERSIG)
-        (string("LOW_S"), (unsigned int)SCRIPT_VERIFY_LOW_S)
-        (string("SIGPUSHONLY"), (unsigned int)SCRIPT_VERIFY_SIGPUSHONLY)
-        (string("MINIMALDATA"), (unsigned int)SCRIPT_VERIFY_MINIMALDATA)
-        (string("NULLDUMMY"), (unsigned int)SCRIPT_VERIFY_NULLDUMMY)
-        (string("DISCOURAGE_UPGRADABLE_NOPS"), (unsigned int)SCRIPT_VERIFY_DISCOURAGE_UPGRADABLE_NOPS);
+    (string("NONE"), (unsigned int)SCRIPT_VERIFY_NONE)
+    (string("P2SH"), (unsigned int)SCRIPT_VERIFY_P2SH)
+    (string("STRICTENC"), (unsigned int)SCRIPT_VERIFY_STRICTENC)
+    (string("DERSIG"), (unsigned int)SCRIPT_VERIFY_DERSIG)
+    (string("LOW_S"), (unsigned int)SCRIPT_VERIFY_LOW_S)
+    (string("SIGPUSHONLY"), (unsigned int)SCRIPT_VERIFY_SIGPUSHONLY)
+    (string("MINIMALDATA"), (unsigned int)SCRIPT_VERIFY_MINIMALDATA)
+    (string("NULLDUMMY"), (unsigned int)SCRIPT_VERIFY_NULLDUMMY)
+    (string("DISCOURAGE_UPGRADABLE_NOPS"), (unsigned int)SCRIPT_VERIFY_DISCOURAGE_UPGRADABLE_NOPS)
+    (string("CLEANSTACK"), (unsigned int)SCRIPT_VERIFY_CLEANSTACK)
+    (string("CHECKLOCKTIMEVERIFY"), (unsigned int)SCRIPT_VERIFY_CHECKLOCKTIMEVERIFY);
 
 unsigned int ParseScriptFlags(string strFlags)
 {
@@ -51,7 +55,7 @@ unsigned int ParseScriptFlags(string strFlags)
     vector<string> words;
     split(words, strFlags, is_any_of(","));
 
-    BOOST_FOREACH(string word, words)
+    for(string word: words)
     {
         if (!mapFlagNames.count(word))
             BOOST_ERROR("Bad test: unknown verification flag '" << word << "'");
@@ -77,7 +81,7 @@ string FormatScriptFlags(unsigned int flags)
     return ret.substr(0, ret.size() - 1);
 }
 
-BOOST_AUTO_TEST_SUITE(transaction_tests)
+BOOST_FIXTURE_TEST_SUITE(transaction_tests, TestingSetup)
 
 //BOOST_AUTO_TEST_CASE(tx_valid)
 //        {

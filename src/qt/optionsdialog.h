@@ -1,5 +1,5 @@
 // Copyright (c) 2011-2013 The Bitcoin developers
-// Copyright (c) 2017-2018 The PIVX developers
+// Copyright (c) 2017-2019 The PIVX developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -32,6 +32,7 @@ public:
 
     void setModel(OptionsModel* model);
     void setMapper();
+    void setCurrentIndex(int index);
 
 protected:
     bool eventFilter(QObject* object, QEvent* event);
@@ -46,6 +47,8 @@ private slots:
     void on_resetButton_clicked();
     void on_okButton_clicked();
     void on_cancelButton_clicked();
+
+    void updateHideOrphans(bool fHide);
 
     void showRestartWarning(bool fPersistent = false);
     void clearStatusLabel();

@@ -1,5 +1,5 @@
 // Copyright (c) 2011-2013 The Bitcoin developers
-// Copyright (c) 2017-2018 The PIVX developers
+// Copyright (c) 2017-2019 The PIVX developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -61,7 +61,7 @@ public:
             cachedNodeStats.clear();
 
             cachedNodeStats.reserve(vNodes.size());
-            foreach (CNode* pnode, vNodes) {
+            for (CNode* pnode: vNodes) {
                 CNodeCombinedStats stats;
                 stats.nodeStateStats.nMisbehavior = 0;
                 stats.nodeStateStats.nSyncHeight = -1;
@@ -76,7 +76,7 @@ public:
         {
             TRY_LOCK(cs_main, lockMain);
             if (lockMain) {
-                BOOST_FOREACH (CNodeCombinedStats& stats, cachedNodeStats)
+                for (CNodeCombinedStats& stats: cachedNodeStats)
                     stats.fNodeStateStatsAvailable = GetNodeStateStats(stats.nodeStats.nodeid, stats.nodeStateStats);
             }
         }
@@ -88,7 +88,7 @@ public:
         // build index map
         mapNodeRows.clear();
         int row = 0;
-        foreach (const CNodeCombinedStats& stats, cachedNodeStats)
+        for (const CNodeCombinedStats& stats: cachedNodeStats)
             mapNodeRows.insert(std::pair<NodeId, int>(stats.nodeStats.nodeid, row++));
     }
 
@@ -102,7 +102,7 @@ public:
         if (idx >= 0 && idx < cachedNodeStats.size()) {
             return &cachedNodeStats[idx];
         } else {
-            return 0;
+            return nullptr;
         }
     }
 };

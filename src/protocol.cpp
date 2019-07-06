@@ -33,7 +33,11 @@ static const char* ppszTypeName[] =
         "mn quorum",
         "mn announce",
         "mn ping",
-        "dstx"};
+        "dstx",
+        "pubcoins",
+        "genwit",
+        "accvalue"
+    };
 
 CMessageHeader::CMessageHeader()
 {
@@ -99,7 +103,6 @@ void CAddress::Init()
 {
     nServices = NODE_NETWORK;
     nTime = 100000000;
-    nLastTry = 0;
 }
 
 CInv::CInv()

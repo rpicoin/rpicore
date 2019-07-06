@@ -1,6 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
-// Copyright (c) 2016-2017 The PIVX developers
+// Copyright (c) 2016-2018 The PIVX developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -15,22 +15,26 @@
 
 #include <openssl/bio.h>
 #include <openssl/buffer.h>
-#include <openssl/crypto.h> // for OPENSSL_cleanse()
 #include <openssl/evp.h>
 
 
 using namespace std;
 
-string SanitizeString(const string& str)
+static const std::string CHARS_ALPHA_NUM = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
+static const std::string SAFE_CHARS[] =
 {
-    /**
-     * safeChars chosen to allow simple messages/URLs/email addresses, but avoid anything
-     * even possibly remotely dangerous like & or >
-     */
-    static string safeChars("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890 .,;_-/:?@()");
-    string strResult;
-    for (std::string::size_type i = 0; i < str.size(); i++) {
-        if (safeChars.find(str[i]) != std::string::npos)
+    CHARS_ALPHA_NUM + " .,;-_/:?@()", // SAFE_CHARS_DEFAULT
+    CHARS_ALPHA_NUM + " .,;-_?@", // SAFE_CHARS_UA_COMMENT
+    CHARS_ALPHA_NUM + ".-_", // SAFE_CHARS_FILENAME
+};
+
+std::string SanitizeString(const std::string& str, int rule)
+{
+    std::string strResult;
+    for (std::string::size_type i = 0; i < str.size(); i++)
+    {
+        if (SAFE_CHARS[rule].find(str[i]) != std::string::npos)
             strResult.push_back(str[i]);
     }
     return strResult;
@@ -277,7 +281,7 @@ SecureString EncodeBase64Secure(const SecureString& input)
     SecureString output(bptr->data, bptr->length);
 
     // Cleanse secure data buffer from memory
-    OPENSSL_cleanse((void*)bptr->data, bptr->length);
+    memory_cleanse((void*)bptr->data, bptr->length);
 
     // Free memory
     BIO_free_all(b64);
@@ -479,7 +483,7 @@ bool ParseInt32(const std::string& str, int32_t *out)
 {
     if (!ParsePrechecks(str))
         return false;
-    char *endp = NULL;
+    char *endp = nullptr;
     errno = 0; // strtol will not set errno if valid
     long int n = strtol(str.c_str(), &endp, 10);
     if(out) *out = (int32_t)n;
@@ -495,7 +499,7 @@ bool ParseInt64(const std::string& str, int64_t *out)
 {
     if (!ParsePrechecks(str))
         return false;
-    char *endp = NULL;
+    char *endp = nullptr;
     errno = 0; // strtoll will not set errno if valid
     long long int n = strtoll(str.c_str(), &endp, 10);
     if(out) *out = (int64_t)n;

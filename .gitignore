@@ -64,7 +64,6 @@ src/qt/test/moc*.cpp
 *.pyc
 *.o
 *.o-*
-*.patch
 .wispr
 *.a
 *.pb.cc
@@ -74,7 +73,6 @@ src/qt/test/moc*.cpp
 *.trs
 *.dmg
 
-*.json.h
 *.raw.h
 
 #libtool object files
@@ -86,6 +84,7 @@ src/qt/test/moc*.cpp
 Makefile
 wispr-qt
 WISPR-Qt.app
+background.tiff*
 
 # Unit-tests
 Makefile.test
@@ -113,10 +112,13 @@ coverage_percent.txt
 linux-coverage-build
 linux-build
 win32-build
+test/config.ini
+test/cache/*
 qa/pull-tester/run-bitcoind-for-test.sh
 qa/pull-tester/tests-config.sh
 qa/pull-tester/cache/*
 qa/pull-tester/test.*/*
+cache/*
 
 !src/leveldb*/Makefile
 
@@ -124,7 +126,7 @@ qa/pull-tester/test.*/*
 .project
 /doc/doxygen/
 /nbproject/
-
+libbitcoinconsensus.pc
 .idea
 CMakeLists.txt
 cmake-build-debug

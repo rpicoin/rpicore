@@ -1,8 +1,8 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2018 The PIVX developers
-// Copyright (c) 2018 The WISPR developers
+// Copyright (c) 2015-2019 The PIVX developers
+// Copyright (c) 2018-2019 The WISPR developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -62,11 +62,21 @@ static Checkpoints::MapCheckpoints mapCheckpoints =
                 (125000, uint256("76d5412ec389433de6cd22345209c859b4c18b6d8f8893df479c9f7520d19901")) // Block 125.000
                 (150000, uint256("a7e0dfdc9c3197e9e763e858aafa9553c0235c0e328371a5f8c5ba0b6e44919d")) // Block 150.000
                 (200000, uint256("385e915b52f0ad669b91005ab7ddb22356b6a220e8b98cbcf2c8aca5c5dd3b03")) // Block 200.000
-                (250000, uint256("40ee22bd8b2cc23f83e16d19a53aa8591617772f9722c56b86d16163b2a10416")); // Block 250.000
+                (250000, uint256("40ee22bd8b2cc23f83e16d19a53aa8591617772f9722c56b86d16163b2a10416")) // Block 250.000
+                (300000, uint256("700c33f9bf03c018f33167c2c455f05762b49e1f1f06e14833a5e8e269beebe7")) // Block 300.000
+                (350000, uint256("ffb49991aa635992305029cb629037cf5d08e945d2027c79f4f737c11e7d680e")) // Block 350.000
+                (400000, uint256("cf86529d0243cb653da92cbbaddc7f0a4f275bcf557cc112d03c33b756af25d3")) // Block 400.000
+                (450000, uint256("041e77f69b429b5e25005fd1dfe0557fec65cefc2b3fc6c496dd1800f0bb9107")) // Block 450.000
+                (500000, uint256("c448d7cc589ea2f93a1cbe901ec95b6f0093303d5899679ab6ef5e52cb7114bd")) // Block 500.000
+                (550000, uint256("f8794aaf9f766d4b50900be64e7e1e937d358feef2260c45bbb490d589667610")) // Block 550.000
+                (600000, uint256("30f3a9dc4316a84586b428b0f8d110c52077f96f3159d5305fe30cf20afd0eef")) // Block 600.000
+                (650000, uint256("ffbbe82b867c86463a07bffaf0b7ec232db5bf31703114e5e8dc94f8eb0afe47")) // Block 650.000
+                (700000, uint256("6ccf493bd1ac07b0b064fd0a39cf2d699d8ac8183632b6ad3e2f665f759a79db")) // Block 700.000
+                (750000, uint256("d0cbba7201e402f13d2c6963765f2fcdb0a455c7157ee6b611d466ff60e108ed")); // Block 750.000
 static const Checkpoints::CCheckpointData data = {
         &mapCheckpoints,
-        1530243664, // * UNIX timestamp of last checkpoint block (Done)
-        514630,    // * total number of transactions between genesis and last checkpoint TODO: keep using correct number
+        1561363307, // * UNIX timestamp of last checkpoint block (Done)
+        1557114,    // * total number of transactions between genesis and last checkpoint TODO: keep using correct number
         //   (the tx=... number in the SetBestChain debug.log lines)
         2000        // * estimated number of transactions per day after checkpoint
 };
@@ -93,11 +103,11 @@ libzerocoin::ZerocoinParams* CChainParams::Zerocoin_Params(bool useModulusV1) co
     assert(this);
     static CBigNum bnHexModulus = 0;
     if (!bnHexModulus)
-        bnHexModulus.SetHex(zerocoinModulus);
+        bnHexModulus.SetHex(consensus.zerocoinModulus);
     static libzerocoin::ZerocoinParams ZCParamsHex = libzerocoin::ZerocoinParams(bnHexModulus);
     static CBigNum bnDecModulus = 0;
     if (!bnDecModulus)
-        bnDecModulus.SetDec(zerocoinModulus);
+        bnDecModulus.SetDec(consensus.zerocoinModulus);
     static libzerocoin::ZerocoinParams ZCParamsDec = libzerocoin::ZerocoinParams(bnDecModulus);
 
     if (useModulusV1)
@@ -113,6 +123,28 @@ public:
     {
         networkID = CBaseChainParams::MAIN;
         strNetworkID = "main";
+        consensus.nSubsidyHalvingInterval = 0;
+        consensus.nEnforceBlockUpgradeMajority = 750;
+        consensus.nRejectBlockOutdatedMajority = 950;
+        consensus.nToCheckBlockUpgradeMajority = 1000;
+        consensus.nMaxReorganizationDepth = 500;
+        consensus.powLimit = ~uint256(0) >> 16; // WISPR starting difficulty is 1 / 2^12
+        consensus.stakeLimit = ~uint256(0) >> 48;
+        consensus.nTargetTimespanV1 =  16 * 60; // WISPR Old: 1 day
+        consensus.nTargetTimespanV2 =  1 * 60; // WISPR New: 1 day
+        consensus.nTargetSpacingV1 = 64;  // WISPR Old: 1 minute
+        consensus.nTargetSpacingV2 = 1 * 60;  // WISPR New: 1 minute
+        consensus.nMaturity = 100;
+        consensus.nMasternodeCountDrift = 20;
+        consensus.nMaxMoneyOut = 120000000 * COIN;
+        consensus.fAllowMinDifficultyBlocks = false;
+        /** Height or Time Based Activations **/
+        consensus.nLastPOWBlock = 450;
+        consensus.nNewProtocolStartHeight = 400000;
+        consensus.nNewProtocolStartTime = 1539963322; //Friday, October 19, 2018 3:35:22 PM
+        consensus.nZerocoinStartHeight = consensus.nNewProtocolStartHeight;
+        consensus.nZerocoinStartTime = consensus.nNewProtocolStartTime;
+
         /**
          * The message start string is designed to be unlikely to occur in normal data.
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
@@ -124,28 +156,20 @@ public:
         pchMessageStart[3] = 0x77;
         vAlertPubKey=ParseHex("0411f84b889c61c1842ec84a15e3093d7dd99d955ab797b24c984cdcfe3aca23f04ec06bd840e8093aaf83488c039027ecc4ad704261245be30289be166f667c61");
         nDefaultPort = 17000;
-        bnProofOfWorkLimit = ~uint256(0) >> 16; // WISPR starting difficulty is 1 / 2^12
-        bnProofOfStakeLimit = ~uint256(0) >> 48;
-        nSubsidyHalvingInterval = 0;
-        nMaxReorganizationDepth = 500;
-        nEnforceBlockUpgradeMajority = 750;
-        nRejectBlockOutdatedMajority = 950;
-        nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 0;
-        nTargetTimespanV1 =  16 * 60; // WISPR Old: 1 day
-        nTargetTimespanV2 =  1 * 60; // WISPR New: 1 day
-        nTargetSpacingV1 = 64;  // WISPR Old: 1 minute
-        nTargetSpacingV2 = 1 * 60;  // WISPR New: 1 minute
-        nMaturity = 100;
-        nMasternodeCountDrift = 20;
-        nMaxMoneyOut = 120000000 * COIN;
+        consensus.nBlockDoubleAccumulated = -1;
+        consensus.nBlockEnforceSerialRange = consensus.nNewProtocolStartHeight; //Enforce serial range starting this block
+        consensus.nBlockRecalculateAccumulators = consensus.nNewProtocolStartHeight; //Trigger a recalculation of accumulators
+        consensus.nBlockFirstFraudulent = -1; //First block that bad serials emerged
+        consensus.nBlockLastGoodCheckpoint = consensus.nNewProtocolStartHeight; //Last valid accumulator checkpoint
 
-        /** Height or Time Based Activations **/
-        nLastPOWBlock = 450;
-        nNewProtocolStartHeight = 400000;
-        nNewProtocolStartTime = 1539963322; //Friday, October 19, 2018 3:35:22 PM
-        nZerocoinStartHeight = nNewProtocolStartHeight;
-        nZerocoinStartTime = nNewProtocolStartTime;
+        // Public coin spend enforcement
+        consensus.nPublicZCSpends = 900000;
+
+        // Fake Serial Attack
+        consensus.nFakeSerialBlockheightEnd = -1;
+        consensus.nSupplyBeforeFakeSerial = 0;   // zerocoin supply at block nFakeSerialBlockheightEnd
+
         /**
          * Build the genesis block. Note that the output of the genesis coinbase cannot
          * be spent as it did not originally exist in the database.
@@ -171,11 +195,11 @@ public:
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
         genesis.nTime = 1513403825;
-        genesis.nBits = bnProofOfWorkLimit.GetCompact();
+        genesis.nBits = consensus.powLimit.GetCompact();
         genesis.nNonce = 36156;
 
-        hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x0000ec93e0a3fe0aafa3be7dafe1290f5fca039a4037dd5174bc3dd7a35d67f0"));
+        consensus.hashGenesisBlock = genesis.GetHash();
+        assert(consensus.hashGenesisBlock == uint256("0x0000ec93e0a3fe0aafa3be7dafe1290f5fca039a4037dd5174bc3dd7a35d67f0"));
         assert(genesis.hashMerkleRoot == uint256("0xbcd0064f46daed0b3c1ccff16656a0da04b5509924118b7c13d21c81d62ec521"));
 
         vSeeds.push_back(CDNSSeedData("wispr.tech", "dnsseed.wispr.tech"));     // Primary DNS Seeder for wispr
@@ -194,35 +218,38 @@ public:
         convertSeed6(vFixedSeeds, pnSeed6_main, ARRAYLEN(pnSeed6_main));
 
         fMiningRequiresPeers = true;
-        fAllowMinDifficultyBlocks = false;
         fDefaultConsistencyChecks = false;
+        fDefaultCheckMemPool = false;
         fRequireStandard = true;
         fMineBlocksOnDemand = false;
-        fSkipProofOfWorkCheck = false;
+        consensus.fSkipProofOfWorkCheck = false;
         fTestnetToBeDeprecatedFieldRPC = false;
-        fHeadersFirstSyncingActive = false;
+        fHeadersFirstSyncingActive = true;
 
-        nPoolMaxTransactions = 3;
-        strSporkKey = "04ac60266c909c22b95415270278b8ea90bec852922d3b2bd110cfba62fc4da20f7d5d6c7f109c9604a421c6e75e47a3c8963dcd1b9b7ca71aaeef3d410e4cc65a";
-        strObfuscationPoolDummyAddress = "WYCSnxDBqGkcruCwreLtBfpXtSMgoo5yUJ";
-        nStartMasternodePayments = nNewProtocolStartTime; // July 2, 2018
+        consensus.nPoolMaxTransactions = 3;
+        consensus.nBudgetCycleBlocks = 43200; //!< Amount of blocks in a months period of time (using 1 minutes per) = (60*24*30)
+        consensus.strSporkKey = "04ac60266c909c22b95415270278b8ea90bec852922d3b2bd110cfba62fc4da20f7d5d6c7f109c9604a421c6e75e47a3c8963dcd1b9b7ca71aaeef3d410e4cc65a";
+        consensus.strObfuscationPoolDummyAddress = "WYCSnxDBqGkcruCwreLtBfpXtSMgoo5yUJ";
+        consensus.nStartMasternodePayments = consensus.nNewProtocolStartTime; // July 2, 2018
 
         /** Zerocoin */
-        zerocoinModulus = "25195908475657893494027183240048398571429282126204032027777137836043662020707595556264018525880784"
+        consensus.zerocoinModulus = "25195908475657893494027183240048398571429282126204032027777137836043662020707595556264018525880784"
                           "4069182906412495150821892985591491761845028084891200728449926873928072877767359714183472702618963750149718246911"
                           "6507761337985909570009733045974880842840179742910064245869181719511874612151517265463228221686998754918242243363"
                           "7259085141865462043576798423387184774447920739934236584823824281198163815010674810451660377306056201619676256133"
                           "8441436038339044149526344321901146575444541784240209246165157233507787077498171257724679629263863563732899121548"
                           "31438167899885040445364023527381951378636564391212010397122822120720357";
-        nMaxZerocoinSpendsPerTransaction = 7; // Assume about 20kb each
-        nMinZerocoinMintFee = 1 * CENT; //high fee required for zerocoin mints
-        nMintRequiredConfirmations = 20; //the maximum amount of confirmations until accumulated in 19
-        nRequiredAccumulation = 1;
-        nDefaultSecurityLevel = 100; //full security level for accumulators
-        nZerocoinHeaderVersion = 8; //Block headers must be this version once zerocoin is active
-        nZerocoinRequiredStakeDepth = 200; //The required confirmations for a zwsp to be stakable
+        consensus.nMaxZerocoinSpendsPerTransaction = 7; // Assume about 20kb each
+        consensus.nMaxZerocoinPublicSpendsPerTransaction = 637; // Assume about 220 bytes each input
+        consensus.nMinZerocoinMintFee = 1 * CENT; //high fee required for zerocoin mints
+        consensus.nMintRequiredConfirmations = 20; //the maximum amount of confirmations until accumulated in 19
+        consensus.nRequiredAccumulation = 1;
+        consensus.nDefaultSecurityLevel = 100; //full security level for accumulators
+        consensus.nZerocoinHeaderVersion = 8; //Block headers must be this version once zerocoin is active
+        consensus.nZerocoinRequiredStakeDepth = 200; //The required confirmations for a zwsp to be stakable
 
-        nBudget_Fee_Confirmations = 6; // Number of confirmations for the finalization fee
+        consensus.nBudget_Fee_Confirmations = 6; // Number of confirmations for the finalization fee
+        consensus.nProposalEstablishmentTime = 60 * 60 * 24; // Proposals must be at least a day old to make it into a budget
     }
 
     const Checkpoints::CCheckpointData& Checkpoints() const
@@ -242,28 +269,35 @@ public:
     {
         networkID = CBaseChainParams::TESTNET;
         strNetworkID = "test";
+        consensus.nSubsidyHalvingInterval = 0;
+        consensus.nEnforceBlockUpgradeMajority = 51;
+        consensus.nRejectBlockOutdatedMajority = 75;
+        consensus.nToCheckBlockUpgradeMajority = 100;
+        consensus.nMaxReorganizationDepth = 500;
+        consensus.powLimit = ~uint256(0) >> 16; // WISPR starting difficulty is 1 / 2^12
+        consensus.stakeLimit = ~uint256(0) >> 48;
+        consensus.fAllowMinDifficultyBlocks = true;
+        consensus.nTargetTimespanV1 =  16 * 60; // WISPR Old: 1 day
+        consensus.nTargetTimespanV2 =  1 * 60; // WISPR New: 1 day
+        consensus.nTargetSpacingV1 = 64;  // WISPR Old: 1 minute
+        consensus.nTargetSpacingV2 = 1 * 60;  // WISPR New: 1 minute
+        consensus.nLastPOWBlock = 450;
+        consensus.nMaturity = 10;
+        consensus.nMasternodeCountDrift = 4;
+        consensus.nMaxMoneyOut = 120000000 * COIN;
+        consensus.nNewProtocolStartHeight = 750;
+        consensus.nNewProtocolStartTime = 1537830552;
+        consensus.nZerocoinStartHeight = consensus.nNewProtocolStartHeight;
+        consensus.nZerocoinStartTime = consensus.nNewProtocolStartTime; // July 2, 2018
+
         pchMessageStart[0] = 0x21;
         pchMessageStart[1] = 0x46;
         pchMessageStart[2] = 0x13;
         pchMessageStart[3] = 0x78;
         vAlertPubKey=ParseHex("04b20dd657f5e4fe0cf9aebb956498c383bac98a079c1003df02c2f121574cd280b8900248a8c6a43074b356e670ef83ec1aadfec60602df7c2366bae732372bba");
         nDefaultPort = 17002;
-        nEnforceBlockUpgradeMajority = 51;
-        nRejectBlockOutdatedMajority = 75;
-        nToCheckBlockUpgradeMajority = 100;
         nMinerThreads = 0;
-        nTargetTimespanV1 =  16 * 60; // WISPR Old: 1 day
-        nTargetTimespanV2 =  1 * 60; // WISPR New: 1 day
-        nTargetSpacingV1 = 64;  // WISPR Old: 1 minute
-        nTargetSpacingV2 = 1 * 60;  // WISPR New: 1 minute
-        nLastPOWBlock = 450;
-        nMaturity = 10;
-        nMasternodeCountDrift = 4;
-        nMaxMoneyOut = 120000000 * COIN;
-        nNewProtocolStartHeight = 750;
-        nNewProtocolStartTime = 1537830552;
-        nZerocoinStartHeight = nNewProtocolStartHeight;
-        nZerocoinStartTime = nNewProtocolStartTime; // July 2, 2018
+
         const char* pszTimestamp = "I would rather be without a state than without a voice";
         genesis.SetNull();
         CMutableTransaction txNew2;
@@ -274,18 +308,26 @@ public:
         txNew2.vout.resize(1);
         txNew2.vin[0].scriptSig = CScript() << 0 << CScriptNum(42) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
         txNew2.vout[0].SetEmpty();
+
+        // Public coin spend enforcement
+        consensus.nPublicZCSpends = 1106100;
+
+        // Fake Serial Attack
+        consensus.nFakeSerialBlockheightEnd = -1;
+        consensus.nSupplyBeforeFakeSerial = 0;
+
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis.vtx.push_back(txNew2);
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
         genesis.nTime    = 1512932225;
-        genesis.nBits    = bnProofOfWorkLimit.GetCompact();
+        genesis.nBits    = consensus.powLimit.GetCompact();
         genesis.nNonce   = 142000;
 
-        hashGenesisBlock = genesis.GetHash();
+        consensus.hashGenesisBlock = genesis.GetHash();
 
-        assert(hashGenesisBlock == uint256("03205c57ebefb02d86c2c0c2de368fa48e92f7df7240f1b528ebbeae70fdbdb1"));
+        assert(consensus.hashGenesisBlock == uint256("03205c57ebefb02d86c2c0c2de368fa48e92f7df7240f1b528ebbeae70fdbdb1"));
         assert(genesis.hashMerkleRoot == uint256("0x26069b04c7c7b5b8773824b15cfbf0ddaf11ee261657a1aeb28aa5c8163909ee"));
 
 
@@ -304,20 +346,23 @@ public:
 
         convertSeed6(vFixedSeeds, pnSeed6_test, ARRAYLEN(pnSeed6_test));
 
-        fSkipProofOfWorkCheck = false;
+        consensus.fSkipProofOfWorkCheck = false;
         fMiningRequiresPeers = true;
-        fAllowMinDifficultyBlocks = true;
         fDefaultConsistencyChecks = false;
+        fDefaultCheckMemPool = false;
         fRequireStandard = true;
         fMineBlocksOnDemand = true;
         fTestnetToBeDeprecatedFieldRPC = true;
 
-        nPoolMaxTransactions = 2;
-        strSporkKey = "04e175173ea919f973cf4bf00d10e1c29c8ef75568c59056630d5a5cce8f6d8ac6edf0bb21baa2a24ecff17ce83b9863a88a54c54ca87c709c8a3f1dfef9d268e6";
-        strObfuscationPoolDummyAddress = "mbTYaNZm7TaPt5Du65aPsL8FNTktufYydC";
-        nStartMasternodePayments = nNewProtocolStartTime;
-        nBudget_Fee_Confirmations = 3; // Number of confirmations for the finalization fee. We have to make this very short
+        consensus.nPoolMaxTransactions = 2;
+        consensus.nBudgetCycleBlocks = 144; //!< Ten cycles per day on testnet
+        consensus.strSporkKey = "04e175173ea919f973cf4bf00d10e1c29c8ef75568c59056630d5a5cce8f6d8ac6edf0bb21baa2a24ecff17ce83b9863a88a54c54ca87c709c8a3f1dfef9d268e6";
+        consensus.strObfuscationPoolDummyAddress = "mbTYaNZm7TaPt5Du65aPsL8FNTktufYydC";
+        consensus.nStartMasternodePayments = consensus.nNewProtocolStartTime;
+        consensus.nBudget_Fee_Confirmations = 3; // Number of confirmations for the finalization fee. We have to make this very short
         // here because we only have a 8 block finalization window on testnet
+        consensus.nProposalEstablishmentTime = 60 * 5; // Proposals must be at least 5 mns old to make it into a test budget
+
     }
     const Checkpoints::CCheckpointData& Checkpoints() const
     {
@@ -336,38 +381,55 @@ public:
     {
         networkID = CBaseChainParams::REGTEST;
         strNetworkID = "regtest";
+        consensus.nSubsidyHalvingInterval = 0;
+        consensus.nEnforceBlockUpgradeMajority = 750;
+        consensus.nRejectBlockOutdatedMajority = 950;
+        consensus.nToCheckBlockUpgradeMajority = 1000;
+        consensus.nMaxReorganizationDepth = 500;
+        consensus.powLimit = ~uint256(0) >> 1; // WISPR starting difficulty is 1 / 2^12
+        consensus.stakeLimit = ~uint256(0) >> 48;
+        consensus.nTargetTimespanV1 = 16 * 60; // WISPR Old: 1 day
+        consensus.nTargetTimespanV2 = 1 * 60; // WISPR New: 1 day
+        consensus.nTargetSpacingV1 = 64;        // WISPR Old: 1 minutes
+        consensus.nTargetSpacingV2 = 1 * 60;        // WISPR New: 1 minute
+        consensus.fAllowMinDifficultyBlocks = true;
+
+
+        consensus.nBlockEnforceSerialRange = 1; //Enforce serial range starting this block
+        consensus.nBlockRecalculateAccumulators = 999999999; //Trigger a recalculation of accumulators
+        consensus.nBlockFirstFraudulent = 999999999; //First block that bad serials emerged
+        consensus.nBlockLastGoodCheckpoint = 999999999; //Last valid accumulator checkpoint
+
+        // Public coin spend enforcement
+        consensus.nPublicZCSpends = 350;
+
+        // Fake Serial Attack
+        consensus.nFakeSerialBlockheightEnd = -1;
+
         pchMessageStart[0] = 0xFF;
         pchMessageStart[1] = 0xAF;
         pchMessageStart[2] = 0xB7;
         pchMessageStart[3] = 0xDF;
-        nSubsidyHalvingInterval = 0;
-        nEnforceBlockUpgradeMajority = 750;
-        nRejectBlockOutdatedMajority = 950;
-        nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 1;
-        nTargetTimespanV1 = 16 * 60; // WISPR Old: 1 day
-        nTargetTimespanV2 = 1 * 60; // WISPR New: 1 day
-        nTargetSpacingV1 = 64;        // WISPR Old: 1 minutes
-        nTargetSpacingV2 = 1 * 60;        // WISPR New: 1 minute
-        bnProofOfWorkLimit = ~uint256(0) >> 1;
         genesis.nTime = 1411111111;
-        genesis.nBits  = bnProofOfWorkLimit.GetCompact();
+        genesis.nBits  = consensus.powLimit.GetCompact();
         genesis.nNonce = 2;
 
-        hashGenesisBlock = genesis.GetHash();
+        consensus.hashGenesisBlock = genesis.GetHash();
         nDefaultPort = 17004;
 //        printf("Req net\n");
 //        printf("genesis = %s\n", genesis.ToString().c_str());
-        assert(hashGenesisBlock == uint256("0302157c185ae0018bb60f0c506087be772aa2015150f994cc1a6db55e8e23bd"));
+        assert(consensus.hashGenesisBlock == uint256("0302157c185ae0018bb60f0c506087be772aa2015150f994cc1a6db55e8e23bd"));
 
         vFixedSeeds.clear(); //! Testnet mode doesn't have any fixed seeds.
         vSeeds.clear();      //! Testnet mode doesn't have any DNS seeds.
 
         fMiningRequiresPeers = false;
-        fAllowMinDifficultyBlocks = true;
         fDefaultConsistencyChecks = true;
+        fDefaultCheckMemPool = true;
         fRequireStandard = false;
         fMineBlocksOnDemand = true;
+        consensus.fSkipProofOfWorkCheck = true;
         fTestnetToBeDeprecatedFieldRPC = false;
     }
     const Checkpoints::CCheckpointData& Checkpoints() const
@@ -393,7 +455,7 @@ public:
 
         fMiningRequiresPeers = false;
         fDefaultConsistencyChecks = true;
-        fAllowMinDifficultyBlocks = false;
+        consensus.fAllowMinDifficultyBlocks = false;
         fMineBlocksOnDemand = true;
     }
 
@@ -404,18 +466,18 @@ public:
     }
 
     //! Published setters to allow changing values in unit test cases
-    virtual void setSubsidyHalvingInterval(int anSubsidyHalvingInterval) { nSubsidyHalvingInterval = anSubsidyHalvingInterval; }
-    virtual void setEnforceBlockUpgradeMajority(int anEnforceBlockUpgradeMajority) { nEnforceBlockUpgradeMajority = anEnforceBlockUpgradeMajority; }
-    virtual void setRejectBlockOutdatedMajority(int anRejectBlockOutdatedMajority) { nRejectBlockOutdatedMajority = anRejectBlockOutdatedMajority; }
-    virtual void setToCheckBlockUpgradeMajority(int anToCheckBlockUpgradeMajority) { nToCheckBlockUpgradeMajority = anToCheckBlockUpgradeMajority; }
+    virtual void setSubsidyHalvingInterval(int anSubsidyHalvingInterval) { consensus.nSubsidyHalvingInterval = anSubsidyHalvingInterval; }
+    virtual void setEnforceBlockUpgradeMajority(int anEnforceBlockUpgradeMajority) { consensus.nEnforceBlockUpgradeMajority = anEnforceBlockUpgradeMajority; }
+    virtual void setRejectBlockOutdatedMajority(int anRejectBlockOutdatedMajority) { consensus.nRejectBlockOutdatedMajority = anRejectBlockOutdatedMajority; }
+    virtual void setToCheckBlockUpgradeMajority(int anToCheckBlockUpgradeMajority) { consensus.nToCheckBlockUpgradeMajority = anToCheckBlockUpgradeMajority; }
     virtual void setDefaultConsistencyChecks(bool afDefaultConsistencyChecks) { fDefaultConsistencyChecks = afDefaultConsistencyChecks; }
-    virtual void setAllowMinDifficultyBlocks(bool afAllowMinDifficultyBlocks) { fAllowMinDifficultyBlocks = afAllowMinDifficultyBlocks; }
-    virtual void setSkipProofOfWorkCheck(bool afSkipProofOfWorkCheck) { fSkipProofOfWorkCheck = afSkipProofOfWorkCheck; }
+    virtual void setAllowMinDifficultyBlocks(bool afAllowMinDifficultyBlocks) { consensus.fAllowMinDifficultyBlocks = afAllowMinDifficultyBlocks; }
+    virtual void setSkipProofOfWorkCheck(bool afSkipProofOfWorkCheck) { consensus.fSkipProofOfWorkCheck = afSkipProofOfWorkCheck; }
 };
 static CUnitTestParams unitTestParams;
 
 
-static CChainParams* pCurrentParams = 0;
+static CChainParams* pCurrentParams = nullptr;
 
 CModifiableParams* ModifiableParams()
 {

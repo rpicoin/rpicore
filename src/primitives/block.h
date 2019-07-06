@@ -1,6 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2013 The Bitcoin developers
-// Copyright (c) 2015-2017 The PIVX developers
+// Copyright (c) 2015-2018 The PIVX developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -11,7 +11,7 @@
 #include "keystore.h"
 #include "serialize.h"
 #include "uint256.h"
-#include <boost/foreach.hpp>
+
 
 
 /** The maximum allowed size for a serialized block, in bytes (network rule) */
@@ -29,7 +29,7 @@ class CBlockHeader
 {
 public:
     // header
-    static const int32_t CURRENT_VERSION=8;
+    static const int32_t CURRENT_VERSION=9;     // Version 9 supports CLTV activation
     int32_t nVersion;
     uint256 hashPrevBlock;
     uint256 hashMerkleRoot;
@@ -78,7 +78,6 @@ public:
 
     uint256 GetHash() const;
     uint256 GetPoWHash() const;
-//    uint256 GetHashForType(fProofOfStake) const;
 
     int64_t GetBlockTime() const
     {
@@ -86,6 +85,23 @@ public:
     }
 };
 
+/**
+    see GETHEADERS message, vtx collapses to a single 0 byte
+*/
+class CBlockGetHeader : public CBlockHeader
+{
+public:
+    CBlockGetHeader() {};
+    CBlockGetHeader(const CBlockHeader &header) { *((CBlockHeader*)this) = header; };
+    std::vector<CTransaction> vtx;
+
+    ADD_SERIALIZE_METHODS;
+    template <typename Stream, typename Operation>
+    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
+        READWRITE(*(CBlockHeader*)this);
+        READWRITE(vtx);
+    }
+};
 
 class CBlock : public CBlockHeader
 {
@@ -158,7 +174,7 @@ public:
     int64_t GetMaxTransactionTime() const
     {
         int64_t maxTransactionTime = 0;
-        BOOST_FOREACH(const CTransaction& tx, vtx)
+        for(const CTransaction& tx: vtx)
         maxTransactionTime = std::max(maxTransactionTime, (int64_t)tx.nTime);
         return maxTransactionTime;
     }
@@ -173,7 +189,7 @@ public:
     // If non-NULL, *mutated is set to whether mutation was detected in the merkle
     // tree (a duplication of transactions in the block leading to an identical
     // merkle root).
-    uint256 BuildMerkleTree(bool* mutated = NULL) const;
+    uint256 BuildMerkleTree(bool* mutated = nullptr) const;
 
     std::vector<uint256> GetMerkleBranch(int nIndex) const;
     static uint256 CheckMerkleBranch(uint256 hash, const std::vector<uint256>& vMerkleBranch, int nIndex);

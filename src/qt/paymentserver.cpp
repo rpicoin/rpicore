@@ -1,6 +1,6 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2017 The PIVX developers
+// Copyright (c) 2015-2019 The PIVX developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -12,13 +12,12 @@
 
 #include "base58.h"
 #include "chainparams.h"
-#include "ui_interface.h"
+#include "guiinterface.h"
 #include "util.h"
-#include "wallet.h"
+#include "wallet/wallet.h"
 
 #include <cstdlib>
 
-#include <openssl/x509.h>
 #include <openssl/x509_vfy.h>
 
 #include <QApplication>
@@ -136,7 +135,7 @@ void PaymentServer::LoadRootCAs(X509_STORE* _store)
 
     int nRootCerts = 0;
     const QDateTime currentTime = QDateTime::currentDateTime();
-    foreach (const QSslCertificate& cert, certList) {
+    for (const QSslCertificate& cert: certList) {
         if (currentTime < cert.effectiveDate() || currentTime > cert.expiryDate()) {
             ReportInvalidCertificate(cert);
             continue;
@@ -235,7 +234,7 @@ void PaymentServer::ipcParseCommandLine(int argc, char* argv[])
 bool PaymentServer::ipcSendCommandLine()
 {
     bool fResult = false;
-    foreach (const QString& r, savedPaymentRequests) {
+    for (const QString& r: savedPaymentRequests) {
         QLocalSocket* socket = new QLocalSocket();
         socket->connectToServer(ipcServerName(), QIODevice::WriteOnly);
         if (!socket->waitForConnected(BITCOIN_IPC_CONNECT_TIMEOUT)) {
@@ -265,9 +264,9 @@ bool PaymentServer::ipcSendCommandLine()
 
 PaymentServer::PaymentServer(QObject* parent, bool startLocalServer) : QObject(parent),
                                                                        saveURIs(true),
-                                                                       uriServer(0),
-                                                                       netManager(0),
-                                                                       optionsModel(0)
+                                                                       uriServer(nullptr),
+                                                                       netManager(nullptr),
+                                                                       optionsModel(nullptr)
 {
     // Verify that the version of the library that we linked against is
     // compatible with the version of the headers we compiled against.
@@ -327,7 +326,7 @@ void PaymentServer::initNetManager()
 {
     if (!optionsModel)
         return;
-    if (netManager != NULL)
+    if (netManager != nullptr)
         delete netManager;
 
     // netManager is used to fetch paymentrequests given in wispr: URIs
@@ -354,7 +353,7 @@ void PaymentServer::uiReady()
     initNetManager();
 
     saveURIs = false;
-    foreach (const QString& s, savedPaymentRequests) {
+    for (const QString& s: savedPaymentRequests) {
         handleURIOrFile(s);
     }
     savedPaymentRequests.clear();
@@ -508,7 +507,7 @@ bool PaymentServer::processPaymentRequest(PaymentRequestPlus& request, SendCoins
     QList<std::pair<CScript, CAmount> > sendingTos = request.getPayTo();
     QStringList addresses;
 
-    foreach (const PAIRTYPE(CScript, CAmount) & sendingTo, sendingTos) {
+    for (const std::pair<CScript, CAmount> & sendingTo: sendingTos) {
         // Extract and check destination addresses
         CTxDestination dest;
         if (ExtractDestination(sendingTo.first, dest)) {
@@ -669,7 +668,7 @@ void PaymentServer::reportSslErrors(QNetworkReply* reply, const QList<QSslError>
     Q_UNUSED(reply);
 
     QString errString;
-    foreach (const QSslError& err, errs) {
+    for (const QSslError& err: errs) {
         qWarning() << "PaymentServer::reportSslErrors : " << err;
         errString += err.errorString() + "\n";
     }

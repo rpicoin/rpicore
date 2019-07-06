@@ -1,6 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
-// Copyright (c) 2017 The PIVX developers
+// Copyright (c) 2017-2018 The PIVX developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -17,6 +17,7 @@
 #include <map>
 #include <set>
 #include <stdint.h>
+#include <stdio.h>
 #include <string.h>
 #include <string>
 #include <utility>
@@ -228,6 +229,11 @@ public:
         return (*this);
     }
 
+    CDataStream& movePos(size_t nSize){
+        nReadPos = nReadPos + nSize;
+        return (*this);
+    }
+
     CDataStream& ignore(int nSize)
     {
         // Ignore from the beginning of the buffer
@@ -325,7 +331,7 @@ public:
     {
         if (file) {
             ::fclose(file);
-            file = NULL;
+            file = nullptr;
         }
     }
 
@@ -336,7 +342,7 @@ public:
     FILE* release()
     {
         FILE* ret = file;
-        file = NULL;
+        file = nullptr;
         return ret;
     }
 
@@ -348,7 +354,7 @@ public:
 
     /** Return true if the wrapped FILE* is NULL, false otherwise.
      */
-    bool IsNull() const { return (file == NULL); }
+    bool IsNull() const { return (file == nullptr); }
 
     //
     // Stream subset
@@ -466,7 +472,7 @@ public:
     {
         if (src) {
             ::fclose(src);
-            src = NULL;
+            src = nullptr;
         }
     }
 

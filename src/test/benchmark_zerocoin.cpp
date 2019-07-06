@@ -25,6 +25,7 @@
 #include "libzerocoin/Coin.h"
 #include "libzerocoin/CoinSpend.h"
 #include "libzerocoin/Accumulator.h"
+#include "test_wispr.h"
 
 using namespace std;
 using namespace libzerocoin;
@@ -234,7 +235,7 @@ Testb_Accumulator()
 {
 	// This test assumes a list of coins were generated during
 	// the Testb_MintCoin() test.
-	if (ggCoins[0] == NULL) {
+	if (ggCoins[0] == nullptr) {
 		return false;
 	}
 	try {
@@ -304,11 +305,11 @@ Testb_MintAndSpend()
 {
 	try {
 		// This test assumes a list of coins were generated in Testb_MintCoin()
-		if (ggCoins[0] == NULL)
+		if (ggCoins[0] == nullptr)
 		{
 			// No coins: mint some.
 			Testb_MintCoin();
-			if (ggCoins[0] == NULL) {
+			if (ggCoins[0] == nullptr) {
 				return false;
 			}
 		}
@@ -377,7 +378,7 @@ Testb_RunAllTests()
 
 	ggNumTests = ggSuccessfulTests = 0;
 	for (uint32_t i = 0; i < TESTS_COINS_TO_ACCUMULATE; i++) {
-		ggCoins[i] = NULL;
+		ggCoins[i] = nullptr;
 	}
 
 	// Run through all of the Zerocoin tests
@@ -402,7 +403,8 @@ Testb_RunAllTests()
 	cout << ggSuccessfulTests << " out of " << ggNumTests << " tests passed." << endl << endl;
 	delete gg_Params;
 }
-BOOST_AUTO_TEST_SUITE(benchmark_zerocoin)
+
+BOOST_FIXTURE_TEST_SUITE(benchmark_zerocoin, TestingSetup)
 
 BOOST_AUTO_TEST_CASE(benchmark_test)
 {

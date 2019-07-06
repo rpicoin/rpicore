@@ -1,0 +1,45 @@
+# It is not recommended to modify this file in-place, because it will
+# be overwritten during package upgrades. If you want to add further
+# options or overwrite existing ones then use
+# $ systemctl edit wisprd.service
+# See "man systemd.service" for details.
+
+# Note that almost all daemon options could be specified in
+# /etc/wispr/wispr.conf
+
+[Unit]
+Description=WISPR daemon
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/wisprd -daemon -datadir=/var/lib/wispr -conf=/etc/wispr/wispr.conf -pid=/run/wisprd/wisprd.pid
+# Creates /run/wisprd owned by wispr
+RuntimeDirectory=wisprd
+User=wispr
+Type=forking
+PIDFile=/run/wisprd/wisprd.pid
+Restart=on-failure
+
+# Hardening measures
+####################
+
+# Provide a private /tmp and /var/tmp.
+PrivateTmp=true
+
+# Mount /usr, /boot/ and /etc read-only for the process.
+ProtectSystem=full
+
+# Disallow the process and all of its children to gain
+# new privileges through execve().
+NoNewPrivileges=true
+
+# Use a new /dev namespace only populated with API pseudo devices
+# such as /dev/null, /dev/zero and /dev/random.
+PrivateDevices=true
+
+# Deny the creation of writable and executable memory mappings.
+# Commented out as it's not supported on Debian 8 or Ubuntu 16.04 LTS
+#MemoryDenyWriteExecute=true
+
+[Install]
+WantedBy=multi-user.target

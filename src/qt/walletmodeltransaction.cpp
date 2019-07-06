@@ -1,15 +1,15 @@
 // Copyright (c) 2011-2013 The Bitcoin developers
-// Copyright (c) 2017 The PIVX developers
+// Copyright (c) 2017-2019 The PIVX developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "walletmodeltransaction.h"
 
-#include "wallet.h"
+#include "wallet/wallet.h"
 
 WalletModelTransaction::WalletModelTransaction(const QList<SendCoinsRecipient>& recipients) : recipients(recipients),
-                                                                                              walletTransaction(0),
-                                                                                              keyChange(0),
+                                                                                              walletTransaction(nullptr),
+                                                                                              keyChange(nullptr),
                                                                                               fee(0)
 {
     walletTransaction = new CWalletTx();
@@ -49,7 +49,7 @@ void WalletModelTransaction::setTransactionFee(const CAmount& newFee)
 CAmount WalletModelTransaction::getTotalTransactionAmount()
 {
     CAmount totalTransactionAmount = 0;
-    foreach (const SendCoinsRecipient& rcp, recipients) {
+    for (const SendCoinsRecipient& rcp: recipients) {
         totalTransactionAmount += rcp.amount;
     }
     return totalTransactionAmount;

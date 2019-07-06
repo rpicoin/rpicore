@@ -1,5 +1,5 @@
 // Copyright (c) 2014-2016 The Dash developers
-// Copyright (c) 2016-2018 The PIVX developers
+// Copyright (c) 2016-2019 The PIVX developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -16,8 +16,7 @@
 #include "sync.h"
 #include "util.h"
 #include "validationinterface.h"
-
-#include <boost/lexical_cast.hpp>
+#include "reverse_iterate.h"
 
 using namespace std;
 using namespace boost;
@@ -61,7 +60,7 @@ void ProcessMessageSwiftTX(CNode* pfrom, std::string& strCommand, CDataStream& v
             return;
         }
 
-        BOOST_FOREACH (const CTxOut o, tx.vout) {
+        for (const CTxOut o: tx.vout) {
             // IX supports normal scripts and unspendable scripts (used in DS collateral and Budget collateral).
             // TODO: Look into other script types that are normal and can be included
             if (!o.scriptPubKey.IsNormalPaymentScript() && !o.scriptPubKey.IsUnspendable()) {
@@ -106,7 +105,7 @@ void ProcessMessageSwiftTX(CNode* pfrom, std::string& strCommand, CDataStream& v
                 pfrom->addr.ToString().c_str(), pfrom->cleanSubVer.c_str(),
                 tx.GetHash().ToString().c_str());
 
-            BOOST_FOREACH (const CTxIn& in, tx.vin) {
+            for (const CTxIn& in : tx.vin) {
                 if (!mapLockedInputs.count(in.prevout)) {
                     mapLockedInputs.insert(make_pair(in.prevout, tx.GetHash()));
                 }
@@ -185,10 +184,10 @@ bool IsIXTXValid(const CTransaction& txCollateral)
     CAmount nValueOut = 0;
     bool missingTx = false;
 
-    BOOST_FOREACH (const CTxOut o, txCollateral.vout)
+    for (const CTxOut o: txCollateral.vout)
         nValueOut += o.nValue;
 
-    BOOST_FOREACH (const CTxIn i, txCollateral.vin) {
+    for (const CTxIn i: txCollateral.vin) {
         CTransaction tx2;
         uint256 hash;
         if (GetTransaction(i.prevout.hash, tx2, hash, true)) {
@@ -226,7 +225,7 @@ bool IsIXTXValid(const CTransaction& txCollateral)
 int64_t CreateNewLock(CTransaction tx)
 {
     int64_t nTxAge = 0;
-    BOOST_REVERSE_FOREACH (CTxIn i, tx.vin) {
+    for (CTxIn i: reverse_iterate(tx.vin)) {
         nTxAge = GetInputAge(i);
         if (nTxAge < 5) //1 less than the "send IX" gui requires, incase of a block propagating the network at the time
         {
@@ -370,7 +369,7 @@ bool ProcessConsensusVote(CNode* pnode, CConsensusVote& ctx)
 #endif
 
                 if (mapTxLockReq.count(ctx.txHash)) {
-                    BOOST_FOREACH (const CTxIn& in, tx.vin) {
+                    for (const CTxIn& in: tx.vin) {
                         if (!mapLockedInputs.count(in.prevout)) {
                             mapLockedInputs.insert(make_pair(in.prevout, ctx.txHash));
                         }
@@ -402,7 +401,7 @@ bool CheckForConflictingLocks(CTransaction& tx)
         Blocks could have been rejected during this time, which is OK. After they cancel out, the client will
         rescan the blocks and find they're acceptable and then take the chain with the most work.
     */
-    BOOST_FOREACH (const CTxIn& in, tx.vin) {
+    for (const CTxIn& in: tx.vin) {
         if (mapLockedInputs.count(in.prevout)) {
             if (mapLockedInputs[in.prevout] != tx.GetHash()) {
                 LogPrintf("SwiftX::CheckForConflictingLocks - found two complete conflicting locks - removing both. %s %s", tx.GetHash().ToString().c_str(), mapLockedInputs[in.prevout].ToString().c_str());
@@ -433,7 +432,7 @@ int64_t GetAverageVoteTime()
 
 void CleanTransactionLocksList()
 {
-    if (chainActive.Tip() == NULL) return;
+    if (chainActive.Tip() == nullptr) return;
 
     std::map<uint256, CTransactionLock>::iterator it = mapTxLocks.begin();
 
@@ -444,13 +443,13 @@ void CleanTransactionLocksList()
             if (mapTxLockReq.count(it->second.txHash)) {
                 CTransaction& tx = mapTxLockReq[it->second.txHash];
 
-                BOOST_FOREACH (const CTxIn& in, tx.vin)
+                for (const CTxIn& in: tx.vin)
                     mapLockedInputs.erase(in.prevout);
 
                 mapTxLockReq.erase(it->second.txHash);
                 mapTxLockReqRejected.erase(it->second.txHash);
 
-                BOOST_FOREACH (CConsensusVote& v, it->second.vecConsensusVotes)
+                for (CConsensusVote& v: it->second.vecConsensusVotes)
                     mapTxLockVote.erase(v.GetHash());
             }
 
@@ -481,12 +480,12 @@ uint256 CConsensusVote::GetHash() const
 bool CConsensusVote::SignatureValid()
 {
     std::string errorMessage;
-    std::string strMessage = txHash.ToString().c_str() + boost::lexical_cast<std::string>(nBlockHeight);
+    std::string strMessage = txHash.ToString().c_str() + std::to_string(nBlockHeight);
     //LogPrintf("verify strMessage %s \n", strMessage.c_str());
 
     CMasternode* pmn = mnodeman.Find(vinMasternode);
 
-    if (pmn == NULL) {
+    if (pmn == nullptr) {
         LogPrintf("SwiftX::CConsensusVote::SignatureValid() - Unknown Masternode\n");
         return false;
     }
@@ -505,7 +504,7 @@ bool CConsensusVote::Sign()
 
     CKey key2;
     CPubKey pubkey2;
-    std::string strMessage = txHash.ToString().c_str() + boost::lexical_cast<std::string>(nBlockHeight);
+    std::string strMessage = txHash.ToString().c_str() + std::to_string(nBlockHeight);
     //LogPrintf("signing strMessage %s \n", strMessage.c_str());
     //LogPrintf("signing privkey %s \n", strMasterNodePrivKey.c_str());
 
@@ -530,7 +529,7 @@ bool CConsensusVote::Sign()
 
 bool CTransactionLock::SignaturesValid()
 {
-    BOOST_FOREACH (CConsensusVote vote, vecConsensusVotes) {
+    for (CConsensusVote vote: vecConsensusVotes) {
         int n = mnodeman.GetMasternodeRank(vote.vinMasternode, vote.nBlockHeight, MIN_SWIFTTX_PROTO_VERSION);
 
         if (n == -1) {
@@ -567,7 +566,7 @@ int CTransactionLock::CountSignatures()
     if (nBlockHeight == 0) return -1;
 
     int n = 0;
-    BOOST_FOREACH (CConsensusVote v, vecConsensusVotes) {
+    for (CConsensusVote v: vecConsensusVotes) {
         if (v.nBlockHeight == nBlockHeight) {
             n++;
         }

@@ -1,0 +1,8 @@
+/usr/bin/wispr-cli		--	gen_context(system_u:object_r:wispr_exec_t,s0)
+/usr/sbin/wisprd		--	gen_context(system_u:object_r:wispr_exec_t,s0)
+/usr/lib(64)?/wispr/wisprd		--	gen_context(system_u:object_r:wispr_exec_t,s0)
+
+/etc/wispr(/.*)?		gen_context(system_u:object_r:wispr_conf_t,s0)
+/var/lib/wispr(/.*)?		gen_context(system_u:object_r:wispr_var_lib_t,s0)
+
+(/var)?/run/wisprd(/.*)?   gen_context(system_u:object_r:wispr_var_run_t,s0)

@@ -1,5 +1,5 @@
 // Copyright (c) 2013-2014 The Bitcoin Core developers
-// Copyright (c) 2017 The PIVX developers
+// Copyright (c) 2017-2019 The PIVX developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -7,7 +7,9 @@
 #include "rpc/client.h"
 
 #include "base58.h"
-#include "wallet.h"
+#include "wallet/wallet.h"
+
+#include "test/test_wispr.h"
 
 #include <boost/algorithm/string.hpp>
 #include <boost/test/unit_test.hpp>
@@ -16,12 +18,12 @@
 
 using namespace std;
 
-extern UniValue createArgs(int nRequired, const char* address1 = NULL, const char* address2 = NULL);
+extern UniValue createArgs(int nRequired, const char* address1 = nullptr, const char* address2 = nullptr);
 extern UniValue CallRPC(string args);
 
 extern CWallet* pwalletMain;
 
-BOOST_AUTO_TEST_SUITE(rpc_wallet_tests)
+BOOST_FIXTURE_TEST_SUITE(rpc_wallet_tests, TestingSetup)
 
 BOOST_AUTO_TEST_CASE(rpc_addmultisig)
 {
