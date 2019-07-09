@@ -1,11 +1,26 @@
 cmake_minimum_required(VERSION 3.10)
 project(WISPR)
 
+set(CMAKE_PREFIX_PATH D:/Development/Libraries/CPP/Qt/5.9.7/mingw53_32)
 set(BDB_VER "4.8.30")
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/contrib/cmake")
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 ")
 include(${CMAKE_ROOT}/Modules/ExternalProject.cmake)
+
+set(LIBEVENT_LIB D:/Development/Libraries/CPP/libevent/libevent.lib)
+set(LIBEVENT_INCLUDE_DIR D:/Development/Libraries/CPP/libevent/include)
+set(LIBEVENT_PTHREAD_LIB D:/Development/Libraries/CPP/libevent/libevent.a)
+set(Boost_INCLUDE_DIR D:/Development/Libraries/CPP/boost)
+set(Boost_LIBRARY_DIR D:/Development/Libraries/CPP/boost/lib)
+set(GMP_INCLUDE_DIR D:/Development/Libraries/CPP/gmp/include)
+set(GMP_LIBRARY D:/Development/Libraries/CPP/gmp/include/libgmp-10.dll)
+set(Protobuf_LIBRARIES D:/Development/Libraries/CPP/protoc/lib/libprotobuf.lib)
+set(Protobuf_INCLUDE_DIR D:/Development/Libraries/CPP/protoc/include)
+set(Protobuf_PROTOC_EXECUTABLE D:/Development/Libraries/CPP/protoc/bin/protoc.exe)
+set(SHLWAPI_INCLUDE_DIR D:/Development/Compilers/C++/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/include)
+set(ZMQ_LIBRARY D:/Development/Libraries/CPP/ZeroMQ 4.0.4/lib/libzmq-v120-mt-4_0_4.lib)
+set(ZMQ_INCLUDE_DIR D:/Development/Libraries/CPP/ZeroMQ 4.0.4/include)
 
 if(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
     message(STATUS "Compiling on macOS")
@@ -114,7 +129,7 @@ ExternalProject_Add (
         BUILD_COMMAND make
         BUILD_IN_SOURCE 1
         INSTALL_COMMAND ""
-        )
+)
 
 ExternalProject_Add (
         libsecp256k1
@@ -331,10 +346,10 @@ add_library(SERVER_A STATIC ${BitcoinHeaders} ${SERVER_SOURCES})
 
 if (ZMQ_FOUND)
     set(ZMQ_SOURCES
-        ./src/zmq/zmqabstractnotifier.cpp
-        ./src/zmq/zmqnotificationinterface.cpp
-        ./src/zmq/zmqpublishnotifier.cpp
-    )
+            ./src/zmq/zmqabstractnotifier.cpp
+            ./src/zmq/zmqnotificationinterface.cpp
+            ./src/zmq/zmqpublishnotifier.cpp
+            )
     add_library(ZMQ_A STATIC ${BitcoinHeaders} ${ZMQ_SOURCES})
 endif()
 
@@ -381,27 +396,15 @@ set(BITCOIN_CRYPTO_SOURCES
         ./src/crypto/scrypt.cpp
         ./src/crypto/ripemd160.cpp
         ./src/crypto/aes_helper.c
-        ./src/crypto/blake.c
-        ./src/crypto/bmw.c
-        ./src/crypto/groestl.c
-        ./src/crypto/jh.c
-        ./src/crypto/keccak.c
-        ./src/crypto/skein.c
-        ./src/crypto/common.h
-        ./src/crypto/sha256.h
-        ./src/crypto/sha512.h
-        ./src/crypto/hmac_sha256.h
-        ./src/crypto/rfc6979_hmac_sha256.h
-        ./src/crypto/hmac_sha512.h
-        ./src/crypto/scrypt.h
-        ./src/crypto/sha1.h
-        ./src/crypto/ripemd160.h
-        ./src/crypto/sph_blake.h
-        ./src/crypto/sph_bmw.h
-        ./src/crypto/sph_groestl.h
-        ./src/crypto/sph_jh.h
-        ./src/crypto/sph_keccak.h
-        ./src/crypto/sph_skein.h
+        ./src/crypto/common
+        ./src/crypto/sha256
+        ./src/crypto/sha512
+        ./src/crypto/hmac_sha256
+        ./src/crypto/rfc6979_hmac_sha256
+        ./src/crypto/hmac_sha512
+        ./src/crypto/scrypt
+        ./src/crypto/sha1
+        ./src/crypto/ripemd160
         ./src/crypto/sph_types.h
         )
 add_library(BITCOIN_CRYPTO_A STATIC ${BITCOIN_CRYPTO_SOURCES})
