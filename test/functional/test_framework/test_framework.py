@@ -414,13 +414,13 @@ class BitcoinTestFramework():
             # blocks are created with timestamps 10 minutes apart
             # starting from 2010 minutes in the past
             self.enable_mocktime()
-            block_time = self.mocktime - (201 * 60)
+            block_time = self.mocktime - (201 * 64)
             for i in range(2):
                 for peer in range(4):
                     for j in range(25):
                         set_node_times(self.nodes, block_time)
                         self.nodes[peer].generate(1)
-                        block_time += 60
+                        block_time += 64
                     # Must sync before next peer starts generating blocks
                     sync_blocks(self.nodes)
 

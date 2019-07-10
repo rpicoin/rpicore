@@ -137,7 +137,6 @@ public:
         consensus.nMaturity = 100;
         consensus.nMasternodeCountDrift = 20;
         consensus.nMaxMoneyOut = 120000000 * COIN;
-        consensus.fAllowMinDifficultyBlocks = false;
         /** Height or Time Based Activations **/
         consensus.nLastPOWBlock = 450;
         consensus.nNewProtocolStartHeight = 400000;
@@ -218,13 +217,14 @@ public:
         convertSeed6(vFixedSeeds, pnSeed6_main, ARRAYLEN(pnSeed6_main));
 
         fMiningRequiresPeers = true;
+        consensus.fAllowMinDifficultyBlocks = false;
         fDefaultConsistencyChecks = false;
         fDefaultCheckMemPool = false;
         fRequireStandard = true;
         fMineBlocksOnDemand = false;
         consensus.fSkipProofOfWorkCheck = false;
         fTestnetToBeDeprecatedFieldRPC = false;
-        fHeadersFirstSyncingActive = true;
+        fHeadersFirstSyncingActive = false;
 
         consensus.nPoolMaxTransactions = 3;
         consensus.nBudgetCycleBlocks = 43200; //!< Amount of blocks in a months period of time (using 1 minutes per) = (60*24*30)
@@ -276,7 +276,6 @@ public:
         consensus.nMaxReorganizationDepth = 500;
         consensus.powLimit = ~uint256(0) >> 16; // WISPR starting difficulty is 1 / 2^12
         consensus.stakeLimit = ~uint256(0) >> 48;
-        consensus.fAllowMinDifficultyBlocks = true;
         consensus.nTargetTimespanV1 =  16 * 60; // WISPR Old: 1 day
         consensus.nTargetTimespanV2 =  1 * 60; // WISPR New: 1 day
         consensus.nTargetSpacingV1 = 64;  // WISPR Old: 1 minute
@@ -348,10 +347,11 @@ public:
 
         consensus.fSkipProofOfWorkCheck = false;
         fMiningRequiresPeers = true;
+        consensus.fAllowMinDifficultyBlocks = true;
         fDefaultConsistencyChecks = false;
         fDefaultCheckMemPool = false;
         fRequireStandard = true;
-        fMineBlocksOnDemand = true;
+        fMineBlocksOnDemand = false;
         fTestnetToBeDeprecatedFieldRPC = true;
 
         consensus.nPoolMaxTransactions = 2;
@@ -388,12 +388,12 @@ public:
         consensus.nMaxReorganizationDepth = 500;
         consensus.powLimit = ~uint256(0) >> 1; // WISPR starting difficulty is 1 / 2^12
         consensus.stakeLimit = ~uint256(0) >> 48;
+        consensus.nLastPOWBlock = 250;
         consensus.nTargetTimespanV1 = 16 * 60; // WISPR Old: 1 day
         consensus.nTargetTimespanV2 = 1 * 60; // WISPR New: 1 day
         consensus.nTargetSpacingV1 = 64;        // WISPR Old: 1 minutes
         consensus.nTargetSpacingV2 = 1 * 60;        // WISPR New: 1 minute
-        consensus.fAllowMinDifficultyBlocks = true;
-
+        consensus.nNewProtocolStartHeight = 300;
 
         consensus.nBlockEnforceSerialRange = 1; //Enforce serial range starting this block
         consensus.nBlockRecalculateAccumulators = 999999999; //Trigger a recalculation of accumulators
@@ -406,10 +406,10 @@ public:
         // Fake Serial Attack
         consensus.nFakeSerialBlockheightEnd = -1;
 
-        pchMessageStart[0] = 0xFF;
-        pchMessageStart[1] = 0xAF;
-        pchMessageStart[2] = 0xB7;
-        pchMessageStart[3] = 0xDF;
+        pchMessageStart[0] = 0xa1;
+        pchMessageStart[1] = 0xcf;
+        pchMessageStart[2] = 0x7e;
+        pchMessageStart[3] = 0xac;
         nMinerThreads = 1;
         genesis.nTime = 1411111111;
         genesis.nBits  = consensus.powLimit.GetCompact();
@@ -425,6 +425,7 @@ public:
         vSeeds.clear();      //! Testnet mode doesn't have any DNS seeds.
 
         fMiningRequiresPeers = false;
+        consensus.fAllowMinDifficultyBlocks = true;
         fDefaultConsistencyChecks = true;
         fDefaultCheckMemPool = true;
         fRequireStandard = false;

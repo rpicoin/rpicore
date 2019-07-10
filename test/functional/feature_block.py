@@ -621,7 +621,7 @@ class FullBlockTest(ComparisonTestFramework):
         b44 = CBlock()
         b44.nTime = self.tip.nTime + 1
         b44.hashPrevBlock = self.tip.sha256
-        b44.nBits = 0x207fffff
+        b44.nBits = 0x1f3ffde0
         b44.vtx.append(coinbase)
         b44.hashMerkleRoot = b44.calc_merkle_root()
         b44.solve()
@@ -635,7 +635,7 @@ class FullBlockTest(ComparisonTestFramework):
         b45 = CBlock()
         b45.nTime = self.tip.nTime + 1
         b45.hashPrevBlock = self.tip.sha256
-        b45.nBits = 0x207fffff
+        b45.nBits = 0x1f3ffde0
         b45.vtx.append(non_coinbase)
         b45.hashMerkleRoot = b45.calc_merkle_root()
         b45.calc_sha256()
@@ -650,7 +650,7 @@ class FullBlockTest(ComparisonTestFramework):
         b46 = CBlock()
         b46.nTime = b44.nTime+1
         b46.hashPrevBlock = b44.sha256
-        b46.nBits = 0x207fffff
+        b46.nBits = 0x1f3ffde0
         b46.vtx = []
         b46.hashMerkleRoot = 0
         b46.solve()

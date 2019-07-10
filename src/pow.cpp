@@ -23,6 +23,11 @@ const CBlockIndex* GetLastBlockIndex(const CBlockIndex* pindex, bool fProofOfSta
     return pindex;
 }
 unsigned int GetNextTargetRequired(const CBlockIndex* pindexLast, bool fProofOfStake) {
+
+    if (Params().NetworkID() == CBaseChainParams::REGTEST){
+        return pindexLast->nBits;
+    }
+
     uint256 bnTargetLimit = fProofOfStake ? Params().ProofOfStakeLimit() : Params().ProofOfWorkLimit();
 
     if (pindexLast == nullptr)
@@ -59,8 +64,9 @@ unsigned int GetNextTargetRequired(const CBlockIndex* pindexLast, bool fProofOfS
 
 unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHeader* pblock)
 {
-    if (Params().NetworkID() == CBaseChainParams::REGTEST)
+    if (Params().NetworkID() == CBaseChainParams::REGTEST){
         return pindexLast->nBits;
+    }
 
     /* current difficulty formula, wispr - DarkGravity v3, written by Evan Duffield - evan@dashpay.io */
     const CBlockIndex* BlockLastSolved = pindexLast;
@@ -165,6 +171,7 @@ bool CheckProofOfWork(uint256 hash, unsigned int nBits)
         return true;
 
     bnTarget.SetCompact(nBits, &fNegative, &fOverflow);
+
     // Check range
     if (fNegative || bnTarget == 0 || fOverflow || bnTarget > Params().ProofOfWorkLimit())
         return error("CheckProofOfWork() : nBits below minimum work");

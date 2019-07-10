@@ -1992,13 +1992,9 @@ double ConvertBitsToDouble(unsigned int nBits)
 
 int64_t GetBlockValue(int nHeight)
 {
-    if (nHeight < 450 && nHeight > 0)
+
+    if (nHeight < 450 && nHeight > 0){
         return 125000 * COIN;
-
-    if (Params().NetworkID() == CBaseChainParams::REGTEST) {
-        if (nHeight == 0)
-            return 250 * COIN;
-
     }
 
     int64_t nSubsidy = 0;
@@ -4261,7 +4257,7 @@ bool CheckWork(const CBlock block, CBlockIndex* const pindexPrev)
     }else{
         nBitsRequired  = GetNextTargetRequired(pindexPrev, block.IsProofOfStake());
     }
-    if (block.IsProofOfWork()) {
+    if ((Params().NetworkID() != CBaseChainParams::REGTEST) && block.IsProofOfWork()) {
         if (hashProof > hashTarget){
             return error("%s : incorrect proof of work - at %d", __func__, pindexPrev->nHeight + 1);
         }
@@ -4287,9 +4283,17 @@ bool ContextualCheckBlockHeader(const CBlockHeader& block, CValidationState& sta
 
     int nHeight = pindexPrev->nHeight + 1;
 
-    if ((Params().NetworkIDString() == "regtest") && block.nBits != GetNextWorkRequired(pindexPrev, &block))
-        return state.DoS(100, error("%s : incorrect proof of work", __func__),
-                REJECT_INVALID, "bad-diffbits");
+//    unsigned int nBitsRequired;
+//    bool fPos = nHeight >= Params().LAST_POW_BLOCK();
+//    if(block.nVersion > 7){
+//        nBitsRequired  = GetNextWorkRequired(pindexPrev, &block);
+//    }else{
+//        nBitsRequired  = GetNextTargetRequired(pindexPrev, fPos);
+//    }
+
+//    if ((Params().NetworkIDString() == "regtest") && block.nBits != nBitsRequired)
+//        return state.DoS(100, error("%s : incorrect proof of work", __func__),
+//                REJECT_INVALID, "bad-diffbits");
 
 
     //If this is a reorg, check that it is not too deep
@@ -4476,7 +4480,7 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
         }
     }
 
-    if(block.GetHash() != Params().HashGenesisBlock() && pindexPrev->nHeight + 1 < Params().NEW_PROTOCOLS_STARTHEIGHT()) {
+    if(Params().NetworkID() != CBaseChainParams::REGTEST && block.GetHash() != Params().HashGenesisBlock() && pindexPrev->nHeight + 1 < Params().NEW_PROTOCOLS_STARTHEIGHT()) {
         if (block.IsProofOfStake() && !CheckCoinStakeTimestamp(block.GetBlockTime(), (int64_t) block.vtx[1].nTime)) {
             return state.DoS(50, error("AcceptBlock() : coinstake timestamp violation nTimeBlock=%d nTimeTx=%u\n",
                                        block.GetBlockTime(), block.vtx[1].nTime));
