@@ -1,3 +1,0 @@
-usr/local/bin/wisprd usr/bin
-usr/local/bin/wispr-cli usr/bin
-debian/examples/wispr.conf etc/wispr

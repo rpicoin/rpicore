@@ -25,7 +25,7 @@ git diff -U0 HEAD~1.. | ./contrib/devtools/clang-format-diff.py -p1 -i -v
 copyright\_header.py
 ====================
 
-Provides utilities for managing copyright headers of `The WISPR
+Provides utilities for managing copyright headers of `The RPICOIN
 developers` in repository source files. It has three subcommands:
 
 ```
@@ -105,7 +105,7 @@ For example:
   ./github-merge.py 3077
 
 (in any git repository) will help you merge pull request #3077 for the
-WisprProject/core repository.
+rpicoin/rpicore repository.
 
 What it does:
 * Fetch master and the pull request.
@@ -123,9 +123,9 @@ couldn't mess with the sources.
 
 Setup
 ---------
-Configuring the github-merge tool for the WISPR repository is done in the following way:
+Configuring the github-merge tool for the RPICOIN repository is done in the following way:
 
-    git config githubmerge.repository WisprProject/core
+    git config githubmerge.repository rpicoin/rpicore
     git config githubmerge.testcmd "make -j4 check" (adapt to whatever you want to use for testing)
     git config --global user.signingkey mykeyid
 
@@ -158,7 +158,7 @@ for further details.
 optimize-pngs.py
 ================
 
-A script to optimize png files in the WISPR
+A script to optimize png files in the RPICOIN
 repository (requires pngcrush).
 
 security-check.py and test-security-check.py
@@ -181,10 +181,10 @@ If only supported symbols are used the return value will be 0 and the output wil
 
 If there are 'unsupported' symbols, the return value will be 1 a list like this will be printed:
 
-    .../64/test_wispr: symbol memcpy from unsupported version GLIBC_2.14
-    .../64/test_wispr: symbol __fdelt_chk from unsupported version GLIBC_2.15
-    .../64/test_wispr: symbol std::out_of_range::~out_of_range() from unsupported version GLIBCXX_3.4.15
-    .../64/test_wispr: symbol _ZNSt8__detail15_List_nod from unsupported version GLIBCXX_3.4.15
+    .../64/test_rpicoin: symbol memcpy from unsupported version GLIBC_2.14
+    .../64/test_rpicoin: symbol __fdelt_chk from unsupported version GLIBC_2.15
+    .../64/test_rpicoin: symbol std::out_of_range::~out_of_range() from unsupported version GLIBCXX_3.4.15
+    .../64/test_rpicoin: symbol _ZNSt8__detail15_List_nod from unsupported version GLIBCXX_3.4.15
 
 update-translations.py
 ======================

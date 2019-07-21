@@ -201,9 +201,9 @@ class RawTransactionsTest(BitcoinTestFramework):
 
         try:
             self.nodes[2].fundrawtransaction(rawtx, {'changeAddress': 'foobar'})
-            raise AssertionError("Accepted invalid wispr address")
+            raise AssertionError("Accepted invalid rpicoin address")
         except JSONRPCException as e:
-            assert("changeAddress must be a valid wispr address" in e.error['message'])
+            assert("changeAddress must be a valid rpicoin address" in e.error['message'])
 
 
         ############################################################

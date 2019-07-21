@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WISPR_ZEROCOIN_H
-#define WISPR_ZEROCOIN_H
+#ifndef RPICOIN_ZEROCOIN_H
+#define RPICOIN_ZEROCOIN_H
 
 #include <amount.h>
 #include <limits.h>

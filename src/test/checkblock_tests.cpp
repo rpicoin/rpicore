@@ -11,7 +11,7 @@
 #include "clientversion.h"
 #include "main.h"
 #include "utiltime.h"
-#include "test/test_wispr.h"
+#include "test/test_rpicoin.h"
 
 #include <cstdio>
 

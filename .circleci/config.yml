@@ -182,7 +182,7 @@ jobs:
 #          at: .
 #      - run:
 #          name: Run Qt Tests
-#          command: ./src/qt/test/test_wispr-qt
+#          command: ./src/qt/test/test_rpicoin-qt
 #      - store_test_results:
 #          path: ./tmp/results
 #      - store_artifacts:
@@ -219,8 +219,8 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-          name: Run Wispr Tests
-          command: src/test/test_wispr --run_test="uint256_tests"
+          name: Run Rpicoin Tests
+          command: src/test/test_rpicoin --run_test="uint256_tests"
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -236,8 +236,8 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-          name: Run Wispr Tests
-          command: src/test/test_wispr --run_test="key_tests"
+          name: Run Rpicoin Tests
+          command: src/test/test_rpicoin --run_test="key_tests"
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -253,8 +253,8 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-          name: Run Wispr Tests
-          command: src/test/test_wispr --run_test="Checkpoints_tests"
+          name: Run Rpicoin Tests
+          command: src/test/test_rpicoin --run_test="Checkpoints_tests"
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -270,8 +270,8 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-          name: Run Wispr Tests
-          command: src/test/test_wispr --run_test="allocator_tests"
+          name: Run Rpicoin Tests
+          command: src/test/test_rpicoin --run_test="allocator_tests"
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -287,8 +287,8 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-          name: Run Wispr Tests
-          command: src/test/test_wispr --run_test="netbase_tests"
+          name: Run Rpicoin Tests
+          command: src/test/test_rpicoin --run_test="netbase_tests"
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -304,8 +304,8 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-          name: Run Wispr Tests
-          command: src/test/test_wispr --run_test="libzerocoin"
+          name: Run Rpicoin Tests
+          command: src/test/test_rpicoin --run_test="libzerocoin"
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -321,8 +321,8 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-          name: Run Wispr Tests
-          command: src/test/test_wispr --run_test="sigopcount_tests"
+          name: Run Rpicoin Tests
+          command: src/test/test_rpicoin --run_test="sigopcount_tests"
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -338,8 +338,8 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-          name: Run Wispr Tests
-          command: src/test/test_wispr --run_test="budget_tests"
+          name: Run Rpicoin Tests
+          command: src/test/test_rpicoin --run_test="budget_tests"
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -355,8 +355,8 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-          name: Run Wispr Tests
-          command: src/test/test_wispr --run_test="zerocoin_denom_tests"
+          name: Run Rpicoin Tests
+          command: src/test/test_rpicoin --run_test="zerocoin_denom_tests"
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -372,8 +372,8 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-          name: Run Wispr Tests
-          command: src/test/test_wispr --run_test="mempool_tests"
+          name: Run Rpicoin Tests
+          command: src/test/test_rpicoin --run_test="mempool_tests"
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -389,8 +389,8 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-          name: Run Wispr Tests
-          command: src/test/test_wispr --run_test="multisig_tests"
+          name: Run Rpicoin Tests
+          command: src/test/test_rpicoin --run_test="multisig_tests"
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -406,8 +406,8 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-          name: Run Wispr Tests
-          command: src/test/test_wispr --run_test="crypto_tests"
+          name: Run Rpicoin Tests
+          command: src/test/test_rpicoin --run_test="crypto_tests"
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -423,8 +423,8 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-          name: Run Wispr Tests
-          command: src/test/test_wispr --run_test="sanity_tests"
+          name: Run Rpicoin Tests
+          command: src/test/test_rpicoin --run_test="sanity_tests"
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -440,8 +440,8 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-          name: Run Wispr Tests
-          command: src/test/test_wispr --run_test="CheckBlock_tests"
+          name: Run Rpicoin Tests
+          command: src/test/test_rpicoin --run_test="CheckBlock_tests"
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -457,8 +457,8 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-          name: Run Wispr Tests
-          command: src/test/test_wispr --run_test="coins_tests"
+          name: Run Rpicoin Tests
+          command: src/test/test_rpicoin --run_test="coins_tests"
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -473,8 +473,8 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-          name: Run Wispr Tests
-          command: src/test/test_wispr --run_test="compress_tests"
+          name: Run Rpicoin Tests
+          command: src/test/test_rpicoin --run_test="compress_tests"
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -490,8 +490,8 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-          name: Run Wispr Tests
-          command: src/test/test_wispr --run_test="mruset_tests"
+          name: Run Rpicoin Tests
+          command: src/test/test_rpicoin --run_test="mruset_tests"
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -506,8 +506,8 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-          name: Run Wispr Tests
-          command: src/test/test_wispr --run_test="pmt_tests"
+          name: Run Rpicoin Tests
+          command: src/test/test_rpicoin --run_test="pmt_tests"
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -522,8 +522,8 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-          name: Run Wispr Tests
-          command: src/test/test_wispr --run_test="rpc_tests"
+          name: Run Rpicoin Tests
+          command: src/test/test_rpicoin --run_test="rpc_tests"
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -539,8 +539,8 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-          name: Run Wispr Tests
-          command: src/test/test_wispr --run_test="zerocoin_implementation_tests"
+          name: Run Rpicoin Tests
+          command: src/test/test_rpicoin --run_test="zerocoin_implementation_tests"
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -556,8 +556,8 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-          name: Run Wispr Tests
-          command: src/test/test_wispr --run_test="accounting_tests"
+          name: Run Rpicoin Tests
+          command: src/test/test_rpicoin --run_test="accounting_tests"
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -573,8 +573,8 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-          name: Run Wispr Tests
-          command: src/test/test_wispr --run_test="rpc_wallet_tests"
+          name: Run Rpicoin Tests
+          command: src/test/test_rpicoin --run_test="rpc_wallet_tests"
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -590,8 +590,8 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-          name: Run Wispr Tests
-          command: src/test/test_wispr --run_test="util_tests"
+          name: Run Rpicoin Tests
+          command: src/test/test_rpicoin --run_test="util_tests"
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -607,8 +607,8 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-          name: Run Wispr Tests
-          command: src/test/test_wispr --run_test="benchmark_zerocoin"
+          name: Run Rpicoin Tests
+          command: src/test/test_rpicoin --run_test="benchmark_zerocoin"
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -624,8 +624,8 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-          name: Run Wispr Tests
-          command: src/test/test_wispr --run_test="tutorial_libzerocoin"
+          name: Run Rpicoin Tests
+          command: src/test/test_rpicoin --run_test="tutorial_libzerocoin"
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -641,8 +641,8 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-          name: Run Wispr Tests
-          command: src/test/test_wispr --run_test="wallet_tests"
+          name: Run Rpicoin Tests
+          command: src/test/test_rpicoin --run_test="wallet_tests"
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -658,8 +658,8 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-          name: Run Wispr Tests
-          command: src/test/test_wispr --run_test="sighash_tests"
+          name: Run Rpicoin Tests
+          command: src/test/test_rpicoin --run_test="sighash_tests"
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -675,8 +675,8 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-          name: Run Wispr Tests
-          command: src/test/test_wispr --run_test="skiplist_tests"
+          name: Run Rpicoin Tests
+          command: src/test/test_rpicoin --run_test="skiplist_tests"
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -692,8 +692,8 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-          name: Run Wispr Tests
-          command: src/test/test_wispr --run_test="script_tests"
+          name: Run Rpicoin Tests
+          command: src/test/test_rpicoin --run_test="script_tests"
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -709,8 +709,8 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-          name: Run Wispr Tests
-          command: src/test/test_wispr --run_test="scriptnum_tests"
+          name: Run Rpicoin Tests
+          command: src/test/test_rpicoin --run_test="scriptnum_tests"
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -726,8 +726,8 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-          name: Run Wispr Tests
-          command: src/test/test_wispr --run_test="serialize_tests"
+          name: Run Rpicoin Tests
+          command: src/test/test_rpicoin --run_test="serialize_tests"
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -743,8 +743,8 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-          name: Run Wispr Tests
-          command: src/test/test_wispr --run_test="base32_tests"
+          name: Run Rpicoin Tests
+          command: src/test/test_rpicoin --run_test="base32_tests"
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -759,8 +759,8 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-          name: Run Wispr Tests
-          command: src/test/test_wispr --run_test="base58_tests"
+          name: Run Rpicoin Tests
+          command: src/test/test_rpicoin --run_test="base58_tests"
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -775,8 +775,8 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-          name: Run Wispr Tests
-          command: src/test/test_wispr --run_test="base64_tests"
+          name: Run Rpicoin Tests
+          command: src/test/test_rpicoin --run_test="base64_tests"
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -792,8 +792,8 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-          name: Run Wispr Tests
-          command: src/test/test_wispr --run_test="transaction_tests"
+          name: Run Rpicoin Tests
+          command: src/test/test_rpicoin --run_test="transaction_tests"
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -809,8 +809,8 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-          name: Run Wispr Tests
-          command: src/test/test_wispr --run_test="univalue_tests"
+          name: Run Rpicoin Tests
+          command: src/test/test_rpicoin --run_test="univalue_tests"
       - store_artifacts:
           path: ./tmp/results
       - store_artifacts:
@@ -826,7 +826,7 @@ jobs:
 #      - attach_workspace:
 #          at: .
 #      - run:
-#          name: Run Wispr Tests
+#          name: Run Rpicoin Tests
 #          command: qa/pull-tester/rpc-tests.py --coverage
 #      - store_test_results:
 #          path: ./tmp/results

@@ -15,7 +15,7 @@ from test_framework.util import wait_until
 ''' -------------------------------------------------------------------------
 TestNode CLASS --------------------------------------------------------------
 
-A peer we use to send messsages to wisprd and store responses
+A peer we use to send messsages to rpicoind and store responses
 Extends P2PInterface.
 '''
 

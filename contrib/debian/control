@@ -1,4 +1,4 @@
-Source: wispr
+Source: rpicoin
 Section: utils
 Priority: optional
 Maintainer: Fuzzbawls <fuzzbawls@gmail.com>
@@ -28,15 +28,15 @@ Build-Depends: debhelper,
  libzmq3-dev,
  dh-systemd
 Standards-Version: 3.9.2
-Homepage: http://www.wispr.tech
-Vcs-Git: git://github.com/WisprProject/core.git
-Vcs-Browser: http://github.com/WisprProject/core
+Homepage: http://www.rpicoin.tech
+Vcs-Git: git://github.com/rpicoin/rpicore.git
+Vcs-Browser: http://github.com/rpicoin/rpicore
 
-Package: wisprd
+Package: rpicoind
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - daemon
- WISPR is a free open source peer-to-peer electronic cash system that
+ RPICOIN is a free open source peer-to-peer electronic cash system that
  is completely decentralized, without the need for a central server or
  trusted parties.  Users hold the crypto keys to their own money and
  transact directly with each other, with the help of a P2P network to
@@ -45,14 +45,14 @@ Description: peer-to-peer network based digital currency - daemon
  Full transaction history is stored locally at each client.  This
  requires 10+ GB of space, slowly growing.
  .
- This package provides the daemon, wisprd, and the CLI tool
- wispr-cli to interact with the daemon.
+ This package provides the daemon, rpicoind, and the CLI tool
+ rpicoin-cli to interact with the daemon.
 
-Package: wispr-qt
+Package: rpicoin-qt
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - Qt GUI
- WISPR is a free open source peer-to-peer electronic cash system that
+ RPICOIN is a free open source peer-to-peer electronic cash system that
  is completely decentralized, without the need for a central server or
  trusted parties.  Users hold the crypto keys to their own money and
  transact directly with each other, with the help of a P2P network to
@@ -61,4 +61,4 @@ Description: peer-to-peer network based digital currency - Qt GUI
  Full transaction history is stored locally at each client.  This
  requires 10+ GB of space, slowly growing.
  .
- This package provides Wispr-Qt, a GUI for WISPR based on Qt.
+ This package provides Rpicoin-Qt, a GUI for RPICOIN based on Qt.

@@ -1,27 +1,27 @@
-WISPR Core version *3.1.0* is now available from:  <https://github.com/WisprProject/core/releases>
+RPICOIN Core version *3.1.0* is now available from:  <https://github.com/rpicoin/rpicore/releases>
 
 This is a new major version release, including various bug fixes and performance improvements, as well as updated translations.
 
-Please report bugs using the issue tracker at github: <https://github.com/WisprProject/core/issues>
+Please report bugs using the issue tracker at github: <https://github.com/rpicoin/rpicore/issues>
 
 
 Mandatory Update
 ==============
 
-WISPR Core v3.1.0 is a mandatory update for all users. This release contains new consensus rules and improvements that are not backwards compatible with older versions. Users will have a grace period of one week to update their clients before enforcement of this update is enabled.
+RPICOIN Core v3.1.0 is a mandatory update for all users. This release contains new consensus rules and improvements that are not backwards compatible with older versions. Users will have a grace period of one week to update their clients before enforcement of this update is enabled.
 
 Users updating from a previous version after Tuesday, May 8, 2018 12:00:00 AM GMT will require a full resync of their local blockchain from either the P2P network or by way of the bootstrap.
 
 How to Upgrade
 ==============
 
-If you are running an older version, shut it down. Wait until it has completely shut down (which might take a few minutes for older versions), then run the installer (on Windows) or just copy over /Applications/WISPR-Qt (on Mac) or wisprd/wispr-qt (on Linux).
+If you are running an older version, shut it down. Wait until it has completely shut down (which might take a few minutes for older versions), then run the installer (on Windows) or just copy over /Applications/RPICOIN-Qt (on Mac) or rpicoind/rpicoin-qt (on Linux).
 
 
 Compatibility
 ==============
 
-WISPR Core is extensively tested on multiple operating systems using
+RPICOIN Core is extensively tested on multiple operating systems using
 the Linux kernel, macOS 10.8+, and Windows Vista and later.
 
 Microsoft ended support for Windows XP on [April 8th, 2014](https://www.microsoft.com/en-us/WindowsForBusiness/end-of-xp-support),
@@ -29,7 +29,7 @@ No attempt is made to prevent installing or running the software on Windows XP, 
 can still do so at your own risk but be aware that there are known instabilities and issues.
 Please do not report issues about Windows XP to the issue tracker.
 
-WISPR Core should also work on most other Unix-like systems but is not
+RPICOIN Core should also work on most other Unix-like systems but is not
 frequently tested on them.
 
 ### :exclamation::exclamation::exclamation: MacOS 10.13 High Sierra :exclamation::exclamation::exclamation:
@@ -40,48 +40,48 @@ frequently tested on them.
 Notable Changes
 ==============
 
-zWSP Updates
+zRPI Updates
 --------------
 
-### zWSP Staking
+### zRPI Staking
 
-zWSP Staking is here! zWSP staking will be activated on the morning of the 8th of May 2018. With the release of zWSP staking, there are effectively 2 versions of zWSP, zWSP minted on the 3.0.6 WISPR wallet or lower, and zWSP minted on WISPR wallet version or higher. New features in this release will require the use of zWSP v2, zWSP minted on this wallet release 3.1.0 or later. If you currently hold zWSP v1 and wish to take advantage of zWSP staking and deterministic zWSP, you will need to spend the zWSP v1 to yourself and remint zWSP v2.
-Note: To find your zWSP version, click the privacy tab, then the zWSP Control button then expand the arrows next to the desired denomination.
-
-
-### Deterministic zWSP Seed Keys
-
-zWSP is now associated with a deterministic seed key. With this seed key, users are able to securely backup their zWSP outside of the wallet that the zWSP had been minted on. zWSP can also be transferred from wallet to wallet without the need of transferring the wallet data file.
+zRPI Staking is here! zRPI staking will be activated on the morning of the 8th of May 2018. With the release of zRPI staking, there are effectively 2 versions of zRPI, zRPI minted on the 3.0.6 RPICOIN wallet or lower, and zRPI minted on RPICOIN wallet version or higher. New features in this release will require the use of zRPI v2, zRPI minted on this wallet release 3.1.0 or later. If you currently hold zRPI v1 and wish to take advantage of zRPI staking and deterministic zRPI, you will need to spend the zRPI v1 to yourself and remint zRPI v2.
+Note: To find your zRPI version, click the privacy tab, then the zRPI Control button then expand the arrows next to the desired denomination.
 
 
-### Updated zWSP minting
+### Deterministic zRPI Seed Keys
 
-zWSP minting now only requires 1 further mint (down from 2) to mature. zWSP mints still require 20 confirmations.  Mints also require that the 'second' mint is at least two checkpoints deep in the chain (this was already the case, but the logic was not as precise).
-
-
-### zWSP Search
-
-Users will now have the ability to search the blockchain for a specific serial # to see if a zWSP denomination has been spent or not.
+zRPI is now associated with a deterministic seed key. With this seed key, users are able to securely backup their zRPI outside of the wallet that the zRPI had been minted on. zRPI can also be transferred from wallet to wallet without the need of transferring the wallet data file.
 
 
+### Updated zRPI minting
 
-WSP/zWSP Staking and Masternode Rewards
+zRPI minting now only requires 1 further mint (down from 2) to mature. zRPI mints still require 20 confirmations.  Mints also require that the 'second' mint is at least two checkpoints deep in the chain (this was already the case, but the logic was not as precise).
+
+
+### zRPI Search
+
+Users will now have the ability to search the blockchain for a specific serial # to see if a zRPI denomination has been spent or not.
+
+
+
+RPI/zRPI Staking and Masternode Rewards
 --------------
 
-### WSP, zWSP and Masternode Payment Schedule
+### RPI, zRPI and Masternode Payment Schedule
 
-To encourage the use of zWSP and increase the WISPR zerocoin anonymity set, the WISPR payment schedule has been changed to the following:
+To encourage the use of zRPI and increase the RPICOIN zerocoin anonymity set, the RPICOIN payment schedule has been changed to the following:
 
-If a user staking zWSP wins the reward for their block, the following zWSP reward will be: 
-- 3 zWSP (3 x 1 denominations) rewarded to the staker, 2 WSP rewarded to the masternode owner and 1 WSP available for the budget. This is a total block reward of 6 WSP, up from 5.
+If a user staking zRPI wins the reward for their block, the following zRPI reward will be:
+- 3 zRPI (3 x 1 denominations) rewarded to the staker, 2 RPI rewarded to the masternode owner and 1 RPI available for the budget. This is a total block reward of 6 RPI, up from 5.
 
-If a user staking WSP wins the reward, the following amounts will be rewarded: 
-- 2 WSP to the WSP staker, 3 WSP to the Masternode owner and 1 WSP available for the budget. This is a total block reward of 6 WSP, up from 5.
+If a user staking RPI wins the reward, the following amounts will be rewarded:
+- 2 RPI to the RPI staker, 3 RPI to the Masternode owner and 1 RPI available for the budget. This is a total block reward of 6 RPI, up from 5.
 
 
-### Return change to sender when minting zWSP
+### Return change to sender when minting zRPI
 
-Previously, zWSP minting would send any change to a newly generated "change address". This has caused confusion among some users, and in some cases insufficient backups of the wallet. The wallet will now find the contributing address which contained the most WSP and return the change from a zWSP mint to that address.
+Previously, zRPI minting would send any change to a newly generated "change address". This has caused confusion among some users, and in some cases insufficient backups of the wallet. The wallet will now find the contributing address which contained the most RPI and return the change from a zRPI mint to that address.
 
 
 User Experience
@@ -89,7 +89,7 @@ User Experience
 
 ### Graphical User Interface
 
-The visual layout of the WISPR Qt wallet has undergone a near-complete overhaul.
+The visual layout of the RPICOIN Qt wallet has undergone a near-complete overhaul.
 A new 'vertical tab' layout is now being used instead of the prior 'horizontal tab' layout, as well as a completely new icon set.
 The overview tab has been simplified greatly to display only balances that are active or relevant, zero-balance line items are hidden by default to avoid clutter.
 
@@ -97,9 +97,9 @@ The overview tab has been simplified greatly to display only balances that are a
 ### Wallet Options
 
 There have been a number of changes to the tasks that you are able to perform from the wallet options. Users will now have the ability to do the following: 
--	Enable and disable the auto zWSP minting feature. This is enabled by default and the enablezeromint=0 setting in the wispr.conf file will overwrite the GUI option.
--	The percentage of autominted zWSP can now be set from 1 to 100, changed from 10 – 100.
--	The stake split threshold can now be set VIA the wallet options. This setting is an advanced feature for those wishing to remain staking regular WSP.
+-	Enable and disable the auto zRPI minting feature. This is enabled by default and the enablezeromint=0 setting in the rpicoin.conf file will overwrite the GUI option.
+-	The percentage of autominted zRPI can now be set from 1 to 100, changed from 10 – 100.
+-	The stake split threshold can now be set VIA the wallet options. This setting is an advanced feature for those wishing to remain staking regular RPI.
 -	“Unlock for staking and anonymization only” is now selected by default when unlocking the wallet from the User Interface
 
 
@@ -113,9 +113,9 @@ Backup to external devices / locations
 
 ### Summary
 
- The WISPR wallet can now have user selected directories for automatic backups of the wallet data file (wallet.dat). This can be set by adding the following lines to the wispr.conf file, found in the WISPR data directory.
+ The RPICOIN wallet can now have user selected directories for automatic backups of the wallet data file (wallet.dat). This can be set by adding the following lines to the rpicoin.conf file, found in the RPICOIN data directory.
 - backuppath = <directory / full path>
-- zwspbackuppath = <directory / full path>
+- zrpibackuppath = <directory / full path>
 - custombackupthreshold = <backup limit>
 Note: System write permissions must be appropriate for the location the wallet is being saved to.
 
@@ -127,7 +127,7 @@ Note: System write permissions must be appropriate for the location the wallet i
 ### Details:
 
 * If path is set to directory, the backup will be named `wallet.dat-<year>-<month>-<day>-<hour>-<minute>-<second>`
-* If zWSP backup, auto generated name is `wallet-autozwspbackup.dat-<year>-<month>-<day>-<hour>-<minute>-<second>`
+* If zRPI backup, auto generated name is `wallet-autozrpibackup.dat-<year>-<month>-<day>-<hour>-<minute>-<second>`
 * If path set to file, backup will be named `<filename>.dat`
 * walletbackupthreshold enables the user to select the maximum count of backup files to be written before overwriting existing backups.
 
@@ -164,19 +164,19 @@ Backing up 4 times will result as shown below
             
 
 
-WISPR Daemon & Client (RPC Changes)
+RPICOIN Daemon & Client (RPC Changes)
 --------------
 
 ### RPC Ban Management
 
-The WISPR client peer bans now have additional RPC commands to manage peers. Peers can be banned and unbanned at will without the need to restart the wallet client. No changes have been made to the conditions resulting in automatic peer bans. New RPC commands: `setban`, `listbanned`, `clearbanned`, and `disconnectnode`
+The RPICOIN client peer bans now have additional RPC commands to manage peers. Peers can be banned and unbanned at will without the need to restart the wallet client. No changes have been made to the conditions resulting in automatic peer bans. New RPC commands: `setban`, `listbanned`, `clearbanned`, and `disconnectnode`
 
 
 ### Random-cookie RPC authentication
 
 When no `-rpcpassword` is specified, the daemon now uses a special 'cookie' file for authentication. This file is generated with random content when the daemon starts, and deleted when it exits. Its contents are used as authentication token. Read access to this file controls who can access through RPC. By default it is stored in the data directory but its location can be overridden with the option `-rpccookiefile`.
 This is similar to Tor's CookieAuthentication: see https://www.torproject.org/docs/tor-manual.html.en 
-This allows running wisprd without having to do any manual configuration.
+This allows running rpicoind without having to do any manual configuration.
 
 
 ### New RPC command
@@ -188,7 +188,7 @@ This allows for a user (such as a third party integration) to query the blockcha
 ### New RPC command 
 `findserial`
 
-Search the zerocoin database for a zerocoinspend transaction that contains the given serial. This will be a helpful tool for the WISPR support group, which often times sees users say "I didn't spend that zWSP". This RPC call allows for support to grab the serial, and then find the spend tx on the chain.
+Search the zerocoin database for a zerocoinspend transaction that contains the given serial. This will be a helpful tool for the RPICOIN support group, which often times sees users say "I didn't spend that zRPI". This RPC call allows for support to grab the serial, and then find the spend tx on the chain.
 
 
 ### New RPC commands 
@@ -206,11 +206,11 @@ Network Layer 2 Changes (Proposals / Budgets / SwiftX)
 
 ### Monthly Budget Increase
 
-As voted on by the WISPR masternodes, the monthly budget available to be utilised has been increased to 42,000 WSP / month. This WSP only has the opportunity to be raised once per month (paid to winning proposals) with any unused WSP not created by the blockchain.
+As voted on by the RPICOIN masternodes, the monthly budget available to be utilised has been increased to 42,000 RPI / month. This RPI only has the opportunity to be raised once per month (paid to winning proposals) with any unused RPI not created by the blockchain.
 
 ### Budget Finalization Fee
 
-The WISPR finalization fee for successful proposals has now been reduced, this fee is now 5 WSP down from 50 WSP. The total fee outlay for a successful proposal is now a total of 55 WSP.
+The RPICOIN finalization fee for successful proposals has now been reduced, this fee is now 5 RPI down from 50 RPI. The total fee outlay for a successful proposal is now a total of 55 RPI.
 
 
 ### SwiftX Raw Transactions
@@ -248,11 +248,11 @@ When inputting wrong data into the GUI for a SOCKS5 proxy, the wallet would cras
 Minor Enhancements
 --------------
 
--	Enforced v1 zWSP spends to require a security level of 100
--	Updates to zWSP spends to avoid segfaults
+-	Enforced v1 zRPI spends to require a security level of 100
+-	Updates to zRPI spends to avoid segfaults
 -	Updates to configuration will now reflect on the privacy tab
--	Fixed a  bug that would not start masternodes from the WISPR-Qt masternodes tab
--	Updated WISPR-Qt tooltips
+-	Fixed a  bug that would not start masternodes from the RPICOIN-Qt masternodes tab
+-	Updated RPICOIN-Qt tooltips
 -	Icon added to the wallet GUI to reflect the status of autominting (active / inactive)
 -	Updated errors causing the blockchain to corrupt when experiencing unexpected wallet shutdowns
 -	Updated RPC help outputs & removed the deprecated obfuscation. 
@@ -263,29 +263,29 @@ Minor Enhancements
 Further Reading: Version 2 Zerocoins
 ==============
 
-Several critical security flaws in the zerocoin protocol and WISPR's zerocoin implementation have been patched. Enough has changed that new zerocoins are distinct from old zerocoins, and have been labelled as *version 2*. When using the zWSP Control dialog in the QT wallet, a user is able to see zWSP marked as version 1 or 2.
+Several critical security flaws in the zerocoin protocol and RPICOIN's zerocoin implementation have been patched. Enough has changed that new zerocoins are distinct from old zerocoins, and have been labelled as *version 2*. When using the zRPI Control dialog in the QT wallet, a user is able to see zRPI marked as version 1 or 2.
 
-zPoS (zWSP staking)
+zPoS (zRPI staking)
 --------------
 
-Once a zWSP has over 200 confirmations it becomes available to stake. Staking zWSP will consume the exact zerocoin that is staked and replace it with a freshly minted zerocoin of the same denomination as well as a reward of three 1 denomination zWSP. So for example if a 1,000 zWSP denomination is staked, the protocol replaces that with a fresh 1,000 denomination and three1 denomination zWSPs.
+Once a zRPI has over 200 confirmations it becomes available to stake. Staking zRPI will consume the exact zerocoin that is staked and replace it with a freshly minted zerocoin of the same denomination as well as a reward of three 1 denomination zRPI. So for example if a 1,000 zRPI denomination is staked, the protocol replaces that with a fresh 1,000 denomination and three1 denomination zRPIs.
 
 Secure Spending
 --------------
 
-Version 1 zerocoins, as implemented by [Miers et. al](http://zerocoin.org/media/pdf/ZerocoinOakland.pdf), allow for something we describe as *serial trolling*. Spending zerocoins requires that the spender reveal their serial number associated with the zerocoin, and in turn that serial number is used to check for double spending. There is a fringe situation (which is very unlikely to happen within WISPR's zerocoin implementation due to delayed coin accumulation) where the spender sends the spending transaction, but the transaction does not immediately make it into the blockchain and remains in the mempool for a long enough duration that a *troll* has enough time to see the spender's serial number, mint a new zerocoin with the same serial number, and spend the new zerocoin before the original spender's transaction becomes confirmed. If the timing of this fringe situation worked, then the original spender's coin would be seen as invalid because the troll was able to have the serial recorded into the blockchain first, thus making the original spender's serial appear as a double spend.
+Version 1 zerocoins, as implemented by [Miers et. al](http://zerocoin.org/media/pdf/ZerocoinOakland.pdf), allow for something we describe as *serial trolling*. Spending zerocoins requires that the spender reveal their serial number associated with the zerocoin, and in turn that serial number is used to check for double spending. There is a fringe situation (which is very unlikely to happen within RPICOIN's zerocoin implementation due to delayed coin accumulation) where the spender sends the spending transaction, but the transaction does not immediately make it into the blockchain and remains in the mempool for a long enough duration that a *troll* has enough time to see the spender's serial number, mint a new zerocoin with the same serial number, and spend the new zerocoin before the original spender's transaction becomes confirmed. If the timing of this fringe situation worked, then the original spender's coin would be seen as invalid because the troll was able to have the serial recorded into the blockchain first, thus making the original spender's serial appear as a double spend.
 
 The serial troll situation is mitigated in version 2 by requiring that the serial number be a hash of a public key. The spend requires an additional signature signed by the private key associated with the public key hash matching the serial number. This work around was conceived by Tim Ruffing, a cryptographer that has studied the zerocoin protocol and done consulting work for the ZCoin project.
 
 Deterministic Zerocoin Generation
 --------------
 
-Zerocoins, or zWSP, are now deterministically generated using a unique 256 bit seed. Each wallet will generate a new seed on its first run. The deterministic seed is used to generate a string of zWSP that can be recalculated at any time using the seed. Deterministic zWSP allows for users to backup all of their future zWSP by simply recording their seed and keeping it in a safe place (similar to backing up a private key for WSP). The zWSP seed needs to remain in the wallet in order to spend the zWSP after it is generated, if the seed is changed then the coins will not be spendable because the wallet will not have the ability to regenerate all of the private zWSP data from the seed. It is important that users record & backup their seed after their first run of the wallet. If the wallet is locked during the first run, then the seed will be generated the first time the wallet is unlocked.
+Zerocoins, or zRPI, are now deterministically generated using a unique 256 bit seed. Each wallet will generate a new seed on its first run. The deterministic seed is used to generate a string of zRPI that can be recalculated at any time using the seed. Deterministic zRPI allows for users to backup all of their future zRPI by simply recording their seed and keeping it in a safe place (similar to backing up a private key for RPI). The zRPI seed needs to remain in the wallet in order to spend the zRPI after it is generated, if the seed is changed then the coins will not be spendable because the wallet will not have the ability to regenerate all of the private zRPI data from the seed. It is important that users record & backup their seed after their first run of the wallet. If the wallet is locked during the first run, then the seed will be generated the first time the wallet is unlocked.
 
 Zerocoin Modulus
 --------------
 
-WISPR's zerocoin implementation used the same code from the ZCoin project to import the modulus use for the zerocoin protocol. The chosen modulus is the 2048 bit RSA number created for the RSA factoring challenge. The ZCoin project's implementation (which WISPR used) improperly imported the modulus into the code. This flaw was discovered by user GOAT from the [Civitas Project](https://github.com/eastcoastcrypto/Civitas/), and reported to WISPR using the bug bounty program. The modulus is now correctly imported and WISPR's accumulators have been changed to use the new proper modulus.
+RPICOIN's zerocoin implementation used the same code from the ZCoin project to import the modulus use for the zerocoin protocol. The chosen modulus is the 2048 bit RSA number created for the RSA factoring challenge. The ZCoin project's implementation (which RPICOIN used) improperly imported the modulus into the code. This flaw was discovered by user GOAT from the [Civitas Project](https://github.com/eastcoastcrypto/Civitas/), and reported to RPICOIN using the bug bounty program. The modulus is now correctly imported and RPICOIN's accumulators have been changed to use the new proper modulus.
 
 
 *3.1.0* Change log
@@ -294,7 +294,7 @@ WISPR's zerocoin implementation used the same code from the ZCoin project to imp
 Detailed release notes follow. This overview includes changes that affect behavior, not code moves, refactors and string updates. For convenience in locating the code changes and accompanying discussion, both the pull request and git merge commit are mentioned.
 
 ### Core Features
- - #582 `cb1632520` [Core] zWSP v2: zPoS dzWSP ezWSP external backup and budget fixes (too many to list)
+ - #582 `cb1632520` [Core] zRPI v2: zPoS dzRPI ezRPI external backup and budget fixes (too many to list)
  - #558 `c7e6f0f7f` [Core] Remove Gitan-OSX warning for High Sierra builds (Mrs-X)
  - #523 `926c073ea` [Core] Give high priority to zerocoinspends to make it into the next block. (presstab)
  - #535 `5e8875feb` [Core] Minor refacturing + unused variable removed (Mrs-X)
@@ -318,7 +318,7 @@ Detailed release notes follow. This overview includes changes that affect behavi
  - #542 `61156def7` [Network] Remove vfReachable and modify IsReachable to only use vfLimited. (Patrick Strateman)
 
 ### GUI
- - #572 `d9b23fe60` [Qt] Refresh zWSP balance after resetting mints or spends (warrows)
+ - #572 `d9b23fe60` [Qt] Refresh zRPI balance after resetting mints or spends (warrows)
  - #571 `1c8e7cb7b` [Qt] Update privacy tab info about zeromint on config change (warrows)
  - #568 `f226de09e` [Qt] Connect automint icon to the UI automint setting change (warrows)
  - #566 `84f43857c` [Qt] Add automint status bar icon (Fuzzbawls)
@@ -329,7 +329,7 @@ Detailed release notes follow. This overview includes changes that affect behavi
  - #521 `fbb105a00` [Qt] Make "For anonymization and staking only" checked by default (Mrs-X)
  - #508 `2cf3be6bb` [Qt] Fix crash when inputting wrong port for network proxy (warrows)
  - #500 `4c01ba65d` [Qt] Remove duplicate code for updating address book labels. (blondfrogs)
- - #506 `ae72bf4e2` [Qt] Autoscroll to end of zWSP status output (Mrs-X)
+ - #506 `ae72bf4e2` [Qt] Autoscroll to end of zRPI status output (Mrs-X)
  - #499 `6305264f2` [Qt] Send popup simplified + SwiftTX -> SwiftX (Mrs-X)
  - #490 `ba777e4ef` [Qt] Update MultiSend GUI to allow address labels (blondfrogs)
  - #483 `5b1070365` [Qt] Fixed Dynamic Screen Elements Issue for Multisig (blondfrogs)
@@ -338,7 +338,7 @@ Detailed release notes follow. This overview includes changes that affect behavi
  - #473 `9e2ed8f0f` [Qt] Make toolbar icons bigger (Mrs-X)
  - #462 `c62eabe7b` [Qt] Consistent trx colors for Overview + Transaction tabs (Mrs-X)
  - #472 `b7929bdcf` [Qt] Minor changes and fixes (Mrs-X)
- - #467 `7099831bd` [Qt] Clear PrivacyDialog "zWsp Selected" labels after sending. (presstab)
+ - #467 `7099831bd` [Qt] Clear PrivacyDialog "zRpi Selected" labels after sending. (presstab)
  - #465 `d8e21774d` [Qt] Added controls to the options dialog for enable or disable auto-minting and set required level (lex-dev3)
  - #464 `59fd7d378` [Qt] setstakesplitthreshold value set in Qt GUI (lex-dev3)
  - #452 `219b68dc9` [Qt] Complete re-design of Qt-wallet (Mrs-X)
@@ -348,7 +348,7 @@ Detailed release notes follow. This overview includes changes that affect behavi
 ### RPC/REST
  - #562 `772160b1b` [Wallet/RPC] Add argument to mint zerocoin from specific UTXO (warrows)
  - #539 `b6a02e9d6` [RPC] Allow watchonly coins to be shown for listunspent (blondfrogs)
- - #543 `e4522ff07` [RPC] Segfault wispr-cli getinfo while loading block index (Mrs-X)
+ - #543 `e4522ff07` [RPC] Segfault rpicoin-cli getinfo while loading block index (Mrs-X)
  - #524 `2541b5001` [RPC] Add blocksizenotify command (Mrs-X)
  - #495 `4946224c1` [RPC] Show script verification errors in signrawtransaction result (Fuzzbawls)
  - #468 `00b8b8e72` [RPC/REST] Migrate to libevent based httpd server (Fuzzbawls)
@@ -361,15 +361,15 @@ Detailed release notes follow. This overview includes changes that affect behavi
  - #170 `027f16c64` [RPC] Convert source tree from json_spirit to UniValue (Fuzzbawls)
 
 ### Wallet
- - #570 `8c8350b59` [Wallet] Add a check on zWSP spend to avoid a segfault (warrows)
+ - #570 `8c8350b59` [Wallet] Add a check on zRPI spend to avoid a segfault (warrows)
  - #565 `80b803201` [Wallet] Increase valid range for automint percentage (Fuzzbawls)
  - #518 `9f6449a70` [Wallet] Combine fees when possible and fix autocombine insufficient funds (warrows)
  - #497 `f21e4456b` [Wallet] Call AutocombineDust less often (warrows)
  - #498 `bfad2a1df` [Wallet] Change the way transaction list is handled (warrows)
  - #477 `93c5f9ff5` [Wallet] Remove potential memory leak (blondfrogs)
  - #488 `d09cf916a` [Wallet] Fixes an autocombinerewards bug with above max size TXs (warrows)
- - #448 `222ef6e6b` [Wallet] Return change to sender when minting zWSP. (presstab)
- - #445 `fc570fc1e` [Wallet] Only require 1 mint to be added before spending zWSP. (presstab)
+ - #448 `222ef6e6b` [Wallet] Return change to sender when minting zRPI. (presstab)
+ - #445 `fc570fc1e` [Wallet] Only require 1 mint to be added before spending zRPI. (presstab)
  
 ### Miscellaneous
  - #559 `d2b017217` [Bug] Segfault with -enableswifttx=0 / -enableswifttx=false (Mrs-X)
@@ -405,4 +405,4 @@ Thanks to everyone who directly contributed to this release:
 - PeterL73
 - Anthony Posselli
 
-As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/WisprProject-translations/), the QA team during Testing and the Node hosts supporting our Testnet.
+As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/rpicoin-translations/), the QA team during Testing and the Node hosts supporting our Testnet.

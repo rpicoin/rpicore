@@ -4,7 +4,7 @@
 
 #include "hash.h"
 #include "utilstrencodings.h"
-#include "test/test_wispr.h"
+#include "test/test_rpicoin.h"
 
 #include <vector>
 

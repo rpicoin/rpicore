@@ -5,7 +5,7 @@
 
 #include "libzerocoin/bignum.h"
 #include "script/script.h"
-#include "test/test_wispr.h"
+#include "test/test_rpicoin.h"
 
 #include <boost/test/unit_test.hpp>
 #include <limits.h>

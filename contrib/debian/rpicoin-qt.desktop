@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Name=RPICOIN Core
+Comment=RPICOIN P2P Cryptocurrency
+Comment[fr]=RPICOIN, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=RPICOIN, eşten eşe kriptografik sanal para birimi
+Exec=rpicoin-qt %u
+Terminal=false
+Type=Application
+Icon=rpicoin128
+MimeType=x-scheme-handler/rpicoin;
+Categories=Office;Finance;
+StartupWMClass=Rpicoin-qt

@@ -289,7 +289,7 @@ RPCConsole::RPCConsole(QWidget* parent) : QDialog(parent, Qt::WindowSystemMenuHi
     ui->openSSLVersion->setText(SSLeay_version(SSLEAY_VERSION));
 #ifdef ENABLE_WALLET
     std::string strPathCustom = GetArg("-backuppath", "");
-    std::string strzWSPPathCustom = GetArg("-zwspbackuppath", "");
+    std::string strzRPIPathCustom = GetArg("-zrpibackuppath", "");
     int nCustomBackupThreshold = GetArg("-custombackupthreshold", DEFAULT_CUSTOMBACKUPTHRESHOLD);
 
     if(!strPathCustom.empty()) {
@@ -298,13 +298,13 @@ RPCConsole::RPCConsole(QWidget* parent) : QDialog(parent, Qt::WindowSystemMenuHi
         ui->wallet_custombackuppath->show();
     }
 
-    if(!strzWSPPathCustom.empty()) {
-        ui->wallet_customzwspbackuppath->setText(QString::fromStdString(strzWSPPathCustom));
-        ui->wallet_customzwspbackuppath_label->setVisible(true);
-        ui->wallet_customzwspbackuppath->setVisible(true);
+    if(!strzRPIPathCustom.empty()) {
+        ui->wallet_customzrpibackuppath->setText(QString::fromStdString(strzRPIPathCustom));
+        ui->wallet_customzrpibackuppath_label->setVisible(true);
+        ui->wallet_customzrpibackuppath->setVisible(true);
     }
 
-    if((!strPathCustom.empty() || !strzWSPPathCustom.empty()) && nCustomBackupThreshold > 0) {
+    if((!strPathCustom.empty() || !strzRPIPathCustom.empty()) && nCustomBackupThreshold > 0) {
         ui->wallet_custombackupthreshold->setText(QString::fromStdString(std::to_string(nCustomBackupThreshold)));
         ui->wallet_custombackupthreshold_label->setVisible(true);
         ui->wallet_custombackupthreshold->setVisible(true);
@@ -640,7 +640,7 @@ void RPCConsole::clear()
     QString clsKey = "Ctrl-L";
 #endif
 
-    message(CMD_REPLY, (tr("Welcome to the WISPR RPC console.") + "<br>" +
+    message(CMD_REPLY, (tr("Welcome to the RPICOIN RPC console.") + "<br>" +
                         tr("Use up and down arrows to navigate history, and %1 to clear screen.").arg("<b>"+clsKey+"</b>") + "<br>" +
                         tr("Type <b>help</b> for an overview of available commands.") +
                         "<br><span class=\"secwarning\"><br>" +

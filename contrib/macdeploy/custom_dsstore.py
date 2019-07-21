@@ -11,7 +11,7 @@ output_file = sys.argv[1]
 package_name_ns = sys.argv[2]
 
 ds = DSStore.open(output_file, 'w+')
-ds['.']['bwsp'] = {
+ds['.']['brpi'] = {
     'ShowStatusBar': False,
     'WindowBounds': '{{300, 280}, {500, 343}}',
     'ContainerShowSidebar': False,
@@ -53,7 +53,7 @@ ds['.']['icvp'] = icvp
 ds['.']['vSrn'] = ('long', 1)
 
 ds['Applications']['Iloc'] = (370, 156)
-ds['WISPR-Qt.app']['Iloc'] = (128, 156)
+ds['RPICOIN-Qt.app']['Iloc'] = (128, 156)
 
 ds.flush()
 ds.close()

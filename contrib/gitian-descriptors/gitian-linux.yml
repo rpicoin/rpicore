@@ -1,5 +1,5 @@
 ---
-name: "wispr-linux-0.3.3"
+name: "rpicoin-linux-0.3.3"
 enable_cache: true
 distro: "ubuntu"
 suites:
@@ -33,7 +33,7 @@ packages:
 - "ca-certificates"
 - "python3"
 remotes:
-- "url": "https://github.com/WisprProject/core.git"
+- "url": "https://github.com/rpicoin/rpicore.git"
   "dir": "core"
 files: []
 script: |
@@ -145,13 +145,13 @@ script: |
   ./autogen.sh
   CONFIG_SITE=${BASEPREFIX}/`echo "${HOSTS}" | awk '{print $1;}'`/share/config.site ./configure --prefix=/
   make dist
-  SOURCEDIST=`echo wispr-*.tar.gz`
+  SOURCEDIST=`echo rpicoin-*.tar.gz`
   DISTNAME=`echo ${SOURCEDIST} | sed 's/.tar.*//'`
   # Correct tar file order
   mkdir -p temp
   pushd temp
   tar xf ../$SOURCEDIST
-  find wispr-* | sort | tar --no-recursion --mode='u+rw,go+r-w,a+X' --owner=0 --group=0 -c -T - | gzip -9n > ../$SOURCEDIST
+  find rpicoin-* | sort | tar --no-recursion --mode='u+rw,go+r-w,a+X' --owner=0 --group=0 -c -T - | gzip -9n > ../$SOURCEDIST
   popd
 
   # Workaround for tarball not building with the bare tag version (prep)

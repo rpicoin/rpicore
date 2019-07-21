@@ -15,9 +15,9 @@
 #include <iostream>
 #include <zpiv/accumulators.h>
 #include "wallet/wallet.h"
-#include "zpiv/zwspwallet.h"
-#include "zwspchain.h"
-#include "test_wispr.h"
+#include "zpiv/zrpiwallet.h"
+#include "zrpichain.h"
+#include "test_rpicoin.h"
 
 using namespace libzerocoin;
 
@@ -460,9 +460,9 @@ BOOST_AUTO_TEST_CASE(checksum_tests)
 BOOST_AUTO_TEST_CASE(test_checkpoints)
         {
                 BOOST_CHECK_MESSAGE(AccumulatorCheckpoints::LoadCheckpoints("main"), "failed to load checkpoints");
-                BOOST_CHECK_MESSAGE(AccumulatorCheckpoints::mapCheckpoints.at(400475)
+                BOOST_CHECK_MESSAGE(AccumulatorCheckpoints::mapCheckpoints.at(0)
                 .at(libzerocoin::CoinDenomination::ZQ_FIVE_THOUSAND)
-                .GetHex() == "1a38ac28dce1d2e52d81bef524cd5bb80754a40704ae3b157763d9d4b304c24d37b85639ffed8fd6eff7d0c53230c0697e9fed4eba8ac7aca20ed199a26b5b4ce1d6d70f1528657b95ce18f217dec87e626d6b626ef03fc0d9128ca51dcf120100b642f98c606fa8749e00ae2fec7fdeaf82b567a513ccc1db8e03f0d5eed21d", "does not match");
+                .GetHex() == "0", "does not match");
         }
 
 BOOST_AUTO_TEST_CASE(deterministic_tests)
@@ -475,7 +475,7 @@ BOOST_AUTO_TEST_CASE(deterministic_tests)
                 CWalletDB walletdb(strWalletFile, "cr+");
 
                 CWallet wallet(strWalletFile);
-                CzWSPWallet zWallet(wallet.strWalletFile);
+                CzRPIWallet zWallet(wallet.strWalletFile);
                 zWallet.SetMasterSeed(seedMaster);
                 wallet.setZWallet(&zWallet);
 
@@ -487,7 +487,7 @@ BOOST_AUTO_TEST_CASE(deterministic_tests)
                 for (int i = 0; i < nTests; i++) {
             PrivateCoin coin(Params().Zerocoin_Params(false), denom, false);
             CDeterministicMint dMint;
-            zWallet.GenerateDeterministicZWSP(denom, coin, dMint);
+            zWallet.GenerateDeterministicZRPI(denom, coin, dMint);
             vCoins.emplace_back(coin);
         }
 

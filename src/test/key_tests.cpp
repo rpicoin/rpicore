@@ -10,7 +10,7 @@
 #include "uint256.h"
 #include "util.h"
 #include "utilstrencodings.h"
-#include "test_wispr.h"
+#include "test_rpicoin.h"
 
 #include <string>
 #include <vector>
@@ -19,14 +19,14 @@
 
 using namespace std;
 
-static const string strSecret1     ("5t9pdUbF2atWYjj5DgFyzbiJyghzkFfFcjj9NqLkGGc3vDbngLf");
-static const string strSecret2     ("5tdesoG8SXoP8cEt6TkEgSxN4T46MgCa5yQAGZ6a46ctoYjY1Fm");
-static const string strSecret1C    ("NYmwDzn8uzaMR5ahcxH8ZEDLMCFwsuhqWjb1yNN9xPshsWru8NBX");
-static const string strSecret2C    ("NatnBDBmqgwigaYGX73qP7ZMxDzeeG252wwDuefatfoRe16ZuWAo");
-static const CBitcoinAddress addr1 ("Wa4qRD6Eg9zZAUGA9NYgRDVeW3VEXC1x3N");
-static const CBitcoinAddress addr2 ("WkXd585snjGTk5cKzHCVyEkSHjPfrS7nTr");
-static const CBitcoinAddress addr1C("WPfjarmXy9uJ8UoYSQeAGyUHnWeECSsfM4");
-static const CBitcoinAddress addr2C("WZgjraM3dneKgC42JHs3PgQAyusbe5QcKE");
+static const string strSecret1     ("5tLUr6x2yfhVqwrkp57t8pZVZFygdQDGdrwrKnyJff6Q3nuEARX");
+static const string strSecret2     ("5sg1gqfKtVw3gJd7iKMdHaCBnYaCciyaSsSH7P3UtJunpdSSbeX");
+static const string strSecret1C    ("NZayujFuj7okK38cNmBNhWvR3P7BufTA1hT6hwuWyd8pj6QrwZKR");
+static const string strSecret2C    ("NWfC2qnANJhYpUnQdN23A9WNc2MYGgGidBca7AHx5U41EzmwKQdM");
+static const CBitcoinAddress addr1 ("RNLmnQzk8kQart8jXECFg6BrWiDN4xrp6Z");
+static const CBitcoinAddress addr2 ("RNLuu3J5YrZqnycLU5RAbzbJVM8EsCoVjU");
+static const CBitcoinAddress addr1C("RFButNtMhxFo1DuSK9SPY3nLZAUuD37CyZ");
+static const CBitcoinAddress addr2C("RMt3r2a3oTmFfQ5NmMgS6NtTrjyPuMR3Fy");
 
 
 static const string strAddressBad("Xta1praZQjyELweyMByXyiREw1ZRsjXzVP");

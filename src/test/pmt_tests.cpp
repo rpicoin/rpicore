@@ -9,7 +9,7 @@
 #include "uint256.h"
 #include "version.h"
 #include "random.h"
-#include "test/test_wispr.h"
+#include "test/test_rpicoin.h"
 
 #include <vector>
 

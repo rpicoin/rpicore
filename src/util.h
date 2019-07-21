@@ -13,7 +13,7 @@
 #define BITCOIN_UTIL_H
 
 #if defined(HAVE_CONFIG_H)
-#include "config/wispr-config.h"
+#include "config/rpicoin-config.h"
 #endif
 
 #include "compat.h"
@@ -31,7 +31,7 @@
 #include <boost/thread/condition_variable.hpp> // for boost::thread_interrupted
 #define CVOIDBEGIN(a)        ((const void*)&(a))
 
-//WISPR only features
+//RPICOIN only features
 
 extern bool fMasterNode;
 extern bool fLiteMode;
@@ -229,7 +229,7 @@ void RenameThread(const char* name);
 template <typename Callable>
 void TraceThread(const char* name, Callable func)
 {
-    std::string s = strprintf("wispr-%s", name);
+    std::string s = strprintf("rpicoin-%s", name);
     RenameThread(s.c_str());
     try {
         LogPrintf("%s thread start\n", name);

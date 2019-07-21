@@ -8,7 +8,7 @@
 #include <string>
 #include <map>
 #include <univalue.h>
-#include "test/test_wispr.h"
+#include "test/test_rpicoin.h"
 
 #include <boost/test/unit_test.hpp>
 

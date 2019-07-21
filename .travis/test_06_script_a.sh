@@ -34,7 +34,7 @@ BEGIN_FOLD distdir
 DOCKER_EXEC make distdir VERSION=$HOST
 END_FOLD
 
-cd "wispr-$HOST" || (echo "could not enter distdir wispr-$HOST"; exit 1)
+cd "rpicoin-$HOST" || (echo "could not enter distdir rpicoin-$HOST"; exit 1)
 
 BEGIN_FOLD configure
 DOCKER_EXEC ./configure --cache-file=../config.cache $BITCOIN_CONFIG_ALL $BITCOIN_CONFIG || ( cat config.log && false)

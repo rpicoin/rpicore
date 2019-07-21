@@ -5,7 +5,7 @@
 #include "util.h"
 
 #include "allocators.h"
-#include "test/test_wispr.h"
+#include "test/test_rpicoin.h"
 
 #include <boost/test/unit_test.hpp>
 

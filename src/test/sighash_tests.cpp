@@ -11,7 +11,7 @@
 #include "script/interpreter.h"
 #include "util.h"
 #include "version.h"
-#include "test_wispr.h"
+#include "test_rpicoin.h"
 
 #include <iostream>
 

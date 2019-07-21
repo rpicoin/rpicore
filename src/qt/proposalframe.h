@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WISPR_QT_PROPOSALFRAME_H
-#define WISPR_QT_PROPOSALFRAME_H
+#ifndef RPICOIN_QT_PROPOSALFRAME_H
+#define RPICOIN_QT_PROPOSALFRAME_H
 
 #include <QFrame>
 #include <QLabel>

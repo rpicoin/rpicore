@@ -10,7 +10,7 @@
 #include "txdb.h"
 #include "wallet/wallet.h"
 #include "wallet/walletdb.h"
-#include "test/test_wispr.h"
+#include "test/test_rpicoin.h"
 #include <boost/test/unit_test.hpp>
 #include <iostream>
 
@@ -18,7 +18,7 @@ using namespace libzerocoin;
 
 BOOST_FIXTURE_TEST_SUITE(zerocoin_denom_tests, BasicTestingSetup)
 
-//translation from wispr quantity to zerocoin denomination
+//translation from rpicoin quantity to zerocoin denomination
 BOOST_AUTO_TEST_CASE(amount_to_denomination_test)
 {
     cout << "Running amount_to_denomination_test...\n";

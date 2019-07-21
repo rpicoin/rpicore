@@ -1,0 +1,81 @@
+policy_module(rpicoin, 1.100.1)
+
+########################################
+#
+# Declarations
+#
+
+type rpicoin_t;
+type rpicoin_exec_t;
+init_daemon_domain(rpicoin_t, rpicoin_exec_t)
+
+permissive rpicoin_t;
+
+type rpicoin_initrc_exec_t;
+init_script_file(rpicoin_initrc_exec_t)
+
+type rpicoin_conf_t;
+files_type(rpicoin_conf_t)
+
+type rpicoin_var_lib_t;
+files_type(rpicoin_var_lib_t)
+
+type rpicoin_var_run_t;
+files_type(rpicoin_var_run_t)
+
+type rpicoin_port_t;
+corenet_port(rpicoin_port_t)
+
+########################################
+#
+# rpicoin local policy
+#
+allow rpicoin_t self:process { fork };
+
+allow rpicoin_t self:fifo_file rw_fifo_file_perms;
+allow rpicoin_t self:unix_stream_socket create_stream_socket_perms;
+
+manage_dirs_pattern(rpicoin_t, rpicoin_conf_t, rpicoin_conf_t)
+manage_files_pattern(rpicoin_t, rpicoin_conf_t, rpicoin_conf_t)
+
+manage_dirs_pattern(rpicoin_t, rpicoin_var_lib_t, rpicoin_var_lib_t)
+manage_files_pattern(rpicoin_t, rpicoin_var_lib_t, rpicoin_var_lib_t)
+files_var_lib_filetrans(rpicoin_t, rpicoin_var_lib_t, { dir file })
+
+manage_dirs_pattern(rpicoin_t, rpicoin_var_run_t, rpicoin_var_run_t)
+manage_files_pattern(rpicoin_t, rpicoin_var_run_t, rpicoin_var_run_t)
+
+sysnet_dns_name_resolve(rpicoin_t)
+corenet_all_recvfrom_unlabeled(rpicoin_t)
+
+allow rpicoin_t self:tcp_socket create_stream_socket_perms;
+corenet_tcp_sendrecv_generic_if(rpicoin_t)
+corenet_tcp_sendrecv_generic_node(rpicoin_t)
+corenet_tcp_sendrecv_all_ports(rpicoin_t)
+corenet_tcp_bind_generic_node(rpicoin_t)
+
+gen_require(`
+    type rpicoin_port_t;
+')
+allow rpicoin_t rpicoin_port_t:tcp_socket name_bind;
+
+gen_require(`
+    type rpicoin_port_t;
+')
+allow rpicoin_t rpicoin_port_t:tcp_socket name_connect;
+
+domain_use_interactive_fds(rpicoin_t)
+
+files_read_etc_files(rpicoin_t)
+
+miscfiles_read_localization(rpicoin_t)
+
+sysnet_dns_name_resolve(rpicoin_t)
+
+allow rpicoin_t rpicoin_exec_t:file execute_no_trans;
+allow rpicoin_t self:process setsched;
+corecmd_exec_ls(rpicoin_t)
+corenet_tcp_connect_http_port(rpicoin_t)
+dev_read_urand(rpicoin_t)
+fs_getattr_xattr_fs(rpicoin_t)
+kernel_read_system_state(rpicoin_t)

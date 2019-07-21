@@ -6,7 +6,7 @@
 #include "wallet/wallet.h"
 #include "wallet/walletdb.h"
 
-#include "test/test_wispr.h"
+#include "test/test_rpicoin.h"
 
 #include <stdint.h>
 

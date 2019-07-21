@@ -66,15 +66,15 @@ TESTS =
 BENCHMARKS =
 
 if BUILD_BITCOIND
-  bin_PROGRAMS += wisprd
+  bin_PROGRAMS += rpicoind
 endif
 
 if BUILD_BITCOIN_UTILS
-  bin_PROGRAMS += wispr-cli wispr-tx
+  bin_PROGRAMS += rpicoin-cli rpicoin-tx
 endif
 
 .PHONY: FORCE check-symbols check-security
-# wispr core #
+# rpicoin core #
 BITCOIN_CORE_H = \
   activemasternode.h \
   addrman.h \
@@ -175,7 +175,7 @@ BITCOIN_CORE_H = \
   wallet/wallet.h \
   wallet/wallet_ismine.h \
   wallet/walletdb.h \
-  zwspchain.h \
+  zrpichain.h \
   zpiv/accumulators.h \
   zpiv/accumulatorcheckpoints.h \
   zpiv/accumulatorcheckpoints.json.h \
@@ -184,12 +184,12 @@ BITCOIN_CORE_H = \
   zpiv/mintpool.h \
   zpiv/witness.h \
   zpiv/zerocoin.h \
-  zpiv/zwsptracker.h \
-  zpiv/zwspwallet.h \
-  zpiv/zwspmodule.h \
+  zpiv/zrpitracker.h \
+  zpiv/zrpiwallet.h \
+  zpiv/zrpimodule.h \
   genwit.h \
   concurrentqueue.h \
-  lightzwspthread.h \
+  lightzrpithread.h \
   zmq/zmqabstractnotifier.h \
   zmq/zmqconfig.h \
   zmq/zmqnotificationinterface.h \
@@ -201,7 +201,7 @@ obj/build.h: FORCE
 	  "$(abs_top_srcdir)"
 libbitcoin_util_a-clientversion.$(OBJEXT): obj/build.h
 
-# server: shared between wisprd and wispr-qt
+# server: shared between rpicoind and rpicoin-qt
 libbitcoin_server_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(MINIUPNPC_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS)
 libbitcoin_server_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_server_a_SOURCES = \
@@ -237,7 +237,7 @@ libbitcoin_server_a_SOURCES = \
   txdb.cpp \
   txmempool.cpp \
   validationinterface.cpp \
-  zwspchain.cpp \
+  zrpichain.cpp \
   $(BITCOIN_CORE_H)
 
 if ENABLE_ZMQ
@@ -249,7 +249,7 @@ libbitcoin_zmq_a_SOURCES = \
   zmq/zmqpublishnotifier.cpp
 endif
 
-# wallet: shared between wisprd and wispr-qt, but only linked
+# wallet: shared between rpicoind and rpicoin-qt, but only linked
 # when wallet enabled
 libbitcoin_wallet_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_wallet_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
@@ -279,12 +279,12 @@ libbitcoin_wallet_a_SOURCES = \
   zpiv/accumulators.cpp \
   zpiv/mintpool.cpp \
   zpiv/witness.cpp \
-  zpiv/zwspwallet.cpp \
-  zpiv/zwsptracker.cpp \
+  zpiv/zrpiwallet.cpp \
+  zpiv/zrpitracker.cpp \
   stakeinput.cpp \
   genwit.cpp \
-  zpiv/zwspmodule.cpp \
-  lightzwspthread.cpp \
+  zpiv/zrpimodule.cpp \
+  lightzrpithread.cpp \
   $(BITCOIN_CORE_H)
 
 # crypto primitives library
@@ -344,7 +344,7 @@ if USE_NUM_OPENSSL
   libzerocoin_libbitcoin_zerocoin_a_SOURCES += libzerocoin/bignum_openssl.cpp
 endif
 
-# common: shared between wisprd, and wispr-qt and non-server tools
+# common: shared between rpicoind, and rpicoin-qt and non-server tools
 libbitcoin_common_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_common_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_common_a_SOURCES = \
@@ -410,7 +410,7 @@ libbitcoin_util_a_SOURCES += compat/glibc_compat.cpp
 AM_LDFLAGS += $(COMPAT_LDFLAGS)
 endif
 
-# cli: shared between wispr-cli and wispr-qt
+# cli: shared between rpicoin-cli and rpicoin-qt
 libbitcoin_cli_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_cli_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_cli_a_SOURCES = \
@@ -420,16 +420,16 @@ libbitcoin_cli_a_SOURCES = \
 nodist_libbitcoin_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
-# wisprd binary #
-wisprd_SOURCES = wisprd.cpp
-wisprd_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-wisprd_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-wisprd_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# rpicoind binary #
+rpicoind_SOURCES = rpicoind.cpp
+rpicoind_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+rpicoind_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+rpicoind_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-wisprd_SOURCES += wisprd-res.rc
+rpicoind_SOURCES += rpicoind-res.rc
 endif
-wisprd_LDADD = \
+rpicoind_LDADD = \
   $(LIBBITCOIN_SERVER) \
   $(LIBBITCOIN_WALLET) \
   $(LIBBITCOIN_COMMON) \
@@ -443,38 +443,38 @@ wisprd_LDADD = \
   $(LIBMEMENV) \
   $(LIBSECP256K1)
 
-wisprd_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS)
+rpicoind_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS)
 
-# wispr-cli binary #
-wispr_cli_SOURCES = wispr-cli.cpp
-wispr_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
-wispr_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-wispr_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# rpicoin-cli binary #
+rpicoin_cli_SOURCES = rpicoin-cli.cpp
+rpicoin_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
+rpicoin_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+rpicoin_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-wispr_cli_SOURCES += wispr-cli-res.rc
+rpicoin_cli_SOURCES += rpicoin-cli-res.rc
 endif
 
-wispr_cli_LDADD = \
+rpicoin_cli_LDADD = \
   $(LIBBITCOIN_CLI) \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_UTIL) \
   $(LIBBITCOIN_CRYPTO)
 
-wispr_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
+rpicoin_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
 #
 
-# wispr-tx binary #
-wispr_tx_SOURCES = wispr-tx.cpp
-wispr_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-wispr_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-wispr_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# rpicoin-tx binary #
+rpicoin_tx_SOURCES = rpicoin-tx.cpp
+rpicoin_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+rpicoin_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+rpicoin_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-wispr_tx_SOURCES += wispr-tx-res.rc
+rpicoin_tx_SOURCES += rpicoin-tx-res.rc
 endif
 
-wispr_tx_LDADD = \
+rpicoin_tx_LDADD = \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_ZEROCOIN) \
@@ -482,7 +482,7 @@ wispr_tx_LDADD = \
   $(LIBBITCOIN_CRYPTO) \
   $(LIBSECP256K1)
 
-wispr_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
+rpicoin_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
 #
 
 # bitcoinconsensus library #
@@ -537,12 +537,12 @@ CLEANFILES += obj/build.h
 EXTRA_DIST =
 
 
-config/wispr-config.h: config/stamp-h1
+config/rpicoin-config.h: config/stamp-h1
 	@$(MAKE) -C $(top_builddir) $(subdir)/$(@)
-config/stamp-h1: $(top_srcdir)/$(subdir)/config/wispr-config.h.in $(top_builddir)/config.status
+config/stamp-h1: $(top_srcdir)/$(subdir)/config/rpicoin-config.h.in $(top_builddir)/config.status
 	$(AM_V_at)$(MAKE) -C $(top_builddir) $(subdir)/$(@)
-$(top_srcdir)/$(subdir)/config/wispr-config.h.in:  $(am__configure_deps)
-	$(AM_V_at)$(MAKE) -C $(top_srcdir) $(subdir)/config/wispr-config.h.in
+$(top_srcdir)/$(subdir)/config/rpicoin-config.h.in:  $(am__configure_deps)
+	$(AM_V_at)$(MAKE) -C $(top_srcdir) $(subdir)/config/rpicoin-config.h.in
 
 clean-local:
 	-$(MAKE) -C secp256k1 clean

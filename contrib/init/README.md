@@ -1,11 +1,11 @@
 Sample configuration files for:
 ```
-SystemD: wisprd.service
-Upstart: wisprd.conf
-OpenRC:  wisprd.openrc
-         wisprd.openrcconf
-CentOS:  wisprd.init
-macOS:    org.wispr.wisprd.plist
+SystemD: rpicoind.service
+Upstart: rpicoind.conf
+OpenRC:  rpicoind.openrc
+         rpicoind.openrcconf
+CentOS:  rpicoind.init
+macOS:    org.rpicoin.rpicoind.plist
 ```
 have been made available to assist packagers in creating node packages here.
 

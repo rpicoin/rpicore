@@ -267,11 +267,11 @@ UniValue stop(const UniValue& params, bool fHelp)
     if (fHelp || params.size() > 1)
         throw runtime_error(
             "stop\n"
-            "\nStop WISPR server.");
+            "\nStop RPICOIN server.");
     // Event loop will exit after current HTTP requests have been handled, so
     // this reply will get back to the client.
     StartShutdown();
-    return "WISPR server stopping";
+    return "RPICOIN server stopping";
 }
 
 
@@ -364,35 +364,35 @@ static const CRPCCommand vRPCCommands[] =
         { "hidden",             "waitforblock",           &waitforblock,           true,  true,  false  },
         { "hidden",             "waitforblockheight",     &waitforblockheight,     true,  true,  false  },
 
-        /* WISPR features */
-        {"wispr", "listmasternodes", &listmasternodes, true, true, false},
-        {"wispr", "getmasternodecount", &getmasternodecount, true, true, false},
-        {"wispr", "masternodeconnect", &masternodeconnect, true, true, false},
-        {"wispr", "createmasternodebroadcast", &createmasternodebroadcast, true, true, false},
-        {"wispr", "decodemasternodebroadcast", &decodemasternodebroadcast, true, true, false},
-        {"wispr", "relaymasternodebroadcast", &relaymasternodebroadcast, true, true, false},
-        {"wispr", "masternodecurrent", &masternodecurrent, true, true, false},
-        {"wispr", "masternodedebug", &masternodedebug, true, true, false},
-        {"wispr", "startmasternode", &startmasternode, true, true, false},
-        {"wispr", "createmasternodekey", &createmasternodekey, true, true, false},
-        {"wispr", "getmasternodeoutputs", &getmasternodeoutputs, true, true, false},
-        {"wispr", "listmasternodeconf", &listmasternodeconf, true, true, false},
-        {"wispr", "getmasternodestatus", &getmasternodestatus, true, true, false},
-        {"wispr", "getmasternodewinners", &getmasternodewinners, true, true, false},
-        {"wispr", "getmasternodescores", &getmasternodescores, true, true, false},
-        {"wispr", "preparebudget", &preparebudget, true, true, false},
-        {"wispr", "submitbudget", &submitbudget, true, true, false},
-        {"wispr", "mnbudgetvote", &mnbudgetvote, true, true, false},
-        {"wispr", "getbudgetvotes", &getbudgetvotes, true, true, false},
-        {"wispr", "getnextsuperblock", &getnextsuperblock, true, true, false},
-        {"wispr", "getbudgetprojection", &getbudgetprojection, true, true, false},
-        {"wispr", "getbudgetinfo", &getbudgetinfo, true, true, false},
-        {"wispr", "mnbudgetrawvote", &mnbudgetrawvote, true, true, false},
-        {"wispr", "mnfinalbudget", &mnfinalbudget, true, true, false},
-        {"wispr", "checkbudgets", &checkbudgets, true, true, false},
-        {"wispr", "mnsync", &mnsync, true, true, false},
-        {"wispr", "spork", &spork, true, true, false},
-        {"wispr", "getpoolinfo", &getpoolinfo, true, true, false},
+        /* RPICOIN features */
+        {"rpicoin", "listmasternodes", &listmasternodes, true, true, false},
+        {"rpicoin", "getmasternodecount", &getmasternodecount, true, true, false},
+        {"rpicoin", "masternodeconnect", &masternodeconnect, true, true, false},
+        {"rpicoin", "createmasternodebroadcast", &createmasternodebroadcast, true, true, false},
+        {"rpicoin", "decodemasternodebroadcast", &decodemasternodebroadcast, true, true, false},
+        {"rpicoin", "relaymasternodebroadcast", &relaymasternodebroadcast, true, true, false},
+        {"rpicoin", "masternodecurrent", &masternodecurrent, true, true, false},
+        {"rpicoin", "masternodedebug", &masternodedebug, true, true, false},
+        {"rpicoin", "startmasternode", &startmasternode, true, true, false},
+        {"rpicoin", "createmasternodekey", &createmasternodekey, true, true, false},
+        {"rpicoin", "getmasternodeoutputs", &getmasternodeoutputs, true, true, false},
+        {"rpicoin", "listmasternodeconf", &listmasternodeconf, true, true, false},
+        {"rpicoin", "getmasternodestatus", &getmasternodestatus, true, true, false},
+        {"rpicoin", "getmasternodewinners", &getmasternodewinners, true, true, false},
+        {"rpicoin", "getmasternodescores", &getmasternodescores, true, true, false},
+        {"rpicoin", "preparebudget", &preparebudget, true, true, false},
+        {"rpicoin", "submitbudget", &submitbudget, true, true, false},
+        {"rpicoin", "mnbudgetvote", &mnbudgetvote, true, true, false},
+        {"rpicoin", "getbudgetvotes", &getbudgetvotes, true, true, false},
+        {"rpicoin", "getnextsuperblock", &getnextsuperblock, true, true, false},
+        {"rpicoin", "getbudgetprojection", &getbudgetprojection, true, true, false},
+        {"rpicoin", "getbudgetinfo", &getbudgetinfo, true, true, false},
+        {"rpicoin", "mnbudgetrawvote", &mnbudgetrawvote, true, true, false},
+        {"rpicoin", "mnfinalbudget", &mnfinalbudget, true, true, false},
+        {"rpicoin", "checkbudgets", &checkbudgets, true, true, false},
+        {"rpicoin", "mnsync", &mnsync, true, true, false},
+        {"rpicoin", "spork", &spork, true, true, false},
+        {"rpicoin", "getpoolinfo", &getpoolinfo, true, true, false},
 
 #ifdef ENABLE_WALLET
         /* Wallet */
@@ -463,11 +463,11 @@ static const CRPCCommand vRPCCommands[] =
         {"zerocoin", "exportzerocoins", &exportzerocoins, false, false, true},
         {"zerocoin", "reconsiderzerocoins", &reconsiderzerocoins, false, false, true},
         {"zerocoin", "getspentzerocoinamount", &getspentzerocoinamount, false, false, false},
-        {"zerocoin", "getzwspseed", &getzwspseed, false, false, true},
-        {"zerocoin", "setzwspseed", &setzwspseed, false, false, true},
+        {"zerocoin", "getzrpiseed", &getzrpiseed, false, false, true},
+        {"zerocoin", "setzrpiseed", &setzrpiseed, false, false, true},
         {"zerocoin", "generatemintlist", &generatemintlist, false, false, true},
-        {"zerocoin", "searchdzwsp", &searchdzwsp, false, false, true},
-        {"zerocoin", "dzwspstate", &dzwspstate, false, false, true},
+        {"zerocoin", "searchdzrpi", &searchdzrpi, false, false, true},
+        {"zerocoin", "dzrpistate", &dzrpistate, false, false, true},
         {"zerocoin", "clearspendcache", &clearspendcache, false, false, true}
 
 #endif // ENABLE_WALLET
@@ -632,14 +632,14 @@ std::vector<std::string> CRPCTable::listCommands() const
 
 std::string HelpExampleCli(string methodname, string args)
 {
-    return "> wispr-cli " + methodname + " " + args + "\n";
+    return "> rpicoin-cli " + methodname + " " + args + "\n";
 }
 
 std::string HelpExampleRpc(string methodname, string args)
 {
     return "> curl --user myusername --data-binary '{\"jsonrpc\": \"1.0\", \"id\":\"curltest\", "
            "\"method\": \"" +
-           methodname + "\", \"params\": [" + args + "] }' -H 'content-type: text/plain;' http://127.0.0.1:17001/\n";
+           methodname + "\", \"params\": [" + args + "] }' -H 'content-type: text/plain;' http://127.0.0.1:18001/\n";
 }
 
 void RPCSetTimerInterfaceIfUnset(RPCTimerInterface *iface)

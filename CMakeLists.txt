@@ -1,16 +1,18 @@
 cmake_minimum_required(VERSION 3.10)
-project(WISPR)
+project(RPICOIN)
 
-set(CMAKE_PREFIX_PATH D:/Development/Libraries/CPP/Qt/5.9.7/mingw53_32)
+set(CMAKE_PREFIX_PATH D:/Development/Libraries/CPP/Qt/5.9.8/mingw53_32)
 set(BDB_VER "4.8.30")
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/contrib/cmake")
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 ")
 include(${CMAKE_ROOT}/Modules/ExternalProject.cmake)
 
+set(BerkeleyDB_ROOT_DIR D:/Development/Libraries/CPP/bdb)
 set(LIBEVENT_LIB D:/Development/Libraries/CPP/libevent/libevent.lib)
 set(LIBEVENT_INCLUDE_DIR D:/Development/Libraries/CPP/libevent/include)
 set(LIBEVENT_PTHREAD_LIB D:/Development/Libraries/CPP/libevent/libevent.a)
+set(OPENSSL_ROOT_DIR D:/Development/Libraries/CPP/openssl)
 set(Boost_INCLUDE_DIR D:/Development/Libraries/CPP/boost)
 set(Boost_LIBRARY_DIR D:/Development/Libraries/CPP/boost/lib)
 set(GMP_INCLUDE_DIR D:/Development/Libraries/CPP/gmp/include)
@@ -18,7 +20,7 @@ set(GMP_LIBRARY D:/Development/Libraries/CPP/gmp/include/libgmp-10.dll)
 set(Protobuf_LIBRARIES D:/Development/Libraries/CPP/protoc/lib/libprotobuf.lib)
 set(Protobuf_INCLUDE_DIR D:/Development/Libraries/CPP/protoc/include)
 set(Protobuf_PROTOC_EXECUTABLE D:/Development/Libraries/CPP/protoc/bin/protoc.exe)
-set(SHLWAPI_INCLUDE_DIR D:/Development/Compilers/C++/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/include)
+set(SHLWAPI_INCLUDE_DIR D:/Development/Compilers/mingw-w64/mingw64/include)
 set(ZMQ_LIBRARY D:/Development/Libraries/CPP/ZeroMQ 4.0.4/lib/libzmq-v120-mt-4_0_4.lib)
 set(ZMQ_INCLUDE_DIR D:/Development/Libraries/CPP/ZeroMQ 4.0.4/include)
 
@@ -112,8 +114,8 @@ else()
     )
 endif()
 
-# run configure if wispr_config.h doesn't exist
-if (EXISTS	"${CMAKE_CURRENT_SOURCE_DIR}/src/config/wispr-config.h")
+# run configure if rpicoin_config.h doesn't exist
+if (EXISTS	"${CMAKE_CURRENT_SOURCE_DIR}/src/config/rpicoin-config.h")
 else()
     execute_process(
             COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/configure ${BDB_CONFIGURE_FLAGS} ${BIGNUM_CONFIGURE_FLAGS}
@@ -159,7 +161,7 @@ include_directories(
 )
 
 set(libleveldb_a_headers
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/config/wispr-config.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/config/rpicoin-config.h
         ${CMAKE_CURRENT_SOURCE_DIR}/src/leveldb/port/atomic_pointer.h
         ${CMAKE_CURRENT_SOURCE_DIR}/src/leveldb/port/port_example.h
         ${CMAKE_CURRENT_SOURCE_DIR}/src/leveldb/port/port_posix.h
@@ -340,7 +342,7 @@ set(SERVER_SOURCES
         ./src/txdb.cpp
         ./src/txmempool.cpp
         ./src/validationinterface.cpp
-        ./src/zwspchain.cpp
+        ./src/zrpichain.cpp
         )
 add_library(SERVER_A STATIC ${BitcoinHeaders} ${SERVER_SOURCES})
 
@@ -377,12 +379,12 @@ set(WALLET_SOURCES
         ./src/wallet/wallet.cpp
         ./src/wallet/wallet_ismine.cpp
         ./src/wallet/walletdb.cpp
-        ./src/zpiv/zwspwallet.cpp
-        ./src/zpiv/zwsptracker.cpp
-        ./src/zpiv/zwspmodule.cpp
+        ./src/zpiv/zrpiwallet.cpp
+        ./src/zpiv/zrpitracker.cpp
+        ./src/zpiv/zrpimodule.cpp
         ./src/stakeinput.cpp
         ./src/genwit.cpp
-        ./src/lightzwspthread.cpp
+        ./src/lightzrpithread.cpp
         )
 add_library(WALLET_A STATIC ${BitcoinHeaders} ${WALLET_SOURCES})
 
@@ -498,9 +500,9 @@ add_library(UTIL_A STATIC ${BitcoinHeaders} ${UTIL_SOURCES})
 set(CLI_SOURCES ./src/rpc/client.cpp)
 add_library(CLI_A STATIC ${BitcoinHeaders} ${CLI_SOURCES})
 
-add_executable(wispr-cli ${CMAKE_CURRENT_SOURCE_DIR}/src/wispr-cli.cpp)
-add_dependencies(wispr-cli libunivalue)
-target_link_libraries(wispr-cli
+add_executable(rpicoin-cli ${CMAKE_CURRENT_SOURCE_DIR}/src/rpicoin-cli.cpp)
+add_dependencies(rpicoin-cli libunivalue)
+target_link_libraries(rpicoin-cli
         CLI_A
         univalue
         UTIL_A
@@ -508,9 +510,9 @@ target_link_libraries(wispr-cli
         ${Boost_LIBRARIES} ${OPENSSL_LIBRARIES} ${LIBEVENT_LIB}
         )
 
-add_executable(wispr-tx ${CMAKE_CURRENT_SOURCE_DIR}/src/wispr-tx.cpp)
-add_dependencies(wispr-tx libunivalue libsecp256k1)
-target_link_libraries(wispr-tx
+add_executable(rpicoin-tx ${CMAKE_CURRENT_SOURCE_DIR}/src/rpicoin-tx.cpp)
+add_dependencies(rpicoin-tx libunivalue libsecp256k1)
+target_link_libraries(rpicoin-tx
         univalue
         COMMON_A
         ZEROCOIN_A
@@ -520,12 +522,12 @@ target_link_libraries(wispr-tx
         ${Boost_LIBRARIES} ${OPENSSL_LIBRARIES} ${LIBEVENT_LIB}
         )
 if(GMP_FOUND)
-    target_link_libraries(wispr-tx ${GMP_LIBRARY})
+    target_link_libraries(rpicoin-tx ${GMP_LIBRARY})
 endif()
 
-add_executable(wisprd ${CMAKE_CURRENT_SOURCE_DIR}/src/wisprd.cpp)
-add_dependencies(wisprd libunivalue libsecp256k1 leveldb leveldb_sse42 memenv)
-target_link_libraries(wisprd
+add_executable(rpicoind ${CMAKE_CURRENT_SOURCE_DIR}/src/rpicoind.cpp)
+add_dependencies(rpicoind libunivalue libsecp256k1 leveldb leveldb_sse42 memenv)
+target_link_libraries(rpicoind
         SERVER_A
         COMMON_A
         univalue
@@ -537,10 +539,10 @@ target_link_libraries(wisprd
         ${BerkeleyDB_LIBRARIES} ${OPENSSL_LIBRARIES} ${Boost_LIBRARIES} ${LIBEVENT_LIB} miniupnpc pthread
         )
 if(GMP_FOUND)
-    target_link_libraries(wisprd ${GMP_LIBRARY})
+    target_link_libraries(rpicoind ${GMP_LIBRARY})
 endif()
 if(ZMQ_FOUND)
-    target_link_libraries(wisprd ZMQ_A ${ZMQ_LIB})
+    target_link_libraries(rpicoind ZMQ_A ${ZMQ_LIB})
 endif ()
 
 

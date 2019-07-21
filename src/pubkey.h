@@ -4,8 +4,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WISPR_PUBKEY_H
-#define WISPR_PUBKEY_H
+#ifndef RPICOIN_PUBKEY_H
+#define RPICOIN_PUBKEY_H
 
 #include "hash.h"
 #include "serialize.h"
@@ -263,4 +263,4 @@ public:
     ~ECCVerifyHandle();
 };
 
-#endif // WISPR_PUBKEY_H
+#endif // RPICOIN_PUBKEY_H

@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WISPR_CONCURRENTQUEUE_H
-#define WISPR_CONCURRENTQUEUE_H
+#ifndef RPICOIN_CONCURRENTQUEUE_H
+#define RPICOIN_CONCURRENTQUEUE_H
 
 
 #include <mutex>

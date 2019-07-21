@@ -7,7 +7,7 @@
 #include "libzerocoin/Accumulator.h"
 #include "zpiv/zerocoin.h"
 #include "zpiv/deterministicmint.h"
-#include "zpiv/zwspwallet.h"
+#include "zpiv/zrpiwallet.h"
 #include "libzerocoin/Coin.h"
 #include "amount.h"
 #include "chainparams.h"
@@ -16,7 +16,7 @@
 #include "wallet/wallet.h"
 #include "wallet/walletdb.h"
 #include "txdb.h"
-#include "test/test_wispr.h"
+#include "test/test_rpicoin.h"
 #include <boost/test/unit_test.hpp>
 #include <iostream>
 
@@ -41,7 +41,7 @@ BOOST_AUTO_TEST_CASE(zerocoin_wrapped_serial_spend_test)
     string strWalletFile = "unittestwallet.dat";
     CWalletDB walletdb(strWalletFile, "cr+");
     CWallet wallet(strWalletFile);
-    CzWSPWallet *czWSPWallet = new CzWSPWallet(wallet.strWalletFile);
+    CzRPIWallet *czRPIWallet = new CzRPIWallet(wallet.strWalletFile);
 
     // Get the 5 created mints.
     CoinDenomination denom = CoinDenomination::ZQ_FIFTY;
@@ -49,8 +49,8 @@ BOOST_AUTO_TEST_CASE(zerocoin_wrapped_serial_spend_test)
     for (unsigned int i = 0; i < TESTS_COINS_TO_ACCUMULATE; i++) {
         PrivateCoin coin(ZCParams, denom, false);
         CDeterministicMint dMint;
-        czWSPWallet->GenerateDeterministicZWSP(denom, coin, dMint, true);
-        czWSPWallet->UpdateCount();
+        czRPIWallet->GenerateDeterministicZRPI(denom, coin, dMint, true);
+        czRPIWallet->UpdateCount();
         vCoins.emplace_back(coin);
     }
 

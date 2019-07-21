@@ -10,8 +10,8 @@
 #include <vector>
 
 /**
- * CBaseChainParams defines the base parameters (shared between wispr-cli and wisprd)
- * of a given instance of the Wispr system.
+ * CBaseChainParams defines the base parameters (shared between rpicoin-cli and rpicoind)
+ * of a given instance of the Rpicoin system.
  */
 class CBaseChainParams
 {

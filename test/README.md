@@ -1,4 +1,4 @@
-This directory contains integration tests that test wisprd and its
+This directory contains integration tests that test rpicoind and its
 utilities in their entirety. It does not contain unit tests, which
 can be found in [/src/test](/src/test), [/src/wallet/test](/src/wallet/test),
 etc.
@@ -6,10 +6,10 @@ etc.
 There are currently two sets of tests in this directory:
 
 - [functional](/test/functional) which test the functionality of
-wisprd and wispr-qt by interacting with them through the RPC and P2P
+rpicoind and rpicoin-qt by interacting with them through the RPC and P2P
 interfaces.
-- [util](/test/util) which tests the wispr utilities, currently only
-wispr-tx.
+- [util](/test/util) which tests the rpicoin utilities, currently only
+rpicoin-tx.
 
 The util tests are run as part of `make check` target. The functional
 tests are run by the travis continuous build process whenever a pull
@@ -70,29 +70,29 @@ options. Run `test_runner.py -h` to see them all.
 
 ##### Resource contention
 
-The P2P and RPC ports used by the wisprd nodes-under-test are chosen to make
-conflicts with other processes unlikely. However, if there is another wisprd
+The P2P and RPC ports used by the rpicoind nodes-under-test are chosen to make
+conflicts with other processes unlikely. However, if there is another rpicoind
 process running on the system (perhaps from a previous test which hasn't successfully
-killed all its wisprd nodes), then there may be a port conflict which will
+killed all its rpicoind nodes), then there may be a port conflict which will
 cause the test to fail. It is recommended that you run the tests on a system
-where no other wisprd processes are running.
+where no other rpicoind processes are running.
 
 On linux, the test_framework will warn if there is another
-wisprd process running when the tests are started.
+rpicoind process running when the tests are started.
 
-If there are zombie wisprd processes after test failure, you can kill them
+If there are zombie rpicoind processes after test failure, you can kill them
 by running the following commands. **Note that these commands will kill all
-wisprd processes running on the system, so should not be used if any non-test
-wisprd processes are being run.**
+rpicoind processes running on the system, so should not be used if any non-test
+rpicoind processes are being run.**
 
 ```bash
-killall wisprd
+killall rpicoind
 ```
 
 or
 
 ```bash
-pkill -9 wisprd
+pkill -9 rpicoind
 ```
 
 
@@ -103,11 +103,11 @@ functional test is run and is stored in test/cache. This speeds up
 test startup times since new blockchains don't need to be generated for
 each test. However, the cache may get into a bad state, in which case
 tests will fail. If this happens, remove the cache directory (and make
-sure wisprd processes are stopped as above):
+sure rpicoind processes are stopped as above):
 
 ```bash
 rm -rf cache
-killall wisprd
+killall rpicoind
 ```
 
 ##### Test logging
@@ -120,13 +120,13 @@ default:
 - when run directly, *all* logs are written to `test_framework.log` and INFO
   level and above are output to the console.
 - when run on Travis, no logs are output to the console. However, if a test
-  fails, the `test_framework.log` and wisprd `debug.log`s will all be dumped
+  fails, the `test_framework.log` and rpicoind `debug.log`s will all be dumped
   to the console to help troubleshooting.
 
 To change the level of logs output to the console, use the `-l` command line
 argument.
 
-`test_framework.log` and wisprd `debug.log`s can be combined into a single
+`test_framework.log` and rpicoind `debug.log`s can be combined into a single
 aggregate log by running the `combine_logs.py` script. The output can be plain
 text, colorized text or html. For example:
 
@@ -153,9 +153,9 @@ import pdb; pdb.set_trace()
 ```
 
 anywhere in the test. You will then be able to inspect variables, as well as
-call methods that interact with the wisprd nodes-under-test.
+call methods that interact with the rpicoind nodes-under-test.
 
-If further introspection of the wisprd instances themselves becomes
+If further introspection of the rpicoind instances themselves becomes
 necessary, this can be accomplished by first setting a pdb breakpoint
 at an appropriate location, running the test to that point, then using
 `gdb` to attach to the process and debug.
@@ -169,8 +169,8 @@ For instance, to attach to `self.node[1]` during a run:
 use the directory path to get the pid from the pid file:
 
 ```bash
-cat /tmp/user/1000/testo9vsdjo3/node1/regtest/wisprd.pid
-gdb /home/example/wisprd <pid>
+cat /tmp/user/1000/testo9vsdjo3/node1/regtest/rpicoind.pid
+gdb /home/example/rpicoind <pid>
 ```
 
 Note: gdb attach step may require `sudo`

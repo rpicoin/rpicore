@@ -2,44 +2,44 @@
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-bin_PROGRAMS += qt/wispr-qt
+bin_PROGRAMS += qt/rpicoin-qt
 EXTRA_LIBRARIES += qt/libbitcoinqt.a
 
-# wispr qt core #
+# rpicoin qt core #
 QT_TS = \
-  qt/locale/wispr_bg.ts \
-   qt/locale/wispr_ca.ts \
-   qt/locale/wispr_cs.ts \
-   qt/locale/wispr_da.ts \
-   qt/locale/wispr_de.ts \
-   qt/locale/wispr_en.ts \
-   qt/locale/wispr_en_GB.ts \
-   qt/locale/wispr_en_US.ts \
-   qt/locale/wispr_eo.ts \
-   qt/locale/wispr_es.ts \
-   qt/locale/wispr_es_ES.ts \
-   qt/locale/wispr_fi.ts \
-   qt/locale/wispr_fr_FR.ts \
-   qt/locale/wispr_hi_IN.ts \
-   qt/locale/wispr_hr.ts \
-   qt/locale/wispr_hr_HR.ts \
-   qt/locale/wispr_it.ts \
-   qt/locale/wispr_ja.ts \
-   qt/locale/wispr_ko_KR.ts \
-   qt/locale/wispr_lt_LT.ts \
-   qt/locale/wispr_nl.ts \
-   qt/locale/wispr_pl.ts \
-   qt/locale/wispr_pt.ts \
-   qt/locale/wispr_pt_BR.ts \
-   qt/locale/wispr_ro_RO.ts \
-   qt/locale/wispr_ru.ts \
-   qt/locale/wispr_sk.ts \
-   qt/locale/wispr_sv.ts \
-   qt/locale/wispr_tr.ts \
-   qt/locale/wispr_uk.ts \
-   qt/locale/wispr_vi.ts \
-   qt/locale/wispr_zh_CN.ts \
-   qt/locale/wispr_zh_TW.ts
+  qt/locale/rpicoin_bg.ts \
+   qt/locale/rpicoin_ca.ts \
+   qt/locale/rpicoin_cs.ts \
+   qt/locale/rpicoin_da.ts \
+   qt/locale/rpicoin_de.ts \
+   qt/locale/rpicoin_en.ts \
+   qt/locale/rpicoin_en_GB.ts \
+   qt/locale/rpicoin_en_US.ts \
+   qt/locale/rpicoin_eo.ts \
+   qt/locale/rpicoin_es.ts \
+   qt/locale/rpicoin_es_ES.ts \
+   qt/locale/rpicoin_fi.ts \
+   qt/locale/rpicoin_fr_FR.ts \
+   qt/locale/rpicoin_hi_IN.ts \
+   qt/locale/rpicoin_hr.ts \
+   qt/locale/rpicoin_hr_HR.ts \
+   qt/locale/rpicoin_it.ts \
+   qt/locale/rpicoin_ja.ts \
+   qt/locale/rpicoin_ko_KR.ts \
+   qt/locale/rpicoin_lt_LT.ts \
+   qt/locale/rpicoin_nl.ts \
+   qt/locale/rpicoin_pl.ts \
+   qt/locale/rpicoin_pt.ts \
+   qt/locale/rpicoin_pt_BR.ts \
+   qt/locale/rpicoin_ro_RO.ts \
+   qt/locale/rpicoin_ru.ts \
+   qt/locale/rpicoin_sk.ts \
+   qt/locale/rpicoin_sv.ts \
+   qt/locale/rpicoin_tr.ts \
+   qt/locale/rpicoin_uk.ts \
+   qt/locale/rpicoin_vi.ts \
+   qt/locale/rpicoin_zh_CN.ts \
+   qt/locale/rpicoin_zh_TW.ts
 
 QT_FORMS_UI = \
   qt/forms/addressbookpage.ui \
@@ -65,7 +65,7 @@ QT_FORMS_UI = \
   qt/forms/sendcoinsentry.ui \
   qt/forms/signverifymessagedialog.ui \
   qt/forms/transactiondescdialog.ui \
-  qt/forms/zwspcontroldialog.ui
+  qt/forms/zrpicontroldialog.ui
 
 QT_MOC_CPP = \
   qt/moc_addressbookpage.cpp \
@@ -120,23 +120,23 @@ QT_MOC_CPP = \
   qt/moc_walletframe.cpp \
   qt/moc_walletmodel.cpp \
   qt/moc_walletview.cpp \
-  qt/moc_zwspcontroldialog.cpp
+  qt/moc_zrpicontroldialog.cpp
 
 BITCOIN_MM = \
   qt/macdockiconhandler.mm \
   qt/macnotificationhandler.mm
 
 QT_MOC = \
-  qt/wispr.moc \
+  qt/rpicoin.moc \
   qt/bitcoinamountfield.moc \
   qt/intro.moc \
   qt/overviewpage.moc \
   qt/rpcconsole.moc
 
-QT_QRC_CPP = qt/qrc_wispr.cpp
-QT_QRC = qt/wispr.qrc
-QT_QRC_LOCALE_CPP = qt/qrc_wispr_locale.cpp
-QT_QRC_LOCALE = qt/wispr_locale.qrc
+QT_QRC_CPP = qt/qrc_rpicoin.cpp
+QT_QRC = qt/rpicoin.qrc
+QT_QRC_LOCALE_CPP = qt/qrc_rpicoin_locale.cpp
+QT_QRC_LOCALE = qt/rpicoin_locale.qrc
 
 PROTOBUF_CC = qt/paymentrequest.pb.cc
 PROTOBUF_H = qt/paymentrequest.pb.h
@@ -202,7 +202,7 @@ BITCOIN_QT_H = \
   qt/walletmodeltransaction.h \
   qt/walletview.h \
   qt/winshutdownmonitor.h \
-  qt/zwspcontroldialog.h
+  qt/zrpicontroldialog.h
 
 RES_ICONS = \
   qt/res/icons/add.png \
@@ -264,12 +264,12 @@ RES_ICONS = \
   qt/res/icons/tx_input.png \
   qt/res/icons/tx_output.png \
   qt/res/icons/tx_mined.png \
-  qt/res/icons/unit_wispr.png \
-  qt/res/icons/unit_mwispr.png \
-  qt/res/icons/unit_uwispr.png \
-  qt/res/icons/unit_twispr.png \
-  qt/res/icons/unit_tmwispr.png \
-  qt/res/icons/unit_tuwispr.png \
+  qt/res/icons/unit_rpicoin.png \
+  qt/res/icons/unit_mrpicoin.png \
+  qt/res/icons/unit_urpicoin.png \
+  qt/res/icons/unit_trpicoin.png \
+  qt/res/icons/unit_tmrpicoin.png \
+  qt/res/icons/unit_turpicoin.png \
   qt/res/icons/yesvote.png \
   qt/res/icons/novote.png \
   qt/res/icons/abstainvote.png
@@ -336,7 +336,7 @@ BITCOIN_QT_WALLET_CPP = \
   qt/walletmodel.cpp \
   qt/walletmodeltransaction.cpp \
   qt/walletview.cpp \
-  qt/zwspcontroldialog.cpp
+  qt/zrpicontroldialog.cpp
 
 BITCOIN_QT_CPP = $(BITCOIN_QT_BASE_CPP)
 if TARGET_WINDOWS
@@ -351,7 +351,7 @@ RES_IMAGES = \
   qt/res/images/splash.png \
   qt/res/images/splash_testnet.png \
   qt/res/images/splash_regtest.png \
-  qt/res/images/wispr_logo_horizontal.png \
+  qt/res/images/rpicoin_logo_horizontal.png \
   qt/res/images/downArrow_dark.png \
   qt/res/images/downArrow_small_dark.png \
   qt/res/images/downArrow_small.png \
@@ -366,7 +366,7 @@ RES_CSS = \
 
 RES_MOVIES = $(wildcard $(srcdir)/qt/res/movies/spinner-*.png)
 
-BITCOIN_RC = qt/res/wispr-qt-res.rc
+BITCOIN_RC = qt/res/rpicoin-qt-res.rc
 
 BITCOIN_QT_INCLUDES = -I$(builddir)/qt -I$(srcdir)/qt -I$(srcdir)/qt/forms \
   -I$(builddir)/qt/forms
@@ -388,71 +388,71 @@ QT_FORMS_H=$(join $(dir $(QT_FORMS_UI)),$(addprefix ui_, $(notdir $(QT_FORMS_UI:
 # Most files will depend on the forms and moc files as includes. Generate them
 # before anything else.
 $(QT_MOC): $(QT_FORMS_H)
-$(qt_libbitcoinqt_a_OBJECTS) $(qt_wispr_qt_OBJECTS) : | $(QT_MOC)
+$(qt_libbitcoinqt_a_OBJECTS) $(qt_rpicoin_qt_OBJECTS) : | $(QT_MOC)
 
 #Generating these with a half-written protobuf header leads to wacky results.
 #This makes sure it's done.
 $(QT_MOC): $(PROTOBUF_H)
 $(QT_MOC_CPP): $(PROTOBUF_H)
 
-# wispr-qt binary #
-qt_wispr_qt_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
+# rpicoin-qt binary #
+qt_rpicoin_qt_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
   $(QT_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS)
-qt_wispr_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
+qt_rpicoin_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
 
-qt_wispr_qt_SOURCES = qt/wispr.cpp
+qt_rpicoin_qt_SOURCES = qt/rpicoin.cpp
 if TARGET_DARWIN
-  qt_wispr_qt_SOURCES += $(BITCOIN_MM)
+  qt_rpicoin_qt_SOURCES += $(BITCOIN_MM)
 endif
 if TARGET_WINDOWS
-  qt_wispr_qt_SOURCES += $(BITCOIN_RC)
+  qt_rpicoin_qt_SOURCES += $(BITCOIN_RC)
 endif
-qt_wispr_qt_LDADD = qt/libbitcoinqt.a $(LIBBITCOIN_SERVER)
+qt_rpicoin_qt_LDADD = qt/libbitcoinqt.a $(LIBBITCOIN_SERVER)
 if ENABLE_WALLET
-qt_wispr_qt_LDADD += $(LIBBITCOIN_UTIL) $(LIBBITCOIN_WALLET)
+qt_rpicoin_qt_LDADD += $(LIBBITCOIN_UTIL) $(LIBBITCOIN_WALLET)
 endif
 if ENABLE_ZMQ
-qt_wispr_qt_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
+qt_rpicoin_qt_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
 endif
-qt_wispr_qt_LDADD += $(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) $(LIBUNIVALUE) $(LIBBITCOIN_ZEROCOIN) $(LIBLEVELDB) $(LIBLEVELDB_SSE42) $(LIBMEMENV) \
+qt_rpicoin_qt_LDADD += $(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) $(LIBUNIVALUE) $(LIBBITCOIN_ZEROCOIN) $(LIBLEVELDB) $(LIBLEVELDB_SSE42) $(LIBMEMENV) \
   $(BOOST_LIBS) $(QT_LIBS) $(QT_DBUS_LIBS) $(QR_LIBS) $(PROTOBUF_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(LIBSECP256K1) \
   $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
-qt_wispr_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-qt_wispr_qt_LIBTOOLFLAGS = $(AM_LIBTOOLFLAGS) --tag CXX
+qt_rpicoin_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+qt_rpicoin_qt_LIBTOOLFLAGS = $(AM_LIBTOOLFLAGS) --tag CXX
 
 #locale/foo.ts -> locale/foo.qm
 QT_QM=$(QT_TS:.ts=.qm)
 
 SECONDARY: $(QT_QM)
 
-$(srcdir)/qt/wisprstrings.cpp: $(libbitcoin_server_a_SOURCES) $(libbitcoin_wallet_a_SOURCES) $(libbitcoin_common_a_SOURCES) $(libbitcoin_zmq_a_SOURCES) $(libbitcoin_util_a_SOURCES)
+$(srcdir)/qt/rpicoinstrings.cpp: $(libbitcoin_server_a_SOURCES) $(libbitcoin_wallet_a_SOURCES) $(libbitcoin_common_a_SOURCES) $(libbitcoin_zmq_a_SOURCES) $(libbitcoin_util_a_SOURCES)
 	@test -n $(XGETTEXT) || echo "xgettext is required for updating translations"
 	$(AM_V_GEN) cd $(srcdir); XGETTEXT=$(XGETTEXT) PACKAGE_NAME="$(PACKAGE_NAME)" $(PYTHON) ../share/qt/extract_strings_qt.py $^
 
-translate: $(srcdir)/qt/wisprstrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(BITCOIN_QT_BASE_CPP) qt/wispr.cpp $(BITCOIN_QT_WINDOWS_CPP) $(BITCOIN_QT_WALLET_CPP) $(BITCOIN_QT_H) $(BITCOIN_MM)
+translate: $(srcdir)/qt/rpicoinstrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(BITCOIN_QT_BASE_CPP) qt/rpicoin.cpp $(BITCOIN_QT_WINDOWS_CPP) $(BITCOIN_QT_WALLET_CPP) $(BITCOIN_QT_H) $(BITCOIN_MM)
 	@test -n $(LUPDATE) || echo "lupdate is required for updating translations"
-	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LUPDATE) $^ -locations relative -no-obsolete -ts $(srcdir)/qt/locale/wispr_en.ts
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LUPDATE) $^ -locations relative -no-obsolete -ts $(srcdir)/qt/locale/rpicoin_en.ts
 
 $(QT_QRC_LOCALE_CPP): $(QT_QRC_LOCALE) $(QT_QM)
 	@test -f $(RCC)
 	@cp -f $< $(@D)/temp_$(<F)
-	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name wispr_locale $(@D)/temp_$(<F) | \
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name rpicoin_locale $(@D)/temp_$(<F) | \
 	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
 	@rm $(@D)/temp_$(<F)
 
 $(QT_QRC_CPP): $(QT_QRC) $(QT_FORMS_H) $(RES_ICONS) $(RES_IMAGES) $(RES_CSS) $(RES_MOVIES) $(PROTOBUF_H)
 	@test -f $(RCC)
-	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name wispr $< | \
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name rpicoin $< | \
 	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
 
-CLEAN_QT = $(nodist_qt_libbitcoinqt_a_SOURCES) $(QT_QM) $(QT_FORMS_H) qt/*.gcda qt/*.gcno qt/temp_wispr_locale.qrc
+CLEAN_QT = $(nodist_qt_libbitcoinqt_a_SOURCES) $(QT_QM) $(QT_FORMS_H) qt/*.gcda qt/*.gcno qt/temp_rpicoin_locale.qrc
 
 CLEANFILES += $(CLEAN_QT)
 
-wispr_qt_clean: FORCE
-	rm -f $(CLEAN_QT) $(qt_libbitcoinqt_a_OBJECTS) $(qt_wispr_qt_OBJECTS) qt/wispr-qt$(EXEEXT) $(LIBBITCOINQT)
+rpicoin_qt_clean: FORCE
+	rm -f $(CLEAN_QT) $(qt_libbitcoinqt_a_OBJECTS) $(qt_rpicoin_qt_OBJECTS) qt/rpicoin-qt$(EXEEXT) $(LIBBITCOINQT)
 
-wispr_qt : qt/wispr-qt$(EXEEXT)
+rpicoin_qt : qt/rpicoin-qt$(EXEEXT)
 
 ui_%.h: %.ui
 	@test -f $(UIC)

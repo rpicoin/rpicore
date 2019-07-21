@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WISPR_GENWIT_H
-#define WISPR_GENWIT_H
+#ifndef RPICOIN_GENWIT_H
+#define RPICOIN_GENWIT_H
 
 
 #include <iostream>

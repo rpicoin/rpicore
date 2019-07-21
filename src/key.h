@@ -4,8 +4,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WISPR_KEY_H
-#define WISPR_KEY_H
+#ifndef RPICOIN_KEY_H
+#define RPICOIN_KEY_H
 
 #include "allocators.h"
 #include "serialize.h"
@@ -181,4 +181,4 @@ void ECC_Stop(void);
 /** Check that required EC support is available at runtime. */
 bool ECC_InitSanityCheck(void);
 
-#endif // WISPR_KEY_H
+#endif // RPICOIN_KEY_H

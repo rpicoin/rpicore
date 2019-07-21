@@ -11,7 +11,7 @@
 #include "sync.h"
 #include "utilstrencodings.h"
 #include "utilmoneystr.h"
-#include "test/test_wispr.h"
+#include "test/test_rpicoin.h"
 
 #include <stdint.h>
 #include <vector>

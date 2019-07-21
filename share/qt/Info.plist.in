@@ -17,7 +17,7 @@
   <string>APPL</string>
 
   <key>CFBundleGetInfoString</key>
-  <string>@CLIENT_VERSION_MAJOR@.@CLIENT_VERSION_MINOR@.@CLIENT_VERSION_REVISION@, Copyright © 2009-@COPYRIGHT_YEAR@ The Bitcoin Core developers, 2014-@COPYRIGHT_YEAR@ The Dash Core developers, 2015-@COPYRIGHT_YEAR@ The WISPR Core developers, 2018-@COPYRIGHT_YEAR@ The WISPR Core developers</string>
+  <string>@CLIENT_VERSION_MAJOR@.@CLIENT_VERSION_MINOR@.@CLIENT_VERSION_REVISION@, Copyright © 2009-@COPYRIGHT_YEAR@ The Bitcoin Core developers, 2014-@COPYRIGHT_YEAR@ The Dash Core developers, 2015-@COPYRIGHT_YEAR@ The RPICOIN Core developers, 2018-@COPYRIGHT_YEAR@ The RPICOIN Core developers</string>
 
   <key>CFBundleShortVersionString</key>
   <string>@CLIENT_VERSION_MAJOR@.@CLIENT_VERSION_MINOR@.@CLIENT_VERSION_REVISION@</string>
@@ -29,16 +29,16 @@
   <string>????</string>
 
   <key>CFBundleExecutable</key>
-  <string>WISPR-Qt</string>
+  <string>RPICOIN-Qt</string>
   
   <key>CFBundleName</key>
-  <string>WISPR-Qt</string>
+  <string>RPICOIN-Qt</string>
 
   <key>LSHasLocalizedDisplayName</key>
   <true/>
 
   <key>CFBundleIdentifier</key>
-  <string>io.wispr.Wispr-Qt</string>
+  <string>io.rpicoin.Rpicoin-Qt</string>
 
   <key>CFBundleURLTypes</key>
   <array>
@@ -46,10 +46,10 @@
       <key>CFBundleTypeRole</key>
       <string>Editor</string>
       <key>CFBundleURLName</key>
-      <string>io.wispr.WisprPayment</string>
+      <string>io.rpicoin.RpicoinPayment</string>
       <key>CFBundleURLSchemes</key>
       <array>
-        <string>wispr</string>
+        <string>rpicoin</string>
       </array>
     </dict>
   </array>
@@ -58,9 +58,9 @@
   <array>
     <dict>
       <key>UTTypeIdentifier</key>
-      <string>io.wispr.paymentrequest</string>
+      <string>io.rpicoin.paymentrequest</string>
       <key>UTTypeDescription</key>
-      <string>Wispr payment request</string>
+      <string>Rpicoin payment request</string>
       <key>UTTypeConformsTo</key>
       <array>
         <string>public.data</string>
@@ -68,10 +68,10 @@
       <key>UTTypeTagSpecification</key>
       <dict>
         <key>public.mime-type</key>
-        <string>application/x-wispr-payment-request</string>
+        <string>application/x-rpicoin-payment-request</string>
         <key>public.filename-extension</key>
         <array>
-          <string>wisprpaymentrequest</string>
+          <string>rpicoinpaymentrequest</string>
         </array>
       </dict>
     </dict>
@@ -84,7 +84,7 @@
       <string>Editor</string>
       <key>LSItemContentTypes</key>
       <array>
-        <string>io.wispr.paymentrequest</string>
+        <string>io.rpicoin.paymentrequest</string>
       </array>
       <key>LSHandlerRank</key>
       <string>Owner</string>

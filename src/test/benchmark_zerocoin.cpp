@@ -25,7 +25,7 @@
 #include "libzerocoin/Coin.h"
 #include "libzerocoin/CoinSpend.h"
 #include "libzerocoin/Accumulator.h"
-#include "test_wispr.h"
+#include "test_rpicoin.h"
 
 using namespace std;
 using namespace libzerocoin;

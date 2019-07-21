@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WISPR_MINTPOOL_H
-#define WISPR_MINTPOOL_H
+#ifndef RPICOIN_MINTPOOL_H
+#define RPICOIN_MINTPOOL_H
 
 #include <map>
 #include <list>
@@ -50,4 +50,4 @@ public:
 };
 
 
-#endif //WISPR_MINTPOOL_H
+#endif //RPICOIN_MINTPOOL_H

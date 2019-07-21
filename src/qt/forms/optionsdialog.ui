@@ -30,10 +30,10 @@
        <item>
         <widget class="QCheckBox" name="bitcoinAtStartup">
          <property name="toolTip">
-          <string>Automatically start WISPR after logging in to the system.</string>
+          <string>Automatically start RPICOIN after logging in to the system.</string>
          </property>
          <property name="text">
-          <string>&amp;Start WISPR on system login</string>
+          <string>&amp;Start RPICOIN on system login</string>
          </property>
         </widget>
        </item>
@@ -131,8 +131,8 @@
         </spacer>
        </item>
        <item>
-        <widget class="QWidget" name="verticalZwspOptionsWidget" native="true">
-         <layout class="QVBoxLayout" name="verticalZwspOptionsLayout">
+        <widget class="QWidget" name="verticalZrpiOptionsWidget" native="true">
+         <layout class="QVBoxLayout" name="verticalZrpiOptionsLayout">
           <property name="margin">
            <number>0</number>
           </property>
@@ -141,20 +141,20 @@
             <item>
              <widget class="QCheckBox" name="checkBoxZeromintEnable">
               <property name="toolTip">
-               <string>Enable automatic minting of WSP units to zWSP</string>
+               <string>Enable automatic minting of RPI units to zRPI</string>
               </property>
               <property name="layoutDirection">
                <enum>Qt::LeftToRight</enum>
               </property>
               <property name="text">
-               <string>Enable zWSP Automint</string>
+               <string>Enable zRPI Automint</string>
               </property>
              </widget>
             </item>
             <item>
              <widget class="QCheckBox" name="checkBoxZeromintAddresses">
               <property name="toolTip">
-               <string>Enable automatic zWSP minting from specific addresses</string>
+               <string>Enable automatic zRPI minting from specific addresses</string>
               </property>
               <property name="layoutDirection">
                <enum>Qt::LeftToRight</enum>
@@ -171,10 +171,10 @@
             <item>
              <widget class="QLabel" name="percentage_label">
               <property name="toolTip">
-               <string>Percentage of incoming WSP which get automatically converted to zWSP via Zerocoin Protocol (min: 10%)</string>
+               <string>Percentage of incoming RPI which get automatically converted to zRPI via Zerocoin Protocol (min: 10%)</string>
               </property>
               <property name="text">
-               <string>Percentage of autominted zWSP</string>
+               <string>Percentage of autominted zRPI</string>
               </property>
              </widget>
             </item>
@@ -204,10 +204,10 @@
                </size>
               </property>
               <property name="toolTip">
-               <string>Wait with automatic conversion to Zerocoin until enough WSP for this denomination is available</string>
+               <string>Wait with automatic conversion to Zerocoin until enough RPI for this denomination is available</string>
               </property>
               <property name="text">
-               <string>Preferred Automint zWSP Denomination</string>
+               <string>Preferred Automint zRPI Denomination</string>
               </property>
              </widget>
             </item>
@@ -220,7 +220,7 @@
                </size>
               </property>
               <property name="toolTip">
-               <string>Wait with automatic conversion to Zerocoin until enough WSP for this denomination is available</string>
+               <string>Wait with automatic conversion to Zerocoin until enough RPI for this denomination is available</string>
               </property>
               <property name="maxVisibleItems">
                <number>9</number>
@@ -325,7 +325,7 @@
        <item>
         <widget class="QCheckBox" name="mapPortUpnp">
          <property name="toolTip">
-          <string>Automatically open the WISPR client port on the router. This only works when your router supports UPnP and it is enabled.</string>
+          <string>Automatically open the RPICOIN client port on the router. This only works when your router supports UPnP and it is enabled.</string>
          </property>
          <property name="text">
           <string>Map port using &amp;UPnP</string>
@@ -345,7 +345,7 @@
        <item>
         <widget class="QCheckBox" name="connectSocks">
          <property name="toolTip">
-          <string>Connect to the WISPR network through a SOCKS5 proxy.</string>
+          <string>Connect to the RPICOIN network through a SOCKS5 proxy.</string>
          </property>
          <property name="text">
           <string>&amp;Connect through SOCKS5 proxy (default proxy):</string>
@@ -511,7 +511,7 @@
          <item>
           <widget class="QValueComboBox" name="lang">
            <property name="toolTip">
-            <string>The user interface language can be set here. This setting will take effect after restarting WISPR.</string>
+            <string>The user interface language can be set here. This setting will take effect after restarting RPICOIN.</string>
            </property>
           </widget>
          </item>
@@ -533,7 +533,7 @@
          </property>
          <property name="text">
           <string>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/WisprProject/WisprProject-translations</string>
+https://www.transifex.com/rpicoin/rpicoin-translations</string>
          </property>
          <property name="wordWrap">
           <bool>true</bool>
@@ -561,8 +561,8 @@ https://www.transifex.com/WisprProject/WisprProject-translations</string>
         </layout>
        </item>
        <item>
-        <widget class="QWidget" name="verticalZwspDisplayWidget" native="true">
-         <layout class="QVBoxLayout" name="verticalZwspDisplayLayout">
+        <widget class="QWidget" name="verticalZrpiDisplayWidget" native="true">
+         <layout class="QVBoxLayout" name="verticalZrpiDisplayLayout">
           <property name="margin">
            <number>0</number>
           </property>

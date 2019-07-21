@@ -5,7 +5,7 @@
 #include "serialize.h"
 #include "streams.h"
 #include "hash.h"
-#include "test/test_wispr.h"
+#include "test/test_rpicoin.h"
 
 #include <stdint.h>
 

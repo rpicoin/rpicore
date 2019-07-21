@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WISPR_ACCUMULATORS_H
-#define WISPR_ACCUMULATORS_H
+#ifndef RPICOIN_ACCUMULATORS_H
+#define RPICOIN_ACCUMULATORS_H
 
 #include "libzerocoin/Accumulator.h"
 #include "libzerocoin/Coin.h"
@@ -90,5 +90,5 @@ public:
     searchMintHeightException(const string &message) : message(message) {}
 };
 
-#endif //WISPR_ACCUMULATORS_H
+#endif //RPICOIN_ACCUMULATORS_H
 

@@ -33,7 +33,7 @@
 #include "util.h"
 #include "utilmoneystr.h"
 #include "validationinterface.h"
-#include "zwspchain.h"
+#include "zrpichain.h"
 #include "reverse_iterate.h"
 
 #include "zpiv/zerocoin.h"
@@ -81,7 +81,7 @@ bool fVerifyingBlocks = false;
 unsigned int nCoinCacheSize = 5000;
 bool fAlerts = DEFAULT_ALERTS;
 unsigned int nModifierInterval; // time to elapse before new modifier is computed
-unsigned int nStakeMinAge = 8 * 60 * 60;
+unsigned int nStakeMinAge = 4 * 60 * 60;
 unsigned int nStakeMinAgeV2 = 60 * 60;
 bool fClearSpendCache = false;
 
@@ -90,7 +90,7 @@ int64_t nMaxTipAge = DEFAULT_MAX_TIP_AGE;
 
 int64_t nReserveBalance = 0;
 
-/** Fees smaller than this (in uwsp) are considered zero fee (for relaying and mining)
+/** Fees smaller than this (in urpi) are considered zero fee (for relaying and mining)
  * We are ~100 times smaller then bitcoin now (2015-06-23), set minRelayTxFee only 10 times higher
  * so it's still 10 times lower comparing to bitcoin.
  */
@@ -1024,7 +1024,7 @@ bool ContextualCheckZerocoinSpend(const CTransaction& tx, const CoinSpend* spend
     //Reject serial's that are already in the blockchain
     int nHeightTx = 0;
     if (IsSerialInBlockchain(spend->getCoinSerialNumber(), nHeightTx))
-        return error("%s : zWSP spend with serial %s is already in block %d\n", __func__,
+        return error("%s : zRPI spend with serial %s is already in block %d\n", __func__,
                      spend->getCoinSerialNumber().GetHex(), nHeightTx);
 
     return true;
@@ -1032,11 +1032,11 @@ bool ContextualCheckZerocoinSpend(const CTransaction& tx, const CoinSpend* spend
 
 bool ContextualCheckZerocoinSpendNoSerialCheck(const CTransaction& tx, const CoinSpend* spend, CBlockIndex* pindex, const uint256& hashBlock)
 {
-    //Check to see if the zWSP is properly signed
+    //Check to see if the zRPI is properly signed
     if (pindex->nHeight >= Params().NEW_PROTOCOLS_STARTHEIGHT()) {
         try {
             if (!spend->HasValidSignature())
-                return error("%s: V2 zWSP spend does not have a valid signature\n", __func__);
+                return error("%s: V2 zRPI spend does not have a valid signature\n", __func__);
         } catch (libzerocoin::InvalidSerialException &e) {
             // Check if we are in the range of the attack
             if(!isBlockBetweenFakeSerialAttackRange(pindex->nHeight))
@@ -1049,7 +1049,7 @@ bool ContextualCheckZerocoinSpendNoSerialCheck(const CTransaction& tx, const Coi
         if (tx.IsCoinStake())
             expectedType = libzerocoin::SpendType::STAKE;
         if (spend->getSpendType() != expectedType) {
-            return error("%s: trying to spend zWSP without the correct spend type. txid=%s\n", __func__,
+            return error("%s: trying to spend zRPI without the correct spend type. txid=%s\n", __func__,
                          tx.GetHash().GetHex());
         }
     }
@@ -1058,7 +1058,7 @@ bool ContextualCheckZerocoinSpendNoSerialCheck(const CTransaction& tx, const Coi
     if (pindex->nHeight >= Params().Zerocoin_Block_Public_Spend_Enabled()) {
         //Reject V1 old serials.
         if (v1Serial) {
-            return error("%s : zWSP v1 serial spend not spendable, serial %s, tx %s\n", __func__,
+            return error("%s : zRPI v1 serial spend not spendable, serial %s, tx %s\n", __func__,
                          spend->getCoinSerialNumber().GetHex(), tx.GetHash().GetHex());
         }
     }
@@ -1067,7 +1067,7 @@ bool ContextualCheckZerocoinSpendNoSerialCheck(const CTransaction& tx, const Coi
     if (!spend->HasValidSerial(Params().Zerocoin_Params(v1Serial)))  {
         // Up until this block our chain was not checking serials correctly..
         if (!isBlockBetweenFakeSerialAttackRange(pindex->nHeight))
-            return error("%s : zWSP spend with serial %s from tx %s is not in valid range\n", __func__,
+            return error("%s : zRPI spend with serial %s from tx %s is not in valid range\n", __func__,
                      spend->getCoinSerialNumber().GetHex(), tx.GetHash().GetHex());
         else
             LogPrintf("%s:: HasValidSerial :: Invalid serial detected within range in block %d\n", __func__, pindex->nHeight);
@@ -1117,7 +1117,7 @@ bool CheckZerocoinSpend(const CTransaction& tx, bool fVerifySignature, CValidati
             }
             libzerocoin::ZerocoinParams* params = Params().Zerocoin_Params(false);
             PublicCoinSpend publicSpend(params);
-            if (!ZWSPModule::parseCoinSpend(txin, tx, prevOut, publicSpend)){
+            if (!ZRPIModule::parseCoinSpend(txin, tx, prevOut, publicSpend)){
                 return state.DoS(100, error("CheckZerocoinSpend(): public zerocoin spend parse failed"));
             }
             newSpend = publicSpend;
@@ -1140,7 +1140,7 @@ bool CheckZerocoinSpend(const CTransaction& tx, bool fVerifySignature, CValidati
         if (isPublicSpend) {
             libzerocoin::ZerocoinParams* params = Params().Zerocoin_Params(false);
             PublicCoinSpend ret(params);
-            if (!ZWSPModule::validateInput(txin, prevOut, tx, ret)){
+            if (!ZRPIModule::validateInput(txin, prevOut, tx, ret)){
                 return state.DoS(100, error("CheckZerocoinSpend(): public zerocoin spend did not verify"));
             }
         } else
@@ -1418,7 +1418,7 @@ bool AcceptToMemoryPool(CTxMemPool& pool, CValidationState& state, const CTransa
             //Check that txid is not already in the chain
             int nHeightTx = 0;
             if (IsTransactionInChain(tx.GetHash(), nHeightTx))
-                return state.Invalid(error("AcceptToMemoryPool : zWSP spend tx %s already in block %d",
+                return state.Invalid(error("AcceptToMemoryPool : zRPI spend tx %s already in block %d",
                                            tx.GetHash().GetHex(), nHeightTx), REJECT_DUPLICATE, "bad-txns-inputs-spent");
 
             //Check for double spending of serial #'s
@@ -1428,29 +1428,29 @@ bool AcceptToMemoryPool(CTxMemPool& pool, CValidationState& state, const CTransa
                 bool isPrivZerocoinSpend = txIn.IsZerocoinSpend();
                 if (!isPrivZerocoinSpend && !isPublicSpend) {
                     return state.Invalid(error("%s: AcceptToMemoryPool failed for tx %s, every input must be a zcspend or zcpublicspend", __func__,
-                                        tx.GetHash().GetHex()), REJECT_INVALID, "bad-txns-invalid-zwsp");
+                                        tx.GetHash().GetHex()), REJECT_INVALID, "bad-txns-invalid-zrpi");
                 }
 
                 // Check enforcement
                 if (!CheckPublicCoinSpendEnforced(chainActive.Height(), isPublicSpend)){
                     return state.Invalid(error("%s: AcceptToMemoryPool failed for tx %s", __func__,
-                                               tx.GetHash().GetHex()), REJECT_INVALID, "bad-txns-invalid-zwsp");
+                                               tx.GetHash().GetHex()), REJECT_INVALID, "bad-txns-invalid-zrpi");
                 }
 
                 if (isPublicSpend) {
                     libzerocoin::ZerocoinParams* params = Params().Zerocoin_Params(false);
                     PublicCoinSpend publicSpend(params);
-                    if (!ZWSPModule::ParseZerocoinPublicSpend(txIn, tx, state, publicSpend)){
+                    if (!ZRPIModule::ParseZerocoinPublicSpend(txIn, tx, state, publicSpend)){
                         return false;
                     }
                     if (!ContextualCheckZerocoinSpend(tx, &publicSpend, chainActive.Tip(), 0))
                         return state.Invalid(error("%s: ContextualCheckZerocoinSpend failed for tx %s", __func__,
-                                                   tx.GetHash().GetHex()), REJECT_INVALID, "bad-txns-invalid-zwsp");
+                                                   tx.GetHash().GetHex()), REJECT_INVALID, "bad-txns-invalid-zrpi");
                 } else {
                     CoinSpend spend = TxInToZerocoinSpend(txIn);
                     if (!ContextualCheckZerocoinSpend(tx, &spend, chainActive.Tip(), 0))
                         return state.Invalid(error("%s: ContextualCheckZerocoinSpend failed for tx %s", __func__,
-                                                   tx.GetHash().GetHex()), REJECT_INVALID, "bad-txns-invalid-zwsp");
+                                                   tx.GetHash().GetHex()), REJECT_INVALID, "bad-txns-invalid-zrpi");
                 }
 
             }
@@ -1480,7 +1480,7 @@ bool AcceptToMemoryPool(CTxMemPool& pool, CValidationState& state, const CTransa
                 }
             }
 
-            // Check that zWSP mints (if included) are not already known
+            // Check that zRPI mints (if included) are not already known
             for (auto& out : tx.vout) {
                 if (!out.IsZerocoinMint())
                     continue;
@@ -2000,7 +2000,7 @@ int64_t GetBlockValue(int nHeight)
     int64_t nSubsidy = 0;
     if (nHeight == 0) {
         nSubsidy = 8999676 * COIN;
-    } else if (nHeight < Params().NEW_PROTOCOLS_STARTHEIGHT() && nHeight > 450) {
+    } else if (nHeight < Params().NEW_PROTOCOLS_STARTHEIGHT() && nHeight >= Params().LAST_POW_BLOCK()) {
         nSubsidy = 300 * COIN;
     } else {
         nSubsidy = 250 * COIN;
@@ -2020,7 +2020,7 @@ CAmount GetSeeSaw(const CAmount& blockValue, int nMasternodeCount, int nHeight)
     }
 
     int64_t nMoneySupply = chainActive.Tip()->nMoneySupply;
-    int64_t mNodeCoins = nMasternodeCount * 125000 * COIN;
+    int64_t mNodeCoins = nMasternodeCount * 10000000 * COIN;
 
     // Use this log to compare the masternode count for different clients
     //LogPrintf("Adjusting seesaw at height %d with %d masternodes (without drift: %d) at %ld\n", nHeight, nMasternodeCount, nMasternodeCount - Params().MasternodeCountDrift(), GetTime());
@@ -2033,24 +2033,24 @@ CAmount GetSeeSaw(const CAmount& blockValue, int nMasternodeCount, int nHeight)
     if (mNodeCoins == 0) {
         ret = 0;
     } else if (nHeight > Params().NEW_PROTOCOLS_STARTHEIGHT()) {
-        ret = blockValue * 0.4;
+        ret = blockValue * 0.55;
     }
     return ret;
 }
 
-int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCount, bool isZWSPStake)
+int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCount, bool isZRPIStake)
 {
     int64_t ret = 0;
 
     if (Params().NetworkID() == CBaseChainParams::TESTNET) {
-        if (nHeight < 450)
+        if (nHeight < 101)
             return 0;
     }
 
     if (nHeight > Params().NEW_PROTOCOLS_STARTHEIGHT()) {
-        //When zWSP is staked, masternode only gets 2 WSP
-        ret = 4 * COIN;
-        if (isZWSPStake)
+        //When zRPI is staked, masternode only gets 2 RPI
+        ret = 137.5 * COIN;
+        if (isZRPIStake)
             ret = 3 * COIN;
     }
 
@@ -2245,7 +2245,7 @@ void AddInvalidSpendsToMap(const CBlock& block)
                     libzerocoin::ZerocoinParams* params = Params().Zerocoin_Params(false);
                     PublicCoinSpend publicSpend(params);
                     CValidationState state;
-                    if (!ZWSPModule::ParseZerocoinPublicSpend(in, tx, state, publicSpend)){
+                    if (!ZRPIModule::ParseZerocoinPublicSpend(in, tx, state, publicSpend)){
                         throw runtime_error("Failed to parse public spend");
                     }
                     spend = &publicSpend;
@@ -2437,7 +2437,7 @@ bool DisconnectBlock(CBlock& block, CValidationState& state, CBlockIndex* pindex
         const CTransaction& tx = block.vtx[i];
 
         /** UNDO ZEROCOIN DATABASING
-         * note we only undo zerocoin databasing in the following statement, value to and from WISPR
+         * note we only undo zerocoin databasing in the following statement, value to and from RPICOIN
          * addresses should still be handled by the typical bitcoin based undo code
          * */
         if (tx.ContainsZerocoins()) {
@@ -2451,7 +2451,7 @@ bool DisconnectBlock(CBlock& block, CValidationState& state, CBlockIndex* pindex
                             libzerocoin::ZerocoinParams *params = Params().Zerocoin_Params(false);
                             PublicCoinSpend publicSpend(params);
                             CValidationState state;
-                            if (!ZWSPModule::ParseZerocoinPublicSpend(txin, tx, state, publicSpend)) {
+                            if (!ZRPIModule::ParseZerocoinPublicSpend(txin, tx, state, publicSpend)) {
                                 return error("Failed to parse public spend");
                             }
                             serial = publicSpend.getCoinSerialNumber();
@@ -2594,7 +2594,7 @@ static CCheckQueue<CScriptCheck> scriptcheckqueue(128);
 
 void ThreadScriptCheck()
 {
-    RenameThread("wispr-scriptch");
+    RenameThread("rpicoin-scriptch");
     scriptcheckqueue.Thread();
 }
 
@@ -2627,16 +2627,16 @@ void AddWrappedSerialsInflation()
     uiInterface.ShowProgress("", 100);
 }
 
-void RecalculateZWSPMinted()
+void RecalculateZRPIMinted()
 {
     CBlockIndex *pindex = chainActive[Params().NEW_PROTOCOLS_STARTHEIGHT()];
-    uiInterface.ShowProgress(_("Recalculating minted ZWSP..."), 0);
+    uiInterface.ShowProgress(_("Recalculating minted ZRPI..."), 0);
     while (true) {
         // Log Message and feedback message every 1000 blocks
         if (pindex->nHeight % 1000 == 0) {
             LogPrintf("%s : block %d...\n", __func__, pindex->nHeight);
             int percent = std::max(1, std::min(99, (int)((double)(pindex->nHeight - Params().NEW_PROTOCOLS_STARTHEIGHT()) * 100 / (chainActive.Height() - Params().NEW_PROTOCOLS_STARTHEIGHT()))));
-            uiInterface.ShowProgress(_("Recalculating minted ZWSP..."), percent);
+            uiInterface.ShowProgress(_("Recalculating minted ZRPI..."), percent);
         }
 
         //overwrite possibly wrong vMintsInBlock data
@@ -2659,18 +2659,18 @@ void RecalculateZWSPMinted()
     uiInterface.ShowProgress("", 100);
 }
 
-void RecalculateZWSPSpent()
+void RecalculateZRPISpent()
 {
     CBlockIndex* pindex = chainActive[Params().NEW_PROTOCOLS_STARTHEIGHT()];
-    uiInterface.ShowProgress(_("Recalculating spent ZWSP..."), 0);
+    uiInterface.ShowProgress(_("Recalculating spent ZRPI..."), 0);
     while (true) {
         if (pindex->nHeight % 1000 == 0) {
             LogPrintf("%s : block %d...\n", __func__, pindex->nHeight);
             int percent = std::max(1, std::min(99, (int)((double)(pindex->nHeight - Params().NEW_PROTOCOLS_STARTHEIGHT()) * 100 / (chainActive.Height() - Params().NEW_PROTOCOLS_STARTHEIGHT()))));
-            uiInterface.ShowProgress(_("Recalculating spent ZWSP..."), percent);
+            uiInterface.ShowProgress(_("Recalculating spent ZRPI..."), percent);
         }
 
-        //Rewrite zWSP supply
+        //Rewrite zRPI supply
         CBlock block;
         assert(ReadBlockFromDisk(block, pindex));
 
@@ -2679,13 +2679,13 @@ void RecalculateZWSPSpent()
         //Reset the supply to previous block
         pindex->mapZerocoinSupply = pindex->pprev->mapZerocoinSupply;
 
-        //Add mints to zWSP supply
+        //Add mints to zRPI supply
         for (auto denom : libzerocoin::zerocoinDenomList) {
             long nDenomAdded = count(pindex->vMintDenominationsInBlock.begin(), pindex->vMintDenominationsInBlock.end(), denom);
             pindex->mapZerocoinSupply.at(denom) += nDenomAdded;
         }
 
-        //Remove spends from zWSP supply
+        //Remove spends from zRPI supply
         for (auto denom : listDenomsSpent)
             pindex->mapZerocoinSupply.at(denom)--;
 
@@ -2706,7 +2706,7 @@ void RecalculateZWSPSpent()
     uiInterface.ShowProgress("", 100);
 }
 
-bool RecalculateWSPSupply(int nHeightStart)
+bool RecalculateRPISupply(int nHeightStart)
 {
     if (nHeightStart > chainActive.Height())
         return false;
@@ -2772,7 +2772,7 @@ bool RecalculateWSPSupply(int nHeightStart)
 
 bool ReindexAccumulators(list<uint256>& listMissingCheckpoints, string& strError)
 {
-    // WISPR: recalculate Accumulator Checkpoints that failed to database properly
+    // RPICOIN: recalculate Accumulator Checkpoints that failed to database properly
     if (!listMissingCheckpoints.empty()) {
         uiInterface.ShowProgress(_("Calculating missing accumulators..."), 0);
         LogPrintf("%s : finding missing checkpoints\n", __func__);
@@ -2820,7 +2820,7 @@ bool ReindexAccumulators(list<uint256>& listMissingCheckpoints, string& strError
     return true;
 }
 
-bool UpdateZWSPSupply(const CBlock& block, CBlockIndex* pindex, bool fJustCheck)
+bool UpdateZRPISupply(const CBlock& block, CBlockIndex* pindex, bool fJustCheck)
 {
     std::list<CZerocoinMint> listMints;
     bool fFilterInvalid = true;
@@ -2880,7 +2880,7 @@ bool UpdateZWSPSupply(const CBlock& block, CBlockIndex* pindex, bool fJustCheck)
         LogPrint("zero", "%s coins for denomination %d pubcoin %s\n", __func__, denom, pindex->mapZerocoinSupply.at(denom));
 
     // Update Wrapped Serials amount
-    // A one-time event where only the zWSP supply was off (due to serial duplication off-chain on main net)
+    // A one-time event where only the zRPI supply was off (due to serial duplication off-chain on main net)
     if (Params().NetworkID() == CBaseChainParams::MAIN && pindex->nHeight == Params().Zerocoin_Block_EndFakeSerial() + 1
             && pindex->GetZerocoinSupply() < Params().GetSupplyBeforeFakeSerial() + GetWrapppedSerialInflationAmount()) {
         for (auto denom : libzerocoin::zerocoinDenomList) {
@@ -3015,7 +3015,7 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
                 if (isPublicSpend) {
                     libzerocoin::ZerocoinParams* params = Params().Zerocoin_Params(false);
                     PublicCoinSpend publicSpend(params);
-                    if (!ZWSPModule::ParseZerocoinPublicSpend(txIn, tx, state, publicSpend)){
+                    if (!ZRPIModule::ParseZerocoinPublicSpend(txIn, tx, state, publicSpend)){
                         return false;
                     }
                     nValueIn += publicSpend.getDenomination() * COIN;
@@ -3033,7 +3033,7 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
                 }
             }
 
-            // Check that zWSP mints are not already known
+            // Check that zRPI mints are not already known
             if (tx.HasZerocoinMintOutputs()) {
                 for (auto& out : tx.vout) {
                     if (!out.IsZerocoinMint())
@@ -3062,7 +3062,7 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
                 }
             }
 
-            // Check that zWSP mints are not already known
+            // Check that zRPI mints are not already known
             if (tx.HasZerocoinMintOutputs()) {
                 for (auto& out : tx.vout) {
                     if (!out.IsZerocoinMint())
@@ -3113,14 +3113,14 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
 
     //A one-time event where money supply counts were off and recalculated on a certain block.
     if (pindex->nHeight == Params().NEW_PROTOCOLS_STARTHEIGHT() + 1) {
-        RecalculateZWSPMinted();
-        RecalculateZWSPSpent();
-        RecalculateWSPSupply(Params().NEW_PROTOCOLS_STARTHEIGHT());
+        RecalculateZRPIMinted();
+        RecalculateZRPISpent();
+        RecalculateRPISupply(Params().NEW_PROTOCOLS_STARTHEIGHT());
     }
 
-    //Track zWSP money supply in the block index
-    if (!UpdateZWSPSupply(block, pindex, fJustCheck))
-        return state.DoS(100, error("%s: Failed to calculate new zWSP supply for block=%s height=%d", __func__,
+    //Track zRPI money supply in the block index
+    if (!UpdateZRPISupply(block, pindex, fJustCheck))
+        return state.DoS(100, error("%s: Failed to calculate new zRPI supply for block=%s height=%d", __func__,
                                     block.GetHash().GetHex(), pindex->nHeight), REJECT_INVALID);
 
     // track money supply and mint amount info
@@ -3128,7 +3128,7 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
     pindex->nMoneySupply = nMoneySupplyPrev + nValueOut - nValueIn;
     pindex->nMint = pindex->nMoneySupply - nMoneySupplyPrev + nFees;
 
-//    LogPrintf("XX69----------> ConnectBlock(): nValueOut: %s, nValueIn: %s, nFees: %s, nMint: %s zWspSpent: %s\n",
+//    LogPrintf("XX69----------> ConnectBlock(): nValueOut: %s, nValueIn: %s, nFees: %s, nMint: %s zRpiSpent: %s\n",
 //              FormatMoney(nValueOut), FormatMoney(nValueIn),
 //              FormatMoney(nFees), FormatMoney(pindex->nMint), FormatMoney(nAmountZerocoinSpent));
 
@@ -3187,7 +3187,7 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
         setDirtyBlockIndex.insert(pindex);
     }
 
-    //Record zWSP serials
+    //Record zRPI serials
     if (pwalletMain) {
         std::set<uint256> setAddedTx;
         for (std::pair<CoinSpend, uint256> pSpend : vSpends) {
@@ -3328,7 +3328,7 @@ void static UpdateTip(CBlockIndex* pindexNew)
     /* Zerocoin minting is disabled
      *
 #ifdef ENABLE_WALLET
-    // If turned on AutoZeromint will automatically convert PIV to zWSP
+    // If turned on AutoZeromint will automatically convert PIV to zRPI
     if (pwalletMain && pwalletMain->isZeromintEnabled())
         pwalletMain->AutoZeromint();
 #endif // ENABLE_WALLET
@@ -4170,7 +4170,7 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
                 nHeight = (*mi).second->nHeight + 1;
         }
 
-        // WISPR
+        // RPICOIN
         // It is entierly possible that we don't have enough data and this could fail
         // (i.e. the block could indeed be valid). Store the block for later consideration
         // but issue an initial reject message.
@@ -4203,7 +4203,7 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
         ))
             return error("CheckBlock() : CheckTransaction failed");
 
-        // double check that there are no double spent zWSP spends in this block
+        // double check that there are no double spent zRPI spends in this block
         if (tx.HasZerocoinSpendInputs()) {
             for (const CTxIn& txIn : tx.vin) {
                 bool isPublicSpend = txIn.IsZerocoinPublicSpend();
@@ -4212,7 +4212,7 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
                     if (isPublicSpend) {
                         libzerocoin::ZerocoinParams* params = Params().Zerocoin_Params(false);
                         PublicCoinSpend publicSpend(params);
-                        if (!ZWSPModule::ParseZerocoinPublicSpend(txIn, tx, state, publicSpend)){
+                        if (!ZRPIModule::ParseZerocoinPublicSpend(txIn, tx, state, publicSpend)){
                             return false;
                         }
                         spend = publicSpend;
@@ -4220,7 +4220,7 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
                         spend = TxInToZerocoinSpend(txIn);
                     }
                     if (count(vBlockSerials.begin(), vBlockSerials.end(), spend.getCoinSerialNumber()))
-                        return state.DoS(100, error("%s : Double spending of zWSP serial %s in block\n Block: %s",
+                        return state.DoS(100, error("%s : Double spending of zRPI serial %s in block\n Block: %s",
                                                     __func__, spend.getCoinSerialNumber().GetHex(), block.ToString()));
                     vBlockSerials.emplace_back(spend.getCoinSerialNumber());
                 }
@@ -4542,18 +4542,18 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
         CTransaction &stakeTxIn = block.vtx[1];
 
         // Inputs
-        std::vector<CTxIn> wspInputs;
-        std::vector<CTxIn> zWSPInputs;
+        std::vector<CTxIn> rpiInputs;
+        std::vector<CTxIn> zRPIInputs;
 
         for (const CTxIn& stakeIn : stakeTxIn.vin) {
             if(stakeIn.IsZerocoinSpend()){
-                zWSPInputs.push_back(stakeIn);
+                zRPIInputs.push_back(stakeIn);
             }else{
-                wspInputs.push_back(stakeIn);
+                rpiInputs.push_back(stakeIn);
             }
         }
-        const bool hasWSPInputs = !wspInputs.empty();
-        const bool hasZWSPInputs = !zWSPInputs.empty();
+        const bool hasRPIInputs = !rpiInputs.empty();
+        const bool hasZRPIInputs = !zRPIInputs.empty();
 
         // ZC started after PoS.
         // Check for serial double spent on the same block, TODO: Move this to the proper method..
@@ -4575,7 +4575,7 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
                         if (isPublicSpend) {
                             libzerocoin::ZerocoinParams* params = Params().Zerocoin_Params(false);
                             PublicCoinSpend publicSpend(params);
-                            if (!ZWSPModule::ParseZerocoinPublicSpend(in, tx, state, publicSpend)){
+                            if (!ZRPIModule::ParseZerocoinPublicSpend(in, tx, state, publicSpend)){
                                 return false;
                             }
                             spend = publicSpend;
@@ -4591,10 +4591,10 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
                     }
                 }
                 if(tx.IsCoinStake()) continue;
-                if(hasWSPInputs)
+                if(hasRPIInputs)
                     // Check if coinstake input is double spent inside the same block
-                    for (const CTxIn& wspIn : wspInputs){
-                        if(wspIn.prevout == in.prevout){
+                    for (const CTxIn& rpiIn : rpiInputs){
+                        if(rpiIn.prevout == in.prevout){
                             // double spent coinstake input inside block
                             return error("%s: double spent coinstake input inside block", __func__);
                         }
@@ -4631,11 +4631,11 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
                 for (const CTransaction &t : bl.vtx) {
                     for (const CTxIn &in: t.vin) {
                         // Loop through every input of the staking tx
-                        for (const CTxIn &stakeIn : wspInputs) {
+                        for (const CTxIn &stakeIn : rpiInputs) {
                             // if it's already spent
 
                             // First regular staking check
-                            if (hasWSPInputs) {
+                            if (hasRPIInputs) {
                                 if (stakeIn.prevout == in.prevout) {
                                     return state.DoS(100, error("%s: input already spent on a previous block",
                                                                 __func__));
@@ -4661,10 +4661,10 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
             // Split height
             splitHeight = prev->nHeight;
 
-            // Now that this loop if completed. Check if we have zWSP inputs.
-            if(hasZWSPInputs){
-                for (const CTxIn& zWspInput : zWSPInputs) {
-                    CoinSpend spend = TxInToZerocoinSpend(zWspInput);
+            // Now that this loop if completed. Check if we have zRPI inputs.
+            if(hasZRPIInputs){
+                for (const CTxIn& zRpiInput : zRPIInputs) {
+                    CoinSpend spend = TxInToZerocoinSpend(zRpiInput);
 
                     // First check if the serials were not already spent on the forked blocks.
                     CBigNum coinSerial = spend.getCoinSerialNumber();
@@ -4684,7 +4684,7 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
 
                     if (!ContextualCheckZerocoinSpendNoSerialCheck(stakeTxIn, &spend, pindex, 0))
                         return state.DoS(100,error("%s: forked chain ContextualCheckZerocoinSpend failed for tx %s", __func__,
-                                                   stakeTxIn.GetHash().GetHex()), REJECT_INVALID, "bad-txns-invalid-zwsp");
+                                                   stakeTxIn.GetHash().GetHex()), REJECT_INVALID, "bad-txns-invalid-zrpi");
 
                     // Now only the ZKP left..
                     // As the spend maturity is 200, the acc value must be accumulated, otherwise it's not ready to be spent
@@ -4726,11 +4726,11 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
             }
         } else {
             if(!isBlockFromFork)
-                for (const CTxIn& zWspInput : zWSPInputs) {
-                        CoinSpend spend = TxInToZerocoinSpend(zWspInput);
+                for (const CTxIn& zRpiInput : zRPIInputs) {
+                        CoinSpend spend = TxInToZerocoinSpend(zRpiInput);
                         if (!ContextualCheckZerocoinSpend(stakeTxIn, &spend, pindex, 0))
                             return state.DoS(100,error("%s: main chain ContextualCheckZerocoinSpend failed for tx %s", __func__,
-                                    stakeTxIn.GetHash().GetHex()), REJECT_INVALID, "bad-txns-invalid-zwsp");
+                                    stakeTxIn.GetHash().GetHex()), REJECT_INVALID, "bad-txns-invalid-zrpi");
                 }
 
         }
@@ -4839,7 +4839,7 @@ bool ProcessNewBlock(CValidationState& state, CNode* pfrom, CBlock* pblock, CDis
         }
     }
     if (nMints || nSpends)
-        LogPrintf("%s : block contains %d zWSP mints and %d zWSP spends\n", __func__, nMints, nSpends);
+        LogPrintf("%s : block contains %d zRPI mints and %d zRPI spends\n", __func__, nMints, nSpends);
 
     if (!CheckBlockSignature(*pblock))
         return error("ProcessNewBlock() : bad proof-of-stake block signature");
@@ -5959,7 +5959,7 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
             return false;
         }
 
-        // WISPR: We use certain sporks during IBD, so check to see if they are
+        // RPICOIN: We use certain sporks during IBD, so check to see if they are
         // available. If not, ask the first peer connected for them.
         bool fMissingSporks = !pSporkDB->SporkExists(SPORK_14_NEW_PROTOCOL_ENFORCEMENT) &&
                               !pSporkDB->SporkExists(SPORK_15_NEW_PROTOCOL_ENFORCEMENT_2) &&
@@ -6561,7 +6561,7 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
                 CBigNum bnAccValue = 0;
                 //std::cout << "asking for checkpoint value in height: " << height << ", den: " << den << std::endl;
                 if (!GetAccumulatorValue(height, den, bnAccValue)) {
-                    LogPrint("zwsp", "peer misbehaving for request an invalid acc checkpoint \n", __func__);
+                    LogPrint("zrpi", "peer misbehaving for request an invalid acc checkpoint \n", __func__);
                     Misbehaving(pfrom->GetId(), 50);
                 } else {
                     //std::cout << "Sending acc value, with checksum: " << GetChecksum(bnAccValue) << " for "
@@ -6586,7 +6586,7 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
                 gen.setPfrom(pfrom);
                 if (gen.isValid(chainActive.Height())) {
                     if (!lightWorker.addWitWork(gen)) {
-                        LogPrint("zwsp", "%s : add genwit request failed \n", __func__);
+                        LogPrint("zrpi", "%s : add genwit request failed \n", __func__);
                         CDataStream ss(SER_NETWORK, PROTOCOL_VERSION);
                         // Invalid request only returns the message without a result.
                         ss << gen.getRequestNum();

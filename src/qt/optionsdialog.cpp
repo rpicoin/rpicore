@@ -4,7 +4,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/wispr-config.h"
+#include "config/rpicoin-config.h"
 #endif
 
 #include "optionsdialog.h"
@@ -73,12 +73,12 @@ OptionsDialog::OptionsDialog(QWidget* parent, bool enableWallet) : QDialog(paren
     ui->tabWidget->removeTab(ui->tabWidget->indexOf(ui->tabWindow));
 #endif
 
-    /* remove Wallet tab and zWsp options in case of -disablewallet */
+    /* remove Wallet tab and zRpi options in case of -disablewallet */
     if (!enableWallet) {
         ui->tabWidget->removeTab(ui->tabWidget->indexOf(ui->tabWallet));
 
-        ui->verticalZwspOptionsWidget->hide();
-        ui->verticalZwspDisplayWidget->hide();
+        ui->verticalZrpiOptionsWidget->hide();
+        ui->verticalZrpiDisplayWidget->hide();
     }
 
     /* Display elements init */

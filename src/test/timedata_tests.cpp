@@ -3,7 +3,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "timedata.h"
-#include "test/test_wispr.h"
+#include "test/test_rpicoin.h"
 
 #include <boost/test/unit_test.hpp>
 

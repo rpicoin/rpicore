@@ -5,8 +5,8 @@ Release Process
 
 ### Before every release candidate
 
-* Update translations (ping Fuzzbawls on Discord) see [translation_process.md](https://github.com/WisprProject/core/blob/master/doc/translation_process.md#synchronising-translations).
-* Update manpages, see [gen-manpages.sh](https://github.com/WisprProject/core/blob/master/contrib/devtools/README.md#gen-manpagessh).
+* Update translations (ping Fuzzbawls on Discord) see [translation_process.md](https://github.com/rpicoin/rpicore/blob/master/doc/translation_process.md#synchronising-translations).
+* Update manpages, see [gen-manpages.sh](https://github.com/rpicoin/rpicore/blob/master/contrib/devtools/README.md#gen-manpagessh).
 
 ### Before every major and minor release
 
@@ -48,12 +48,12 @@ If you're using the automated script (found in [contrib/gitian-build.py](/contri
 Check out the source code in the following directory hierarchy.
 
     cd /path/to/your/toplevel/build
-    git clone https://github.com/WisprProject/gitian.sigs.git
-    git clone https://github.com/WisprProject/detached.sigs.git
+    git clone https://github.com/rpicoin/gitian.sigs.git
+    git clone https://github.com/rpicoin/detached.sigs.git
     git clone https://github.com/devrandom/gitian-builder.git
-    git clone https://github.com/WisprProject/core.git
+    git clone https://github.com/rpicoin/rpicore.git
 
-### WISPR maintainers/release engineers, suggestion for writing release notes
+### RPICOIN maintainers/release engineers, suggestion for writing release notes
 
 Write release notes. git shortlog helps a lot, for example:
 
@@ -74,7 +74,7 @@ If you're using the automated script (found in [contrib/gitian-build.py](/contri
 
 Setup Gitian descriptors:
 
-    pushd ./wispr
+    pushd ./rpicoin
     export SIGNER=(your Gitian key, ie bluematt, sipa, etc)
     export VERSION=(new version, e.g. 0.8.0)
     git fetch
@@ -107,10 +107,10 @@ Create the macOS SDK tarball, see the [macOS build instructions](build-osx.md#de
 
 NOTE: Gitian is sometimes unable to download files. If you have errors, try the step below.
 
-By default, Gitian will fetch source files as needed. To cache them ahead of time, make sure you have checked out the tag you want to build in wispr, then:
+By default, Gitian will fetch source files as needed. To cache them ahead of time, make sure you have checked out the tag you want to build in rpicoin, then:
 
     pushd ./gitian-builder
-    make -C ../wispr/depends download SOURCES_PATH=`pwd`/cache/common
+    make -C ../rpicoin/depends download SOURCES_PATH=`pwd`/cache/common
     popd
 
 Only missing files will be fetched, so this is safe to re-run for each build.
@@ -118,50 +118,50 @@ Only missing files will be fetched, so this is safe to re-run for each build.
 NOTE: Offline builds must use the --url flag to ensure Gitian fetches only from local URLs. For example:
 
     pushd ./gitian-builder
-    ./bin/gbuild --url wispr=/path/to/wispr,signature=/path/to/sigs {rest of arguments}
+    ./bin/gbuild --url rpicoin=/path/to/rpicoin,signature=/path/to/sigs {rest of arguments}
     popd
 
 The gbuild invocations below <b>DO NOT DO THIS</b> by default.
 
-### Build and sign WISPR Core for Linux, Windows, and macOS:
+### Build and sign RPICOIN Core for Linux, Windows, and macOS:
 
     pushd ./gitian-builder
-    ./bin/gbuild --num-make 2 --memory 3000 --commit wispr=v${VERSION} ../wispr/contrib/gitian-descriptors/gitian-linux.yml
-    ./bin/gsign --signer "$SIGNER" --release ${VERSION}-linux --destination ../gitian.sigs/ ../wispr/contrib/gitian-descriptors/gitian-linux.yml
-    mv build/out/wispr-*.tar.gz build/out/src/wispr-*.tar.gz ../
+    ./bin/gbuild --num-make 2 --memory 3000 --commit rpicoin=v${VERSION} ../rpicoin/contrib/gitian-descriptors/gitian-linux.yml
+    ./bin/gsign --signer "$SIGNER" --release ${VERSION}-linux --destination ../gitian.sigs/ ../rpicoin/contrib/gitian-descriptors/gitian-linux.yml
+    mv build/out/rpicoin-*.tar.gz build/out/src/rpicoin-*.tar.gz ../
 
-    ./bin/gbuild --num-make 2 --memory 3000 --commit wispr=v${VERSION} ../wispr/contrib/gitian-descriptors/gitian-win.yml
-    ./bin/gsign --signer "$SIGNER" --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../wispr/contrib/gitian-descriptors/gitian-win.yml
-    mv build/out/wispr-*-win-unsigned.tar.gz inputs/wispr-win-unsigned.tar.gz
-    mv build/out/wispr-*.zip build/out/wispr-*.exe ../
+    ./bin/gbuild --num-make 2 --memory 3000 --commit rpicoin=v${VERSION} ../rpicoin/contrib/gitian-descriptors/gitian-win.yml
+    ./bin/gsign --signer "$SIGNER" --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../rpicoin/contrib/gitian-descriptors/gitian-win.yml
+    mv build/out/rpicoin-*-win-unsigned.tar.gz inputs/rpicoin-win-unsigned.tar.gz
+    mv build/out/rpicoin-*.zip build/out/rpicoin-*.exe ../
 
-    ./bin/gbuild --num-make 2 --memory 3000 --commit wispr=v${VERSION} ../wispr/contrib/gitian-descriptors/gitian-osx.yml
-    ./bin/gsign --signer "$SIGNER" --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../wispr/contrib/gitian-descriptors/gitian-osx.yml
-    mv build/out/wispr-*-osx-unsigned.tar.gz inputs/wispr-osx-unsigned.tar.gz
-    mv build/out/wispr-*.tar.gz build/out/wispr-*.dmg ../
+    ./bin/gbuild --num-make 2 --memory 3000 --commit rpicoin=v${VERSION} ../rpicoin/contrib/gitian-descriptors/gitian-osx.yml
+    ./bin/gsign --signer "$SIGNER" --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../rpicoin/contrib/gitian-descriptors/gitian-osx.yml
+    mv build/out/rpicoin-*-osx-unsigned.tar.gz inputs/rpicoin-osx-unsigned.tar.gz
+    mv build/out/rpicoin-*.tar.gz build/out/rpicoin-*.dmg ../
     popd
 
 Build output expected:
 
-  1. source tarball (`wispr-${VERSION}.tar.gz`)
-  2. linux 32-bit and 64-bit dist tarballs (`wispr-${VERSION}-linux[32|64].tar.gz`)
-  3. windows 32-bit and 64-bit unsigned installers and dist zips (`wispr-${VERSION}-win[32|64]-setup-unsigned.exe`, `wispr-${VERSION}-win[32|64].zip`)
-  4. macOS unsigned installer and dist tarball (`wispr-${VERSION}-osx-unsigned.dmg`, `wispr-${VERSION}-osx64.tar.gz`)
+  1. source tarball (`rpicoin-${VERSION}.tar.gz`)
+  2. linux 32-bit and 64-bit dist tarballs (`rpicoin-${VERSION}-linux[32|64].tar.gz`)
+  3. windows 32-bit and 64-bit unsigned installers and dist zips (`rpicoin-${VERSION}-win[32|64]-setup-unsigned.exe`, `rpicoin-${VERSION}-win[32|64].zip`)
+  4. macOS unsigned installer and dist tarball (`rpicoin-${VERSION}-osx-unsigned.dmg`, `rpicoin-${VERSION}-osx64.tar.gz`)
   5. Gitian signatures (in `gitian.sigs/${VERSION}-<linux|{win,osx}-unsigned>/(your Gitian key)/`)
 
 ### Verify other gitian builders signatures to your own. (Optional)
 
 Add other gitian builders keys to your gpg keyring, and/or refresh keys.
 
-    gpg --import wispr/contrib/gitian-keys/*.pgp
+    gpg --import rpicoin/contrib/gitian-keys/*.pgp
     gpg --refresh-keys
 
 Verify the signatures
 
     pushd ./gitian-builder
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-linux ../wispr/contrib/gitian-descriptors/gitian-linux.yml
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-unsigned ../wispr/contrib/gitian-descriptors/gitian-win.yml
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-unsigned ../wispr/contrib/gitian-descriptors/gitian-osx.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-linux ../rpicoin/contrib/gitian-descriptors/gitian-linux.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-unsigned ../rpicoin/contrib/gitian-descriptors/gitian-win.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-unsigned ../rpicoin/contrib/gitian-descriptors/gitian-osx.yml
     popd
 
 ### Next steps:
@@ -182,15 +182,15 @@ Codesigner only: Create Windows/macOS detached signatures:
 
 Codesigner only: Sign the macOS binary:
 
-    transfer wispr-osx-unsigned.tar.gz to macOS for signing
-    tar xf wispr-osx-unsigned.tar.gz
+    transfer rpicoin-osx-unsigned.tar.gz to macOS for signing
+    tar xf rpicoin-osx-unsigned.tar.gz
     ./detached-sig-create.sh -s "Key ID"
     Enter the keychain password and authorize the signature
     Move signature-osx.tar.gz back to the gitian host
 
 Codesigner only: Sign the windows binaries:
 
-    tar xf wispr-win-unsigned.tar.gz
+    tar xf rpicoin-win-unsigned.tar.gz
     ./detached-sig-create.sh -key /path/to/codesign.key
     Enter the passphrase for the key when prompted
     signature-win.tar.gz will be created
@@ -210,25 +210,25 @@ Codesigner only: Commit the detached codesign payloads:
 Non-codesigners: wait for Windows/macOS detached signatures:
 
 - Once the Windows/macOS builds each have 3 matching signatures, they will be signed with their respective release keys.
-- Detached signatures will then be committed to the [detached.sigs](https://github.com/WisprProject/detached.sigs) repository, which can be combined with the unsigned apps to create signed binaries.
+- Detached signatures will then be committed to the [detached.sigs](https://github.com/rpicoin/detached.sigs) repository, which can be combined with the unsigned apps to create signed binaries.
 
 Create (and optionally verify) the signed macOS binary:
 
     pushd ./gitian-builder
-    ./bin/gbuild -i --commit signature=v${VERSION} ../wispr/contrib/gitian-descriptors/gitian-osx-signer.yml
-    ./bin/gsign --signer "$SIGNER" --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../wispr/contrib/gitian-descriptors/gitian-osx-signer.yml
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../wispr/contrib/gitian-descriptors/gitian-osx-signer.yml
-    mv build/out/wispr-osx-signed.dmg ../wispr-${VERSION}-osx.dmg
+    ./bin/gbuild -i --commit signature=v${VERSION} ../rpicoin/contrib/gitian-descriptors/gitian-osx-signer.yml
+    ./bin/gsign --signer "$SIGNER" --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../rpicoin/contrib/gitian-descriptors/gitian-osx-signer.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../rpicoin/contrib/gitian-descriptors/gitian-osx-signer.yml
+    mv build/out/rpicoin-osx-signed.dmg ../rpicoin-${VERSION}-osx.dmg
     popd
 
 Create (and optionally verify) the signed Windows binaries:
 
     pushd ./gitian-builder
-    ./bin/gbuild -i --commit signature=v${VERSION} ../wispr/contrib/gitian-descriptors/gitian-win-signer.yml
-    ./bin/gsign --signer "$SIGNER" --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../wispr/contrib/gitian-descriptors/gitian-win-signer.yml
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-signed ../wispr/contrib/gitian-descriptors/gitian-win-signer.yml
-    mv build/out/wispr-*win64-setup.exe ../wispr-${VERSION}-win64-setup.exe
-    mv build/out/wispr-*win32-setup.exe ../wispr-${VERSION}-win32-setup.exe
+    ./bin/gbuild -i --commit signature=v${VERSION} ../rpicoin/contrib/gitian-descriptors/gitian-win-signer.yml
+    ./bin/gsign --signer "$SIGNER" --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../rpicoin/contrib/gitian-descriptors/gitian-win-signer.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-signed ../rpicoin/contrib/gitian-descriptors/gitian-win-signer.yml
+    mv build/out/rpicoin-*win64-setup.exe ../rpicoin-${VERSION}-win64-setup.exe
+    mv build/out/rpicoin-*win32-setup.exe ../rpicoin-${VERSION}-win32-setup.exe
     popd
 
 Commit your signature for the signed macOS/Windows binaries:
@@ -250,18 +250,18 @@ sha256sum * > SHA256SUMS
 
 The list of files should be:
 ```
-wispr-${VERSION}-aarch64-linux-gnu.tar.gz
-wispr-${VERSION}-arm-linux-gnueabihf.tar.gz
-wispr-${VERSION}-i686-pc-linux-gnu.tar.gz
-wispr-${VERSION}-riscv64-linux-gnu.tar.gz
-wispr-${VERSION}-x86_64-linux-gnu.tar.gz
-wispr-${VERSION}-osx64.tar.gz
-wispr-${VERSION}-osx.dmg
-wispr-${VERSION}.tar.gz
-wispr-${VERSION}-win32-setup.exe
-wispr-${VERSION}-win32.zip
-wispr-${VERSION}-win64-setup.exe
-wispr-${VERSION}-win64.zip
+rpicoin-${VERSION}-aarch64-linux-gnu.tar.gz
+rpicoin-${VERSION}-arm-linux-gnueabihf.tar.gz
+rpicoin-${VERSION}-i686-pc-linux-gnu.tar.gz
+rpicoin-${VERSION}-riscv64-linux-gnu.tar.gz
+rpicoin-${VERSION}-x86_64-linux-gnu.tar.gz
+rpicoin-${VERSION}-osx64.tar.gz
+rpicoin-${VERSION}-osx.dmg
+rpicoin-${VERSION}.tar.gz
+rpicoin-${VERSION}-win32-setup.exe
+rpicoin-${VERSION}-win32.zip
+rpicoin-${VERSION}-win64-setup.exe
+rpicoin-${VERSION}-win64.zip
 ```
 The `*-debug*` files generated by the gitian build contain debug symbols
 for troubleshooting by developers. It is assumed that anyone that is interested
@@ -283,10 +283,10 @@ Note: check that SHA256SUMS itself doesn't end up in SHA256SUMS, which is a spur
 
   - bitcointalk announcement thread
 
-  - Optionally twitter, reddit /r/wispr, ... but this will usually sort out itself
+  - Optionally twitter, reddit /r/rpicoin, ... but this will usually sort out itself
 
   - Archive release notes for the new version to `doc/release-notes/` (branch `master` and branch of the release)
 
-  - Create a [new GitHub release](https://github.com/WisprProject/core/releases/new) with a link to the archived release notes.
+  - Create a [new GitHub release](https://github.com/rpicoin/rpicore/releases/new) with a link to the archived release notes.
 
   - Celebrate

@@ -13,7 +13,7 @@
 #include "util.h"
 #include "stakeinput.h"
 #include "utilmoneystr.h"
-#include "zwspchain.h"
+#include "zrpichain.h"
 
 using namespace std;
 
@@ -49,13 +49,13 @@ unsigned int GetStakeMinAge(){
     bool newVersion = chainActive.Height() >= Params().NEW_PROTOCOLS_STARTHEIGHT();
     if(newVersion){
         return nStakeMinAgeV2;
-
     }
+
     return nStakeMinAge;
 }
 // Hard checkpoints of stake modifiers to ensure they are deterministic
 static std::map<int, unsigned int> mapStakeModifierCheckpoints =
-        boost::assign::map_list_of(0, 0xfd11f4e7u);
+        boost::assign::map_list_of(0, 0x0000000000000000);
 
 // Get time weight
 int64_t GetWeight(int64_t nIntervalBeginning, int64_t nIntervalEnd)
@@ -203,6 +203,7 @@ bool ComputeNextStakeModifier(const CBlockIndex* pindexPrev, uint64_t& nStakeMod
     if (pindexPrev->nHeight == 1) {
         fGeneratedStakeModifier = true;
         nStakeModifier |= (((uint64_t) pindexPrev->GetStakeEntropyBit()) << 1);
+        LogPrintf("ComputeNextStakeModifier: second modifier= %s\n", std::to_string(nStakeModifier).c_str());
         return true;
     }
     // First find current stake modifier and its generation block time
@@ -369,7 +370,10 @@ bool CheckStakeV1(unsigned int nTxPrevTime, const COutPoint &prevout,
     ss << bnStakeModifierV2;
     ss << nTxPrevTime << prevout.hash << prevout.n << nTimeTx;
     hashProofOfStake = Hash(ss.begin(), ss.end());
-//    LogPrintf("%s: modifier:%d nTimeBlockFrom:%d nTimeTx:%d hash:%s\n", __func__, nStakeModifier, nTimeBlockFrom, nTimeTx, hashProofOfStake.ToString());
+//    LogPrintf("CheckStakeV1() : pass bnStakeModifierV2=%s nTimeTxPrev=%u\n prevout.hash=%s nPrevout.n=%u\n nTimeTx=%u nValueIn=%u\n bnTargetOld=%s bnTarget=%s\n hashProof=%s\n",
+//              bnStakeModifierV2.ToString(),
+//              nTxPrevTime, prevout.hash.ToString(), prevout.n, nTimeTx, nValueIn, bnTargetOld.ToString(),
+//               bnTarget.ToString(), hashProofOfStake.ToString());
 
     return stakeTargetHitOld(hashProofOfStake, bnTarget);
 }
@@ -428,21 +432,21 @@ bool Stake(CStakeInput* stakeInput, unsigned int nBits, unsigned int nTimeBlockF
 bool ContextualCheckZerocoinStake(int nPreviousBlockHeight, CStakeInput* stake)
 {
     if (nPreviousBlockHeight < Params().Zerocoin_Block_V2_Start())
-        return error("%s: zWSP stake block is less than allowed start height", __func__);
+        return error("%s: zRPI stake block is less than allowed start height", __func__);
 
-    if (CZWspStake* zWSP = dynamic_cast<CZWspStake*>(stake)) {
-        CBlockIndex* pindexFrom = zWSP->GetIndexFrom();
+    if (CZRpiStake* zRPI = dynamic_cast<CZRpiStake*>(stake)) {
+        CBlockIndex* pindexFrom = zRPI->GetIndexFrom();
         if (!pindexFrom)
-            return error("%s: failed to get index associated with zWSP stake checksum", __func__);
+            return error("%s: failed to get index associated with zRPI stake checksum", __func__);
 
         if (chainActive.Height() - pindexFrom->nHeight < Params().Zerocoin_RequiredStakeDepth())
-            return error("%s: zWSP stake does not have required confirmation depth. Current height %d,  stakeInput height %d.", __func__, chainActive.Height(), pindexFrom->nHeight);
+            return error("%s: zRPI stake does not have required confirmation depth. Current height %d,  stakeInput height %d.", __func__, chainActive.Height(), pindexFrom->nHeight);
 
         //The checksum needs to be the exact checksum from 200 blocks ago
         uint256 nCheckpoint200 = chainActive[nPreviousBlockHeight - Params().Zerocoin_RequiredStakeDepth()]->nAccumulatorCheckpoint;
-        uint32_t nChecksum200 = ParseChecksum(nCheckpoint200, libzerocoin::AmountToZerocoinDenomination(zWSP->GetValue()));
-        if (nChecksum200 != zWSP->GetChecksum())
-            return error("%s: accumulator checksum is different than the block 200 blocks previous. stake=%d block200=%d", __func__, zWSP->GetChecksum(), nChecksum200);
+        uint32_t nChecksum200 = ParseChecksum(nCheckpoint200, libzerocoin::AmountToZerocoinDenomination(zRPI->GetValue()));
+        if (nChecksum200 != zRPI->GetChecksum())
+            return error("%s: accumulator checksum is different than the block 200 blocks previous. stake=%d block200=%d", __func__, zRPI->GetChecksum(), nChecksum200);
     } else {
         return error("%s: dynamic_cast of stake ptr failed", __func__);
     }
@@ -468,10 +472,10 @@ bool CheckProofOfStake(const CBlock block, uint256& hashProofOfStake, std::uniqu
         if (spend.getSpendType() != libzerocoin::SpendType::STAKE)
             return error("%s: spend is using the wrong SpendType (%d)", __func__, (int)spend.getSpendType());
 
-        stake = std::unique_ptr<CStakeInput>(new CZWspStake(spend));
+        stake = std::unique_ptr<CStakeInput>(new CZRpiStake(spend));
 
         if (!ContextualCheckZerocoinStake(nPreviousBlockHeight, stake.get()))
-            return error("%s: staked zWSP fails context checks", __func__);
+            return error("%s: staked zRPI fails context checks", __func__);
     } else {
         // First try finding the previous transaction in database
         uint256 hashBlock;
@@ -483,9 +487,9 @@ bool CheckProofOfStake(const CBlock block, uint256& hashProofOfStake, std::uniqu
         if (!VerifyScript(txin.scriptSig, txPrev.vout[txin.prevout.n].scriptPubKey, SCRIPT_VERIFY_NONE, TransactionSignatureChecker(&tx, 0)))
             return error("CheckProofOfStake() : VerifySignature failed on coinstake %s", tx.GetHash().ToString().c_str());
 
-        CWspStake* wspInput = new CWspStake();
-        wspInput->SetInput(txPrev, txin.prevout.n);
-        stake = std::unique_ptr<CStakeInput>(wspInput);
+        CRpiStake* rpiInput = new CRpiStake();
+        rpiInput->SetInput(txPrev, txin.prevout.n);
+        stake = std::unique_ptr<CStakeInput>(rpiInput);
     }
 
     //Get the
@@ -506,7 +510,7 @@ bool CheckProofOfStake(const CBlock block, uint256& hashProofOfStake, std::uniqu
     int64_t nValueIn = txPrev.vout[txin.prevout.n].nValue;
     unsigned int nBlockFromTime = blockfrom.nTime;
     unsigned int nTxTime = block.nTime;
-    if (!txin.IsZerocoinSpend() && nPreviousBlockHeight >= Params().Zerocoin_Block_Public_Spend_Enabled() - 1) { //Equivalent for zWSP is checked above in ContextualCheckZerocoinStake()
+    if (!txin.IsZerocoinSpend() && nPreviousBlockHeight >= Params().Zerocoin_Block_Public_Spend_Enabled() - 1) { //Equivalent for zRPI is checked above in ContextualCheckZerocoinStake()
         if (nTxTime < nBlockFromTime) // Transaction timestamp nTxTime
             return error("CheckStakeKernelHash() : nTime violation - nBlockFromTime=%d nTimeTx=%d", nBlockFromTime, nTxTime);
         if (nBlockFromTime + nStakeMinAge > nTxTime) // Min age requirement
@@ -522,8 +526,10 @@ bool CheckProofOfStake(const CBlock block, uint256& hashProofOfStake, std::uniqu
         }
     } else {
         if (!CheckStakeV1(txPrev.nTime, txin.prevout, tx.nTime, hashProofOfStake, nValueIn, pindexOld, block.nBits)) {
-            return error("CheckProofOfStake() : INFO: old bnStakeModifierV2 check kernel failed on coinstake %s, hashProof=%s \n block:\n%s\n",
-                         tx.GetHash().ToString(), hashProofOfStake.ToString(), block.ToString().c_str());
+            LogPrintf("CheckProofOfStake() : INFO: old bnStakeModifierV2 check kernel failed on coinstake %s, hashProof=%s, bnStakeModifierV2=%s\n",
+                         tx.GetHash().ToString(), hashProofOfStake.ToString(), pindexOld->bnStakeModifierV2.ToString());
+//            return error("CheckProofOfStake() : INFO: old bnStakeModifierV2 check kernel failed on coinstake %s, hashProof=%s, bnStakeModifierV2=%s\n block:\n%s\n",
+//                         tx.GetHash().ToString(), hashProofOfStake.ToString(), pindexOld->bnStakeModifierV2.ToString(), block.ToString().c_str());
         }
     }
     return true;

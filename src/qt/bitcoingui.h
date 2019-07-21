@@ -7,7 +7,7 @@
 #define BITCOIN_QT_BITCOINGUI_H
 
 #if defined(HAVE_CONFIG_H)
-#include "config/wispr-config.h"
+#include "config/rpicoin-config.h"
 #endif
 
 #include "amount.h"

@@ -8,7 +8,7 @@
 #define BITCOIN_BIGNUM_H
 
 #if defined HAVE_CONFIG_H
-#include "config/wispr-config.h"
+#include "config/rpicoin-config.h"
 #endif
 
 #if defined(USE_NUM_OPENSSL)

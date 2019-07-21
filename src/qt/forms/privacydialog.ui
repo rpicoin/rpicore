@@ -145,7 +145,7 @@
                       <item>
                        <layout class="QHBoxLayout" name="horizontalLayout_3">
                         <item>
-                         <widget class="QLabel" name="labelzWSPActions">
+                         <widget class="QLabel" name="labelzRPIActions">
                           <property name="font">
                            <font>
                             <pointsize>12</pointsize>
@@ -162,9 +162,9 @@
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="labelzWSPSyncStatus">
+                         <widget class="QLabel" name="labelzRPISyncStatus">
                           <property name="toolTip">
-                           <string>The displayed information may be out of date. Your wallet automatically synchronizes with the WISPR network after a connection is established, but this process has not completed yet.</string>
+                           <string>The displayed information may be out of date. Your wallet automatically synchronizes with the RPICOIN network after a connection is established, but this process has not completed yet.</string>
                           </property>
                           <property name="styleSheet">
                            <string notr="true">QLabel { color: red; }</string>
@@ -231,7 +231,7 @@
                               </font>
                              </property>
                              <property name="toolTip">
-                              <string>Total Balance including unconfirmed and immature zWSP</string>
+                              <string>Total Balance including unconfirmed and immature zRPI</string>
                              </property>
                              <property name="text">
                               <string>Total Zerocoin  Balance:</string>
@@ -256,10 +256,10 @@
                               </font>
                              </property>
                              <property name="toolTip">
-                              <string>Total Balance including unconfirmed and immature zWSP</string>
+                              <string>Total Balance including unconfirmed and immature zRPI</string>
                              </property>
                              <property name="text">
-                              <string>0 zWSP</string>
+                              <string>0 zRPI</string>
                              </property>
                              <property name="alignment">
                               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -308,7 +308,7 @@
                               </font>
                              </property>
                              <property name="text">
-                              <string>0 zWSP</string>
+                              <string>0 zRPI</string>
                              </property>
                             </widget>
                            </item>
@@ -330,7 +330,7 @@
                          <item>
                           <widget class="QPushButton" name="pushButtonShowDenoms">
                            <property name="toolTip">
-                            <string>Show zWSP denominations list</string>
+                            <string>Show zRPI denominations list</string>
                            </property>
                            <property name="text">
                             <string>Show Denominations</string>
@@ -362,7 +362,7 @@
 font-weight: bold;</string>
                           </property>
                           <property name="text">
-                           <string>zWSP minting is DISABLED</string>
+                           <string>zRPI minting is DISABLED</string>
                           </property>
                          </widget>
                         </item>
@@ -493,7 +493,7 @@ font-weight: bold;</string>
 font-weight: bold;</string>
                           </property>
                           <property name="text">
-                           <string>zWSP spending is NOT private (links back to the mint transaction)</string>
+                           <string>zRPI spending is NOT private (links back to the mint transaction)</string>
                           </property>
                          </widget>
                         </item>
@@ -521,21 +521,21 @@ font-weight: bold;</string>
                          <number>0</number>
                         </property>
                         <item>
-                         <widget class="QPushButton" name="pushButtonZWspControl">
+                         <widget class="QPushButton" name="pushButtonZRpiControl">
                           <property name="text">
-                           <string>zWSP Control</string>
+                           <string>zRPI Control</string>
                           </property>
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="labelzWspSelected">
+                         <widget class="QLabel" name="labelzRpiSelected">
                           <property name="text">
-                           <string>zWSP Selected:</string>
+                           <string>zRPI Selected:</string>
                           </property>
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="labelzWspSelected_int">
+                         <widget class="QLabel" name="labelzRpiSelected_int">
                           <property name="text">
                            <string>0</string>
                           </property>
@@ -589,7 +589,7 @@ font-weight: bold;</string>
                       <item>
                        <layout class="QHBoxLayout" name="horizontalLayout_6">
                         <item>
-                         <widget class="QPushButton" name="pushButtonSpendzWSP">
+                         <widget class="QPushButton" name="pushButtonSpendzRPI">
                           <property name="minimumSize">
                            <size>
                             <width>131</width>
@@ -605,9 +605,9 @@ font-weight: bold;</string>
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="labelzWSPBalanceText">
+                         <widget class="QLabel" name="labelzRPIBalanceText">
                           <property name="toolTip">
-                           <string>Available (mature and spendable) zWSP for spending</string>
+                           <string>Available (mature and spendable) zRPI for spending</string>
                           </property>
                           <property name="text">
                            <string>Available Balance:</string>
@@ -626,12 +626,12 @@ font-weight: bold;</string>
                            </font>
                           </property>
                           <property name="toolTip">
-                           <string>Available (mature and spendable) zWSP for spending
+                           <string>Available (mature and spendable) zRPI for spending
 
-zWSP are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</string>
+zRPI are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</string>
                           </property>
                           <property name="text">
-                           <string>0 zWSP</string>
+                           <string>0 zRPI</string>
                           </property>
                           <property name="alignment">
                            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -694,7 +694,7 @@ zWSP are mature when they have more than 20 confirmations AND more than 2 mints 
                              </size>
                             </property>
                             <property name="toolTip">
-                             <string>The WISPR address to send the payment to. Creates local payment to yourself when empty.</string>
+                             <string>The RPICOIN address to send the payment to. Creates local payment to yourself when empty.</string>
                             </property>
                            </widget>
                           </item>
@@ -707,7 +707,7 @@ zWSP are mature when they have more than 20 confirmations AND more than 2 mints 
                              <string/>
                             </property>
                             <property name="icon">
-                             <iconset resource="../wispr.qrc">
+                             <iconset resource="../rpicoin.qrc">
                               <normaloff>:/icons/address-book</normaloff>:/icons/address-book</iconset>
                             </property>
                             <property name="shortcut">
@@ -724,7 +724,7 @@ zWSP are mature when they have more than 20 confirmations AND more than 2 mints 
                              <string/>
                             </property>
                             <property name="icon">
-                             <iconset resource="../wispr.qrc">
+                             <iconset resource="../rpicoin.qrc">
                               <normaloff>:/icons/editpaste</normaloff>:/icons/editpaste</iconset>
                             </property>
                             <property name="shortcut">
@@ -775,7 +775,7 @@ zWSP are mature when they have more than 20 confirmations AND more than 2 mints 
                            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                           </property>
                           <property name="buddy">
-                           <cstring>zWSPpayAmount</cstring>
+                           <cstring>zRPIpayAmount</cstring>
                           </property>
                          </widget>
                         </item>
@@ -785,10 +785,10 @@ zWSP are mature when they have more than 20 confirmations AND more than 2 mints 
                            <number>0</number>
                           </property>
                           <item>
-                           <widget class="QLineEdit" name="zWSPpayAmount"/>
+                           <widget class="QLineEdit" name="zRPIpayAmount"/>
                           </item>
                           <item>
-                           <widget class="QLabel" name="labelzWSP">
+                           <widget class="QLabel" name="labelzRPI">
                             <property name="minimumSize">
                              <size>
                               <width>55</width>
@@ -796,7 +796,7 @@ zWSP are mature when they have more than 20 confirmations AND more than 2 mints 
                              </size>
                             </property>
                             <property name="text">
-                             <string>zWSP</string>
+                             <string>zRPI</string>
                             </property>
                             <property name="alignment">
                              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -880,7 +880,7 @@ zWSP are mature when they have more than 20 confirmations AND more than 2 mints 
                       <item>
                        <layout class="QHBoxLayout" name="horizontalLayout_21">
                         <item>
-                         <widget class="QLabel" name="labelzWSPStats">
+                         <widget class="QLabel" name="labelzRPIStats">
                           <property name="font">
                            <font>
                             <pointsize>12</pointsize>
@@ -960,7 +960,7 @@ zWSP are mature when they have more than 20 confirmations AND more than 2 mints 
                            </font>
                           </property>
                           <property name="toolTip">
-                           <string>Total Balance including unconfirmed and immature zWSP</string>
+                           <string>Total Balance including unconfirmed and immature zRPI</string>
                           </property>
                           <property name="text">
                            <string>Total Zerocoin  Balance:</string>
@@ -998,10 +998,10 @@ zWSP are mature when they have more than 20 confirmations AND more than 2 mints 
                            </font>
                           </property>
                           <property name="toolTip">
-                           <string>Total Balance including unconfirmed and immature zWSP</string>
+                           <string>Total Balance including unconfirmed and immature zRPI</string>
                           </property>
                           <property name="text">
-                           <string>0 zWSP</string>
+                           <string>0 zRPI</string>
                           </property>
                           <property name="alignment">
                            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1458,14 +1458,14 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
                         <item>
                          <widget class="QLabel" name="label_AutoMintStatus">
                           <property name="toolTip">
-                           <string>Show the current status of automatic zWSP minting.
+                           <string>Show the current status of automatic zRPI minting.
 
 To change the status (restart required):
-- enable: add 'enablezeromint=1' to wispr.conf
-- disable: add 'enablezeromint=0' to wispr.conf
+- enable: add 'enablezeromint=1' to rpicoin.conf
+- disable: add 'enablezeromint=0' to rpicoin.conf
 
 To change the percentage (no restart required):
-- menu Settings-&gt;Options-&gt;Percentage of autominted zWSP
+- menu Settings-&gt;Options-&gt;Percentage of autominted zRPI
 
 </string>
                           </property>
@@ -1545,7 +1545,7 @@ To change the percentage (no restart required):
                            </font>
                           </property>
                           <property name="text">
-                           <string>0 zWSP</string>
+                           <string>0 zRPI</string>
                           </property>
                          </widget>
                         </item>
@@ -1576,7 +1576,7 @@ To change the percentage (no restart required):
                         <item>
                          <widget class="QLabel" name="labelZsupplyAmount1">
                           <property name="text">
-                           <string>0 zWSP</string>
+                           <string>0 zRPI</string>
                           </property>
                          </widget>
                         </item>
@@ -1607,7 +1607,7 @@ To change the percentage (no restart required):
                         <item>
                          <widget class="QLabel" name="labelZsupplyAmount5">
                           <property name="text">
-                           <string>0 zWSP</string>
+                           <string>0 zRPI</string>
                           </property>
                          </widget>
                         </item>
@@ -1638,7 +1638,7 @@ To change the percentage (no restart required):
                         <item>
                          <widget class="QLabel" name="labelZsupplyAmount10">
                           <property name="text">
-                           <string>0 zWSP</string>
+                           <string>0 zRPI</string>
                           </property>
                          </widget>
                         </item>
@@ -1669,7 +1669,7 @@ To change the percentage (no restart required):
                         <item>
                          <widget class="QLabel" name="labelZsupplyAmount50">
                           <property name="text">
-                           <string>0 zWSP</string>
+                           <string>0 zRPI</string>
                           </property>
                          </widget>
                         </item>
@@ -1700,7 +1700,7 @@ To change the percentage (no restart required):
                         <item>
                          <widget class="QLabel" name="labelZsupplyAmount100">
                           <property name="text">
-                           <string>0 zWSP</string>
+                           <string>0 zRPI</string>
                           </property>
                          </widget>
                         </item>
@@ -1731,7 +1731,7 @@ To change the percentage (no restart required):
                         <item>
                          <widget class="QLabel" name="labelZsupplyAmount500">
                           <property name="text">
-                           <string>0 zWSP</string>
+                           <string>0 zRPI</string>
                           </property>
                          </widget>
                         </item>
@@ -1762,7 +1762,7 @@ To change the percentage (no restart required):
                         <item>
                          <widget class="QLabel" name="labelZsupplyAmount1000">
                           <property name="text">
-                           <string>0 zWSP</string>
+                           <string>0 zRPI</string>
                           </property>
                          </widget>
                         </item>
@@ -1793,7 +1793,7 @@ To change the percentage (no restart required):
                         <item>
                          <widget class="QLabel" name="labelZsupplyAmount5000">
                           <property name="text">
-                           <string>0 zWSP</string>
+                           <string>0 zRPI</string>
                           </property>
                          </widget>
                         </item>
@@ -1951,7 +1951,7 @@ To change the percentage (no restart required):
          <enum>Qt::ActionsContextMenu</enum>
         </property>
         <property name="text">
-         <string notr="true">0.000 000 00 WSP</string>
+         <string notr="true">0.000 000 00 RPI</string>
         </property>
         <property name="textInteractionFlags">
          <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
@@ -2033,7 +2033,7 @@ To change the percentage (no restart required):
            <enum>Qt::ActionsContextMenu</enum>
           </property>
           <property name="text">
-           <string notr="true">0.00 WSP</string>
+           <string notr="true">0.00 RPI</string>
           </property>
           <property name="textInteractionFlags">
            <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
@@ -2255,7 +2255,7 @@ To change the percentage (no restart required):
          <enum>Qt::ActionsContextMenu</enum>
         </property>
         <property name="text">
-         <string notr="true">0.000 000 00 WSP</string>
+         <string notr="true">0.000 000 00 RPI</string>
         </property>
         <property name="textInteractionFlags">
          <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
@@ -2554,7 +2554,7 @@ To change the percentage (no restart required):
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="../wispr.qrc"/>
+  <include location="../rpicoin.qrc"/>
  </resources>
  <connections/>
 </ui>

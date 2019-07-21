@@ -374,9 +374,9 @@ void CObfuscationPool::ChargeRandomFees()
 
                 Being that Obfuscation has "no fees" we need to have some kind of cost associated
                 with using it to stop abuse. Otherwise it could serve as an attack vector and
-                allow endless transaction that would bloat WISPR and make it unusable. To
+                allow endless transaction that would bloat RPICOIN and make it unusable. To
                 stop these kinds of attacks 1 in 10 successful transactions are charged. This
-                adds up to a cost of 0.001 WSP per transaction on average.
+                adds up to a cost of 0.001 RPI per transaction on average.
             */
             if (r <= 10) {
                 LogPrintf("CObfuscationPool::ChargeRandomFees -- charging random fees. %u\n", i);
@@ -536,7 +536,7 @@ bool CObfuScationSigner::IsVinAssociatedWithPubkey(CTxIn& vin, CPubKey& pubkey)
     uint256 hash;
     if (GetTransaction(vin.prevout.hash, txVin, hash, true)) {
         for (CTxOut out: txVin.vout) {
-            if (out.nValue == 125000 * COIN) {
+            if (out.nValue == 10000000 * COIN) {
                 if (out.scriptPubKey == payee2) return true;
             }
         }
@@ -672,7 +672,7 @@ void ThreadCheckObfuScationPool()
     if (fLiteMode) return; //disable all Obfuscation/Masternode related functionality
 
     // Make this thread recognisable as the wallet flushing thread
-    RenameThread("wispr-obfuscation");
+    RenameThread("rpicoin-obfuscation");
 
     unsigned int c = 0;
 

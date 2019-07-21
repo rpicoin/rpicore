@@ -13,9 +13,9 @@ from time import sleep
 from test_framework.authproxy import JSONRPCException
 from test_framework.util import assert_equal, assert_greater_than
 
-from fake_stake.base_test import WISPR_FakeStakeTest
+from fake_stake.base_test import RPICOIN_FakeStakeTest
 
-class zWSPValidCoinSpendTest(WISPR_FakeStakeTest):
+class zRPIValidCoinSpendTest(RPICOIN_FakeStakeTest):
 
     def run_test(self):
         self.description = "Covers the 'valid publicCoinSpend spend' scenario."
@@ -31,7 +31,7 @@ class zWSPValidCoinSpendTest(WISPR_FakeStakeTest):
         sleep(2)
 
         # 2) Mint zerocoins
-        self.log.info("Minting %d-denom zWSPs..." % DENOM_TO_USE)
+        self.log.info("Minting %d-denom zRPIs..." % DENOM_TO_USE)
         self.node.mintzerocoin(DENOM_TO_USE)
         self.node.generate(1)
         sleep(2)
@@ -99,4 +99,4 @@ class zWSPValidCoinSpendTest(WISPR_FakeStakeTest):
 
 
 if __name__ == '__main__':
-    zWSPValidCoinSpendTest().main()
+    zRPIValidCoinSpendTest().main()

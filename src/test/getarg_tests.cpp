@@ -4,7 +4,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "util.h"
-#include "test/test_wispr.h"
+#include "test/test_rpicoin.h"
 
 #include <string>
 #include <vector>

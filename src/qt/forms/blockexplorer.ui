@@ -168,7 +168,7 @@
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources>
-  <include location="../wispr.qrc"/>
+  <include location="../rpicoin.qrc"/>
  </resources>
  <connections/>
 </ui>

@@ -17,8 +17,8 @@
 #include "zpiv/accumulatormap.h"
 #include "zpiv/accumulators.h"
 #include "wallet/wallet.h"
-#include "zpiv/zwspmodule.h"
-#include "zwspchain.h"
+#include "zpiv/zrpimodule.h"
+#include "zrpichain.h"
 
 #include <stdint.h>
 #include <fstream>
@@ -139,12 +139,12 @@ UniValue blockToJSON(const CBlock& block, const CBlockIndex* blockindex, bool tx
 
     result.push_back(Pair("moneysupply",ValueFromAmount(blockindex->nMoneySupply)));
 
-    UniValue zwspObj(UniValue::VOBJ);
+    UniValue zrpiObj(UniValue::VOBJ);
     for (auto denom : libzerocoin::zerocoinDenomList) {
-        zwspObj.push_back(Pair(to_string(denom), ValueFromAmount(blockindex->mapZerocoinSupply.at(denom) * (denom*COIN))));
+        zrpiObj.push_back(Pair(to_string(denom), ValueFromAmount(blockindex->mapZerocoinSupply.at(denom) * (denom*COIN))));
     }
-    zwspObj.push_back(Pair("total", ValueFromAmount(blockindex->GetZerocoinSupply())));
-    result.push_back(Pair("zWSPsupply", zwspObj));
+    zrpiObj.push_back(Pair("total", ValueFromAmount(blockindex->GetZerocoinSupply())));
+    result.push_back(Pair("zRPIsupply", zrpiObj));
 
     return result;
 }
@@ -182,17 +182,17 @@ UniValue getchecksumblock(const UniValue& params, bool fHelp)
             "  \"previousblockhash\" : \"hash\",  (string) The hash of the previous block\n"
             "  \"nextblockhash\" : \"hash\"       (string) The hash of the next block\n"
             "  \"moneysupply\" : \"supply\"       (numeric) The money supply when this block was added to the blockchain\n"
-            "  \"zWSPsupply\" :\n"
+            "  \"zRPIsupply\" :\n"
             "  {\n"
-            "     \"1\" : n,            (numeric) supply of 1 zWSP denomination\n"
-            "     \"5\" : n,            (numeric) supply of 5 zWSP denomination\n"
-            "     \"10\" : n,           (numeric) supply of 10 zWSP denomination\n"
-            "     \"50\" : n,           (numeric) supply of 50 zWSP denomination\n"
-            "     \"100\" : n,          (numeric) supply of 100 zWSP denomination\n"
-            "     \"500\" : n,          (numeric) supply of 500 zWSP denomination\n"
-            "     \"1000\" : n,         (numeric) supply of 1000 zWSP denomination\n"
-            "     \"5000\" : n,         (numeric) supply of 5000 zWSP denomination\n"
-            "     \"total\" : n,        (numeric) The total supply of all zWSP denominations\n"
+            "     \"1\" : n,            (numeric) supply of 1 zRPI denomination\n"
+            "     \"5\" : n,            (numeric) supply of 5 zRPI denomination\n"
+            "     \"10\" : n,           (numeric) supply of 10 zRPI denomination\n"
+            "     \"50\" : n,           (numeric) supply of 50 zRPI denomination\n"
+            "     \"100\" : n,          (numeric) supply of 100 zRPI denomination\n"
+            "     \"500\" : n,          (numeric) supply of 500 zRPI denomination\n"
+            "     \"1000\" : n,         (numeric) supply of 1000 zRPI denomination\n"
+            "     \"5000\" : n,         (numeric) supply of 5000 zRPI denomination\n"
+            "     \"total\" : n,        (numeric) The total supply of all zRPI denominations\n"
             "  }\n"
             "}\n"
 
@@ -492,7 +492,7 @@ UniValue getrawmempool(const UniValue& params, bool fHelp)
             "{                           (json object)\n"
             "  \"transactionid\" : {       (json object)\n"
             "    \"size\" : n,             (numeric) transaction size in bytes\n"
-            "    \"fee\" : n,              (numeric) transaction fee in wispr\n"
+            "    \"fee\" : n,              (numeric) transaction fee in rpicoin\n"
             "    \"time\" : n,             (numeric) local time transaction entered pool in seconds since 1 Jan 1970 GMT\n"
             "    \"height\" : n,           (numeric) block height when transaction entered pool\n"
             "    \"startingpriority\" : n, (numeric) priority when transaction entered pool\n"
@@ -573,17 +573,17 @@ UniValue getblock(const UniValue& params, bool fHelp)
             "  \"previousblockhash\" : \"hash\",  (string) The hash of the previous block\n"
             "  \"nextblockhash\" : \"hash\"       (string) The hash of the next block\n"
             "  \"moneysupply\" : \"supply\"       (numeric) The money supply when this block was added to the blockchain\n"
-            "  \"zWSPsupply\" :\n"
+            "  \"zRPIsupply\" :\n"
             "  {\n"
-            "     \"1\" : n,            (numeric) supply of 1 zWSP denomination\n"
-            "     \"5\" : n,            (numeric) supply of 5 zWSP denomination\n"
-            "     \"10\" : n,           (numeric) supply of 10 zWSP denomination\n"
-            "     \"50\" : n,           (numeric) supply of 50 zWSP denomination\n"
-            "     \"100\" : n,          (numeric) supply of 100 zWSP denomination\n"
-            "     \"500\" : n,          (numeric) supply of 500 zWSP denomination\n"
-            "     \"1000\" : n,         (numeric) supply of 1000 zWSP denomination\n"
-            "     \"5000\" : n,         (numeric) supply of 5000 zWSP denomination\n"
-            "     \"total\" : n,        (numeric) The total supply of all zWSP denominations\n"
+            "     \"1\" : n,            (numeric) supply of 1 zRPI denomination\n"
+            "     \"5\" : n,            (numeric) supply of 5 zRPI denomination\n"
+            "     \"10\" : n,           (numeric) supply of 10 zRPI denomination\n"
+            "     \"50\" : n,           (numeric) supply of 50 zRPI denomination\n"
+            "     \"100\" : n,          (numeric) supply of 100 zRPI denomination\n"
+            "     \"500\" : n,          (numeric) supply of 500 zRPI denomination\n"
+            "     \"1000\" : n,         (numeric) supply of 1000 zRPI denomination\n"
+            "     \"5000\" : n,         (numeric) supply of 5000 zRPI denomination\n"
+            "     \"total\" : n,        (numeric) The total supply of all zRPI denominations\n"
             "  }\n"
             "}\n"
 
@@ -736,8 +736,8 @@ UniValue gettxout(const UniValue& params, bool fHelp)
             "     \"hex\" : \"hex\",        (string) \n"
             "     \"reqSigs\" : n,          (numeric) Number of required signatures\n"
             "     \"type\" : \"pubkeyhash\", (string) The type, eg pubkeyhash\n"
-            "     \"addresses\" : [          (array of string) array of wispr addresses\n"
-            "     \"wispraddress\"   	 	(string) wispr address\n"
+            "     \"addresses\" : [          (array of string) array of rpicoin addresses\n"
+            "     \"rpicoinaddress\"   	 	(string) rpicoin address\n"
             "        ,...\n"
             "     ]\n"
             "  },\n"
@@ -1260,7 +1260,7 @@ UniValue getaccumulatorwitness(const UniValue& params, bool fHelp)
     CZerocoinSpendReceipt receipt;
 
     if (!GenerateAccumulatorWitness(pubCoin, accumulator, witness, nMintsAdded, strFailReason)) {
-        receipt.SetStatus(_(strFailReason.c_str()), ZWSP_FAILED_ACCUMULATOR_INITIALIZATION);
+        receipt.SetStatus(_(strFailReason.c_str()), ZRPI_FAILED_ACCUMULATOR_INITIALIZATION);
         throw JSONRPCError(RPC_DATABASE_ERROR, receipt.GetStatusMessage());
     }
 
@@ -1436,7 +1436,7 @@ UniValue getserials(const UniValue& params, bool fHelp) {
                         }
                         libzerocoin::ZerocoinParams *params = Params().Zerocoin_Params(false);
                         PublicCoinSpend publicSpend(params);
-                        if (!ZWSPModule::parseCoinSpend(txin, tx, prevOut, publicSpend)) {
+                        if (!ZRPIModule::parseCoinSpend(txin, tx, prevOut, publicSpend)) {
                             throw JSONRPCError(RPC_INTERNAL_ERROR, "public zerocoin spend parse failed");
                         }
                         serial_str = publicSpend.getCoinSerialNumber().ToString(16);
@@ -1510,9 +1510,9 @@ UniValue getblockindexstats(const UniValue& params, bool fHelp) {
                 "        \"denom_5\": xxxx           (numeric) number of PUBLIC spends of denom_5 occurred over the block range\n"
                 "         ...                    ... number of PUBLIC spends of other denominations: ..., 10, 50, 100, 500, 1000, 5000\n"
                 "  }\n"
-                "  \"txbytes\": xxxxx                (numeric) Sum of the size of all txes (zWSP excluded) over block range\n"
-                "  \"ttlfee\": xxxxx                 (numeric) Sum of the fee amount of all txes (zWSP mints excluded) over block range\n"
-                "  \"ttlfee_all\": xxxxx             (numeric) Sum of the fee amount of all txes (zWSP mints included) over block range\n"
+                "  \"txbytes\": xxxxx                (numeric) Sum of the size of all txes (zRPI excluded) over block range\n"
+                "  \"ttlfee\": xxxxx                 (numeric) Sum of the fee amount of all txes (zRPI mints excluded) over block range\n"
+                "  \"ttlfee_all\": xxxxx             (numeric) Sum of the fee amount of all txes (zRPI mints included) over block range\n"
                 "  \"feeperkb\": xxxxx               (numeric) Average fee per kb (excluding zc txes)\n"
                 "}\n"
 

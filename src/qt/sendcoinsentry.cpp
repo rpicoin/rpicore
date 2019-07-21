@@ -29,9 +29,9 @@ SendCoinsEntry::SendCoinsEntry(QWidget* parent) : QStackedWidget(parent),
 #endif
     ui->addAsLabel->setPlaceholderText(tr("Enter a label for this address to add it to your address book"));
 
-    // normal wispr address field
+    // normal rpicoin address field
     GUIUtil::setupAddressWidget(ui->payTo, this);
-    // just a label for displaying wispr address(es)
+    // just a label for displaying rpicoin address(es)
     ui->payTo_is->setFont(GUIUtil::bitcoinAddressFont());
 
     // Connect signals

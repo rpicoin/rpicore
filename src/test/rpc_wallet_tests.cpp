@@ -9,7 +9,7 @@
 #include "base58.h"
 #include "wallet/wallet.h"
 
-#include "test/test_wispr.h"
+#include "test/test_rpicoin.h"
 
 #include <boost/algorithm/string.hpp>
 #include <boost/test/unit_test.hpp>

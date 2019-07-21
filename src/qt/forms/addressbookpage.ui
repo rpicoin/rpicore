@@ -131,7 +131,7 @@
         <string>&amp;Delete</string>
        </property>
        <property name="icon">
-        <iconset resource="../wispr.qrc">
+        <iconset resource="../rpicoin.qrc">
          <normaloff>:/icons/remove</normaloff>:/icons/remove</iconset>
        </property>
        <property name="autoDefault">
@@ -161,7 +161,7 @@
         <string>&amp;Export</string>
        </property>
        <property name="icon">
-        <iconset resource="../wispr.qrc">
+        <iconset resource="../rpicoin.qrc">
          <normaloff>:/icons/export</normaloff>:/icons/export</iconset>
        </property>
        <property name="autoDefault">
@@ -190,7 +190,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="../wispr.qrc"/>
+  <include location="../rpicoin.qrc"/>
  </resources>
  <connections/>
 </ui>

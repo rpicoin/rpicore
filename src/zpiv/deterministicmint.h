@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WISPR_DETERMINISTICMINT_H
-#define WISPR_DETERMINISTICMINT_H
+#ifndef RPICOIN_DETERMINISTICMINT_H
+#define RPICOIN_DETERMINISTICMINT_H
 
 #include <libzerocoin/Denominations.h>
 #include <uint256.h>
@@ -64,4 +64,4 @@ public:
     };
 };
 
-#endif //WISPR_DETERMINISTICMINT_H
+#endif //RPICOIN_DETERMINISTICMINT_H

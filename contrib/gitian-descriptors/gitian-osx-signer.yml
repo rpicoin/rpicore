@@ -1,5 +1,5 @@
 ---
-name: "wispr-dmg-signer"
+name: "rpicoin-dmg-signer"
 distro: "ubuntu"
 suites:
 - "bionic"
@@ -8,10 +8,10 @@ architectures:
 packages:
 - "faketime"
 remotes:
-- "url": "https://github.com/WisprProject/detached.sigs.git"
+- "url": "https://github.com/rpicoin/detached.sigs.git"
   "dir": "signature"
 files:
-- "wispr-osx-unsigned.tar.gz"
+- "rpicoin-osx-unsigned.tar.gz"
 script: |
   set -e -o pipefail
 
@@ -30,8 +30,8 @@ script: |
     chmod +x ${WRAP_DIR}/${prog}
   done
 
-  UNSIGNED=wispr-osx-unsigned.tar.gz
-  SIGNED=wispr-osx-signed.dmg
+  UNSIGNED=rpicoin-osx-unsigned.tar.gz
+  SIGNED=rpicoin-osx-signed.dmg
 
   tar -xf ${UNSIGNED}
   OSX_VOLNAME="$(cat osx_volname)"

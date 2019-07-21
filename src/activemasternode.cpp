@@ -12,7 +12,7 @@
 #include "spork.h"
 
 //
-// Bootup the Masternode, look for a 125000 WISPR input and register on the network
+// Bootup the Masternode, look for a 125000 RPICOIN input and register on the network
 //
 void CActiveMasternode::ManageStatus()
 {
@@ -456,7 +456,7 @@ vector<COutput> CActiveMasternode::SelectCoinsMasternode()
 
     // Filter
     for (const COutput& out: vCoins) {
-        if (out.tx->vout[out.i].nValue == 125000 * COIN) { //exactly
+        if (out.tx->vout[out.i].nValue == 10000000 * COIN) { //exactly
             filteredCoins.push_back(out);
         }
     }

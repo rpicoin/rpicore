@@ -1,0 +1,8 @@
+/usr/bin/rpicoin-cli		--	gen_context(system_u:object_r:rpicoin_exec_t,s0)
+/usr/sbin/rpicoind		--	gen_context(system_u:object_r:rpicoin_exec_t,s0)
+/usr/lib(64)?/rpicoin/rpicoind		--	gen_context(system_u:object_r:rpicoin_exec_t,s0)
+
+/etc/rpicoin(/.*)?		gen_context(system_u:object_r:rpicoin_conf_t,s0)
+/var/lib/rpicoin(/.*)?		gen_context(system_u:object_r:rpicoin_var_lib_t,s0)
+
+(/var)?/run/rpicoind(/.*)?   gen_context(system_u:object_r:rpicoin_var_run_t,s0)

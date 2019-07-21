@@ -8,7 +8,7 @@
 #include "script/script.h"
 #include "script/standard.h"
 #include "uint256.h"
-#include "test_wispr.h"
+#include "test_rpicoin.h"
 
 #include <vector>
 

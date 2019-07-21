@@ -24,12 +24,12 @@
 #include "txdb.h"
 #include "util.h"
 #include "utilmoneystr.h"
-#include "zwspchain.h"
+#include "zrpichain.h"
 
 #include "denomination_functions.h"
 #include "libzerocoin/Denominations.h"
-#include "zpiv/zwspwallet.h"
-#include "zpiv/zwsptracker.h"
+#include "zpiv/zrpiwallet.h"
+#include "zpiv/zrpitracker.h"
 #include "zpiv/deterministicmint.h"
 #include <assert.h>
 
@@ -55,7 +55,7 @@ bool fGlobalUnlockSpendCache = false;
 int64_t nStartupTime = GetTime(); //!< Client startup time for use with automint
 
 /**
- * Fees smaller than this (in uwsp) are considered zero fee (for transaction creation)
+ * Fees smaller than this (in urpi) are considered zero fee (for transaction creation)
  * We are ~100 times smaller then bitcoin now (2015-06-23), set minTxFee 10 times higher
  * so it's still 10 times lower comparing to bitcoin.
  * Override with -mintxfee
@@ -798,7 +798,7 @@ bool CWallet::IsUsed(const CBitcoinAddress address) const
 
 bool CWallet::IsMyZerocoinSpend(const CBigNum& bnSerial) const
 {
-    return zwspTracker->HasSerial(bnSerial);
+    return zrpiTracker->HasSerial(bnSerial);
 }
 
 CAmount CWallet::GetDebit(const CTxIn& txin, const isminefilter& filter) const
@@ -1024,7 +1024,7 @@ CAmount CWalletTx::GetUnlockedCredit() const
         const CTxOut& txout = vout[i];
 
         if (pwallet->IsSpent(hashTx, i) || pwallet->IsLockedCoin(hashTx, i)) continue;
-        if (fMasterNode && vout[i].nValue == 125000 * COIN) continue; // do not count MN-like outputs
+        if (fMasterNode && vout[i].nValue == 10000000 * COIN) continue; // do not count MN-like outputs
 
         nCredit += pwallet->GetCredit(txout, ISMINE_SPENDABLE);
         if (!MoneyRange(nCredit))
@@ -1058,7 +1058,7 @@ CAmount CWalletTx::GetLockedCredit() const
         }
 
         // Add masternode collaterals which are handled likc locked coins
-        else if (fMasterNode && vout[i].nValue == 125000 * COIN) {
+        else if (fMasterNode && vout[i].nValue == 10000000 * COIN) {
             nCredit += pwallet->GetCredit(txout, ISMINE_SPENDABLE);
         }
 
@@ -1133,7 +1133,7 @@ CAmount CWalletTx::GetLockedWatchOnlyCredit() const
         }
 
         // Add masternode collaterals which are handled likc locked coins
-        else if (fMasterNode && vout[i].nValue == 125000 * COIN) {
+        else if (fMasterNode && vout[i].nValue == 10000000 * COIN) {
             nCredit += pwallet->GetCredit(txout, ISMINE_WATCH_ONLY);
         }
 
@@ -1245,9 +1245,9 @@ int CWallet::ScanForWalletTransactions(CBlockIndex* pindexStart, bool fUpdate)
 {
     int ret = 0;
     int64_t nNow = GetTime();
-    bool fCheckZWSP = GetBoolArg("-zapwallettxes", false);
-    if (fCheckZWSP)
-        zwspTracker->Init();
+    bool fCheckZRPI = GetBoolArg("-zapwallettxes", false);
+    if (fCheckZRPI)
+        zrpiTracker->Init();
 
     CBlockIndex* pindex = pindexStart;
     {
@@ -1273,8 +1273,8 @@ int CWallet::ScanForWalletTransactions(CBlockIndex* pindexStart, bool fUpdate)
                     ret++;
             }
 
-            //If this is a zapwallettx, need to readd zwsp
-            if (fCheckZWSP && pindex->nHeight >= Params().NEW_PROTOCOLS_STARTHEIGHT()) {
+            //If this is a zapwallettx, need to readd zrpi
+            if (fCheckZRPI && pindex->nHeight >= Params().NEW_PROTOCOLS_STARTHEIGHT()) {
                 list<CZerocoinMint> listMints;
                 BlockToZerocoinMintList(block, listMints, true);
 
@@ -1453,7 +1453,7 @@ CAmount CWallet::GetBalance() const
 CAmount CWallet::GetZerocoinBalance(bool fMatureOnly) const
 {
     if (fMatureOnly) {
-        // This code is not removed just for when we back to use zWSP in the future, for now it's useless,
+        // This code is not removed just for when we back to use zRPI in the future, for now it's useless,
         // every public coin spend is now spendable without need to have new mints on top.
 
         //if (chainActive.Height() > nLastMaturityCheck)
@@ -1461,7 +1461,7 @@ CAmount CWallet::GetZerocoinBalance(bool fMatureOnly) const
         //nLastMaturityCheck = chainActive.Height();
 
         CAmount nBalance = 0;
-        vector<CMintMeta> vMints = zwspTracker->GetMints(true);
+        vector<CMintMeta> vMints = zrpiTracker->GetMints(true);
         for (auto meta : vMints) {
             // Every public coin spend is now spendable, no need to mint new coins on top.
             //if (meta.nHeight >= mapMintMaturity.at(meta.denom) || meta.nHeight >= chainActive.Height() || meta.nHeight == 0)
@@ -1471,7 +1471,7 @@ CAmount CWallet::GetZerocoinBalance(bool fMatureOnly) const
         return nBalance;
     }
 
-    return zwspTracker->GetBalance(false, false);
+    return zrpiTracker->GetBalance(false, false);
 }
 
 CAmount CWallet::GetImmatureZerocoinBalance() const
@@ -1481,7 +1481,7 @@ CAmount CWallet::GetImmatureZerocoinBalance() const
 
 CAmount CWallet::GetUnconfirmedZerocoinBalance() const
 {
-    return zwspTracker->GetUnconfirmedBalance();
+    return zrpiTracker->GetUnconfirmedBalance();
 }
 
 CAmount CWallet::GetUnlockedCoins() const
@@ -1528,7 +1528,7 @@ std::map<libzerocoin::CoinDenomination, CAmount> CWallet::GetMyZerocoinDistribut
         spread.insert(std::pair<libzerocoin::CoinDenomination, CAmount>(denom, 0));
     {
         LOCK(cs_wallet);
-        set<CMintMeta> setMints = zwspTracker->ListMints(true, true, true);
+        set<CMintMeta> setMints = zrpiTracker->ListMints(true, true, true);
         for (auto& mint : setMints)
             spread.at(mint.denom)++;
     }
@@ -1663,13 +1663,13 @@ void CWallet::AvailableCoins(
                 if (nCoinType == ONLY_DENOMINATED) {
                     found = IsDenominatedAmount(pcoin->vout[i].nValue);
                 } else if (nCoinType == ONLY_NOT10000IFMN) {
-                    found = !(fMasterNode && pcoin->vout[i].nValue == 125000 * COIN);
+                    found = !(fMasterNode && pcoin->vout[i].nValue == 10000000 * COIN);
                 } else if (nCoinType == ONLY_NONDENOMINATED_NOT10000IFMN) {
                     if (IsCollateralAmount(pcoin->vout[i].nValue)) continue; // do not use collateral amounts
                     found = !IsDenominatedAmount(pcoin->vout[i].nValue);
-                    if (found && fMasterNode) found = pcoin->vout[i].nValue != 125000 * COIN; // do not use Hot MN funds
+                    if (found && fMasterNode) found = pcoin->vout[i].nValue != 10000000 * COIN; // do not use Hot MN funds
                 } else if (nCoinType == ONLY_125000) {
-                    found = pcoin->vout[i].nValue == 125000 * COIN;
+                    found = pcoin->vout[i].nValue == 10000000 * COIN;
                 } else {
                     found = true;
                 }
@@ -1791,11 +1791,11 @@ bool less_then_denom(const COutput& out1, const COutput& out2)
 bool CWallet::SelectStakeCoins(std::list<std::unique_ptr<CStakeInput> >& listInputs, CAmount nTargetAmount, bool fPrecompute)
 {
     LOCK(cs_main);
-    //Add WSP
+    //Add RPI
     vector<COutput> vCoins;
     AvailableCoins(vCoins, true, NULL, false, STAKABLE_COINS);
     CAmount nAmountSelected = 0;
-    if (GetBoolArg("-wspstake", true) && !fPrecompute) {
+    if (GetBoolArg("-rpistake", true) && !fPrecompute) {
         for (const COutput &out : vCoins) {
             //make sure not to outrun target amount
             if (nAmountSelected + out.tx->vout[out.i].nValue > nTargetAmount)
@@ -1820,16 +1820,16 @@ bool CWallet::SelectStakeCoins(std::list<std::unique_ptr<CStakeInput> >& listInp
             //add to our stake set
             nAmountSelected += out.tx->vout[out.i].nValue;
 
-            std::unique_ptr<CWspStake> input(new CWspStake());
+            std::unique_ptr<CRpiStake> input(new CRpiStake());
             input->SetInput((CTransaction) *out.tx, out.i);
             listInputs.emplace_back(std::move(input));
         }
     }
 
-    /* Disable zWSP Staking
-    //zWSP
-    if ((GetBoolArg("-zwspstake", true) || fPrecompute) && chainActive.Height() > Params().Zerocoin_Block_V2_Start() && !IsSporkActive(SPORK_16_ZEROCOIN_MAINTENANCE_MODE)) {
-        //Only update zWSP set once per update interval
+    /* Disable zRPI Staking
+    //zRPI
+    if ((GetBoolArg("-zrpistake", true) || fPrecompute) && chainActive.Height() > Params().Zerocoin_Block_V2_Start() && !IsSporkActive(SPORK_16_ZEROCOIN_MAINTENANCE_MODE)) {
+        //Only update zRPI set once per update interval
         bool fUpdate = false;
         static int64_t nTimeLastUpdate = 0;
         if (GetAdjustedTime() - nTimeLastUpdate > nStakeSetUpdateTime) {
@@ -1837,7 +1837,7 @@ bool CWallet::SelectStakeCoins(std::list<std::unique_ptr<CStakeInput> >& listInp
             nTimeLastUpdate = GetAdjustedTime();
         }
 
-        set<CMintMeta> setMints = zwspTracker->ListMints(true, true, fUpdate);
+        set<CMintMeta> setMints = zrpiTracker->ListMints(true, true, fUpdate);
         for (auto meta : setMints) {
             if (meta.hashStake == 0) {
                 CZerocoinMint mint;
@@ -1845,13 +1845,13 @@ bool CWallet::SelectStakeCoins(std::list<std::unique_ptr<CStakeInput> >& listInp
                     uint256 hashStake = mint.GetSerialNumber().getuint256();
                     hashStake = Hash(hashStake.begin(), hashStake.end());
                     meta.hashStake = hashStake;
-                    zwspTracker->UpdateState(meta);
+                    zrpiTracker->UpdateState(meta);
                 }
             }
             if (meta.nVersion < CZerocoinMint::STAKABLE_VERSION)
                 continue;
             if (meta.nHeight < chainActive.Height() - Params().Zerocoin_RequiredStakeDepth()) {
-                std::unique_ptr<CZWspStake> input(new CZWspStake(meta.denom, meta.hashStake));
+                std::unique_ptr<CZRpiStake> input(new CZRpiStake(meta.denom, meta.hashStake));
                 listInputs.emplace_back(std::move(input));
             }
         }
@@ -1864,9 +1864,9 @@ bool CWallet::MintableCoins()
 {
     LOCK(cs_main);
     CAmount nBalance = GetBalance();
-    CAmount nZwspBalance = GetZerocoinBalance(false);
+    CAmount nZrpiBalance = GetZerocoinBalance(false);
 
-    // Regular WSP
+    // Regular RPI
     if (nBalance > 0) {
         if (mapArgs.count("-reservebalance") && !ParseMoney(mapArgs["-reservebalance"], nReserveBalance))
             return error("%s : invalid reserve balance amount", __func__);
@@ -1889,9 +1889,9 @@ bool CWallet::MintableCoins()
         }
     }
 
-    // zWSP
-    if (nZwspBalance > 0) {
-        set<CMintMeta> setMints = zwspTracker->ListMints(true, true, true);
+    // zRPI
+    if (nZrpiBalance > 0) {
+        set<CMintMeta> setMints = zrpiTracker->ListMints(true, true, true);
         for (auto mint : setMints) {
             if (mint.nVersion < CZerocoinMint::STAKABLE_VERSION)
                 continue;
@@ -2051,7 +2051,7 @@ bool CWallet::GetBudgetSystemCollateralTX(CWalletTx& tx, uint256 hash, bool useI
     CAmount nFeeRet = 0;
     std::string strFail = "";
     vector<pair<CScript, CAmount> > vecSend;
-    vecSend.push_back(make_pair(scriptChange, BUDGET_FEE_TX_OLD)); // Old 50 WSP collateral
+    vecSend.push_back(make_pair(scriptChange, BUDGET_FEE_TX_OLD)); // Old 50 RPI collateral
 
     CCoinControl* coinControl = nullptr;
     bool success = CreateTransaction(vecSend, tx, reservekey, nFeeRet, strFail, coinControl, ALL_COINS, useIX, (CAmount)0);
@@ -2074,7 +2074,7 @@ bool CWallet::GetBudgetFinalizationCollateralTX(CWalletTx& tx, uint256 hash, boo
     CAmount nFeeRet = 0;
     std::string strFail = "";
     vector<pair<CScript, CAmount> > vecSend;
-    vecSend.push_back(make_pair(scriptChange, BUDGET_FEE_TX)); // New 5 WSP collateral
+    vecSend.push_back(make_pair(scriptChange, BUDGET_FEE_TX)); // New 5 RPI collateral
 
     CCoinControl* coinControl = nullptr;
     bool success = CreateTransaction(vecSend, tx, reservekey, nFeeRet, strFail, coinControl, ALL_COINS, useIX, (CAmount)0);
@@ -2167,9 +2167,9 @@ bool CWallet::CreateTransaction(const vector<pair<CScript, CAmount> >& vecSend,
                     if (coin_type == ALL_COINS) {
                         strFailReason = _("Insufficient funds.");
                     } else if (coin_type == ONLY_NOT10000IFMN) {
-                        strFailReason = _("Unable to locate enough funds for this transaction that are not equal 10000 WSP.");
+                        strFailReason = _("Unable to locate enough funds for this transaction that are not equal 10000 RPI.");
                     } else if (coin_type == ONLY_NONDENOMINATED_NOT10000IFMN) {
-                        strFailReason = _("Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 WSP.");
+                        strFailReason = _("Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 RPI.");
                     } else {
                         strFailReason = _("Unable to locate enough Obfuscation denominated funds for this transaction.");
                         strFailReason += " " + _("Obfuscation uses exact denominated amounts to send funds, you might simply need to anonymize some more coins.");
@@ -2207,7 +2207,7 @@ bool CWallet::CreateTransaction(const vector<pair<CScript, CAmount> >& vecSend,
                 if (nChange > 0) {
                     // Fill a vout to ourself
                     // TODO: pass in scriptChange instead of reservekey so
-                    // change transaction isn't always pay-to-wispr-address
+                    // change transaction isn't always pay-to-rpicoin-address
                     CScript scriptChange;
                     bool combineChange = false;
 
@@ -2424,7 +2424,7 @@ bool CWallet::CreateCoinStake(
             txNew.vout.insert(txNew.vout.end(), vout.begin(), vout.end());
 
             CAmount nMinFee = 0;
-            if (!stakeInput->IsZWSP()) {
+            if (!stakeInput->IsZRPI()) {
                 // Set output amount
                 if (txNew.vout.size() == 3) {
                     txNew.vout[1].nValue = ((nCredit - nMinFee) / 2 / CENT) * CENT;
@@ -2439,10 +2439,10 @@ bool CWallet::CreateCoinStake(
                 return error("CreateCoinStake : exceeded coinstake size limit");
 
             //Masternode payment
-            FillBlockPayee(txNew, nMinFee, true, stakeInput->IsZWSP());
+            FillBlockPayee(txNew, nMinFee, true, stakeInput->IsZRPI());
 
             {
-                TRY_LOCK(zwspTracker->cs_spendcache, fLocked);
+                TRY_LOCK(zrpiTracker->cs_spendcache, fLocked);
                 if (!fLocked)
                     continue;
 
@@ -2458,8 +2458,8 @@ bool CWallet::CreateCoinStake(
             }
 
             //Mark mints as spent
-            if (stakeInput->IsZWSP()) {
-                CZWspStake* z = (CZWspStake*)stakeInput.get();
+            if (stakeInput->IsZRPI()) {
+                CZRpiStake* z = (CZRpiStake*)stakeInput.get();
                 if (!z->MarkSpent(this, txNew.GetHash()))
                     return error("%s: failed to mark mint as used\n", __func__);
             }
@@ -2475,7 +2475,7 @@ bool CWallet::CreateCoinStake(
     if (!fKernelFound)
         return false;
 
-    // Sign for WSP
+    // Sign for RPI
     int nIn = 0;
     if (!txNew.vin[0].scriptSig.IsZerocoinSpend()) {
         for (CTxIn txIn : txNew.vin) {
@@ -2495,13 +2495,13 @@ bool CWallet::CreateCoinStake(
                 return error("%s: extracting pubcoin from txout failed", __func__);
 
             uint256 hashPubcoin = GetPubCoinHash(pubcoin.getValue());
-            if (!zwspTracker->HasPubcoinHash(hashPubcoin))
+            if (!zrpiTracker->HasPubcoinHash(hashPubcoin))
                 return error("%s: could not find pubcoinhash %s in tracker", __func__, hashPubcoin.GetHex());
 
-            CMintMeta meta = zwspTracker->GetMetaFromPubcoin(hashPubcoin);
+            CMintMeta meta = zrpiTracker->GetMetaFromPubcoin(hashPubcoin);
             meta.txid = txNew.GetHash();
             meta.nHeight = chainActive.Height() + 1;
-            if (!zwspTracker->UpdateState(meta))
+            if (!zrpiTracker->UpdateState(meta))
                 return error("%s: failed to update metadata in tracker", __func__);
         }
     }
@@ -3283,7 +3283,7 @@ void CWallet::CreateAutoMintTransaction(const CAmount& nMintAmount, CCoinControl
         CAmount nZerocoinBalance = GetZerocoinBalance(false);
         CAmount nBalance = GetUnlockedCoins();
         CAmount dPercentage = 100 * (double)nZerocoinBalance / (double)(nZerocoinBalance + nBalance);
-        LogPrintf("CWallet::AutoZeromint() @ block %ld: successfully minted %ld zWSP. Current percentage of zWSP: %lf%%\n",
+        LogPrintf("CWallet::AutoZeromint() @ block %ld: successfully minted %ld zRPI. Current percentage of zRPI: %lf%%\n",
                   chainActive.Tip()->nHeight, nMintAmount, dPercentage);
         // Re-adjust startup time to delay next Automint for 5 minutes
         nStartupTime = GetAdjustedTime();
@@ -3326,32 +3326,32 @@ void CWallet::AutoZeromint()
     CAmount nMintAmount = 0;
     CAmount nToMintAmount = 0;
 
-    // zWSP are integers > 0, so we can't mint 10% of 9 WSP
+    // zRPI are integers > 0, so we can't mint 10% of 9 RPI
     if (nBalance < 10){
-        LogPrint("zero", "CWallet::AutoZeromint(): available balance (%ld) too small for minting zWSP\n", nBalance);
+        LogPrint("zero", "CWallet::AutoZeromint(): available balance (%ld) too small for minting zRPI\n", nBalance);
         return;
     }
 
-    // Percentage of zWSP we already have
+    // Percentage of zRPI we already have
     double dPercentage = 100 * (double)nZerocoinBalance / (double)(nZerocoinBalance + nBalance);
 
     // Check if minting is actually needed
     if(dPercentage >= nZeromintPercentage){
-        LogPrint("zero", "CWallet::AutoZeromint() @block %ld: percentage of existing zWSP (%lf%%) already >= configured percentage (%d%%). No minting needed...\n",
+        LogPrint("zero", "CWallet::AutoZeromint() @block %ld: percentage of existing zRPI (%lf%%) already >= configured percentage (%d%%). No minting needed...\n",
                   chainActive.Tip()->nHeight, dPercentage, nZeromintPercentage);
         return;
     }
 
-    // zWSP amount needed for the target percentage
+    // zRPI amount needed for the target percentage
     nToMintAmount = ((nZerocoinBalance + nBalance) * nZeromintPercentage / 100);
 
-    // zWSP amount missing from target (must be minted)
+    // zRPI amount missing from target (must be minted)
     nToMintAmount = (nToMintAmount - nZerocoinBalance) / COIN;
 
-    // Use the biggest denomination smaller than the needed zWSP We'll only mint exact denomination to make minting faster.
+    // Use the biggest denomination smaller than the needed zRPI We'll only mint exact denomination to make minting faster.
     // Exception: for big amounts use 6666 (6666 = 1*5000 + 1*1000 + 1*500 + 1*100 + 1*50 + 1*10 + 1*5 + 1) to create all
     // possible denominations to avoid having 5000 denominations only.
-    // If a preferred denomination is used (means nPreferredDenom != 0) do nothing until we have enough WSP to mint this denomination
+    // If a preferred denomination is used (means nPreferredDenom != 0) do nothing until we have enough RPI to mint this denomination
 
     if (nPreferredDenom > 0){
         if (nToMintAmount >= nPreferredDenom)
@@ -3765,11 +3765,11 @@ bool CWallet::GetZerocoinKey(const CBigNum& bnSerial, CKey& key)
     return mint.GetKeyPair(key);
 }
 
-bool CWallet::CreateZWSPOutPut(libzerocoin::CoinDenomination denomination, CTxOut& outMint, CDeterministicMint& dMint)
+bool CWallet::CreateZRPIOutPut(libzerocoin::CoinDenomination denomination, CTxOut& outMint, CDeterministicMint& dMint)
 {
     // mint a new coin (create Pedersen Commitment) and extract PublicCoin that is shareable from it
     libzerocoin::PrivateCoin coin(Params().Zerocoin_Params(false), denomination, false);
-    zwalletMain->GenerateDeterministicZWSP(denomination, coin, dMint);
+    zwalletMain->GenerateDeterministicZRPI(denomination, coin, dMint);
 
     libzerocoin::PublicCoin pubCoin = coin.getPublicCoin();
 
@@ -3814,8 +3814,8 @@ bool CWallet::CreateZerocoinMintTransaction(const CAmount nValue, CMutableTransa
 
         CTxOut outMint;
         CDeterministicMint dMint;
-        if (!CreateZWSPOutPut(denomination, outMint, dMint)) {
-            strFailReason = strprintf("%s: failed to create new zwsp output", __func__);
+        if (!CreateZRPIOutPut(denomination, outMint, dMint)) {
+            strFailReason = strprintf("%s: failed to create new zrpi output", __func__);
             return error(strFailReason.c_str());
         }
         txNew.vout.push_back(outMint);
@@ -3849,7 +3849,7 @@ bool CWallet::CreateZerocoinMintTransaction(const CAmount nValue, CMutableTransa
     }
 
     //any change that is less than 0.0100000 will be ignored and given as an extra fee
-    //also assume that a zerocoinspend that is minting the change will not have any change that goes to Wsp
+    //also assume that a zerocoinspend that is minting the change will not have any change that goes to Rpi
     CAmount nChange = nValueIn - nTotalValue; // Fee already accounted for in nTotalValue
     if (nChange > 1 * CENT && !isZCSpendChange) {
         // Fill a vout to ourself using the largest contributing address
@@ -3863,7 +3863,7 @@ bool CWallet::CreateZerocoinMintTransaction(const CAmount nValue, CMutableTransa
             reservekey->ReturnKey();
     }
 
-    // Sign if these are wispr outputs - NOTE that zWSP outputs are signed later in SoK
+    // Sign if these are rpicoin outputs - NOTE that zRPI outputs are signed later in SoK
     if (!isZCSpendChange) {
         int nIn = 0;
         for (const std::pair<const CWalletTx*, unsigned int>& coin : setCoins) {
@@ -3880,20 +3880,20 @@ bool CWallet::CreateZerocoinMintTransaction(const CAmount nValue, CMutableTransa
 bool CWallet::CheckCoinSpend(libzerocoin::CoinSpend& spend, libzerocoin::Accumulator& accumulator, CZerocoinSpendReceipt& receipt)
 {
     if (!spend.Verify(accumulator)) {
-        receipt.SetStatus(_("The transaction did not verify"), ZWSP_BAD_SERIALIZATION);
+        receipt.SetStatus(_("The transaction did not verify"), ZRPI_BAD_SERIALIZATION);
         return error("%s : The transaction did not verify", __func__);
     }
 
     if (Params().NetworkID() != CBaseChainParams::REGTEST && IsSerialKnown(spend.getCoinSerialNumber())) {
-        //Tried to spend an already spent zWSP
-        receipt.SetStatus(_("The coin spend has been used"), ZWSP_SPENT_USED_ZWSP);
+        //Tried to spend an already spent zRPI
+        receipt.SetStatus(_("The coin spend has been used"), ZRPI_SPENT_USED_ZRPI);
         uint256 hashSerial = GetSerialHash(spend.getCoinSerialNumber());
-        if(!zwspTracker->HasSerialHash(hashSerial))
+        if(!zrpiTracker->HasSerialHash(hashSerial))
             return error("%s: serialhash %s not found in tracker", __func__, hashSerial.GetHex());
 
-        CMintMeta meta = zwspTracker->Get(hashSerial);
+        CMintMeta meta = zrpiTracker->Get(hashSerial);
         meta.isUsed = true;
-        if (!zwspTracker->UpdateState(meta))
+        if (!zrpiTracker->UpdateState(meta))
             LogPrintf("%s: failed to write zerocoinmint\n", __func__);
 
         return false;
@@ -3933,14 +3933,14 @@ bool CWallet::MintsToInputVector(std::map<CBigNum, CZerocoinMint>& mapMintsSelec
                          CZerocoinSpendReceipt& receipt, libzerocoin::SpendType spendType, CBlockIndex* pindexCheckpoint)
 {
     // Default error status if not changed below
-    receipt.SetStatus(_("Transaction Mint Started"), ZWSP_TXMINT_GENERAL);
+    receipt.SetStatus(_("Transaction Mint Started"), ZRPI_TXMINT_GENERAL);
     libzerocoin::ZerocoinParams* paramsAccumulator = Params().Zerocoin_Params(false);
     AccumulatorMap mapAccumulators(paramsAccumulator);
     int64_t nTimeStart = GetTimeMicros();
 
     int nLockAttempts = 0;
     while (nLockAttempts < 100) {
-        TRY_LOCK(zwspTracker->cs_spendcache, lockSpendcache);
+        TRY_LOCK(zrpiTracker->cs_spendcache, lockSpendcache);
         if (!lockSpendcache) {
             fGlobalUnlockSpendCache = true;
             MilliSleep(100);
@@ -3950,8 +3950,8 @@ bool CWallet::MintsToInputVector(std::map<CBigNum, CZerocoinMint>& mapMintsSelec
 
         for (auto &it : mapMintsSelected) {
             CZerocoinMint mint = it.second;
-            CMintMeta meta = zwspTracker->Get(GetSerialHash(mint.GetSerialNumber()));
-            CoinWitnessData *coinWitness = zwspTracker->GetSpendCache(meta.hashStake);
+            CMintMeta meta = zrpiTracker->Get(GetSerialHash(mint.GetSerialNumber()));
+            CoinWitnessData *coinWitness = zrpiTracker->GetSpendCache(meta.hashStake);
 
             if (!coinWitness->nHeightAccEnd) {
                 *coinWitness = CoinWitnessData(mint);
@@ -3961,7 +3961,7 @@ bool CWallet::MintsToInputVector(std::map<CBigNum, CZerocoinMint>& mapMintsSelec
             // Generate the witness for each mint being spent
             if (!GenerateAccumulatorWitness(coinWitness, mapAccumulators, pindexCheckpoint)) {
                 receipt.SetStatus(_("Couldn't generate the accumulator witness"),
-                                  ZWSP_FAILED_ACCUMULATOR_INITIALIZATION);
+                                  ZRPI_FAILED_ACCUMULATOR_INITIALIZATION);
                 return error("%s : %s", __func__, receipt.GetStatusMessage());
             }
 
@@ -3981,7 +3981,7 @@ bool CWallet::MintsToInputVector(std::map<CBigNum, CZerocoinMint>& mapMintsSelec
             if (nVersion >= libzerocoin::PrivateCoin::PUBKEY_VERSION) {
                 CKey key;
                 if (!mint.GetKeyPair(key))
-                    return error("%s: failed to set zWSP privkey mint version=%d", __func__, nVersion);
+                    return error("%s: failed to set zRPI privkey mint version=%d", __func__, nVersion);
                 privateCoin.setPrivKey(key.GetPrivKey());
             }
             int64_t nTime3 = GetTimeMicros();
@@ -4001,7 +4001,7 @@ bool CWallet::MintsToInputVector(std::map<CBigNum, CZerocoinMint>& mapMintsSelec
                                              *coinWitness->pWitness, hashTxOut, spendType);
 
                 if (!CheckCoinSpend(spend, accumulator, receipt)) {
-                    receipt.SetStatus(_("CoinSpend: failed check"), ZWSP_SPEND_ERROR);
+                    receipt.SetStatus(_("CoinSpend: failed check"), ZRPI_SPEND_ERROR);
                     return error("%s : %s", __func__, receipt.GetStatusMessage());
                 }
 
@@ -4014,7 +4014,7 @@ bool CWallet::MintsToInputVector(std::map<CBigNum, CZerocoinMint>& mapMintsSelec
                 int64_t nTime5 = GetTimeMicros();
                 LogPrint("bench", "        - CoinSpend verified in %.2fms\n", 0.001 * (nTime5 - nTime4));
             } catch (const std::exception &) {
-                receipt.SetStatus(_("CoinSpend: Accumulator witness does not verify"), ZWSP_INVALID_WITNESS);
+                receipt.SetStatus(_("CoinSpend: Accumulator witness does not verify"), ZRPI_INVALID_WITNESS);
                 return error("%s : %s", __func__, receipt.GetStatusMessage());
             }
         }
@@ -4023,14 +4023,14 @@ bool CWallet::MintsToInputVector(std::map<CBigNum, CZerocoinMint>& mapMintsSelec
 
     if (nLockAttempts == 100) {
         LogPrintf("%s : could not get lock on cs_spendcache\n", __func__);
-        receipt.SetStatus(_("could not get lock on cs_spendcache"), ZWSP_TXMINT_GENERAL);
+        receipt.SetStatus(_("could not get lock on cs_spendcache"), ZRPI_TXMINT_GENERAL);
         return false;
     }
 
     int64_t nTimeFinished = GetTimeMicros();
     LogPrint("bench", "    - %s took %.2fms [%.3fms/spend]\n", __func__, 0.001 * (nTimeFinished - nTimeStart), 0.001 * (nTimeFinished - nTimeStart) / mapMintsSelected.size());
 
-    receipt.SetStatus(_("Spend Valid"), ZWSP_SPEND_OKAY); // Everything okay
+    receipt.SetStatus(_("Spend Valid"), ZRPI_SPEND_OKAY); // Everything okay
 
     return true;
 }
@@ -4039,11 +4039,11 @@ bool CWallet::MintsToInputVectorPublicSpend(std::map<CBigNum, CZerocoinMint>& ma
                                     CZerocoinSpendReceipt& receipt, libzerocoin::SpendType spendType, CBlockIndex* pindexCheckpoint)
 {
     // Default error status if not changed below
-    receipt.SetStatus(_("Transaction Mint Started"), ZWSP_TXMINT_GENERAL);
+    receipt.SetStatus(_("Transaction Mint Started"), ZRPI_TXMINT_GENERAL);
 
     int nLockAttempts = 0;
     while (nLockAttempts < 100) {
-        TRY_LOCK(zwspTracker->cs_spendcache, lockSpendcache);
+        TRY_LOCK(zrpiTracker->cs_spendcache, lockSpendcache);
         if (!lockSpendcache) {
             fGlobalUnlockSpendCache = true;
             MilliSleep(100);
@@ -4059,11 +4059,11 @@ bool CWallet::MintsToInputVectorPublicSpend(std::map<CBigNum, CZerocoinMint>& ma
             CTransaction txMint;
             uint256 hashBlock;
             if (!GetTransaction(mint.GetTxHash(), txMint, hashBlock)) {
-                receipt.SetStatus(strprintf(_("Unable to find transaction containing mint %s"), mint.GetTxHash().GetHex()), ZWSP_TXMINT_GENERAL);
+                receipt.SetStatus(strprintf(_("Unable to find transaction containing mint %s"), mint.GetTxHash().GetHex()), ZRPI_TXMINT_GENERAL);
                 return false;
             } else if (mapBlockIndex.count(hashBlock) < 1) {
                 // check that this mint made it into the blockchain
-                receipt.SetStatus(_("Mint did not make it into blockchain"), ZWSP_TXMINT_GENERAL);
+                receipt.SetStatus(_("Mint did not make it into blockchain"), ZRPI_TXMINT_GENERAL);
                 return false;
             }
 
@@ -4084,14 +4084,14 @@ bool CWallet::MintsToInputVectorPublicSpend(std::map<CBigNum, CZerocoinMint>& ma
             }
 
             if (outputIndex == -1) {
-                receipt.SetStatus(_("Pubcoin not found in mint tx"), ZWSP_TXMINT_GENERAL);
+                receipt.SetStatus(_("Pubcoin not found in mint tx"), ZRPI_TXMINT_GENERAL);
                 return false;
             }
 
             mint.SetOutputIndex(outputIndex);
             CTxIn in;
-            if(!ZWSPModule::createInput(in, mint, hashTxOut)){
-                receipt.SetStatus(_("Cannot create public spend input"), ZWSP_TXMINT_GENERAL);
+            if(!ZRPIModule::createInput(in, mint, hashTxOut)){
+                receipt.SetStatus(_("Cannot create public spend input"), ZRPI_TXMINT_GENERAL);
                 return false;
             }
             vin.emplace_back(in);
@@ -4102,11 +4102,11 @@ bool CWallet::MintsToInputVectorPublicSpend(std::map<CBigNum, CZerocoinMint>& ma
 
     if (nLockAttempts == 100) {
         LogPrintf("%s : could not get lock on cs_spendcache\n", __func__);
-        receipt.SetStatus(_("could not get lock on cs_spendcache"), ZWSP_TXMINT_GENERAL);
+        receipt.SetStatus(_("could not get lock on cs_spendcache"), ZRPI_TXMINT_GENERAL);
         return false;
     }
 
-    receipt.SetStatus(_("Spend Valid"), ZWSP_SPEND_OKAY); // Everything okay
+    receipt.SetStatus(_("Spend Valid"), ZRPI_SPEND_OKAY); // Everything okay
 
     return true;
 }
@@ -4124,19 +4124,19 @@ bool CWallet::CreateZerocoinSpendTransaction(
         bool isPublicSpend)
 {
     // Check available funds
-    int nStatus = ZWSP_TRX_FUNDS_PROBLEMS;
+    int nStatus = ZRPI_TRX_FUNDS_PROBLEMS;
     if (nValue > GetZerocoinBalance(true)) {
         receipt.SetStatus(_("You don't have enough Zerocoins in your wallet"), nStatus);
         return false;
     }
 
     if (nValue < 1) {
-        receipt.SetStatus(_("Value is below the smallest available denomination (= 1) of zWSP"), nStatus);
+        receipt.SetStatus(_("Value is below the smallest available denomination (= 1) of zRPI"), nStatus);
         return false;
     }
 
     // Create transaction
-    nStatus = ZWSP_TRX_CREATE;
+    nStatus = ZRPI_TRX_CREATE;
 
     // If not already given pre-selected mints, then select mints from the wallet
     CWalletDB walletdb(pwalletMain->strWalletFile);
@@ -4144,11 +4144,11 @@ bool CWallet::CreateZerocoinSpendTransaction(
     CAmount nValueSelected = 0;
     int nCoinsReturned = 0; // Number of coins returned in change from function below (for debug)
     int nNeededSpends = 0;  // Number of spends which would be needed if selection failed
-    const int nMaxSpends = Params().Zerocoin_MaxPublicSpendsPerTransaction(); // Maximum possible spends for one zWSP public spend transaction
+    const int nMaxSpends = Params().Zerocoin_MaxPublicSpendsPerTransaction(); // Maximum possible spends for one zRPI public spend transaction
     vector<CMintMeta> vMintsToFetch;
     if (vSelectedMints.empty()) {
-        //  All of the zWSP used in the public coin spend are mature by default (everything is public now.. no need to wait for any accumulation)
-        setMints = zwspTracker->ListMints(true, false, true, true); // need to find mints to spend
+        //  All of the zRPI used in the public coin spend are mature by default (everything is public now.. no need to wait for any accumulation)
+        setMints = zrpiTracker->ListMints(true, false, true, true); // need to find mints to spend
         if(setMints.empty()) {
             receipt.SetStatus(_("Failed to find Zerocoins in wallet.dat"), nStatus);
             return false;
@@ -4161,7 +4161,7 @@ bool CWallet::CreateZerocoinSpendTransaction(
         if(!fWholeNumber)
             nValueToSelect = static_cast<CAmount>(ceil(dValue) * COIN);
 
-        // Select the zWSP mints to use in this spend
+        // Select the zRPI mints to use in this spend
         std::map<libzerocoin::CoinDenomination, CAmount> DenomMap = GetMyZerocoinDistribution();
         list<CMintMeta> listMints(setMints.begin(), setMints.end());
         vMintsToFetch = SelectMintsFromList(nValueToSelect, nValueSelected, nMaxSpends, fMinimizeChange,
@@ -4194,12 +4194,12 @@ bool CWallet::CreateZerocoinSpendTransaction(
         if (IsSerialInBlockchain(mint.GetSerialNumber(), nHeightSpend)) {
             receipt.SetStatus(_("Trying to spend an already spent serial #, try again."), nStatus);
             uint256 hashSerial = GetSerialHash(mint.GetSerialNumber());
-            if (!zwspTracker->HasSerialHash(hashSerial))
+            if (!zrpiTracker->HasSerialHash(hashSerial))
                 return error("%s: tracker does not have serialhash %s", __func__, hashSerial.GetHex());
 
-            CMintMeta meta = zwspTracker->Get(hashSerial);
+            CMintMeta meta = zrpiTracker->Get(hashSerial);
             meta.isUsed = true;
-            zwspTracker->UpdateState(meta);
+            zrpiTracker->UpdateState(meta);
 
             return false;
         }
@@ -4245,7 +4245,7 @@ bool CWallet::CreateZerocoinSpendTransaction(
 
 
     // Create change if needed
-    nStatus = ZWSP_TRX_CHANGE;
+    nStatus = ZRPI_TRX_CHANGE;
 
     CMutableTransaction txNew;
     wtxNew.BindWallet(this);
@@ -4301,7 +4301,7 @@ bool CWallet::CreateZerocoinSpendTransaction(
                 }
             }
 
-            //add output to wispr address to the transaction (the actual primary spend taking place)
+            //add output to rpicoin address to the transaction (the actual primary spend taking place)
             CTxOut txOutZerocoinSpend(nValue, scriptZerocoinSpend);
             txNew.vout.push_back(txOutZerocoinSpend);
 
@@ -4329,7 +4329,7 @@ bool CWallet::CreateZerocoinSpendTransaction(
             // Limit size
             unsigned int nBytes = ::GetSerializeSize(txNew, SER_NETWORK, PROTOCOL_VERSION);
             if (nBytes >= MAX_ZEROCOIN_TX_SIZE) {
-                receipt.SetStatus(_("In rare cases, a spend with 7 coins exceeds our maximum allowable transaction size, please retry spend using 6 or less coins"), ZWSP_TX_TOO_LARGE);
+                receipt.SetStatus(_("In rare cases, a spend with 7 coins exceeds our maximum allowable transaction size, please retry spend using 6 or less coins"), ZRPI_TX_TOO_LARGE);
                 return false;
             }
 
@@ -4351,7 +4351,7 @@ bool CWallet::CreateZerocoinSpendTransaction(
         }
     }
 
-    receipt.SetStatus(_("Transaction Created"), ZWSP_SPEND_OKAY); // Everything okay
+    receipt.SetStatus(_("Transaction Created"), ZRPI_SPEND_OKAY); // Everything okay
 
     return true;
 }
@@ -4362,7 +4362,7 @@ string CWallet::ResetMintZerocoin()
     long deletions = 0;
     CWalletDB walletdb(pwalletMain->strWalletFile);
 
-    set<CMintMeta> setMints = zwspTracker->ListMints(false, false, true);
+    set<CMintMeta> setMints = zrpiTracker->ListMints(false, false, true);
     vector<CMintMeta> vMintsToFind(setMints.begin(), setMints.end());
     vector<CMintMeta> vMintsMissing;
     vector<CMintMeta> vMintsToUpdate;
@@ -4373,17 +4373,17 @@ string CWallet::ResetMintZerocoin()
     // Update the meta data of mints that were marked for updating
     for (CMintMeta meta : vMintsToUpdate) {
         updates++;
-        zwspTracker->UpdateState(meta);
+        zrpiTracker->UpdateState(meta);
     }
 
     // Delete any mints that were unable to be located on the blockchain
     for (CMintMeta mint : vMintsMissing) {
         deletions++;
-        if (!zwspTracker->Archive(mint))
+        if (!zrpiTracker->Archive(mint))
             LogPrintf("%s: failed to archive mint\n", __func__);
     }
 
-    NotifyzWSPReset();
+    NotifyzRPIReset();
 
     string strResult = _("ResetMintZerocoin finished: ") + to_string(updates) + _(" mints updated, ") + to_string(deletions) + _(" mints deleted\n");
     return strResult;
@@ -4394,7 +4394,7 @@ string CWallet::ResetSpentZerocoin()
     long removed = 0;
     CWalletDB walletdb(pwalletMain->strWalletFile);
 
-    set<CMintMeta> setMints = zwspTracker->ListMints(false, false, true);
+    set<CMintMeta> setMints = zrpiTracker->ListMints(false, false, true);
     list<CZerocoinSpend> listSpends = walletdb.ListSpentCoins();
     list<CZerocoinSpend> listUnconfirmedSpends;
 
@@ -4416,14 +4416,14 @@ string CWallet::ResetSpentZerocoin()
             if (meta.hashSerial == GetSerialHash(spend.GetSerial())) {
                 removed++;
                 meta.isUsed = false;
-                zwspTracker->UpdateState(meta);
+                zrpiTracker->UpdateState(meta);
                 walletdb.EraseZerocoinSpendSerialEntry(spend.GetSerial());
                 continue;
             }
         }
     }
 
-    NotifyzWSPReset();
+    NotifyzRPIReset();
 
     string strResult = _("ResetSpentZerocoin finished: ") + to_string(removed) + _(" unconfirmed transactions removed\n");
     return strResult;
@@ -4466,10 +4466,10 @@ void CWallet::ReconsiderZerocoins(std::list<CZerocoinMint>& listMintsRestored, s
         mint.SetHeight(nHeight);
         mint.SetUsed(IsSerialInBlockchain(mint.GetSerialNumber(), nHeight));
 
-        if (!zwspTracker->UnArchive(hashPubcoin, false)) {
+        if (!zrpiTracker->UnArchive(hashPubcoin, false)) {
             LogPrintf("%s : failed to unarchive mint %s\n", __func__, mint.GetValue().GetHex());
         } else {
-            zwspTracker->UpdateZerocoinMint(mint);
+            zrpiTracker->UpdateZerocoinMint(mint);
         }
         listMintsRestored.emplace_back(mint);
     }
@@ -4485,39 +4485,39 @@ void CWallet::ReconsiderZerocoins(std::list<CZerocoinMint>& listMintsRestored, s
         uint256 txidSpend;
         dMint.SetUsed(IsSerialInBlockchain(dMint.GetSerialHash(), nHeight, txidSpend));
 
-        if (!zwspTracker->UnArchive(dMint.GetPubcoinHash(), true)) {
+        if (!zrpiTracker->UnArchive(dMint.GetPubcoinHash(), true)) {
             LogPrintf("%s : failed to unarchive deterministic mint %s\n", __func__, dMint.GetPubcoinHash().GetHex());
         } else {
-            zwspTracker->Add(dMint, true);
+            zrpiTracker->Add(dMint, true);
         }
         listDMintsRestored.emplace_back(dMint);
     }
 }
 
-string CWallet::GetUniqueWalletBackupName(bool fzwspAuto) const
+string CWallet::GetUniqueWalletBackupName(bool fzrpiAuto) const
 {
     stringstream ssDateTime;
     std::string strWalletBackupName = strprintf("%s", DateTimeStrFormat(".%Y-%m-%d-%H-%M", GetTime()));
     ssDateTime << strWalletBackupName;
 
-    return strprintf("wallet%s.dat%s", fzwspAuto ? "-autozwspbackup" : "", DateTimeStrFormat(".%Y-%m-%d-%H-%M", GetTime()));
+    return strprintf("wallet%s.dat%s", fzrpiAuto ? "-autozrpibackup" : "", DateTimeStrFormat(".%Y-%m-%d-%H-%M", GetTime()));
 }
 
-void CWallet::ZWspBackupWallet()
+void CWallet::ZRpiBackupWallet()
 {
     filesystem::path backupDir = GetDataDir() / "backups";
     filesystem::path backupPath;
     string strNewBackupName;
 
     for (int i = 0; i < 10; i++) {
-        strNewBackupName = strprintf("wallet-autozwspbackup-%d.dat", i);
+        strNewBackupName = strprintf("wallet-autozrpibackup-%d.dat", i);
         backupPath = backupDir / strNewBackupName;
 
         if (filesystem::exists(backupPath)) {
             //Keep up to 10 backups
             if (i <= 8) {
                 //If the next file backup exists and is newer, then iterate
-                filesystem::path nextBackupPath = backupDir / strprintf("wallet-autozwspbackup-%d.dat", i + 1);
+                filesystem::path nextBackupPath = backupDir / strprintf("wallet-autozrpibackup-%d.dat", i + 1);
                 if (filesystem::exists(nextBackupPath)) {
                     time_t timeThis = filesystem::last_write_time(backupPath);
                     time_t timeNext = filesystem::last_write_time(nextBackupPath);
@@ -4532,7 +4532,7 @@ void CWallet::ZWspBackupWallet()
                 continue;
             }
             //reset to 0 because name with 9 already used
-            strNewBackupName = strprintf("wallet-autozwspbackup-%d.dat", 0);
+            strNewBackupName = strprintf("wallet-autozrpibackup-%d.dat", 0);
             backupPath = backupDir / strNewBackupName;
             break;
         }
@@ -4542,8 +4542,8 @@ void CWallet::ZWspBackupWallet()
 
     BackupWallet(*this, backupPath.string());
 
-    if(!GetArg("-zwspbackuppath", "").empty()) {
-        filesystem::path customPath(GetArg("-zwspbackuppath", ""));
+    if(!GetArg("-zrpibackuppath", "").empty()) {
+        filesystem::path customPath(GetArg("-zrpibackuppath", ""));
         filesystem::create_directories(customPath);
 
         if(!customPath.has_extension()) {
@@ -4618,13 +4618,13 @@ string CWallet::MintZerocoin(CAmount nValue, CWalletTx& wtxNew, vector<CDetermin
         CWalletDB walletdb(pwalletMain->strWalletFile);
         for (CDeterministicMint dMint : vDMints) {
             dMint.SetTxHash(wtxNew.GetHash());
-            zwspTracker->Add(dMint, true);
+            zrpiTracker->Add(dMint, true);
         }
     }
 
     //Create a backup of the wallet
     if (fBackupMints)
-        ZWspBackupWallet();
+        ZRpiBackupWallet();
 
     return "";
 }
@@ -4632,10 +4632,10 @@ string CWallet::MintZerocoin(CAmount nValue, CWalletTx& wtxNew, vector<CDetermin
 bool CWallet::SpendZerocoin(CAmount nAmount, CWalletTx& wtxNew, CZerocoinSpendReceipt& receipt, vector<CZerocoinMint>& vMintsSelected, bool fMintChange, bool fMinimizeChange, CBitcoinAddress* addressTo, bool isPublicSpend)
 {
     // Default: assume something goes wrong. Depending on the problem this gets more specific below
-    int nStatus = ZWSP_SPEND_ERROR;
+    int nStatus = ZRPI_SPEND_ERROR;
 
     if (IsLocked()) {
-        receipt.SetStatus("Error: Wallet locked, unable to create transaction!", ZWSP_WALLET_LOCKED);
+        receipt.SetStatus("Error: Wallet locked, unable to create transaction!", ZRPI_WALLET_LOCKED);
         return false;
     }
 
@@ -4646,24 +4646,24 @@ bool CWallet::SpendZerocoin(CAmount nAmount, CWalletTx& wtxNew, CZerocoinSpendRe
     }
 
     if (fMintChange && fBackupMints)
-        ZWspBackupWallet();
+        ZRpiBackupWallet();
 
     CWalletDB walletdb(pwalletMain->strWalletFile);
     if (!CommitTransaction(wtxNew, reserveKey)) {
         LogPrintf("%s: failed to commit\n", __func__);
-        nStatus = ZWSP_COMMIT_FAILED;
+        nStatus = ZRPI_COMMIT_FAILED;
 
         //reset all mints
         for (CZerocoinMint mint : vMintsSelected) {
             uint256 hashPubcoin = GetPubCoinHash(mint.GetValue());
-            zwspTracker->SetPubcoinNotUsed(hashPubcoin);
+            zrpiTracker->SetPubcoinNotUsed(hashPubcoin);
             pwalletMain->NotifyZerocoinChanged(pwalletMain, mint.GetValue().GetHex(), "New", CT_UPDATED);
         }
 
         //erase spends
         for (CZerocoinSpend spend : receipt.GetSpends()) {
             if (!walletdb.EraseZerocoinSpendSerialEntry(spend.GetSerial())) {
-                receipt.SetStatus("Error: It cannot delete coin serial number in wallet", ZWSP_ERASE_SPENDS_FAILED);
+                receipt.SetStatus("Error: It cannot delete coin serial number in wallet", ZRPI_ERASE_SPENDS_FAILED);
             }
 
             //Remove from public zerocoinDB
@@ -4673,7 +4673,7 @@ bool CWallet::SpendZerocoin(CAmount nAmount, CWalletTx& wtxNew, CZerocoinSpendRe
         // erase new mints
         for (auto& dMint : vNewMints) {
             if (!walletdb.EraseDeterministicMint(dMint.GetPubcoinHash())) {
-                receipt.SetStatus("Error: Unable to cannot delete zerocoin mint in wallet", ZWSP_ERASE_NEW_MINTS_FAILED);
+                receipt.SetStatus("Error: Unable to cannot delete zerocoin mint in wallet", ZRPI_ERASE_NEW_MINTS_FAILED);
             }
         }
 
@@ -4685,9 +4685,9 @@ bool CWallet::SpendZerocoin(CAmount nAmount, CWalletTx& wtxNew, CZerocoinSpendRe
     uint256 txidSpend = wtxNew.GetHash();
     for (CZerocoinMint mint : vMintsSelected) {
         uint256 hashPubcoin = GetPubCoinHash(mint.GetValue());
-        zwspTracker->SetPubcoinUsed(hashPubcoin, txidSpend);
+        zrpiTracker->SetPubcoinUsed(hashPubcoin, txidSpend);
 
-        CMintMeta metaCheck = zwspTracker->GetMetaFromPubcoin(hashPubcoin);
+        CMintMeta metaCheck = zrpiTracker->GetMetaFromPubcoin(hashPubcoin);
         if (!metaCheck.isUsed) {
             receipt.SetStatus("Error, the mint did not get marked as used", nStatus);
             return false;
@@ -4697,10 +4697,10 @@ bool CWallet::SpendZerocoin(CAmount nAmount, CWalletTx& wtxNew, CZerocoinSpendRe
     // write new Mints to db
     for (auto& dMint : vNewMints) {
         dMint.SetTxHash(txidSpend);
-        zwspTracker->Add(dMint, true);
+        zrpiTracker->Add(dMint, true);
     }
 
-    receipt.SetStatus("Spend Successful", ZWSP_SPEND_OKAY);  // When we reach this point spending zWSP was successful
+    receipt.SetStatus("Spend Successful", ZRPI_SPEND_OKAY);  // When we reach this point spending zRPI was successful
 
     return true;
 }
@@ -4708,18 +4708,18 @@ bool CWallet::SpendZerocoin(CAmount nAmount, CWalletTx& wtxNew, CZerocoinSpendRe
 bool CWallet::GetMintFromStakeHash(const uint256& hashStake, CZerocoinMint& mint)
 {
     CMintMeta meta;
-    if (!zwspTracker->GetMetaFromStakeHash(hashStake, meta))
+    if (!zrpiTracker->GetMetaFromStakeHash(hashStake, meta))
         return error("%s: failed to find meta associated with hashStake", __func__);
     return GetMint(meta.hashSerial, mint);
 }
 
 bool CWallet::GetMint(const uint256& hashSerial, CZerocoinMint& mint)
 {
-    if (!zwspTracker->HasSerialHash(hashSerial))
+    if (!zrpiTracker->HasSerialHash(hashSerial))
         return error("%s: serialhash %s is not in tracker", __func__, hashSerial.GetHex());
 
     CWalletDB walletdb(strWalletFile);
-    CMintMeta meta = zwspTracker->Get(hashSerial);
+    CMintMeta meta = zrpiTracker->Get(hashSerial);
     if (meta.isDeterministic) {
         CDeterministicMint dMint;
         if (!walletdb.ReadDeterministicMint(meta.hashPubcoin, dMint))
@@ -4738,7 +4738,7 @@ bool CWallet::GetMint(const uint256& hashSerial, CZerocoinMint& mint)
 
 bool CWallet::IsMyMint(const CBigNum& bnValue) const
 {
-    if (zwspTracker->HasPubcoin(bnValue))
+    if (zrpiTracker->HasPubcoin(bnValue))
         return true;
 
     return zwalletMain->IsInMintPool(bnValue);
@@ -4748,11 +4748,11 @@ bool CWallet::UpdateMint(const CBigNum& bnValue, const int& nHeight, const uint2
 {
     uint256 hashValue = GetPubCoinHash(bnValue);
     CZerocoinMint mint;
-    if (zwspTracker->HasPubcoinHash(hashValue)) {
-        CMintMeta meta = zwspTracker->GetMetaFromPubcoin(hashValue);
+    if (zrpiTracker->HasPubcoinHash(hashValue)) {
+        CMintMeta meta = zrpiTracker->GetMetaFromPubcoin(hashValue);
         meta.nHeight = nHeight;
         meta.txid = txid;
-        return zwspTracker->UpdateState(meta);
+        return zrpiTracker->UpdateState(meta);
     } else {
         //Check if this mint is one that is in our mintpool (a potential future mint from our deterministic generation)
         if (zwalletMain->IsInMintPool(bnValue)) {
@@ -4768,18 +4768,18 @@ bool CWallet::UpdateMint(const CBigNum& bnValue, const int& nHeight, const uint2
 bool CWallet::SetMintUnspent(const CBigNum& bnSerial)
 {
     uint256 hashSerial = GetSerialHash(bnSerial);
-    if (!zwspTracker->HasSerialHash(hashSerial))
+    if (!zrpiTracker->HasSerialHash(hashSerial))
         return error("%s: did not find mint", __func__);
 
-    CMintMeta meta = zwspTracker->Get(hashSerial);
-    zwspTracker->SetPubcoinNotUsed(meta.hashPubcoin);
+    CMintMeta meta = zrpiTracker->Get(hashSerial);
+    zrpiTracker->SetPubcoinNotUsed(meta.hashPubcoin);
     return true;
 }
 
 bool CWallet::DatabaseMint(CDeterministicMint& dMint)
 {
     CWalletDB walletdb(strWalletFile);
-    zwspTracker->Add(dMint, true);
+    zrpiTracker->Add(dMint, true);
     return true;
 }
 
@@ -4802,7 +4802,7 @@ void ThreadPrecomputeSpends()
 void CWallet::PrecomputeSpends()
 {
     LogPrintf("Precomputer started\n");
-    RenameThread("wispr-precomputer");
+    RenameThread("rpicoin-precomputer");
 
     CWalletDB walletdb("precomputes.dat", "cr+");
 
@@ -4842,7 +4842,7 @@ void CWallet::PrecomputeSpends()
             nLastCacheWriteDB = nLastCacheCleanUpTime;
         }
 
-        // Get the list of zWSP inputs
+        // Get the list of zRPI inputs
         std::list <std::unique_ptr<CStakeInput>> listInputs;
         if (!SelectStakeCoins(listInputs, 0, true)) {
             MilliSleep(5000);
@@ -4878,7 +4878,7 @@ void CWallet::PrecomputeSpends()
             CoinWitnessCacheData tempDataHolder;
 
             {
-                TRY_LOCK(zwspTracker->cs_spendcache, fLocked);
+                TRY_LOCK(zrpiTracker->cs_spendcache, fLocked);
                 if (!fLocked)
                     continue;
 
@@ -4894,7 +4894,7 @@ void CWallet::PrecomputeSpends()
 
                 uint256 serialHash = stakeInput->GetSerialHash();
                 setInputHashes.insert(serialHash);
-                CoinWitnessData* witnessData = zwspTracker->GetSpendCache(serialHash);
+                CoinWitnessData* witnessData = zrpiTracker->GetSpendCache(serialHash);
 
                 // Initialize nHeightStop so it can be set below
                 int nHeightStop = 0;
