@@ -24,7 +24,7 @@ class TxnMallTest(BitcoinTestFramework):
 
     def run_test(self):
         # All nodes should start with 6,250 PIV:
-        starting_balance = 6250
+        starting_balance = 6250000
         for i in range(4):
             assert_equal(self.nodes[i].getbalance(), starting_balance)
             self.nodes[i].getnewaddress("")  # bug workaround, coins generated assigned to first getnewaddress!

@@ -159,14 +159,15 @@ UniValue generate(const UniValue& params, bool fHelp)
         if (!pblocktemplate.get())
             throw JSONRPCError(RPC_INTERNAL_ERROR, "Couldn't create new block");
         CBlock *pblock = &pblocktemplate->block;
-
+        uint256 hash = pblock->GetHash();
         if(!fPoS){
             {
                 LOCK(cs_main);
                 IncrementExtraNonce(pblock, chainActive.Tip(), nExtraNonce);
             }
+            hash = pblock->GetPoWHash();
         }
-        while (!CheckProofOfWork(pblock->GetPoWHash(), pblock->nBits)) {
+        while (!CheckProofOfWork(hash, pblock->nBits)) {
             // Yes, there is a chance every nonce could fail to satisfy the -regtest
             // target -- 1 in 2^(2^32). That ain't gonna happen.
             ++pblock->nNonce;

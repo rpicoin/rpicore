@@ -1992,13 +1992,9 @@ double ConvertBitsToDouble(unsigned int nBits)
 
 int64_t GetBlockValue(int nHeight)
 {
-    if (nHeight < 450 && nHeight > 0)
+
+    if (nHeight < Params().LAST_POW_BLOCK() && nHeight > 0){
         return 8999676 * COIN;
-
-    if (Params().NetworkID() == CBaseChainParams::REGTEST) {
-        if (nHeight == 0)
-            return 250 * COIN;
-
     }
 
     int64_t nSubsidy = 0;
@@ -3286,25 +3282,23 @@ bool static FlushStateToDisk(CValidationState& state, FlushStateMode mode)
             // First make sure all block and undo data is flushed to disk.
             FlushBlockFile();
             // Then update all block file information (which may refer to block and undo files).
-            bool fileschanged = false;
-            for (set<int>::iterator it = setDirtyFileInfo.begin(); it != setDirtyFileInfo.end();) {
-                if (!pblocktree->WriteBlockFileInfo(*it, vinfoBlockFile[*it])) {
-                    return state.Abort("Failed to write to block index");
+            {
+                std::vector<std::pair<int, const CBlockFileInfo*> > vFiles;
+                vFiles.reserve(setDirtyFileInfo.size());
+                for (set<int>::iterator it = setDirtyFileInfo.begin(); it != setDirtyFileInfo.end(); ) {
+                    vFiles.push_back(make_pair(*it, &vinfoBlockFile[*it]));
+                    setDirtyFileInfo.erase(it++);
                 }
-                fileschanged = true;
-                setDirtyFileInfo.erase(it++);
-            }
-            if (fileschanged && !pblocktree->WriteLastBlockFile(nLastBlockFile)) {
-                return state.Abort("Failed to write to block index");
-            }
-            for (set<CBlockIndex*>::iterator it = setDirtyBlockIndex.begin(); it != setDirtyBlockIndex.end();) {
-                if (!pblocktree->WriteBlockIndex(CDiskBlockIndex(*it))) {
-                    return state.Abort("Failed to write to block index");
+                std::vector<const CBlockIndex*> vBlocks;
+                vBlocks.reserve(setDirtyBlockIndex.size());
+                for (set<CBlockIndex*>::iterator it = setDirtyBlockIndex.begin(); it != setDirtyBlockIndex.end(); ) {
+                    vBlocks.push_back(*it);
+                    setDirtyBlockIndex.erase(it++);
                 }
-                setDirtyBlockIndex.erase(it++);
+                if (!pblocktree->WriteBatchSync(vFiles, nLastBlockFile, vBlocks)) {
+                    return state.Abort("Files to write to block index database");
+                }
             }
-
-            pblocktree->Sync();
             // Finally flush the chainstate (which may refer to block index entries).
             if (!pcoinsTip->Flush())
                 return state.Abort("Failed to write to coin database");
@@ -4071,7 +4065,7 @@ bool CheckBlockHeader(const CBlockHeader& block, CValidationState& state, bool f
             return state.DoS(50, error("CheckBlockHeader() : block version must be above 7 after ZerocoinStartHeight"),
             REJECT_INVALID, "block-version");
     } else {
-        if (block.nVersion >= Params().Zerocoin_HeaderVersion())
+        if (block.nVersion >= Params().Zerocoin_HeaderVersion() && Params().NetworkID() != CBaseChainParams::REGTEST)
             return state.DoS(50, error("CheckBlockHeader() : block version must be below 8 before ZerocoinStartHeight"),
                              REJECT_INVALID, "block-version");
     }
@@ -4262,7 +4256,7 @@ bool CheckWork(const CBlock block, CBlockIndex* const pindexPrev)
     }else{
         nBitsRequired  = GetNextTargetRequired(pindexPrev, block.IsProofOfStake());
     }
-    if (block.IsProofOfWork()) {
+    if ((Params().NetworkID() != CBaseChainParams::REGTEST) && block.IsProofOfWork()) {
         if (hashProof > hashTarget){
             return error("%s : incorrect proof of work - at %d", __func__, pindexPrev->nHeight + 1);
         }
@@ -4288,9 +4282,17 @@ bool ContextualCheckBlockHeader(const CBlockHeader& block, CValidationState& sta
 
     int nHeight = pindexPrev->nHeight + 1;
 
-    if ((Params().NetworkIDString() == "regtest") && block.nBits != GetNextWorkRequired(pindexPrev, &block))
-        return state.DoS(100, error("%s : incorrect proof of work", __func__),
-                REJECT_INVALID, "bad-diffbits");
+//    unsigned int nBitsRequired;
+//    bool fPos = nHeight >= Params().LAST_POW_BLOCK();
+//    if(block.nVersion > 7){
+//        nBitsRequired  = GetNextWorkRequired(pindexPrev, &block);
+//    }else{
+//        nBitsRequired  = GetNextTargetRequired(pindexPrev, fPos);
+//    }
+
+//    if ((Params().NetworkIDString() == "regtest") && block.nBits != nBitsRequired)
+//        return state.DoS(100, error("%s : incorrect proof of work", __func__),
+//                REJECT_INVALID, "bad-diffbits");
 
 
     //If this is a reorg, check that it is not too deep
@@ -4477,7 +4479,7 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
         }
     }
 
-    if(block.GetHash() != Params().HashGenesisBlock() && pindexPrev->nHeight + 1 < Params().NEW_PROTOCOLS_STARTHEIGHT()) {
+    if(Params().NetworkID() != CBaseChainParams::REGTEST && block.GetHash() != Params().HashGenesisBlock() && pindexPrev->nHeight + 1 < Params().NEW_PROTOCOLS_STARTHEIGHT()) {
         if (block.IsProofOfStake() && !CheckCoinStakeTimestamp(block.GetBlockTime(), (int64_t) block.vtx[1].nTime)) {
             return state.DoS(50, error("AcceptBlock() : coinstake timestamp violation nTimeBlock=%d nTimeTx=%u\n",
                                        block.GetBlockTime(), block.vtx[1].nTime));

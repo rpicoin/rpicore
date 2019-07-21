@@ -33,7 +33,7 @@ class ZapWalletTXesTest (BitcoinTestFramework):
         self.nodes[1].generate(101)
         self.sync_all()
 
-        assert_equal(self.nodes[0].getbalance(), 250)
+        assert_equal(self.nodes[0].getbalance(), 125000)
         # This transaction will be confirmed
         txid1 = self.nodes[0].sendtoaddress(self.nodes[1].getnewaddress(), 10)
 
