@@ -51,7 +51,7 @@ class WalletTest(BitcoinTestFramework):
         self.sync_all([self.nodes[0:3]])
 
         assert_equal(self.nodes[0].getbalance(), 8999676)
-        assert_equal(self.nodes[1].getbalance(), 11375000)
+        assert_equal(self.nodes[1].getbalance(), 818970516)
         assert_equal(self.nodes[2].getbalance(), 0)
 
         # Check that only first and second nodes have UTXOs
@@ -87,7 +87,7 @@ class WalletTest(BitcoinTestFramework):
 
         # node0 should end up with 100 btc in block rewards plus fees, but
         # minus the 21 plus fees sent to node2
-        assert_equal(self.nodes[0].getbalance(), 250000-21)
+        assert_equal(self.nodes[0].getbalance(), 17999352-21)
         assert_equal(self.nodes[2].getbalance(), 21)
 
         # Node0 should have two unspent outputs.
@@ -115,8 +115,8 @@ class WalletTest(BitcoinTestFramework):
         self.sync_all([self.nodes[0:3]])
 
         assert_equal(self.nodes[0].getbalance(), 0)
-        assert_equal(self.nodes[2].getbalance(), 250000)
-        assert_equal(self.nodes[2].getbalance("from1"), 250000-21)
+        assert_equal(self.nodes[2].getbalance(), 17999352)
+        assert_equal(self.nodes[2].getbalance("from1"), 17999352-21)
 
         # Send 10 BTC normal
         address = self.nodes[0].getnewaddress("test")
