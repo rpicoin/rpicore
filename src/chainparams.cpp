@@ -54,11 +54,22 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
         boost::assign::map_list_of
-                (0, uint256("0x0000b712bda549469a4533c0827bd8263299cd2d13030b15e72d93a3e094e914")); // Block 0
+                (0, uint256("0x0000b712bda549469a4533c0827bd8263299cd2d13030b15e72d93a3e094e914"))
+                (50000, uint256("e13891ed03b98324162082f47ae4dd4250a075ae9a96f982961e284aa83259b5")) // Block 50.000
+                (100000, uint256("c26704a2af85d7da0c4e15a7a6e7648f87e4dd15512fb4586d04fc5ec0b01211")) // Block 100.000
+                (150000, uint256("69c550f21163c0f0c4bbb07184c7d178f0d372048a8bd1e52473517c33b87b3f")) // Block 150.000
+                (200000, uint256("ffb7f3996cd225fa8e106117ec7e428a2e8db4f3e76e8c03b24c36ade5ecddd2")) // Block 200.000
+                (250000, uint256("149cd7201a2978fea3ee0f098ab8f989b1b9436f2cc8cebf45986ff9aaad3ca1")) // Block 250.000
+                (300000, uint256("a4379a7772bda6a59d7a03b59da3168585d97e9ece9906c327cbc07307169fff")) // Block 300.000
+                (350000, uint256("fd0c691aad1762436b65939c0cc60df87d6b95397047c55f718c1831d75aa1bb")) // Block 350.000
+                (400000, uint256("970dfe35eaeb3a3c0339fcb28800b669341e8ca61f2da3aac11a9253896bd669")) // Block 400.000
+                (450000, uint256("05db87a93a517a551a68417a9ac21854e5a899ea8895d890639486a8a23e1a35")) // Block 450.000
+                (500000, uint256("8263684c3f6f957babcff5f9d793b6b1e9129b8f10a67ca769e6ce5fd3c2dbd4")) // Block 500.000
+                (550000, uint256("0d8789b2fa1e90ae584635b1d4945d80394678096291c9b16e387ab4a16c9abf")); // Block 550.000
 static const Checkpoints::CCheckpointData data = {
         &mapCheckpoints,
-        1540087953, // * UNIX timestamp of last checkpoint block (Done)
-        815060,    // * total number of transactions between genesis and last checkpoint TODO: keep using correct number
+        1562581008, // * UNIX timestamp of last checkpoint block (Done)
+        1131629,    // * total number of transactions between genesis and last checkpoint TODO: keep using correct number
         //   (the tx=... number in the SetBestChain debug.log lines)
         2000        // * estimated number of transactions per day after checkpoint
 };
