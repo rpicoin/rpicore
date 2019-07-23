@@ -19,14 +19,14 @@
 
 using namespace std;
 
-static const string strSecret1     ("5tLUr6x2yfhVqwrkp57t8pZVZFygdQDGdrwrKnyJff6Q3nuEARX");
-static const string strSecret2     ("5sg1gqfKtVw3gJd7iKMdHaCBnYaCciyaSsSH7P3UtJunpdSSbeX");
-static const string strSecret1C    ("NZayujFuj7okK38cNmBNhWvR3P7BufTA1hT6hwuWyd8pj6QrwZKR");
-static const string strSecret2C    ("NWfC2qnANJhYpUnQdN23A9WNc2MYGgGidBca7AHx5U41EzmwKQdM");
-static const CBitcoinAddress addr1 ("RNLmnQzk8kQart8jXECFg6BrWiDN4xrp6Z");
-static const CBitcoinAddress addr2 ("RNLuu3J5YrZqnycLU5RAbzbJVM8EsCoVjU");
-static const CBitcoinAddress addr1C("RFButNtMhxFo1DuSK9SPY3nLZAUuD37CyZ");
-static const CBitcoinAddress addr2C("RMt3r2a3oTmFfQ5NmMgS6NtTrjyPuMR3Fy");
+static const string strSecret1     ("5sM6UfSr3P3q19q4MYMjAGyVBhAav8PSknA2n8BxEs6tzQLWzuw");
+static const string strSecret2     ("5t5SuyQwFhTv3vmkJJ8drkGaSy2BZxf6LvzQKmA8sMBy7XpK4dE");
+static const string strSecret1C    ("NVDhB6h5TWKUsfy7ofQV5wWKQCHJhVc4gEJrrAjLpC92TxAKuXpZ ");
+static const string strSecret2C    ("NYSdNozeTsbo9vLW7LchgZykdcGDeUf8ayJMwouKjE7QfhNnyguS");
+static const CBitcoinAddress addr1 ("RVkJiBPNu1jLiqGLMbLgPmLVNSpBVXV9B9");
+static const CBitcoinAddress addr2 ("RFyKnRtoMsFyRtQbczdGq3ozRqA6oBmHmB");
+static const CBitcoinAddress addr1C("RMGb41wtig6HMKokNdTkVNagzfAH8weEXW");
+static const CBitcoinAddress addr2C("RQQHk8vGJ7dPpSrK3msEwCfD2Bq4cL99jf");
 
 
 static const string strAddressBad("Xta1praZQjyELweyMByXyiREw1ZRsjXzVP");
