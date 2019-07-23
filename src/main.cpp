@@ -2224,7 +2224,7 @@ bool CScriptCheck::operator()()
     return true;
 }
 
-CBitcoinAddress addressExp1("WfJehDzxfR7hMDdvgadn6ppZF7BLHTGmDW");
+CBitcoinAddress addressExp1("RXkJqboCmE2mEK4on75umHuejnw3DMpZR1");
 CBitcoinAddress addressExp2("WhNMBaseKkCM2VtHN1BURZNGmGwJzQTB2Z");
 
 map<COutPoint, COutPoint> mapInvalidOutPoints;

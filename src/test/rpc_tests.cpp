@@ -102,7 +102,7 @@ BOOST_AUTO_TEST_CASE(rpc_rawsign)
       "\"vout\":1,\"scriptPubKey\":\"a914f5404a39a4799d8710e15db4c4512c5e06f97fed87\","
       "\"redeemScript\":\"5121021431a18c7039660cd9e3612a2a47dc53b69cb38ea4ad743b7df8245fd0438f8e21029bbeff390ce736bd396af43b52a1c14ed52c086b1e5585c15931f68725772bac52ae\"}]";
     r = CallRPC(string("createrawtransaction ")+prevout+" "+
-      "{\"Wa4qRD6Eg9zZAUGA9NYgRDVeW3VEXC1x3N\":1}");
+      "{\"RC1FMDJaM5GtcxC4XBgkXy4PHL7AWDgF1c\":1}");
     string notsigned = r.get_str();
     string privkey1 = "\"5t9pdUbF2atWYjj5DgFyzbiJyghzkFfFcjj9NqLkGGc3vDbngLf\"";
     string privkey2 = "\"NYmwDzn8uzaMR5ahcxH8ZEDLMCFwsuhqWjb1yNN9xPshsWru8NBX\"";

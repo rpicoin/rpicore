@@ -76,7 +76,7 @@
   { "exec": "./rpicoin-tx",
     "args":
     ["-create",
-     "outaddr=1:Wa4qRD6Eg9zZAUGA9NYgRDVeW3VEXC1x3N:garbage"],
+     "outaddr=1:RC1FMDJaM5GtcxC4XBgkXy4PHL7AWDgF1c:garbage"],
     "return_code": 1,
     "error_txt": "error: invalid TX output address",
     "description": "Malformed outaddr argument (too many separators). Expected to fail."
@@ -87,8 +87,8 @@
      "in=5897de6bd6027a475eadd57019d4e6872c396d0716c4875a5f1a6fcfdf385c1f:0",
      "in=bf829c6bcf84579331337659d31f89dfd138f7f7785802d5501c92333145ca7c:18",
      "in=22a6f904655d53ae2ff70e701a0bbd90aa3975c0f40bfc6cc996a9049e31cdfc:1",
-     "outaddr=0.18:Wa4qRD6Eg9zZAUGA9NYgRDVeW3VEXC1x3N",
-     "outaddr=4:WkXd585snjGTk5cKzHCVyEkSHjPfrS7nTr"],
+     "outaddr=0.18:RC1FMDJaM5GtcxC4XBgkXy4PHL7AWDgF1c",
+     "outaddr=4:RVkJiBPNu1jLiqGLMbLgPmLVNSpBVXV9B9"],
     "output_cmp": "txcreate1.hex",
     "description": "Creates a new transaction with three inputs and two outputs"
   },
@@ -99,8 +99,8 @@
      "in=5897de6bd6027a475eadd57019d4e6872c396d0716c4875a5f1a6fcfdf385c1f:0",
      "in=bf829c6bcf84579331337659d31f89dfd138f7f7785802d5501c92333145ca7c:18",
      "in=22a6f904655d53ae2ff70e701a0bbd90aa3975c0f40bfc6cc996a9049e31cdfc:1",
-     "outaddr=0.18:Wa4qRD6Eg9zZAUGA9NYgRDVeW3VEXC1x3N",
-     "outaddr=4:WkXd585snjGTk5cKzHCVyEkSHjPfrS7nTr"],
+     "outaddr=0.18:RC1FMDJaM5GtcxC4XBgkXy4PHL7AWDgF1c",
+     "outaddr=4:RVkJiBPNu1jLiqGLMbLgPmLVNSpBVXV9B9"],
     "output_cmp": "txcreate1.json",
     "description": "Creates a new transaction with three inputs and two outputs (output in json)"
   },
@@ -142,7 +142,7 @@
      "set=privatekeys:[\"5tdesoG8SXoP8cEt6TkEgSxN4T46MgCa5yQAGZ6a46ctoYjY1Fm\"]",
      "set=prevtxs:[{\"txid\":\"4d49a71ec9da436f71ec4ee231d04f292a29cd316f598bb7068feccabdc59485\",\"vout\":0,\"scriptPubKey\":\"4d49a71ec9da436f71ec4ee231d04f292a29cd316f598bb7068feccabdc59485\"}]",
      "sign=ALL",
-     "outaddr=0.001:WkXd585snjGTk5cKzHCVyEkSHjPfrS7nTr"],
+     "outaddr=0.001:RVkJiBPNu1jLiqGLMbLgPmLVNSpBVXV9B9"],
     "output_cmp": "txcreatesign.hex",
     "description": "Creates a new transaction with a single input and a single output, and then signs the transaction"
   }
