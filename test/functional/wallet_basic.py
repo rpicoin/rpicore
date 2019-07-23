@@ -43,14 +43,14 @@ class WalletTest(BitcoinTestFramework):
         self.nodes[0].generate(1)
 
         walletinfo = self.nodes[0].getwalletinfo()
-        assert_equal(walletinfo['immature_balance'], 125000)
+        assert_equal(walletinfo['immature_balance'], 8999676)
         assert_equal(walletinfo['balance'], 0)
 
         self.sync_all([self.nodes[0:3]])
         self.nodes[1].generate(101)
         self.sync_all([self.nodes[0:3]])
 
-        assert_equal(self.nodes[0].getbalance(), 125000)
+        assert_equal(self.nodes[0].getbalance(), 8999676)
         assert_equal(self.nodes[1].getbalance(), 11375000)
         assert_equal(self.nodes[2].getbalance(), 0)
 
