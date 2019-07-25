@@ -102,7 +102,7 @@ void setupAddressWidget(QValidatedLineEdit* widget, QWidget* parent)
     widget->setFont(bitcoinAddressFont());
     // We don't want translators to use own addresses in translations
     // and this is the only place, where this address is supplied.
-    widget->setPlaceholderText(QObject::tr("Enter a RPICOIN address (e.g. %1)").arg("WffFAEDF5MNo4sXn9rRr1s71ZfNJK2zHWL"));
+    widget->setPlaceholderText(QObject::tr("Enter a RPICOIN address (e.g. %1)").arg("RFyKnRtoMsFyRtQbczdGq3ozRqA6oBmHmB"));
     widget->setValidator(new BitcoinAddressEntryValidator(parent));
     widget->setCheckValidator(new BitcoinAddressCheckValidator(parent));
 }

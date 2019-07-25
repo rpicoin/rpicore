@@ -133,7 +133,7 @@ public:
         /** Height or Time Based Activations **/
         consensus.nLastPOWBlock = 100;
         consensus.nNewProtocolStartHeight = 600000;
-        consensus.nNewProtocolStartTime = 1564511361; //Tuesday, July 30, 2019 18:29:21 PM
+        consensus.nNewProtocolStartTime = 1564511361; //Tuesday, July 30, 2019 18:29:21 PM #NOT USED
         consensus.nZerocoinStartHeight = consensus.nNewProtocolStartHeight;
         consensus.nZerocoinStartTime = consensus.nNewProtocolStartTime;
 
@@ -223,8 +223,8 @@ public:
 
         consensus.nPoolMaxTransactions = 3;
         consensus.nBudgetCycleBlocks = 43200; //!< Amount of blocks in a months period of time (using 1 minutes per) = (60*24*30)
-        consensus.strSporkKey = "04ac60266c909c22b95415270278b8ea90bec852922d3b2bd110cfba62fc4da20f7d5d6c7f109c9604a421c6e75e47a3c8963dcd1b9b7ca71aaeef3d410e4cc65a";
-        consensus.strObfuscationPoolDummyAddress = "WYCSnxDBqGkcruCwreLtBfpXtSMgoo5yUJ";
+        consensus.strSporkKey = "042ebd54696c8118a15522c1a755845ce3eab63ab3f655533bb16660539278788ae0221e0ea3fd96a5def1d3707672561a319d2b1a7b07b9139c1846aea406b338";
+        consensus.strObfuscationPoolDummyAddress = "RJqgPMnzYPpwwctE1cXC691dC7EuqFAHZW ";
         consensus.nStartMasternodePayments = consensus.nNewProtocolStartTime; // July 2, 2018
 
         /** Zerocoin */
