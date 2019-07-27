@@ -4282,17 +4282,17 @@ bool ContextualCheckBlockHeader(const CBlockHeader& block, CValidationState& sta
 
     int nHeight = pindexPrev->nHeight + 1;
 
-//    unsigned int nBitsRequired;
-//    bool fPos = nHeight >= Params().LAST_POW_BLOCK();
-//    if(block.nVersion > 7){
-//        nBitsRequired  = GetNextWorkRequired(pindexPrev, &block);
-//    }else{
-//        nBitsRequired  = GetNextTargetRequired(pindexPrev, fPos);
-//    }
+    unsigned int nBitsRequired;
+    bool fPos = nHeight >= Params().LAST_POW_BLOCK();
+    if(block.nVersion > 7){
+        nBitsRequired  = GetNextWorkRequired(pindexPrev, &block);
+    }else{
+        nBitsRequired  = GetNextTargetRequired(pindexPrev, fPos);
+    }
 
-//    if ((Params().NetworkIDString() == "regtest") && block.nBits != nBitsRequired)
-//        return state.DoS(100, error("%s : incorrect proof of work", __func__),
-//                REJECT_INVALID, "bad-diffbits");
+    if ((Params().NetworkIDString() == "regtest") && block.nBits != nBitsRequired)
+        return state.DoS(100, error("%s : incorrect proof of work", __func__),
+                REJECT_INVALID, "bad-diffbits");
 
 
     //If this is a reorg, check that it is not too deep

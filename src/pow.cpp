@@ -167,9 +167,6 @@ bool CheckProofOfWork(uint256 hash, unsigned int nBits)
     if (Params().SkipProofOfWorkCheck())
         return true;
 
-    if(hash == uint256("03205c57ebefb02d86c2c0c2de368fa48e92f7df7240f1b528ebbeae70fdbdb1"))
-        return true;
-
     bnTarget.SetCompact(nBits, &fNegative, &fOverflow);
 
     // Check range

@@ -232,6 +232,10 @@ void CMasternodeSync::ClearFulfilledRequest()
 
 void CMasternodeSync::Process()
 {
+    if(chainActive.Height() < Params().NEW_PROTOCOLS_STARTHEIGHT()){
+        RequestedMasternodeAssets = MASTERNODE_SYNC_FINISHED;
+        return;
+    }
     static int tick = 0;
 
     if (tick++ % MASTERNODE_SYNC_TIMEOUT != 0) return;
@@ -260,11 +264,6 @@ void CMasternodeSync::Process()
     // sporks synced but blockchain is not, wait until we're almost at a recent block to continue
     if (Params().NetworkID() != CBaseChainParams::REGTEST &&
         !IsBlockchainSynced() && RequestedMasternodeAssets > MASTERNODE_SYNC_SPORKS) return;
-
-    if(chainActive.Height() < Params().NEW_PROTOCOLS_STARTHEIGHT()){
-        RequestedMasternodeAssets = MASTERNODE_SYNC_FINISHED;
-        return;
-    }
 
     TRY_LOCK(cs_vNodes, lockRecv);
     if (!lockRecv) return;
