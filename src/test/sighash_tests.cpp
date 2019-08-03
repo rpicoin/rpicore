@@ -171,12 +171,14 @@ BOOST_AUTO_TEST_CASE(sighash_from_data)
                 for (unsigned int idx = 0; idx < tests.size(); idx++) {
             UniValue test = tests[idx];
             std::string strTest = test.write();
-            if (test.size() < 1) // Allow for extra stuff (useful for comments)
+            if (test.empty()) // Allow for extra stuff (useful for comments)
             {
                 BOOST_ERROR("Bad test: " << strTest);
                 continue;
             }
-            if (test.size() == 1) continue; // comment
+            if (test.size() == 1) {
+                continue; // comment
+            }
 
             std::string raw_tx, raw_script, sigHashHex;
             int nIn, nHashType;

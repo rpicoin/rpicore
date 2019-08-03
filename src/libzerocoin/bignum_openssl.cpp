@@ -4,6 +4,9 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
+#include <utility>
+
+
 #include "bignum.h"
 
 CBigNum::CBigNum()
@@ -34,17 +37,21 @@ CBigNum::~CBigNum()
 }
 
 //CBigNum(char n) is not portable.  Use 'signed char' or 'unsigned char'.
-CBigNum::CBigNum(signed char n)        { bn = BN_new(); if (n >= 0) setulong(n); else setint64(n); }
-CBigNum::CBigNum(short n)              { bn = BN_new(); if (n >= 0) setulong(n); else setint64(n); }
-CBigNum::CBigNum(int n)                { bn = BN_new(); if (n >= 0) setulong(n); else setint64(n); }
-CBigNum::CBigNum(long n)               { bn = BN_new(); if (n >= 0) setulong(n); else setint64(n); }
+CBigNum::CBigNum(signed char n)        { bn = BN_new(); if (n >= 0) { setulong(n); } else { setint64(n);
+}}
+CBigNum::CBigNum(short n)              { bn = BN_new(); if (n >= 0) { setulong(n); } else { setint64(n);
+}}
+CBigNum::CBigNum(int n)                { bn = BN_new(); if (n >= 0) { setulong(n); } else { setint64(n);
+}}
+CBigNum::CBigNum(long n)               { bn = BN_new(); if (n >= 0) { setulong(n); } else { setint64(n);
+}}
 CBigNum::CBigNum(long long n)          { bn = BN_new(); setint64(n); }
 CBigNum::CBigNum(unsigned char n)      { bn = BN_new(); setulong(n); }
 CBigNum::CBigNum(unsigned short n)     { bn = BN_new(); setulong(n); }
 CBigNum::CBigNum(unsigned int n)       { bn = BN_new(); setulong(n); }
 CBigNum::CBigNum(unsigned long n)      { bn = BN_new(); setulong(n); }
 CBigNum::CBigNum(unsigned long long n) { bn = BN_new(); setuint64(n); }
-CBigNum::CBigNum(uint256 n)            { bn = BN_new(); setuint256(n); }
+CBigNum::CBigNum(const uint256& n)            { bn = BN_new(); setuint256(n); }
 
 CBigNum::CBigNum(const std::vector<unsigned char>& vch)
 {
@@ -90,8 +97,9 @@ int CBigNum::bitSize() const
 
 void CBigNum::setulong(unsigned long n)
 {
-    if (!BN_set_word(bn, n))
+    if (!BN_set_word(bn, n)) {
         throw bignum_error("CBigNum conversion from unsigned long : BN_set_word failed");
+     }
 }
 
 unsigned long CBigNum::getulong() const
@@ -107,10 +115,11 @@ unsigned int CBigNum::getuint() const
 int CBigNum::getint() const
 {
     unsigned long n = BN_get_word(bn);
-    if (!BN_is_negative(bn))
+    if (!BN_is_negative(bn)) {
         return (n > (unsigned long)std::numeric_limits<int>::max() ? std::numeric_limits<int>::max() : n);
-    else
-        return (n > (unsigned long)std::numeric_limits<int>::max() ? std::numeric_limits<int>::min() : -(int)n);
+    } else {
+        return (n > (unsigned long) std::numeric_limits<int>::max() ? std::numeric_limits<int>::min() : -(int) n);
+    }
 }
 
 void CBigNum::setint64(int64_t sn)
@@ -140,8 +149,9 @@ void CBigNum::setint64(int64_t sn)
         n <<= 8;
         if (fLeadingZeroes)
         {
-            if (c == 0)
+            if (c == 0) {
                 continue;
+             }
             if (c & 0x80)
                 *p++ = (fNegative ? 0x80 : 0);
             else if (fNegative)
@@ -190,7 +200,7 @@ void CBigNum::setuint256(uint256 n)
     unsigned char pch[sizeof(n) + 6];
     unsigned char* p = pch + 4;
     bool fLeadingZeroes = true;
-    unsigned char* pbegin = (unsigned char*)&n;
+    auto* pbegin = (unsigned char*)&n;
     unsigned char* psrc = pbegin + sizeof(n);
     while (psrc != pbegin)
     {
@@ -249,8 +259,9 @@ void CBigNum::setvch(const std::vector<unsigned char>& vch)
 std::vector<unsigned char> CBigNum::getvch() const
 {
     unsigned int nSize = BN_bn2mpi(bn, nullptr);
-    if (nSize <= 4)
+    if (nSize <= 4) {
         return std::vector<unsigned char>();
+    }
     std::vector<unsigned char> vch(nSize);
     BN_bn2mpi(bn, &vch[0]);
     vch.erase(vch.begin(), vch.begin() + 4);
@@ -277,8 +288,9 @@ bool CBigNum::SetHexBool(const std::string& str)
     }
     if (psz[0] == '0' && tolower(psz[1]) == 'x')
         psz += 2;
-    while (isspace(*psz))
+    while (isspace(*psz)) {
         psz++;
+     }
 
     // hex string to bignum
     static const signed char phexdigit[256] = { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, 0,1,2,3,4,5,6,7,8,9,0,0,0,0,0,0, 0,0xa,0xb,0xc,0xd,0xe,0xf,0,0,0,0,0,0,0,0,0, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, 0,0xa,0xb,0xc,0xd,0xe,0xf,0,0,0,0,0,0,0,0,0 };

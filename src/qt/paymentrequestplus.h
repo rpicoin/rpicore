@@ -27,7 +27,7 @@
 class PaymentRequestPlus
 {
 public:
-    PaymentRequestPlus() {}
+    PaymentRequestPlus() = default;
 
     bool parse(const QByteArray& data);
     bool SerializeToString(std::string* output) const;

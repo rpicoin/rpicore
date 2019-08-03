@@ -13,7 +13,7 @@ namespace
 //   matches the original.
 bool sanity_test_widen(char testchar)
 {
-    const std::ctype<char>& test(std::use_facet<std::ctype<char> >(std::locale()));
+    const auto& test(std::use_facet<std::ctype<char> >(std::locale()));
     return test.narrow(test.widen(testchar), 'b') == testchar;
 }
 
@@ -24,15 +24,18 @@ bool sanity_test_widen(char testchar)
 bool sanity_test_list(unsigned int size)
 {
     std::list<unsigned int> test;
-    for (unsigned int i = 0; i != size; ++i)
+    for (unsigned int i = 0; i != size; ++i) {
         test.push_back(i + 1);
+}
 
-    if (test.size() != size)
+    if (test.size() != size) {
         return false;
+}
 
     while (!test.empty()) {
-        if (test.back() != test.size())
+        if (test.back() != test.size()) {
             return false;
+}
         test.pop_back();
     }
     return true;

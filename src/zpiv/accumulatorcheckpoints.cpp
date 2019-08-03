@@ -23,29 +23,33 @@ namespace AccumulatorCheckpoints
     bool LoadCheckpoints(const std::string& strNetwork)
     {
         UniValue v;
-        if (strNetwork == "main")
+        if (strNetwork == "main") {
             v = read_json(GetMainCheckpoints());
-        else if (strNetwork == "test")
+        } else if (strNetwork == "test") {
             v = read_json(GetTestCheckpoints());
-        else if (strNetwork == "regtest")
+        } else if (strNetwork == "regtest") {
             v = read_json(GetRegTestCheckpoints());
-        else
+        } else {
             return false;
+        }
 
-        if (v.empty())
+        if (v.empty()) {
             return false;
+        }
 
         for (unsigned int idx = 0; idx < v.size(); idx++) {
             const UniValue &val = v[idx];
             const UniValue &o = val.get_obj();
 
             const UniValue &vHeight = find_value(o, "height");
-            if (!vHeight.isNum())
+            if (!vHeight.isNum()) {
                 return false;
+            }
 
             int nHeight = vHeight.get_int();
-            if (nHeight < 0)
+            if (nHeight < 0) {
                 return false;
+            }
 
             Checkpoint checkpoint;
             for (auto denom : libzerocoin::zerocoinDenomList) {
@@ -66,18 +70,21 @@ namespace AccumulatorCheckpoints
     Checkpoint GetClosestCheckpoint(const int& nHeight, int& nHeightCheckpoint)
     {
         nHeightCheckpoint = -1;
-        for (auto it : mapCheckpoints) {
+        for (const auto& it : mapCheckpoints) {
             //only checkpoints that are less than the height requested (unless height is less than the first checkpoint)
             if (it.first < nHeight) {
-                if (nHeightCheckpoint == -1)
+                if (nHeightCheckpoint == -1) {
                     nHeightCheckpoint = it.first;
-                if (nHeight - it.first < nHeightCheckpoint)
+                }
+                if (nHeight - it.first < nHeightCheckpoint) {
                     nHeightCheckpoint = it.first;
+                }
             }
         }
 
-        if (nHeightCheckpoint != -1)
+        if (nHeightCheckpoint != -1) {
             return mapCheckpoints.at(nHeightCheckpoint);
+        }
 
         return Checkpoint();
     }

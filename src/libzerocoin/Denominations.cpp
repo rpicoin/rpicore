@@ -3,6 +3,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "Denominations.h"
+#include <utility>
 #include "amount.h"
 
 namespace libzerocoin {
@@ -96,13 +97,13 @@ CAmount ZerocoinDenominationToAmount(const libzerocoin::CoinDenomination& denomi
 }
 
 
-CoinDenomination get_denomination(std::string denomAmount) {
+CoinDenomination get_denomination(const std::string& denomAmount) {
     int64_t val = std::stoi(denomAmount);
     return IntToZerocoinDenomination(val);
 }
 
 
-int64_t get_amount(std::string denomAmount) {
+int64_t get_amount(const std::string& denomAmount) {
     int64_t nAmount = 0;
     libzerocoin::CoinDenomination denom = get_denomination(denomAmount);
     if (denom == libzerocoin::ZQ_ERROR) {

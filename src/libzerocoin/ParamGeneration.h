@@ -16,7 +16,7 @@
 
 namespace libzerocoin {
 
-void CalculateParams(ZerocoinParams &params, CBigNum N, std::string aux, uint32_t securityLevel);
+void CalculateParams(ZerocoinParams &params, const CBigNum& N, const std::string& aux, uint32_t securityLevel);
 void calculateGroupParamLengths(uint32_t maxPLen, uint32_t securityLevel,
                                 uint32_t *pLen, uint32_t *qLen);
 
@@ -35,20 +35,20 @@ void calculateGroupParamLengths(uint32_t maxPLen, uint32_t securityLevel,
 
 // Prototypes
 bool                primalityTestByTrialDivision(uint32_t candidate);
-uint256             calculateSeed(CBigNum modulus, std::string auxString, uint32_t securityLevel, std::string groupName);
-uint256             calculateGeneratorSeed(uint256 seed, uint256 pSeed, uint256 qSeed, std::string label, uint32_t index, uint32_t count);
+uint256             calculateSeed(const CBigNum& modulus, const std::string& auxString, uint32_t securityLevel, const std::string& groupName);
+uint256             calculateGeneratorSeed(const uint256& seed, const uint256& pSeed, const uint256& qSeed, const std::string& label, uint32_t index, uint32_t count);
 
-uint256             calculateHash(uint256 input);
-IntegerGroupParams  deriveIntegerGroupParams(uint256 seed, uint32_t pLen, uint32_t qLen);
+uint256             calculateHash(const uint256& input);
+IntegerGroupParams  deriveIntegerGroupParams(const uint256& seed, uint32_t pLen, uint32_t qLen);
 IntegerGroupParams  deriveIntegerGroupFromOrder(CBigNum &groupOrder);
-void                calculateGroupModulusAndOrder(uint256 seed, uint32_t pLen, uint32_t qLen,
+void                calculateGroupModulusAndOrder(const uint256& seed, uint32_t pLen, uint32_t qLen,
         CBigNum *resultModulus, CBigNum *resultGroupOrder,
         uint256 *resultPseed, uint256 *resultQseed);
-CBigNum              calculateGroupGenerator(uint256 seed, uint256 pSeed, uint256 qSeed, CBigNum modulus,
-        CBigNum groupOrder, uint32_t index);
-CBigNum              generateRandomPrime(uint32_t primeBitLen, uint256 in_seed, uint256 *out_seed,
+CBigNum              calculateGroupGenerator(const uint256& seed, const uint256& pSeed, const uint256& qSeed, const CBigNum& modulus,
+        const CBigNum& groupOrder, uint32_t index);
+CBigNum              generateRandomPrime(uint32_t primeBitLen, const uint256& in_seed, uint256 *out_seed,
                                         uint32_t *prime_gen_counter);
-CBigNum              generateIntegerFromSeed(uint32_t numBits, uint256 seed, uint32_t *numIterations);
+CBigNum              generateIntegerFromSeed(uint32_t numBits, const uint256& seed, uint32_t *numIterations);
 
 }/* namespace libzerocoin */
 

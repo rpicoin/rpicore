@@ -355,7 +355,7 @@ maxParams = 16
 
 def makeCommaSepLists(lineTemplate, elemTemplate, startInd=1):
     for j in range(startInd,maxParams+1):
-        std::list = ', '.join([elemTemplate % {'i':i} for i in range(startInd,j+1)])
+        list = ', '.join([elemTemplate % {'i':i} for i in range(startInd,j+1)])
         cog.outl(lineTemplate % {'j':j, 'list':list})
 
 makeCommaSepLists('#define TINYFORMAT_ARGTYPES_%(j)d %(list)s',
@@ -573,8 +573,8 @@ private:
         int variablePrecision);
 
     // Private copy & assign: Kill gcc warnings with -Weffc++
-    FormatIterator(const FormatIterator&);
-    FormatIterator& operator=(const FormatIterator&);
+    FormatIterator(const FormatIterator&) = delete;
+    FormatIterator& operator=(const FormatIterator&) = delete;
 
     // Stream, current format string & state
     std::ostream& m_out;
@@ -967,7 +967,7 @@ TINYFORMAT_FOREACH_ARGNUM(TINYFORMAT_MAKE_FORMAT_FUNCS)
                                  bodyPrefix, streamName, bodySuffix)       \
     template <TINYFORMAT_ARGTYPES(n)>                                      \
     returnType funcName(TINYFORMAT_WRAP_FORMAT_EXTRA_ARGS const char* fmt, \
-        TINYFORMAT_VARARGS(n)) funcDeclSuffix                              \
+        TINYFORMAT_VARARGS(n)) (funcDeclSuffix)                              \
     {                                                                      \
         bodyPrefix                                                         \
             tinyformat::format(streamName, fmt, TINYFORMAT_PASSARGS(n));   \
@@ -976,7 +976,7 @@ TINYFORMAT_FOREACH_ARGNUM(TINYFORMAT_MAKE_FORMAT_FUNCS)
 
 #define TINYFORMAT_WRAP_FORMAT(returnType, funcName, funcDeclSuffix,                                       \
                                bodyPrefix, streamName, bodySuffix)                                         \
-    inline returnType funcName(TINYFORMAT_WRAP_FORMAT_EXTRA_ARGS const char* fmt) funcDeclSuffix           \
+    inline returnType funcName(TINYFORMAT_WRAP_FORMAT_EXTRA_ARGS const char* fmt) (funcDeclSuffix)           \
     {                                                                                                      \
         bodyPrefix                                                                                         \
             tinyformat::detail::FormatIterator(streamName, fmt)                                            \

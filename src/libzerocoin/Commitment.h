@@ -60,7 +60,7 @@ private:
  */
 class CommitmentProofOfKnowledge {
 public:
-    CommitmentProofOfKnowledge(){};
+    CommitmentProofOfKnowledge()= default;;
 	CommitmentProofOfKnowledge(const libzerocoin::IntegerGroupParams* ap, const libzerocoin::IntegerGroupParams* bp);
 	/** Generates a proof that two commitments, a and b, open to the same value.
 	 *

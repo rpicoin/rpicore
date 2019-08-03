@@ -7,6 +7,7 @@
 #define SRC_MASTERNODECONFIG_H_
 
 #include <string>
+#include <utility>
 #include <vector>
 
 #include <boost/filesystem.hpp>
@@ -30,11 +31,11 @@ public:
     public:
         CMasternodeEntry(std::string alias, std::string ip, std::string privKey, std::string txHash, std::string outputIndex)
         {
-            this->alias = alias;
-            this->ip = ip;
-            this->privKey = privKey;
-            this->txHash = txHash;
-            this->outputIndex = outputIndex;
+            this->alias = std::move(alias);
+            this->ip = std::move(ip);
+            this->privKey = std::move(privKey);
+            this->txHash = std::move(txHash);
+            this->outputIndex = std::move(outputIndex);
         }
 
         const std::string& getAlias() const
@@ -107,7 +108,7 @@ public:
     int getCount()
     {
         int c = -1;
-        for (CMasternodeEntry e : entries) {
+        for (const CMasternodeEntry& e : entries) {
             if (e.getAlias() != "") c++;
         }
         return c;

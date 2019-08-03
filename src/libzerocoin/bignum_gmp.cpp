@@ -4,6 +4,9 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
+#include <utility>
+
+
 #include "bignum.h"
 
 /** C++ wrapper for BIGNUM (Gmp bignum) */
@@ -40,7 +43,7 @@ CBigNum::CBigNum(unsigned short n)   { mpz_init(bn); mpz_set_ui(bn, n); }
 CBigNum::CBigNum(unsigned int n)     { mpz_init(bn); mpz_set_ui(bn, n); }
 CBigNum::CBigNum(unsigned long n)    { mpz_init(bn); mpz_set_ui(bn, n); }
 
-CBigNum::CBigNum(uint256 n) { mpz_init(bn); setuint256(n); }
+CBigNum::CBigNum(const uint256& n) { mpz_init(bn); setuint256(n); }
 
 CBigNum::CBigNum(const std::vector<unsigned char>& vch)
 {
@@ -57,8 +60,9 @@ CBigNum::CBigNum(const std::vector<unsigned char>& vch)
 */
 CBigNum CBigNum::randBignum(const CBigNum& range)
 {
-    if (range < 2)
+    if (range < 2) {
         return 0;
+}
 
     size_t size = (mpz_sizeinbase (range.bn, 2) + CHAR_BIT-1) / CHAR_BIT;
     std::vector<unsigned char> buf(size);
@@ -123,7 +127,7 @@ int CBigNum::getint() const
     }
 }
 
-void CBigNum::setuint256(uint256 n)
+void CBigNum::setuint256(const uint256& n)
 {
     mpz_import(bn, n.size(), -1, 1, 0, 0, (unsigned char*)&n);
 }

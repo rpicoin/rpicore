@@ -7,7 +7,7 @@
 #ifndef BITCOIN_GUIINTERFACE_H
 #define BITCOIN_GUIINTERFACE_H
 
-#include <stdint.h>
+#include <cstdint>
 #include <string>
 
 #include <boost/signals2/last_value.hpp>

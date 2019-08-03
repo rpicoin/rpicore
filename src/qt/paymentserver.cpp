@@ -308,7 +308,7 @@ bool PaymentServer::eventFilter(QObject* object, QEvent* event)
 {
     // clicking on wispr: URIs creates FileOpen events on the Mac
     if (event->type() == QEvent::FileOpen) {
-        QFileOpenEvent* fileEvent = static_cast<QFileOpenEvent*>(event);
+        auto* fileEvent = dynamic_cast<QFileOpenEvent*>(event);
         if (!fileEvent->file().isEmpty())
             handleURIOrFile(fileEvent->file());
         else if (!fileEvent->url().isEmpty())
@@ -395,10 +395,11 @@ void PaymentServer::handleURIOrFile(const QString& s)
                         CClientUIInterface::MSG_ERROR);
                 } else
                     emit receivedPaymentRequest(recipient);
-            } else
+            } else {
                 emit message(tr("URI handling"),
                     tr("URI cannot be parsed! This can be caused by an invalid WISPR address or malformed URI parameters."),
                     CClientUIInterface::ICON_WARNING);
+}
 
             return;
         }
@@ -469,8 +470,9 @@ bool PaymentServer::readPaymentRequestFromFile(const QString& filename, PaymentR
 
 bool PaymentServer::processPaymentRequest(PaymentRequestPlus& request, SendCoinsRecipient& recipient)
 {
-    if (!optionsModel)
+    if (!optionsModel) {
         return false;
+}
 
     if (request.IsInitialized()) {
         const payments::PaymentDetails& details = request.getDetails();
@@ -554,7 +556,7 @@ void PaymentServer::fetchRequest(const QUrl& url)
     netManager->get(netRequest);
 }
 
-void PaymentServer::fetchPaymentACK(CWallet* wallet, SendCoinsRecipient recipient, QByteArray transaction)
+void PaymentServer::fetchPaymentACK(CWallet* wallet, const SendCoinsRecipient& recipient, const QByteArray& transaction)
 {
     const payments::PaymentDetails& details = recipient.paymentRequest.getDetails();
     if (!details.has_payment_url())

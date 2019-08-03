@@ -38,7 +38,7 @@ namespace libzerocoin {
 ///
 
 void
-CalculateParams(ZerocoinParams &params, CBigNum N, std::string aux, uint32_t securityLevel)
+CalculateParams(ZerocoinParams &params, const CBigNum& N, const std::string& aux, uint32_t securityLevel)
 {
     params.initialized = false;
     params.accumulatorParams.initialized = false;
@@ -124,7 +124,7 @@ CalculateParams(ZerocoinParams &params, CBigNum N, std::string aux, uint32_t sec
 /// Returns the hash of the value.
 
 uint256
-calculateGeneratorSeed(uint256 seed, uint256 pSeed, uint256 qSeed, std::string label, uint32_t index, uint32_t count)
+calculateGeneratorSeed(const uint256& seed, const uint256& pSeed, const uint256& qSeed, const std::string& label, uint32_t index, uint32_t count)
 {
     CHashWriter hasher(0,0);
     uint256     hash;
@@ -156,7 +156,7 @@ calculateGeneratorSeed(uint256 seed, uint256 pSeed, uint256 qSeed, std::string l
 /// Returns the hash of the value.
 
 uint256
-calculateSeed(CBigNum modulus, std::string auxString, uint32_t securityLevel, std::string groupName)
+calculateSeed(const CBigNum& modulus, const std::string& auxString, uint32_t securityLevel, const std::string& groupName)
 {
     CHashWriter hasher(0,0);
     uint256     hash;
@@ -175,7 +175,7 @@ calculateSeed(CBigNum modulus, std::string auxString, uint32_t securityLevel, st
 }
 
 uint256
-calculateHash(uint256 input)
+calculateHash(const uint256& input)
 {
     CHashWriter hasher(0,0);
 
@@ -243,7 +243,7 @@ calculateGroupParamLengths(uint32_t maxPLen, uint32_t securityLevel,
 /// derive two generators "g", "h".
 
 IntegerGroupParams
-deriveIntegerGroupParams(uint256 seed, uint32_t pLen, uint32_t qLen)
+deriveIntegerGroupParams(const uint256& seed, uint32_t pLen, uint32_t qLen)
 {
     IntegerGroupParams result;
     CBigNum p;
@@ -353,7 +353,7 @@ deriveIntegerGroupFromOrder(CBigNum &groupOrder)
 /// primes "p" and "q".
 
 void
-calculateGroupModulusAndOrder(uint256 seed, uint32_t pLen, uint32_t qLen,
+calculateGroupModulusAndOrder(const uint256& seed, uint32_t pLen, uint32_t qLen,
                               CBigNum *resultModulus, CBigNum *resultGroupOrder,
                               uint256 *resultPseed, uint256 *resultQseed)
 {
@@ -455,7 +455,7 @@ calculateGroupModulusAndOrder(uint256 seed, uint32_t pLen, uint32_t qLen,
 /// Uses the algorithm described in FIPS 186-3 Appendix A.2.3.
 
 CBigNum
-calculateGroupGenerator(uint256 seed, uint256 pSeed, uint256 qSeed, CBigNum modulus, CBigNum groupOrder, uint32_t index)
+calculateGroupGenerator(const uint256& seed, const uint256& pSeed, const uint256& qSeed, const CBigNum& modulus, const CBigNum& groupOrder, uint32_t index)
 {
     CBigNum result;
 
@@ -499,7 +499,7 @@ calculateGroupGenerator(uint256 seed, uint256 pSeed, uint256 qSeed, CBigNum modu
 /// Appendix C.6. This is a recursive function.
 
 CBigNum
-generateRandomPrime(uint32_t primeBitLen, uint256 in_seed, uint256 *out_seed,
+generateRandomPrime(uint32_t primeBitLen, const uint256& in_seed, uint256 *out_seed,
                     uint32_t *prime_gen_counter)
 {
     // Verify that primeBitLen is not too small
@@ -616,7 +616,7 @@ generateRandomPrime(uint32_t primeBitLen, uint256 in_seed, uint256 *out_seed,
 }
 
 CBigNum
-generateIntegerFromSeed(uint32_t numBits, uint256 seed, uint32_t *numIterations)
+generateIntegerFromSeed(uint32_t numBits, const uint256& seed, uint32_t *numIterations)
 {
     CBigNum      result(0);
     uint32_t    iterations = ceil((double)numBits / (double)HASH_OUTPUT_BITS);

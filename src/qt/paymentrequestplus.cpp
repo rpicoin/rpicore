@@ -58,7 +58,8 @@ bool PaymentRequestPlus::IsInitialized() const
 
 QString PaymentRequestPlus::getPKIType() const
 {
-    if (!IsInitialized()) return QString("none");
+    if (!IsInitialized()) { return QString("none");
+}
     return QString::fromStdString(paymentRequest.pki_type());
 }
 
@@ -66,8 +67,9 @@ bool PaymentRequestPlus::getMerchant(X509_STORE* certStore, QString& merchant) c
 {
     merchant.clear();
 
-    if (!IsInitialized())
+    if (!IsInitialized()) {
         return false;
+    }
 
     // One day we'll support more PKI types, but just
     // x509 for now:
@@ -184,8 +186,9 @@ bool PaymentRequestPlus::getMerchant(X509_STORE* certStore, QString& merchant) c
         qWarning() << "PaymentRequestPlus::getMerchant : SSL error: " << err.what();
     }
 
-    if (website)
+    if (website) {
         delete[] website;
+    }
     X509_STORE_CTX_free(store_ctx);
     for (unsigned int i = 0; i < certs.size(); i++)
         X509_free(certs[i]);
