@@ -27,7 +27,6 @@
 
 #include <univalue.h>
 
-using namespace RPCServer;
 
 static bool fRPCRunning = false;
 static bool fRPCInWarmup = true;
