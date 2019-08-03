@@ -35,7 +35,6 @@
 
 #include <univalue.h>
 
-using namespace boost::algorithm;
 
 // Uncomment if you want to output updated JSON tests.
 //#define UPDATE_JSON_TESTS

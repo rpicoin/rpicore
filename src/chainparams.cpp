@@ -16,7 +16,6 @@
 
 #include <boost/assign/list_of.hpp>
 
-using namespace boost::assign;
 
 struct SeedSpec6 {
     uint8_t addr[16];

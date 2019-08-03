@@ -16,10 +16,8 @@
 #include "wallet/wallet_ismine.h"
 #endif
 
-#include <boost/assign/std/vector.hpp>
 #include <boost/test/unit_test.hpp>
 
-using namespace boost::assign;
 
 typedef std::vector<unsigned char> valtype;
 
@@ -81,7 +79,8 @@ BOOST_AUTO_TEST_CASE(multisig_verify)
 
     // Test a AND b:
     keys.clear();
-    keys += key[0],key[1]; // magic operator+= from boost.assign
+    keys.push_back(key[0]);
+    keys.push_back(key[1]);
     s = sign_multisig(a_and_b, keys, txTo[0], 0);
     BOOST_CHECK(VerifyScript(s, a_and_b, flags, MutableTransactionSignatureChecker(&txTo[0], 0), &err));
     BOOST_CHECK_MESSAGE(err == SCRIPT_ERR_OK, ScriptErrorString(err));
@@ -89,13 +88,14 @@ BOOST_AUTO_TEST_CASE(multisig_verify)
     for (int i = 0; i < 4; i++)
     {
         keys.clear();
-        keys += key[i];
+        keys.push_back(key[i]);
         s = sign_multisig(a_and_b, keys, txTo[0], 0);
         BOOST_CHECK_MESSAGE(!VerifyScript(s, a_and_b, flags, MutableTransactionSignatureChecker(&txTo[0], 0), &err), strprintf("a&b 1: %d", i));
         BOOST_CHECK_MESSAGE(err == SCRIPT_ERR_INVALID_STACK_OPERATION, ScriptErrorString(err));
 
         keys.clear();
-        keys += key[1],key[i];
+        keys.push_back(key[1]);
+        keys.push_back(key[i]);
         s = sign_multisig(a_and_b, keys, txTo[0], 0);
         BOOST_CHECK_MESSAGE(!VerifyScript(s, a_and_b, flags, MutableTransactionSignatureChecker(&txTo[0], 0), &err), strprintf("a&b 2: %d", i));
         BOOST_CHECK_MESSAGE(err == SCRIPT_ERR_EVAL_FALSE, ScriptErrorString(err));
@@ -105,7 +105,7 @@ BOOST_AUTO_TEST_CASE(multisig_verify)
     for (int i = 0; i < 4; i++)
     {
         keys.clear();
-        keys += key[i];
+        keys.push_back(key[i]);
         s = sign_multisig(a_or_b, keys, txTo[1], 0);
         if (i == 0 || i == 1)
         {
@@ -128,7 +128,8 @@ BOOST_AUTO_TEST_CASE(multisig_verify)
         for (int j = 0; j < 4; j++)
         {
             keys.clear();
-            keys += key[i],key[j];
+            keys.push_back(key[i]);
+            keys.push_back(key[j]);
             s = sign_multisig(escrow, keys, txTo[2], 0);
             if (i < j && i < 3 && j < 3)
             {

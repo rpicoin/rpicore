@@ -18,7 +18,6 @@
 #include "validationinterface.h"
 #include "reverse_iterate.h"
 
-using namespace boost;
 
 std::map<uint256, CTransaction> mapTxLockReq;
 std::map<uint256, CTransaction> mapTxLockReqRejected;

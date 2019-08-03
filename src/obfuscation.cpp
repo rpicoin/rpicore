@@ -22,7 +22,6 @@
 #include <boost/assign/list_of.hpp>
 #include <openssl/rand.h>
 
-using namespace boost;
 
 // The main object for accessing Obfuscation
 CObfuscationPool obfuScationPool;

@@ -26,7 +26,6 @@
 #define SWIFTTX_SIGNATURES_REQUIRED 6
 #define SWIFTTX_SIGNATURES_TOTAL 10
 
-using namespace boost;
 
 class CConsensusVote;
 class CTransaction;

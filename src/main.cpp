@@ -49,7 +49,6 @@
 #include <atomic>
 #include <queue>
 
-using namespace boost;
 
 #if defined(NDEBUG)
 #error "WISPR cannot be compiled without assertions."
@@ -4957,7 +4956,7 @@ bool AbortNode(const std::string& strMessage, const std::string& userMessage)
 
 bool CheckDiskSpace(uint64_t nAdditionalBytes)
 {
-    uint64_t nFreeBytesAvailable = filesystem::space(GetDataDir()).available;
+    uint64_t nFreeBytesAvailable = boost::filesystem::space(GetDataDir()).available;
 
     // Check for nMinDiskSpace bytes (currently 50MB)
     if (nFreeBytesAvailable < nMinDiskSpace + nAdditionalBytes)

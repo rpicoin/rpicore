@@ -27,7 +27,6 @@
 
 #include <univalue.h>
 
-using namespace boost::algorithm;
 
 // In script_tests.cpp
 extern UniValue read_json(const std::string& jsondata);
@@ -52,7 +51,7 @@ unsigned int ParseScriptFlags(std::string strFlags)
     }
     unsigned int flags = 0;
     std::vector<std::string> words;
-    split(words, strFlags, is_any_of(","));
+    boost::algorithm::split(words, strFlags, boost::algorithm::is_any_of(","));
 
     for(std::string word: words)
     {

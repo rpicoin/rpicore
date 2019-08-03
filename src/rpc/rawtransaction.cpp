@@ -32,8 +32,6 @@
 
 #include <univalue.h>
 
-using namespace boost;
-using namespace boost::assign;
 
 void ScriptPubKeyToJSON(const CScript& scriptPubKey, UniValue& out, bool fIncludeHex)
 {

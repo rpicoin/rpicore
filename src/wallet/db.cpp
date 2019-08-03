@@ -21,7 +21,6 @@
 #include <boost/thread.hpp>
 #include <boost/version.hpp>
 
-using namespace boost;
 
 
 unsigned int nWalletDBUpdated;

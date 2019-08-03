@@ -57,7 +57,6 @@
 #endif
 #endif
 
-using namespace boost;
 
 namespace
 {
