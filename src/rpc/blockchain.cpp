@@ -329,7 +329,7 @@ UniValue waitforblock(const UniValue& params, bool fHelp)
             "\nReturns the current block on timeout or exit.\n"
 
             "\nArguments:\n"
-            "1. \"blockhash\" (required, string) Block hash to wait for.\n"
+            "1. \"blockhash\" (required, std::string) Block hash to wait for.\n"
             "2. timeout       (int, optional, default=0) Time in milliseconds to wait for a response. 0 indicates no timeout.\n"
 
             "\nResult:\n"

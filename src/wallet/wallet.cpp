@@ -1918,7 +1918,7 @@ bool CWallet::SelectCoinsMinConf(const CAmount& nTargetValue, int nConfMine, int
     random_shuffle(vCoins.begin(), vCoins.end(), GetRandInt);
 
     // move denoms down on the list
-    sort(vCoins.begin(), vCoins.end(), less_then_denom);
+    std::sort(vCoins.begin(), vCoins.end(), less_then_denom);
 
     // try to find nondenom first to prevent unneeded spending of mixed coins
     for (unsigned int tryDenom = 0; tryDenom < 2; tryDenom++) {

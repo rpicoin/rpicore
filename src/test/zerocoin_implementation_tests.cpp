@@ -175,7 +175,7 @@ bool CheckZerocoinSpendNoDB(const CTransaction tx, std::string& strError)
 //            return false;
 //        }
 
-        //       Accumulator accumulator(Params().Zerocoin_Params(true), newSpend.getDenomination(), bnAccumulatorValue);
+ //       libzerocoin::Accumulator accumulator(Params().Zerocoin_Params(true), newSpend.getDenomination(), bnAccumulatorValue);
 
 //        //Check that the coin is on the accumulator
 //        if (!newSpend.Verify(accumulator)) {
@@ -194,7 +194,7 @@ bool CheckZerocoinSpendNoDB(const CTransaction tx, std::string& strError)
         //     return state.DoS(100, error("Zerocoinspend is already known"));
 
         //make sure that there is no over redemption of coins
-        nTotalRedeemed += ZerocoinDenominationToAmount(newSpend.getDenomination());
+        nTotalRedeemed += libzerocoin::ZerocoinDenominationToAmount(newSpend.getDenomination());
         fValidated = true;
     }
 

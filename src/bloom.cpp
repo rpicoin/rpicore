@@ -24,7 +24,7 @@
 
 
 CBloomFilter::CBloomFilter(unsigned int nElements, double nFPRate, unsigned int nTweakIn, unsigned char nFlagsIn) :
- /**	
+ /**
  * The ideal size for a bloom filter with a given number of elements and false positive rate is:
  * - nElements * log(fp rate) / ln(2)^2
  * We ignore filter parameters which will create a bloom filter larger than the protocol limits
@@ -35,8 +35,8 @@ CBloomFilter::CBloomFilter(unsigned int nElements, double nFPRate, unsigned int 
  * Again, we ignore filter parameters which will create a bloom filter with more hash functions than the protocol limits
  * See https://en.wikipedia.org/wiki/Bloom_filter for an explanation of these formulas
  */
-	isFull(false),
-	isEmpty(false),
+    isFull(false),
+    isEmpty(false),
   nHashFuncs(std::min((unsigned int)(vData.size() * 8 / nElements * LN2), MAX_HASH_FUNCS)),
   nTweak(nTweakIn),
   nFlags(nFlagsIn)

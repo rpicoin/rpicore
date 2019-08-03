@@ -63,7 +63,7 @@ QT_TRANSLATE_NOOP("wispr-core", ""
 "Enable automatic wallet backups triggered after each zWSP minting (0-1, "
 "default: %u)"),
 QT_TRANSLATE_NOOP("wispr-core", ""
-"Enable or disable staking functionality for PIV inputs (0-1, default: %u)"),
+"Enable or disable staking functionality for WSP inputs (0-1, default: %u)"),
 QT_TRANSLATE_NOOP("wispr-core", ""
 "Enable or disable staking functionality for zWSP inputs (0-1, default: %u)"),
 QT_TRANSLATE_NOOP("wispr-core", ""
@@ -102,10 +102,10 @@ QT_TRANSLATE_NOOP("wispr-core", ""
 QT_TRANSLATE_NOOP("wispr-core", ""
 "Failed to find coin set amongst held coins with less than maxNumber of Spends"),
 QT_TRANSLATE_NOOP("wispr-core", ""
-"Fees (in PIV/Kb) smaller than this are considered zero fee for relaying "
+"Fees (in WSP/Kb) smaller than this are considered zero fee for relaying "
 "(default: %s)"),
 QT_TRANSLATE_NOOP("wispr-core", ""
-"Fees (in PIV/Kb) smaller than this are considered zero fee for transaction "
+"Fees (in WSP/Kb) smaller than this are considered zero fee for transaction "
 "creation (default: %s)"),
 QT_TRANSLATE_NOOP("wispr-core", ""
 "Flush database activity from memory pool to disk log every <n> megabytes "
@@ -212,10 +212,10 @@ QT_TRANSLATE_NOOP("wispr-core", ""
 "Unable to locate enough Obfuscation denominated funds for this transaction."),
 QT_TRANSLATE_NOOP("wispr-core", ""
 "Unable to locate enough Obfuscation non-denominated funds for this "
-"transaction that are not equal 10000 PIV."),
+"transaction that are not equal 10000 WSP."),
 QT_TRANSLATE_NOOP("wispr-core", ""
 "Unable to locate enough funds for this transaction that are not equal 10000 "
-"PIV."),
+"WSP."),
 QT_TRANSLATE_NOOP("wispr-core", ""
 "Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: "
 "%s)"),
@@ -333,7 +333,7 @@ QT_TRANSLATE_NOOP("wispr-core", "Failed to read block"),
 QT_TRANSLATE_NOOP("wispr-core", "Failed to select a zerocoin"),
 QT_TRANSLATE_NOOP("wispr-core", "Failed to wipe zerocoinDB"),
 QT_TRANSLATE_NOOP("wispr-core", "Failed to write coin serial number into wallet"),
-QT_TRANSLATE_NOOP("wispr-core", "Fee (in PIV/kB) to add to transactions you send (default: %s)"),
+QT_TRANSLATE_NOOP("wispr-core", "Fee (in WSP/kB) to add to transactions you send (default: %s)"),
 QT_TRANSLATE_NOOP("wispr-core", "Force safe mode (default: %u)"),
 QT_TRANSLATE_NOOP("wispr-core", "Generate coins (default: %u)"),
 QT_TRANSLATE_NOOP("wispr-core", "How many blocks to check at startup (default: %u, 0 = all)"),
@@ -398,11 +398,11 @@ QT_TRANSLATE_NOOP("wispr-core", "RPC server options:"),
 QT_TRANSLATE_NOOP("wispr-core", "Randomly drop 1 of every <n> network messages"),
 QT_TRANSLATE_NOOP("wispr-core", "Randomly fuzz 1 of every <n> network messages"),
 QT_TRANSLATE_NOOP("wispr-core", "Rebuild block chain index from current blk000??.dat files"),
-QT_TRANSLATE_NOOP("wispr-core", "Recalculating PIV supply..."),
+QT_TRANSLATE_NOOP("wispr-core", "Recalculating WSP supply..."),
 QT_TRANSLATE_NOOP("wispr-core", "Recalculating minted ZWSP..."),
 QT_TRANSLATE_NOOP("wispr-core", "Recalculating spent ZWSP..."),
 QT_TRANSLATE_NOOP("wispr-core", "Receive and display P2P network alerts (default: %u)"),
-QT_TRANSLATE_NOOP("wispr-core", "Reindex the PIV and zWSP money supply statistics"),
+QT_TRANSLATE_NOOP("wispr-core", "Reindex the WSP and zWSP money supply statistics"),
 QT_TRANSLATE_NOOP("wispr-core", "Reindex the accumulator database"),
 QT_TRANSLATE_NOOP("wispr-core", "Reindexing zerocoin database..."),
 QT_TRANSLATE_NOOP("wispr-core", "Reindexing zerocoin failed"),

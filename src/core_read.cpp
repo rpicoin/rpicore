@@ -46,7 +46,7 @@ CScript ParseScript(std::string s)
     }
 
     std::vector<std::string> words;
-    split(words, s, boost::algorithm::is_any_of(" \t\n"), boost::token_compress_on);
+    boost::algorithm::split(words, s, boost::algorithm::is_any_of(" \t\n"), boost::algorithm::token_compress_on);
 
     for (std::vector<std::string>::const_iterator w = words.begin(); w != words.end(); ++w) {
         if (w->empty()) {
@@ -113,7 +113,7 @@ uint256 ParseHashUV(const UniValue& v, const std::string& strName)
     std::string strHex;
     if (v.isStr())
         strHex = v.getValStr();
-    return ParseHashStr(strHex, strName); // Note: ParseHashStr("") throws a runtime_error
+    return ParseHashStr(strHex, strName); // Note: ParseHashStr("") throws a std::runtime_error
 }
 
 uint256 ParseHashStr(const std::string& strHex, const std::string& strName)

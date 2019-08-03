@@ -169,7 +169,7 @@ Test_GenerateGroupParams()
         }
 
         CBigNum c = group.g.pow_mod(group.groupOrder, group.modulus);
-        //cout << "g^q mod p = " << c << endl;
+        //cout << "g^q mod p = " << c << std::endl;
         if (!(c.isOne())) return false;
 
         // Try at multiple parameter sizes

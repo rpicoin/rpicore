@@ -325,7 +325,7 @@ int calculateChange(
             break;
         }
     }
-    // OK so if != libzerocoin::ZQ_ERROR we have a solution using 1 coin
+    // OK so if != ZQ_ERROR we have a solution using 1 coin
     if (minDenomOverTarget != libzerocoin::ZQ_ERROR) {
         mapOfDenomsUsed.at(minDenomOverTarget) = 1;
 

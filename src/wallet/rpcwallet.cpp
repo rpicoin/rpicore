@@ -2120,9 +2120,9 @@ UniValue getwalletinfo(const UniValue& params, bool fHelp)
             "\nResult:\n"
             "{\n"
             "  \"walletversion\": xxxxx,     (numeric) the wallet version\n"
-            "  \"balance\": xxxxxxx,         (numeric) the total PIV balance of the wallet\n"
-            "  \"unconfirmed_balance\": xxx, (numeric) the total unconfirmed balance of the wallet in PIV\n"
-            "  \"immature_balance\": xxxxxx, (numeric) the total immature balance of the wallet in PIV\n"
+            "  \"balance\": xxxxxxx,         (numeric) the total WSP balance of the wallet\n"
+            "  \"unconfirmed_balance\": xxx, (numeric) the total unconfirmed balance of the wallet in WSP\n"
+            "  \"immature_balance\": xxxxxx, (numeric) the total immature balance of the wallet in WSP\n"
             "  \"txcount\": xxxxxxx,         (numeric) the total number of transactions in the wallet\n"
             "  \"keypoololdest\": xxxxxx,    (numeric) the timestamp (seconds since GMT epoch) of the oldest pre-generated key in the key pool\n"
             "  \"keypoolsize\": xxxx,        (numeric) how many new keys are pre-generated\n"
@@ -2845,7 +2845,7 @@ UniValue spendzerocoin(const UniValue& params, bool fHelp)
     if (fHelp || params.size() > 4 || params.size() < 3)
         throw std::runtime_error(
             "spendzerocoin amount mintchange minimizechange ( \"address\" )\n"
-            "\nSpend zWSP to a PIV address.\n" +
+            "\nSpend zWSP to a WSP address.\n" +
             HelpRequiringPassphrase() + "\n"
 
             "\nArguments:\n"

@@ -176,7 +176,7 @@ bool EraseCheckpoints(int nStartHeight, int nEndHeight)
 
         for (auto denom : libzerocoin::zerocoinDenomList) {
             uint32_t nChecksumDelete = ParseChecksum(nCheckpointDelete, denom);
-            if (count(listCheckpointsPrev.begin(), listCheckpointsPrev.end(), nCheckpointDelete))
+            if (std::count(listCheckpointsPrev.begin(), listCheckpointsPrev.end(), nCheckpointDelete))
                 continue;
             EraseChecksum(nChecksumDelete);
         }

@@ -547,3 +547,4 @@ endif ()
 
 
 add_subdirectory(src/qt)
+add_subdirectory(src/test)

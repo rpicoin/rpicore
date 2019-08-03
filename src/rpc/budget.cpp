@@ -48,11 +48,50 @@ void budgetToJSON(CBudgetProposal* pbudgetProposal, UniValue& bObj)
     bObj.push_back(Pair("fValid", pbudgetProposal->fValid));
 }
 
-UniValue preparebudget(const UniValue& params, bool fHelp)
+void checkBudgetInputs(const UniValue& params, std::string &strProposalName, std::string &strURL,
+                       int &nPaymentCount, int &nBlockStart, CBitcoinAddress &address, CAmount &nAmount)
 {
     int nBlockMin = 0;
     CBlockIndex* pindexPrev = chainActive.Tip();
 
+    strProposalName = SanitizeString(params[0].get_str());
+    if (strProposalName.size() > 20)
+        throw std::runtime_error("Invalid proposal name, limit of 20 characters.");
+
+    strURL = SanitizeString(params[1].get_str());
+    if (strURL.size() > 64)
+        throw std::runtime_error("Invalid url, limit of 64 characters.");
+
+    nPaymentCount = params[2].get_int();
+    if (nPaymentCount < 1)
+        throw std::runtime_error("Invalid payment count, must be more than zero.");
+
+    // Start must be in the next budget cycle
+    if (pindexPrev != NULL) nBlockMin = pindexPrev->nHeight - pindexPrev->nHeight % Params().GetBudgetCycleBlocks() + Params().GetBudgetCycleBlocks();
+
+    nBlockStart = params[3].get_int();
+    if (nBlockStart % Params().GetBudgetCycleBlocks() != 0) {
+        int nNext = pindexPrev->nHeight - pindexPrev->nHeight % Params().GetBudgetCycleBlocks() + Params().GetBudgetCycleBlocks();
+        throw std::runtime_error(strprintf("Invalid block start - must be a budget cycle block. Next valid block: %d", nNext));
+    }
+
+    int nBlockEnd = nBlockStart + (Params().GetBudgetCycleBlocks() * nPaymentCount); // End must be AFTER current cycle
+
+    if (nBlockStart < nBlockMin)
+        throw std::runtime_error("Invalid block start, must be more than current height.");
+
+    if (nBlockEnd < pindexPrev->nHeight)
+        throw std::runtime_error("Invalid ending block, starting block + (payment_cycle*payments) must be more than current height.");
+
+    address = params[4].get_str();
+    if (!address.IsValid())
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid WISPR address");
+
+    nAmount = AmountFromValue(params[5]);
+}
+
+UniValue preparebudget(const UniValue& params, bool fHelp)
+{
     if (fHelp || params.size() != 6)
         throw std::runtime_error(
             "preparebudget \"proposal-name\" \"url\" payment-count block-start \"wispr-address\" monthy-payment\n"
@@ -77,44 +116,17 @@ UniValue preparebudget(const UniValue& params, bool fHelp)
 
     EnsureWalletIsUnlocked();
 
-    std::string strProposalName = SanitizeString(params[0].get_str());
-    if (strProposalName.size() > 20)
-        throw std::runtime_error("Invalid proposal name, limit of 20 characters.");
+    std::string strProposalName;
+    std::string strURL;
+    int nPaymentCount;
+    int nBlockStart;
+    CBitcoinAddress address;
+    CAmount nAmount;
 
-    std::string strURL = SanitizeString(params[1].get_str());
-    if (strURL.size() > 64)
-        throw std::runtime_error("Invalid url, limit of 64 characters.");
-
-    int nPaymentCount = params[2].get_int();
-    if (nPaymentCount < 1)
-        throw std::runtime_error("Invalid payment count, must be more than zero.");
-
-    // Start must be in the next budget cycle
-    if (pindexPrev != NULL) nBlockMin = pindexPrev->nHeight - pindexPrev->nHeight % Params().GetBudgetCycleBlocks() + Params().GetBudgetCycleBlocks();
-
-    int nBlockStart = params[3].get_int();
-    if (nBlockStart % Params().GetBudgetCycleBlocks() != 0) {
-        int nNext = pindexPrev->nHeight - pindexPrev->nHeight % Params().GetBudgetCycleBlocks() + Params().GetBudgetCycleBlocks();
-        throw std::runtime_error(strprintf("Invalid block start - must be a budget cycle block. Next valid block: %d", nNext));
-    }
-
-    int nBlockEnd = nBlockStart + Params().GetBudgetCycleBlocks() * nPaymentCount; // End must be AFTER current cycle
-
-    if (nBlockStart < nBlockMin)
-        throw std::runtime_error("Invalid block start, must be more than current height.");
-
-    if (nBlockEnd < pindexPrev->nHeight)
-        throw std::runtime_error("Invalid ending block, starting block + (payment_cycle*payments) must be more than current height.");
-
-    CBitcoinAddress address(params[4].get_str());
-    if (!address.IsValid())
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid WISPR address");
+    checkBudgetInputs(params, strProposalName, strURL, nPaymentCount, nBlockStart, address, nAmount);
 
     // Parse WISPR address
     CScript scriptPubKey = GetScriptForDestination(address.Get());
-    CAmount nAmount = AmountFromValue(params[5]);
-
-    //*************************************************************************
 
     // create transaction 15 minutes into the future, to allow for confirmation time
     CBudgetProposalBroadcast budgetProposalBroadcast(strProposalName, strURL, nPaymentCount, scriptPubKey, nAmount, nBlockStart, 0);
@@ -145,12 +157,9 @@ UniValue preparebudget(const UniValue& params, bool fHelp)
 
 UniValue submitbudget(const UniValue& params, bool fHelp)
 {
-    int nBlockMin = 0;
-    CBlockIndex* pindexPrev = chainActive.Tip();
-
     if (fHelp || params.size() != 7)
         throw std::runtime_error(
-            "submitbudget \"proposal-name\" \"url\" payment-count block-start \"wispr-address\" monthy-payment \"fee-tx\"\n"
+            "submitbudget \"proposal-name\" \"url\" payment-count block-start \"wispr-address\" monthly-payment \"fee-tx\"\n"
             "\nSubmit proposal to the network\n"
 
             "\nArguments:\n"
@@ -169,45 +178,18 @@ UniValue submitbudget(const UniValue& params, bool fHelp)
             HelpExampleCli("submitbudget", "\"test-proposal\" \"https://forum.wispr.tech/t/test-proposal\" 2 820800 \"D9oc6C3dttUbv8zd7zGNq1qKBGf4ZQ1XEE\" 500") +
             HelpExampleRpc("submitbudget", "\"test-proposal\" \"https://forum.wispr.tech/t/test-proposal\" 2 820800 \"D9oc6C3dttUbv8zd7zGNq1qKBGf4ZQ1XEE\" 500"));
 
-    // Check these inputs the same way we check the vote commands:
-    // **********************************************************
+    std::string strProposalName;
+    std::string strURL;
+    int nPaymentCount;
+    int nBlockStart;
+    CBitcoinAddress address;
+    CAmount nAmount;
 
-    std::string strProposalName = SanitizeString(params[0].get_str());
-    if (strProposalName.size() > 20)
-        throw std::runtime_error("Invalid proposal name, limit of 20 characters.");
-
-    std::string strURL = SanitizeString(params[1].get_str());
-    if (strURL.size() > 64)
-        throw std::runtime_error("Invalid url, limit of 64 characters.");
-
-    int nPaymentCount = params[2].get_int();
-    if (nPaymentCount < 1)
-        throw std::runtime_error("Invalid payment count, must be more than zero.");
-
-    // Start must be in the next budget cycle
-    if (pindexPrev != nullptr) nBlockMin = pindexPrev->nHeight - pindexPrev->nHeight % Params().GetBudgetCycleBlocks() + Params().GetBudgetCycleBlocks();
-
-    int nBlockStart = params[3].get_int();
-    if (nBlockStart % Params().GetBudgetCycleBlocks() != 0) {
-        int nNext = pindexPrev->nHeight - pindexPrev->nHeight % Params().GetBudgetCycleBlocks() + Params().GetBudgetCycleBlocks();
-        throw std::runtime_error(strprintf("Invalid block start - must be a budget cycle block. Next valid block: %d", nNext));
-    }
-
-    int nBlockEnd = nBlockStart + (Params().GetBudgetCycleBlocks() * nPaymentCount); // End must be AFTER current cycle
-
-    if (nBlockStart < nBlockMin)
-        throw std::runtime_error("Invalid block start, must be more than current height.");
-
-    if (nBlockEnd < pindexPrev->nHeight)
-        throw std::runtime_error("Invalid ending block, starting block + (payment_cycle*payments) must be more than current height.");
-
-    CBitcoinAddress address(params[4].get_str());
-    if (!address.IsValid())
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid WISPR address");
+    checkBudgetInputs(params, strProposalName, strURL, nPaymentCount, nBlockStart, address, nAmount);
 
     // Parse WISPR address
     CScript scriptPubKey = GetScriptForDestination(address.Get());
-    CAmount nAmount = AmountFromValue(params[5]);
+
     uint256 hash = ParseHashV(params[6], "parameter 1");
 
     //create the proposal incase we're the first to make it
@@ -940,7 +922,7 @@ UniValue checkbudgets(const UniValue& params, bool fHelp)
     if (fHelp || params.size() != 0)
         throw std::runtime_error(
             "checkbudgets\n"
-            "\nInitiates a buddget check cycle manually\n"
+            "\nInitiates a budget check cycle manually\n"
 
             "\nExamples:\n" +
             HelpExampleCli("checkbudgets", "") + HelpExampleRpc("checkbudgets", ""));

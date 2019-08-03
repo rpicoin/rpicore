@@ -45,27 +45,27 @@ BOOST_AUTO_TEST_CASE(denomination_to_value_test)
 
     int64_t Value = 1 * COIN;
     libzerocoin::CoinDenomination denomination = libzerocoin::ZQ_ONE;
-    BOOST_CHECK_MESSAGE(ZerocoinDenominationToAmount(denomination) == Value, "Wrong Value - should be 1");
+    BOOST_CHECK_MESSAGE(libzerocoin::ZerocoinDenominationToAmount(denomination) == Value, "Wrong Value - should be 1");
 
     Value = 10 * COIN;
     denomination = libzerocoin::ZQ_TEN;
-    BOOST_CHECK_MESSAGE(ZerocoinDenominationToAmount(denomination) == Value, "Wrong Value - should be 10");
+    BOOST_CHECK_MESSAGE(libzerocoin::ZerocoinDenominationToAmount(denomination) == Value, "Wrong Value - should be 10");
 
     Value = 50 * COIN;
     denomination = libzerocoin::ZQ_FIFTY;
-    BOOST_CHECK_MESSAGE(ZerocoinDenominationToAmount(denomination) == Value, "Wrong Value - should be 50");
+    BOOST_CHECK_MESSAGE(libzerocoin::ZerocoinDenominationToAmount(denomination) == Value, "Wrong Value - should be 50");
 
     Value = 500 * COIN;
     denomination = libzerocoin::ZQ_FIVE_HUNDRED;
-    BOOST_CHECK_MESSAGE(ZerocoinDenominationToAmount(denomination) == Value, "Wrong Value - should be 500");
+    BOOST_CHECK_MESSAGE(libzerocoin::ZerocoinDenominationToAmount(denomination) == Value, "Wrong Value - should be 500");
 
     Value = 100 * COIN;
     denomination = libzerocoin::ZQ_ONE_HUNDRED;
-    BOOST_CHECK_MESSAGE(ZerocoinDenominationToAmount(denomination) == Value, "Wrong Value - should be 100");
+    BOOST_CHECK_MESSAGE(libzerocoin::ZerocoinDenominationToAmount(denomination) == Value, "Wrong Value - should be 100");
 
     Value = 0 * COIN;
     denomination = libzerocoin::ZQ_ERROR;
-    BOOST_CHECK_MESSAGE(ZerocoinDenominationToAmount(denomination) == Value, "Wrong Value - should be 0");
+    BOOST_CHECK_MESSAGE(libzerocoin::ZerocoinDenominationToAmount(denomination) == Value, "Wrong Value - should be 0");
 }
 
 BOOST_AUTO_TEST_CASE(zerocoin_spend_test241)
@@ -109,7 +109,7 @@ BOOST_AUTO_TEST_CASE(zerocoin_spend_test241)
     // Show what we have
     j = 0;
     for (const auto& denom : libzerocoin::zerocoinDenomList)
-        std::cout << DenomAmounts[j++] << "*" << ZerocoinDenominationToAmount(denom) / COIN << " + ";
+        std::cout << DenomAmounts[j++] << "*" << libzerocoin::ZerocoinDenominationToAmount(denom) / COIN << " + ";
     std::cout << "\n";
 
     // For DenomAmounts[] = {1,2,3,4,0,0,0,0}; we can spend up to 200 without requiring more than 4 Spends
@@ -193,7 +193,7 @@ BOOST_AUTO_TEST_CASE(zerocoin_spend_test115)
     // Show what we have
     j = 0;
     for (const auto& denom : libzerocoin::zerocoinDenomList)
-        std::cout << DenomAmounts[j++] << "*" << ZerocoinDenominationToAmount(denom) / COIN << " + ";
+        std::cout << DenomAmounts[j++] << "*" << libzerocoin::ZerocoinDenominationToAmount(denom) / COIN << " + ";
     std::cout << "\n";
 
     CAmount OneCoinAmount = libzerocoin::ZerocoinDenominationToAmount(libzerocoin::ZQ_ONE);
@@ -277,7 +277,7 @@ BOOST_AUTO_TEST_CASE(zerocoin_spend_test_from_245)
     // Show what we have
     j = 0;
     for (const auto& denom : libzerocoin::zerocoinDenomList)
-        std::cout << DenomAmounts[j++] << "*" << ZerocoinDenominationToAmount(denom) / COIN << " + ";
+        std::cout << DenomAmounts[j++] << "*" << libzerocoin::ZerocoinDenominationToAmount(denom) / COIN << " + ";
     std::cout << "\n";
 
     CAmount OneCoinAmount = libzerocoin::ZerocoinDenominationToAmount(libzerocoin::ZQ_ONE);
@@ -382,7 +382,7 @@ BOOST_AUTO_TEST_CASE(zerocoin_spend_test_from_145)
     // Show what we have
     j = 0;
     for (const auto& denom : libzerocoin::zerocoinDenomList)
-        std::cout << DenomAmounts[j++] << "*" << ZerocoinDenominationToAmount(denom) / COIN << " + ";
+        std::cout << DenomAmounts[j++] << "*" << libzerocoin::ZerocoinDenominationToAmount(denom) / COIN << " + ";
     std::cout << "\n";
 
     CAmount OneCoinAmount = libzerocoin::ZerocoinDenominationToAmount(libzerocoin::ZQ_ONE);
@@ -485,7 +485,7 @@ BOOST_AUTO_TEST_CASE(zerocoin_spend_test99)
     // Show what we have
     j = 0;
     for (const auto& denom : libzerocoin::zerocoinDenomList)
-        std::cout << DenomAmounts[j++] << "*" << ZerocoinDenominationToAmount(denom) / COIN << " + ";
+        std::cout << DenomAmounts[j++] << "*" << libzerocoin::ZerocoinDenominationToAmount(denom) / COIN << " + ";
     std::cout << "\n";
 
     CAmount OneCoinAmount = libzerocoin::ZerocoinDenominationToAmount(libzerocoin::ZQ_ONE);
