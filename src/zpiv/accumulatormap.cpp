@@ -9,15 +9,14 @@
 #include "libzerocoin/Denominations.h"
 
 using namespace libzerocoin;
-using namespace std;
 
 //Construct accumulators for all denominations
 AccumulatorMap::AccumulatorMap(libzerocoin::ZerocoinParams* params)
 {
     this->params = params;
     for (auto& denom : zerocoinDenomList) {
-        unique_ptr<Accumulator> uptr(new Accumulator(params, denom));
-        mapAccumulators.insert(make_pair(denom, std::move(uptr)));
+        std::unique_ptr<Accumulator> uptr(new Accumulator(params, denom));
+        mapAccumulators.insert(std::make_pair(denom, std::move(uptr)));
     }
 }
 
@@ -32,8 +31,8 @@ void AccumulatorMap::Reset(libzerocoin::ZerocoinParams* params2)
     this->params = params2;
     mapAccumulators.clear();
     for (auto& denom : zerocoinDenomList) {
-        unique_ptr<Accumulator> uptr(new Accumulator(params2, denom));
-        mapAccumulators.insert(make_pair(denom, std::move(uptr)));
+        std::unique_ptr<Accumulator> uptr(new Accumulator(params2, denom));
+        mapAccumulators.insert(std::make_pair(denom, std::move(uptr)));
     }
 }
 

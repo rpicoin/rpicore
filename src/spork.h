@@ -16,7 +16,6 @@
 #include "obfuscation.h"
 #include "protocol.h"
 
-using namespace std;
 using namespace boost;
 
 /*

@@ -16,7 +16,6 @@
 #include "hash.h"
 #include "uint256.h"
 
-using namespace std;
 
 namespace libzerocoin {
 
@@ -39,7 +38,7 @@ namespace libzerocoin {
 ///
 
 void
-CalculateParams(ZerocoinParams &params, CBigNum N, string aux, uint32_t securityLevel)
+CalculateParams(ZerocoinParams &params, CBigNum N, std::string aux, uint32_t securityLevel)
 {
 	params.initialized = false;
 	params.accumulatorParams.initialized = false;
@@ -125,7 +124,7 @@ CalculateParams(ZerocoinParams &params, CBigNum N, string aux, uint32_t security
 /// Returns the hash of the value.
 
 uint256
-calculateGeneratorSeed(uint256 seed, uint256 pSeed, uint256 qSeed, string label, uint32_t index, uint32_t count)
+calculateGeneratorSeed(uint256 seed, uint256 pSeed, uint256 qSeed, std::string label, uint32_t index, uint32_t count)
 {
 	CHashWriter hasher(0,0);
 	uint256     hash;
@@ -133,15 +132,15 @@ calculateGeneratorSeed(uint256 seed, uint256 pSeed, uint256 qSeed, string label,
 	// Compute the hash of:
 	// <modulus>||<securitylevel>||<auxString>||groupName
 	hasher << seed;
-	hasher << string("||");
+	hasher << std::string("||");
 	hasher << pSeed;
-	hasher << string("||");
+	hasher << std::string("||");
 	hasher << qSeed;
-	hasher << string("||");
+	hasher << std::string("||");
 	hasher << label;
-	hasher << string("||");
+	hasher << std::string("||");
 	hasher << index;
-	hasher << string("||");
+	hasher << std::string("||");
 	hasher << count;
 
 	return hasher.GetHash();
@@ -157,7 +156,7 @@ calculateGeneratorSeed(uint256 seed, uint256 pSeed, uint256 qSeed, string label,
 /// Returns the hash of the value.
 
 uint256
-calculateSeed(CBigNum modulus, string auxString, uint32_t securityLevel, string groupName)
+calculateSeed(CBigNum modulus, std::string auxString, uint32_t securityLevel, std::string groupName)
 {
 	CHashWriter hasher(0,0);
 	uint256     hash;
@@ -165,11 +164,11 @@ calculateSeed(CBigNum modulus, string auxString, uint32_t securityLevel, string 
 	// Compute the hash of:
 	// <modulus>||<securitylevel>||<auxString>||groupName
 	hasher << modulus;
-	hasher << string("||");
+	hasher << std::string("||");
 	hasher << securityLevel;
-	hasher << string("||");
+	hasher << std::string("||");
 	hasher << auxString;
-	hasher << string("||");
+	hasher << std::string("||");
 	hasher << groupName;
 
 	return hasher.GetHash();
@@ -365,7 +364,7 @@ calculateGroupModulusAndOrder(uint256 seed, uint32_t pLen, uint32_t qLen,
 	}
 
 #ifdef ZEROCOIN_DEBUG
-	cout << "calculateGroupModulusAndOrder: pLen = " << pLen << endl;
+	std::cout << "calculateGroupModulusAndOrder: pLen = " << pLen << std::endl;
 #endif
 
 	// Generate a random prime for the group order.
@@ -523,8 +522,8 @@ generateRandomPrime(uint32_t primeBitLen, uint256 in_seed, uint256 *out_seed,
 			uint32_t iteration_count;
 			CBigNum c = generateIntegerFromSeed(primeBitLen, prime_seed, &iteration_count);
 #ifdef ZEROCOIN_DEBUG
-			cout << "generateRandomPrime: primeBitLen = " << primeBitLen << endl;
-			cout << "Generated c = " << c << endl;
+			std::cout << "generateRandomPrime: primeBitLen = " << primeBitLen << std::endl;
+			std::cout << "Generated c = " << c << std::endl;
 #endif
 
 			prime_seed += (iteration_count + 1);
@@ -534,8 +533,8 @@ generateRandomPrime(uint32_t primeBitLen, uint256 in_seed, uint256 *out_seed,
 			uint32_t intc = c.getulong();
 			intc = (2 * floor(intc / 2.0)) + 1;
 #ifdef ZEROCOIN_DEBUG
-			cout << "Should be odd. c = " << intc << endl;
-			cout << "The big num is: c = " << c << endl;
+			std::cout << "Should be odd. c = " << intc << std::endl;
+			std::cout << "The big num is: c = " << c << std::endl;
 #endif
 
 			// Perform trial division on this (relatively small) integer to determine if "intc"
@@ -623,8 +622,8 @@ generateIntegerFromSeed(uint32_t numBits, uint256 seed, uint32_t *numIterations)
 	uint32_t    iterations = ceil((double)numBits / (double)HASH_OUTPUT_BITS);
 
 #ifdef ZEROCOIN_DEBUG
-	cout << "numBits = " << numBits << endl;
-	cout << "iterations = " << iterations << endl;
+	std::cout << "numBits = " << numBits << std::endl;
+	std::cout << "iterations = " << iterations << std::endl;
 #endif
 
 	// Loop "iterations" times filling up the value "result" with random bits

@@ -38,7 +38,7 @@ BOOST_AUTO_TEST_CASE(zerocoin_wrapped_serial_spend_test)
     (void)ZCParams;
 
     // Seed + Mints
-    string strWalletFile = "unittestwallet.dat";
+    std::string strWalletFile = "unittestwallet.dat";
     CWalletDB walletdb(strWalletFile, "cr+");
     CWallet wallet(strWalletFile);
     CzWSPWallet *czWSPWallet = new CzWSPWallet(wallet.strWalletFile);

@@ -157,7 +157,7 @@ void CzWSPWallet::GenerateMintPool(uint32_t nCountStart, uint32_t nCountEnd)
 // pubcoin hashes are stored to db so that a full accounting of mints belonging to the seed can be tracked without regenerating
 bool CzWSPWallet::LoadMintPoolFromDB()
 {
-    map<uint256, vector<pair<uint256, uint32_t> > > mapMintPool = CWalletDB(strWalletFile).MapMintPool();
+    std::map<uint256, std::vector<std::pair<uint256, uint32_t> > > mapMintPool = CWalletDB(strWalletFile).MapMintPool();
 
     uint256 hashSeed = Hash(seedMaster.begin(), seedMaster.end());
     for (auto& pair : mapMintPool[hashSeed])
@@ -185,7 +185,7 @@ void CzWSPWallet::SyncWithChain(bool fGenerateMintPool)
     bool found = true;
     CWalletDB walletdb(strWalletFile);
 
-    set<uint256> setAddedTx;
+    std::set<uint256> setAddedTx;
     while (found) {
         found = false;
         if (fGenerateMintPool)
@@ -193,8 +193,8 @@ void CzWSPWallet::SyncWithChain(bool fGenerateMintPool)
         LogPrintf("%s: Mintpool size=%d\n", __func__, mintPool.size());
 
         std::set<uint256> setChecked;
-        list<pair<uint256,uint32_t> > listMints = mintPool.List();
-        for (pair<uint256, uint32_t> pMint : listMints) {
+        std::list<std::pair<uint256,uint32_t> > listMints = mintPool.List();
+        for (std::pair<uint256, uint32_t> pMint : listMints) {
             LOCK(cs_main);
             if (setChecked.count(pMint.first))
                 return;
@@ -284,7 +284,7 @@ bool CzWSPWallet::SetMintSeen(const CBigNum& bnValue, const int& nHeight, const 
 {
     if (!mintPool.Has(bnValue))
         return error("%s: value not in pool", __func__);
-    pair<uint256, uint32_t> pMint = mintPool.Get(bnValue);
+    std::pair<uint256, uint32_t> pMint = mintPool.Get(bnValue);
 
     // Regenerate the mint
     uint512 seedZerocoin = GetZerocoinSeed(pMint.second);

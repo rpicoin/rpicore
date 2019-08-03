@@ -14,7 +14,6 @@
 #include "sporkdb.h"
 #include "util.h"
 
-using namespace std;
 using namespace boost;
 
 class CSporkMessage;

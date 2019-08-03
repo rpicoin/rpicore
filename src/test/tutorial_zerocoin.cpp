@@ -26,7 +26,6 @@
 #include "libzerocoin/Accumulator.h"
 #include "test_wispr.h"
 
-using namespace std;
 
 #define COINS_TO_ACCUMULATE     5
 #define DUMMY_TRANSACTION_HASH  0 // in real life these would be uint256 hashes
@@ -76,7 +75,7 @@ ZerocoinTutorial()
 		// Set up the Zerocoin Params object
 		libzerocoin::ZerocoinParams* params = new libzerocoin::ZerocoinParams(testModulus);
 
-		cout << "Successfully loaded parameters." << endl;
+		std::cout << "Successfully loaded parameters." << std::endl;
 
 		/********************************************************************/
 		// What is it:      Coin generation
@@ -100,7 +99,7 @@ ZerocoinTutorial()
 		// of currency inputs totaling the assigned value of one zerocoin.
 		libzerocoin::PublicCoin pubCoin = newCoin.getPublicCoin();
 
-		cout << "Successfully minted a zerocoin." << endl;
+		std::cout << "Successfully minted a zerocoin." << std::endl;
 
 		// Serialize the public coin to a CDataStream object.
 		CDataStream serializedCoin(SER_NETWORK, PROTOCOL_VERSION);
@@ -127,10 +126,10 @@ ZerocoinTutorial()
 			// If this returns false, don't accept the coin for any purpose!
 			// Any ZEROCOIN_MINT with an invalid coin should NOT be
 			// accepted as a valid transaction in the block chain.
-			cout << "Error: coin is not valid!";
+			std::cout << "Error: coin is not valid!";
 		}
 
-		cout << "Deserialized and verified the coin." << endl;
+		std::cout << "Deserialized and verified the coin." << std::endl;
 
 		/********************************************************************/
 		// What is it:      Accumulator computation
@@ -175,7 +174,7 @@ ZerocoinTutorial()
 		// we generated up above.
 		newAccumulator += pubCoinNew;
 
-		cout << "Successfully accumulated coins." << endl;
+		std::cout << "Successfully accumulated coins." << std::endl;
 
 		/********************************************************************/
 		// What is it:      Coin spend
@@ -215,7 +214,7 @@ ZerocoinTutorial()
 		// This is a sanity check. The CoinSpend object should always verify,
 		// but why not check before we put it onto the wire?
 		if (!spend.Verify(accumulator)) {
-			cout << "ERROR: Our new CoinSpend transaction did not verify!" << endl;
+			std::cout << "ERROR: Our new CoinSpend transaction did not verify!" << std::endl;
 			return false;
 		}
 
@@ -223,7 +222,7 @@ ZerocoinTutorial()
 		CDataStream serializedCoinSpend(SER_NETWORK, PROTOCOL_VERSION);
 		serializedCoinSpend << spend;
 
-		cout << "Successfully generated a coin spend transaction." << endl;
+		std::cout << "Successfully generated a coin spend transaction." << std::endl;
 
 		/********************************************************************/
 		// What is it:      Coin spend verification
@@ -250,7 +249,7 @@ ZerocoinTutorial()
 		// Verify that the spend is valid with respect to the Accumulator
 		// and the Metadata
 		if (!newSpend.Verify(accumulator)) {
-			cout << "ERROR: The CoinSpend transaction did not verify!" << endl;
+			std::cout << "ERROR: The CoinSpend transaction did not verify!" << std::endl;
 			return false;
 		}
 
@@ -260,14 +259,14 @@ ZerocoinTutorial()
 		// The serial number is stored as a CBigNum.
 		CBigNum serialNumber = newSpend.getCoinSerialNumber();
 
-		cout << "Successfully verified a coin spend transaction." << endl;
-		cout << endl << "Coin serial number is:" << endl << serialNumber << endl;
+		std::cout << "Successfully verified a coin spend transaction." << std::endl;
+		std::cout << std::endl << "Coin serial number is:" << std::endl << serialNumber << std::endl;
 
 		// We're done
 		return true;
 
-	} catch (runtime_error &e) {
-		cout << e.what() << endl;
+	} catch (std::runtime_error &e) {
+		std::cout << e.what() << std::endl;
 		return false;
 	}
 
@@ -277,7 +276,7 @@ ZerocoinTutorial()
 BOOST_FIXTURE_TEST_SUITE(tutorial_libzerocoin, TestingSetup)
 BOOST_AUTO_TEST_CASE(tutorial_libzerocoin_tests)
 {
-	cout << "libzerocoin v" << ZEROCOIN_VERSION_STRING << " tutorial." << endl << endl;
+	std::cout << "libzerocoin v" << ZEROCOIN_VERSION_STRING << " tutorial." << std::endl << std::endl;
 
 	ZerocoinTutorial();
 }

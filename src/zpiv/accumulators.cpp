@@ -95,7 +95,7 @@ void AddAccumulatorChecksum(const uint32_t nChecksum, const CBigNum &bnValue)
     //Since accumulators are switching at v2, stop databasing v1 because its useless. Only focus on v2.
     if (chainActive.Height() >= Params().NEW_PROTOCOLS_STARTHEIGHT()) {
         zerocoinDB->WriteAccumulatorValue(nChecksum, bnValue);
-        mapAccumulatorValues.insert(make_pair(nChecksum, bnValue));
+        mapAccumulatorValues.insert(std::make_pair(nChecksum, bnValue));
     }
 }
 
@@ -150,7 +150,7 @@ bool LoadAccumulatorValuesFromDB(const uint256 nCheckpoint)
             LogPrint("zero", "%s : Missing databased value for checksum %d\n", __func__, nChecksum);
             return false;
         }
-        mapAccumulatorValues.insert(make_pair(nChecksum, bnValue));
+        mapAccumulatorValues.insert(std::make_pair(nChecksum, bnValue));
     }
     return true;
 }
@@ -162,13 +162,13 @@ bool EraseCheckpoints(int nStartHeight, int nEndHeight)
     if (chainActive.Height() < nStartHeight)
         return false;
 
-    nEndHeight = min(chainActive.Height(), nEndHeight);
+    nEndHeight = std::min(chainActive.Height(), nEndHeight);
 
     CBlockIndex* pindex = chainActive[nStartHeight];
     uint256 nCheckpointPrev = pindex->pprev->nAccumulatorCheckpoint;
 
     //Keep a list of checkpoints from the previous block so that we don't delete them
-    list<uint32_t> listCheckpointsPrev;
+    std::list<uint32_t> listCheckpointsPrev;
     for (auto denom : zerocoinDenomList)
         listCheckpointsPrev.emplace_back(ParseChecksum(nCheckpointPrev, denom));
 
@@ -364,12 +364,12 @@ int ComputeAccumulatedCoins(int nHeightEnd, libzerocoin::CoinDenomination denom)
 }
 
 
-list<PublicCoin> GetPubcoinFromBlock(const CBlockIndex* pindex){
+std::list<PublicCoin> GetPubcoinFromBlock(const CBlockIndex* pindex){
     //grab mints from this block
     CBlock block;
     if(!ReadBlockFromDisk(block, pindex))
         throw GetPubcoinException("GetPubcoinFromBlock: failed to read block from disk while adding pubcoins to witness");
-    list<libzerocoin::PublicCoin> listPubcoins;
+    std::list<libzerocoin::PublicCoin> listPubcoins;
     if(!BlockToPubcoinList(block, listPubcoins, true))
         throw GetPubcoinException("GetPubcoinFromBlock: failed to get zerocoin mintlist from block "+std::to_string(pindex->nHeight)+"\n");
     return listPubcoins;
@@ -378,7 +378,7 @@ list<PublicCoin> GetPubcoinFromBlock(const CBlockIndex* pindex){
 
 
 int AddBlockMintsToAccumulator(const CoinDenomination den, const CBloomFilter filter, const CBlockIndex* pindex,
-                               libzerocoin::Accumulator* accumulator, bool isWitness, list<CBigNum>& notAddedCoins)
+                               libzerocoin::Accumulator* accumulator, bool isWitness, std::list<CBigNum>& notAddedCoins)
 {
     // if this block contains mints of the denomination that is being spent, then add them to the witness
     int nMintsAdded = 0;
@@ -615,8 +615,8 @@ bool calculateAccumulatedBlocksFor(
         libzerocoin::CoinDenomination den,
         CBloomFilter filter,
         libzerocoin::Accumulator &witnessAccumulator,
-        list<CBigNum>& ret,
-        string& strError
+        std::list<CBigNum>& ret,
+        std::string& strError
 ){
     bool fDoubleCounted = false;
     int nMintsAdded = 0;
@@ -671,7 +671,7 @@ bool calculateAccumulatedBlocksFor(
         libzerocoin::Accumulator &accumulator,
         libzerocoin::Accumulator &witnessAccumulator,
         libzerocoin::PublicCoin coin,
-        string& strError
+        std::string& strError
 ){
 
     int amountOfScannedBlocks = 0;
@@ -730,8 +730,8 @@ bool CalculateAccumulatorWitnessFor(
         Accumulator& accumulator,
         AccumulatorWitness& witness,
         int& nMintsAdded,
-        string& strError,
-        list<CBigNum>& ret,
+        std::string& strError,
+        std::list<CBigNum>& ret,
         int &heightStop
 ){
     // Lock
@@ -807,7 +807,7 @@ bool GenerateAccumulatorWitness(
         Accumulator& accumulator,
         AccumulatorWitness& witness,
         int& nMintsAdded,
-        string& strError,
+        std::string& strError,
         CBlockIndex* pindexCheckpoint)
 {
     try {
@@ -893,11 +893,11 @@ bool GenerateAccumulatorWitness(
 
 
 
-map<CoinDenomination, int> GetMintMaturityHeight()
+std::map<CoinDenomination, int> GetMintMaturityHeight()
 {
-    map<CoinDenomination, pair<int, int > > mapDenomMaturity;
+    std::map<CoinDenomination, std::pair<int, int > > mapDenomMaturity;
     for (auto denom : libzerocoin::zerocoinDenomList)
-        mapDenomMaturity.insert(make_pair(denom, make_pair(0, 0)));
+        mapDenomMaturity.insert(std::make_pair(denom, std::make_pair(0, 0)));
 
     int nConfirmedHeight = chainActive.Height() - Params().Zerocoin_MintRequiredConfirmations();
 
@@ -928,9 +928,9 @@ map<CoinDenomination, int> GetMintMaturityHeight()
     }
 
     //Generate final map
-    map<CoinDenomination, int> mapRet;
+    std::map<CoinDenomination, int> mapRet;
     for (auto denom : libzerocoin::zerocoinDenomList)
-        mapRet.insert(make_pair(denom, mapDenomMaturity.at(denom).second));
+        mapRet.insert(std::make_pair(denom, mapDenomMaturity.at(denom).second));
 
     return mapRet;
 }

@@ -21,7 +21,7 @@ BOOST_FIXTURE_TEST_SUITE(zerocoin_denom_tests, BasicTestingSetup)
 //translation from wispr quantity to zerocoin denomination
 BOOST_AUTO_TEST_CASE(amount_to_denomination_test)
 {
-    cout << "Running amount_to_denomination_test...\n";
+    std::cout << "Running amount_to_denomination_test...\n";
 
     //valid amount (min edge)
     CAmount amount = 1 * COIN;
@@ -42,7 +42,7 @@ BOOST_AUTO_TEST_CASE(amount_to_denomination_test)
 
 BOOST_AUTO_TEST_CASE(denomination_to_value_test)
 {
-    cout << "Running ZerocoinDenominationToValue_test...\n";
+    std::cout << "Running ZerocoinDenominationToValue_test...\n";
 
     int64_t Value = 1 * COIN;
     CoinDenomination denomination = ZQ_ONE;

@@ -27,35 +27,34 @@
 
 #include <univalue.h>
 
-using namespace std;
 using namespace boost::algorithm;
 
 // In script_tests.cpp
 extern UniValue read_json(const std::string& jsondata);
 
-static std::map<string, unsigned int> mapFlagNames = boost::assign::map_list_of
-    (string("NONE"), (unsigned int)SCRIPT_VERIFY_NONE)
-    (string("P2SH"), (unsigned int)SCRIPT_VERIFY_P2SH)
-    (string("STRICTENC"), (unsigned int)SCRIPT_VERIFY_STRICTENC)
-    (string("DERSIG"), (unsigned int)SCRIPT_VERIFY_DERSIG)
-    (string("LOW_S"), (unsigned int)SCRIPT_VERIFY_LOW_S)
-    (string("SIGPUSHONLY"), (unsigned int)SCRIPT_VERIFY_SIGPUSHONLY)
-    (string("MINIMALDATA"), (unsigned int)SCRIPT_VERIFY_MINIMALDATA)
-    (string("NULLDUMMY"), (unsigned int)SCRIPT_VERIFY_NULLDUMMY)
-    (string("DISCOURAGE_UPGRADABLE_NOPS"), (unsigned int)SCRIPT_VERIFY_DISCOURAGE_UPGRADABLE_NOPS)
-    (string("CLEANSTACK"), (unsigned int)SCRIPT_VERIFY_CLEANSTACK)
-    (string("CHECKLOCKTIMEVERIFY"), (unsigned int)SCRIPT_VERIFY_CHECKLOCKTIMEVERIFY);
+static std::map<std::string, unsigned int> mapFlagNames = boost::assign::map_list_of
+    (std::string("NONE"), (unsigned int)SCRIPT_VERIFY_NONE)
+    (std::string("P2SH"), (unsigned int)SCRIPT_VERIFY_P2SH)
+    (std::string("STRICTENC"), (unsigned int)SCRIPT_VERIFY_STRICTENC)
+    (std::string("DERSIG"), (unsigned int)SCRIPT_VERIFY_DERSIG)
+    (std::string("LOW_S"), (unsigned int)SCRIPT_VERIFY_LOW_S)
+    (std::string("SIGPUSHONLY"), (unsigned int)SCRIPT_VERIFY_SIGPUSHONLY)
+    (std::string("MINIMALDATA"), (unsigned int)SCRIPT_VERIFY_MINIMALDATA)
+    (std::string("NULLDUMMY"), (unsigned int)SCRIPT_VERIFY_NULLDUMMY)
+    (std::string("DISCOURAGE_UPGRADABLE_NOPS"), (unsigned int)SCRIPT_VERIFY_DISCOURAGE_UPGRADABLE_NOPS)
+    (std::string("CLEANSTACK"), (unsigned int)SCRIPT_VERIFY_CLEANSTACK)
+    (std::string("CHECKLOCKTIMEVERIFY"), (unsigned int)SCRIPT_VERIFY_CHECKLOCKTIMEVERIFY);
 
-unsigned int ParseScriptFlags(string strFlags)
+unsigned int ParseScriptFlags(std::string strFlags)
 {
     if (strFlags.empty()) {
         return 0;
     }
     unsigned int flags = 0;
-    vector<string> words;
+    std::vector<std::string> words;
     split(words, strFlags, is_any_of(","));
 
-    for(string word: words)
+    for(std::string word: words)
     {
         if (!mapFlagNames.count(word))
             BOOST_ERROR("Bad test: unknown verification flag '" << word << "'");
@@ -65,13 +64,13 @@ unsigned int ParseScriptFlags(string strFlags)
     return flags;
 }
 
-string FormatScriptFlags(unsigned int flags)
+std::string FormatScriptFlags(unsigned int flags)
 {
     if (flags == 0) {
         return "";
     }
-    string ret;
-    std::map<string, unsigned int>::const_iterator it = mapFlagNames.begin();
+    std::string ret;
+    std::map<std::string, unsigned int>::const_iterator it = mapFlagNames.begin();
     while (it != mapFlagNames.end()) {
         if (flags & it->second) {
             ret += it->first + ",";
@@ -348,7 +347,7 @@ BOOST_AUTO_TEST_CASE(test_IsStandard)
                 key.MakeNewKey(true);
                 t.vout[0].scriptPubKey = GetScriptForDestination(key.GetPubKey().GetID());
 
-                string reason;
+                std::string reason;
                 BOOST_CHECK(IsStandardTx(t, reason));
 
                 t.vout[0].nValue = 5011; // dust
