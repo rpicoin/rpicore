@@ -68,7 +68,7 @@ CalculateParams(ZerocoinParams &params, CBigNum N, std::string aux, uint32_t sec
 	// Calculate candidate parameters ("p", "q") for the coin commitment group
 	// using a deterministic process based on "N", the "aux" string, and
 	// the dedicated string "COMMITMENTGROUP".
-	params.coinCommitmentGroup = deriveIntegerGroupParams(calculateSeed(N, aux, securityLevel, STRING_COMMIT_GROUP),
+	params.coinCommitmentGroup = libzerocoin::deriveIntegerGroupParams(libzerocoin::calculateSeed(N, aux, securityLevel, STRING_COMMIT_GROUP),
 	                             pLen, qLen);
 
 	// Next, we derive parameters for a second Accumulated Value commitment group.
@@ -79,7 +79,7 @@ CalculateParams(ZerocoinParams &params, CBigNum N, std::string aux, uint32_t sec
 
 	// Calculate the parameters for the internal commitment
 	// using the same process.
-	params.accumulatorParams.accumulatorPoKCommitmentGroup = deriveIntegerGroupParams(calculateSeed(N, aux, securityLevel, STRING_AIC_GROUP),
+	params.accumulatorParams.accumulatorPoKCommitmentGroup = libzerocoin::deriveIntegerGroupParams(libzerocoin::calculateSeed(N, aux, securityLevel, STRING_AIC_GROUP),
 	        qLen + 300, qLen + 1);
 
 	// Calculate the parameters for the accumulator QRN commitment generators. This isn't really

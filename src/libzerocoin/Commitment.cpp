@@ -17,14 +17,14 @@
 namespace libzerocoin {
 
 //Commitment class
-Commitment::Commitment(const IntegerGroupParams* p,
+Commitment::Commitment(const libzerocoin::IntegerGroupParams* p,
                                    const CBigNum& value): params(p), contents(value) {
 	this->randomness = CBigNum::randBignum(params->groupOrder);
 	this->commitmentValue = (params->g.pow_mod(this->contents, params->modulus).mul_mod(
 	                         params->h.pow_mod(this->randomness, params->modulus), params->modulus));
 }
 
-Commitment::Commitment(const IntegerGroupParams* p, const CBigNum& bnSerial, const CBigNum& bnRandomness): params(p), contents(bnSerial) {
+Commitment::Commitment(const libzerocoin::IntegerGroupParams* p, const CBigNum& bnSerial, const CBigNum& bnRandomness): params(p), contents(bnSerial) {
     this->randomness = bnRandomness;
     this->commitmentValue = (params->g.pow_mod(this->contents, params->modulus).mul_mod(
         params->h.pow_mod(this->randomness, params->modulus), params->modulus));
@@ -43,11 +43,11 @@ const CBigNum& Commitment::getContents() const {
 }
 
 //CommitmentProofOfKnowledge class
-CommitmentProofOfKnowledge::CommitmentProofOfKnowledge(const IntegerGroupParams* ap, const IntegerGroupParams* bp): ap(ap), bp(bp) {}
+CommitmentProofOfKnowledge::CommitmentProofOfKnowledge(const libzerocoin::IntegerGroupParams* ap, const libzerocoin::IntegerGroupParams* bp): ap(ap), bp(bp) {}
 
 // TODO: get parameters from the commitment group
-CommitmentProofOfKnowledge::CommitmentProofOfKnowledge(const IntegerGroupParams* aParams,
-        const IntegerGroupParams* bParams, const Commitment& a, const Commitment& b):
+CommitmentProofOfKnowledge::CommitmentProofOfKnowledge(const libzerocoin::IntegerGroupParams* aParams,
+        const libzerocoin::IntegerGroupParams* bParams, const Commitment& a, const Commitment& b):
 	ap(aParams),bp(bParams)
 {
 	CBigNum r1, r2, r3;

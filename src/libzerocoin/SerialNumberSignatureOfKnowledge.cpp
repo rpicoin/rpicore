@@ -16,7 +16,7 @@
 
 namespace libzerocoin {
 
-SerialNumberSignatureOfKnowledge::SerialNumberSignatureOfKnowledge(const ZerocoinParams* p): params(p) { }
+SerialNumberSignatureOfKnowledge::SerialNumberSignatureOfKnowledge(const libzerocoin::ZerocoinParams* p): params(p) { }
 
 // Use one 256 bit seed and concatenate 4 unique 256 bit hashes to make a 1024 bit hash
 CBigNum SeedTo1024(uint256 hashSeed) {
@@ -38,7 +38,7 @@ CBigNum SeedTo1024(uint256 hashSeed) {
 }
 
 SerialNumberSignatureOfKnowledge::SerialNumberSignatureOfKnowledge(const
-        ZerocoinParams* p, const PrivateCoin& coin, const Commitment& commitmentToCoin, uint256 msghash):
+        libzerocoin::ZerocoinParams* p, const PrivateCoin& coin, const Commitment& commitmentToCoin, uint256 msghash):
                 params(p),
                 s_notprime(p->zkp_iterations),
                 sprime(p->zkp_iterations)

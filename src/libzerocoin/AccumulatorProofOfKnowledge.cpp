@@ -19,7 +19,7 @@ namespace libzerocoin {
 AccumulatorProofOfKnowledge::AccumulatorProofOfKnowledge(const AccumulatorAndProofParams* p): params(p) {}
 
 AccumulatorProofOfKnowledge::AccumulatorProofOfKnowledge(const AccumulatorAndProofParams* p,
-        const Commitment& commitmentToCoin, const AccumulatorWitness& witness): params(p) {
+        const Commitment& commitmentToCoin, const libzerocoin::AccumulatorWitness& witness): params(p) {
 
 	CBigNum sg = params->accumulatorPoKCommitmentGroup.g;
 	CBigNum sh = params->accumulatorPoKCommitmentGroup.h;
@@ -105,7 +105,7 @@ AccumulatorProofOfKnowledge::AccumulatorProofOfKnowledge(const AccumulatorAndPro
 
 /** Verifies that a commitment c is accumulated in accumulator a
  */
-bool AccumulatorProofOfKnowledge:: Verify(const Accumulator& a, const CBigNum& valueOfCommitmentToCoin) const {
+bool AccumulatorProofOfKnowledge:: Verify(const libzerocoin::Accumulator& a, const CBigNum& valueOfCommitmentToCoin) const {
 	CBigNum sg = params->accumulatorPoKCommitmentGroup.g;
 	CBigNum sh = params->accumulatorPoKCommitmentGroup.h;
 

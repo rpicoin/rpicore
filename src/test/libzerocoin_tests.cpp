@@ -26,7 +26,6 @@
 #include "libzerocoin/Accumulator.h"
 #include "test_wispr.h"
 
-using namespace libzerocoin;
 
 #define COLOR_STR_GREEN   "\033[32m"
 #define COLOR_STR_NORMAL  "\033[0m"
@@ -45,10 +44,10 @@ uint32_t    gCoinSize            = 0;
 uint32_t    gSerialNumberSize    = 0;
 
 // Global coin array
-PrivateCoin    *gCoins[TESTS_COINS_TO_ACCUMULATE];
+libzerocoin::PrivateCoin    *gCoins[TESTS_COINS_TO_ACCUMULATE];
 
 // Global params
-ZerocoinParams *g_Params;
+libzerocoin::ZerocoinParams *g_Params;
 
 //////////
 // Utility routines
@@ -153,12 +152,12 @@ bool
 Test_GenerateGroupParams()
 {
     uint32_t pLen = 1024, qLen = 256, count;
-    IntegerGroupParams group;
+    libzerocoin::IntegerGroupParams group;
 
     for (count = 0; count < 1; count++) {
 
         try {
-            group = deriveIntegerGroupParams(calculateSeed(GetTestModulus(), "test", ZEROCOIN_DEFAULT_SECURITYLEVEL, "TEST GROUP"), pLen, qLen);
+            group = libzerocoin::deriveIntegerGroupParams(libzerocoin::calculateSeed(GetTestModulus(), "test", ZEROCOIN_DEFAULT_SECURITYLEVEL, "TEST GROUP"), pLen, qLen);
         } catch (std::runtime_error e) {
             std::cout << "Caught exception " << e.what() << std::endl;
             return false;
@@ -188,7 +187,7 @@ Test_ParamGen()
 
     try {
         // Instantiating testParams runs the parameter generation code
-        ZerocoinParams testParams(GetTestModulus(),ZEROCOIN_DEFAULT_SECURITYLEVEL);
+        libzerocoin::ZerocoinParams testParams(GetTestModulus(),ZEROCOIN_DEFAULT_SECURITYLEVEL);
     } catch (std::runtime_error e) {
         std::cout << e.what() << std::endl;
         result = false;
@@ -207,11 +206,11 @@ Test_Accumulator()
     }
     try {
         // Accumulate the coin list from first to last into one accumulator
-            Accumulator accOne(&g_Params->accumulatorParams, CoinDenomination::ZQ_ONE);
-            Accumulator accTwo(&g_Params->accumulatorParams,CoinDenomination::ZQ_ONE);
-            Accumulator accThree(&g_Params->accumulatorParams,CoinDenomination::ZQ_ONE);
-            Accumulator accFour(&g_Params->accumulatorParams,CoinDenomination::ZQ_ONE);
-        AccumulatorWitness wThree(g_Params, accThree, gCoins[0]->getPublicCoin());
+            libzerocoin::Accumulator accOne(&g_Params->accumulatorParams, libzerocoin::CoinDenomination::ZQ_ONE);
+            libzerocoin::Accumulator accTwo(&g_Params->accumulatorParams,libzerocoin::CoinDenomination::ZQ_ONE);
+            libzerocoin::Accumulator accThree(&g_Params->accumulatorParams,libzerocoin::CoinDenomination::ZQ_ONE);
+            libzerocoin::Accumulator accFour(&g_Params->accumulatorParams,libzerocoin::CoinDenomination::ZQ_ONE);
+        libzerocoin::AccumulatorWitness wThree(g_Params, accThree, gCoins[0]->getPublicCoin());
 
         for (uint32_t i = 0; i < TESTS_COINS_TO_ACCUMULATE; i++) {
             accOne += gCoins[i]->getPublicCoin();
@@ -245,7 +244,7 @@ Test_Accumulator()
         ss << accOne;
 
         // Deserialize it into a new object
-        Accumulator newAcc(g_Params, ss);
+        libzerocoin::Accumulator newAcc(g_Params, ss);
 
         // Compare the results
         if (accOne.getValue() != newAcc.getValue()) {
@@ -270,13 +269,13 @@ Test_EqualityPoK()
 
             // Manufacture two commitments to "val", both
             // under different sets of parameters
-            Commitment one(&g_Params->accumulatorParams.accumulatorPoKCommitmentGroup, val);
+            libzerocoin::Commitment one(&g_Params->accumulatorParams.accumulatorPoKCommitmentGroup, val);
 
-            Commitment two(&g_Params->serialNumberSoKCommitmentGroup, val);
+            libzerocoin::Commitment two(&g_Params->serialNumberSoKCommitmentGroup, val);
 
             // Now generate a proof of knowledge that "one" and "two" are
             // both commitments to the same value
-            CommitmentProofOfKnowledge pok(&g_Params->accumulatorParams.accumulatorPoKCommitmentGroup,
+            libzerocoin::CommitmentProofOfKnowledge pok(&g_Params->accumulatorParams.accumulatorPoKCommitmentGroup,
                                            &g_Params->serialNumberSoKCommitmentGroup,
                                            one, two);
 
@@ -285,7 +284,7 @@ Test_EqualityPoK()
             ss << pok;
 
             // Deserialize back into a PoK object
-            CommitmentProofOfKnowledge newPok(&g_Params->accumulatorParams.accumulatorPoKCommitmentGroup,
+            libzerocoin::CommitmentProofOfKnowledge newPok(&g_Params->accumulatorParams.accumulatorPoKCommitmentGroup,
                                               &g_Params->serialNumberSoKCommitmentGroup,
                                               ss);
 
@@ -299,7 +298,7 @@ Test_EqualityPoK()
 
             // This time tamper with it, then deserialize it back into a PoK
             ss2[15] = 0;
-            CommitmentProofOfKnowledge newPok2(&g_Params->accumulatorParams.accumulatorPoKCommitmentGroup,
+            libzerocoin::CommitmentProofOfKnowledge newPok2(&g_Params->accumulatorParams.accumulatorPoKCommitmentGroup,
                                                &g_Params->serialNumberSoKCommitmentGroup,
                                                ss2);
 
@@ -324,9 +323,9 @@ Test_MintCoin()
     try {
         // Generate a list of coins
         for (uint32_t i = 0; i < TESTS_COINS_TO_ACCUMULATE; i++) {
-            gCoins[i] = new PrivateCoin(g_Params,libzerocoin::CoinDenomination::ZQ_ONE);
+            gCoins[i] = new libzerocoin::PrivateCoin(g_Params,libzerocoin::CoinDenomination::ZQ_ONE);
 
-            PublicCoin pc = gCoins[i]->getPublicCoin();
+            libzerocoin::PublicCoin pc = gCoins[i]->getPublicCoin();
             CDataStream ss(SER_NETWORK, PROTOCOL_VERSION);
             ss << pc;
             gCoinSize += ss.size();
@@ -353,19 +352,19 @@ bool Test_InvalidCoin()
             if (!coinValue.isPrime()) break;
         }
 
-        PublicCoin pubCoin(g_Params);
+        libzerocoin::PublicCoin pubCoin(g_Params);
         if (pubCoin.validate()) {
             // A blank coin should not be valid!
             return false;
         }
 
-        PublicCoin pubCoin2(g_Params, coinValue, ZQ_ONE);
+        libzerocoin::PublicCoin pubCoin2(g_Params, coinValue, libzerocoin::ZQ_ONE);
         if (pubCoin2.validate()) {
             // A non-prime coin should not be valid!
             return false;
         }
 
-        PublicCoin pubCoin3 = pubCoin2;
+        libzerocoin::PublicCoin pubCoin3 = pubCoin2;
         if (pubCoin2.validate()) {
             // A copy of a non-prime coin should not be valid!
             return false;
@@ -374,7 +373,7 @@ bool Test_InvalidCoin()
         // Serialize and deserialize the coin
         CDataStream ss(SER_NETWORK, PROTOCOL_VERSION);
         ss << pubCoin;
-        PublicCoin pubCoin4(g_Params, ss);
+        libzerocoin::PublicCoin pubCoin4(g_Params, ss);
         if (pubCoin4.validate()) {
             // A deserialized copy of a non-prime coin should not be valid!
             return false;
@@ -405,8 +404,8 @@ Test_MintAndSpend()
         // Accumulate the list of generated coins into a fresh accumulator.
         // The first one gets marked as accumulated for a witness, the
         // others just get accumulated normally.
-        Accumulator acc(&g_Params->accumulatorParams,CoinDenomination::ZQ_ONE);
-        AccumulatorWitness wAcc(g_Params, acc, gCoins[0]->getPublicCoin());
+        libzerocoin::Accumulator acc(&g_Params->accumulatorParams,libzerocoin::CoinDenomination::ZQ_ONE);
+        libzerocoin::AccumulatorWitness wAcc(g_Params, acc, gCoins[0]->getPublicCoin());
 
         for (uint32_t i = 0; i < TESTS_COINS_TO_ACCUMULATE; i++) {
             acc += gCoins[i]->getPublicCoin();
@@ -417,16 +416,16 @@ Test_MintAndSpend()
         //SpendMetaData m(1,1);
         CDataStream cc(SER_NETWORK, PROTOCOL_VERSION);
         cc << *gCoins[0];
-        PrivateCoin myCoin(g_Params,cc);
+        libzerocoin::PrivateCoin myCoin(g_Params,cc);
 
-        CoinSpend spend(g_Params, g_Params, myCoin, acc, 0, wAcc, 0, SpendType::SPEND);
+        libzerocoin::CoinSpend spend(g_Params, g_Params, myCoin, acc, 0, wAcc, 0, libzerocoin::SpendType::SPEND);
         spend.Verify(acc);
 
         // Serialize the proof and deserialize into newSpend
         CDataStream ss(SER_NETWORK, PROTOCOL_VERSION);
         ss << spend;
         gProofSize = ss.size();
-        CoinSpend newSpend(g_Params, g_Params, ss);
+        libzerocoin::CoinSpend newSpend(g_Params, g_Params, ss);
 
         // See if we can verify the deserialized proof (return our result)
         bool ret =  newSpend.Verify(acc);
@@ -448,7 +447,7 @@ void
 Test_RunAllTests()
 {
     // Make a new set of parameters from a random RSA modulus
-    g_Params = new ZerocoinParams(GetTestModulus());
+    g_Params = new libzerocoin::ZerocoinParams(GetTestModulus());
 
     gNumTests = gSuccessfulTests = gProofSize = 0;
     for (uint32_t i = 0; i < TESTS_COINS_TO_ACCUMULATE; i++) {

@@ -9,7 +9,6 @@
 #include "main.h"
 #include "walletmodel.h"
 
-using namespace libzerocoin;
 
 std::set<std::string> ZWspControlDialog::setSelectedMints;
 std::set<CMintMeta> ZWspControlDialog::setMints;
@@ -79,7 +78,7 @@ void ZWspControlDialog::updateList()
 
     //populate rows with mint info
     int nBestHeight = chainActive.Height();
-    //map<CoinDenomination, int> mapMaturityHeight = GetMintMaturityHeight();
+    //map<libzerocoin::CoinDenomination, int> mapMaturityHeight = GetMintMaturityHeight();
     for (const CMintMeta& mint : setMints) {
         // assign this mint to the correct denomination in the tree view
         libzerocoin::CoinDenomination denom = mint.denom;

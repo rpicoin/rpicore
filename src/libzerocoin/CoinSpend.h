@@ -44,7 +44,7 @@ public:
     //! \param paramsV2 - params that begin when V2 zerocoins begin on the WISPR network
     //! \param strm - a serialized CoinSpend
     template <typename Stream>
-    CoinSpend(const ZerocoinParams* paramsV1, const ZerocoinParams* paramsV2, Stream& strm) :
+    CoinSpend(const libzerocoin::ZerocoinParams* paramsV1, const libzerocoin::ZerocoinParams* paramsV2, Stream& strm) :
         accumulatorPoK(&paramsV2->accumulatorParams),
         serialNumberSoK(paramsV1),
         commitmentPoK(&paramsV1->serialNumberSoKCommitmentGroup, &paramsV2->accumulatorParams.accumulatorPoKCommitmentGroup)
@@ -55,7 +55,7 @@ public:
 
         //Need to reset some parameters if v2
         int serialVersion = ExtractVersionFromSerial(coinSerialNumber);
-        if (serialVersion >= PrivateCoin::PUBKEY_VERSION) {
+        if (serialVersion >= libzerocoin::PrivateCoin::PUBKEY_VERSION) {
             accumulatorPoK = AccumulatorProofOfKnowledge(&paramsV2->accumulatorParams);
             serialNumberSoK = SerialNumberSignatureOfKnowledge(paramsV2);
             commitmentPoK = CommitmentProofOfKnowledge(&paramsV2->serialNumberSoKCommitmentGroup, &paramsV2->accumulatorParams.accumulatorPoKCommitmentGroup);
@@ -86,8 +86,8 @@ public:
 	 * @param a hash of the partial transaction that contains this coin spend
 	 * @throw ZerocoinException if the process fails
 	 */
-    CoinSpend(const ZerocoinParams* paramsCoin, const ZerocoinParams* paramsAcc, const PrivateCoin& coin, Accumulator& a, const uint32_t& checksum,
-              const AccumulatorWitness& witness, const uint256& ptxHash, const SpendType& spendType);
+    CoinSpend(const libzerocoin::ZerocoinParams* paramsCoin, const libzerocoin::ZerocoinParams* paramsAcc, const PrivateCoin& coin, libzerocoin::Accumulator& a, const uint32_t& checksum,
+              const libzerocoin::AccumulatorWitness& witness, const uint256& ptxHash, const SpendType& spendType);
 
 
     virtual ~CoinSpend(){};
@@ -102,7 +102,7 @@ public:
 	 *
 	 * @return the denomination
 	 */
-    CoinDenomination getDenomination() const { return this->denomination; }
+    libzerocoin::CoinDenomination getDenomination() const { return this->denomination; }
 
     /**Gets the checksum of the accumulator used in this proof.
 	 *
@@ -125,7 +125,7 @@ public:
     static std::vector<unsigned char> ParseSerial(CDataStream& s);
 
     virtual const uint256 signatureHash() const;
-    virtual bool Verify(const Accumulator& a, bool verifyParams = true) const;
+    virtual bool Verify(const libzerocoin::Accumulator& a, bool verifyParams = true) const;
     bool HasValidSerial(ZerocoinParams* params) const;
     bool HasValidSignature() const;
     void setTxOutHash(uint256 txOutHash) { this->ptxHash = txOutHash; };
@@ -159,7 +159,7 @@ public:
     }
 
 protected:
-    CoinDenomination denomination = ZQ_ERROR;
+    libzerocoin::CoinDenomination denomination = libzerocoin::ZQ_ERROR;
     CBigNum coinSerialNumber;
     uint8_t version;
     //As of version 2

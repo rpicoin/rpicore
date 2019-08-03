@@ -27,7 +27,6 @@
 #include "libzerocoin/Accumulator.h"
 #include "test_wispr.h"
 
-using namespace libzerocoin;
 
 #define COLOR_STR_GREEN   "\033[32m"
 #define COLOR_STR_NORMAL  "\033[0m"
@@ -40,10 +39,10 @@ uint32_t    ggNumTests        = 0;
 uint32_t    ggSuccessfulTests = 0;
 
 // Global coin array
-PrivateCoin    *ggCoins[TESTS_COINS_TO_ACCUMULATE];
+libzerocoin::PrivateCoin    *ggCoins[TESTS_COINS_TO_ACCUMULATE];
 
 // Global params
-ZerocoinParams *gg_Params;
+libzerocoin::ZerocoinParams *gg_Params;
 
 //////////
 // Utility routines
@@ -181,12 +180,12 @@ bool
 Testb_GenerateGroupParams()
 {
 	uint32_t pLen = 1024, qLen = 256, count;
-	IntegerGroupParams group;
+    libzerocoin::IntegerGroupParams group;
 
 	for (count = 0; count < 1; count++) {
 
 		try {
-			group = deriveIntegerGroupParams(calculateSeed(gGetTestModulus(), "test", ZEROCOIN_DEFAULT_SECURITYLEVEL, "TEST GROUP"), pLen, qLen);
+			group = libzerocoin::deriveIntegerGroupParams(libzerocoin::calculateSeed(gGetTestModulus(), "test", ZEROCOIN_DEFAULT_SECURITYLEVEL, "TEST GROUP"), pLen, qLen);
 		} catch (std::runtime_error e) {
 			std::cout << "Caught exception " << e.what() << std::endl;
 			return false;
@@ -217,7 +216,7 @@ Testb_ParamGen()
 	try {
 		timer.start();
 		// Instantiating testParams runs the parameter generation code
-		ZerocoinParams testParams(gGetTestModulus(),ZEROCOIN_DEFAULT_SECURITYLEVEL);
+		libzerocoin::ZerocoinParams testParams(gGetTestModulus(),ZEROCOIN_DEFAULT_SECURITYLEVEL);
 		timer.stop();
 
 		std::cout << "\tPARAMGEN ELAPSED TIME: " << timer.duration() << " ms\t" << timer.duration()*0.001 << " s" << std::endl;
@@ -239,11 +238,11 @@ Testb_Accumulator()
 	}
 	try {
 		// Accumulate the coin list from first to last into one accumulator
-            Accumulator accOne(&gg_Params->accumulatorParams,libzerocoin::CoinDenomination::ZQ_ONE);
-            Accumulator accTwo(&gg_Params->accumulatorParams,libzerocoin::CoinDenomination::ZQ_ONE);
-            Accumulator accThree(&gg_Params->accumulatorParams,libzerocoin::CoinDenomination::ZQ_ONE);
-            Accumulator accFour(&gg_Params->accumulatorParams,libzerocoin::CoinDenomination::ZQ_ONE);
-		AccumulatorWitness wThree(gg_Params, accThree, ggCoins[0]->getPublicCoin());
+            libzerocoin::Accumulator accOne(&gg_Params->accumulatorParams,libzerocoin::CoinDenomination::ZQ_ONE);
+            libzerocoin::Accumulator accTwo(&gg_Params->accumulatorParams,libzerocoin::CoinDenomination::ZQ_ONE);
+            libzerocoin::Accumulator accThree(&gg_Params->accumulatorParams,libzerocoin::CoinDenomination::ZQ_ONE);
+            libzerocoin::Accumulator accFour(&gg_Params->accumulatorParams,libzerocoin::CoinDenomination::ZQ_ONE);
+		libzerocoin::AccumulatorWitness wThree(gg_Params, accThree, ggCoins[0]->getPublicCoin());
 
 		for (uint32_t i = 0; i < TESTS_COINS_TO_ACCUMULATE; i++) {
 			accOne += ggCoins[i]->getPublicCoin();
@@ -287,7 +286,7 @@ Testb_MintCoin()
 		// Generate a list of coins
 		timer.start();
 		for (uint32_t i = 0; i < TESTS_COINS_TO_ACCUMULATE; i++) {
-            ggCoins[i] = new PrivateCoin(gg_Params,CoinDenomination::ZQ_ONE);
+            ggCoins[i] = new libzerocoin::PrivateCoin(gg_Params,libzerocoin::CoinDenomination::ZQ_ONE);
 		}
 		timer.stop();
 	} catch (std::exception &e) {
@@ -316,8 +315,8 @@ Testb_MintAndSpend()
 		// Accumulate the list of generated coins into a fresh accumulator.
 		// The first one gets marked as accumulated for a witness, the
 		// others just get accumulated normally.
-        Accumulator acc(&gg_Params->accumulatorParams,CoinDenomination::ZQ_ONE);
-		AccumulatorWitness wAcc(gg_Params, acc, ggCoins[0]->getPublicCoin());
+        libzerocoin::Accumulator acc(&gg_Params->accumulatorParams,libzerocoin::CoinDenomination::ZQ_ONE);
+		libzerocoin::AccumulatorWitness wAcc(gg_Params, acc, ggCoins[0]->getPublicCoin());
 
 		timer.start();
 		for (uint32_t i = 0; i < TESTS_COINS_TO_ACCUMULATE; i++) {
@@ -337,7 +336,7 @@ Testb_MintAndSpend()
 
 		// Now spend the coin
 		timer.start();
-		CoinSpend spend(gg_Params, gg_Params, *(ggCoins[0]), acc, 0, wAcc, 0, SpendType::SPEND); //(0) presstab
+		libzerocoin::CoinSpend spend(gg_Params, gg_Params, *(ggCoins[0]), acc, 0, wAcc, 0, libzerocoin::SpendType::SPEND); //(0) presstab
 		timer.stop();
 
 		std::cout << "\tSPEND ELAPSED TIME: " << timer.duration() << " ms\t" << timer.duration()*0.001 << " s" << std::endl;
@@ -349,7 +348,7 @@ Testb_MintAndSpend()
 		ss << spend;
 		timer.stop();
 
-		CoinSpend newSpend(gg_Params, gg_Params, ss);
+		libzerocoin::CoinSpend newSpend(gg_Params, gg_Params, ss);
 
 		std::cout << "\tSERIALIZE ELAPSED TIME: " << timer.duration() << " ms\t" << timer.duration()*0.001 << " s" << std::endl;
 
@@ -373,7 +372,7 @@ void
 Testb_RunAllTests()
 {
 	// Make a new set of parameters from a random RSA modulus
-	gg_Params = new ZerocoinParams(gGetTestModulus());
+	gg_Params = new libzerocoin::ZerocoinParams(gGetTestModulus());
 
 	ggNumTests = ggSuccessfulTests = 0;
 	for (uint32_t i = 0; i < TESTS_COINS_TO_ACCUMULATE; i++) {

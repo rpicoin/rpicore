@@ -1,7 +1,7 @@
 /**
  * @file       Coin.h
  *
- * @brief      PublicCoin and PrivateCoin classes for the Zerocoin library.
+ * @brief      libzerocoin::PublicCoin and PrivateCoin classes for the Zerocoin library.
  *
  * @author     Ian Miers, Christina Garman and Matthew Green
  * @date       June 2013
@@ -30,8 +30,8 @@ namespace libzerocoin
     };
 
     int ExtractVersionFromSerial(const CBigNum& bnSerial);
-    bool IsValidSerial(const ZerocoinParams* params, const CBigNum& bnSerial);
-    bool IsValidCommitmentToCoinRange(const ZerocoinParams* params, const CBigNum& bnCommitment);
+    bool IsValidSerial(const libzerocoin::ZerocoinParams* params, const CBigNum& bnSerial);
+    bool IsValidCommitmentToCoinRange(const libzerocoin::ZerocoinParams* params, const CBigNum& bnCommitment);
     CBigNum GetAdjustedSerial(const CBigNum& bnSerial);
     bool GenerateKeyPair(const CBigNum& bnGroupOrder, const uint256& nPrivkey, CKey& key, CBigNum& bnSerial);
 
@@ -45,12 +45,12 @@ class PublicCoin
 {
 public:
     template <typename Stream>
-    PublicCoin(const ZerocoinParams* p, Stream& strm) : params(p)
+    PublicCoin(const libzerocoin::ZerocoinParams* p, Stream& strm) : params(p)
     {
         strm >> *this;
     }
 
-    PublicCoin(const ZerocoinParams* p);
+    PublicCoin(const libzerocoin::ZerocoinParams* p);
 
     /**Generates a public coin
 	 *
@@ -58,15 +58,15 @@ public:
 	 * @param coin the value of the commitment.
 	 * @param denomination The denomination of the coin. 
 	 */
-    PublicCoin(const ZerocoinParams* p, const CBigNum& coin, const CoinDenomination d);
+    PublicCoin(const libzerocoin::ZerocoinParams* p, const CBigNum& coin, const libzerocoin::CoinDenomination d);
     const CBigNum& getValue() const { return this->value; }
 
-    CoinDenomination getDenomination() const { return this->denomination; }
-    bool operator==(const PublicCoin& rhs) const
+    libzerocoin::CoinDenomination getDenomination() const { return this->denomination; }
+    bool operator==(const libzerocoin::PublicCoin& rhs) const
     {
         return ((this->value == rhs.value) && (this->params == rhs.params) && (this->denomination == rhs.denomination));
     }
-    bool operator!=(const PublicCoin& rhs) const { return !(*this == rhs); }
+    bool operator!=(const libzerocoin::PublicCoin& rhs) const { return !(*this == rhs); }
     /** Checks that coin is prime and in the appropriate range given the parameters
      * @return true if valid
      */
@@ -81,9 +81,9 @@ public:
     }
 
 private:
-    const ZerocoinParams* params;
+    const libzerocoin::ZerocoinParams* params;
     CBigNum value;
-    CoinDenomination denomination;
+    libzerocoin::CoinDenomination denomination;
 };
 
 /**
@@ -104,13 +104,13 @@ public:
     static int const CURRENT_VERSION = 2;
     static int const V2_BITSHIFT = 4;
     template <typename Stream>
-    PrivateCoin(const ZerocoinParams* p, Stream& strm) : params(p), publicCoin(p)
+    PrivateCoin(const libzerocoin::ZerocoinParams* p, Stream& strm) : params(p), publicCoin(p)
     {
         strm >> *this;
     }
-    PrivateCoin(const ZerocoinParams* p, const CoinDenomination denomination, bool fMintNew = true);
-    PrivateCoin(const ZerocoinParams* p, const CoinDenomination denomination, const CBigNum& bnSerial, const CBigNum& bnRandomness);
-    const PublicCoin& getPublicCoin() const { return this->publicCoin; }
+    PrivateCoin(const libzerocoin::ZerocoinParams* p, const libzerocoin::CoinDenomination denomination, bool fMintNew = true);
+    PrivateCoin(const libzerocoin::ZerocoinParams* p, const libzerocoin::CoinDenomination denomination, const CBigNum& bnSerial, const CBigNum& bnRandomness);
+    const libzerocoin::PublicCoin& getPublicCoin() const { return this->publicCoin; }
     // @return the coins serial number
     const CBigNum& getSerialNumber() const { return this->serialNumber; }
     const CBigNum& getRandomness() const { return this->randomness; }
@@ -141,8 +141,8 @@ public:
     }
 
 private:
-    const ZerocoinParams* params;
-    PublicCoin publicCoin;
+    const libzerocoin::ZerocoinParams* params;
+    libzerocoin::PublicCoin publicCoin;
     CBigNum randomness;
     CBigNum serialNumber;
     uint8_t version = 1;
@@ -158,7 +158,7 @@ private:
 	 * the resulting commitment is prime. Stores the
 	 * resulting commitment (coin) and randomness (trapdoor).
 	 **/
-    void mintCoin(const CoinDenomination denomination);
+    void mintCoin(const libzerocoin::CoinDenomination denomination);
 
     /**
 	 * @brief Mint a new coin using a faster process.
@@ -174,7 +174,7 @@ private:
 	 * to timing attacks. Don't use it if you think someone
 	 * could be timing your coin minting.
 	 **/
-    void mintCoinFast(const CoinDenomination denomination);
+    void mintCoinFast(const libzerocoin::CoinDenomination denomination);
 };
 
 } /* namespace libzerocoin */

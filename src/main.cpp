@@ -50,7 +50,6 @@
 #include <queue>
 
 using namespace boost;
-using namespace libzerocoin;
 
 #if defined(NDEBUG)
 #error "WISPR cannot be compiled without assertions."
@@ -961,7 +960,7 @@ bool MoneyRange(CAmount nValueOut)
 
 bool CheckZerocoinMint(const uint256& txHash, const CTxOut& txout, CValidationState& state, bool fCheckOnly)
 {
-    PublicCoin pubCoin(Params().Zerocoin_Params(false));
+    libzerocoin::PublicCoin pubCoin(Params().Zerocoin_Params(false));
     if(!TxOutToPublicCoin(txout, pubCoin, state))
         return state.DoS(100, error("CheckZerocoinMint(): TxOutToPublicCoin() failed"));
 
@@ -971,7 +970,7 @@ bool CheckZerocoinMint(const uint256& txHash, const CTxOut& txout, CValidationSt
     return true;
 }
 
-bool ContextualCheckZerocoinMint(const CTransaction& tx, const PublicCoin& coin, const CBlockIndex* pindex)
+bool ContextualCheckZerocoinMint(const CTransaction& tx, const libzerocoin::PublicCoin& coin, const CBlockIndex* pindex)
 {
     if (pindex->nHeight >= Params().Zerocoin_Block_Public_Spend_Enabled()) {
         // Zerocoin MINTs have been disabled
@@ -1014,7 +1013,7 @@ bool CheckPublicCoinSpendEnforced(int blockHeight, bool isPublicSpend) {
     return true;
 }
 
-bool ContextualCheckZerocoinSpend(const CTransaction& tx, const CoinSpend* spend, CBlockIndex* pindex, const uint256& hashBlock)
+bool ContextualCheckZerocoinSpend(const CTransaction& tx, const libzerocoin::CoinSpend* spend, CBlockIndex* pindex, const uint256& hashBlock)
 {
     if(!ContextualCheckZerocoinSpendNoSerialCheck(tx, spend, pindex, hashBlock)){
         return false;
@@ -1029,7 +1028,7 @@ bool ContextualCheckZerocoinSpend(const CTransaction& tx, const CoinSpend* spend
     return true;
 }
 
-bool ContextualCheckZerocoinSpendNoSerialCheck(const CTransaction& tx, const CoinSpend* spend, CBlockIndex* pindex, const uint256& hashBlock)
+bool ContextualCheckZerocoinSpendNoSerialCheck(const CTransaction& tx, const libzerocoin::CoinSpend* spend, CBlockIndex* pindex, const uint256& hashBlock)
 {
     //Check to see if the zWSP is properly signed
     if (pindex->nHeight >= Params().NEW_PROTOCOLS_STARTHEIGHT()) {
@@ -1108,7 +1107,7 @@ bool CheckZerocoinSpend(const CTransaction& tx, bool fVerifySignature, CValidati
         if (!txin.IsZerocoinSpend() && !isPublicSpend)
             continue;
 
-        CoinSpend newSpend;
+        libzerocoin::CoinSpend newSpend;
         CTxOut prevOut;
         if (isPublicSpend) {
             if(!GetOutput(txin.prevout.hash, txin.prevout.n, state, prevOut)){
@@ -1125,12 +1124,12 @@ bool CheckZerocoinSpend(const CTransaction& tx, bool fVerifySignature, CValidati
         }
 
         //check that the denomination is valid
-        if (newSpend.getDenomination() == ZQ_ERROR)
+        if (newSpend.getDenomination() == libzerocoin::ZQ_ERROR)
             return state.DoS(100, error("Zerocoinspend does not have the correct denomination"));
 
         //check that denomination is what it claims to be in nSequence
         if (newSpend.getDenomination() != txin.nSequence)
-            return state.DoS(100, error("Zerocoinspend nSequence denomination does not match CoinSpend"));
+            return state.DoS(100, error("Zerocoinspend nSequence denomination does not match libzerocoin::CoinSpend"));
 
         //make sure the txout has not changed
         if (newSpend.getTxOutHash() != hashTxOut)
@@ -1152,7 +1151,7 @@ bool CheckZerocoinSpend(const CTransaction& tx, bool fVerifySignature, CValidati
                     return state.DoS(100, error("%s: Zerocoinspend could not find accumulator associated with checksum %s", __func__, HexStr(BEGIN(nChecksum), END(nChecksum))));
                 }
 
-            Accumulator accumulator(Params().Zerocoin_Params(chainActive.Height() < Params().NEW_PROTOCOLS_STARTHEIGHT()),
+            libzerocoin::Accumulator accumulator(Params().Zerocoin_Params(chainActive.Height() < Params().NEW_PROTOCOLS_STARTHEIGHT()),
                                     newSpend.getDenomination(), bnAccumulatorValue);
 
                 //Check that the coin has been accumulated
@@ -1446,7 +1445,7 @@ bool AcceptToMemoryPool(CTxMemPool& pool, CValidationState& state, const CTransa
                         return state.Invalid(error("%s: ContextualCheckZerocoinSpend failed for tx %s", __func__,
                                                    tx.GetHash().GetHex()), REJECT_INVALID, "bad-txns-invalid-zwsp");
                 } else {
-                    CoinSpend spend = TxInToZerocoinSpend(txIn);
+                    libzerocoin::CoinSpend spend = TxInToZerocoinSpend(txIn);
                     if (!ContextualCheckZerocoinSpend(tx, &spend, chainActive.Tip(), 0))
                         return state.Invalid(error("%s: ContextualCheckZerocoinSpend failed for tx %s", __func__,
                                                    tx.GetHash().GetHex()), REJECT_INVALID, "bad-txns-invalid-zwsp");
@@ -1484,7 +1483,7 @@ bool AcceptToMemoryPool(CTxMemPool& pool, CValidationState& state, const CTransa
                 if (!out.IsZerocoinMint())
                     continue;
 
-                PublicCoin coin(Params().Zerocoin_Params(false));
+                libzerocoin::PublicCoin coin(Params().Zerocoin_Params(false));
                 if (!TxOutToPublicCoin(out, coin, state))
                     return state.Invalid(error("%s: failed final check of zerocoinmint for tx %s", __func__, tx.GetHash().GetHex()));
 
@@ -2238,7 +2237,7 @@ void AddInvalidSpendsToMap(const CBlock& block)
             bool isPublicSpend = in.IsZerocoinPublicSpend();
             if (in.IsZerocoinSpend() || isPublicSpend) {
 
-                CoinSpend* spend;
+                libzerocoin::CoinSpend* spend;
                 if (isPublicSpend) {
                     libzerocoin::ZerocoinParams* params = Params().Zerocoin_Params(false);
                     PublicCoinSpend publicSpend(params);
@@ -2248,7 +2247,7 @@ void AddInvalidSpendsToMap(const CBlock& block)
                     }
                     spend = &publicSpend;
                 } else {
-                    CoinSpend spendObj = TxInToZerocoinSpend(in);
+                    libzerocoin::CoinSpend spendObj = TxInToZerocoinSpend(in);
                     spend = &spendObj;
                 }
 
@@ -2454,7 +2453,7 @@ bool DisconnectBlock(CBlock& block, CValidationState& state, CBlockIndex* pindex
                             }
                             serial = publicSpend.getCoinSerialNumber();
                         } else {
-                            CoinSpend spend = TxInToZerocoinSpend(txin);
+                            libzerocoin::CoinSpend spend = TxInToZerocoinSpend(txin);
                             serial = spend.getCoinSerialNumber();
                         }
 
@@ -2479,7 +2478,7 @@ bool DisconnectBlock(CBlock& block, CValidationState& state, CBlockIndex* pindex
                     if (txout.scriptPubKey.empty() || !txout.IsZerocoinMint())
                         continue;
 
-                    PublicCoin pubCoin(Params().Zerocoin_Params(false));
+                    libzerocoin::PublicCoin pubCoin(Params().Zerocoin_Params(false));
                     if (!TxOutToPublicCoin(txout, pubCoin, state))
                         return error("DisconnectBlock(): TxOutToPublicCoin() failed");
 
@@ -2770,7 +2769,7 @@ bool RecalculateWSPSupply(int nHeightStart)
 
 bool ReindexAccumulators(std::list<uint256>& listMissingCheckpoints, std::string& strError)
 {
-    // WISPR: recalculate Accumulator Checkpoints that failed to database properly
+    // WISPR: recalculate libzerocoin::Accumulator Checkpoints that failed to database properly
     if (!listMissingCheckpoints.empty()) {
         uiInterface.ShowProgress(_("Calculating missing accumulators..."), 0);
         LogPrintf("%s : finding missing checkpoints\n", __func__);
@@ -2827,7 +2826,7 @@ bool UpdateZWSPSupply(const CBlock& block, CBlockIndex* pindex, bool fJustCheck)
 
     // Initialize zerocoin supply to the supply from previous block
     if (pindex->pprev && pindex->pprev->GetBlockHeader().nVersion > 7) {
-        for (auto& denom : zerocoinDenomList) {
+        for (auto& denom : libzerocoin::zerocoinDenomList) {
             pindex->mapZerocoinSupply.at(denom) = pindex->pprev->GetZcMints(denom);
         }
     }
@@ -2874,7 +2873,7 @@ bool UpdateZWSPSupply(const CBlock& block, CBlockIndex* pindex, bool fJustCheck)
         }
     }
 
-    for (auto& denom : zerocoinDenomList)
+    for (auto& denom : libzerocoin::zerocoinDenomList)
         LogPrint("zero", "%s coins for denomination %d pubcoin %s\n", __func__, denom, pindex->mapZerocoinSupply.at(denom));
 
     // Update Wrapped Serials amount
@@ -2962,8 +2961,8 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
     unsigned int nSigOps = 0;
     CDiskTxPos pos(pindex->GetBlockPos(), GetSizeOfCompactSize(block.vtx.size()));
     std::vector<std::pair<uint256, CDiskTxPos> > vPos;
-    std::vector<std::pair<CoinSpend, uint256> > vSpends;
-    std::vector<std::pair<PublicCoin, uint256> > vMints;
+    std::vector<std::pair<libzerocoin::CoinSpend, uint256> > vSpends;
+    std::vector<std::pair<libzerocoin::PublicCoin, uint256> > vMints;
     vPos.reserve(block.vtx.size());
     CBlockUndo blockundo;
     blockundo.vtxundo.reserve(block.vtx.size() - 1);
@@ -3022,7 +3021,7 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
                     if (!ContextualCheckZerocoinSpend(tx, &publicSpend, pindex, hashBlock))
                         return state.DoS(100, error("%s: failed to add block %s with invalid public zc spend", __func__, tx.GetHash().GetHex()), REJECT_INVALID);
                 } else {
-                    CoinSpend spend = TxInToZerocoinSpend(txIn);
+                    libzerocoin::CoinSpend spend = TxInToZerocoinSpend(txIn);
                     nValueIn += spend.getDenomination() * COIN;
                     //queue for db write after the 'justcheck' section has concluded
                     vSpends.emplace_back(std::make_pair(spend, tx.GetHash()));
@@ -3037,7 +3036,7 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
                     if (!out.IsZerocoinMint())
                         continue;
 
-                    PublicCoin coin(Params().Zerocoin_Params(false));
+                    libzerocoin::PublicCoin coin(Params().Zerocoin_Params(false));
                     if (!TxOutToPublicCoin(out, coin, state))
                         return state.DoS(100, error("%s: failed final check of zerocoinmint for tx %s", __func__, tx.GetHash().GetHex()));
 
@@ -3066,7 +3065,7 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
                     if (!out.IsZerocoinMint())
                         continue;
 
-                    PublicCoin coin(Params().Zerocoin_Params(false));
+                    libzerocoin::PublicCoin coin(Params().Zerocoin_Params(false));
                     if (!TxOutToPublicCoin(out, coin, state))
                         return state.DoS(100, error("%s: failed final check of zerocoinmint for tx %s", __func__, tx.GetHash().GetHex()));
 
@@ -3188,7 +3187,7 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
     //Record zWSP serials
     if (pwalletMain) {
         std::set<uint256> setAddedTx;
-        for (std::pair<CoinSpend, uint256> pSpend : vSpends) {
+        for (std::pair<libzerocoin::CoinSpend, uint256> pSpend : vSpends) {
             // Send signal to wallet if this is ours
             if (pwalletMain->IsMyZerocoinSpend(pSpend.first.getCoinSerialNumber())) {
                 LogPrintf("%s: %s detected zerocoinspend in transaction %s \n", __func__,
@@ -4662,7 +4661,7 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
             // Now that this loop if completed. Check if we have zWSP inputs.
             if(hasZWSPInputs){
                 for (const CTxIn& zWspInput : zWSPInputs) {
-                    CoinSpend spend = TxInToZerocoinSpend(zWspInput);
+                    libzerocoin::CoinSpend spend = TxInToZerocoinSpend(zWspInput);
 
                     // First check if the serials were not already spent on the forked blocks.
                     CBigNum coinSerial = spend.getCoinSerialNumber();
@@ -4691,7 +4690,7 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
                         return state.DoS(100, error("%s: stake zerocoinspend not ready to be spent", __func__));
                     }
 
-                    Accumulator accumulator(Params().Zerocoin_Params(chainActive.Height() < Params().NEW_PROTOCOLS_STARTHEIGHT()),
+                    libzerocoin::Accumulator accumulator(Params().Zerocoin_Params(chainActive.Height() < Params().NEW_PROTOCOLS_STARTHEIGHT()),
                                             spend.getDenomination(), bnAccumulatorValue);
 
                     //Check that the coinspend is valid
@@ -4725,7 +4724,7 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
         } else {
             if(!isBlockFromFork)
                 for (const CTxIn& zWspInput : zWSPInputs) {
-                        CoinSpend spend = TxInToZerocoinSpend(zWspInput);
+                        libzerocoin::CoinSpend spend = TxInToZerocoinSpend(zWspInput);
                         if (!ContextualCheckZerocoinSpend(stakeTxIn, &spend, pindex, 0))
                             return state.DoS(100,error("%s: main chain ContextualCheckZerocoinSpend failed for tx %s", __func__,
                                     stakeTxIn.GetHash().GetHex()), REJECT_INVALID, "bad-txns-invalid-zwsp");

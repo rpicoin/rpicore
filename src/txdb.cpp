@@ -15,7 +15,6 @@
 
 #include <boost/thread.hpp>
 
-using namespace libzerocoin;
 
 void static BatchWriteCoins(CLevelDBBatch& batch, const uint256& hash, const CCoins& coins)
 {
@@ -298,7 +297,7 @@ bool CZerocoinDB::WriteCoinMintBatch(const std::vector<std::pair<libzerocoin::Pu
     CLevelDBBatch batch;
     size_t count = 0;
     for (std::vector<std::pair<libzerocoin::PublicCoin, uint256> >::const_iterator it=mintInfo.begin(); it != mintInfo.end(); it++) {
-        PublicCoin pubCoin = it->first;
+        libzerocoin::PublicCoin pubCoin = it->first;
         uint256 hash = GetPubCoinHash(pubCoin.getValue());
         batch.Write(std::make_pair('m', hash), it->second);
         ++count;
