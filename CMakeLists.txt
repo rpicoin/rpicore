@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.14.5)
 project(WISPR)
 
 set(CMAKE_PREFIX_PATH D:/Development/Libraries/CPP/Qt/5.9.8/mingw53_32)
