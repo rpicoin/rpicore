@@ -137,6 +137,9 @@ static const int DEFAULT_PRECOMPUTE_LENGTH = 1000;
 static const int MIN_PRECOMPUTE_LENGTH = 500;
 static const int MAX_PRECOMPUTE_LENGTH = 2000;
 
+//TODO Remove after fork
+inline int64_t FutureDrift(int64_t nTime, int nHeight) { return (nHeight > 250) ? nTime + 15 : nTime + 10 * 60; }
+
 struct BlockHasher {
     size_t operator()(const uint256& hash) const { return hash.GetLow64(); }
 };
