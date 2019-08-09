@@ -26,22 +26,22 @@ bool sanity_test_list(unsigned int size)
     std::list<unsigned int> test;
     for (unsigned int i = 0; i != size; ++i) {
         test.push_back(i + 1);
-}
+    }
 
     if (test.size() != size) {
         return false;
-}
+     }
 
     while (!test.empty()) {
         if (test.back() != test.size()) {
             return false;
-}
+     }
         test.pop_back();
     }
     return true;
 }
 
-} // anon namespace
+} // namespace
 
 // trigger: string::at(x) on an empty string to trigger __throw_out_of_range_fmt.
 // test: force std::string to throw an out_of_range exception. Verify that

@@ -33,14 +33,14 @@ bool sanity_test_memcpy()
     unsigned int memcpy_verify[T] = {};
     for (unsigned int i = 0; i != T; ++i) {
         memcpy_test[i] = i;
-}
+     }
 
     memcpy_int(memcpy_verify, memcpy_test, sizeof(memcpy_test));
 
     for (unsigned int i = 0; i != T; ++i) {
         if (memcpy_verify[i] != i) {
             return false;
-}
+        }
     }
     return true;
 }
@@ -59,7 +59,7 @@ bool sanity_test_fdelt()
 }
 #endif
 
-} // anon namespace
+} // namespace
 
 bool glibc_sanity_test()
 {
