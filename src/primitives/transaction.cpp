@@ -160,7 +160,7 @@ uint256 CTransaction::ComputeHash() const
 
 CTransaction::CTransaction() : nVersion(CTransaction::CURRENT_VERSION), nTime(GetAdjustedTime()), vin(), vout(), nLockTime(0), hash{} { }
 
-CTransaction::CTransaction(const CMutableTransaction &tx) : nVersion(tx.nVersion), nTime(tx.nTime), vin(tx.vin), vout(tx.vout), nLockTime(tx.nLockTime), hash{UpdateHash()} {}
+CTransaction::CTransaction(const CMutableTransaction &tx) : nVersion(tx.nVersion), nTime(tx.nTime), vin(tx.vin), vout(tx.vout), nLockTime(tx.nLockTime), hash{ComputeHash()} {}
 
 CTransaction &CTransaction::operator=(const CTransaction &tx) {
     *const_cast<int32_t *>(&nVersion) = tx.nVersion;
