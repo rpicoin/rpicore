@@ -17,7 +17,7 @@ class PIVX_RPCSporkTest(BitcoinTestFramework):
         self.setup_clean_chain = True
         self.num_nodes = 2
         self.extra_args = [['-staking=1']] * self.num_nodes
-        self.extra_args[0].append('-sporkkey=932HEevBSujW2ud7RfB1YF91AFygbBRQj3de3LyaCRqNzKKgWXi')
+        self.extra_args[0].append('-sporkkey=cTVT7g368ynsBGYni7Q3pj7bRbaXWbeJvndhuVFMB9FneLB3Sq8z')
 
 
     def setup_network(self):
