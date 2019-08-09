@@ -74,16 +74,13 @@ std::string CTxIn::ToString() const
     std::string str;
     str += "CTxIn(";
     str += prevout.ToString();
-    str += strprintf(", hash=%s", GetHash().ToString());
-    str += strprintf(", prevPubKey=%s", prevPubKey.ToString());
-    str += strprintf(", nSequence=%u", nSequence);
     if (prevout.IsNull())
         if(IsZerocoinSpend())
             str += strprintf(", zerocoinspend %s...", HexStr(scriptSig).substr(0, 25));
         else
             str += strprintf(", coinbase %s", HexStr(scriptSig));
     else
-        str += strprintf(", scriptSig=%s", scriptSig.ToString());
+        str += strprintf(", scriptSig=%s", scriptSig.ToString().substr(0,24));
     if (nSequence != std::numeric_limits<unsigned int>::max())
         str += strprintf(", nSequence=%u", nSequence);
     str += ")";
@@ -107,9 +104,6 @@ bool COutPoint::IsMasternodeReward(const CTransaction* tx) const
 
 uint256 CTxOut::GetHash() const
 {
-    return SerializeHash(*this);
-}
-uint256 CTxIn::GetHash() const {
     return SerializeHash(*this);
 }
 

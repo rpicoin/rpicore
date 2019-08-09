@@ -96,7 +96,6 @@ public:
     {
         return (nSequence == std::numeric_limits<uint32_t>::max());
     }
-    uint256 GetHash() const;
 
     bool IsZerocoinSpend() const;
     bool IsZerocoinPublicSpend() const;
