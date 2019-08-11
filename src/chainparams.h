@@ -73,6 +73,12 @@ public:
     bool SkipProofOfWorkCheck() const { return consensus.fSkipProofOfWorkCheck; }
     /** Make standard checks */
     bool RequireStandard() const { return fRequireStandard; }
+    int64_t TargetTimespan() const {
+        return consensus.nTargetTimespanV2;
+    }
+    int64_t TargetSpacing() const {
+        return consensus.nTargetSpacingV2;
+    }
     int64_t TargetTimespanV1() const {
             return consensus.nTargetTimespanV1;
     }
@@ -184,8 +190,6 @@ protected:
     std::string strObfuscationPoolDummyAddress;
     int64_t nStartMasternodePayments;
     std::string zerocoinModulus;
-    int64_t nPivxBadBlockTime;
-    unsigned int nPivxBadBlocknBits;
 };
 
 /**
