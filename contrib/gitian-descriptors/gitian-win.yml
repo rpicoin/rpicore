@@ -1,5 +1,5 @@
 ---
-name: "rpicoin-win-0.3.3"
+name: "rpicoin-win-0.4.0"
 enable_cache: true
 distro: "ubuntu"
 suites:
@@ -25,7 +25,7 @@ packages:
 - "rename"
 remotes:
 - "url": "https://github.com/rpicoin/rpicore.git"
-  "dir": "core"
+  "dir": "rpicore"
 files: []
 script: |
   set -e -o pipefail
@@ -106,7 +106,7 @@ script: |
   create_per-host_linker_wrapper "2000-01-01 12:00:00"
   export PATH=${WRAP_DIR}:${PATH}
 
-  cd core
+  cd rpicore
   BASEPREFIX=`pwd`/depends
   # Build dependencies for each host
   for i in $HOSTS; do

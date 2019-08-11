@@ -1,5 +1,5 @@
 ---
-name: "rpicoin-linux-0.3.3"
+name: "rpicoin-linux-0.4.0"
 enable_cache: true
 distro: "ubuntu"
 suites:
@@ -34,7 +34,7 @@ packages:
 - "python3"
 remotes:
 - "url": "https://github.com/rpicoin/rpicore.git"
-  "dir": "core"
+  "dir": "rpicore"
 files: []
 script: |
   set -e -o pipefail
@@ -123,7 +123,7 @@ script: |
   chmod +x ${WRAP_DIR}/${prog}
   done
 
-  cd core
+  cd rpicore
   BASEPREFIX=`pwd`/depends
   # Build dependencies for each host
   for i in $HOSTS; do

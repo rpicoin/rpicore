@@ -59,20 +59,20 @@ def build():
 
     if args.linux:
         print('\nCompiling ' + args.version + ' Linux')
-        subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'core='+args.commit, '--url', 'core='+args.url, '../rpicore/contrib/gitian-descriptors/gitian-linux.yml'])
+        subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'rpicore='+args.commit, '--url', 'rpicore='+args.url, '../rpicore/contrib/gitian-descriptors/gitian-linux.yml'])
         subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-linux', '--destination', '../gitian.sigs/', '../rpicore/contrib/gitian-descriptors/gitian-linux.yml'])
         subprocess.check_call('mv build/out/rpicoin-*.tar.gz build/out/src/rpicoin-*.tar.gz ../rpicoin-binaries/'+args.version, shell=True)
 
     if args.windows:
         print('\nCompiling ' + args.version + ' Windows')
-        subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'core='+args.commit, '--url', 'core='+args.url, '../rpicore/contrib/gitian-descriptors/gitian-win.yml'])
+        subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'rpicore='+args.commit, '--url', 'rpicore='+args.url, '../rpicore/contrib/gitian-descriptors/gitian-win.yml'])
         subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-win-unsigned', '--destination', '../gitian.sigs/', '../rpicore/contrib/gitian-descriptors/gitian-win.yml'])
         subprocess.check_call('mv build/out/rpicoin-*-win-unsigned.tar.gz inputs/', shell=True)
         subprocess.check_call('mv build/out/rpicoin-*.zip build/out/rpicoin-*.exe build/out/src/rpicoin-*.tar.gz ../rpicoin-binaries/'+args.version, shell=True)
 
     if args.macos:
         print('\nCompiling ' + args.version + ' MacOS')
-        subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'core='+args.commit, '--url', 'core='+args.url, '../rpicore/contrib/gitian-descriptors/gitian-osx.yml'])
+        subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'rpicore='+args.commit, '--url', 'rpicore='+args.url, '../rpicore/contrib/gitian-descriptors/gitian-osx.yml'])
         subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-osx-unsigned', '--destination', '../gitian.sigs/', '../rpicore/contrib/gitian-descriptors/gitian-osx.yml'])
         subprocess.check_call('mv build/out/rpicoin-*-osx-unsigned.tar.gz inputs/', shell=True)
         subprocess.check_call('mv build/out/rpicoin-*.tar.gz build/out/rpicoin-*.dmg build/out/src/rpicoin-*.tar.gz ../rpicoin-binaries/'+args.version, shell=True)
