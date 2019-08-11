@@ -59,7 +59,7 @@ def build():
 
     if args.linux:
         print('\nCompiling ' + args.version + ' Linux')
-        subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'wispr='+args.commit, '--url', 'wispr='+args.url, '../core/contrib/gitian-descriptors/gitian-linux.yml'])
+        subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'core='+args.commit, '--url', 'wispr='+args.url, '../core/contrib/gitian-descriptors/gitian-linux.yml'])
         subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-linux', '--destination', '../gitian.sigs/', '../core/contrib/gitian-descriptors/gitian-linux.yml'])
         subprocess.check_call('mv build/out/wispr-*.tar.gz build/out/src/wispr-*.tar.gz ../wispr-binaries/'+args.version, shell=True)
 
