@@ -159,7 +159,8 @@ public:
         consensus.nBlockRecalculateAccumulators = consensus.nNewProtocolStartHeight; //Trigger a recalculation of accumulators
         consensus.nBlockFirstFraudulent = -1; //First block that bad serials emerged
         consensus.nBlockLastGoodCheckpoint = consensus.nNewProtocolStartHeight; //Last valid accumulator checkpoint
-
+        nPivxBadBlockTime = 1471401614; // Skip nBit validation of Block 259201 per PR #915
+        nPivxBadBlocknBits = 0x1c056dac; // Skip nBit validation of Block 259201 per PR #915
         // Public coin spend enforcement
         consensus.nPublicZCSpends = 900000;
 
@@ -286,6 +287,8 @@ public:
         consensus.nNewProtocolStartTime = 1537830552;
         consensus.nZerocoinStartHeight = consensus.nNewProtocolStartHeight;
         consensus.nZerocoinStartTime = consensus.nNewProtocolStartTime; // July 2, 2018
+        nPivxBadBlockTime = 1489001494; // Skip nBit validation of Block 259201 per PR #915
+        nPivxBadBlocknBits = 0x1e0a20bd; // Skip nBit validation of Block 201 per PR #915
 
         pchMessageStart[0] = 0x21;
         pchMessageStart[1] = 0x46;

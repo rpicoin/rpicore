@@ -150,7 +150,8 @@ public:
     int LAST_POW_BLOCK() const { return consensus.nLastPOWBlock; }
     int NEW_PROTOCOLS_STARTHEIGHT() const { return consensus.nNewProtocolStartHeight; }
     int NEW_PROTOCOLS_STARTTIME() const { return consensus.nNewProtocolStartTime; }
-
+    int PivxBadBlockTime() const { return consensus.nPivxBadBlockTime; }
+    int PivxBadBlocknBits() const { return consensus.nPivxBadBlocknBits; }
     int Zerocoin_Block_Public_Spend_Enabled() const { return consensus.nPublicZCSpends; }
 
 protected:
@@ -183,7 +184,8 @@ protected:
     std::string strObfuscationPoolDummyAddress;
     int64_t nStartMasternodePayments;
     std::string zerocoinModulus;
-
+    int64_t nPivxBadBlockTime;
+    unsigned int nPivxBadBlocknBits;
 };
 
 /**
