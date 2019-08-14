@@ -47,10 +47,10 @@ unsigned int GetTargetSpacing() {
 unsigned int GetStakeMinAge(){
     bool newVersion = chainActive.Height() >= Params().NEW_PROTOCOLS_STARTHEIGHT();
     if(newVersion){
-        return nStakeMinAgeV2;
+        return Params().StakeMinAgeV2();
 
     }
-    return nStakeMinAge;
+    return Params().StakeMinAge();
 }
 // Hard checkpoints of stake modifiers to ensure they are deterministic
 static std::map<int, unsigned int> mapStakeModifierCheckpoints =
@@ -59,7 +59,7 @@ static std::map<int, unsigned int> mapStakeModifierCheckpoints =
 // Get time weight
 int64_t GetWeight(int64_t nIntervalBeginning, int64_t nIntervalEnd)
 {
-    return nIntervalEnd - nIntervalBeginning - Params().StakeMinAge();
+    return nIntervalEnd - nIntervalBeginning - GetStakeMinAge();
 }
 
 // Get the last stake modifier and its generation time from a given block
@@ -379,9 +379,9 @@ bool Stake(CStakeInput* stakeInput, unsigned int nBits, unsigned int nTimeBlockF
         if (nTimeTx < nTimeBlockFrom)
             return error("%s : nTime violation", __func__);
 
-        if (nTimeBlockFrom + Params().StakeMinAge() > nTimeTx) // Min age requirement
+        if (nTimeBlockFrom + GetStakeMinAge() > nTimeTx) // Min age requirement
             return error("%s : min age violation - nTimeBlockFrom=%d nStakeMinAge=%d nTimeTx=%d",
-                         __func__, nTimeBlockFrom, Params().StakeMinAge(), nTimeTx);
+                         __func__, nTimeBlockFrom, GetStakeMinAge(), nTimeTx);
     }
 
     //grab difficulty
@@ -425,7 +425,7 @@ bool Stake(CStakeInput* stakeInput, unsigned int nBits, unsigned int nTimeBlockF
 
 bool ContextualCheckZerocoinStake(int nPreviousBlockHeight, CStakeInput* stake)
 {
-    if (nPreviousBlockHeight < Params().Zerocoin_Block_V2_Start())
+    if (nPreviousBlockHeight < Params().NEW_PROTOCOLS_STARTHEIGHT())
         return error("%s : zWSP stake block is less than allowed start height", __func__);
 
     if (CZWspStake* zWSP = dynamic_cast<CZWspStake*>(stake)) {
@@ -509,9 +509,9 @@ bool CheckProofOfStake(const CBlock block, uint256& hashProofOfStake, std::uniqu
         //Equivalent for zPIV is checked above in ContextualCheckZerocoinStake()
         if (nTxTime < nBlockFromTime) // Transaction timestamp nTxTime
             return error("%s : nTime violation - nBlockFromTime=%d nTimeTx=%d", __func__, nBlockFromTime, nTxTime);
-        if (nBlockFromTime + Params().StakeMinAge() > nTxTime) // Min age requirement
+        if (nBlockFromTime + GetStakeMinAge() > nTxTime) // Min age requirement
             return error("%s : min age violation - nBlockFromTime=%d nStakeMinAge=%d nTimeTx=%d",
-                    __func__, nBlockFromTime, Params().StakeMinAge(), nTxTime);
+                    __func__, nBlockFromTime, GetStakeMinAge(), nTxTime);
     }
     if (block.nVersion > 7) {
         if (!stake->GetModifier(nStakeModifier))

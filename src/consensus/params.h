@@ -74,6 +74,8 @@ struct Params {
 
     int64_t nPivxBadBlockTime;
     unsigned int nPivxBadBlocknBits;
+    int nStakeMinAge;
+    int nStakeMinAgeV2;
 };
 } // namespace Consensus
 

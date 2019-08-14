@@ -161,7 +161,8 @@ public:
         consensus.nBlockLastGoodCheckpoint = consensus.nNewProtocolStartHeight; //Last valid accumulator checkpoint
         consensus.nPivxBadBlockTime = 0; // Skip nBit validation of Block 259201 per PR #915
         consensus.nPivxBadBlocknBits = 0; // Skip nBit validation of Block 259201 per PR #915
-        nStakeMinAge = 60 * 60;   // PIVX: 1 hour
+        consensus.nStakeMinAge = 8 * 60 * 60;
+        consensus.nStakeMinAgeV2 = 60 * 60;   // PIVX: 1 hour
 
         // Public coin spend enforcement
         consensus.nPublicZCSpends = 900000;
@@ -397,7 +398,8 @@ public:
         consensus.nTargetSpacingV1 = 64;        // WISPR Old: 1 minutes
         consensus.nTargetSpacingV2 = 1 * 60;        // WISPR New: 1 minute
         consensus.nNewProtocolStartHeight = 300;
-        nStakeMinAge = 0;
+        consensus.nStakeMinAge = 0;
+        consensus.nStakeMinAgeV2 = 0;
 
         consensus.nBlockEnforceSerialRange = 1; //Enforce serial range starting this block
         consensus.nBlockRecalculateAccumulators = 999999999; //Trigger a recalculation of accumulators
