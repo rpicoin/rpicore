@@ -57,6 +57,7 @@ public:
   int ToCheckBlockUpgradeMajority() const { return consensus.nToCheckBlockUpgradeMajority; }
 
   int MaxReorganizationDepth() const { return consensus.nMaxReorganizationDepth; }
+    int StakeMinAge() const { return nStakeMinAge; }
 
     /** Used if GenerateBitcoins is called with a negative number of threads */
     int DefaultMinerThreads() const { return nMinerThreads; }
@@ -190,6 +191,9 @@ protected:
     std::string strObfuscationPoolDummyAddress;
     int64_t nStartMasternodePayments;
     std::string zerocoinModulus;
+
+    int nStakeMinAge;
+
 };
 
 /**
