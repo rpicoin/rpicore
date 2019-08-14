@@ -11,7 +11,7 @@ output_file = sys.argv[1]
 package_name_ns = sys.argv[2]
 
 ds = DSStore.open(output_file, 'w+')
-ds['.']['brpi'] = {
+ds['.']['bwsp'] = {
     'ShowStatusBar': False,
     'WindowBounds': '{{300, 280}, {500, 343}}',
     'ContainerShowSidebar': False,
