@@ -20,7 +20,7 @@
 
 #include <stdexcept>
 #include <vector>
-#include <limits.h>
+#include <climits>
 
 #include "serialize.h"
 #include "uint256.h"
@@ -60,7 +60,7 @@ public:
     CBigNum(unsigned int n);
     CBigNum(unsigned long n);
     CBigNum(unsigned long long n);
-    explicit CBigNum(uint256 n);
+    explicit CBigNum(const uint256& n);
     explicit CBigNum(const std::vector<unsigned char>& vch);
 
     /** Generates a cryptographically secure random number between zero and range exclusive
@@ -87,7 +87,7 @@ public:
     int getint() const;
     void setint64(int64_t sn);
     void setuint64(uint64_t n);
-    void setuint256(uint256 n);
+    void setuint256(const uint256& n);
     uint256 getuint256() const;
     void setvch(const std::vector<unsigned char>& vch);
     std::vector<unsigned char> getvch() const;
@@ -345,5 +345,5 @@ inline bool operator>(const CBigNum& a, const CBigNum& b)  { return (mpz_cmp(a.b
 
 inline std::ostream& operator<<(std::ostream &strm, const CBigNum &b) { return strm << b.ToString(10); }
 
-typedef CBigNum Bignum;
+using Bignum = CBigNum;
 #endif

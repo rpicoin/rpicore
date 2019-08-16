@@ -16,8 +16,6 @@
 
 #include <boost/assign/list_of.hpp>
 
-using namespace std;
-using namespace boost::assign;
 
 struct SeedSpec6 {
     uint8_t addr[16];
@@ -154,6 +152,10 @@ public:
         consensus.nBlockRecalculateAccumulators = consensus.nNewProtocolStartHeight; //Trigger a recalculation of accumulators
         consensus.nBlockFirstFraudulent = -1; //First block that bad serials emerged
         consensus.nBlockLastGoodCheckpoint = consensus.nNewProtocolStartHeight; //Last valid accumulator checkpoint
+        consensus.nPivxBadBlockTime = 0; // Skip nBit validation of Block 259201 per PR #915
+        consensus.nPivxBadBlocknBits = 0; // Skip nBit validation of Block 259201 per PR #915
+        consensus.nStakeMinAge = 8 * 60 * 60;
+        consensus.nStakeMinAgeV2 = 60 * 60;   // PIVX: 1 hour
 
         // Public coin spend enforcement
         consensus.nPublicZCSpends = 600000;
@@ -179,7 +181,7 @@ public:
         txNew.nLockTime = 0;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
-        txNew.vin[0].scriptSig = CScript() << 0 << CScriptNum(42) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
+        txNew.vin[0].scriptSig = CScript() << 0 << CScriptNum(42) << std::vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
         txNew.vout[0].nValue = 113713337 * COIN;
         txNew.vout[0].scriptPubKey = CScript() << ParseHex("0467b402a59fdb190a280fd7bc2234986dae22a28df82dabe19b58383c1c1f78b6d82f88fb90054efa6ff0025a8a38b802a2d04b5037f4fc56beb445f18d22d403") << OP_CHECKSIG;
         genesis.vtx.push_back(txNew);
@@ -283,6 +285,8 @@ public:
         consensus.nNewProtocolStartTime = 1537830552;
         consensus.nZerocoinStartHeight = consensus.nNewProtocolStartHeight;
         consensus.nZerocoinStartTime = consensus.nNewProtocolStartTime; // July 2, 2018
+        consensus.nPivxBadBlockTime = 0; // Skip nBit validation of Block 259201 per PR #915
+        consensus.nPivxBadBlocknBits = 0; // Skip nBit validation of Block 201 per PR #915
 
         pchMessageStart[0] = 0x44;
         pchMessageStart[1] = 0x18;
@@ -300,7 +304,7 @@ public:
         txNew2.nLockTime = 0;
         txNew2.vin.resize(1);
         txNew2.vout.resize(1);
-        txNew2.vin[0].scriptSig = CScript() << 0 << CScriptNum(42) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
+        txNew2.vin[0].scriptSig = CScript() << 0 << CScriptNum(42) << std::vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
         txNew2.vout[0].SetEmpty();
 
         // Public coin spend enforcement
@@ -387,6 +391,8 @@ public:
         consensus.nTargetSpacingV1 = 64;        // RPICOIN Old: 1 minutes
         consensus.nTargetSpacingV2 = 1 * 60;        // RPICOIN New: 1 minute
         consensus.nNewProtocolStartHeight = 300;
+        consensus.nStakeMinAge = 0;
+        consensus.nStakeMinAgeV2 = 0;
 
         consensus.nBlockEnforceSerialRange = 1; //Enforce serial range starting this block
         consensus.nBlockRecalculateAccumulators = 999999999; //Trigger a recalculation of accumulators
@@ -425,6 +431,13 @@ public:
         fMineBlocksOnDemand = true;
         consensus.fSkipProofOfWorkCheck = true;
         fTestnetToBeDeprecatedFieldRPC = false;
+
+        /* Spork Key for RegTest:
+        WIF private key: 932HEevBSujW2ud7RfB1YF91AFygbBRQj3de3LyaCRqNzKKgWXi
+        private key hex: bd4960dcbd9e7f2223f24e7164ecb6f1fe96fc3a416f5d3a830ba5720c84b8ca
+        Address: yCvUVd72w7xpimf981m114FSFbmAmne7j9
+        */
+        consensus.strSporkKey = "02161ea61cdeacc91ac87728a98966b6e6ebda46c50644d954e03a6ba5426a78d5";
     }
     const Checkpoints::CCheckpointData& Checkpoints() const
     {

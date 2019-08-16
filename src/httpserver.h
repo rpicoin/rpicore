@@ -6,7 +6,7 @@
 #define BITCOIN_HTTPSERVER_H
 
 #include <string>
-#include <stdint.h>
+#include <cstdint>
 #include <functional>
 
 static const int DEFAULT_HTTP_THREADS=4;
@@ -82,7 +82,7 @@ public:
 
     /**
      * Get the request header specified by hdr, or an empty string.
-     * Return an pair (isPresent,string).
+     * Return an pair (isPresent,std::string).
      */
     std::pair<bool, std::string> GetHeader(const std::string& hdr);
 
@@ -118,7 +118,7 @@ class HTTPClosure
 {
 public:
     virtual void operator()() = 0;
-    virtual ~HTTPClosure() {}
+    virtual ~HTTPClosure() = default;
 };
 
 /** Event class. This can be used either as an cross-thread trigger or as a timer.

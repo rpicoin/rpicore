@@ -16,15 +16,15 @@
 
 namespace libzerocoin {
 
-SerialNumberSignatureOfKnowledge::SerialNumberSignatureOfKnowledge(const ZerocoinParams* p): params(p) { }
+SerialNumberSignatureOfKnowledge::SerialNumberSignatureOfKnowledge(const libzerocoin::ZerocoinParams* p): params(p) { }
 
 // Use one 256 bit seed and concatenate 4 unique 256 bit hashes to make a 1024 bit hash
 CBigNum SeedTo1024(uint256 hashSeed) {
     CHashWriter hasher(0,0);
     hasher << hashSeed;
 
-    vector<unsigned char> vResult;
-    vector<unsigned char> vHash = CBigNum(hasher.GetHash()).getvch();
+    std::vector<unsigned char> vResult;
+    std::vector<unsigned char> vHash = CBigNum(hasher.GetHash()).getvch();
     vResult.insert(vResult.end(), vHash.begin(), vHash.end());
     for (int i = 0; i < 3; i ++) {
         hasher << vResult;
@@ -38,7 +38,7 @@ CBigNum SeedTo1024(uint256 hashSeed) {
 }
 
 SerialNumberSignatureOfKnowledge::SerialNumberSignatureOfKnowledge(const
-        ZerocoinParams* p, const PrivateCoin& coin, const Commitment& commitmentToCoin, uint256 msghash):
+        libzerocoin::ZerocoinParams* p, const PrivateCoin& coin, const Commitment& commitmentToCoin, uint256 msghash):
                 params(p),
                 s_notprime(p->zkp_iterations),
                 sprime(p->zkp_iterations)
@@ -56,10 +56,10 @@ SerialNumberSignatureOfKnowledge::SerialNumberSignatureOfKnowledge(const
     CHashWriter hasher(0,0);
     hasher << *params << commitmentToCoin.getCommitmentValue() << coin.getSerialNumber() << msghash;
 
-    vector<CBigNum> r(params->zkp_iterations);
-    vector<CBigNum> v_seed(params->zkp_iterations);
-    vector<CBigNum> v_expanded(params->zkp_iterations);
-    vector<CBigNum> c(params->zkp_iterations);
+    std::vector<CBigNum> r(params->zkp_iterations);
+    std::vector<CBigNum> v_seed(params->zkp_iterations);
+    std::vector<CBigNum> v_expanded(params->zkp_iterations);
+    std::vector<CBigNum> c(params->zkp_iterations);
 
     for(uint32_t i=0; i < params->zkp_iterations; i++) {
         r[i] = CBigNum::randBignum(params->coinCommitmentGroup.groupOrder);
@@ -144,7 +144,7 @@ bool SerialNumberSignatureOfKnowledge::Verify(const CBigNum& coinSerialNumber, c
     CHashWriter hasher(0,0);
     hasher << *params << valueOfCommitmentToCoin << coinSerialNumber << msghash;
 
-    vector<CBigNum> tprime(params->zkp_iterations);
+    std::vector<CBigNum> tprime(params->zkp_iterations);
     unsigned char *hashbytes = (unsigned char*) &this->hash;
 
     try {

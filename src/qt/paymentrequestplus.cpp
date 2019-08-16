@@ -18,7 +18,6 @@
 #include <QDebug>
 #include <QSslCertificate>
 
-using namespace std;
 
 class SSLVerifyError : public std::runtime_error
 {
@@ -47,7 +46,7 @@ bool PaymentRequestPlus::parse(const QByteArray& data)
     return true;
 }
 
-bool PaymentRequestPlus::SerializeToString(string* output) const
+bool PaymentRequestPlus::SerializeToString(std::string* output) const
 {
     return paymentRequest.SerializeToString(output);
 }
@@ -59,7 +58,8 @@ bool PaymentRequestPlus::IsInitialized() const
 
 QString PaymentRequestPlus::getPKIType() const
 {
-    if (!IsInitialized()) return QString("none");
+    if (!IsInitialized()) { return QString("none");
+}
     return QString::fromStdString(paymentRequest.pki_type());
 }
 
@@ -67,8 +67,9 @@ bool PaymentRequestPlus::getMerchant(X509_STORE* certStore, QString& merchant) c
 {
     merchant.clear();
 
-    if (!IsInitialized())
+    if (!IsInitialized()) {
         return false;
+    }
 
     // One day we'll support more PKI types, but just
     // x509 for now:
@@ -185,8 +186,9 @@ bool PaymentRequestPlus::getMerchant(X509_STORE* certStore, QString& merchant) c
         qWarning() << "PaymentRequestPlus::getMerchant : SSL error: " << err.what();
     }
 
-    if (website)
+    if (website) {
         delete[] website;
+    }
     X509_STORE_CTX_free(store_ctx);
     for (unsigned int i = 0; i < certs.size(); i++)
         X509_free(certs[i]);
@@ -201,7 +203,7 @@ QList<std::pair<CScript, CAmount> > PaymentRequestPlus::getPayTo() const
         const unsigned char* scriptStr = (const unsigned char*)details.outputs(i).script().data();
         CScript s(scriptStr, scriptStr + details.outputs(i).script().size());
 
-        result.append(make_pair(s, details.outputs(i).amount()));
+        result.append(std::make_pair(s, details.outputs(i).amount()));
     }
     return result;
 }

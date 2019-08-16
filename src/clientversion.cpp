@@ -80,10 +80,11 @@ const std::string CLIENT_DATE(BUILD_DATE);
 
 static std::string FormatVersion(int nVersion)
 {
-    if (nVersion % 100 == 0)
+    if (nVersion % 100 == 0){
         return strprintf("%d.%d.%d", nVersion / 1000000, (nVersion / 10000) % 100, (nVersion / 100) % 100);
-    else
+    } else {
         return strprintf("%d.%d.%d.%d", nVersion / 1000000, (nVersion / 10000) % 100, (nVersion / 100) % 100, nVersion % 100);
+    }
 }
 
 std::string FormatFullVersion()
@@ -100,7 +101,7 @@ std::string FormatSubVersion(const std::string& name, int nClientVersion, const 
     ss << "/";
     ss << name << ":" << FormatVersion(nClientVersion);
     if (!comments.empty()) {
-        std::vector<std::string>::const_iterator it(comments.begin());
+        auto it(comments.begin());
         ss << "(" << *it;
         for (++it; it != comments.end(); ++it)
             ss << "; " << *it;

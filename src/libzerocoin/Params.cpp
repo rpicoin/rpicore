@@ -16,7 +16,7 @@
 
 namespace libzerocoin {
 
-ZerocoinParams::ZerocoinParams(CBigNum N, uint32_t securityLevel) {
+ZerocoinParams::ZerocoinParams(const CBigNum& N, uint32_t securityLevel) {
 	this->zkp_hash_len = securityLevel;
 	this->zkp_iterations = securityLevel;
 

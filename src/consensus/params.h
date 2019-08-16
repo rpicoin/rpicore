@@ -25,36 +25,36 @@ struct Params {
     uint256 powLimit;
     bool fAllowMinDifficultyBlocks;
 
-  int nMaxReorganizationDepth;
-  int64_t nTargetTimespanV1;
-  int64_t nTargetTimespanV2;
-  int64_t nTargetSpacingV1;
-  int64_t nTargetSpacingV2;
-  int nLastPOWBlock;
-  int nMasternodeCountDrift;
-  int nMaturity;
-  CAmount nMaxMoneyOut;
-  bool fSkipProofOfWorkCheck;
-  int nPoolMaxTransactions;
-  std::string strSporkKey;
-  std::string strObfuscationPoolDummyAddress;
-  int64_t nStartMasternodePayments;
-  std::string zerocoinModulus;
-  int nMaxZerocoinSpendsPerTransaction;
-  CAmount nMinZerocoinMintFee;
-  int nMintRequiredConfirmations;
-  int nRequiredAccumulation;
-  int nDefaultSecurityLevel;
-  int nZerocoinHeaderVersion;
+    int nMaxReorganizationDepth;
+    int64_t nTargetTimespanV1;
+    int64_t nTargetTimespanV2;
+    int64_t nTargetSpacingV1;
+    int64_t nTargetSpacingV2;
+    int nLastPOWBlock;
+    int nMasternodeCountDrift;
+    int nMaturity;
+    CAmount nMaxMoneyOut;
+    bool fSkipProofOfWorkCheck;
+    int nPoolMaxTransactions;
+    std::string strSporkKey;
+    std::string strObfuscationPoolDummyAddress;
+    int64_t nStartMasternodePayments;
+    std::string zerocoinModulus;
+    int nMaxZerocoinSpendsPerTransaction;
+    CAmount nMinZerocoinMintFee;
+    int nMintRequiredConfirmations;
+    int nRequiredAccumulation;
+    int nDefaultSecurityLevel;
+    int nZerocoinHeaderVersion;
     int nBudgetCycleBlocks;
     int64_t nBudget_Fee_Confirmations;
-  int nZerocoinStartHeight;
-  int nNewProtocolStartHeight;
+    int nZerocoinStartHeight;
+    int nNewProtocolStartHeight;
 
-  int nZerocoinStartTime;
-  int nNewProtocolStartTime;
-  int nZerocoinRequiredStakeDepth;
-  uint256 stakeLimit;
+    int nZerocoinStartTime;
+    int nNewProtocolStartTime;
+    int nZerocoinRequiredStakeDepth;
+    uint256 stakeLimit;
     int nMaxZerocoinPublicSpendsPerTransaction;
     CAmount nInvalidAmountFiltered;
     int64_t nProposalEstablishmentTime;
@@ -71,6 +71,11 @@ struct Params {
     // fake serial attack
     int nFakeSerialBlockheightEnd = 0;
     CAmount nSupplyBeforeFakeSerial = 0;
+
+    int64_t nPivxBadBlockTime;
+    unsigned int nPivxBadBlocknBits;
+    int nStakeMinAge;
+    int nStakeMinAgeV2;
 };
 } // namespace Consensus
 

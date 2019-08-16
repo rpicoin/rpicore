@@ -36,7 +36,7 @@ public:
     }
 
     template<typename Stream>
-    Accumulator(const ZerocoinParams* p, Stream& strm) {
+    Accumulator(const libzerocoin::ZerocoinParams* p, Stream& strm) {
         strm >> *this;
         this->params = &(p->accumulatorParams);
     }
@@ -47,9 +47,9 @@ public:
      * @param d the denomination of coins we are accumulating
      * @throw     Zerocoin exception in case of invalid parameters
      **/
-    Accumulator(const AccumulatorAndProofParams* p, const CoinDenomination d);
+    Accumulator(const AccumulatorAndProofParams* p, const libzerocoin::CoinDenomination d);
 
-    Accumulator(const ZerocoinParams* p, const CoinDenomination d, CBigNum bnValue = 0);
+    Accumulator(const libzerocoin::ZerocoinParams* p, const libzerocoin::CoinDenomination d, CBigNum bnValue = 0);
 
     /**
      * Accumulate a coin into the accumulator. Validates
@@ -60,10 +60,10 @@ public:
      * @throw        Zerocoin exception if the coin is not valid.
      *
      **/
-    void accumulate(const PublicCoin &coin);
+    void accumulate(const libzerocoin::PublicCoin &coin);
     void increment(const CBigNum& bnValue);
 
-    CoinDenomination getDenomination() const;
+    libzerocoin::CoinDenomination getDenomination() const;
     /** Get the accumulator result
      *
      * @return a CBigNum containing the result.
@@ -87,7 +87,7 @@ public:
      * @param c the coin to accumulate
      * @return a refrence to the updated accumulator.
      */
-    Accumulator& operator +=(const PublicCoin& c);
+    libzerocoin::Accumulator& operator +=(const libzerocoin::PublicCoin& c);
     bool operator==(const Accumulator rhs) const;
     ADD_SERIALIZE_METHODS;
     template <typename Stream, typename Operation>  inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
@@ -97,7 +97,7 @@ public:
 private:
     const AccumulatorAndProofParams* params;
     CBigNum value;
-    CoinDenomination denomination;
+    libzerocoin::CoinDenomination denomination;
 };
 
 /**A witness that a PublicCoin is in the accumulation of a set of coins
@@ -106,7 +106,7 @@ private:
 class AccumulatorWitness {
 public:
     template<typename Stream>
-    AccumulatorWitness(const ZerocoinParams* p, Stream& strm) {
+    AccumulatorWitness(const libzerocoin::ZerocoinParams* p, Stream& strm) {
         strm >> *this;
     }
 
@@ -115,13 +115,13 @@ public:
      * @param checkpoint the last known accumulator value before the element was added
      * @param coin the coin we want a witness to
      */
-    AccumulatorWitness(const ZerocoinParams* p, const Accumulator& checkpoint, const PublicCoin coin);
+    AccumulatorWitness(const libzerocoin::ZerocoinParams* p, const libzerocoin::Accumulator& checkpoint, const libzerocoin::PublicCoin coin);
 
     /** Adds element to the set whose's accumulation we are proving coin is a member of
      *
      * @param c the coin to add
      */
-    void AddElement(const PublicCoin& c);
+    void AddElement(const libzerocoin::PublicCoin& c);
 
     /** Adds element to the set whose's accumulation we are proving coin is a member of. No checks performed!
      *
@@ -134,25 +134,25 @@ public:
      * @return the value of the witness
      */
     const CBigNum& getValue() const;
-    const PublicCoin& getPublicCoin() const;
-    void resetValue(const Accumulator& checkpoint, const PublicCoin coin);
+    const libzerocoin::PublicCoin& getPublicCoin() const;
+    void resetValue(const libzerocoin::Accumulator& checkpoint, const libzerocoin::PublicCoin coin);
 
     /** Checks that this is a witness to the accumulation of coin
      * @param a             the accumulator we are checking against.
      * @param publicCoin    the coin we're providing a witness for
      * @return True if the witness computation validates
      */
-    bool VerifyWitness(const Accumulator& a, const PublicCoin &publicCoin) const;
+    bool VerifyWitness(const libzerocoin::Accumulator& a, const libzerocoin::PublicCoin &publicCoin) const;
 
     /**
      * Adds rhs to the set whose's accumulation ware proving coin is a member of
      * @param rhs the PublicCoin to add
      * @return
      */
-    AccumulatorWitness& operator +=(const PublicCoin& rhs);
+    libzerocoin::AccumulatorWitness& operator +=(const libzerocoin::PublicCoin& rhs);
 private:
-    Accumulator witness;
-    PublicCoin element; // was const but changed to use setting in assignment
+    libzerocoin::Accumulator witness;
+    libzerocoin::PublicCoin element; // was const but changed to use setting in assignment
 };
 
 } /* namespace libzerocoin */

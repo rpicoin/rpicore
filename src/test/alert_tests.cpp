@@ -15,7 +15,7 @@
 #include "util.h"
 #include "utilstrencodings.h"
 
-#include "test/test_bitcoin.h"
+#include "test/test_wispr.h"
 
 #include <fstream>
 
@@ -95,7 +95,7 @@ struct ReadAlerts : public TestingSetup
         }
         catch (std::exception) { }
     }
-    ~ReadAlerts() { }
+    ~ReadAlerts() = default;
 
     static std::vector<std::string> read_lines(boost::filesystem::path filepath)
     {

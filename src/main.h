@@ -171,8 +171,6 @@ extern bool fClearSpendCache;
 extern bool fLargeWorkForkFound;
 extern bool fLargeWorkInvalidChainFound;
 
-extern unsigned int nStakeMinAge;
-extern unsigned int nStakeMinAgeV2;
 extern int64_t nLastCoinStakeSearchInterval;
 extern int64_t nLastCoinStakeSearchTime;
 extern int64_t nReserveBalance;
@@ -375,7 +373,7 @@ void AddWrappedSerialsInflation();
 void RecalculateZRPISpent();
 void RecalculateZRPIMinted();
 bool RecalculateRPISupply(int nHeightStart);
-bool ReindexAccumulators(list<uint256>& listMissingCheckpoints, string& strError);
+bool ReindexAccumulators(std::list<uint256>& listMissingCheckpoints, std::string& strError);
 
 // Fake Serial attack Range
 bool isBlockBetweenFakeSerialAttackRange(int nHeight);

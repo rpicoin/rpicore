@@ -37,13 +37,13 @@ public:
 	 * @param p the group parameters for the coin
 	 * @param value the value to commit to
 	 */
-	Commitment(const IntegerGroupParams* p, const CBigNum& value);
-    explicit Commitment(const IntegerGroupParams* p, const CBigNum& bnSerial, const CBigNum& bnRandomness);
+	Commitment(const libzerocoin::IntegerGroupParams* p, const CBigNum& value);
+    explicit Commitment(const libzerocoin::IntegerGroupParams* p, const CBigNum& bnSerial, const CBigNum& bnRandomness);
 	const CBigNum& getCommitmentValue() const;
 	const CBigNum& getRandomness() const;
 	const CBigNum& getContents() const;
 private:
-	const IntegerGroupParams *params;
+	const libzerocoin::IntegerGroupParams *params;
 	CBigNum commitmentValue;
 	CBigNum randomness;
 	const CBigNum contents;
@@ -60,8 +60,8 @@ private:
  */
 class CommitmentProofOfKnowledge {
 public:
-    CommitmentProofOfKnowledge(){};
-	CommitmentProofOfKnowledge(const IntegerGroupParams* ap, const IntegerGroupParams* bp);
+    CommitmentProofOfKnowledge()= default;;
+	CommitmentProofOfKnowledge(const libzerocoin::IntegerGroupParams* ap, const libzerocoin::IntegerGroupParams* bp);
 	/** Generates a proof that two commitments, a and b, open to the same value.
 	 *
 	 * @param ap the IntegerGroup for commitment a
@@ -69,11 +69,11 @@ public:
 	 * @param a the first commitment
 	 * @param b the second commitment
 	 */
-	CommitmentProofOfKnowledge(const IntegerGroupParams* aParams, const IntegerGroupParams* bParams, const Commitment& a, const Commitment& b);
+	CommitmentProofOfKnowledge(const libzerocoin::IntegerGroupParams* aParams, const libzerocoin::IntegerGroupParams* bParams, const Commitment& a, const Commitment& b);
 	//FIXME: is it best practice that this is here?
 	template<typename Stream>
-	CommitmentProofOfKnowledge(const IntegerGroupParams* aParams,
-	                           const IntegerGroupParams* bParams, Stream& strm): ap(aParams), bp(bParams)
+	CommitmentProofOfKnowledge(const libzerocoin::IntegerGroupParams* aParams,
+	                           const libzerocoin::IntegerGroupParams* bParams, Stream& strm): ap(aParams), bp(bParams)
 	{
 		strm >> *this;
 	}
@@ -99,7 +99,7 @@ public:
 	    READWRITE(challenge);
 	}
 private:
-	const IntegerGroupParams *ap, *bp;
+	const libzerocoin::IntegerGroupParams *ap, *bp;
 
 	CBigNum S1, S2, S3, challenge;
 };

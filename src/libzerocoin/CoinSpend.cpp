@@ -17,8 +17,8 @@
 
 namespace libzerocoin
 {
-    CoinSpend::CoinSpend(const ZerocoinParams* paramsCoin, const ZerocoinParams* paramsAcc, const PrivateCoin& coin, Accumulator& a, const uint32_t& checksum,
-                     const AccumulatorWitness& witness, const uint256& ptxHash, const SpendType& spendType) :
+    CoinSpend::CoinSpend(const libzerocoin::ZerocoinParams* paramsCoin, const libzerocoin::ZerocoinParams* paramsAcc, const PrivateCoin& coin, libzerocoin::Accumulator& a, const uint32_t& checksum,
+                     const libzerocoin::AccumulatorWitness& witness, const uint256& ptxHash, const SpendType& spendType) :
                                                                                   coinSerialNumber((coin.getSerialNumber())),
                                                                                   spendType(spendType),
                                                                                   ptxHash(ptxHash),
@@ -66,14 +66,14 @@ namespace libzerocoin
     this->serialNumberSoK = SerialNumberSignatureOfKnowledge(paramsCoin, coin, fullCommitmentToCoinUnderSerialParams, hashSig);
 
     // 5. Sign the transaction using the private key associated with the serial number
-    if (version >= PrivateCoin::PUBKEY_VERSION) {
+    if (version >= libzerocoin::PrivateCoin::PUBKEY_VERSION) {
         this->pubkey = coin.getPubKey();
         if (!coin.sign(hashSig, this->vchSig))
             throw std::runtime_error("Coinspend failed to sign signature hash");
     }
 }
 
-bool CoinSpend::Verify(const Accumulator& a, bool verifyParams) const
+bool CoinSpend::Verify(const libzerocoin::Accumulator& a, bool verifyParams) const
 {
     // Double check that the version is the same as marked in the serial
     if (ExtractVersionFromSerial(coinSerialNumber) != version) {
@@ -111,7 +111,7 @@ const uint256 CoinSpend::signatureHash() const
     h << serialCommitmentToCoinValue << accCommitmentToCoinValue << commitmentPoK << accumulatorPoK << ptxHash
       << coinSerialNumber << accChecksum << denomination;
 
-    if (version >= PrivateCoin::PUBKEY_VERSION)
+    if (version >= libzerocoin::PrivateCoin::PUBKEY_VERSION)
         h << spendType;
 
     return h.GetHash();

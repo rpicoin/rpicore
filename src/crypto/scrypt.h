@@ -1,7 +1,7 @@
 #ifndef SCRYPT_H
 #define SCRYPT_H
-#include <stdlib.h>
-#include <stdint.h>
+#include <cstdlib>
+#include <cstdint>
 #include <string>
 #include "uint256.h"
 

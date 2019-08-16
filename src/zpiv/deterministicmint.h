@@ -6,8 +6,8 @@
 #define RPICOIN_DETERMINISTICMINT_H
 
 #include <libzerocoin/Denominations.h>
-#include <uint256.h>
 #include <serialize.h>
+#include <uint256.h>
 
 //struct that is safe to store essential mint data, without holding any information that allows for actual spending (serial, randomness, private key)
 class CDeterministicMint

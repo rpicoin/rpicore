@@ -8,13 +8,13 @@
 #define RPICOIN_SERIALIZE_H
 
 #include <algorithm>
-#include <assert.h>
+#include <cassert>
 #include <ios>
 #include <limits>
 #include <map>
 #include <set>
-#include <stdint.h>
-#include <string.h>
+#include <cstdint>
+#include <cstring>
 #include <string>
 #include <utility>
 #include <vector>
@@ -553,7 +553,7 @@ CVarInt<I> WrapVarInt(I& n)
  */
 
 /**
- *  string
+ *  std::string
  */
 template <typename C>
 unsigned int GetSerializeSize(const std::basic_string<C>& str, int, int = 0);

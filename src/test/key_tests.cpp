@@ -17,19 +17,18 @@
 
 #include <boost/test/unit_test.hpp>
 
-using namespace std;
 
-static const string strSecret1     ("5sM6UfSr3P3q19q4MYMjAGyVBhAav8PSknA2n8BxEs6tzQLWzuw");
-static const string strSecret2     ("5t5SuyQwFhTv3vmkJJ8drkGaSy2BZxf6LvzQKmA8sMBy7XpK4dE");
-static const string strSecret1C    ("NVDhB6h5TWKUsfy7ofQV5wWKQCHJhVc4gEJrrAjLpC92TxAKuXpZ ");
-static const string strSecret2C    ("NYSdNozeTsbo9vLW7LchgZykdcGDeUf8ayJMwouKjE7QfhNnyguS");
+static const std::string strSecret1     ("5sM6UfSr3P3q19q4MYMjAGyVBhAav8PSknA2n8BxEs6tzQLWzuw");
+static const std::string strSecret2     ("5t5SuyQwFhTv3vmkJJ8drkGaSy2BZxf6LvzQKmA8sMBy7XpK4dE");
+static const std::string strSecret1C    ("NVDhB6h5TWKUsfy7ofQV5wWKQCHJhVc4gEJrrAjLpC92TxAKuXpZ ");
+static const std::string strSecret2C    ("NYSdNozeTsbo9vLW7LchgZykdcGDeUf8ayJMwouKjE7QfhNnyguS");
 static const CBitcoinAddress addr1 ("RVkJiBPNu1jLiqGLMbLgPmLVNSpBVXV9B9");
 static const CBitcoinAddress addr2 ("RFyKnRtoMsFyRtQbczdGq3ozRqA6oBmHmB");
 static const CBitcoinAddress addr1C("RMGb41wtig6HMKokNdTkVNagzfAH8weEXW");
 static const CBitcoinAddress addr2C("RQQHk8vGJ7dPpSrK3msEwCfD2Bq4cL99jf");
 
 
-static const string strAddressBad("Xta1praZQjyELweyMByXyiREw1ZRsjXzVP");
+static const std::string strAddressBad("Xta1praZQjyELweyMByXyiREw1ZRsjXzVP");
 
 //#define KEY_TESTS_DUMPINFO
 #ifdef KEY_TESTS_DUMPINFO
@@ -38,7 +37,7 @@ void dumpKeyInfo(uint256 privkey)
     CKey key;
     key.resize(32);
     memcpy(&secret[0], &privkey, 32);
-    vector<unsigned char> sec;
+    std::vector<unsigned char> sec;
     sec.resize(32);
     memcpy(&sec[0], &secret[0], 32);
     printf("  * secret (hex): %s\n", HexStr(sec).c_str());
@@ -52,7 +51,7 @@ void dumpKeyInfo(uint256 privkey)
         printf("    * secret (base58): %s\n", bsecret.ToString().c_str());
         CKey key;
         key.SetSecret(secret, fCompressed);
-        vector<unsigned char> vchPubKey = key.GetPubKey();
+        std::vector<unsigned char> vchPubKey = key.GetPubKey();
         printf("    * pubkey (hex): %s\n", HexStr(vchPubKey).c_str());
         printf("    * address (base58): %s\n", CBitcoinAddress(vchPubKey).ToString().c_str());
     }
@@ -110,12 +109,12 @@ BOOST_AUTO_TEST_CASE(key_test1)
 
     for (int n=0; n<16; n++)
     {
-        string strMsg = strprintf("Very secret message %i: 11", n);
+        std::string strMsg = strprintf("Very secret message %i: 11", n);
         uint256 hashMsg = Hash(strMsg.begin(), strMsg.end());
 
         // normal signatures
 
-        vector<unsigned char> sign1, sign2, sign1C, sign2C;
+        std::vector<unsigned char> sign1, sign2, sign1C, sign2C;
 
         BOOST_CHECK(key1.Sign (hashMsg, sign1));
         BOOST_CHECK(key2.Sign (hashMsg, sign2));
@@ -144,7 +143,7 @@ BOOST_AUTO_TEST_CASE(key_test1)
 
         // compact signatures (with key recovery)
 
-        vector<unsigned char> csign1, csign2, csign1C, csign2C;
+        std::vector<unsigned char> csign1, csign2, csign1C, csign2C;
 
         BOOST_CHECK(key1.SignCompact (hashMsg, csign1));
         BOOST_CHECK(key2.SignCompact (hashMsg, csign2));
@@ -167,7 +166,7 @@ BOOST_AUTO_TEST_CASE(key_test1)
     // test deterministic signing
 
     std::vector<unsigned char> detsig, detsigc;
-    string strMsg = "Very deterministic message";
+    std::string strMsg = "Very deterministic message";
     uint256 hashMsg = Hash(strMsg.begin(), strMsg.end());
     BOOST_CHECK(key1.Sign(hashMsg, detsig));
     BOOST_CHECK(key1C.Sign(hashMsg, detsigc));

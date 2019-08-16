@@ -126,7 +126,7 @@ bool CZRpiStake::CreateTxIn(CWallet* pwallet, CTxIn& txIn, uint256 hashTxOut)
     return true;
 }
 
-bool CZRpiStake::CreateTxOuts(CWallet* pwallet, vector<CTxOut>& vout, CAmount nTotal)
+bool CZRpiStake::CreateTxOuts(CWallet* pwallet, std::vector<CTxOut>& vout, CAmount nTotal)
 {
     //Create an output returning the zRPI that was staked
     CTxOut outReward;
@@ -195,9 +195,9 @@ CAmount CRpiStake::GetValue()
     return txFrom.vout[nPosition].nValue;
 }
 
-bool CRpiStake::CreateTxOuts(CWallet* pwallet, vector<CTxOut>& vout, CAmount nTotal)
+bool CRpiStake::CreateTxOuts(CWallet* pwallet, std::vector<CTxOut>& vout, CAmount nTotal)
 {
-    vector<valtype> vSolutions;
+    std::vector<valtype> vSolutions;
     txnouttype whichType;
     CScript scriptPubKeyKernel = txFrom.vout[nPosition].scriptPubKey;
     if (!Solver(scriptPubKeyKernel, whichType, vSolutions)) {

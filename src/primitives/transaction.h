@@ -96,6 +96,7 @@ public:
     {
         return (nSequence == std::numeric_limits<uint32_t>::max());
     }
+
     uint256 GetHash() const;
 
     bool IsZerocoinSpend() const;
@@ -204,11 +205,6 @@ struct CMutableTransaction;
  */
 class CTransaction
 {
-private:
-    /** Memory only. */
-    const uint256 hash;
-    void UpdateHash() const;
-
 public:
     static const int32_t CURRENT_VERSION = 1;
 
@@ -223,6 +219,12 @@ public:
     std::vector<CTxOut> vout;
     const uint32_t nLockTime;
 
+private:
+    /** Memory only. */
+    const uint256 hash;
+    uint256 ComputeHash() const;
+
+public:
     /** Construct a CTransaction that qualifies as IsNull() */
     CTransaction();
 
@@ -243,8 +245,10 @@ public:
         READWRITE(*const_cast<std::vector<CTxIn>*>(&vin));
         READWRITE(*const_cast<std::vector<CTxOut>*>(&vout));
         READWRITE(*const_cast<uint32_t*>(&nLockTime));
-        if (ser_action.ForRead())
-            UpdateHash();
+//        READWRITE(*const_cast<uint256*>(&hash));
+        if (ser_action.ForRead()){
+            *const_cast<uint256*>(&hash) = SerializeHash(*this);
+        }
     }
 
     bool IsNull() const {
@@ -335,17 +339,6 @@ struct CMutableTransaction
     uint256 GetHash() const;
 
     std::string ToString() const;
-
-    friend bool operator==(const CMutableTransaction& a, const CMutableTransaction& b)
-    {
-        return a.GetHash() == b.GetHash();
-    }
-
-    friend bool operator!=(const CMutableTransaction& a, const CMutableTransaction& b)
-    {
-        return !(a == b);
-    }
-
 };
 
 #endif // BITCOIN_PRIMITIVES_TRANSACTION_H

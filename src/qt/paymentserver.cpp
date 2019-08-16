@@ -42,8 +42,6 @@
 #include <QTextDocument>
 #include <QUrlQuery>
 
-using namespace boost;
-using namespace std;
 
 const int BITCOIN_IPC_CONNECT_TIMEOUT = 1000; // milliseconds
 const QString BITCOIN_IPC_PREFIX("rpicoin:");
@@ -310,7 +308,7 @@ bool PaymentServer::eventFilter(QObject* object, QEvent* event)
 {
     // clicking on rpicoin: URIs creates FileOpen events on the Mac
     if (event->type() == QEvent::FileOpen) {
-        QFileOpenEvent* fileEvent = static_cast<QFileOpenEvent*>(event);
+        auto* fileEvent = dynamic_cast<QFileOpenEvent*>(event);
         if (!fileEvent->file().isEmpty())
             handleURIOrFile(fileEvent->file());
         else if (!fileEvent->url().isEmpty())
@@ -397,10 +395,11 @@ void PaymentServer::handleURIOrFile(const QString& s)
                         CClientUIInterface::MSG_ERROR);
                 } else
                     emit receivedPaymentRequest(recipient);
-            } else
+            } else {
                 emit message(tr("URI handling"),
                     tr("URI cannot be parsed! This can be caused by an invalid RPICOIN address or malformed URI parameters."),
                     CClientUIInterface::ICON_WARNING);
+}
 
             return;
         }
@@ -471,8 +470,9 @@ bool PaymentServer::readPaymentRequestFromFile(const QString& filename, PaymentR
 
 bool PaymentServer::processPaymentRequest(PaymentRequestPlus& request, SendCoinsRecipient& recipient)
 {
-    if (!optionsModel)
+    if (!optionsModel) {
         return false;
+}
 
     if (request.IsInitialized()) {
         const payments::PaymentDetails& details = request.getDetails();
@@ -556,7 +556,7 @@ void PaymentServer::fetchRequest(const QUrl& url)
     netManager->get(netRequest);
 }
 
-void PaymentServer::fetchPaymentACK(CWallet* wallet, SendCoinsRecipient recipient, QByteArray transaction)
+void PaymentServer::fetchPaymentACK(CWallet* wallet, const SendCoinsRecipient& recipient, const QByteArray& transaction)
 {
     const payments::PaymentDetails& details = recipient.paymentRequest.getDetails();
     if (!details.has_payment_url())
@@ -576,7 +576,7 @@ void PaymentServer::fetchPaymentACK(CWallet* wallet, SendCoinsRecipient recipien
     // Create a new refund address, or re-use:
     QString account = tr("Refund from %1").arg(recipient.authenticatedMerchant);
     std::string strAccount = account.toStdString();
-    set<CTxDestination> refundAddresses = wallet->GetAccountAddresses(strAccount);
+    std::set<CTxDestination> refundAddresses = wallet->GetAccountAddresses(strAccount);
     if (!refundAddresses.empty()) {
         CScript s = GetScriptForDestination(*refundAddresses.begin());
         payments::Output* refund_to = payment.add_refund_to();

@@ -27,8 +27,6 @@
 #include "libzerocoin/Accumulator.h"
 #include "test_rpicoin.h"
 
-using namespace std;
-using namespace libzerocoin;
 
 #define COLOR_STR_GREEN   "\033[32m"
 #define COLOR_STR_NORMAL  "\033[0m"
@@ -41,10 +39,10 @@ uint32_t    ggNumTests        = 0;
 uint32_t    ggSuccessfulTests = 0;
 
 // Global coin array
-PrivateCoin    *ggCoins[TESTS_COINS_TO_ACCUMULATE];
+libzerocoin::PrivateCoin    *ggCoins[TESTS_COINS_TO_ACCUMULATE];
 
 // Global params
-ZerocoinParams *gg_Params;
+libzerocoin::ZerocoinParams *gg_Params;
 
 //////////
 // Utility routines
@@ -87,21 +85,21 @@ public:
 Timer timer;
 
 void
-gLogTestResult(string testName, bool (*testPtr)())
+gLogTestResult(std::string testName, bool (*testPtr)())
 {
-	string colorGreen(COLOR_STR_GREEN);
-	string colorNormal(COLOR_STR_NORMAL);
-	string colorRed(COLOR_STR_RED);
+	std::string colorGreen(COLOR_STR_GREEN);
+	std::string colorNormal(COLOR_STR_NORMAL);
+	std::string colorRed(COLOR_STR_RED);
 
-	cout << "Testing if " << testName << "..." << endl;
+	std::cout << "Testing if " << testName << "..." << std::endl;
 
 	bool testResult = testPtr();
 
 	if (testResult == true) {
-		cout << "\t" << colorGreen << "[PASS]"  << colorNormal << endl;
+		std::cout << "\t" << colorGreen << "[PASS]"  << colorNormal << std::endl;
 		ggSuccessfulTests++;
 	} else {
-		cout << colorRed << "\t[FAIL]" << colorNormal << endl;
+		std::cout << colorRed << "\t[FAIL]" << colorNormal << std::endl;
 	}
 
 	ggNumTests++;
@@ -170,7 +168,7 @@ Testb_CalcParamSizes()
 		if (pLen < 3072 || qLen < 320) {
 			result = false;
 		}
-	} catch (exception &e) {
+	} catch (std::exception &e) {
 		result = false;
 	}
 #endif
@@ -182,14 +180,14 @@ bool
 Testb_GenerateGroupParams()
 {
 	uint32_t pLen = 1024, qLen = 256, count;
-	IntegerGroupParams group;
+    libzerocoin::IntegerGroupParams group;
 
 	for (count = 0; count < 1; count++) {
 
 		try {
-			group = deriveIntegerGroupParams(calculateSeed(gGetTestModulus(), "test", ZEROCOIN_DEFAULT_SECURITYLEVEL, "TEST GROUP"), pLen, qLen);
+			group = libzerocoin::deriveIntegerGroupParams(libzerocoin::calculateSeed(gGetTestModulus(), "test", ZEROCOIN_DEFAULT_SECURITYLEVEL, "TEST GROUP"), pLen, qLen);
 		} catch (std::runtime_error e) {
-			cout << "Caught exception " << e.what() << endl;
+			std::cout << "Caught exception " << e.what() << std::endl;
 			return false;
 		}
 
@@ -218,12 +216,12 @@ Testb_ParamGen()
 	try {
 		timer.start();
 		// Instantiating testParams runs the parameter generation code
-		ZerocoinParams testParams(gGetTestModulus(),ZEROCOIN_DEFAULT_SECURITYLEVEL);
+		libzerocoin::ZerocoinParams testParams(gGetTestModulus(),ZEROCOIN_DEFAULT_SECURITYLEVEL);
 		timer.stop();
 
-		cout << "\tPARAMGEN ELAPSED TIME: " << timer.duration() << " ms\t" << timer.duration()*0.001 << " s" << endl;
-	} catch (runtime_error e) {
-		cout << e.what() << endl;
+		std::cout << "\tPARAMGEN ELAPSED TIME: " << timer.duration() << " ms\t" << timer.duration()*0.001 << " s" << std::endl;
+	} catch (std::runtime_error e) {
+		std::cout << e.what() << std::endl;
 		result = false;
 	}
 
@@ -240,11 +238,11 @@ Testb_Accumulator()
 	}
 	try {
 		// Accumulate the coin list from first to last into one accumulator
-            Accumulator accOne(&gg_Params->accumulatorParams,libzerocoin::CoinDenomination::ZQ_ONE);
-            Accumulator accTwo(&gg_Params->accumulatorParams,libzerocoin::CoinDenomination::ZQ_ONE);
-            Accumulator accThree(&gg_Params->accumulatorParams,libzerocoin::CoinDenomination::ZQ_ONE);
-            Accumulator accFour(&gg_Params->accumulatorParams,libzerocoin::CoinDenomination::ZQ_ONE);
-		AccumulatorWitness wThree(gg_Params, accThree, ggCoins[0]->getPublicCoin());
+            libzerocoin::Accumulator accOne(&gg_Params->accumulatorParams,libzerocoin::CoinDenomination::ZQ_ONE);
+            libzerocoin::Accumulator accTwo(&gg_Params->accumulatorParams,libzerocoin::CoinDenomination::ZQ_ONE);
+            libzerocoin::Accumulator accThree(&gg_Params->accumulatorParams,libzerocoin::CoinDenomination::ZQ_ONE);
+            libzerocoin::Accumulator accFour(&gg_Params->accumulatorParams,libzerocoin::CoinDenomination::ZQ_ONE);
+		libzerocoin::AccumulatorWitness wThree(gg_Params, accThree, ggCoins[0]->getPublicCoin());
 
 		for (uint32_t i = 0; i < TESTS_COINS_TO_ACCUMULATE; i++) {
 			accOne += ggCoins[i]->getPublicCoin();
@@ -258,23 +256,23 @@ Testb_Accumulator()
 
 		// Compare the accumulated results
 		if (accOne.getValue() != accTwo.getValue() || accOne.getValue() != accThree.getValue()) {
-			cout << "Accumulators don't match" << endl;
+			std::cout << "Accumulators don't match" << std::endl;
 			return false;
 		}
 
 		if(accFour.getValue() != wThree.getValue()) {
-			cout << "Witness math not working," << endl;
+			std::cout << "Witness math not working," << std::endl;
 			return false;
 		}
 
 		// Verify that the witness is correct
 		if (!wThree.VerifyWitness(accThree, ggCoins[0]->getPublicCoin()) ) {
-			cout << "Witness not valid" << endl;
+			std::cout << "Witness not valid" << std::endl;
 			return false;
 		}
 
-	} catch (runtime_error e) {
-		cout << e.what() << endl;
+	} catch (std::runtime_error e) {
+		std::cout << e.what() << std::endl;
         return false;
 	}
 
@@ -288,14 +286,14 @@ Testb_MintCoin()
 		// Generate a list of coins
 		timer.start();
 		for (uint32_t i = 0; i < TESTS_COINS_TO_ACCUMULATE; i++) {
-            ggCoins[i] = new PrivateCoin(gg_Params,CoinDenomination::ZQ_ONE);
+            ggCoins[i] = new libzerocoin::PrivateCoin(gg_Params,libzerocoin::CoinDenomination::ZQ_ONE);
 		}
 		timer.stop();
-	} catch (exception &e) {
+	} catch (std::exception &e) {
 		return false;
 	}
 
-	cout << "\tMINT ELAPSED TIME:\n\t\tTotal: " << timer.duration() << " ms\t" << timer.duration()*0.001 << " s\n\t\tPer Coin: " << timer.duration()/TESTS_COINS_TO_ACCUMULATE << " ms\t" << (timer.duration()/TESTS_COINS_TO_ACCUMULATE)*0.001 << " s" << endl;
+	std::cout << "\tMINT ELAPSED TIME:\n\t\tTotal: " << timer.duration() << " ms\t" << timer.duration()*0.001 << " s\n\t\tPer Coin: " << timer.duration()/TESTS_COINS_TO_ACCUMULATE << " ms\t" << (timer.duration()/TESTS_COINS_TO_ACCUMULATE)*0.001 << " s" << std::endl;
 
 	return true;
 }
@@ -317,8 +315,8 @@ Testb_MintAndSpend()
 		// Accumulate the list of generated coins into a fresh accumulator.
 		// The first one gets marked as accumulated for a witness, the
 		// others just get accumulated normally.
-        Accumulator acc(&gg_Params->accumulatorParams,CoinDenomination::ZQ_ONE);
-		AccumulatorWitness wAcc(gg_Params, acc, ggCoins[0]->getPublicCoin());
+        libzerocoin::Accumulator acc(&gg_Params->accumulatorParams,libzerocoin::CoinDenomination::ZQ_ONE);
+		libzerocoin::AccumulatorWitness wAcc(gg_Params, acc, ggCoins[0]->getPublicCoin());
 
 		timer.start();
 		for (uint32_t i = 0; i < TESTS_COINS_TO_ACCUMULATE; i++) {
@@ -326,7 +324,7 @@ Testb_MintAndSpend()
 		}
 		timer.stop();
 
-		cout << "\tACCUMULATOR ELAPSED TIME:\n\t\tTotal: " << timer.duration() << " ms\t" << timer.duration()*0.001 << " s\n\t\tPer Element: " << timer.duration()/TESTS_COINS_TO_ACCUMULATE << " ms\t" << (timer.duration()/TESTS_COINS_TO_ACCUMULATE)*0.001 << " s" << endl;
+		std::cout << "\tACCUMULATOR ELAPSED TIME:\n\t\tTotal: " << timer.duration() << " ms\t" << timer.duration()*0.001 << " s\n\t\tPer Element: " << timer.duration()/TESTS_COINS_TO_ACCUMULATE << " ms\t" << (timer.duration()/TESTS_COINS_TO_ACCUMULATE)*0.001 << " s" << std::endl;
 
 		timer.start();
 		for (uint32_t i = 0; i < TESTS_COINS_TO_ACCUMULATE; i++) {
@@ -334,14 +332,14 @@ Testb_MintAndSpend()
 		}
 		timer.stop();
 
-		cout << "\tWITNESS ELAPSED TIME: \n\t\tTotal: " << timer.duration() << " ms\t" << timer.duration()*0.001 << " s\n\t\tPer Element: " << timer.duration()/TESTS_COINS_TO_ACCUMULATE << " ms\t" << (timer.duration()/TESTS_COINS_TO_ACCUMULATE)*0.001 << " s" << endl;
+		std::cout << "\tWITNESS ELAPSED TIME: \n\t\tTotal: " << timer.duration() << " ms\t" << timer.duration()*0.001 << " s\n\t\tPer Element: " << timer.duration()/TESTS_COINS_TO_ACCUMULATE << " ms\t" << (timer.duration()/TESTS_COINS_TO_ACCUMULATE)*0.001 << " s" << std::endl;
 
 		// Now spend the coin
 		timer.start();
-		CoinSpend spend(gg_Params, gg_Params, *(ggCoins[0]), acc, 0, wAcc, 0, SpendType::SPEND); //(0) presstab
+		libzerocoin::CoinSpend spend(gg_Params, gg_Params, *(ggCoins[0]), acc, 0, wAcc, 0, libzerocoin::SpendType::SPEND); //(0) presstab
 		timer.stop();
 
-		cout << "\tSPEND ELAPSED TIME: " << timer.duration() << " ms\t" << timer.duration()*0.001 << " s" << endl;
+		std::cout << "\tSPEND ELAPSED TIME: " << timer.duration() << " ms\t" << timer.duration()*0.001 << " s" << std::endl;
 
 		// Serialize the proof and deserialize into newSpend
 		CDataStream ss(SER_NETWORK, PROTOCOL_VERSION);
@@ -350,20 +348,20 @@ Testb_MintAndSpend()
 		ss << spend;
 		timer.stop();
 
-		CoinSpend newSpend(gg_Params, gg_Params, ss);
+		libzerocoin::CoinSpend newSpend(gg_Params, gg_Params, ss);
 
-		cout << "\tSERIALIZE ELAPSED TIME: " << timer.duration() << " ms\t" << timer.duration()*0.001 << " s" << endl;
+		std::cout << "\tSERIALIZE ELAPSED TIME: " << timer.duration() << " ms\t" << timer.duration()*0.001 << " s" << std::endl;
 
 		// Finally, see if we can verify the deserialized proof (return our result)
 		timer.start();
 		bool ret = newSpend.Verify(acc);
 		timer.stop();
 
-		cout << "\tSPEND VERIFY ELAPSED TIME: " << timer.duration() << " ms\t" << timer.duration()*0.001 << " s" << endl;
+		std::cout << "\tSPEND VERIFY ELAPSED TIME: " << timer.duration() << " ms\t" << timer.duration()*0.001 << " s" << std::endl;
 
 		return ret;
-	} catch (runtime_error &e) {
-		cout << e.what() << endl;
+	} catch (std::runtime_error &e) {
+		std::cout << e.what() << std::endl;
 		return false;
 	}
 
@@ -374,7 +372,7 @@ void
 Testb_RunAllTests()
 {
 	// Make a new set of parameters from a random RSA modulus
-	gg_Params = new ZerocoinParams(gGetTestModulus());
+	gg_Params = new libzerocoin::ZerocoinParams(gGetTestModulus());
 
 	ggNumTests = ggSuccessfulTests = 0;
 	for (uint32_t i = 0; i < TESTS_COINS_TO_ACCUMULATE; i++) {
@@ -392,7 +390,7 @@ Testb_RunAllTests()
 
 	// Summarize test results
 	if (ggSuccessfulTests < ggNumTests) {
-		cout << endl << "ERROR: SOME TESTS FAILED" << endl;
+		std::cout << std::endl << "ERROR: SOME TESTS FAILED" << std::endl;
 	}
 
 	// Clear any generated coins
@@ -400,7 +398,7 @@ Testb_RunAllTests()
 		delete ggCoins[i];
 	}
 
-	cout << ggSuccessfulTests << " out of " << ggNumTests << " tests passed." << endl << endl;
+	std::cout << ggSuccessfulTests << " out of " << ggNumTests << " tests passed." << std::endl << std::endl;
 	delete gg_Params;
 }
 
@@ -408,7 +406,7 @@ BOOST_FIXTURE_TEST_SUITE(benchmark_zerocoin, TestingSetup)
 
 BOOST_AUTO_TEST_CASE(benchmark_test)
 {
-	cout << "libzerocoin v" << ZEROCOIN_VERSION_STRING << " benchmark utility." << endl << endl;
+	std::cout << "libzerocoin v" << ZEROCOIN_VERSION_STRING << " benchmark utility." << std::endl << std::endl;
 
 	Testb_RunAllTests();
 }

@@ -57,6 +57,8 @@ public:
   int ToCheckBlockUpgradeMajority() const { return consensus.nToCheckBlockUpgradeMajority; }
 
   int MaxReorganizationDepth() const { return consensus.nMaxReorganizationDepth; }
+    int StakeMinAge() const { return consensus.nStakeMinAge; }
+    int StakeMinAgeV2() const { return consensus.nStakeMinAgeV2; }
 
     /** Used if GenerateBitcoins is called with a negative number of threads */
     int DefaultMinerThreads() const { return nMinerThreads; }
@@ -73,6 +75,12 @@ public:
     bool SkipProofOfWorkCheck() const { return consensus.fSkipProofOfWorkCheck; }
     /** Make standard checks */
     bool RequireStandard() const { return fRequireStandard; }
+    int64_t TargetTimespan() const {
+        return consensus.nTargetTimespanV2;
+    }
+    int64_t TargetSpacing() const {
+        return consensus.nTargetSpacingV2;
+    }
     int64_t TargetTimespanV1() const {
             return consensus.nTargetTimespanV1;
     }
@@ -150,7 +158,8 @@ public:
     int LAST_POW_BLOCK() const { return consensus.nLastPOWBlock; }
     int NEW_PROTOCOLS_STARTHEIGHT() const { return consensus.nNewProtocolStartHeight; }
     int NEW_PROTOCOLS_STARTTIME() const { return consensus.nNewProtocolStartTime; }
-
+    int PivxBadBlockTime() const { return consensus.nPivxBadBlockTime; }
+    int PivxBadBlocknBits() const { return consensus.nPivxBadBlocknBits; }
     int Zerocoin_Block_Public_Spend_Enabled() const { return consensus.nPublicZCSpends; }
 
 protected:
@@ -183,6 +192,7 @@ protected:
     std::string strObfuscationPoolDummyAddress;
     int64_t nStartMasternodePayments;
     std::string zerocoinModulus;
+
 
 };
 

@@ -8,10 +8,10 @@
 #ifndef RPICOIN_UINT256_H
 #define RPICOIN_UINT256_H
 
-#include <assert.h>
+#include <cassert>
 #include <cstring>
 #include <stdexcept>
-#include <stdint.h>
+#include <cstdint>
 #include <string>
 #include <vector>
 
@@ -320,7 +320,7 @@ public:
 class uint160 : public base_uint<160>
 {
 public:
-    uint160() {}
+    uint160() = default;
     uint160(const base_uint<160>& b) : base_uint<160>(b) {}
     uint160(uint64_t b) : base_uint<160>(b) {}
     explicit uint160(const std::string& str) : base_uint<160>(str) {}
@@ -331,7 +331,7 @@ public:
 class uint256 : public base_uint<256>
 {
 public:
-    uint256() {}
+    uint256() = default;
     uint256(const base_uint<256>& b) : base_uint<256>(b) {}
     uint256(uint64_t b) : base_uint<256>(b) {}
     explicit uint256(const std::string& str) : base_uint<256>(str) {}
@@ -387,7 +387,7 @@ inline uint256 uint256S(const std::string& str)
 class uint512 : public base_uint<512>
 {
 public:
-    uint512() {}
+    uint512() = default;
     uint512(const base_uint<512>& b) : base_uint<512>(b) {}
     uint512(uint64_t b) : base_uint<512>(b) {}
     explicit uint512(const std::string& str) : base_uint<512>(str) {}

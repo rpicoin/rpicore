@@ -8,13 +8,13 @@
 #ifndef BITCOIN_SCRIPT_SCRIPT_H
 #define BITCOIN_SCRIPT_SCRIPT_H
 
-#include <assert.h>
+#include <cassert>
 #include <climits>
 #include <limits>
 #include "pubkey.h"
 #include <stdexcept>
-#include <stdint.h>
-#include <string.h>
+#include <cstdint>
+#include <cstring>
 #include <string>
 #include <vector>
 
@@ -375,7 +375,7 @@ protected:
         return *this;
     }
 public:
-    CScript() { }
+    CScript() = default;
     CScript(const CScript& b) : std::vector<unsigned char>(b.begin(), b.end()) { }
     CScript(const_iterator pbegin, const_iterator pend) : std::vector<unsigned char>(pbegin, pend) { }
     CScript(const unsigned char* pbegin, const unsigned char* pend) : std::vector<unsigned char>(pbegin, pend) { }
@@ -559,7 +559,7 @@ public:
         int nFound = 0;
         if (b.empty())
             return nFound;
-        iterator pc = begin();
+        auto pc = begin();
         opcodetype opcode;
         do
         {
@@ -576,7 +576,7 @@ public:
     {
         int nFound = 0;
         opcodetype opcode;
-        for (const_iterator pc = begin(); pc != end() && GetOp(pc, opcode);)
+        for (auto pc = begin(); pc != end() && GetOp(pc, opcode);)
             if (opcode == op)
                 ++nFound;
         return nFound;
