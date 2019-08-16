@@ -159,7 +159,7 @@ public:
         consensus.nStakeMinAgeV2 = 60 * 60;   // PIVX: 1 hour
 
         // Public coin spend enforcement
-        consensus.nPublicZCSpends = 600000;
+        consensus.nPublicZCSpends = 650000;
 
         // Fake Serial Attack
         consensus.nFakeSerialBlockheightEnd = -1;
