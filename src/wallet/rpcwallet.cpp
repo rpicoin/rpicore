@@ -3151,7 +3151,7 @@ UniValue resetspentzerocoin(const UniValue& params, bool fHelp)
     LOCK2(cs_main, pwalletMain->cs_wallet);
 
     CWalletDB walletdb(pwalletMain->strWalletFile);
-    CzWSPTracker* zrpiTracker = pwalletMain->zrpiTracker.get();
+    CzRPITracker* zrpiTracker = pwalletMain->zrpiTracker.get();
     std::set<CMintMeta> setMints = zrpiTracker->ListMints(false, false, false);
     std::list<CZerocoinSpend> listSpends = walletdb.ListSpentCoins();
     std::list<CZerocoinSpend> listUnconfirmedSpends;
