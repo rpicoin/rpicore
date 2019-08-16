@@ -62,7 +62,7 @@ bool CZMQAbstractPublishNotifier::Initialize(void *pcontext)
     assert(!psocket);
 
     // check if address is being used by other publish notifier
-    std::multimap<std::string, CZMQAbstractPublishNotifier*>::iterator i = mapPublishNotifiers.find(address);
+    auto i = mapPublishNotifiers.find(address);
 
     if (i==mapPublishNotifiers.end())
     {
@@ -106,7 +106,7 @@ void CZMQAbstractPublishNotifier::Shutdown()
     typedef std::multimap<std::string, CZMQAbstractPublishNotifier*>::iterator iterator;
     std::pair<iterator, iterator> iterpair = mapPublishNotifiers.equal_range(address);
 
-    for (iterator it = iterpair.first; it != iterpair.second; ++it)
+    for (auto it = iterpair.first; it != iterpair.second; ++it)
     {
         if (it->second==this)
         {
@@ -197,7 +197,7 @@ bool CZMQPublishRawBlockNotifier::NotifyBlock(const CBlockIndex *pindex)
 
 bool CZMQPublishRawTransactionNotifier::NotifyTransaction(const CTransaction &transaction)
 {
-    uint256 hash = transaction.GetHash();
+    const uint256& hash = transaction.GetHash();
     LogPrint("zmq", "zmq: Publish rawtx %s\n", hash.GetHex());
     CDataStream ss(SER_NETWORK, PROTOCOL_VERSION);
     ss << transaction;
@@ -206,7 +206,7 @@ bool CZMQPublishRawTransactionNotifier::NotifyTransaction(const CTransaction &tr
 
 bool CZMQPublishRawTransactionLockNotifier::NotifyTransactionLock(const CTransaction &transaction)
 {
-    uint256 hash = transaction.GetHash();
+    const uint256& hash = transaction.GetHash();
     LogPrint("zmq", "zmq: Publish rawtxlock %s\n", hash.GetHex());
     CDataStream ss(SER_NETWORK, PROTOCOL_VERSION);
     ss << transaction;

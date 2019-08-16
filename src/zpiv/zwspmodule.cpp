@@ -41,7 +41,7 @@ const uint256 PublicCoinSpend::signatureHash() const
 
 namespace ZWSPModule {
 
-    bool createInput(CTxIn &in, CZerocoinMint &mint, uint256 hashTxOut) {
+    bool createInput(CTxIn &in, CZerocoinMint &mint, const uint256& hashTxOut) {
         libzerocoin::ZerocoinParams *params = Params().Zerocoin_Params(false);
         uint8_t nVersion = mint.GetVersion();
         if (nVersion < libzerocoin::PrivateCoin::PUBKEY_VERSION) {

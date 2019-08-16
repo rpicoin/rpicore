@@ -13,11 +13,11 @@
 
 class CGenWit {
 
-    public:
+public:
 
     CGenWit();
 
-    CGenWit(const CBloomFilter &filter, int startingHeight, libzerocoin::CoinDenomination den, int requestNum, CBigNum accWitValue = 0);
+    CGenWit(CBloomFilter filter, int startingHeight, libzerocoin::CoinDenomination den, int requestNum, const CBigNum& accWitValue = 0);
 
     bool isValid(int chainActiveHeight);
 

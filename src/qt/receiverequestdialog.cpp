@@ -27,7 +27,7 @@
 #include <qrencode.h>
 #endif
 
-QRImageWidget::QRImageWidget(QWidget* parent) : QLabel(parent), contextMenu(0)
+QRImageWidget::QRImageWidget(QWidget* parent) : QLabel(parent), contextMenu(nullptr)
 {
     contextMenu = new QMenu();
     QAction* saveImageAction = new QAction(tr("&Save Image..."), this);
@@ -49,10 +49,10 @@ void QRImageWidget::mousePressEvent(QMouseEvent* event)
 {
     if (event->button() == Qt::LeftButton && pixmap()) {
         event->accept();
-        QMimeData* mimeData = new QMimeData;
+        auto* mimeData = new QMimeData;
         mimeData->setImageData(exportImage());
 
-        QDrag* drag = new QDrag(this);
+        auto* drag = new QDrag(this);
         drag->setMimeData(mimeData);
         drag->exec();
     } else {
@@ -64,7 +64,7 @@ void QRImageWidget::saveImage()
 {
     if (!pixmap())
         return;
-    QString fn = GUIUtil::getSaveFileName(this, tr("Save QR Code"), QString(), tr("PNG Image (*.png)"), NULL);
+    QString fn = GUIUtil::getSaveFileName(this, tr("Save QR Code"), QString(), tr("PNG Image (*.png)"), nullptr);
     if (!fn.isEmpty()) {
         exportImage().save(fn);
     }

@@ -8,12 +8,13 @@
 #include "util.h"
 #include "guiinterface.h"
 #include <base58.h>
+ #include <utility>
 
 CMasternodeConfig masternodeConfig;
 
 void CMasternodeConfig::add(std::string alias, std::string ip, std::string privKey, std::string txHash, std::string outputIndex)
 {
-    CMasternodeEntry cme(alias, ip, privKey, txHash, outputIndex);
+    CMasternodeEntry cme(std::move(alias), std::move(ip), std::move(privKey), std::move(txHash), std::move(outputIndex));
     entries.push_back(cme);
 }
 
@@ -25,7 +26,7 @@ bool CMasternodeConfig::read(std::string& strErr)
 
     if (!streamConfig.good()) {
         FILE* configFile = fopen(pathMasternodeConfigFile.string().c_str(), "a");
-        if (configFile != NULL) {
+        if (configFile != nullptr) {
             std::string strHeader = "# Masternode config file\n"
                                     "# Format: alias IP:port masternodeprivkey collateral_output_txid collateral_output_index\n"
                                     "# Example: mn1 127.0.0.2:17000 93HaYBVUCYjEMeeH1Y4sBGLALQZE1Yc1K64xiqgX37tGBDQL8Xg 2bcd3c84c84f87eaa86e4e56834c92927a07f9e18718810b92e0d0324456a67c 0\n";

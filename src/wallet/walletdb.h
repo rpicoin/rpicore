@@ -95,8 +95,8 @@ public:
     bool WritePurpose(const std::string& strAddress, const std::string& purpose);
     bool ErasePurpose(const std::string& strAddress);
 
-    bool WriteTx(uint256 hash, const CWalletTx& wtx);
-    bool EraseTx(uint256 hash);
+    bool WriteTx(const uint256& hash, const CWalletTx& wtx);
+    bool EraseTx(const uint256& hash);
 
     bool WriteKey(const CPubKey& vchPubKey, const CPrivKey& vchPrivKey, const CKeyMetadata& keyMeta);
     bool WriteCryptedKey(const CPubKey& vchPubKey, const std::vector<unsigned char>& vchCryptedSecret, const CKeyMetadata& keyMeta);
@@ -124,7 +124,7 @@ public:
     bool EraseMultiSend(std::vector<std::pair<std::string, int> > vMultiSend);
     bool WriteMSettings(bool fMultiSendStake, bool fMultiSendMasternode, int nLastMultiSendHeight);
     bool WriteMSDisabledAddresses(std::vector<std::string> vDisabledAddresses);
-    bool EraseMSDisabledAddresses(std::vector<std::string> vDisabledAddresses);
+    bool EraseMSDisabledAddresses(const std::vector<std::string>& vDisabledAddresses);
     bool WriteAutoCombineSettings(bool fEnable, CAmount nCombineThreshold);
 
     bool WriteDefaultKey(const CPubKey& vchPubKey);
@@ -154,7 +154,7 @@ public:
     DBErrors LoadWallet(CWallet* pwallet);
     DBErrors FindWalletTx(CWallet* pwallet, std::vector<uint256>& vTxHash, std::vector<CWalletTx>& vWtx);
     DBErrors ZapWalletTx(CWallet* pwallet, std::vector<CWalletTx>& vWtx);
-    static bool Recover(CDBEnv& dbenv, std::string filename, bool fOnlyKeys);
+    static bool Recover(CDBEnv& dbenv, const std::string& filename, bool fOnlyKeys);
     static bool Recover(CDBEnv& dbenv, std::string filename);
 
     bool WriteDeterministicMint(const CDeterministicMint& dMint);
@@ -204,7 +204,7 @@ private:
     bool WriteAccountingEntry(const uint64_t nAccEntryNum, const CAccountingEntry& acentry);
 };
 
-void NotifyBacked(const CWallet& wallet, bool fSuccess, std::string strMessage);
+void NotifyBacked(const CWallet& wallet, bool fSuccess, const std::string& strMessage);
 bool BackupWallet(const CWallet& wallet, const boost::filesystem::path& strDest, bool fEnableCustom = true);
 bool AttemptBackupWallet(const CWallet& wallet, const boost::filesystem::path& pathSrc, const boost::filesystem::path& pathDest);
 

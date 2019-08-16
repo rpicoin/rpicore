@@ -14,7 +14,7 @@
 #include "uint256.h"
 #include "util.h"
 
-#include <math.h>
+#include <cmath>
 // ppcoin: find last block index up to pindex
 const CBlockIndex* GetLastBlockIndex(const CBlockIndex* pindex, bool fProofOfStake)
 {
@@ -158,7 +158,7 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
     return bnNew.GetCompact();
 }
 
-bool CheckProofOfWork(uint256 hash, unsigned int nBits)
+bool CheckProofOfWork(const uint256& hash, unsigned int nBits)
 {
     bool fNegative;
     bool fOverflow;

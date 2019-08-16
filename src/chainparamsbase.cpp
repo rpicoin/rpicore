@@ -8,7 +8,7 @@
 
 #include "util.h"
 
-#include <assert.h>
+#include <cassert>
 
 #include <boost/assign/list_of.hpp>
 

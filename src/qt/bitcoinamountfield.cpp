@@ -53,7 +53,7 @@ public:
         }
     }
 
-    CAmount value(bool* valid_out = 0) const
+    CAmount value(bool* valid_out = nullptr) const
     {
         return parse(text(), valid_out);
     }
@@ -147,7 +147,7 @@ protected:
     bool event(QEvent* event)
     {
         if (event->type() == QEvent::KeyPress || event->type() == QEvent::KeyRelease) {
-            QKeyEvent* keyEvent = static_cast<QKeyEvent*>(event);
+            auto* keyEvent = static_cast<QKeyEvent*>(event);
             if (keyEvent->key() == Qt::Key_Comma) {
                 // Translate a comma into a period
                 QKeyEvent periodKeyEvent(event->type(), Qt::Key_Period, keyEvent->modifiers(), ".", keyEvent->isAutoRepeat(), keyEvent->count());
@@ -159,7 +159,7 @@ protected:
 
     StepEnabled stepEnabled() const
     {
-        StepEnabled rv = 0;
+        StepEnabled rv = nullptr;
         if (isReadOnly()) // Disable steps when AmountSpinBox is read-only
             return StepNone;
         if (text().isEmpty()) // Allow step-up with empty field
@@ -182,7 +182,7 @@ signals:
 #include "bitcoinamountfield.moc"
 
 BitcoinAmountField::BitcoinAmountField(QWidget* parent) : QWidget(parent),
-                                                          amount(0)
+                                                          amount(nullptr)
 {
     this->setObjectName("BitcoinAmountField"); // ID as CSS-reference
     // For whatever reasons the Gods of Qt-CSS-manipulation won't let us change this class' stylesheet in the CSS file.
@@ -198,7 +198,7 @@ BitcoinAmountField::BitcoinAmountField(QWidget* parent) : QWidget(parent),
     amount->installEventFilter(this);
     amount->setMaximumWidth(170);
 
-    QHBoxLayout* layout = new QHBoxLayout(this);
+    auto* layout = new QHBoxLayout(this);
     layout->addWidget(amount);
     unit = new QValueComboBox(this);
     unit->setModel(new BitcoinUnits(this));

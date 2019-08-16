@@ -21,7 +21,7 @@
 #include "utilstrencodings.h"
 
 #include <deque>
-#include <stdint.h>
+#include <cstdint>
 
 #ifndef WIN32
 #include <arpa/inet.h>
@@ -66,7 +66,7 @@ static const size_t MAPASKFOR_MAX_SZ = MAX_INV_SZ;
 unsigned int ReceiveFloodSize();
 unsigned int SendBufferSize();
 
-void AddOneShot(std::string strDest);
+void AddOneShot(const std::string& strDest);
 bool RecvLine(SOCKET hSocket, std::string& strLine);
 void AddressCurrentlyConnected(const CService& addr);
 CNode* FindNode(const CNetAddr& ip);
@@ -381,7 +381,7 @@ public:
     // Whether a ping is requested.
     bool fPingQueued;
 
-    CNode(SOCKET hSocketIn, CAddress addrIn, std::string addrNameIn = "", bool fInboundIn = false);
+    CNode(SOCKET hSocketIn, CAddress addrIn, const std::string& addrNameIn = "", bool fInboundIn = false);
     ~CNode();
 
 private:
@@ -656,7 +656,7 @@ public:
         }
     }
 
-    bool HasFulfilledRequest(std::string strRequest)
+    bool HasFulfilledRequest(const std::string& strRequest)
     {
         for (std::string& type : vecRequestsFulfilled) {
             if (type == strRequest) return true;
@@ -664,9 +664,9 @@ public:
         return false;
     }
 
-    void ClearFulfilledRequest(std::string strRequest)
+    void ClearFulfilledRequest(const std::string& strRequest)
     {
-        std::vector<std::string>::iterator it = vecRequestsFulfilled.begin();
+        auto it = vecRequestsFulfilled.begin();
         while (it != vecRequestsFulfilled.end()) {
             if ((*it) == strRequest) {
                 vecRequestsFulfilled.erase(it);
@@ -676,7 +676,7 @@ public:
         }
     }
 
-    void FulfilledRequest(std::string strRequest)
+    void FulfilledRequest(const std::string& strRequest)
     {
         if (HasFulfilledRequest(strRequest)) return;
         vecRequestsFulfilled.push_back(strRequest);
@@ -686,7 +686,7 @@ public:
     void Subscribe(unsigned int nChannel, unsigned int nHops = 0);
     void CancelSubscribe(unsigned int nChannel);
     void CloseSocketDisconnect();
-    bool DisconnectOldProtocol(int nVersionRequired, std::string strLastCommand = "");
+    bool DisconnectOldProtocol(int nVersionRequired, const std::string& strLastCommand = "");
 
     // Denial-of-service detection/prevention
     // The idea is to detect peers that are behaving

@@ -21,7 +21,7 @@
 #include "guiinterface.h"
 
 #ifdef WIN32
-#include <string.h>
+#include <cstring>
 #else
 #include <fcntl.h>
 #endif
@@ -110,7 +110,7 @@ boost::condition_variable messageHandlerCondition;
 static CNodeSignals g_signals;
 CNodeSignals& GetNodeSignals() { return g_signals; }
 
-void AddOneShot(std::string strDest)
+void AddOneShot(const std::string& strDest)
 {
     LOCK(cs_vOneShots);
     vOneShots.push_back(strDest);
@@ -131,11 +131,11 @@ bool GetLocal(CService& addr, const CNetAddr* paddrPeer)
     int nBestReachability = -1;
     {
         LOCK(cs_mapLocalHost);
-        for (std::map<CNetAddr, LocalServiceInfo>::iterator it = mapLocalHost.begin(); it != mapLocalHost.end(); it++) {
-            int nScore = (*it).second.nScore;
-            int nReachability = (*it).first.GetReachabilityFrom(paddrPeer);
+        for (auto & it : mapLocalHost) {
+            int nScore = it.second.nScore;
+            int nReachability = it.first.GetReachabilityFrom(paddrPeer);
             if (nReachability > nBestReachability || (nReachability == nBestReachability && nScore > nBestScore)) {
-                addr = CService((*it).first, (*it).second.nPort);
+                addr = CService(it.first, it.second.nPort);
                 nBestReachability = nReachability;
                 nBestScore = nScore;
             }
@@ -407,7 +407,7 @@ CNode* ConnectNode(CAddress addrConnect, const char* pszDest, bool obfuScationMa
         pszDest ? 0.0 : (double)(GetAdjustedTime() - addrConnect.nTime) / 3600.0);
 
     // Connect
-    SOCKET hSocket = INVALID_SOCKET;;
+    auto hSocket = INVALID_SOCKET;;
     bool proxyConnectionFailed = false;
     if (pszDest ? ConnectSocketByName(addrConnect, hSocket, pszDest, Params().GetDefaultPort(), nConnectTimeout, &proxyConnectionFailed) :
                   ConnectSocket(addrConnect, hSocket, nConnectTimeout, &proxyConnectionFailed)) {
@@ -455,7 +455,7 @@ void CNode::CloseSocketDisconnect()
         vRecvMsg.clear();
 }
 
-bool CNode::DisconnectOldProtocol(int nVersionRequired, std::string strLastCommand)
+bool CNode::DisconnectOldProtocol(int nVersionRequired, const std::string& strLastCommand)
 {
     fDisconnect = false;
     if (nVersion < nVersionRequired) {
@@ -505,10 +505,10 @@ bool CNode::IsBanned(CNetAddr ip)
     bool fResult = false;
     {
         LOCK(cs_setBanned);
-        for (banmap_t::iterator it = setBanned.begin(); it != setBanned.end(); it++)
+        for (auto & it : setBanned)
         {
-            CSubNet subNet = (*it).first;
-            CBanEntry banEntry = (*it).second;
+            CSubNet subNet = it.first;
+            CBanEntry banEntry = it.second;
 
             if(subNet.Match(ip) && GetTime() < banEntry.nBanUntil)
                 fResult = true;
@@ -522,7 +522,7 @@ bool CNode::IsBanned(CSubNet subnet)
     bool fResult = false;
     {
         LOCK(cs_setBanned);
-        banmap_t::iterator i = setBanned.find(subnet);
+        auto i = setBanned.find(subnet);
         if (i != setBanned.end()) {
             CBanEntry banEntry = (*i).second;
             if (GetTime() < banEntry.nBanUntil)
@@ -609,7 +609,7 @@ void CNode::SweepBanned()
     bool notifyUI = false;
     {
         LOCK(cs_setBanned);
-        banmap_t::iterator it = setBanned.begin();
+        auto it = setBanned.begin();
         while(it != setBanned.end())
         {
             CSubNet subNet = (*it).first;
@@ -790,7 +790,7 @@ int CNetMessage::readData(const char* pch, unsigned int nBytes)
 // requires LOCK(cs_vSend)
 void SocketSendData(CNode* pnode)
 {
-    std::deque<CSerializeData>::iterator it = pnode->vSendMsg.begin();
+    auto it = pnode->vSendMsg.begin();
 
     while (it != pnode->vSendMsg.end()) {
         const CSerializeData& data = *it;
@@ -1197,7 +1197,7 @@ void ThreadMapPort()
 
 void MapPort(bool fUseUPnP)
 {
-    static boost::thread* upnp_thread = NULL;
+    static boost::thread* upnp_thread = nullptr;
 
     if (fUseUPnP) {
         if (upnp_thread) {
@@ -1210,7 +1210,7 @@ void MapPort(bool fUseUPnP)
         upnp_thread->interrupt();
         upnp_thread->join();
         delete upnp_thread;
-        upnp_thread = NULL;
+        upnp_thread = nullptr;
     }
 }
 
@@ -1305,9 +1305,9 @@ void ThreadOpenConnections()
     if (mapArgs.count("-connect") && mapMultiArgs["-connect"].size() > 0) {
         for (int64_t nLoop = 0;; nLoop++) {
             ProcessOneShot();
-            for (std::string strAddr : mapMultiArgs["-connect"]) {
+            for (const std::string& strAddr : mapMultiArgs["-connect"]) {
                 CAddress addr;
-                OpenNetworkConnection(addr, NULL, strAddr.c_str());
+                OpenNetworkConnection(addr, nullptr, strAddr.c_str());
                 for (int i = 0; i < 10 && i < nLoop; i++) {
                     MilliSleep(500);
                 }
@@ -1442,7 +1442,7 @@ void ThreadOpenAddedConnections()
         {
             LOCK(cs_vNodes);
             for (CNode* pnode : vNodes)
-                for (std::list<std::vector<CService> >::iterator it = lservAddressesToAdd.begin(); it != lservAddressesToAdd.end(); it++)
+                for (auto it = lservAddressesToAdd.begin(); it != lservAddressesToAdd.end(); it++)
                     for (CService& addrNode : *(it))
                         if (pnode->addr == addrNode) {
                             it = lservAddressesToAdd.erase(it);
@@ -1719,7 +1719,7 @@ void StartNode(boost::thread_group& threadGroup, CScheduler& scheduler)
         semOutbound = new CSemaphore(nMaxOutbound);
     }
 
-    if (pnodeLocalHost == NULL)
+    if (pnodeLocalHost == nullptr)
         pnodeLocalHost = new CNode(INVALID_SOCKET, CAddress(CService("127.0.0.1", 0), nLocalServices));
 
     Discover(threadGroup);
@@ -1771,7 +1771,7 @@ bool StopNode()
 class CNetCleanup
 {
 public:
-    CNetCleanup() {}
+    CNetCleanup() = default;
 
     ~CNetCleanup()
     {
@@ -1808,7 +1808,7 @@ void CExplicitNetCleanup::callCleanup()
 {
     // Explicit call to destructor of CNetCleanup because it's not implicitly called
     // when the wallet is restarted from within the wallet itself.
-    CNetCleanup* tmp = new CNetCleanup();
+    auto* tmp = new CNetCleanup();
     delete tmp; // Stroustrup's gonna kill me for that
 }
 
@@ -2027,7 +2027,7 @@ bool CAddrDB::Read(CAddrMan& addr)
 unsigned int ReceiveFloodSize() { return 1000 * GetArg("-maxreceivebuffer", 5 * 1000); }
 unsigned int SendBufferSize() { return 1000 * GetArg("-maxsendbuffer", 1 * 1000); }
 
-CNode::CNode(SOCKET hSocketIn, CAddress addrIn, std::string addrNameIn, bool fInboundIn) : ssSend(SER_NETWORK, INIT_PROTO_VERSION), setAddrKnown(5000)
+CNode::CNode(SOCKET hSocketIn, CAddress addrIn, const std::string& addrNameIn, bool fInboundIn) : ssSend(SER_NETWORK, INIT_PROTO_VERSION), setAddrKnown(5000)
 {
     nServices = 0;
     hSocket = hSocketIn;
@@ -2098,7 +2098,7 @@ void CNode::AskFor(const CInv& inv)
     // We're using mapAskFor as a priority queue,
     // the key is the earliest time the request can be sent
     int64_t nRequestTime;
-    limitedmap<CInv, int64_t>::const_iterator it = mapAlreadyAskedFor.find(inv);
+    auto it = mapAlreadyAskedFor.find(inv);
     if (it != mapAlreadyAskedFor.end())
         nRequestTime = it->second;
     else
@@ -2169,7 +2169,7 @@ void CNode::EndMessage() UNLOCK_FUNCTION(cs_vSend)
 
     LogPrint("net", "(%d bytes) peer=%d\n", nSize, id);
 
-    std::deque<CSerializeData>::iterator it = vSendMsg.insert(vSendMsg.end(), CSerializeData());
+    auto it = vSendMsg.insert(vSendMsg.end(), CSerializeData());
     ssSend.GetAndClear(*it);
     nSendSize += (*it).size();
 

@@ -27,7 +27,7 @@ Accumulator::Accumulator(const AccumulatorAndProofParams* p, const libzerocoin::
     this->value = this->params->accumulatorBase;
 }
 
-Accumulator::Accumulator(const libzerocoin::ZerocoinParams* p, const libzerocoin::CoinDenomination d, const CBigNum bnValue) {
+Accumulator::Accumulator(const libzerocoin::ZerocoinParams* p, const libzerocoin::CoinDenomination d, const CBigNum& bnValue) {
     this->params = &(p->accumulatorParams);
     denomination = d;
 
@@ -79,7 +79,7 @@ const CBigNum& Accumulator::getValue() const {
 }
 
 //Manually set accumulator value
-void Accumulator::setValue(CBigNum bnValue) {
+void Accumulator::setValue(const CBigNum& bnValue) {
     this->value = bnValue;
 }
 

@@ -37,7 +37,7 @@ libzerocoin::CoinDenomination getMaxDenomHeld(
 // Get Exact Amount with CoinsHeld
 // -------------------------------------------------------------------------------------------------------
 std::map<libzerocoin::CoinDenomination, CAmount> getSpendCoins(const CAmount nValueTarget,
-    const std::map<libzerocoin::CoinDenomination, CAmount> mapOfDenomsHeld)
+    const std::map<libzerocoin::CoinDenomination, CAmount>& mapOfDenomsHeld)
 
 {
     std::map<libzerocoin::CoinDenomination, CAmount> mapUsed;
@@ -92,7 +92,7 @@ std::map<libzerocoin::CoinDenomination, CAmount> getChange(const CAmount nValueT
 bool getIdealSpends(
     const CAmount nValueTarget,
     const std::list<CMintMeta>& listMints,
-    const std::map<libzerocoin::CoinDenomination, CAmount> mapOfDenomsHeld,
+    const std::map<libzerocoin::CoinDenomination, CAmount>& mapOfDenomsHeld,
     std::map<libzerocoin::CoinDenomination, CAmount>& mapOfDenomsUsed)
 {
     CAmount nRemainingValue = nValueTarget;
@@ -403,7 +403,7 @@ int calculateChange(
 // -------------------------------------------------------------------------------------------------------
 std::vector<CMintMeta> SelectMintsFromList(const CAmount nValueTarget, CAmount& nSelectedValue, int nMaxNumberOfSpends, bool fMinimizeChange,
                                                int& nCoinsReturned, const std::list<CMintMeta>& listMints,
-                                               const std::map<libzerocoin::CoinDenomination, CAmount> mapOfDenomsHeld, int& nNeededSpends)
+                                               const std::map<libzerocoin::CoinDenomination, CAmount>& mapOfDenomsHeld, int& nNeededSpends)
 {
     std::vector<CMintMeta> vSelectedMints;
     std::map<libzerocoin::CoinDenomination, CAmount> mapOfDenomsUsed;

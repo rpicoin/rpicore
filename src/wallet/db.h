@@ -63,7 +63,7 @@ public:
     enum VerifyResult { VERIFY_OK,
         RECOVER_OK,
         RECOVER_FAIL };
-    VerifyResult Verify(std::string strFile, bool (*recoverFunc)(CDBEnv& dbenv, std::string strFile));
+    VerifyResult Verify(const std::string& strFile, bool (*recoverFunc)(CDBEnv& dbenv, std::string strFile));
     /**
      * Salvage data from a file that Verify says is bad.
      * fAggressive sets the DB_AGGRESSIVE flag (see berkeley DB->verify() method documentation).
@@ -71,8 +71,8 @@ public:
      * NOTE: reads the entire database into memory, so cannot be used
      * for huge databases.
      */
-    typedef std::pair<std::vector<unsigned char>, std::vector<unsigned char> > KeyValPair;
-    bool Salvage(std::string strFile, bool fAggressive, std::vector<KeyValPair>& vResult);
+    using KeyValPair = std::pair<std::vector<unsigned char>, std::vector<unsigned char> >;
+    bool Salvage(const std::string& strFile, bool fAggressive, std::vector<CDBEnv::KeyValPair>& vResult);
 
     bool Open(const boost::filesystem::path& path);
     void Close();
@@ -84,8 +84,8 @@ public:
 
     DbTxn* TxnBegin(int flags = DB_TXN_WRITE_NOSYNC)
     {
-        DbTxn* ptxn = NULL;
-        int ret = dbenv->txn_begin(NULL, &ptxn, flags);
+        DbTxn* ptxn = nullptr;
+        int ret = dbenv->txn_begin(nullptr, &ptxn, flags);
         if (!ptxn || ret != 0)
             return nullptr;
         return ptxn;
@@ -133,7 +133,7 @@ protected:
         datValue.set_flags(DB_DBT_MALLOC);
         int ret = pdb->get(activeTxn, &datKey, &datValue, 0);
         memset(datKey.get_data(), 0, datKey.get_size());
-        if (datValue.get_data() == NULL)
+        if (datValue.get_data() == nullptr)
             return false;
 
         // Unserialize value
@@ -225,8 +225,8 @@ protected:
     {
         if (!pdb)
             return nullptr;
-        Dbc* pcursor = NULL;
-        int ret = pdb->cursor(NULL, &pcursor, 0);
+        Dbc* pcursor = nullptr;
+        int ret = pdb->cursor(nullptr, &pcursor, 0);
         if (ret != 0)
             return nullptr;
         return pcursor;
@@ -250,7 +250,7 @@ protected:
         int ret = pcursor->get(&datKey, &datValue, fFlags);
         if (ret != 0)
             return ret;
-        else if (datKey.get_data() == NULL || datValue.get_data() == NULL)
+        else if (datKey.get_data() == nullptr || datValue.get_data() == nullptr)
             return 99999;
 
         // Convert to streams
@@ -286,7 +286,7 @@ public:
         if (!pdb || !activeTxn)
             return false;
         int ret = activeTxn->commit(0);
-        activeTxn = NULL;
+        activeTxn = nullptr;
         return (ret == 0);
     }
 
@@ -295,7 +295,7 @@ public:
         if (!pdb || !activeTxn)
             return false;
         int ret = activeTxn->abort();
-        activeTxn = NULL;
+        activeTxn = nullptr;
         return (ret == 0);
     }
 

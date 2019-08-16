@@ -42,14 +42,14 @@ public:
      * @param commitmentToCoin the commitment to the coin
      * @param msghash hash of meta data to create a signature of knowledge on.
      */
-    SerialNumberSignatureOfKnowledge(const ZerocoinParams* p, const PrivateCoin& coin, const Commitment& commitmentToCoin, uint256 msghash);
+    SerialNumberSignatureOfKnowledge(const ZerocoinParams* p, const PrivateCoin& coin, const Commitment& commitmentToCoin, const uint256& msghash);
 
     /** Verifies the Signature of knowledge.
      *
      * @param msghash hash of meta data to create a signature of knowledge on.
      * @return
      */
-    bool Verify(const CBigNum& coinSerialNumber, const CBigNum& valueOfCommitmentToCoin,const uint256 msghash, bool isInParamsValidationRange = true) const;
+    bool Verify(const CBigNum& coinSerialNumber, const CBigNum& valueOfCommitmentToCoin,const uint256& msghash, bool isInParamsValidationRange = true) const;
     ADD_SERIALIZE_METHODS;
   template <typename Stream, typename Operation>  inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
         READWRITE(s_notprime);

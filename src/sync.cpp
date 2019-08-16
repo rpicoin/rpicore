@@ -11,7 +11,7 @@
 #include "util.h"
 #include "utilstrencodings.h"
 
-#include <stdio.h>
+#include <cstdio>
 
 #ifdef DEBUG_LOCKCONTENTION
 #if !defined(HAVE_THREAD_LOCAL)

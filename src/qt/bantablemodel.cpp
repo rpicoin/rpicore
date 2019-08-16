@@ -53,11 +53,11 @@ public:
 
         cachedBanlist.clear();
         cachedBanlist.reserve(banMap.size());
-        for (banmap_t::iterator it = banMap.begin(); it != banMap.end(); it++)
+        for (auto & it : banMap)
         {
             CCombinedBan banEntry;
-            banEntry.subnet = (*it).first;
-            banEntry.banEntry = (*it).second;
+            banEntry.subnet = it.first;
+            banEntry.banEntry = it.second;
             cachedBanlist.append(banEntry);
         }
 
@@ -115,7 +115,7 @@ QVariant BanTableModel::data(const QModelIndex &index, int role) const
     if(!index.isValid())
         return QVariant();
 
-    CCombinedBan *rec = static_cast<CCombinedBan*>(index.internalPointer());
+    auto *rec = static_cast<CCombinedBan*>(index.internalPointer());
 
     if (role == Qt::DisplayRole) {
         switch(index.column())
@@ -147,7 +147,7 @@ QVariant BanTableModel::headerData(int section, Qt::Orientation orientation, int
 Qt::ItemFlags BanTableModel::flags(const QModelIndex &index) const
 {
     if(!index.isValid())
-        return 0;
+        return nullptr;
 
     Qt::ItemFlags retval = Qt::ItemIsSelectable | Qt::ItemIsEnabled;
     return retval;

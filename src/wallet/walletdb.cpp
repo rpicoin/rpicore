@@ -21,6 +21,7 @@
 #include <boost/scoped_ptr.hpp>
 #include <boost/thread.hpp>
 #include <fstream>
+#include <utility>
 
 
 static uint64_t nAccountingEntryNumber = 0;
@@ -55,13 +56,13 @@ bool CWalletDB::ErasePurpose(const std::string& strPurpose)
     return Erase(std::make_pair(std::string("purpose"), strPurpose));
 }
 
-bool CWalletDB::WriteTx(uint256 hash, const CWalletTx& wtx)
+bool CWalletDB::WriteTx(const uint256& hash, const CWalletTx& wtx)
 {
     nWalletDBUpdated++;
     return Write(std::make_pair(std::string("tx"), hash), wtx);
 }
 
-bool CWalletDB::EraseTx(uint256 hash)
+bool CWalletDB::EraseTx(const uint256& hash)
 {
     nWalletDBUpdated++;
     return Erase(std::make_pair(std::string("tx"), hash));
@@ -265,7 +266,7 @@ bool CWalletDB::WriteMSDisabledAddresses(std::vector<std::string> vDisabledAddre
     return ret;
 }
 //presstab HyperStake
-bool CWalletDB::EraseMSDisabledAddresses(std::vector<std::string> vDisabledAddresses)
+bool CWalletDB::EraseMSDisabledAddresses(const std::vector<std::string>& vDisabledAddresses)
 {
     nWalletDBUpdated++;
     bool ret = true;
@@ -397,23 +398,23 @@ DBErrors CWalletDB::ReorderTransactions(CWallet* pwallet)
     typedef std::multimap<int64_t, TxPair> TxItems;
     TxItems txByTime;
 
-    for (std::map<uint256, CWalletTx>::iterator it = pwallet->mapWallet.begin(); it != pwallet->mapWallet.end(); ++it) {
-        CWalletTx* wtx = &((*it).second);
-        txByTime.insert(std::make_pair(wtx->nTimeReceived, TxPair(wtx, (CAccountingEntry*)0)));
+    for (auto & it : pwallet->mapWallet) {
+        CWalletTx* wtx = &(it.second);
+        txByTime.insert(std::make_pair(wtx->nTimeReceived, TxPair(wtx, (CAccountingEntry*)nullptr)));
     }
     std::list<CAccountingEntry> acentries;
     ListAccountCreditDebit("", acentries);
     for (CAccountingEntry& entry: acentries) {
-        txByTime.insert(std::make_pair(entry.nTime, TxPair((CWalletTx*)0, &entry)));
+        txByTime.insert(std::make_pair(entry.nTime, TxPair((CWalletTx*)nullptr, &entry)));
     }
 
     int64_t& nOrderPosNext = pwallet->nOrderPosNext;
     nOrderPosNext = 0;
     std::vector<int64_t> nOrderPosOffsets;
-    for (TxItems::iterator it = txByTime.begin(); it != txByTime.end(); ++it) {
-        CWalletTx* const pwtx = (*it).second.first;
-        CAccountingEntry* const pacentry = (*it).second.second;
-        int64_t& nOrderPos = (pwtx != 0) ? pwtx->nOrderPos : pacentry->nOrderPos;
+    for (auto & it : txByTime) {
+        CWalletTx* const pwtx = it.second.first;
+        CAccountingEntry* const pacentry = it.second.second;
+        int64_t& nOrderPos = (pwtx != nullptr) ? pwtx->nOrderPos : pacentry->nOrderPos;
 
         if (nOrderPos == -1) {
             nOrderPos = nOrderPosNext++;
@@ -717,7 +718,7 @@ bool ReadKeyValue(CWallet* pwallet, CDataStream& ssKey, CDataStream& ssValue, CW
     return true;
 }
 
-static bool IsKeyType(std::string strType)
+static bool IsKeyType(const std::string& strType)
 {
     return (strType == "key" || strType == "wkey" ||
             strType == "mkey" || strType == "ckey");
@@ -801,7 +802,7 @@ DBErrors CWalletDB::LoadWallet(CWallet* pwallet)
     if ((wss.nKeys + wss.nCKeys) != wss.nKeyMeta)
         pwallet->nTimeFirstKey = 1; // 0 would be considered 'no value'
 
-    for (uint256 hash: wss.vWalletUpgrade)
+    for (const uint256& hash: wss.vWalletUpgrade)
         WriteTx(hash, pwallet->mapWallet[hash]);
 
     // Rewrite encrypted wallets of versions 0.4.0 and 0.5.0rc:
@@ -817,7 +818,7 @@ DBErrors CWalletDB::LoadWallet(CWallet* pwallet)
     pwallet->laccentries.clear();
     ListAccountCreditDebit("*", pwallet->laccentries);
     for(CAccountingEntry& entry: pwallet->laccentries) {
-        pwallet->wtxOrdered.insert(std::make_pair(entry.nOrderPos, CWallet::TxPair((CWalletTx*)0, &entry)));
+        pwallet->wtxOrdered.insert(std::make_pair(entry.nOrderPos, CWallet::TxPair((CWalletTx*)nullptr, &entry)));
     }
 
     return result;
@@ -929,7 +930,7 @@ void ThreadFlushWalletDB(const std::string& strFile)
             if (lockDb) {
                 // Don't do this if any databases are in use
                 int nRefCount = 0;
-                std::map<std::string, int>::iterator mi = bitdb.mapFileUseCount.begin();
+                auto mi = bitdb.mapFileUseCount.begin();
                 while (mi != bitdb.mapFileUseCount.end()) {
                     nRefCount += (*mi).second;
                     mi++;
@@ -937,7 +938,7 @@ void ThreadFlushWalletDB(const std::string& strFile)
 
                 if (nRefCount == 0) {
                     boost::this_thread::interruption_point();
-                    std::map<std::string, int>::iterator mi = bitdb.mapFileUseCount.find(strFile);
+                    auto mi = bitdb.mapFileUseCount.find(strFile);
                     if (mi != bitdb.mapFileUseCount.end()) {
                         LogPrint("db", "Flushing wallet.dat\n");
                         nLastFlushed = nWalletDBUpdated;
@@ -956,7 +957,7 @@ void ThreadFlushWalletDB(const std::string& strFile)
     }
 }
 
-void NotifyBacked(const CWallet& wallet, bool fSuccess, std::string strMessage)
+void NotifyBacked(const CWallet& wallet, bool fSuccess, const std::string& strMessage)
 {
     LogPrint(nullptr, strMessage.data());
     wallet.NotifyWalletBacked(fSuccess, strMessage);
@@ -1028,7 +1029,7 @@ bool BackupWallet(const CWallet& wallet, const boost::filesystem::path& strDest,
                         }
 
                         int counter = 0; //TODO: add seconds to avoid naming conflicts
-                        for (auto entry : folderSet) {
+                        for (const auto& entry : folderSet) {
                             counter++;
                             if(entry.second == pathWithFile) {
                                 pathWithFile += "(1)";
@@ -1037,7 +1038,7 @@ bool BackupWallet(const CWallet& wallet, const boost::filesystem::path& strDest,
 
                         if (counter >= nThreshold) {
                             std::time_t oldestBackup = 0;
-                            for(auto entry : folderSet) {
+                            for(const auto& entry : folderSet) {
                                 if(oldestBackup == 0 || entry.first < oldestBackup) {
                                     oldestBackup = entry.first;
                                 }
@@ -1101,7 +1102,7 @@ bool AttemptBackupWallet(const CWallet& wallet, const boost::filesystem::path& p
 //
 // Try to (very carefully!) recover wallet.dat if there is a problem.
 //
-bool CWalletDB::Recover(CDBEnv& dbenv, std::string filename, bool fOnlyKeys)
+bool CWalletDB::Recover(CDBEnv& dbenv, const std::string& filename, bool fOnlyKeys)
 {
     // Recovery procedure:
     // move wallet.dat to wallet.timestamp.bak
@@ -1113,7 +1114,7 @@ bool CWalletDB::Recover(CDBEnv& dbenv, std::string filename, bool fOnlyKeys)
     int64_t now = GetTime();
     std::string newFilename = strprintf("wallet.%d.bak", now);
 
-    int result = dbenv.dbenv->dbrename(NULL, filename.c_str(), NULL,
+    int result = dbenv.dbenv->dbrename(nullptr, filename.c_str(), nullptr,
                                        newFilename.c_str(), DB_AUTO_COMMIT);
     if (result == 0)
         LogPrintf("Renamed %s to %s\n", filename, newFilename);
@@ -1132,7 +1133,7 @@ bool CWalletDB::Recover(CDBEnv& dbenv, std::string filename, bool fOnlyKeys)
 
     bool fSuccess = allOK;
     boost::scoped_ptr<Db> pdbCopy(new Db(dbenv.dbenv, 0));
-    int ret = pdbCopy->open(NULL,               // Txn pointer
+    int ret = pdbCopy->open(nullptr,               // Txn pointer
         filename.c_str(),   // Filename
         "main",             // Logical db name
         DB_BTREE,           // Database type
@@ -1174,7 +1175,7 @@ bool CWalletDB::Recover(CDBEnv& dbenv, std::string filename, bool fOnlyKeys)
 
 bool CWalletDB::Recover(CDBEnv& dbenv, std::string filename)
 {
-    return CWalletDB::Recover(dbenv, filename, false);
+    return CWalletDB::Recover(dbenv, std::move(filename), false);
 }
 
 bool CWalletDB::WriteDestData(const std::string& address, const std::string& key, const std::string& value)
@@ -1465,7 +1466,7 @@ void CWalletDB::EraseAllPrecomputes()
     std::set<uint256> setHashes;
     LoadPrecomputes(setHashes);
 
-    for (auto hash : setHashes)
+    for (const auto& hash : setHashes)
         ErasePrecompute(hash);
 }
 

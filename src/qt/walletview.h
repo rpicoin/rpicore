@@ -94,12 +94,12 @@ public slots:
     /** Switch to receive coins page */
     void gotoReceiveCoinsPage();
     /** Switch to send coins page */
-    void gotoSendCoinsPage(QString addr = "");
+    void gotoSendCoinsPage(const QString& addr = "");
 
     /** Show Sign/Verify Message dialog and switch to sign message tab */
-    void gotoSignMessageTab(QString addr = "");
+    void gotoSignMessageTab(const QString& addr = "");
     /** Show Sign/Verify Message dialog and switch to verify message tab */
-    void gotoVerifyMessageTab(QString addr = "");
+    void gotoVerifyMessageTab(const QString& addr = "");
     /** Show MultiSend Dialog */
     void gotoMultiSendDialog();
     /** Show a multisig tab **/
@@ -137,7 +137,7 @@ public slots:
     void showProgress(const QString& title, int nProgress);
 
     /** Update selected WSP amount from transactionview */
-    void trxAmount(QString amount);
+    void trxAmount(const QString& amount);
 
 signals:
     /** Signal that we want to show the main window */

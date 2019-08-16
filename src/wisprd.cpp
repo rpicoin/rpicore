@@ -20,7 +20,7 @@
 #include <boost/filesystem.hpp>
 #include <boost/thread.hpp>
 
-#include <stdio.h>
+#include <cstdio>
 
 /* Introduction text for doxygen: */
 

@@ -20,7 +20,7 @@
 #include "zpiv/zwspmodule.h"
 #include "zwspchain.h"
 
-#include <stdint.h>
+#include <cstdint>
 #include <fstream>
 #include <iostream>
 #include <univalue.h>
@@ -38,7 +38,7 @@ static std::mutex cs_blockchange;
 static std::condition_variable cond_blockchange;
 static CUpdatedBlock latestblock;
 
-extern void TxToJSON(const CTransaction& tx, const uint256 hashBlock, UniValue& entry);
+extern void TxToJSON(const CTransaction& tx, const uint256& hashBlock, UniValue& entry);
 void ScriptPubKeyToJSON(const CScript& scriptPubKey, UniValue& out, bool fIncludeHex);
 
 double GetDifficulty(const CBlockIndex* blockindex)
@@ -268,7 +268,7 @@ UniValue getbestblockhash(const UniValue& params, bool fHelp)
     return chainActive.Tip()->GetBlockHash().GetHex();
 }
 
-void RPCNotifyBlockChange(const uint256 hashBlock)
+void RPCNotifyBlockChange(const uint256& hashBlock)
 {
     CBlockIndex* pindex = nullptr;
     pindex = mapBlockIndex.at(hashBlock);

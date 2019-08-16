@@ -22,7 +22,7 @@
 
 Bip38ToolDialog::Bip38ToolDialog(QWidget* parent) : QDialog(parent, Qt::WindowSystemMenuHint | Qt::WindowTitleHint | Qt::WindowCloseButtonHint),
                                                     ui(new Ui::Bip38ToolDialog),
-                                                    model(0)
+                                                    model(nullptr)
 {
     ui->setupUi(this);
 
@@ -93,12 +93,12 @@ QString specialChar = "\"@!#$%&'()*+,-./:;<=>?`{|}~^_[]\\";
 QString validChar = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" + specialChar;
 bool isValidPassphrase(QString strPassphrase, QString& strInvalid)
 {
-    for (int i = 0; i < strPassphrase.size(); i++) {
-        if (!validChar.contains(strPassphrase[i], Qt::CaseSensitive)) {
-            if (QString("\"'").contains(strPassphrase[i]))
+    for (auto && i : strPassphrase) {
+        if (!validChar.contains(i, Qt::CaseSensitive)) {
+            if (QString("\"'").contains(i))
                 continue;
 
-            strInvalid = strPassphrase[i];
+            strInvalid = i;
             return false;
         }
     }

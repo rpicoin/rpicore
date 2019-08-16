@@ -11,7 +11,7 @@
 #include "uint256.h"
 #include "reverse_iterate.h"
 
-#include <stdint.h>
+#include <cstdint>
 
 
 
@@ -35,7 +35,7 @@ bool CheckBlock(int nHeight, const uint256& hash, bool fMatchesCheckpoint)
 
     const MapCheckpoints& checkpoints = *Params().Checkpoints().mapCheckpoints;
 
-    MapCheckpoints::const_iterator i = checkpoints.find(nHeight);
+    auto i = checkpoints.find(nHeight);
     // If looking for an exact match, then return false
     if (i == checkpoints.end()) return !fMatchesCheckpoint;
     return hash == i->second;

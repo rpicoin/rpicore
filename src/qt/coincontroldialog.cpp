@@ -47,7 +47,7 @@ bool CCoinControlWidgetItem::operator<(const QTreeWidgetItem &other) const {
 
 CoinControlDialog::CoinControlDialog(QWidget* parent, bool fMultisigEnabled) : QDialog(parent, Qt::WindowSystemMenuHint | Qt::WindowTitleHint | Qt::WindowCloseButtonHint),
                                                         ui(new Ui::CoinControlDialog),
-                                                        model(0)
+                                                        model(nullptr)
 {
     ui->setupUi(this);
     this->fMultisigEnabled = fMultisigEnabled;
@@ -515,7 +515,7 @@ void CoinControlDialog::updateDialogLabels()
         // Amount
         nAmount += out.tx->vout[out.i].nValue;
     }
-    MultisigDialog* multisigDialog = (MultisigDialog*)this->parentWidget();
+    auto* multisigDialog = (MultisigDialog*)this->parentWidget();
 
     multisigDialog->updateCoinControl(nAmount, nQuantity);
 }

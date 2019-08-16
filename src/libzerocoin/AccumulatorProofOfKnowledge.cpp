@@ -27,8 +27,8 @@ AccumulatorProofOfKnowledge::AccumulatorProofOfKnowledge(const AccumulatorAndPro
 	CBigNum g_n = params->accumulatorQRNCommitmentGroup.g;
 	CBigNum h_n = params->accumulatorQRNCommitmentGroup.h;
 
-	CBigNum e = commitmentToCoin.getContents();
-	CBigNum r = commitmentToCoin.getRandomness();
+	const CBigNum& e = commitmentToCoin.getContents();
+	const CBigNum& r = commitmentToCoin.getRandomness();
 
 	CBigNum aM_4 = params->accumulatorModulus/CBigNum((long)4);
     CBigNum aR = CBigNum(2).pow(params->k_prime + params->k_dprime);

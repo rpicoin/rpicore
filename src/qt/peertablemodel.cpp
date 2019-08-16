@@ -109,7 +109,7 @@ public:
 
 PeerTableModel::PeerTableModel(ClientModel* parent) : QAbstractTableModel(parent),
                                                       clientModel(parent),
-                                                      timer(0)
+                                                      timer(nullptr)
 {
     columns << tr("Address/Hostname") << tr("Version") << tr("Ping Time");
     priv = new PeerTablePriv();
@@ -153,7 +153,7 @@ QVariant PeerTableModel::data(const QModelIndex& index, int role) const
     if (!index.isValid())
         return QVariant();
 
-    CNodeCombinedStats* rec = static_cast<CNodeCombinedStats*>(index.internalPointer());
+    auto* rec = static_cast<CNodeCombinedStats*>(index.internalPointer());
 
     if (role == Qt::DisplayRole) {
         switch (index.column()) {
@@ -185,7 +185,7 @@ QVariant PeerTableModel::headerData(int section, Qt::Orientation orientation, in
 Qt::ItemFlags PeerTableModel::flags(const QModelIndex& index) const
 {
     if (!index.isValid())
-        return 0;
+        return nullptr;
 
     Qt::ItemFlags retval = Qt::ItemIsSelectable | Qt::ItemIsEnabled;
     return retval;
@@ -217,7 +217,7 @@ void PeerTableModel::refresh()
 
 int PeerTableModel::getRowByNodeId(NodeId nodeid)
 {
-    std::map<NodeId, int>::iterator it = priv->mapNodeRows.find(nodeid);
+    auto it = priv->mapNodeRows.find(nodeid);
     if (it == priv->mapNodeRows.end())
         return -1;
 

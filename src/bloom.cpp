@@ -15,8 +15,8 @@
 #include "script/standard.h"
 #include "streams.h"
 
-#include <math.h>
-#include <stdlib.h>
+#include <cmath>
+#include <cstdlib>
 
 
 #define LN2SQUARED 0.4804530139182014246671025263266649717305529515945455
@@ -174,7 +174,7 @@ bool CBloomFilter::IsRelevantAndUpdate(const CTransaction& tx)
         // If this matches, also add the specific output that was matched.
         // This means clients don't have to update the filter themselves when a new relevant tx
         // is discovered in order to find spending transactions, which avoids round-tripping and race conditions.
-        CScript::const_iterator pc = txout.scriptPubKey.begin();
+        auto pc = txout.scriptPubKey.begin();
         std::vector<unsigned char> data;
         while (pc < txout.scriptPubKey.end()) {
             opcodetype opcode;
@@ -211,7 +211,7 @@ bool CBloomFilter::IsRelevantAndUpdate(const CTransaction& tx)
             return true;
 
         // Match if the filter contains any arbitrary script data element in any scriptSig in tx
-        CScript::const_iterator pc = txin.scriptSig.begin();
+        auto pc = txin.scriptSig.begin();
         std::vector<unsigned char> data;
         while (pc < txin.scriptSig.end()) {
             opcodetype opcode;
@@ -236,9 +236,9 @@ void CBloomFilter::UpdateEmptyFull()
 {
     bool full = true;
     bool empty = true;
-    for (unsigned int i = 0; i < vData.size(); i++) {
-        full &= vData[i] == 0xff;
-        empty &= vData[i] == 0;
+    for (unsigned char i : vData) {
+        full &= i == 0xff;
+        empty &= i == 0;
     }
     isFull = full;
     isEmpty = empty;

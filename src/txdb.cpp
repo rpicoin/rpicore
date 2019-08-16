@@ -11,7 +11,7 @@
 #include "uint256.h"
 #include "zpiv/accumulators.h"
 
-#include <stdint.h>
+#include <cstdint>
 
 #include <boost/thread.hpp>
 

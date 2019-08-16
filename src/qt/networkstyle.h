@@ -22,7 +22,7 @@ public:
     const QPixmap& getSplashImage() const { return splashImage; }
 
 private:
-    NetworkStyle(const QString& appName, const QString& appIcon, const char* titleAddText, const QString& splashImage);
+    NetworkStyle(QString  appName, const QString& appIcon, const char* titleAddText, const QString& splashImage);
 
     QString appName;
     QIcon appIcon;

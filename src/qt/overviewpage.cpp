@@ -102,8 +102,8 @@ public:
 
 OverviewPage::OverviewPage(QWidget* parent) : QWidget(parent),
                                               ui(new Ui::OverviewPage),
-                                              clientModel(0),
-                                              walletModel(0),
+                                              clientModel(nullptr),
+                                              walletModel(nullptr),
                                               currentBalance(-1),
                                               currentUnconfirmedBalance(-1),
                                               currentImmatureBalance(-1),
@@ -114,7 +114,7 @@ OverviewPage::OverviewPage(QWidget* parent) : QWidget(parent),
                                               currentWatchUnconfBalance(-1),
                                               currentWatchImmatureBalance(-1),
                                               txdelegate(new TxViewDelegate()),
-                                              filter(0)
+                                              filter(nullptr)
 {
     nDisplayUnit = 0; // just make sure it's not unitialized
     ui->setupUi(this);

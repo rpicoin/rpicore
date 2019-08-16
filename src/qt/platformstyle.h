@@ -41,7 +41,7 @@ public:
     QIcon TextColorIcon(const QIcon& icon) const;
 
 private:
-    PlatformStyle(const QString& name, bool imagesOnButtons, bool colorizeIcons, bool useExtraSpacing);
+    PlatformStyle(QString  name, bool imagesOnButtons, bool colorizeIcons, bool useExtraSpacing);
 
     QString name;
     bool imagesOnButtons;

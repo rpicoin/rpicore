@@ -41,7 +41,7 @@ public:
         MINIMUM_COLUMN_WIDTH = 130
     };
 
-    explicit PrivacyDialog(QWidget* parent = 0);
+    explicit PrivacyDialog(QWidget* parent = nullptr);
     ~PrivacyDialog();
 
     void setModel(WalletModel* model);

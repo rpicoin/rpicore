@@ -247,7 +247,7 @@ private:
 public:
     void AddSpend(const CZerocoinSpend& spend);
     std::vector<CZerocoinSpend> GetSpends();
-    void SetStatus(std::string strStatus, int nStatus, int nNeededSpends = 0);
+    void SetStatus(const std::string& strStatus, int nStatus, int nNeededSpends = 0);
     std::string GetStatusMessage();
     int GetStatus();
     int GetNeededSpends();

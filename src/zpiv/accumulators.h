@@ -5,6 +5,7 @@
 #ifndef WISPR_ACCUMULATORS_H
 #define WISPR_ACCUMULATORS_H
 
+#include <utility>
 #include "libzerocoin/Accumulator.h"
 #include "libzerocoin/Coin.h"
 #include "libzerocoin/Denominations.h"
@@ -55,7 +56,7 @@ bool GetAccumulatorValueFromChecksum(uint32_t nChecksum, bool fMemoryOnly, CBigN
 void AddAccumulatorChecksum(const uint32_t nChecksum, const CBigNum &bnValue, bool fMemoryOnly);
 bool CalculateAccumulatorCheckpoint(int nHeight, uint256& nCheckpoint, AccumulatorMap& mapAccumulators);
 void DatabaseChecksums(AccumulatorMap& mapAccumulators);
-bool LoadAccumulatorValuesFromDB(const uint256 nCheckpoint);
+bool LoadAccumulatorValuesFromDB(const uint256& nCheckpoint);
 bool EraseAccumulatorValues(const uint256& nCheckpointErase, const uint256& nCheckpointPrevious);
 uint32_t ParseChecksum(uint256 nChecksum, libzerocoin::CoinDenomination denomination);
 uint32_t GetChecksum(const CBigNum &bnValue);
@@ -69,25 +70,25 @@ bool ValidateAccumulatorCheckpoint(const CBlock& block, CBlockIndex* pindex, Acc
 class NotEnoughMintsException : public std::exception {
 public:
     std::string message;
-    NotEnoughMintsException(const std::string &message) : message(message) {}
+    NotEnoughMintsException(std::string message) : message(std::move(message)) {}
 };
 
 class GetPubcoinException : public std::exception {
 public:
     std::string message;
-    GetPubcoinException(const std::string &message) : message(message) {}
+    GetPubcoinException(std::string message) : message(std::move(message)) {}
 };
 
 class ChecksumInDbNotFoundException : public std::exception {
 public:
     std::string message;
-    ChecksumInDbNotFoundException(const std::string &message) : message(message) {}
+    ChecksumInDbNotFoundException(std::string message) : message(std::move(message)) {}
 };
 
 class searchMintHeightException : public std::exception {
 public:
     std::string message;
-    searchMintHeightException(const std::string &message) : message(message) {}
+    searchMintHeightException(std::string message) : message(std::move(message)) {}
 };
 
 #endif //WISPR_ACCUMULATORS_H

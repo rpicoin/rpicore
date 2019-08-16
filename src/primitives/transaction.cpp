@@ -34,14 +34,14 @@ uint256 COutPoint::GetHash()
     return Hash(BEGIN(hash), END(hash), BEGIN(n), END(n));
 }
 
-CTxIn::CTxIn(COutPoint prevoutIn, const CScript& scriptSigIn, uint32_t nSequenceIn)
+CTxIn::CTxIn(const COutPoint& prevoutIn, const CScript& scriptSigIn, uint32_t nSequenceIn)
 {
     prevout = std::move(prevoutIn);
     scriptSig = scriptSigIn;
     nSequence = nSequenceIn;
 }
 
-CTxIn::CTxIn(uint256 hashPrevTx, uint32_t nOut, const CScript& scriptSigIn, uint32_t nSequenceIn)
+CTxIn::CTxIn(const uint256& hashPrevTx, uint32_t nOut, const CScript& scriptSigIn, uint32_t nSequenceIn)
 {
     prevout = COutPoint(std::move(hashPrevTx), nOut);
     scriptSig = scriptSigIn;

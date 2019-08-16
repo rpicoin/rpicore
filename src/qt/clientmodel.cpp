@@ -33,12 +33,12 @@ static const int64_t nClientStartupTime = GetTime();
 
 ClientModel::ClientModel(OptionsModel* optionsModel, QObject* parent) : QObject(parent),
                                                                         optionsModel(optionsModel),
-                                                                        peerTableModel(0),
-                                                                        banTableModel(0),
+                                                                        peerTableModel(nullptr),
+                                                                        banTableModel(nullptr),
                                                                         cachedNumBlocks(0),
                                                                         cachedMasternodeCountString(""),
                                                                         cachedReindexing(0), cachedImporting(0),
-                                                                        numBlocksAtStartup(-1), pollTimer(0)
+                                                                        numBlocksAtStartup(-1), pollTimer(nullptr)
 {
     peerTableModel = new PeerTableModel(this);
     banTableModel = new BanTableModel(this);

@@ -28,7 +28,7 @@ public:
     uint32_t n;
 
     COutPoint() { hash.SetNull(); n = (uint32_t) -1; }
-    COutPoint(uint256 hashIn, uint32_t nIn) { hash = std::move(hashIn); n = nIn; }
+    COutPoint(const uint256& hashIn, uint32_t nIn) { hash = std::move(hashIn); n = nIn; }
 
     ADD_SERIALIZE_METHODS;
 
@@ -80,8 +80,8 @@ public:
         nSequence = std::numeric_limits<unsigned int>::max();
     }
 
-    explicit CTxIn(COutPoint prevoutIn, const CScript& scriptSigIn=CScript(), uint32_t nSequenceIn=std::numeric_limits<unsigned int>::max());
-    CTxIn(uint256 hashPrevTx, uint32_t nOut, const CScript& scriptSigIn=CScript(), uint32_t nSequenceIn=std::numeric_limits<uint32_t>::max());
+    explicit CTxIn(const COutPoint& prevoutIn, const CScript& scriptSigIn=CScript(), uint32_t nSequenceIn=std::numeric_limits<unsigned int>::max());
+    CTxIn(const uint256& hashPrevTx, uint32_t nOut, const CScript& scriptSigIn=CScript(), uint32_t nSequenceIn=std::numeric_limits<uint32_t>::max());
     CTxIn(const libzerocoin::CoinSpend& spend, libzerocoin::CoinDenomination denom);
 
     ADD_SERIALIZE_METHODS;
