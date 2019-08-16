@@ -6,7 +6,7 @@
 #define WISPR_ZEROCOIN_H
 
 #include <amount.h>
-#include <limits.h>
+#include <climits>
 #include <chainparams.h>
 #include "libzerocoin/bignum.h"
 #include "libzerocoin/Denominations.h"

@@ -14,11 +14,11 @@ template <typename T>
 class mruset
 {
 public:
-    typedef T key_type;
-    typedef T value_type;
-    typedef typename std::set<T>::iterator iterator;
-    typedef typename std::set<T>::const_iterator const_iterator;
-    typedef typename std::set<T>::size_type size_type;
+    using key_type = T;
+    using value_type = T;
+    using iterator = typename std::set<T>::iterator;
+    using const_iterator = typename std::set<T>::const_iterator;
+    using size_type = typename std::set<T>::size_type;
 
 protected:
     std::set<T> set;

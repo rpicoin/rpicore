@@ -35,7 +35,7 @@ void CLightWorker::ThreadLightZWSPSimplified() {
                     libzerocoin::Accumulator accumulator(params, genWit.getDen(), genWit.getAccWitValue());
                     libzerocoin::PublicCoin temp(params);
                     libzerocoin::AccumulatorWitness witness(params, accumulator, temp);
-                    std::string strFailReason = "";
+                    std::string strFailReason;
                     int nMintsAdded = 0;
                     CZerocoinSpendReceipt receipt;
 
@@ -77,15 +77,16 @@ void CLightWorker::ThreadLightZWSPSimplified() {
                         ss << witness.getValue();
                         uint32_t size = ret.size();
                         ss << size;
-                        for (CBigNum bnValue : ret) {
+                        for (const CBigNum& bnValue : ret) {
                             ss << bnValue;
                         }
                         ss << heightStop;
                         if (genWit.getPfrom()) {
                             LogPrintf("%s pushing message to %s \n", "wispr-light-thread", genWit.getPfrom()->addrName);
                             genWit.getPfrom()->PushMessage("pubcoins", ss);
-                        } else
+                        } else{
                             LogPrintf("%s NOT pushing message to %s \n", "wispr-light-thread", genWit.getPfrom()->addrName);
+                        }
                     }
                 } else {
                     // Rejects only the failed height

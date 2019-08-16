@@ -3,6 +3,8 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "zpiv/zwspmodule.h"
+
+#include <utility>
 #include "zwspchain.h"
 #include "libzerocoin/Commitment.h"
 #include "libzerocoin/Coin.h"
@@ -25,7 +27,7 @@ bool PublicCoinSpend::validate() const {
     }
     // Now check that the signature validates with the serial
     if (!HasValidSignature()) {
-        return error("%s: signature invalid", __func__);;
+        return error("%s: signature invalid", __func__);
     }
     return true;
 }
@@ -52,7 +54,7 @@ namespace ZWSPModule {
             return error("%s: failed to set zWSP privkey mint version=%d", __func__, nVersion);
 
         PublicCoinSpend spend(params, mint.GetSerialNumber(), mint.GetRandomness(), key.GetPubKey());
-        spend.setTxOutHash(hashTxOut);
+        spend.setTxOutHash(std::move(hashTxOut));
         spend.outputIndex = mint.GetOutputIndex();
         spend.txHash = mint.GetTxHash();
         spend.setDenom(mint.GetDenomination());

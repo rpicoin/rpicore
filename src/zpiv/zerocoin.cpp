@@ -3,6 +3,8 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include <streams.h>
+
+#include <utility>
 #include "zerocoin.h"
 #include "hash.h"
 #include "util.h"
@@ -55,11 +57,11 @@ std::vector<CZerocoinSpend> CZerocoinSpendReceipt::GetSpends()
     return vSpends;
 }
 
-void CZerocoinSpendReceipt::SetStatus(std::string strStatus, int nStatus, int nNeededSpends)
+void CZerocoinSpendReceipt::SetStatus(std::string strStatus, int _nStatus, int _nNeededSpends)
 {
-    strStatusMessage = strStatus;
-    this->nStatus = nStatus;
-    this->nNeededSpends = nNeededSpends;
+    strStatusMessage = std::move(strStatus);
+    this->nStatus = _nStatus;
+    this->nNeededSpends = _nNeededSpends;
 }
 
 std::string CZerocoinSpendReceipt::GetStatusMessage()

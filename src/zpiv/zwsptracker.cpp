@@ -3,6 +3,8 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include <zpiv/deterministicmint.h>
+
+#include <utility>
 #include "zwsptracker.h"
 #include "util.h"
 #include "sync.h"
@@ -16,7 +18,7 @@
 
 CzWSPTracker::CzWSPTracker(std::string strWalletFile)
 {
-    this->strWalletFile = strWalletFile;
+    this->strWalletFile = std::move(strWalletFile);
     mapSerialHashes.clear();
     mapPendingSpends.clear();
     fInitialized = false;
@@ -82,20 +84,20 @@ bool CzWSPTracker::UnArchive(const uint256& hashPubcoin, bool isDeterministic)
 CMintMeta CzWSPTracker::Get(const uint256 &hashSerial)
 {
     if (!mapSerialHashes.count(hashSerial))
-        return CMintMeta();
+        return {};
 
     return mapSerialHashes.at(hashSerial);
 }
 
 CMintMeta CzWSPTracker::GetMetaFromPubcoin(const uint256& hashPubcoin)
 {
-    for (auto it : mapSerialHashes) {
+    for (const auto& it : mapSerialHashes) {
         CMintMeta meta = it.second;
         if (meta.hashPubcoin == hashPubcoin)
             return meta;
     }
 
-    return CMintMeta();
+    return {};
 }
 
 bool CzWSPTracker::GetMetaFromStakeHash(const uint256& hashStake, CMintMeta& meta) const
@@ -136,13 +138,12 @@ bool CzWSPTracker::ClearSpendCache()
 std::vector<uint256> CzWSPTracker::GetSerialHashes()
 {
     std::vector<uint256> vHashes;
-    for (auto it : mapSerialHashes) {
-        if (it.second.isArchived)
+    for (const auto& it : mapSerialHashes) {
+        if (it.second.isArchived){
             continue;
-
+        }
         vHashes.emplace_back(it.first);
     }
-
 
     return vHashes;
 }
@@ -163,7 +164,7 @@ CAmount CzWSPTracker::GetBalance(bool fConfirmedOnly, bool fUnconfirmedOnly) con
             CMintMeta meta = it.second;
             if (meta.isUsed || meta.isArchived)
                 continue;
-            bool fConfirmed = ((meta.nHeight < chainActive.Height() - Params().Zerocoin_MintRequiredConfirmations()) && !(meta.nHeight == 0));
+            bool fConfirmed = ((meta.nHeight < chainActive.Height() - Params().Zerocoin_MintRequiredConfirmations()) && meta.nHeight != 0);
             if (fConfirmedOnly && !fConfirmed)
                 continue;
             if (fUnconfirmedOnly && fConfirmed)
@@ -202,9 +203,10 @@ std::vector<CMintMeta> CzWSPTracker::GetMints(bool fConfirmedOnly) const
 //Does a mint in the tracker have this txid
 bool CzWSPTracker::HasMintTx(const uint256& txid)
 {
-    for (auto it : mapSerialHashes) {
-        if (it.second.txid == txid)
+    for (const auto& it : mapSerialHashes) {
+        if (it.second.txid == txid){
             return true;
+        }
     }
 
     return false;
@@ -219,7 +221,7 @@ bool CzWSPTracker::HasPubcoin(const CBigNum &bnValue) const
 
 bool CzWSPTracker::HasPubcoinHash(const uint256& hashPubcoin) const
 {
-    for (auto it : mapSerialHashes) {
+    for (const auto& it : mapSerialHashes) {
         CMintMeta meta = it.second;
         if (meta.hashPubcoin == hashPubcoin)
             return true;
@@ -372,7 +374,7 @@ void CzWSPTracker::SetPubcoinNotUsed(const uint256& hashPubcoin)
 void CzWSPTracker::RemovePending(const uint256& txid)
 {
     uint256 hashSerial;
-    for (auto it : mapPendingSpends) {
+    for (const auto& it : mapPendingSpends) {
         if (it.second == txid) {
             hashSerial = it.first;
             break;
@@ -470,7 +472,7 @@ std::set<CMintMeta> CzWSPTracker::ListMints(bool fUnusedOnly, bool fMatureOnly, 
 
         std::list<CDeterministicMint> listDeterministicDB = walletdb.ListDeterministicMints();
 
-        CzWSPWallet* zWSPWallet = new CzWSPWallet(strWalletFile);
+        auto* zWSPWallet = new CzWSPWallet(strWalletFile);
         for (auto& dMint : listDeterministicDB) {
             if (fExcludeV1 && dMint.GetVersion() < 2)
                 continue;

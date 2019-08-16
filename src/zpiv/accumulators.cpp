@@ -669,7 +669,7 @@ bool calculateAccumulatedBlocksFor(
         CBigNum &bnAccValue,
         libzerocoin::Accumulator &accumulator,
         libzerocoin::Accumulator &witnessAccumulator,
-        libzerocoin::PublicCoin coin,
+        const libzerocoin::PublicCoin& coin,
         std::string& strError
 ){
 

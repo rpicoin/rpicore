@@ -16,6 +16,8 @@
 #include "uint256.h"
 #include <streams.h>
 #include <utilstrencodings.h>
+
+#include <utility>
 #include "zpiv/zerocoin.h"
 #include "chainparams.h"
 
@@ -24,10 +26,10 @@ static int const COIN_SPEND_PUBLIC_SPEND_VERSION = 3;
 class PublicCoinSpend : public libzerocoin::CoinSpend{
 public:
 
-    PublicCoinSpend(libzerocoin::ZerocoinParams* params):pubCoin(params){};
+    explicit PublicCoinSpend(libzerocoin::ZerocoinParams* params):pubCoin(params){};
 
     PublicCoinSpend(libzerocoin::ZerocoinParams* params,
-            CBigNum serial, CBigNum randomness, CPubKey pubkey):pubCoin(params){
+            const CBigNum& serial, const CBigNum& randomness, CPubKey pubkey):pubCoin(params){
         this->coinSerialNumber = serial;
         this->randomness = randomness;
         this->pubkey = pubkey;
@@ -46,7 +48,7 @@ public:
     }
 
     const uint256 signatureHash() const override;
-    void setVchSig(std::vector<unsigned char> vchSig) { this->vchSig = vchSig; };
+    void setVchSig(std::vector<unsigned char> vchSig) { this->vchSig = std::move(vchSig); };
     bool Verify(const libzerocoin::Accumulator& a, bool verifyParams = true) const override;
     bool validate() const;
 
@@ -87,7 +89,7 @@ namespace ZWSPModule {
      * @return true if everything went ok
      */
     bool ParseZerocoinPublicSpend(const CTxIn &in, const CTransaction& tx, CValidationState& state, PublicCoinSpend& publicCoinSpend);
-};
+}
 
 
 #endif //PIVX_ZWSPMODULE_H

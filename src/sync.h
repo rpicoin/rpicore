@@ -98,13 +98,13 @@ public:
 };
 
 /** Wrapped mutex: supports waiting but not recursive locking */
-typedef AnnotatedMixin<std::mutex> CWaitableCriticalSection;
+using CWaitableCriticalSection = AnnotatedMixin<std::mutex>;
 
 /** Just a typedef for std::condition_variable, can be wrapped later if desired */
-typedef std::condition_variable CConditionVariable;
+using CConditionVariable = std::condition_variable;
 
 /** Just a typedef for std::unique_lock, can be wrapped later if desired */
-typedef std::unique_lock<std::mutex> WaitableLock;
+using WaitableLock = std::unique_lock<std::mutex>;
 
 #ifdef DEBUG_LOCKCONTENTION
 void PrintLockContention(const char* pszName, const char* pszFile, int nLine);
@@ -229,8 +229,8 @@ public:
 class CSemaphoreGrant
 {
 private:
-    CSemaphore* sem;
-    bool fHaveGrant;
+    CSemaphore* sem{nullptr};
+    bool fHaveGrant{false};
 
 public:
     void Acquire()
@@ -264,7 +264,7 @@ public:
         fHaveGrant = false;
     }
 
-    CSemaphoreGrant() : sem(nullptr), fHaveGrant(false) {}
+    CSemaphoreGrant() = default;
 
     explicit CSemaphoreGrant(CSemaphore& sema, bool fTry = false) : sem(&sema), fHaveGrant(false)
     {
