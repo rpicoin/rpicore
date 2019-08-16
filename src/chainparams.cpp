@@ -155,7 +155,7 @@ public:
         consensus.nBlockLastGoodCheckpoint = consensus.nNewProtocolStartHeight; //Last valid accumulator checkpoint
         consensus.nPivxBadBlockTime = 0; // Skip nBit validation of Block 259201 per PR #915
         consensus.nPivxBadBlocknBits = 0; // Skip nBit validation of Block 259201 per PR #915
-        consensus.nStakeMinAge = 8 * 60 * 60;
+        consensus.nStakeMinAge = 4 * 60 * 60;
         consensus.nStakeMinAgeV2 = 60 * 60;   // PIVX: 1 hour
 
         // Public coin spend enforcement
