@@ -2,7 +2,7 @@
 
 CMAKE_MINIMUM_REQUIRED(VERSION 3.14.5)
 
-project(wispr-test)
+project(rpicoin-test)
 
 # Process json files.
 file(MAKE_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/data")
@@ -16,36 +16,36 @@ function(gen_json_header NAME)
 		# Get the proper name for the test variable.
 		get_filename_component(TEST_NAME ${f} NAME_WE)
 		add_custom_command(OUTPUT ${h}
-			COMMAND ${PYTHON}
-			ARGS
+				COMMAND ${PYTHON}
+				ARGS
 				"${CMAKE_CURRENT_SOURCE_DIR}/data/generate_header.py"
 				"${TEST_NAME}"
 				"${CMAKE_CURRENT_SOURCE_DIR}/${f}" > ${h}
-			MAIN_DEPENDENCY ${f}
-			DEPENDS
+				MAIN_DEPENDENCY ${f}
+				DEPENDS
 				"data/generate_header.py"
-			VERBATIM
-		)
+				VERBATIM
+				)
 		list(APPEND HEADERS ${h})
 	endforeach(f)
 	set(${NAME} "${HEADERS}" PARENT_SCOPE)
 endfunction()
 
 gen_json_header(JSON_HEADERS
-	data/script_tests.json
-	data/base58_keys_valid.json
-	data/base58_encode_decode.json
-	data/base58_keys_invalid.json
-	data/tx_invalid.json
-	data/tx_valid.json
-	data/sighash.json
-)
+		data/script_tests.json
+		data/base58_keys_valid.json
+		data/base58_encode_decode.json
+		data/base58_keys_invalid.json
+		data/tx_invalid.json
+		data/tx_valid.json
+		data/sighash.json
+		)
 
 include(TestSuite)
-create_test_suite(wispr)
-#add_dependencies(check check-wispr)
+create_test_suite(rpicoin)
+#add_dependencies(check check-rpicoin)
 
-add_test_to_suite(wispr test_wispr
+add_test_to_suite(rpicoin test_rpicoin
 		accounting_tests.cpp
 		addrman_tests.cpp
 		alert_tests.cpp
@@ -87,7 +87,7 @@ add_test_to_suite(wispr test_wispr
 		sighash_tests.cpp
 		sigopcount_tests.cpp
 		skiplist_tests.cpp
-		test_wispr.cpp
+		test_rpicoin.cpp
 		test_zerocoin.cpp
 		timedata_tests.cpp
 		torcontrol_tests.cpp
@@ -104,19 +104,19 @@ add_test_to_suite(wispr test_wispr
 		zerocoin_transactions_tests.cpp
 
 
-	# Tests generated from JSON
-	${JSON_HEADERS}
-)
+		# Tests generated from JSON
+		${JSON_HEADERS}
+		)
 
-target_include_directories(test_wispr
-	PUBLIC
+target_include_directories(test_rpicoin
+		PUBLIC
 		# To access the generated json headers.
 		${CMAKE_CURRENT_BINARY_DIR}
-)
+		)
 
 find_package(Boost 1.68 REQUIRED unit_test_framework)
 
-target_link_libraries(test_wispr Boost::unit_test_framework rpcclient server)
+target_link_libraries(test_rpicoin Boost::unit_test_framework rpcclient server)
 
 # We need to detect if the BOOST_TEST_DYN_LINK flag is required.
 set(CMAKE_REQUIRED_LIBRARIES Boost::unit_test_framework)
@@ -127,12 +127,12 @@ set(CMAKE_REQUIRED_LIBRARIES Boost::unit_test_framework)
 #" BOOST_TEST_DYN_LINK)
 
 if(BOOST_TEST_DYN_LINK)
-	target_compile_definitions(test_wispr PRIVATE BOOST_TEST_DYN_LINK)
+	target_compile_definitions(test_rpicoin PRIVATE BOOST_TEST_DYN_LINK)
 endif(BOOST_TEST_DYN_LINK)
 
 if(BUILD_BITCOIN_WALLET)
-	target_sources(test_wispr
-		PRIVATE
+	target_sources(test_rpicoin
+			PRIVATE
 			../wallet/test/psbt_wallet_tests.cpp
 			../wallet/test/wallet_tests.cpp
 			../wallet/test/wallet_crypto_tests.cpp
@@ -146,5 +146,5 @@ if(BUILD_BITCOIN_WALLET)
 			../wallet/test/wallet_test_fixture.cpp
 			../wallet/test/init_test_fixture.cpp
 			../wallet/test/init_test_fixture.h
-	)
+			)
 endif()
