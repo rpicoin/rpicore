@@ -1,7 +1,7 @@
 # RPICoin [RPI]
 Scrypt Algo PoS 3.0 CryptoCurrency
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0)
-
+[![GitHub version](https://badge.fury.io/gh/rpicoin%2Frpicore.svg)](https://badge.fury.io/gh/rpicoin%2Frpicore)
 ![logo](https://i.imgur.com/VhuAUbi.png)
 
 Intro
