@@ -221,7 +221,7 @@
 </message>
 <message>
 <location line="+9"/>
-    <source>WISPR will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your WSPs from being stolen by malware infecting your computer.</source>
+    <source>WISPR will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your RPIs from being stolen by malware infecting your computer.</source>
 <translation type="unfinished"></translation>
 </message>
 <message>
@@ -231,7 +231,7 @@
 </message>
 <message>
 <location line="+0"/>
-    <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR WSP&lt;/b&gt;!</source>
+    <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR RPI&lt;/b&gt;!</source>
 <translation type="unfinished"></translation>
 </message>
 <message>
@@ -557,7 +557,7 @@
 </message>
 <message>
 <location line="+11"/>
-    <source>Privacy Actions for zWSP</source>
+    <source>Privacy Actions for zRPI</source>
                                 <translation type="unfinished"></translation>
 </message>
 <message>
@@ -2242,7 +2242,7 @@ MultiSend: %1</source>
     </message>
     <message>
     <location line="+13"/>
-        <source>Add destinations to send WSP to</source>
+        <source>Add destinations to send RPI to</source>
     <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2489,17 +2489,17 @@ MultiSend: %1</source>
 </message>
 <message>
 <location line="-187"/>
-    <source>Enable automatic minting of WSP units to zWSP</source>
+    <source>Enable automatic minting of RPI units to zRPI</source>
 <translation type="unfinished"></translation>
 </message>
 <message>
 <location line="+6"/>
-    <source>Enable zWSP Automint</source>
+    <source>Enable zRPI Automint</source>
 <translation type="unfinished"></translation>
 </message>
 <message>
 <location line="+7"/>
-    <source>Enable automatic zWSP minting from specific addresses</source>
+    <source>Enable automatic zRPI minting from specific addresses</source>
 <translation type="unfinished"></translation>
 </message>
 <message>
@@ -2509,23 +2509,23 @@ MultiSend: %1</source>
 </message>
 <message>
 <location line="+11"/>
-    <source>Percentage of incoming WSP which get automatically converted to zWSP via Zerocoin Protocol (min: 10%)</source>
+    <source>Percentage of incoming RPI which get automatically converted to zRPI via Zerocoin Protocol (min: 10%)</source>
 <translation type="unfinished"></translation>
 </message>
 <message>
 <location line="+3"/>
-    <source>Percentage of autominted zWSP</source>
+    <source>Percentage of autominted zRPI</source>
 <translation type="unfinished"></translation>
 </message>
 <message>
 <location line="+30"/>
 <location line="+16"/>
-    <source>Wait with automatic conversion to Zerocoin until enough WSP for this denomination is available</source>
+    <source>Wait with automatic conversion to Zerocoin until enough RPI for this denomination is available</source>
 <translation type="unfinished"></translation>
 </message>
 <message>
 <location line="-13"/>
-    <source>Preferred Automint zWSP Denomination</source>
+    <source>Preferred Automint zRPI Denomination</source>
 <translation type="unfinished"></translation>
 </message>
 <message>
@@ -2744,7 +2744,7 @@ MultiSend: %1</source>
 </message>
 <message>
 <location line="+71"/>
-    <source>WSP Balance</source>
+    <source>RPI Balance</source>
 <translation type="unfinished"></translation>
 </message>
 <message>
@@ -2781,14 +2781,14 @@ MultiSend: %1</source>
 </message>
 <message>
 <location line="+96"/>
-    <source>zWSP Balance</source>
+    <source>zRPI Balance</source>
 <translation type="unfinished"></translation>
 </message>
 <message>
 <location line="+53"/>
 <location line="+17"/>
     <source>Mature: more than 20 confirmation and more than 1 mint of the same denomination after it was minted.
-    These zWSP are spendable.</source>
+    These zRPI are spendable.</source>
 <translation type="unfinished"></translation>
 </message>
 <message>
@@ -2861,7 +2861,7 @@ MultiSend: %1</source>
     <message>
     <location line="+191"/>
     <location line="+19"/>
-        <source>Locked WSP or Masternode collaterals. These are excluded from zWSP minting.</source>
+        <source>Locked RPI or Masternode collaterals. These are excluded from zRPI minting.</source>
     <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2877,7 +2877,7 @@ MultiSend: %1</source>
     <message>
     <location line="+58"/>
     <location line="+19"/>
-        <source>Your current zWSP balance, unconfirmed and immature zWSP included.</source>
+        <source>Your current zRPI balance, unconfirmed and immature zRPI included.</source>
     <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2893,7 +2893,7 @@ MultiSend: %1</source>
     </message>
     <message>
     <location line="+111"/>
-        <source>Current percentage of zWSP.
+        <source>Current percentage of zRPI.
         If AutoMint is enabled this percentage will settle around the configured AutoMint percentage (default = 10%).
     </source>
     <translation type="unfinished"></translation>
@@ -3080,7 +3080,7 @@ MultiSend: %1</source>
     </message>
     <message>
     <location line="+229"/>
-        <source>zWSP</source>
+        <source>zRPI</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3115,12 +3115,12 @@ MultiSend: %1</source>
     </message>
     <message>
     <location line="+462"/>
-        <source>zWSP Control</source>
+        <source>zRPI Control</source>
     <translation type="unfinished"></translation>
     </message>
     <message>
     <location line="+7"/>
-        <source>zWSP Selected:</source>
+        <source>zRPI Selected:</source>
     <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3145,7 +3145,7 @@ MultiSend: %1</source>
     </message>
     <message>
     <location line="+7"/>
-        <source>Available (mature and spendable) zWSP for spending</source>
+        <source>Available (mature and spendable) zRPI for spending</source>
                                                           <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3155,9 +3155,9 @@ MultiSend: %1</source>
     </message>
     <message>
     <location line="+16"/>
-        <source>Available (mature and spendable) zWSP for spending
+        <source>Available (mature and spendable) zRPI for spending
 
-        zWSP are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
+        zRPI are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
     <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3174,7 +3174,7 @@ MultiSend: %1</source>
     <location line="+31"/>
     <location line="+31"/>
     <location line="+31"/>
-        <source>0 zWSP</source>
+        <source>0 zRPI</source>
     <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3252,7 +3252,7 @@ MultiSend: %1</source>
     <location line="+25"/>
     <location line="+704"/>
     <location line="+38"/>
-        <source>Total Balance including unconfirmed and immature zWSP</source>
+        <source>Total Balance including unconfirmed and immature zRPI</source>
     <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3286,14 +3286,14 @@ MultiSend: %1</source>
     </message>
     <message>
     <location line="+40"/>
-        <source>Show the current status of automatic zWSP minting.
+        <source>Show the current status of automatic zRPI minting.
 
         To change the status (restart required):
     - enable: add &apos;enablezeromint=1&apos; to wispr.conf
     - disable: add &apos;enablezeromint=0&apos; to wispr.conf
 
     To change the percentage (no restart required):
-    - menu Settings-&gt;Options-&gt;Percentage of autominted zWSP
+    - menu Settings-&gt;Options-&gt;Percentage of autominted zRPI
 
     </source>
     <translation type="unfinished"></translation>
@@ -3363,7 +3363,7 @@ MultiSend: %1</source>
     </message>
     <message>
     <location line="-1092"/>
-        <source>Show zWSP denominations list</source>
+        <source>Show zRPI denominations list</source>
     <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3373,12 +3373,12 @@ MultiSend: %1</source>
     </message>
     <message>
     <location line="+29"/>
-        <source>zWSP minting is DISABLED</source>
+        <source>zRPI minting is DISABLED</source>
     <translation type="unfinished"></translation>
     </message>
     <message>
     <location line="+131"/>
-        <source>zWSP spending is NOT private (links back to the mint transaction)</source>
+        <source>zRPI spending is NOT private (links back to the mint transaction)</source>
     <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3544,12 +3544,12 @@ MultiSend: %1</source>
     </message>
     <message>
     <location line="+240"/>
-        <source>zWSP Spend #: </source>
+        <source>zRPI Spend #: </source>
     <translation type="unfinished"></translation>
     </message>
     <message>
     <location line="+16"/>
-        <source>zWSP Mint</source>
+        <source>zRPI Mint</source>
     <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3569,12 +3569,12 @@ MultiSend: %1</source>
     </message>
     <message>
     <location line="+17"/>
-        <source>zWSP is currently disabled due to maintenance.</source>
+        <source>zRPI is currently disabled due to maintenance.</source>
     <translation type="unfinished"></translation>
     </message>
     <message>
     <location line="-537"/>
-        <source>zWSP is currently undergoing maintenance.</source>
+        <source>zRPI is currently undergoing maintenance.</source>
     <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4287,7 +4287,7 @@ MultiSend: %1</source>
     </message>
     <message>
     <location line="+29"/>
-        <source>Custom zWSP Backup Path:</source>
+        <source>Custom zRPI Backup Path:</source>
     <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4880,12 +4880,12 @@ MultiSend: %1</source>
     </message>
     <message>
     <location line="+7"/>
-        <source>0 WSP</source>
+        <source>0 RPI</source>
     <translation type="unfinished"></translation>
     </message>
     <message>
     <location line="+149"/>
-        <source>SwiftX technology allows for near instant transactions - A flat fee of 0.01 WSP applies</source>
+        <source>SwiftX technology allows for near instant transactions - A flat fee of 0.01 RPI applies</source>
     <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4955,12 +4955,12 @@ MultiSend: %1</source>
     </message>
     <message>
     <location line="+1026"/>
-        <source>If the custom fee is set to 1000 uWSPs and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 uWSPs in fee,&lt;br /&gt;while &quot;at least&quot; pays 1000 uWSPs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <source>If the custom fee is set to 1000 uRPIs and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 uRPIs in fee,&lt;br /&gt;while &quot;at least&quot; pays 1000 uRPIs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
     <translation type="unfinished"></translation>
     </message>
     <message>
     <location line="+16"/>
-        <source>If the custom fee is set to 1000 uWSPs and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 uWSPs in fee,&lt;br /&gt;while &quot;total at least&quot; pays 1000 uWSPs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <source>If the custom fee is set to 1000 uRPIs and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 uRPIs in fee,&lt;br /&gt;while &quot;total at least&quot; pays 1000 uRPIs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
     <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5026,7 +5026,7 @@ MultiSend: %1</source>
     </message>
     <message>
     <location line="+35"/>
-        <source>Anonymized WSP</source>
+        <source>Anonymized RPI</source>
     <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5906,12 +5906,12 @@ MultiSend: %1</source>
     </message>
     <message>
     <location line="+7"/>
-        <source>WSP Stake</source>
+        <source>RPI Stake</source>
     <translation type="unfinished"></translation>
     </message>
     <message>
     <location line="+2"/>
-        <source>zWSP Stake</source>
+        <source>zRPI Stake</source>
     <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5936,37 +5936,37 @@ MultiSend: %1</source>
     </message>
     <message>
     <location line="+4"/>
-        <source>Converted WSP to zWSP</source>
+        <source>Converted RPI to zRPI</source>
     <translation type="unfinished"></translation>
     </message>
     <message>
     <location line="+2"/>
-        <source>Spent zWSP</source>
+        <source>Spent zRPI</source>
     <translation type="unfinished"></translation>
     </message>
     <message>
     <location line="+2"/>
-        <source>Received WSP from zWSP</source>
+        <source>Received RPI from zRPI</source>
     <translation type="unfinished"></translation>
     </message>
     <message>
     <location line="+2"/>
-        <source>Minted Change as zWSP from zWSP Spend</source>
+        <source>Minted Change as zRPI from zRPI Spend</source>
     <translation type="unfinished"></translation>
     </message>
     <message>
     <location line="+2"/>
-        <source>Converted zWSP to WSP</source>
+        <source>Converted zRPI to RPI</source>
     <translation type="unfinished"></translation>
     </message>
     <message>
     <location line="+56"/>
-        <source>Anonymous (zWSP Transaction)</source>
+        <source>Anonymous (zRPI Transaction)</source>
     <translation type="unfinished"></translation>
     </message>
     <message>
     <location line="+2"/>
-        <source>Anonymous (zWSP Stake)</source>
+        <source>Anonymous (zRPI Stake)</source>
     <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6235,12 +6235,12 @@ MultiSend: %1</source>
     </message>
     <message>
     <location line="-310"/>
-        <source>Received WSP from zWSP</source>
+        <source>Received RPI from zRPI</source>
     <translation type="unfinished"></translation>
     </message>
     <message>
     <location line="+3"/>
-        <source>Zerocoin Spend, Change in zWSP</source>
+        <source>Zerocoin Spend, Change in zRPI</source>
     <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6287,7 +6287,7 @@ MultiSend: %1</source>
     <message>
     <location line="-18"/>
     <location line="+9"/>
-        <source>SwiftX doesn&apos;t support sending values that high yet. Transactions are currently limited to %1 WSP.</source>
+        <source>SwiftX doesn&apos;t support sending values that high yet. Transactions are currently limited to %1 RPI.</source>
     <translation type="unfinished"></translation>
     </message>
     </context>
@@ -6325,10 +6325,10 @@ MultiSend: %1</source>
     </message>
     </context>
     <context>
-    <name>ZWspControlDialog</name>
+    <name>ZRpiControlDialog</name>
     <message>
     <location filename="../forms/zwspcontroldialog.ui" line="+20"/>
-        <source>Select zWSP to Spend</source>
+        <source>Select zRPI to Spend</source>
     <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6344,7 +6344,7 @@ MultiSend: %1</source>
     </message>
     <message>
     <location line="-7"/>
-        <source>zWSP</source>
+        <source>zRPI</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6432,17 +6432,17 @@ MultiSend: %1</source>
 </message>
 <message>
 <location line="+2"/>
-    <source>Enable automatic wallet backups triggered after each zWSP minting (0-1, default: %u)</source>
+    <source>Enable automatic wallet backups triggered after each zRPI minting (0-1, default: %u)</source>
 <translation type="unfinished"></translation>
 </message>
 <message>
 <location line="+3"/>
-    <source>Enable or disable staking functionality for WSP inputs (0-1, default: %u)</source>
+    <source>Enable or disable staking functionality for RPI inputs (0-1, default: %u)</source>
 <translation type="unfinished"></translation>
 </message>
 <message>
 <location line="+2"/>
-    <source>Enable or disable staking functionality for zWSP inputs (0-1, default: %u)</source>
+    <source>Enable or disable staking functionality for zRPI inputs (0-1, default: %u)</source>
 <translation type="unfinished"></translation>
 </message>
 <message>
@@ -6487,12 +6487,12 @@ MultiSend: %1</source>
 </message>
 <message>
 <location line="+8"/>
-    <source>Fees (in WSP/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
+    <source>Fees (in RPI/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
 <translation type="unfinished"></translation>
 </message>
 <message>
 <location line="+3"/>
-    <source>Fees (in WSP/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
+    <source>Fees (in RPI/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
 <translation type="unfinished"></translation>
 </message>
 <message>
@@ -6647,12 +6647,12 @@ MultiSend: %1</source>
     </message>
     <message>
     <location line="+2"/>
-        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 WSP.</source>
+        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 RPI.</source>
     <translation type="unfinished"></translation>
     </message>
     <message>
     <location line="+3"/>
-        <source>Unable to locate enough funds for this transaction that are not equal 10000 WSP.</source>
+        <source>Unable to locate enough funds for this transaction that are not equal 10000 RPI.</source>
     <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6917,7 +6917,7 @@ MultiSend: %1</source>
 </message>
 <message>
 <location line="+1"/>
-    <source>Enable precomputation of zWSP spends and stakes (0-1, default %u)</source>
+    <source>Enable precomputation of zRPI spends and stakes (0-1, default %u)</source>
 <translation type="unfinished"></translation>
 </message>
 <message>
@@ -7032,7 +7032,7 @@ MultiSend: %1</source>
 </message>
 <message>
 <location line="+4"/>
-    <source>Fee (in WSP/kB) to add to transactions you send (default: %s)</source>
+    <source>Fee (in RPI/kB) to add to transactions you send (default: %s)</source>
 <translation type="unfinished"></translation>
 </message>
 <message>
@@ -7162,22 +7162,22 @@ MultiSend: %1</source>
 </message>
 <message>
 <location line="+9"/>
-    <source>Recalculating WSP supply...</source>
+    <source>Recalculating RPI supply...</source>
 <translation type="unfinished"></translation>
 </message>
 <message>
 <location line="+1"/>
-    <source>Recalculating minted ZWSP...</source>
+    <source>Recalculating minted ZRPI...</source>
 <translation type="unfinished"></translation>
 </message>
 <message>
 <location line="+1"/>
-    <source>Recalculating spent ZWSP...</source>
+    <source>Recalculating spent ZRPI...</source>
 <translation type="unfinished"></translation>
 </message>
 <message>
 <location line="+2"/>
-    <source>Reindex the WSP and zWSP money supply statistics</source>
+    <source>Reindex the RPI and zRPI money supply statistics</source>
 <translation type="unfinished"></translation>
 </message>
 <message>
@@ -7274,7 +7274,7 @@ MultiSend: %1</source>
 </message>
 <message>
 <location line="+27"/>
-    <source>Specify custom backup path to add a copy of any automatic zWSP backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup. If backuppath is set as well, 4 backups will happen</source>
+    <source>Specify custom backup path to add a copy of any automatic zRPI backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup. If backuppath is set as well, 4 backups will happen</source>
 <translation type="unfinished"></translation>
 </message>
 <message>
@@ -7824,7 +7824,7 @@ MultiSend: %1</source>
 </message>
 <message>
 <location line="+1"/>
-    <source>Syncing zWSP wallet...</source>
+    <source>Syncing zRPI wallet...</source>
 <translation type="unfinished"></translation>
 </message>
 <message>
@@ -7964,7 +7964,7 @@ MultiSend: %1</source>
 </message>
 <message>
 <location line="+1"/>
-    <source>Value is below the smallest available denomination (= 1) of zWSP</source>
+    <source>Value is below the smallest available denomination (= 1) of zRPI</source>
 <translation type="unfinished"></translation>
 </message>
 <message>
