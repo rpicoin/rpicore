@@ -49,7 +49,7 @@ public:
      **/
     Accumulator(const AccumulatorAndProofParams* p, const libzerocoin::CoinDenomination d);
 
-    Accumulator(const libzerocoin::ZerocoinParams* p, const libzerocoin::CoinDenomination d, CBigNum bnValue = 0);
+    Accumulator(const libzerocoin::ZerocoinParams* p, const libzerocoin::CoinDenomination d, const CBigNum& bnValue = 0);
 
     /**
      * Accumulate a coin into the accumulator. Validates
@@ -70,7 +70,7 @@ public:
      */
     const CBigNum& getValue() const;
 
-    void setValue(CBigNum bnValue);
+    void setValue(const CBigNum& bnValue);
     void setInitialValue();
 
     // /**

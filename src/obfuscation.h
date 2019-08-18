@@ -108,7 +108,7 @@ public:
     }
 
     /// Add entries to use for Obfuscation
-    bool Add(const std::vector<CTxIn> vinIn, int64_t amountIn, const CTransaction collateralIn, const std::vector<CTxOut> voutIn)
+    bool Add(const std::vector<CTxIn>& vinIn, int64_t amountIn, const CTransaction& collateralIn, const std::vector<CTxOut>& voutIn)
     {
         if (isSet) {
             return false;
@@ -206,13 +206,13 @@ public:
     /// Is the inputs associated with this public key? (and there is 10000 RPI - checking if valid masternode)
     bool IsVinAssociatedWithPubkey(CTxIn& vin, CPubKey& pubkey);
     /// Set the private/public key values, returns true if successful
-    bool GetKeysFromSecret(std::string strSecret, CKey& keyRet, CPubKey& pubkeyRet);
+    bool GetKeysFromSecret(const std::string& strSecret, CKey& keyRet, CPubKey& pubkeyRet);
     /// Set the private/public key values, returns true if successful
-    bool SetKey(std::string strSecret, std::string& errorMessage, CKey& key, CPubKey& pubkey);
+    bool SetKey(const std::string& strSecret, std::string& errorMessage, CKey& key, CPubKey& pubkey);
     /// Sign the message, returns true if successful
-    bool SignMessage(std::string strMessage, std::string& errorMessage, std::vector<unsigned char>& vchSig, CKey key);
+    bool SignMessage(const std::string& strMessage, std::string& errorMessage, std::vector<unsigned char>& vchSig, const CKey& key);
     /// Verify the message, returns true if succcessful
-    bool VerifyMessage(CPubKey pubkey, std::vector<unsigned char>& vchSig, std::string strMessage, std::string& errorMessage);
+    bool VerifyMessage(CPubKey pubkey, std::vector<unsigned char>& vchSig, const std::string& strMessage, std::string& errorMessage);
 };
 
 /** Used to keep track of current status of Obfuscation pool
@@ -298,7 +298,7 @@ public:
         SetCollateralAddress(Params().ObfuscationPoolDummyAddress());
     }
 
-    bool SetCollateralAddress(std::string strAddress);
+    bool SetCollateralAddress(const std::string& strAddress);
     void Reset();
     void SetNull();
 

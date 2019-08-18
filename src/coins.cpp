@@ -7,7 +7,7 @@
 
 #include "random.h"
 
-#include <assert.h>
+#include <cassert>
 
 /**
  * calculate number of bytes for the bitmask, and its number of non-zero bytes
@@ -61,7 +61,7 @@ bool CCoins::Spend(int nPos)
 
 bool CCoinsView::GetCoins(const uint256& txid, CCoins& coins) const { return false; }
 bool CCoinsView::HaveCoins(const uint256& txid) const { return false; }
-uint256 CCoinsView::GetBestBlock() const { return uint256(0); }
+uint256 CCoinsView::GetBestBlock() const { return {0}; }
 bool CCoinsView::BatchWrite(CCoinsMap& mapCoins, const uint256& hashBlock) { return false; }
 bool CCoinsView::GetStats(CCoinsStats& stats) const { return false; }
 
@@ -228,8 +228,8 @@ CAmount CCoinsViewCache::GetValueIn(const CTransaction& tx) const
         return tx.GetZerocoinSpent();
 
     CAmount nResult = 0;
-    for (unsigned int i = 0; i < tx.vin.size(); i++)
-        nResult += GetOutputFor(tx.vin[i]).nValue;
+    for (const auto & i : tx.vin)
+        nResult += GetOutputFor(i).nValue;
 
     return nResult;
 }
@@ -237,8 +237,8 @@ CAmount CCoinsViewCache::GetValueIn(const CTransaction& tx) const
 bool CCoinsViewCache::HaveInputs(const CTransaction& tx) const
 {
     if (!tx.IsCoinBase() && !tx.HasZerocoinSpendInputs()) {
-        for (unsigned int i = 0; i < tx.vin.size(); i++) {
-            const COutPoint& prevout = tx.vin[i].prevout;
+        for (const auto & i : tx.vin) {
+            const COutPoint& prevout = i.prevout;
             const CCoins* coins = AccessCoins(prevout.hash);
             if (!coins || !coins->IsAvailable(prevout.n)) {
                 return false;

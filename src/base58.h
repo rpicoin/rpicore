@@ -116,7 +116,7 @@ public:
     bool IsValid() const;
     bool IsValid(const CChainParams& params) const;
 
-    CBitcoinAddress() {}
+    CBitcoinAddress() = default;
     CBitcoinAddress(const CTxDestination& dest) { Set(dest); }
     CBitcoinAddress(const std::string& strAddress) { SetString(strAddress); }
     CBitcoinAddress(const char* pszAddress) { SetString(pszAddress); }
@@ -139,7 +139,7 @@ public:
     bool SetString(const std::string& strSecret);
 
     CBitcoinSecret(const CKey& vchSecret) { SetKey(vchSecret); }
-    CBitcoinSecret() {}
+    CBitcoinSecret() = default;
 };
 
 template <typename K, int Size, CChainParams::Base58Type Type>

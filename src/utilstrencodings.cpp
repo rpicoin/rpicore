@@ -10,7 +10,7 @@
 
 #include <cstdlib>
 #include <cstring>
-#include <errno.h>
+#include <cerrno>
 #include <limits>
 
 #include <openssl/bio.h>
@@ -31,15 +31,15 @@ static const std::string SAFE_CHARS[] =
 std::string SanitizeString(const std::string& str, int rule)
 {
     std::string strResult;
-    for (std::string::size_type i = 0; i < str.size(); i++)
+    for (char i : str)
     {
-        if (SAFE_CHARS[rule].find(str[i]) != std::string::npos)
-            strResult.push_back(str[i]);
+        if (SAFE_CHARS[rule].find(i) != std::string::npos)
+            strResult.push_back(i);
     }
     return strResult;
 }
 
-bool validateURL(std::string strURL, std::string& strErr, unsigned int maxSize) {
+bool validateURL(const std::string& strURL, std::string& strErr, unsigned int maxSize) {
 
     // Check URL size
     if (strURL.size() > maxSize) {
@@ -93,8 +93,8 @@ signed char HexDigit(char c)
 
 bool IsHex(const std::string& str)
 {
-    for (std::string::const_iterator it(str.begin()); it != str.end(); ++it) {
-        if (HexDigit(*it) < 0)
+    for (char it : str) {
+        if (HexDigit(it) < 0)
             return false;
     }
     return (str.size() > 0) && (str.size() % 2 == 0);
@@ -200,7 +200,7 @@ std::vector<unsigned char> DecodeBase64(const char* p, bool* pfInvalid)
     int mode = 0;
     int left = 0;
 
-    while (1) {
+    while (true) {
         int dec = decode64_table[(unsigned char)*p];
         if (dec == -1) break;
         p++;
@@ -402,7 +402,7 @@ std::vector<unsigned char> DecodeBase32(const char* p, bool* pfInvalid)
     int mode = 0;
     int left = 0;
 
-    while (1) {
+    while (true) {
         int dec = decode32_table[(unsigned char)*p];
         if (dec == -1) break;
         p++;
@@ -550,7 +550,7 @@ bool ParseDouble(const std::string& str, double *out)
     return text.eof() && !text.fail();
 }
 
-std::string FormatParagraph(const std::string in, size_t width, size_t indent)
+std::string FormatParagraph(const std::string& in, size_t width, size_t indent)
 {
     std::stringstream out;
     size_t col = 0;
@@ -597,7 +597,7 @@ int64_t atoi64(const char* psz)
 #ifdef _MSC_VER
     return _atoi64(psz);
 #else
-    return strtoll(psz, NULL, 10);
+    return strtoll(psz, nullptr, 10);
 #endif
 }
 
@@ -606,7 +606,7 @@ int64_t atoi64(const std::string& str)
 #ifdef _MSC_VER
     return _atoi64(str.c_str());
 #else
-    return strtoll(str.c_str(), NULL, 10);
+    return strtoll(str.c_str(), nullptr, 10);
 #endif
 }
 

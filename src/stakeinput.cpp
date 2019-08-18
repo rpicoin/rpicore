@@ -171,7 +171,7 @@ bool CZRpiStake::MarkSpent(CWallet *pwallet, const uint256& txid)
 }
 
 //!RPI Stake
-bool CRpiStake::SetInput(CTransaction txPrev, unsigned int n)
+bool CRpiStake::SetInput(const CTransaction& txPrev, unsigned int n)
 {
     this->txFrom = txPrev;
     this->nPosition = n;

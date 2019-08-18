@@ -150,7 +150,7 @@ public:
 
     std::string ToString() const;
 
-    void Remove(CTxIn vin);
+    void Remove(const CTxIn& vin);
 
     int GetEstimatedMasternodes(int nBlock);
 

@@ -38,7 +38,7 @@ void ProposalFrame::setProposal(CBudgetProposal* proposal)
     proposalItem->setSpacing(0);
     proposalItem->setObjectName(QStringLiteral("proposalItem"));
 
-    QHBoxLayout* proposalInfo = new QHBoxLayout();
+    auto* proposalInfo = new QHBoxLayout();
     proposalInfo->setSpacing(0);
     proposalInfo->setObjectName(QStringLiteral("proposalInfo"));
 
@@ -97,7 +97,7 @@ void ProposalFrame::refresh()
         connect(strProposalURL, &QLabel::linkActivated, this, &ProposalFrame::proposalLink_clicked);
         proposalURL->addWidget(strProposalURL);
 
-        QSpacerItem* spacer = new QSpacerItem(1,1, QSizePolicy::Expanding, QSizePolicy::Fixed);
+        auto* spacer = new QSpacerItem(1,1, QSizePolicy::Expanding, QSizePolicy::Fixed);
         proposalURL->addSpacerItem(spacer);
 
         proposalItem->addLayout(proposalURL);
@@ -113,7 +113,7 @@ void ProposalFrame::refresh()
         int nCountMyMasternodes = masternodeConfig.getCount();
         proposalVotes = new QHBoxLayout();
 
-        QToolButton* yesButton = new QToolButton();
+        auto* yesButton = new QToolButton();
         yesButton->setIcon(QIcon(":/icons/yesvote"));
         if (nCountMyMasternodes < 0)
             yesButton->setEnabled(false);
@@ -123,7 +123,7 @@ void ProposalFrame::refresh()
         QLabel* yesVotes = new QLabel();
         yesVotes->setText(QString::number(proposal->GetYeas()));
 
-        QToolButton* abstainButton = new QToolButton();
+        auto* abstainButton = new QToolButton();
         abstainButton->setIcon(QIcon(":/icons/abstainvote"));
         if (nCountMyMasternodes < 0)
             abstainButton->setEnabled(false);
@@ -133,7 +133,7 @@ void ProposalFrame::refresh()
         QLabel* abstainVotes = new QLabel();
         abstainVotes->setText(QString::number(proposal->GetAbstains()));
 
-        QToolButton* noButton = new QToolButton();
+        auto* noButton = new QToolButton();
         noButton->setIcon(QIcon(":/icons/novote"));
         if (nCountMyMasternodes < 0)
             noButton->setEnabled(false);
@@ -159,16 +159,16 @@ void ProposalFrame::refresh()
     {
         delete strRemainingPaymentCount;
         QLayoutItem* child;
-        while ((child = proposalVotes->takeAt(0)) != 0) {
-            if (child->widget() != 0)
+        while ((child = proposalVotes->takeAt(0)) != nullptr) {
+            if (child->widget() != nullptr)
             {
                 delete child->widget();
             }
             delete child;
         }
         delete proposalVotes;
-        while ((child = proposalURL->takeAt(0)) != 0) {
-            if (child->widget() != 0)
+        while ((child = proposalURL->takeAt(0)) != nullptr) {
+            if (child->widget() != nullptr)
             {
                 delete child->widget();
             }

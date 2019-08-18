@@ -12,7 +12,7 @@
 #include "zrpichain.h"
 
 
-CzRPIWallet::CzRPIWallet(std::string strWalletFile)
+CzRPIWallet::CzRPIWallet(const std::string& strWalletFile)
 {
     this->strWalletFile = strWalletFile;
     CWalletDB walletdb(strWalletFile);
@@ -167,8 +167,9 @@ bool CzRPIWallet::LoadMintPoolFromDB()
 
 void CzRPIWallet::RemoveMintsFromPool(const std::vector<uint256>& vPubcoinHashes)
 {
-    for (const uint256& hash : vPubcoinHashes)
+    for (const uint256& hash : vPubcoinHashes){
         mintPool.Remove(hash);
+    }
 }
 
 void CzRPIWallet::GetState(int& nCount, int& nLastGenerated)
@@ -193,7 +194,7 @@ void CzRPIWallet::SyncWithChain(bool fGenerateMintPool)
 
         std::set<uint256> setChecked;
         std::list<std::pair<uint256,uint32_t> > listMints = mintPool.List();
-        for (std::pair<uint256, uint32_t> pMint : listMints) {
+        for (const std::pair<uint256, uint32_t>& pMint : listMints) {
             LOCK(cs_main);
             if (setChecked.count(pMint.first))
                 return;

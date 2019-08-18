@@ -32,13 +32,13 @@
 #include <openssl/sha.h>
 #include <string>
 
-#include <string.h>
-#include <stdint.h>
+#include <cstring>
+#include <cstdint>
 
 #ifndef __FreeBSD__
 static inline void be32enc(void *pp, uint32_t x)
 {
-    uint8_t *p = (uint8_t *)pp;
+    auto *p = (uint8_t *)pp;
     p[3] = x & 0xff;
     p[2] = (x >> 8) & 0xff;
     p[1] = (x >> 16) & 0xff;
@@ -57,7 +57,7 @@ HMAC_SHA256_Init(HMAC_SHA256_CTX *ctx, const void *_K, size_t Klen)
 {
     unsigned char pad[64];
     unsigned char khash[32];
-    const unsigned char *K = (const unsigned char *)_K;
+    const auto *K = (const unsigned char *)_K;
     size_t i;
 
     /* If Klen > 64, the key is really SHA256(K). */
@@ -174,7 +174,7 @@ PBKDF2_SHA256(const uint8_t *passwd, size_t passwdlen, const uint8_t *salt,
 static inline uint32_t
 le32dec_2(const void * pp)
 {
-    const uint8_t * p = (uint8_t const *)pp;
+    const auto * p = (uint8_t const *)pp;
 
     return ((uint32_t)(p[0]) + ((uint32_t)(p[1]) << 8) +
             ((uint32_t)(p[2]) << 16) + ((uint32_t)(p[3]) << 24));
@@ -183,7 +183,7 @@ le32dec_2(const void * pp)
 static inline void
 le32enc_2(void * pp, uint32_t x)
 {
-    uint8_t * p = (uint8_t *)pp;
+    auto * p = (uint8_t *)pp;
 
     p[0] = x & 0xff;
     p[1] = (x >> 8) & 0xff;
@@ -194,7 +194,7 @@ le32enc_2(void * pp, uint32_t x)
 static void
 blkcpy(void * dest, const void * src, size_t len)
 {
-    size_t * D = (size_t*)dest;
+    auto * D = (size_t*)dest;
     const size_t * S = (size_t*)src;
     size_t L = len / sizeof(size_t);
     size_t i;
@@ -206,7 +206,7 @@ blkcpy(void * dest, const void * src, size_t len)
 static void
 blkxor(void * dest, const void * src, size_t len)
 {
-    size_t * D = (size_t*)dest;
+    auto * D = (size_t*)dest;
     const size_t* S = (size_t*)src;
     size_t L = len / sizeof(size_t);
     size_t i;
@@ -300,7 +300,7 @@ blockmix_salsa8(const uint32_t * Bin, uint32_t * Bout, uint32_t * X, size_t r)
 static uint64_t
 integerify(const void * B, size_t r)
 {
-    const uint32_t * X = (const uint32_t*)((uintptr_t)(B) + (2 * r - 1) * 64);
+    const auto * X = (const uint32_t*)((uintptr_t)(B) + (2 * r - 1) * 64);
 
     return (((uint64_t)(X[1]) << 32) + X[0]);
 }
@@ -308,10 +308,10 @@ integerify(const void * B, size_t r)
 void SMix(uint8_t *B, unsigned int r, unsigned int N, void* _V, void* XY)
 {
     //new
-    uint32_t* X = (uint32_t*)XY;
-    uint32_t* Y = (uint32_t*)((uint8_t*)(XY) + 128 * r);
-    uint32_t* Z = (uint32_t*)((uint8_t *)(XY) + 256 * r);
-    uint32_t * V = (uint32_t*)_V;
+    auto* X = (uint32_t*)XY;
+    auto* Y = (uint32_t*)((uint8_t*)(XY) + 128 * r);
+    auto* Z = (uint32_t*)((uint8_t *)(XY) + 256 * r);
+    auto * V = (uint32_t*)_V;
 
     uint32_t j, k;
 
@@ -365,7 +365,7 @@ void scrypt(const char* pass, unsigned int pLen, const char* salt, unsigned int 
     void* XY0 = malloc(256 * r + 64 + 63);
     void* B1 = malloc(128 * r * p + 63);
     uint8_t* B = (uint8_t *)(((uintptr_t)(B1) + 63) & ~ (uintptr_t)(63));
-    uint32_t* V = (uint32_t *)(((uintptr_t)(V0) + 63) & ~ (uintptr_t)(63));
+    auto* V = (uint32_t *)(((uintptr_t)(V0) + 63) & ~ (uintptr_t)(63));
     uint32_t* XY = (uint32_t *)(((uintptr_t)(XY0) + 63) & ~ (uintptr_t)(63));
 
     PBKDF2_SHA256((const uint8_t *)pass, pLen, (const uint8_t *)salt, sLen, 1, B, p * 128 * r);

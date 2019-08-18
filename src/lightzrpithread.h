@@ -40,7 +40,7 @@ public:
         NON_DETERMINED = 1
     };
 
-    bool addWitWork(CGenWit wit) {
+    bool addWitWork(const CGenWit& wit) {
         if (!isWorkerRunning) {
             LogPrintf("%s not running trying to add wit work \n", "rpicoin-light-thread");
             return false;

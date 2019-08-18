@@ -30,7 +30,7 @@ class OverviewPage : public QWidget
     Q_OBJECT
 
 public:
-    explicit OverviewPage(QWidget* parent = 0);
+    explicit OverviewPage(QWidget* parent = nullptr);
     ~OverviewPage();
 
     void setClientModel(ClientModel* clientModel);

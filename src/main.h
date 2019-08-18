@@ -35,7 +35,7 @@
 #include <exception>
 #include <map>
 #include <set>
-#include <stdint.h>
+#include <cstdint>
 #include <string>
 #include <utility>
 #include <vector>
@@ -238,7 +238,7 @@ void ThreadScriptCheck();
 /** Check whether we are doing an initial block download (synchronizing from disk or network) */
 bool IsInitialBlockDownload();
 /** Format a string that describes several potential problems detected by the core */
-std::string GetWarnings(std::string strFor);
+std::string GetWarnings(const std::string& strFor);
 /** Retrieve a transaction (from memory pool, or from disk, if possible) */
 bool GetTransaction(const uint256& hash, CTransaction& tx, uint256& hashBlock, bool fAllowSlow = false, CBlockIndex* blockIndex = nullptr);
 /** Retrieve an output (from memory pool, or from disk, if possible) */
@@ -254,7 +254,7 @@ bool ActivateBestChain(CValidationState& state, CBlock* pblock = nullptr, bool f
 CAmount GetBlockValue(int nHeight);
 
 /** Create a new block index entry for a given block hash */
-CBlockIndex* InsertBlockIndex(uint256 hash);
+CBlockIndex* InsertBlockIndex(const uint256& hash);
 /** Abort with a message */
 bool AbortNode(const std::string& msg, const std::string& userMessage = "");
 /** Get statistics from node state */
@@ -271,8 +271,8 @@ bool AcceptToMemoryPool(CTxMemPool& pool, CValidationState& state, const CTransa
 bool AcceptableInputs(CTxMemPool& pool, CValidationState& state, const CTransaction& tx, bool fLimitFree, bool* pfMissingInputs, bool fRejectInsaneFee = false, bool isDSTX = false);
 
 int GetInputAge(CTxIn& vin);
-int GetInputAgeIX(uint256 nTXHash, CTxIn& vin);
-int GetIXConfirmations(uint256 nTXHash);
+int GetInputAgeIX(const uint256& nTXHash, CTxIn& vin);
+int GetIXConfirmations(const uint256& nTXHash);
 
 struct CNodeStateStats {
     int nMisbehavior;
@@ -368,7 +368,7 @@ bool ContextualCheckZerocoinSpendNoSerialCheck(const CTransaction& tx, const lib
 bool IsTransactionInChain(const uint256& txId, int& nHeightTx, CTransaction& tx);
 bool IsTransactionInChain(const uint256& txId, int& nHeightTx);
 bool IsBlockHashInChain(const uint256& hashBlock);
-bool ValidOutPoint(const COutPoint out, int nHeight);
+bool ValidOutPoint(const COutPoint& out, int nHeight);
 void AddWrappedSerialsInflation();
 void RecalculateZRPISpent();
 void RecalculateZRPIMinted();
@@ -565,7 +565,7 @@ public:
     bool DoS(int level, bool ret = false, unsigned char chRejectCodeIn = 0, std::string strRejectReasonIn = "", bool corruptionIn = false)
     {
         chRejectCode = chRejectCodeIn;
-        strRejectReason = strRejectReasonIn;
+        strRejectReason = std::move(strRejectReasonIn);
         corruptionPossible = corruptionIn;
         if (mode == MODE_ERROR)
             return ret;
@@ -577,12 +577,12 @@ public:
         unsigned char _chRejectCode = 0,
         std::string _strRejectReason = "")
     {
-        return DoS(0, ret, _chRejectCode, _strRejectReason);
+        return DoS(0, ret, _chRejectCode, std::move(_strRejectReason));
     }
     bool Error(std::string strRejectReasonIn = "")
     {
         if (mode == MODE_VALID)
-            strRejectReason = strRejectReasonIn;
+            strRejectReason = std::move(strRejectReasonIn);
         mode = MODE_ERROR;
         return false;
     }

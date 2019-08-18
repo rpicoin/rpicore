@@ -16,11 +16,12 @@
 #include "protocol.h"
 
 #include "libzerocoin/Params.h"
+#include <utility>
 #include <vector>
 
 struct CDNSSeedData {
     std::string name, host;
-    CDNSSeedData(const std::string& strName, const std::string& strHost) : name(strName), host(strHost) {}
+    CDNSSeedData(std::string  strName, std::string  strHost) : name(std::move(strName)), host(std::move(strHost)) {}
 };
 
 /**
@@ -158,12 +159,12 @@ public:
     int LAST_POW_BLOCK() const { return consensus.nLastPOWBlock; }
     int NEW_PROTOCOLS_STARTHEIGHT() const { return consensus.nNewProtocolStartHeight; }
     int NEW_PROTOCOLS_STARTTIME() const { return consensus.nNewProtocolStartTime; }
-    int PivxBadBlockTime() const { return consensus.nPivxBadBlockTime; }
-    int PivxBadBlocknBits() const { return consensus.nPivxBadBlocknBits; }
+    uint32_t PivxBadBlockTime() const { return consensus.nPivxBadBlockTime; }
+    uint32_t PivxBadBlocknBits() const { return consensus.nPivxBadBlocknBits; }
     int Zerocoin_Block_Public_Spend_Enabled() const { return consensus.nPublicZCSpends; }
 
 protected:
-    CChainParams() {}
+    CChainParams() = default;
 
     Consensus::Params consensus;
     CMessageHeader::MessageStartChars pchMessageStart;

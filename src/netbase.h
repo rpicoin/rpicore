@@ -190,13 +190,13 @@ public:
 class proxyType
 {
 public:
-    proxyType(): randomize_credentials(false) {}
+    proxyType() = default;
     proxyType(const CService &proxy, bool randomize_credentials=false): proxy(proxy), randomize_credentials(randomize_credentials) {}
 
     bool IsValid() const { return proxy.IsValid(); }
 
     CService proxy;
-    bool randomize_credentials;
+    bool randomize_credentials{false};
 };
 
 enum Network ParseNetwork(std::string net);

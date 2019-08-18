@@ -8,6 +8,7 @@
 #include "guiconstants.h"
 
 #include <QApplication>
+#include <utility>
 
 static const struct {
     const char* networkId;
@@ -22,7 +23,7 @@ static const struct {
 static const unsigned network_styles_count = sizeof(network_styles) / sizeof(*network_styles);
 
 // titleAddText needs to be const char* for tr()
-NetworkStyle::NetworkStyle(const QString& appName, const QString& appIcon, const char* titleAddText, const QString& splashImage) : appName(appName),
+NetworkStyle::NetworkStyle(QString  appName, const QString& appIcon, const char* titleAddText, const QString& splashImage) : appName(std::move(appName)),
                                                                                                                                    appIcon(appIcon),
                                                                                                                                    titleAddText(qApp->translate("SplashScreen", titleAddText)),
                                                                                                                                    splashImage(splashImage)
@@ -31,13 +32,13 @@ NetworkStyle::NetworkStyle(const QString& appName, const QString& appIcon, const
 
 const NetworkStyle* NetworkStyle::instantiate(const QString& networkId)
 {
-    for (unsigned x = 0; x < network_styles_count; ++x) {
-        if (networkId == network_styles[x].networkId) {
+    for (const auto & network_style : network_styles) {
+        if (networkId == network_style.networkId) {
             return new NetworkStyle(
-                network_styles[x].appName,
-                network_styles[x].appIcon,
-                network_styles[x].titleAddText,
-                network_styles[x].splashImage);
+                network_style.appName,
+                network_style.appIcon,
+                network_style.titleAddText,
+                network_style.splashImage);
         }
     }
     return nullptr;

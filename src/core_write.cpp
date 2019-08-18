@@ -21,10 +21,10 @@
 std::string FormatScript(const CScript& script)
 {
     std::string ret;
-    CScript::const_iterator it = script.begin();
+    auto it = script.begin();
     opcodetype op;
     while (it != script.end()) {
-        CScript::const_iterator it2 = it;
+        auto it2 = it;
         std::vector<unsigned char> vch;
         if (script.GetOp2(it, op, &vch)) {
             if (op == OP_0) {

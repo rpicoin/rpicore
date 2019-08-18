@@ -12,7 +12,7 @@
 #include <cstdlib>
 #include <string>
 
-typedef int64_t CAmount;
+using CAmount = int64_t;
 
 static const CAmount COIN = 100000000;
 static const CAmount CENT = 1000000;
@@ -23,9 +23,9 @@ static const CAmount CENT = 1000000;
 class CFeeRate
 {
 private:
-    CAmount nSatoshisPerK; // unit is satoshis-per-1,000-bytes
+    CAmount nSatoshisPerK{0}; // unit is satoshis-per-1,000-bytes
 public:
-    CFeeRate() : nSatoshisPerK(0) {}
+    CFeeRate() = default;
     explicit CFeeRate(const CAmount& _nSatoshisPerK) : nSatoshisPerK(_nSatoshisPerK) {}
     CFeeRate(const CAmount& nFeePaid, size_t nSize);
     CFeeRate(const CFeeRate& other) { nSatoshisPerK = other.nSatoshisPerK; }

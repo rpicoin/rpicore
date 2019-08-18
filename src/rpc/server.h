@@ -14,7 +14,7 @@
 
 #include <list>
 #include <map>
-#include <stdint.h>
+#include <cstdint>
 #include <string>
 
 #include <boost/function.hpp>
@@ -25,8 +25,8 @@ class CRPCCommand;
 
 namespace RPCServer
 {
-    void OnStarted(boost::function<void ()> slot);
-    void OnStopped(boost::function<void ()> slot);
+    void OnStarted(const boost::function<void ()>& slot);
+    void OnStopped(const boost::function<void ()>& slot);
     void OnPreCommand(boost::function<void (const CRPCCommand&)> slot);
     void OnPostCommand(boost::function<void (const CRPCCommand&)> slot);
 }
@@ -139,7 +139,7 @@ private:
 public:
     CRPCTable();
     const CRPCCommand* operator[](const std::string& name) const;
-    std::string help(std::string name) const;
+    std::string help(const std::string& name) const;
 
     /**
      * Execute a method.
@@ -163,20 +163,20 @@ extern const CRPCTable tableRPC;
  * Utilities: convert hex-encoded Values
  * (throws error if not hex).
  */
-extern uint256 ParseHashV(const UniValue& v, std::string strName);
-extern uint256 ParseHashO(const UniValue& o, std::string strKey);
-extern std::vector<unsigned char> ParseHexV(const UniValue& v, std::string strName);
-extern std::vector<unsigned char> ParseHexO(const UniValue& o, std::string strKey);
-extern int ParseInt(const UniValue& o, std::string strKey);
-extern bool ParseBool(const UniValue& o, std::string strKey);
+extern uint256 ParseHashV(const UniValue& v, const std::string& strName);
+extern uint256 ParseHashO(const UniValue& o, const std::string& strKey);
+extern std::vector<unsigned char> ParseHexV(const UniValue& v, const std::string& strName);
+extern std::vector<unsigned char> ParseHexO(const UniValue& o, const std::string& strKey);
+extern int ParseInt(const UniValue& o, const std::string& strKey);
+extern bool ParseBool(const UniValue& o, const std::string& strKey);
 
 extern int64_t nWalletUnlockTime;
 extern CAmount AmountFromValue(const UniValue& value);
 extern UniValue ValueFromAmount(const CAmount& amount);
 extern double GetDifficulty(const CBlockIndex* blockindex = nullptr);
 extern std::string HelpRequiringPassphrase();
-extern std::string HelpExampleCli(std::string methodname, std::string args);
-extern std::string HelpExampleRpc(std::string methodname, std::string args);
+extern std::string HelpExampleCli(const std::string& methodname, const std::string& args);
+extern std::string HelpExampleRpc(const std::string& methodname, const std::string& args);
 
 extern void EnsureWalletIsUnlocked(bool fAllowAnonOnly = false);
 extern UniValue DoZrpiSpend(const CAmount nAmount, bool fMintChange, bool fMinimizeChange, std::vector<CZerocoinMint>& vMintsSelected, std::string address_str, bool isPublicSpend = true);
@@ -355,6 +355,6 @@ bool StartRPC();
 void InterruptRPC();
 void StopRPC();
 std::string JSONRPCExecBatch(const UniValue& vReq);
-void RPCNotifyBlockChange(const uint256 nHeight);
+void RPCNotifyBlockChange(const uint256& nHeight);
 
 #endif // BITCOIN_RPCSERVER_H

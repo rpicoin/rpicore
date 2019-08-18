@@ -8,9 +8,10 @@
 #include <QAbstractItemModel>
 #include <QFile>
 #include <QTextStream>
+#include <utility>
 
-CSVModelWriter::CSVModelWriter(const QString& filename, QObject* parent) : QObject(parent),
-                                                                           filename(filename), model(0)
+CSVModelWriter::CSVModelWriter(QString  filename, QObject* parent) : QObject(parent),
+                                                                           filename(std::move(filename)), model(nullptr)
 {
 }
 

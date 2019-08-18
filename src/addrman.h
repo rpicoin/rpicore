@@ -16,7 +16,7 @@
 
 #include <map>
 #include <set>
-#include <stdint.h>
+#include <cstdint>
 #include <vector>
 
 /**
@@ -295,9 +295,9 @@ public:
         s << nUBuckets;
         std::map<int, int> mapUnkIds;
         int nIds = 0;
-        for (std::map<int, CAddrInfo>::const_iterator it = mapInfo.begin(); it != mapInfo.end(); it++) {
-            mapUnkIds[(*it).first] = nIds;
-            const CAddrInfo& info = (*it).second;
+        for (const auto & it : mapInfo) {
+            mapUnkIds[it.first] = nIds;
+            const CAddrInfo& info = it.second;
             if (info.nRefCount) {
                 assert(nIds != nNew); // this means nNew was wrong, oh ow
                 s << info;
@@ -305,24 +305,24 @@ public:
             }
         }
         nIds = 0;
-        for (std::map<int, CAddrInfo>::const_iterator it = mapInfo.begin(); it != mapInfo.end(); it++) {
-            const CAddrInfo& info = (*it).second;
+        for (const auto & it : mapInfo) {
+            const CAddrInfo& info = it.second;
             if (info.fInTried) {
                 assert(nIds != nTried); // this means nTried was wrong, oh ow
                 s << info;
                 nIds++;
             }
         }
-        for (int bucket = 0; bucket < ADDRMAN_NEW_BUCKET_COUNT; bucket++) {
+        for (const auto & bucket : vvNew) {
             int nSize = 0;
-            for (int i = 0; i < ADDRMAN_BUCKET_SIZE; i++) {
-                if (vvNew[bucket][i] != -1)
+            for (int i : bucket) {
+                if (i != -1)
                     nSize++;
             }
             s << nSize;
-            for (int i = 0; i < ADDRMAN_BUCKET_SIZE; i++) {
-                if (vvNew[bucket][i] != -1) {
-                    int nIndex = mapUnkIds[vvNew[bucket][i]];
+            for (int i : bucket) {
+                if (i != -1) {
+                    int nIndex = mapUnkIds[i];
                     s << nIndex;
                 }
             }
@@ -436,14 +436,14 @@ public:
     {
         std::vector<int>().swap(vRandom);
         nKey = GetRandHash();
-        for (size_t bucket = 0; bucket < ADDRMAN_NEW_BUCKET_COUNT; bucket++) {
-            for (size_t entry = 0; entry < ADDRMAN_BUCKET_SIZE; entry++) {
-                vvNew[bucket][entry] = -1;
+        for (auto & bucket : vvNew) {
+            for (int & entry : bucket) {
+                entry = -1;
             }
         }
-        for (size_t bucket = 0; bucket < ADDRMAN_TRIED_BUCKET_COUNT; bucket++) {
-            for (size_t entry = 0; entry < ADDRMAN_BUCKET_SIZE; entry++) {
-                vvTried[bucket][entry] = -1;
+        for (auto & bucket : vvTried) {
+            for (int & entry : bucket) {
+                entry = -1;
             }
         }
 
@@ -503,8 +503,8 @@ public:
         {
             LOCK(cs);
             Check();
-            for (std::vector<CAddress>::const_iterator it = vAddr.begin(); it != vAddr.end(); it++)
-                nAdd += Add_(*it, source, nTimePenalty) ? 1 : 0;
+            for (const auto & it : vAddr)
+                nAdd += Add_(it, source, nTimePenalty) ? 1 : 0;
             Check();
         }
         if (nAdd)

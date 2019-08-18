@@ -6,6 +6,7 @@
 #ifndef MASTERNODE_PAYMENTS_H
 #define MASTERNODE_PAYMENTS_H
 
+#include <utility>
 #include "key.h"
 #include "main.h"
 #include "masternode.h"
@@ -68,7 +69,7 @@ public:
         nVotes = 0;
     }
 
-    CMasternodePayee(CScript payee, int nVotesIn)
+    CMasternodePayee(const CScript& payee, int nVotesIn)
     {
         scriptPubKey = payee;
         nVotes = nVotesIn;
@@ -102,7 +103,7 @@ public:
         vecPayments.clear();
     }
 
-    void AddPayee(CScript payeeIn, int nIncrement)
+    void AddPayee(const CScript& payeeIn, int nIncrement)
     {
         LOCK(cs_vecPayments);
 
@@ -132,7 +133,7 @@ public:
         return (nVotes > -1);
     }
 
-    bool HasPayeeWithVotes(CScript payee, int nVotesReq)
+    bool HasPayeeWithVotes(const CScript& payee, int nVotesReq)
     {
         LOCK(cs_vecPayments);
 
@@ -176,7 +177,7 @@ public:
     CMasternodePaymentWinner(CTxIn vinIn)
     {
         nBlockHeight = 0;
-        vinMasternode = vinIn;
+        vinMasternode = std::move(vinIn);
         payee = CScript();
     }
 
@@ -195,7 +196,7 @@ public:
     bool SignatureValid();
     void Relay();
 
-    void AddPayee(CScript payeeIn)
+    void AddPayee(const CScript& payeeIn)
     {
         payee = payeeIn;
     }
@@ -263,7 +264,7 @@ public:
     bool IsTransactionValid(const CTransaction& txNew, int nBlockHeight);
     bool IsScheduled(CMasternode& mn, int nNotBlockHeight);
 
-    bool CanVote(COutPoint outMasternode, int nBlockHeight)
+    bool CanVote(const COutPoint& outMasternode, int nBlockHeight)
     {
         LOCK(cs_mapMasternodePayeeVotes);
 

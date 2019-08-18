@@ -202,7 +202,7 @@ std::string CBigNum::ToString(int nBase) const
     std::string str(c_str);
     // Free c_str with the right free function:
     void (*freefunc)(void *, size_t);
-    mp_get_memory_functions (NULL, NULL, &freefunc);
+    mp_get_memory_functions (nullptr, nullptr, &freefunc);
     freefunc(c_str, strlen(c_str) + 1);
 
     return str;

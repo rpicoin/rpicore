@@ -109,7 +109,7 @@ void setupAddressWidget(QValidatedLineEdit* widget, QWidget* parent)
 
 void setupAmountWidget(QLineEdit* widget, QWidget* parent)
 {
-    QDoubleValidator* amountValidator = new QDoubleValidator(parent);
+    auto* amountValidator = new QDoubleValidator(parent);
     amountValidator->setDecimals(8);
     amountValidator->setBottom(0.0);
     widget->setValidator(amountValidator);
@@ -417,7 +417,7 @@ ToolTipToRichTextFilter::ToolTipToRichTextFilter(int size_threshold, QObject* pa
 bool ToolTipToRichTextFilter::eventFilter(QObject* obj, QEvent* evt)
 {
     if (evt->type() == QEvent::ToolTipChange) {
-        QWidget* widget = static_cast<QWidget*>(obj);
+        auto* widget = static_cast<QWidget*>(obj);
         QString tooltip = widget->toolTip();
         if (tooltip.size() > size_threshold && !tooltip.startsWith("<qt")) {
             // Escape the current message as HTML and replace \n by <br> if it's not rich text
@@ -558,7 +558,7 @@ DHMSTableWidgetItem::DHMSTableWidgetItem(const int64_t seconds) : QTableWidgetIt
  */
 bool DHMSTableWidgetItem::operator<(QTableWidgetItem const& item) const
 {
-    DHMSTableWidgetItem const* rhs =
+    auto const* rhs =
         dynamic_cast<DHMSTableWidgetItem const*>(&item);
 
     if (!rhs)

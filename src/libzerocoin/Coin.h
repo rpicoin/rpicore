@@ -13,6 +13,7 @@
 
 #ifndef COIN_H_
 #define COIN_H_
+#include <utility>
 #include "Denominations.h"
 #include "Params.h"
 #include "amount.h"
@@ -26,7 +27,7 @@ namespace libzerocoin
     class InvalidSerialException : public std::exception {
     public:
         std::string message;
-        InvalidSerialException(const std::string &message) : message(message) {}
+        InvalidSerialException(std::string message) : message(std::move(message)) {}
     };
 
     int ExtractVersionFromSerial(const CBigNum& bnSerial);
@@ -119,8 +120,8 @@ public:
     const uint8_t& getVersion() const { return this->version; }
 
     void setPublicCoin(PublicCoin p) { publicCoin = p; }
-    void setRandomness(CBigNum n) { randomness = n; }
-    void setSerialNumber(CBigNum n) { serialNumber = n; }
+    void setRandomness(const CBigNum& n) { randomness = n; }
+    void setSerialNumber(const CBigNum& n) { serialNumber = n; }
     void setVersion(uint8_t nVersion) { this->version = nVersion; }
     void setPrivKey(const CPrivKey& privkey) { this->privkey = privkey; }
     bool sign(const uint256& hash, std::vector<unsigned char>& vchSig) const;

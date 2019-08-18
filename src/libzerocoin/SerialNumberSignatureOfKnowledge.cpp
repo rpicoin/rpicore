@@ -19,7 +19,7 @@ namespace libzerocoin {
 SerialNumberSignatureOfKnowledge::SerialNumberSignatureOfKnowledge(const libzerocoin::ZerocoinParams* p): params(p) { }
 
 // Use one 256 bit seed and concatenate 4 unique 256 bit hashes to make a 1024 bit hash
-CBigNum SeedTo1024(uint256 hashSeed) {
+CBigNum SeedTo1024(const uint256& hashSeed) {
     CHashWriter hasher(0,0);
     hasher << hashSeed;
 
@@ -38,7 +38,7 @@ CBigNum SeedTo1024(uint256 hashSeed) {
 }
 
 SerialNumberSignatureOfKnowledge::SerialNumberSignatureOfKnowledge(const
-        libzerocoin::ZerocoinParams* p, const PrivateCoin& coin, const Commitment& commitmentToCoin, uint256 msghash):
+        libzerocoin::ZerocoinParams* p, const PrivateCoin& coin, const Commitment& commitmentToCoin, const uint256& msghash):
                 params(p),
                 s_notprime(p->zkp_iterations),
                 sprime(p->zkp_iterations)
@@ -90,7 +90,7 @@ SerialNumberSignatureOfKnowledge::SerialNumberSignatureOfKnowledge(const
         hasher << c[i];
 
     this->hash = hasher.GetHash();
-    unsigned char *hashbytes =  (unsigned char*) &hash;
+    auto *hashbytes =  (unsigned char*) &hash;
 
     for(uint32_t i = 0; i < params->zkp_iterations; i++) {
         int bit = i % 8;
@@ -123,7 +123,7 @@ inline CBigNum SerialNumberSignatureOfKnowledge::challengeCalculation(const CBig
 }
 
 bool SerialNumberSignatureOfKnowledge::Verify(const CBigNum& coinSerialNumber, const CBigNum& valueOfCommitmentToCoin,
-        const uint256 msghash, bool isInParamsValidationRange) const {
+        const uint256& msghash, bool isInParamsValidationRange) const {
     CBigNum a = params->coinCommitmentGroup.g;
     CBigNum b = params->coinCommitmentGroup.h;
     CBigNum g = params->serialNumberSoKCommitmentGroup.g;
@@ -145,7 +145,7 @@ bool SerialNumberSignatureOfKnowledge::Verify(const CBigNum& coinSerialNumber, c
     hasher << *params << valueOfCommitmentToCoin << coinSerialNumber << msghash;
 
     std::vector<CBigNum> tprime(params->zkp_iterations);
-    unsigned char *hashbytes = (unsigned char*) &this->hash;
+    auto *hashbytes = (unsigned char*) &this->hash;
 
     try {
         for (uint32_t i = 0; i < params->zkp_iterations; i++) {

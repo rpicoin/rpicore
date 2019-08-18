@@ -10,7 +10,7 @@
 
 namespace AccumulatorCheckpoints
 {
-    typedef std::map<libzerocoin::CoinDenomination, CBigNum> Checkpoint;
+    using Checkpoint = std::map<libzerocoin::CoinDenomination, CBigNum>;
     extern std::map<int, Checkpoint> mapCheckpoints;
 
     UniValue read_json(const std::string& jsondata);

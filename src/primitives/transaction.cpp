@@ -14,6 +14,8 @@
 #include "utilstrencodings.h"
 #include "transaction.h"
 
+#include <utility>
+
 
 extern bool GetTransaction(const uint256 &hash, CTransaction &txOut, uint256 &hashBlock, bool fAllowSlow);
 
@@ -32,16 +34,16 @@ uint256 COutPoint::GetHash()
     return Hash(BEGIN(hash), END(hash), BEGIN(n), END(n));
 }
 
-CTxIn::CTxIn(COutPoint prevoutIn, CScript scriptSigIn, uint32_t nSequenceIn)
+CTxIn::CTxIn(const COutPoint& prevoutIn, const CScript& scriptSigIn, uint32_t nSequenceIn)
 {
-    prevout = prevoutIn;
+    prevout = std::move(prevoutIn);
     scriptSig = scriptSigIn;
     nSequence = nSequenceIn;
 }
 
-CTxIn::CTxIn(uint256 hashPrevTx, uint32_t nOut, CScript scriptSigIn, uint32_t nSequenceIn)
+CTxIn::CTxIn(const uint256& hashPrevTx, uint32_t nOut, const CScript& scriptSigIn, uint32_t nSequenceIn)
 {
-    prevout = COutPoint(hashPrevTx, nOut);
+    prevout = COutPoint(std::move(hashPrevTx), nOut);
     scriptSig = scriptSigIn;
     nSequence = nSequenceIn;
 }
@@ -90,7 +92,7 @@ std::string CTxIn::ToString() const
     return str;
 }
 
-CTxOut::CTxOut(const CAmount& nValueIn, CScript scriptPubKeyIn)
+CTxOut::CTxOut(const CAmount& nValueIn, const CScript& scriptPubKeyIn)
 {
     nValue = nValueIn;
     scriptPubKey = scriptPubKeyIn;
@@ -153,10 +155,12 @@ std::string CMutableTransaction::ToString() const
         vin.size(),
         vout.size(),
         nLockTime);
-    for (unsigned int i = 0; i < vin.size(); i++)
-        str += "    " + vin[i].ToString() + "\n";
-    for (unsigned int i = 0; i < vout.size(); i++)
-        str += "    " + vout[i].ToString() + "\n";
+    for (const auto & i : vin){
+        str += "    " + i.ToString() + "\n";
+    }
+    for (const auto & i : vout){
+        str += "    " + i.ToString() + "\n";
+    }
     return str;
 }
 
@@ -223,16 +227,16 @@ bool CTransaction::IsCoinStake() const
 CAmount CTransaction::GetValueOut() const
 {
     CAmount nValueOut = 0;
-    for (std::vector<CTxOut>::const_iterator it(vout.begin()); it != vout.end(); ++it)
+    for (const auto & it : vout)
     {
         // RPICOIN: previously MoneyRange() was called here. This has been replaced with negative check and boundary wrap check.
-        if (it->nValue < 0)
+        if (it.nValue < 0)
             throw std::runtime_error("CTransaction::GetValueOut() : value out of range : less than 0");
 
-        if ((nValueOut + it->nValue) < nValueOut)
+        if ((nValueOut + it.nValue) < nValueOut)
             throw std::runtime_error("CTransaction::GetValueOut() : value out of range : wraps the int64_t boundary");
 
-        nValueOut += it->nValue;
+        nValueOut += it.nValue;
     }
     return nValueOut;
 }
@@ -247,7 +251,7 @@ CAmount CTransaction::GetZerocoinMinted() const
     return  nValueOut;
 }
 
-bool CTransaction::UsesUTXO(const COutPoint out)
+bool CTransaction::UsesUTXO(const COutPoint& out)
 {
     for (const CTxIn& in : vin) {
         if (in.prevout == out)
@@ -261,8 +265,9 @@ std::list<COutPoint> CTransaction::GetOutPoints() const
 {
     std::list<COutPoint> listOutPoints;
     uint256 txHash = GetHash();
-    for (unsigned int i = 0; i < vout.size(); i++)
+    for (unsigned int i = 0; i < vout.size(); i++){
         listOutPoints.emplace_back(COutPoint(txHash, i));
+    }
     return listOutPoints;
 }
 
@@ -306,9 +311,9 @@ unsigned int CTransaction::CalculateModifiedSize(unsigned int nTxSize) const
     // risk encouraging people to create junk outputs to redeem later.
     if (nTxSize == 0)
         nTxSize = ::GetSerializeSize(*this, SER_NETWORK, PROTOCOL_VERSION);
-    for (std::vector<CTxIn>::const_iterator it(vin.begin()); it != vin.end(); ++it)
+    for (const auto & it : vin)
     {
-        unsigned int offset = 41U + std::min(110U, (unsigned int)it->scriptSig.size());
+        unsigned int offset = 41U + std::min(110U, (unsigned int)it.scriptSig.size());
         if (nTxSize > offset)
             nTxSize -= offset;
     }
@@ -325,9 +330,11 @@ std::string CTransaction::ToString() const
                      vout.size(),
                      nLockTime,
                      nTime);
-    for (unsigned int i = 0; i < vin.size(); i++)
-        str += "    " + vin[i].ToString() + "\n";
-    for (unsigned int i = 0; i < vout.size(); i++)
-        str += "    " + vout[i].ToString() + "\n";
+    for (const auto & i : vin){
+        str += "    " + i.ToString() + "\n";
+    }
+    for (const auto & i : vout){
+        str += "    " + i.ToString() + "\n";
+    }
     return str;
 }

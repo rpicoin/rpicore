@@ -225,7 +225,7 @@ bool ComputeNextStakeModifier(const CBlockIndex* pindexPrev, uint64_t& nStakeMod
     const CBlockIndex* pindex = pindexPrev;
 
     while (pindex && pindex->GetBlockTime() >= nSelectionIntervalStart) {
-        vSortedByTimestamp.push_back(std::make_pair(pindex->GetBlockTime(), pindex->GetBlockHash()));
+        vSortedByTimestamp.emplace_back(std::make_pair(pindex->GetBlockTime(), pindex->GetBlockHash()));
         pindex = pindex->pprev;
     }
 
@@ -285,11 +285,12 @@ bool ComputeNextStakeModifier(const CBlockIndex* pindexPrev, uint64_t& nStakeMod
 
 // The stake modifier used to hash for a stake kernel is chosen as the stake
 // modifier about a selection interval later than the coin generating the kernel
-bool GetKernelStakeModifier(uint256 hashBlockFrom, uint64_t& nStakeModifier, int& nStakeModifierHeight, int64_t& nStakeModifierTime, bool fPrintProofOfStake)
+bool GetKernelStakeModifier(const uint256& hashBlockFrom, uint64_t& nStakeModifier, int& nStakeModifierHeight, int64_t& nStakeModifierTime, bool fPrintProofOfStake)
 {
     nStakeModifier = 0;
-    if (!mapBlockIndex.count(hashBlockFrom))
+    if (!mapBlockIndex.count(hashBlockFrom)){
         return error("%s : block not indexed", __func__);
+    }
     const CBlockIndex* pindexFrom = mapBlockIndex[hashBlockFrom];
     nStakeModifierHeight = pindexFrom->nHeight;
     nStakeModifierTime = pindexFrom->GetBlockTime();
@@ -329,10 +330,10 @@ bool stakeTargetHit(const uint256& hashProofOfStake, const int64_t& nValueIn, co
     // Now check if proof-of-stake hash meets target protocol
     return hashProofOfStake < (bnCoinDayWeight * bnTargetPerCoinDay);
 }
-bool stakeTargetHitOld(uint256 hashProofOfStake, uint256 bnTargetPerCoinDay) {
-    if (hashProofOfStake > bnTargetPerCoinDay)
+bool stakeTargetHitOld(const uint256& hashProofOfStake, const uint256& bnTargetPerCoinDay) {
+    if (hashProofOfStake > bnTargetPerCoinDay) {
         return false;
-
+    }
     return true;
 }
 bool CheckStakeV2(const CDataStream& ssUniqueID, CAmount nValueIn, const uint64_t nStakeModifier, const uint256& bnTarget,
@@ -431,7 +432,7 @@ bool ContextualCheckZerocoinStake(int nPreviousBlockHeight, CStakeInput* stake)
     if (nPreviousBlockHeight < Params().NEW_PROTOCOLS_STARTHEIGHT())
         return error("%s : zRPI stake block is less than allowed start height", __func__);
 
-    if (CZRpiStake* zRPI = dynamic_cast<CZRpiStake*>(stake)) {
+    if (auto* zRPI = dynamic_cast<CZRpiStake*>(stake)) {
         CBlockIndex* pindexFrom = zRPI->GetIndexFrom();
         if (!pindexFrom)
             return error("%s : failed to get index associated with zRPI stake checksum", __func__);
@@ -452,7 +453,7 @@ bool ContextualCheckZerocoinStake(int nPreviousBlockHeight, CStakeInput* stake)
 }
 
 // Check kernel hash target and coinstake signature
-bool CheckProofOfStake(const CBlock block, uint256& hashProofOfStake, std::unique_ptr<CStakeInput>& stake, int nPreviousBlockHeight)
+bool CheckProofOfStake(const CBlock& block, uint256& hashProofOfStake, std::unique_ptr<CStakeInput>& stake, int nPreviousBlockHeight)
 {
     const CTransaction tx = block.vtx[1];
     if (!tx.IsCoinStake())
@@ -484,7 +485,7 @@ bool CheckProofOfStake(const CBlock block, uint256& hashProofOfStake, std::uniqu
         if (!VerifyScript(txin.scriptSig, txPrev.vout[txin.prevout.n].scriptPubKey, SCRIPT_VERIFY_NONE, TransactionSignatureChecker(&tx, 0)))
             return error("%s : VerifySignature failed on coinstake %s", __func__, tx.GetHash().ToString().c_str());
 
-        CRpiStake* rpiInput = new CRpiStake();
+        auto* rpiInput = new CRpiStake();
         rpiInput->SetInput(txPrev, txin.prevout.n);
         stake = std::unique_ptr<CStakeInput>(rpiInput);
     }

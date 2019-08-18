@@ -3,6 +3,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "accumulators.h"
+ #include <utility>
 #include "accumulatormap.h"
 #include "chainparams.h"
 #include "main.h"
@@ -84,7 +85,7 @@ bool GetAccumulatorValueFromChecksum(uint32_t nChecksum, bool fMemoryOnly, CBigN
 
 bool GetAccumulatorValueFromDB(uint256 nCheckpoint, libzerocoin::CoinDenomination denom, CBigNum& bnAccValue)
 {
-    uint32_t nChecksum = ParseChecksum(nCheckpoint, denom);
+    uint32_t nChecksum = ParseChecksum(std::move(nCheckpoint), denom);
     return GetAccumulatorValueFromChecksum(nChecksum, false, bnAccValue);
 }
 
@@ -136,7 +137,7 @@ bool EraseAccumulatorValues(const uint256& nCheckpointErase, const uint256& nChe
 }
 
 
-bool LoadAccumulatorValuesFromDB(const uint256 nCheckpoint)
+bool LoadAccumulatorValuesFromDB(const uint256& nCheckpoint)
 {
     for (auto& denomination : libzerocoin::zerocoinDenomList) {
         uint32_t nChecksum = ParseChecksum(nCheckpoint, denomination);
@@ -376,7 +377,7 @@ std::list<libzerocoin::PublicCoin> GetPubcoinFromBlock(const CBlockIndex* pindex
 
 
 
-int AddBlockMintsToAccumulator(const libzerocoin::CoinDenomination den, const CBloomFilter filter, const CBlockIndex* pindex,
+int AddBlockMintsToAccumulator(const libzerocoin::CoinDenomination den, const CBloomFilter& filter, const CBlockIndex* pindex,
                                libzerocoin::Accumulator* accumulator, bool isWitness, std::list<CBigNum>& notAddedCoins)
 {
     // if this block contains mints of the denomination that is being spent, then add them to the witness
@@ -488,7 +489,7 @@ bool LockMethod(){
     return true;
 }
 
-int SearchMintHeightOf(CBigNum value){
+int SearchMintHeightOf(const CBigNum& value){
     uint256 txid;
     if (!zerocoinDB->ReadCoinMint(value, txid))
         throw searchMintHeightException("searchForMintHeightOf:: failed to read mint from db");
@@ -612,7 +613,7 @@ bool calculateAccumulatedBlocksFor(
         CBigNum &bnAccValue,
         libzerocoin::Accumulator &accumulator,
         libzerocoin::CoinDenomination den,
-        CBloomFilter filter,
+        const CBloomFilter& filter,
         libzerocoin::Accumulator &witnessAccumulator,
         std::list<CBigNum>& ret,
         std::string& strError
@@ -669,7 +670,7 @@ bool calculateAccumulatedBlocksFor(
         CBigNum &bnAccValue,
         libzerocoin::Accumulator &accumulator,
         libzerocoin::Accumulator &witnessAccumulator,
-        libzerocoin::PublicCoin coin,
+        const libzerocoin::PublicCoin& coin,
         std::string& strError
 ){
 

@@ -572,7 +572,7 @@ bool CMasternodeBlockPayees::IsTransactionValid(const CTransaction& txNew)
 
     for (CMasternodePayee& payee : vecPayments) {
         bool found = false;
-        for (CTxOut out : txNew.vout) {
+        for (const CTxOut& out : txNew.vout) {
             if (payee.scriptPubKey == out.scriptPubKey) {
                 if(out.nValue >= requiredMasternodePayment)
                     found = true;
@@ -657,7 +657,7 @@ void CMasternodePayments::CleanPaymentList()
     //keep up to five cycles for historical sake
     int nLimit = std::max(int(mnodeman.size() * 1.25), 1000);
 
-    std::map<uint256, CMasternodePaymentWinner>::iterator it = mapMasternodePayeeVotes.begin();
+    auto it = mapMasternodePayeeVotes.begin();
     while (it != mapMasternodePayeeVotes.end()) {
         CMasternodePaymentWinner winner = (*it).second;
 
@@ -816,7 +816,7 @@ void CMasternodePayments::Sync(CNode* node, int nCountNeeded)
     if (nCountNeeded > nCount) nCountNeeded = nCount;
 
     int nInvCount = 0;
-    std::map<uint256, CMasternodePaymentWinner>::iterator it = mapMasternodePayeeVotes.begin();
+    auto it = mapMasternodePayeeVotes.begin();
     while (it != mapMasternodePayeeVotes.end()) {
         CMasternodePaymentWinner winner = (*it).second;
         if (winner.nBlockHeight >= nHeight - nCountNeeded && winner.nBlockHeight <= nHeight + 20) {
@@ -844,7 +844,7 @@ int CMasternodePayments::GetOldestBlock()
 
     int nOldestBlock = std::numeric_limits<int>::max();
 
-    std::map<int, CMasternodeBlockPayees>::iterator it = mapMasternodeBlocks.begin();
+    auto it = mapMasternodeBlocks.begin();
     while (it != mapMasternodeBlocks.end()) {
         if ((*it).first < nOldestBlock) {
             nOldestBlock = (*it).first;
@@ -862,7 +862,7 @@ int CMasternodePayments::GetNewestBlock()
 
     int nNewestBlock = 0;
 
-    std::map<int, CMasternodeBlockPayees>::iterator it = mapMasternodeBlocks.begin();
+    auto it = mapMasternodeBlocks.begin();
     while (it != mapMasternodeBlocks.end()) {
         if ((*it).first > nNewestBlock) {
             nNewestBlock = (*it).first;

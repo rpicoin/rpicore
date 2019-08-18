@@ -31,7 +31,7 @@ class BlockExplorer : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit BlockExplorer(QWidget* parent = 0);
+    explicit BlockExplorer(QWidget* parent = nullptr);
     ~BlockExplorer();
 
 protected:

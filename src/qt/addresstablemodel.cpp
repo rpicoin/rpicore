@@ -15,6 +15,7 @@
 
 #include <QDebug>
 #include <QFont>
+#include <utility>
 
 const QString AddressTableModel::Send = "S";
 const QString AddressTableModel::Receive = "R";
@@ -34,8 +35,8 @@ struct AddressTableEntry {
     QString pubcoin;
 
     AddressTableEntry() {}
-    AddressTableEntry(Type type, const QString &pubcoin):    type(type), pubcoin(pubcoin) {}
-    AddressTableEntry(Type type, const QString& label, const QString& address) : type(type), label(label), address(address) {}
+    AddressTableEntry(Type type, QString pubcoin):    type(type), pubcoin(std::move(pubcoin)) {}
+    AddressTableEntry(Type type, QString  label, QString  address) : type(type), label(std::move(label)), address(std::move(address)) {}
 };
 
 struct AddressTableEntryLessThan {
@@ -194,7 +195,7 @@ public:
     }
 };
 
-AddressTableModel::AddressTableModel(CWallet* wallet, WalletModel* parent) : QAbstractTableModel(parent), walletModel(parent), wallet(wallet), priv(0)
+AddressTableModel::AddressTableModel(CWallet* wallet, WalletModel* parent) : QAbstractTableModel(parent), walletModel(parent), wallet(wallet), priv(nullptr)
 {
     columns << tr("Label") << tr("Address");
     priv = new AddressTablePriv(wallet, this);
@@ -223,7 +224,7 @@ QVariant AddressTableModel::data(const QModelIndex& index, int role) const
     if (!index.isValid())
         return QVariant();
 
-    AddressTableEntry* rec = static_cast<AddressTableEntry*>(index.internalPointer());
+    auto* rec = static_cast<AddressTableEntry*>(index.internalPointer());
 
     if (role == Qt::DisplayRole || role == Qt::EditRole) {
         switch (index.column()) {
@@ -259,7 +260,7 @@ bool AddressTableModel::setData(const QModelIndex& index, const QVariant& value,
 {
     if (!index.isValid())
         return false;
-    AddressTableEntry* rec = static_cast<AddressTableEntry*>(index.internalPointer());
+    auto* rec = static_cast<AddressTableEntry*>(index.internalPointer());
     std::string strPurpose = (rec->type == AddressTableEntry::Sending ? "send" : "receive");
     editStatus = OK;
 
@@ -317,8 +318,8 @@ QVariant AddressTableModel::headerData(int section, Qt::Orientation orientation,
 Qt::ItemFlags AddressTableModel::flags(const QModelIndex& index) const
 {
     if (!index.isValid())
-        return 0;
-    AddressTableEntry* rec = static_cast<AddressTableEntry*>(index.internalPointer());
+        return nullptr;
+    auto* rec = static_cast<AddressTableEntry*>(index.internalPointer());
 
     Qt::ItemFlags retval = Qt::ItemIsSelectable | Qt::ItemIsEnabled;
     // Can edit address and label for sending addresses,

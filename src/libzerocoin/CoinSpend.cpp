@@ -14,14 +14,15 @@
 #include "CoinSpend.h"
 #include <iostream>
 #include <sstream>
+#include <utility>
 
 namespace libzerocoin
 {
     CoinSpend::CoinSpend(const libzerocoin::ZerocoinParams* paramsCoin, const libzerocoin::ZerocoinParams* paramsAcc, const PrivateCoin& coin, libzerocoin::Accumulator& a, const uint32_t& checksum,
-                     const libzerocoin::AccumulatorWitness& witness, const uint256& ptxHash, const SpendType& spendType) :
+                     const libzerocoin::AccumulatorWitness& witness, uint256  ptxHash, const SpendType& spendType) :
                                                                                   coinSerialNumber((coin.getSerialNumber())),
                                                                                   spendType(spendType),
-                                                                                  ptxHash(ptxHash),
+                                                                                  ptxHash(std::move(ptxHash)),
                                                                                   accChecksum(checksum),
                                                                                   accumulatorPoK(&paramsAcc->accumulatorParams),
                                                                                   serialNumberSoK(paramsCoin),

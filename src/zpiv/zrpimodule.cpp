@@ -3,6 +3,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "zpiv/zrpimodule.h"
+#include <utility>
 #include "zrpichain.h"
 #include "libzerocoin/Commitment.h"
 #include "libzerocoin/Coin.h"
@@ -25,7 +26,7 @@ bool PublicCoinSpend::validate() const {
     }
     // Now check that the signature validates with the serial
     if (!HasValidSignature()) {
-        return error("%s: signature invalid", __func__);;
+        return error("%s: signature invalid", __func__);
     }
     return true;
 }
@@ -39,7 +40,7 @@ const uint256 PublicCoinSpend::signatureHash() const
 
 namespace ZRPIModule {
 
-    bool createInput(CTxIn &in, CZerocoinMint &mint, uint256 hashTxOut) {
+    bool createInput(CTxIn &in, CZerocoinMint &mint, const uint256& hashTxOut) {
         libzerocoin::ZerocoinParams *params = Params().Zerocoin_Params(false);
         uint8_t nVersion = mint.GetVersion();
         if (nVersion < libzerocoin::PrivateCoin::PUBKEY_VERSION) {
@@ -52,7 +53,7 @@ namespace ZRPIModule {
             return error("%s: failed to set zRPI privkey mint version=%d", __func__, nVersion);
 
         PublicCoinSpend spend(params, mint.GetSerialNumber(), mint.GetRandomness(), key.GetPubKey());
-        spend.setTxOutHash(hashTxOut);
+        spend.setTxOutHash(std::move(hashTxOut));
         spend.outputIndex = mint.GetOutputIndex();
         spend.txHash = mint.GetTxHash();
         spend.setDenom(mint.GetDenomination());

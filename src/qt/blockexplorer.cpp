@@ -38,8 +38,8 @@ static CAmount getTxIn(const CTransaction& tx)
         return 0;
 
     CAmount Sum = 0;
-    for (unsigned int i = 0; i < tx.vin.size(); i++)
-        Sum += getPrevOut(tx.vin[i].prevout).nValue;
+    for (const auto & i : tx.vin)
+        Sum += getPrevOut(i.prevout).nValue;
     return Sum;
 }
 
@@ -100,7 +100,7 @@ static std::string makeHTMLTable(const std::string* pCells, int nRows, int nColu
     return Table;
 }
 
-static std::string TxToRow(const CTransaction& tx, const CScript& Highlight = CScript(), const std::string& Prepend = std::string(), int64_t* pSum = NULL)
+static std::string TxToRow(const CTransaction& tx, const CScript& Highlight = CScript(), const std::string& Prepend = std::string(), int64_t* pSum = nullptr)
 {
     std::string InAmounts, InAddresses, OutAmounts, OutAddresses;
     int64_t Delta = 0;

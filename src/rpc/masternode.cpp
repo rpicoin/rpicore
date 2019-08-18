@@ -339,7 +339,7 @@ UniValue startmasternode (const UniValue& params, bool fHelp)
             CMasternode* pmn = mnodeman.Find(vin);
             CMasternodeBroadcast mnb;
 
-            if (pmn != NULL) {
+            if (pmn != nullptr) {
                 if (strCommand == "missing") continue;
                 if (strCommand == "disabled" && pmn->IsEnabled()) continue;
             }
@@ -381,7 +381,7 @@ UniValue startmasternode (const UniValue& params, bool fHelp)
         UniValue statusObj(UniValue::VOBJ);
         statusObj.push_back(Pair("alias", alias));
 
-        for (CMasternodeConfig::CMasternodeEntry mne: masternodeConfig.getEntries()) {
+        for (const CMasternodeConfig::CMasternodeEntry& mne: masternodeConfig.getEntries()) {
             if (mne.getAlias() == alias) {
                 found = true;
                 std::string errorMessage;
@@ -725,7 +725,7 @@ UniValue getmasternodescores (const UniValue& params, bool fHelp)
     return obj;
 }
 
-bool DecodeHexMnb(CMasternodeBroadcast& mnb, std::string strHexMnb) {
+bool DecodeHexMnb(CMasternodeBroadcast& mnb, const std::string& strHexMnb) {
 
     if (!IsHex(strHexMnb))
         return false;
@@ -795,7 +795,7 @@ UniValue createmasternodebroadcast(const UniValue& params, bool fHelp)
         UniValue statusObj(UniValue::VOBJ);
         statusObj.push_back(Pair("alias", alias));
 
-        for(CMasternodeConfig::CMasternodeEntry mne: masternodeConfig.getEntries()) {
+        for(const CMasternodeConfig::CMasternodeEntry& mne: masternodeConfig.getEntries()) {
             if(mne.getAlias() == alias) {
                 found = true;
                 std::string errorMessage;
@@ -838,7 +838,7 @@ UniValue createmasternodebroadcast(const UniValue& params, bool fHelp)
 
         UniValue resultsObj(UniValue::VARR);
 
-        for(CMasternodeConfig::CMasternodeEntry mne: masternodeConfig.getEntries()) {
+        for(const CMasternodeConfig::CMasternodeEntry& mne: masternodeConfig.getEntries()) {
             std::string errorMessage;
 
             CTxIn vin = CTxIn(uint256S(mne.getTxHash()), uint32_t(atoi(mne.getOutputIndex().c_str())));

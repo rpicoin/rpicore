@@ -13,8 +13,8 @@
 #include "uint256.h"
 #include "undo.h"
 
-#include <assert.h>
-#include <stdint.h>
+#include <cassert>
+#include <cstdint>
 
 #include <boost/unordered_map.hpp>
 
@@ -188,9 +188,9 @@ public:
         // spentness bitmask
         nSize += nMaskSize;
         // txouts themself
-        for (unsigned int i = 0; i < vout.size(); i++)
-            if (!vout[i].IsNull())
-                nSize += ::GetSerializeSize(CTxOutCompressor(REF(vout[i])), nType, nVersion);
+        for (const auto & i : vout)
+            if (!i.IsNull())
+                nSize += ::GetSerializeSize(CTxOutCompressor(REF(i)), nType, nVersion);
         // height
         nSize += ::GetSerializeSize(VARINT(nHeight), nType, nVersion);
         return nSize;
@@ -353,7 +353,7 @@ public:
     virtual bool GetStats(CCoinsStats& stats) const;
 
     //! As we use CCoinsViews polymorphically, have a virtual destructor
-    virtual ~CCoinsView() {}
+    virtual ~CCoinsView() = default;
 };
 
 

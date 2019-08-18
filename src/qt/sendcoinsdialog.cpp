@@ -30,8 +30,8 @@
 
 SendCoinsDialog::SendCoinsDialog(QWidget* parent) : QDialog(parent, Qt::WindowSystemMenuHint | Qt::WindowTitleHint | Qt::WindowCloseButtonHint),
                                                     ui(new Ui::SendCoinsDialog),
-                                                    clientModel(0),
-                                                    model(0),
+                                                    clientModel(nullptr),
+                                                    model(nullptr),
                                                     fNewRecipientAllowed(true),
                                                     fFeeMinimized(true)
 {
@@ -448,7 +448,7 @@ void SendCoinsDialog::accept()
 
 SendCoinsEntry* SendCoinsDialog::addEntry()
 {
-    SendCoinsEntry* entry = new SendCoinsEntry(this);
+    auto* entry = new SendCoinsEntry(this);
     entry->setModel(model);
     ui->entries->addWidget(entry);
     connect(entry, SIGNAL(removeEntry(SendCoinsEntry*)), this, SLOT(removeEntry(SendCoinsEntry*)));
@@ -469,7 +469,7 @@ SendCoinsEntry* SendCoinsDialog::addEntry()
 
 void SendCoinsDialog::updateTabsAndLabels()
 {
-    setupTabChain(0);
+    setupTabChain(nullptr);
     coinControlUpdateLabels();
 }
 
@@ -502,7 +502,7 @@ QWidget* SendCoinsDialog::setupTabChain(QWidget* prev)
 
 void SendCoinsDialog::setAddress(const QString& address)
 {
-    SendCoinsEntry* entry = 0;
+    SendCoinsEntry* entry = nullptr;
     // Replace the first entry if it is still unused
     if (ui->entries->count() == 1) {
         SendCoinsEntry* first = qobject_cast<SendCoinsEntry*>(ui->entries->itemAt(0)->widget());
@@ -522,7 +522,7 @@ void SendCoinsDialog::pasteEntry(const SendCoinsRecipient& rv)
     if (!fNewRecipientAllowed)
         return;
 
-    SendCoinsEntry* entry = 0;
+    SendCoinsEntry* entry = nullptr;
     // Replace the first entry if it is still unused
     if (ui->entries->count() == 1) {
         SendCoinsEntry* first = qobject_cast<SendCoinsEntry*>(ui->entries->itemAt(0)->widget());

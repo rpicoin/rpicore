@@ -59,8 +59,8 @@ QValidator::State BitcoinAddressEntryValidator::validate(QString& input, int& po
 
     // Validation
     QValidator::State state = QValidator::Acceptable;
-    for (int idx = 0; idx < input.size(); ++idx) {
-        int ch = input.at(idx).unicode();
+    for (auto idx : input) {
+        int ch = idx.unicode();
 
         if (((ch >= '0' && ch <= '9') ||
                 (ch >= 'a' && ch <= 'z') ||

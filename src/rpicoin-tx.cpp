@@ -18,7 +18,7 @@
 #include "utilmoneystr.h"
 #include "utilstrencodings.h"
 
-#include <stdio.h>
+#include <cstdio>
 
 #include <boost/algorithm/string.hpp>
 #include <boost/assign/list_of.hpp>
@@ -298,9 +298,9 @@ static bool findSighashFlags(int& flags, const std::string& flagStr)
 {
     flags = 0;
 
-    for (unsigned int i = 0; i < N_SIGHASH_OPTS; i++) {
-        if (flagStr == sighashOptions[i].flagStr) {
-            flags = sighashOptions[i].flags;
+    for (auto sighashOption : sighashOptions) {
+        if (flagStr == sighashOption.flagStr) {
+            flags = sighashOption.flags;
             return true;
         }
     }
@@ -308,14 +308,14 @@ static bool findSighashFlags(int& flags, const std::string& flagStr)
     return false;
 }
 
-uint256 ParseHashUO(std::map<std::string, UniValue>& o, std::string strKey)
+uint256 ParseHashUO(std::map<std::string, UniValue>& o, const std::string& strKey)
 {
     if (!o.count(strKey))
         return 0;
     return ParseHashUV(o[strKey], strKey);
 }
 
-std::vector<unsigned char> ParseHexUO(std::map<std::string, UniValue>& o, std::string strKey)
+std::vector<unsigned char> ParseHexUO(std::map<std::string, UniValue>& o, const std::string& strKey)
 {
     if (!o.count(strKey)) {
         std::vector<unsigned char> emptyVec;

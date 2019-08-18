@@ -20,7 +20,7 @@ class ProposalFrame : public QFrame
     Q_OBJECT
 
 public:
-    explicit ProposalFrame(QWidget* parent = 0);
+    explicit ProposalFrame(QWidget* parent = nullptr);
     ~ProposalFrame();
 
     void setProposal(CBudgetProposal* proposal);

@@ -187,12 +187,12 @@ UniValue addnode(const UniValue& params, bool fHelp)
 
     if (strCommand == "onetry") {
         CAddress addr;
-        OpenNetworkConnection(addr, NULL, strNode.c_str());
+        OpenNetworkConnection(addr, nullptr, strNode.c_str());
         return NullUniValue;
     }
 
     LOCK(cs_vAddedNodes);
-    std::vector<std::string>::iterator it = vAddedNodes.begin();
+    auto it = vAddedNodes.begin();
     for (; it != vAddedNodes.end(); it++)
         if (strNode == *it)
             break;
@@ -226,7 +226,7 @@ UniValue disconnectnode(const UniValue& params, bool fHelp)
         );
 
     CNode* pNode = FindNode(params[0].get_str());
-    if (pNode == NULL)
+    if (pNode == nullptr)
         throw JSONRPCError(RPC_CLIENT_NODE_NOT_CONNECTED, "Node not found in connected nodes");
 
     pNode->CloseSocketDisconnect();
@@ -369,7 +369,7 @@ static UniValue GetNetworksInfo()
 {
     UniValue networks(UniValue::VARR);
     for (int n = 0; n < NET_MAX; ++n) {
-        enum Network network = static_cast<enum Network>(n);
+        auto network = static_cast<enum Network>(n);
         if (network == NET_UNROUTABLE)
             continue;
         proxyType proxy;

@@ -19,7 +19,7 @@ protected:
     CBlockIndex* pindexFrom;
 
 public:
-    virtual ~CStakeInput(){};
+    virtual ~CStakeInput()= default;;
     virtual CBlockIndex* GetIndexFrom() = 0;
     virtual bool CreateTxIn(CWallet* pwallet, CTxIn& txIn, uint256 hashTxOut = 0) = 0;
     virtual bool GetTxFrom(CTransaction& tx) = 0;
@@ -80,7 +80,7 @@ public:
         this->pindexFrom = nullptr;
     }
 
-    bool SetInput(CTransaction txPrev, unsigned int n);
+    bool SetInput(const CTransaction& txPrev, unsigned int n);
 
     CBlockIndex* GetIndexFrom() override;
     bool GetTxFrom(CTransaction& tx) override;

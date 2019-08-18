@@ -18,7 +18,7 @@
 #include "utilstrencodings.h"
 #include "utiltime.h"
 
-#include <stdarg.h>
+#include <cstdarg>
 
 #include <boost/date_time/posix_time/posix_time.hpp>
 #include <openssl/bio.h>
@@ -166,7 +166,7 @@ public:
         // Securely erase the memory used by the PRNG
         RAND_cleanup();
         // Shutdown OpenSSL library multithreading support
-        CRYPTO_set_locking_callback(NULL);
+        CRYPTO_set_locking_callback(nullptr);
         for (int i = 0; i < CRYPTO_num_locks(); i++)
             delete ppmutexOpenSSL[i];
         OPENSSL_free(ppmutexOpenSSL);
@@ -190,12 +190,12 @@ static boost::once_flag debugPrintInitFlag = BOOST_ONCE_INIT;
  * in a thread-safe manner the first time called:
  */
 static FILE* fileout = nullptr;
-static boost::mutex* mutexDebugLog = NULL;
+static boost::mutex* mutexDebugLog = nullptr;
 
 static void DebugPrintInit()
 {
     assert(fileout == nullptr);
-    assert(mutexDebugLog == NULL);
+    assert(mutexDebugLog == nullptr);
 
     boost::filesystem::path pathDebug = GetDataDir() / "debug.log";
     fileout = fopen(pathDebug.string().c_str(), "a");
@@ -215,7 +215,7 @@ bool LogAcceptCategory(const char* category)
         // where mapMultiArgs might be deleted before another
         // global destructor calls LogPrint()
         static boost::thread_specific_ptr<std::set<std::string> > ptrCategory;
-        if (ptrCategory.get() == NULL) {
+        if (ptrCategory.get() == nullptr) {
             const std::vector<std::string>& categories = mapMultiArgs["-debug"];
             ptrCategory.reset(new std::set<std::string>(categories.begin(), categories.end()));
             // thread_specific_ptr automatically deletes the set when the thread ends.
@@ -261,7 +261,7 @@ int LogPrintStr(const std::string& str)
         if (fReopenDebugLog) {
             fReopenDebugLog = false;
             boost::filesystem::path pathDebug = GetDataDir() / "debug.log";
-            if (freopen(pathDebug.string().c_str(), "a", fileout) != NULL)
+            if (freopen(pathDebug.string().c_str(), "a", fileout) != nullptr)
                 setbuf(fileout, nullptr); // unbuffered
         }
 
@@ -536,7 +536,7 @@ void CreatePidFile(const boost::filesystem::path& path, pid_t pid)
 }
 #endif
 
-bool RenameOver(boost::filesystem::path src, boost::filesystem::path dest)
+bool RenameOver(const boost::filesystem::path& src, const boost::filesystem::path& dest)
 {
 #ifdef WIN32
     return MoveFileExA(src.string().c_str(), dest.string().c_str(),
@@ -569,7 +569,7 @@ void FileCommit(FILE* fileout)
 {
     fflush(fileout); // harmless if redundantly called
 #ifdef WIN32
-    HANDLE hFile = (HANDLE)_get_osfhandle(_fileno(fileout));
+    auto hFile = (HANDLE)_get_osfhandle(_fileno(fileout));
     FlushFileBuffers(hFile);
 #else
 #if defined(__linux__) || defined(__NetBSD__)
@@ -623,7 +623,7 @@ void AllocateFileRange(FILE* file, unsigned int offset, unsigned int length)
 {
 #if defined(WIN32)
     // Windows-specific version
-    HANDLE hFile = (HANDLE)_get_osfhandle(_fileno(file));
+    auto hFile = (HANDLE)_get_osfhandle(_fileno(file));
     LARGE_INTEGER nFileSize;
     int64_t nEndPos = (int64_t)offset + length;
     nFileSize.u.LowPart = nEndPos & 0xFFFFFFFF;
@@ -742,7 +742,7 @@ double double_safe_multiplication(double fValue, double fmultiplicator)
         return std::numeric_limits<double>::max();
 }
 
-void runCommand(std::string strCommand)
+void runCommand(const std::string& strCommand)
 {
     int nErr = ::system(strCommand.c_str());
     if (nErr)

@@ -170,7 +170,7 @@ const char* GetOpName(opcodetype opcode)
 unsigned int CScript::GetSigOpCount(bool fAccurate) const
 {
     unsigned int n = 0;
-    const_iterator pc = begin();
+    auto pc = begin();
     opcodetype lastOpcode = OP_INVALIDOPCODE;
     while (pc < end())
     {
@@ -199,7 +199,7 @@ unsigned int CScript::GetSigOpCount(const CScript& scriptSig) const
     // This is a pay-to-script-hash scriptPubKey;
     // get the last item that the scriptSig
     // pushes onto the stack:
-    const_iterator pc = scriptSig.begin();
+    auto pc = scriptSig.begin();
     std::vector<unsigned char> data;
     while (pc < scriptSig.end())
     {
@@ -221,7 +221,7 @@ bool CScript::IsNormalPaymentScript() const
 
     std::string str;
     opcodetype opcode;
-    const_iterator pc = begin();
+    auto pc = begin();
     int i = 0;
     while (pc < end())
     {
@@ -295,7 +295,7 @@ std::string CScript::ToString() const
     std::string str;
     opcodetype opcode;
     std::vector<unsigned char> vch;
-    const_iterator pc = begin();
+    auto pc = begin();
     while (pc < end())
     {
         if (!str.empty())

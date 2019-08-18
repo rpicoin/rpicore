@@ -853,12 +853,12 @@ void MultisigDialog::on_addAddressButton_clicked()
     addressFrame->setFrameShadow(QFrame::Raised);
     addressFrame->setObjectName(QStringLiteral("addressFrame"));
 
-    QVBoxLayout* frameLayout = new QVBoxLayout(addressFrame);
+    auto* frameLayout = new QVBoxLayout(addressFrame);
     frameLayout->setSpacing(1);
     frameLayout->setObjectName(QStringLiteral("frameLayout"));
     frameLayout->setContentsMargins(6, 6, 6, 6);
 
-    QHBoxLayout* addressLayout = new QHBoxLayout();
+    auto* addressLayout = new QHBoxLayout();
     addressLayout->setSpacing(2);
     addressLayout->setObjectName(QStringLiteral("addressLayout"));
 
@@ -867,11 +867,11 @@ void MultisigDialog::on_addAddressButton_clicked()
     addressLabel->setText(QApplication::translate("MultisigDialog", strprintf("Address / Key %i:", ui->addressList->count()+1).c_str() , 0));
     addressLayout->addWidget(addressLabel);
 
-    QValidatedLineEdit* address = new QValidatedLineEdit(addressFrame);
+    auto* address = new QValidatedLineEdit(addressFrame);
     address->setObjectName(QStringLiteral("address"));
     addressLayout->addWidget(address);
 
-    QToolButton* addressBookButton = new QToolButton(addressFrame);
+    auto* addressBookButton = new QToolButton(addressFrame);
     addressBookButton->setObjectName(QStringLiteral("addressBookButton"));
     QIcon icon3;
     icon3.addFile(QStringLiteral(":/icons/address-book"), QSize(), QIcon::Normal, QIcon::Off);
@@ -880,7 +880,7 @@ void MultisigDialog::on_addAddressButton_clicked()
 
     addressLayout->addWidget(addressBookButton);
 
-    QToolButton* addressPasteButton = new QToolButton(addressFrame);
+    auto* addressPasteButton = new QToolButton(addressFrame);
     addressPasteButton->setObjectName(QStringLiteral("addressPasteButton"));
     QIcon icon4;
     icon4.addFile(QStringLiteral(":/icons/editpaste"), QSize(), QIcon::Normal, QIcon::Off);
@@ -889,7 +889,7 @@ void MultisigDialog::on_addAddressButton_clicked()
 
     addressLayout->addWidget(addressPasteButton);
 
-    QToolButton* addressDeleteButton = new QToolButton(addressFrame);
+    auto* addressDeleteButton = new QToolButton(addressFrame);
     addressDeleteButton->setObjectName(QStringLiteral("addressDeleteButton"));
     QIcon icon5;
     icon5.addFile(QStringLiteral(":/icons/remove"), QSize(), QIcon::Normal, QIcon::Off);
@@ -925,12 +925,12 @@ void MultisigDialog::on_addInputButton_clicked()
     txInputFrame->setFrameShadow(QFrame::Raised);
     txInputFrame->setObjectName(QStringLiteral("txInputFrame"));
 
-    QVBoxLayout* frameLayout = new QVBoxLayout(txInputFrame);
+    auto* frameLayout = new QVBoxLayout(txInputFrame);
     frameLayout->setSpacing(1);
     frameLayout->setObjectName(QStringLiteral("txInputFrameLayout"));
     frameLayout->setContentsMargins(6, 6, 6, 6);
 
-    QHBoxLayout* txInputLayout = new QHBoxLayout();
+    auto* txInputLayout = new QHBoxLayout();
     txInputLayout->setSpacing(2);
     txInputLayout->setObjectName(QStringLiteral("txInputLayout"));
 
@@ -939,12 +939,12 @@ void MultisigDialog::on_addInputButton_clicked()
     txInputIdLabel->setText(QApplication::translate("MultisigDialog", strprintf("%i. Tx Hash: ", ui->inputsList->count()+1).c_str(), 0));
     txInputLayout->addWidget(txInputIdLabel);
 
-    QLineEdit* txInputId = new QLineEdit(txInputFrame);
+    auto* txInputId = new QLineEdit(txInputFrame);
     txInputId->setObjectName(QStringLiteral("txInputId"));
 
     txInputLayout->addWidget(txInputId);
 
-    QSpacerItem* horizontalSpacer = new QSpacerItem(10, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+    auto* horizontalSpacer = new QSpacerItem(10, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
     txInputLayout->addItem(horizontalSpacer);
 
     QLabel* txInputVoutLabel = new QLabel(txInputFrame);
@@ -953,13 +953,13 @@ void MultisigDialog::on_addInputButton_clicked()
 
     txInputLayout->addWidget(txInputVoutLabel);
 
-    QSpinBox* txInputVout = new QSpinBox(txInputFrame);
+    auto* txInputVout = new QSpinBox(txInputFrame);
     txInputVout->setObjectName("txInputVout");
     sizePolicy.setHeightForWidth(txInputVout->sizePolicy().hasHeightForWidth());
     txInputVout->setSizePolicy(sizePolicy);
     txInputLayout->addWidget(txInputVout);
 
-    QToolButton* inputDeleteButton = new QToolButton(txInputFrame);
+    auto* inputDeleteButton = new QToolButton(txInputFrame);
     inputDeleteButton->setObjectName(QStringLiteral("inputDeleteButton"));
     QIcon icon;
     icon.addFile(QStringLiteral(":/icons/remove"), QSize(), QIcon::Normal, QIcon::Off);
@@ -979,9 +979,9 @@ void MultisigDialog::on_addDestinationButton_clicked()
     destinationFrame->setFrameShape(QFrame::StyledPanel);
     destinationFrame->setFrameShadow(QFrame::Raised);
 
-    QVBoxLayout* frameLayout = new QVBoxLayout(destinationFrame);
+    auto* frameLayout = new QVBoxLayout(destinationFrame);
     frameLayout->setObjectName(QStringLiteral("destinationFrameLayout"));
-    QHBoxLayout* destinationLayout = new QHBoxLayout();
+    auto* destinationLayout = new QHBoxLayout();
     destinationLayout->setSpacing(0);
     destinationLayout->setObjectName(QStringLiteral("destinationLayout"));
     QLabel* destinationAddressLabel = new QLabel(destinationFrame);
@@ -989,12 +989,12 @@ void MultisigDialog::on_addDestinationButton_clicked()
 
     destinationLayout->addWidget(destinationAddressLabel);
 
-    QValidatedLineEdit* destinationAddress = new QValidatedLineEdit(destinationFrame);
+    auto* destinationAddress = new QValidatedLineEdit(destinationFrame);
     destinationAddress->setObjectName(QStringLiteral("destinationAddress"));
 
     destinationLayout->addWidget(destinationAddress);
 
-    QSpacerItem* horizontalSpacer = new QSpacerItem(10, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+    auto* horizontalSpacer = new QSpacerItem(10, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
     destinationLayout->addItem(horizontalSpacer);
 
     QLabel* destinationAmountLabel = new QLabel(destinationFrame);
@@ -1002,7 +1002,7 @@ void MultisigDialog::on_addDestinationButton_clicked()
 
     destinationLayout->addWidget(destinationAmountLabel);
 
-    BitcoinAmountField* destinationAmount = new BitcoinAmountField(destinationFrame);
+    auto* destinationAmount = new BitcoinAmountField(destinationFrame);
     destinationAmount->setObjectName(QStringLiteral("destinationAmount"));
 
     destinationAddressLabel->setText(QApplication::translate("MultisigDialog", strprintf("%i. Address: ", ui->destinationsList->count()+1).c_str(), 0));
@@ -1010,7 +1010,7 @@ void MultisigDialog::on_addDestinationButton_clicked()
 
     destinationLayout->addWidget(destinationAmount);
 
-    QToolButton* destinationDeleteButton = new QToolButton(destinationFrame);
+    auto* destinationDeleteButton = new QToolButton(destinationFrame);
     destinationDeleteButton->setObjectName(QStringLiteral("destinationDeleteButton"));
     QIcon icon;
     icon.addFile(QStringLiteral(":/icons/remove"), QSize(), QIcon::Normal, QIcon::Off);
@@ -1042,7 +1042,7 @@ void MultisigDialog::on_addPrivKeyButton_clicked()
     keyFrame->setFrameShape(QFrame::StyledPanel);
     keyFrame->setFrameShadow(QFrame::Raised);
 
-    QHBoxLayout* keyLayout = new QHBoxLayout(keyFrame);
+    auto* keyLayout = new QHBoxLayout(keyFrame);
     keyLayout->setObjectName(QStringLiteral("keyLayout"));
 
     QLabel* keyLabel = new QLabel(keyFrame);
@@ -1050,12 +1050,12 @@ void MultisigDialog::on_addPrivKeyButton_clicked()
     keyLabel->setText(QApplication::translate("MultisigDialog", strprintf("Key %i: ", (ui->keyList->count()+1)).c_str(), 0));
     keyLayout->addWidget(keyLabel);
 
-    QLineEdit* key = new QLineEdit(keyFrame);
+    auto* key = new QLineEdit(keyFrame);
     key->setObjectName(QStringLiteral("key"));
     key->setEchoMode(QLineEdit::Password);
     keyLayout->addWidget(key);
 
-    QToolButton* keyDeleteButton = new QToolButton(keyFrame);
+    auto* keyDeleteButton = new QToolButton(keyFrame);
     keyDeleteButton->setObjectName(QStringLiteral("keyDeleteButton"));
     QIcon icon;
     icon.addFile(QStringLiteral(":/icons/remove"), QSize(), QIcon::Normal, QIcon::Off);

@@ -24,6 +24,7 @@
 #include <boost/signals2/signal.hpp>
 #include <boost/thread.hpp>
 #include <boost/algorithm/string/case_conv.hpp> // for to_upper()
+#include <utility>
 
 #include <univalue.h>
 
@@ -47,24 +48,24 @@ static struct CRPCSignals
     boost::signals2::signal<void (const CRPCCommand&)> PostCommand;
 } g_rpcSignals;
 
-void RPCServer::OnStarted(boost::function<void ()> slot)
+void RPCServer::OnStarted(const boost::function<void ()>& slot)
 {
     g_rpcSignals.Started.connect(slot);
 }
 
-void RPCServer::OnStopped(boost::function<void ()> slot)
+void RPCServer::OnStopped(const boost::function<void ()>& slot)
 {
     g_rpcSignals.Stopped.connect(slot);
 }
 
 void RPCServer::OnPreCommand(boost::function<void (const CRPCCommand&)> slot)
 {
-    g_rpcSignals.PreCommand.connect(boost::bind(slot, _1));
+    g_rpcSignals.PreCommand.connect(boost::bind(std::move(slot), _1));
 }
 
 void RPCServer::OnPostCommand(boost::function<void (const CRPCCommand&)> slot)
 {
-    g_rpcSignals.PostCommand.connect(boost::bind(slot, _1));
+    g_rpcSignals.PostCommand.connect(boost::bind(std::move(slot), _1));
 }
 
 void RPCTypeCheck(const UniValue& params,
@@ -132,7 +133,7 @@ UniValue ValueFromAmount(const CAmount& amount)
             strprintf("%s%d.%08d", sign ? "-" : "", quotient, remainder));
 }
 
-uint256 ParseHashV(const UniValue& v, std::string strName)
+uint256 ParseHashV(const UniValue& v, const std::string& strName)
 {
     std::string strHex;
     if (v.isStr())
@@ -145,11 +146,11 @@ uint256 ParseHashV(const UniValue& v, std::string strName)
     result.SetHex(strHex);
     return result;
 }
-uint256 ParseHashO(const UniValue& o, std::string strKey)
+uint256 ParseHashO(const UniValue& o, const std::string& strKey)
 {
     return ParseHashV(find_value(o, strKey), strKey);
 }
-std::vector<unsigned char> ParseHexV(const UniValue& v, std::string strName)
+std::vector<unsigned char> ParseHexV(const UniValue& v, const std::string& strName)
 {
     std::string strHex;
     if (v.isStr())
@@ -158,12 +159,12 @@ std::vector<unsigned char> ParseHexV(const UniValue& v, std::string strName)
         throw JSONRPCError(RPC_INVALID_PARAMETER, strName + " must be hexadecimal string (not '" + strHex + "')");
     return ParseHex(strHex);
 }
-std::vector<unsigned char> ParseHexO(const UniValue& o, std::string strKey)
+std::vector<unsigned char> ParseHexO(const UniValue& o, const std::string& strKey)
 {
     return ParseHexV(find_value(o, strKey), strKey);
 }
 
-int ParseInt(const UniValue& o, std::string strKey)
+int ParseInt(const UniValue& o, const std::string& strKey)
 {
     const UniValue& v = find_value(o, strKey);
     if (v.isNum())
@@ -172,7 +173,7 @@ int ParseInt(const UniValue& o, std::string strKey)
     return v.get_int();
 }
 
-bool ParseBool(const UniValue& o, std::string strKey)
+bool ParseBool(const UniValue& o, const std::string& strKey)
 {
     const UniValue& v = find_value(o, strKey);
     if (v.isBool())
@@ -186,7 +187,7 @@ bool ParseBool(const UniValue& o, std::string strKey)
  * Note: This interface may still be subject to change.
  */
 
-std::string CRPCTable::help(std::string strCommand) const
+std::string CRPCTable::help(const std::string& strCommand) const
 {
     std::string strRet;
     std::string category;
@@ -484,7 +485,7 @@ CRPCTable::CRPCTable()
 
 const CRPCCommand *CRPCTable::operator[](const std::string &name) const
 {
-    std::map<std::string, const CRPCCommand*>::const_iterator it = mapCommands.find(name);
+    auto it = mapCommands.find(name);
     if (it == mapCommands.end())
         return nullptr;
     return (*it).second;
@@ -628,12 +629,12 @@ std::vector<std::string> CRPCTable::listCommands() const
     return commandList;
 }
 
-std::string HelpExampleCli(std::string methodname, std::string args)
+std::string HelpExampleCli(const std::string& methodname, const std::string& args)
 {
     return "> rpicoin-cli " + methodname + " " + args + "\n";
 }
 
-std::string HelpExampleRpc(std::string methodname, std::string args)
+std::string HelpExampleRpc(const std::string& methodname, const std::string& args)
 {
     return "> curl --user myusername --data-binary '{\"jsonrpc\": \"1.0\", \"id\":\"curltest\", "
            "\"method\": \"" +

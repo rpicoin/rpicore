@@ -6,7 +6,7 @@
 #define RPICOIN_ZEROCOIN_H
 
 #include <amount.h>
-#include <limits.h>
+#include <climits>
 #include <chainparams.h>
 #include "libzerocoin/bignum.h"
 #include "libzerocoin/Denominations.h"
@@ -247,7 +247,7 @@ private:
 public:
     void AddSpend(const CZerocoinSpend& spend);
     std::vector<CZerocoinSpend> GetSpends();
-    void SetStatus(std::string strStatus, int nStatus, int nNeededSpends = 0);
+    void SetStatus(const std::string& strStatus, int nStatus, int nNeededSpends = 0);
     std::string GetStatusMessage();
     int GetStatus();
     int GetNeededSpends();

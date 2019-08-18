@@ -13,14 +13,16 @@
 #include "sync.h"
 #include "guiinterface.h"
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
 
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <signal.h>
+#include <csignal>
 #include <future>
+#include <utility>
+#include <utility>
 
 #include <event2/event.h>
 #include <event2/http.h>
@@ -43,8 +45,8 @@ static const size_t MAX_HEADERS_SIZE = 8192;
 class HTTPWorkItem : public HTTPClosure
 {
 public:
-    HTTPWorkItem(HTTPRequest* req, const std::string &path, const HTTPRequestHandler& func):
-        req(req), path(path), func(func)
+    HTTPWorkItem(HTTPRequest* req, std::string path, const HTTPRequestHandler& func):
+        req(req), path(std::move(path)), func(func)
     {
     }
     void operator()()
@@ -164,9 +166,9 @@ public:
 
 struct HTTPPathHandler
 {
-    HTTPPathHandler() {}
+    HTTPPathHandler() = default;
     HTTPPathHandler(std::string prefix, bool exactMatch, HTTPRequestHandler handler):
-        prefix(prefix), exactMatch(exactMatch), handler(handler)
+        prefix(std::move(std::move(prefix))), exactMatch(exactMatch), handler(handler)
     {
     }
     std::string prefix;
@@ -520,8 +522,8 @@ static void httpevent_callback_fn(evutil_socket_t, short, void* data)
         delete self;
 }
 
-HTTPEvent::HTTPEvent(struct event_base* base, bool deleteWhenTriggered, const std::function<void(void)>& handler):
-    deleteWhenTriggered(deleteWhenTriggered), handler(handler)
+HTTPEvent::HTTPEvent(struct event_base* base, bool deleteWhenTriggered, std::function<void(void)>  handler):
+    deleteWhenTriggered(deleteWhenTriggered), handler(std::move(handler))
 {
     ev = event_new(base, -1, 0, httpevent_callback_fn, this);
     assert(ev);

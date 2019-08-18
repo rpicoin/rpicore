@@ -58,7 +58,7 @@ void ProcessMessageSwiftTX(CNode* pfrom, std::string& strCommand, CDataStream& v
             return;
         }
 
-        for (const CTxOut o: tx.vout) {
+        for (const CTxOut& o: tx.vout) {
             // IX supports normal scripts and unspendable scripts (used in DS collateral and Budget collateral).
             // TODO: Look into other script types that are normal and can be included
             if (!o.scriptPubKey.IsNormalPaymentScript() && !o.scriptPubKey.IsUnspendable()) {
@@ -110,7 +110,7 @@ void ProcessMessageSwiftTX(CNode* pfrom, std::string& strCommand, CDataStream& v
             }
 
             // resolve conflicts
-            std::map<uint256, CTransactionLock>::iterator i = mapTxLocks.find(tx.GetHash());
+            auto i = mapTxLocks.find(tx.GetHash());
             if (i != mapTxLocks.end()) {
                 //we only care if we have a complete tx lock
                 if ((*i).second.CountSignatures() >= SWIFTTX_SIGNATURES_REQUIRED) {
@@ -182,10 +182,10 @@ bool IsIXTXValid(const CTransaction& txCollateral)
     CAmount nValueOut = 0;
     bool missingTx = false;
 
-    for (const CTxOut o: txCollateral.vout)
+    for (const CTxOut& o: txCollateral.vout)
         nValueOut += o.nValue;
 
-    for (const CTxIn i: txCollateral.vin) {
+    for (const CTxIn& i: txCollateral.vin) {
         CTransaction tx2;
         uint256 hash;
         if (GetTransaction(i.prevout.hash, tx2, hash, true)) {
@@ -304,7 +304,7 @@ bool ProcessConsensusVote(CNode* pnode, CConsensusVote& ctx)
     int n = mnodeman.GetMasternodeRank(ctx.vinMasternode, ctx.nBlockHeight, MIN_SWIFTTX_PROTO_VERSION);
 
     CMasternode* pmn = mnodeman.Find(ctx.vinMasternode);
-    if (pmn != NULL)
+    if (pmn != nullptr)
         LogPrint("swiftx", "SwiftX::ProcessConsensusVote - Masternode ADDR %s %d\n", pmn->addr.ToString().c_str(), n);
 
     if (n == -1) {
@@ -339,7 +339,7 @@ bool ProcessConsensusVote(CNode* pnode, CConsensusVote& ctx)
         LogPrint("swiftx", "SwiftX::ProcessConsensusVote - Transaction Lock Exists %s !\n", ctx.txHash.ToString().c_str());
 
     //compile consessus vote
-    std::map<uint256, CTransactionLock>::iterator i = mapTxLocks.find(ctx.txHash);
+    auto i = mapTxLocks.find(ctx.txHash);
     if (i != mapTxLocks.end()) {
         (*i).second.AddSignature(ctx);
 
@@ -415,7 +415,7 @@ bool CheckForConflictingLocks(CTransaction& tx)
 
 int64_t GetAverageVoteTime()
 {
-    std::map<uint256, int64_t>::iterator it = mapUnknownVotes.begin();
+    auto it = mapUnknownVotes.begin();
     int64_t total = 0;
     int64_t count = 0;
 
@@ -432,7 +432,7 @@ void CleanTransactionLocksList()
 {
     if (chainActive.Tip() == nullptr) return;
 
-    std::map<uint256, CTransactionLock>::iterator it = mapTxLocks.begin();
+    auto it = mapTxLocks.begin();
 
     while (it != mapTxLocks.end()) {
         if (GetTime() > it->second.nExpiration) { //keep them for an hour
@@ -458,12 +458,12 @@ void CleanTransactionLocksList()
     }
 }
 
-int GetTransactionLockSignatures(uint256 txHash)
+int GetTransactionLockSignatures(const uint256& txHash)
 {
     if(fLargeWorkForkFound || fLargeWorkInvalidChainFound) return -2;
     if (!IsSporkActive(SPORK_2_SWIFTTX)) return -1;
 
-    std::map<uint256, CTransactionLock>::iterator it = mapTxLocks.find(txHash);
+    auto it = mapTxLocks.find(txHash);
     if(it != mapTxLocks.end()) return it->second.CountSignatures();
 
     return -1;
@@ -564,7 +564,7 @@ int CTransactionLock::CountSignatures()
     if (nBlockHeight == 0) return -1;
 
     int n = 0;
-    for (CConsensusVote v: vecConsensusVotes) {
+    for (const CConsensusVote& v: vecConsensusVotes) {
         if (v.nBlockHeight == nBlockHeight) {
             n++;
         }

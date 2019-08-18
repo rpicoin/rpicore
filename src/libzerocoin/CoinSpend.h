@@ -16,6 +16,7 @@
 
 #include <streams.h>
 #include <utilstrencodings.h>
+ #include <utility>
 #include "Accumulator.h"
 #include "AccumulatorProofOfKnowledge.h"
 #include "Coin.h"
@@ -87,7 +88,7 @@ public:
 	 * @throw ZerocoinException if the process fails
 	 */
     CoinSpend(const libzerocoin::ZerocoinParams* paramsCoin, const libzerocoin::ZerocoinParams* paramsAcc, const PrivateCoin& coin, libzerocoin::Accumulator& a, const uint32_t& checksum,
-              const libzerocoin::AccumulatorWitness& witness, const uint256& ptxHash, const SpendType& spendType);
+              const libzerocoin::AccumulatorWitness& witness, uint256  ptxHash, const SpendType& spendType);
 
 
     virtual ~CoinSpend(){};
@@ -128,7 +129,7 @@ public:
     virtual bool Verify(const libzerocoin::Accumulator& a, bool verifyParams = true) const;
     bool HasValidSerial(ZerocoinParams* params) const;
     bool HasValidSignature() const;
-    void setTxOutHash(uint256 txOutHash) { this->ptxHash = txOutHash; };
+    void setTxOutHash(uint256 txOutHash) { this->ptxHash = std::move(txOutHash); };
     void setDenom(libzerocoin::CoinDenomination denom) { this->denomination = denom; }
 
     CBigNum CalculateValidSerial(ZerocoinParams* params);

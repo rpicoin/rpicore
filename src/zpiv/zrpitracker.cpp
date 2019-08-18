@@ -3,6 +3,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include <zpiv/deterministicmint.h>
+#include <utility>
 #include "zrpitracker.h"
 #include "util.h"
 #include "sync.h"
@@ -16,7 +17,7 @@
 
 CzRPITracker::CzRPITracker(std::string strWalletFile)
 {
-    this->strWalletFile = strWalletFile;
+    this->strWalletFile = std::move(strWalletFile);
     mapSerialHashes.clear();
     mapPendingSpends.clear();
     fInitialized = false;
@@ -82,20 +83,20 @@ bool CzRPITracker::UnArchive(const uint256& hashPubcoin, bool isDeterministic)
 CMintMeta CzRPITracker::Get(const uint256 &hashSerial)
 {
     if (!mapSerialHashes.count(hashSerial))
-        return CMintMeta();
+        return {};
 
     return mapSerialHashes.at(hashSerial);
 }
 
 CMintMeta CzRPITracker::GetMetaFromPubcoin(const uint256& hashPubcoin)
 {
-    for (auto it : mapSerialHashes) {
+    for (const auto& it : mapSerialHashes) {
         CMintMeta meta = it.second;
         if (meta.hashPubcoin == hashPubcoin)
             return meta;
     }
 
-    return CMintMeta();
+    return {};
 }
 
 bool CzRPITracker::GetMetaFromStakeHash(const uint256& hashStake, CMintMeta& meta) const
@@ -136,13 +137,12 @@ bool CzRPITracker::ClearSpendCache()
 std::vector<uint256> CzRPITracker::GetSerialHashes()
 {
     std::vector<uint256> vHashes;
-    for (auto it : mapSerialHashes) {
-        if (it.second.isArchived)
+    for (const auto& it : mapSerialHashes) {
+        if (it.second.isArchived){
             continue;
-
+        }
         vHashes.emplace_back(it.first);
     }
-
 
     return vHashes;
 }
@@ -163,7 +163,7 @@ CAmount CzRPITracker::GetBalance(bool fConfirmedOnly, bool fUnconfirmedOnly) con
             CMintMeta meta = it.second;
             if (meta.isUsed || meta.isArchived)
                 continue;
-            bool fConfirmed = ((meta.nHeight < chainActive.Height() - Params().Zerocoin_MintRequiredConfirmations()) && !(meta.nHeight == 0));
+            bool fConfirmed = ((meta.nHeight < chainActive.Height() - Params().Zerocoin_MintRequiredConfirmations()) && meta.nHeight != 0);
             if (fConfirmedOnly && !fConfirmed)
                 continue;
             if (fUnconfirmedOnly && fConfirmed)
@@ -202,9 +202,10 @@ std::vector<CMintMeta> CzRPITracker::GetMints(bool fConfirmedOnly) const
 //Does a mint in the tracker have this txid
 bool CzRPITracker::HasMintTx(const uint256& txid)
 {
-    for (auto it : mapSerialHashes) {
-        if (it.second.txid == txid)
+    for (const auto& it : mapSerialHashes) {
+        if (it.second.txid == txid){
             return true;
+        }
     }
 
     return false;
@@ -219,7 +220,7 @@ bool CzRPITracker::HasPubcoin(const CBigNum &bnValue) const
 
 bool CzRPITracker::HasPubcoinHash(const uint256& hashPubcoin) const
 {
-    for (auto it : mapSerialHashes) {
+    for (const auto& it : mapSerialHashes) {
         CMintMeta meta = it.second;
         if (meta.hashPubcoin == hashPubcoin)
             return true;
@@ -372,7 +373,7 @@ void CzRPITracker::SetPubcoinNotUsed(const uint256& hashPubcoin)
 void CzRPITracker::RemovePending(const uint256& txid)
 {
     uint256 hashSerial;
-    for (auto it : mapPendingSpends) {
+    for (const auto& it : mapPendingSpends) {
         if (it.second == txid) {
             hashSerial = it.first;
             break;
@@ -470,7 +471,7 @@ std::set<CMintMeta> CzRPITracker::ListMints(bool fUnusedOnly, bool fMatureOnly, 
 
         std::list<CDeterministicMint> listDeterministicDB = walletdb.ListDeterministicMints();
 
-        CzRPIWallet* zRPIWallet = new CzRPIWallet(strWalletFile);
+        auto* zRPIWallet = new CzRPIWallet(strWalletFile);
         for (auto& dMint : listDeterministicDB) {
             if (fExcludeV1 && dMint.GetVersion() < 2)
                 continue;

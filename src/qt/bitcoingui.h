@@ -51,7 +51,7 @@ class BitcoinGUI : public QMainWindow
 public:
     static const QString DEFAULT_WALLET;
 
-    explicit BitcoinGUI(const NetworkStyle* networkStyle, QWidget* parent = 0);
+    explicit BitcoinGUI(const NetworkStyle* networkStyle, QWidget* parent = nullptr);
     ~BitcoinGUI();
 
     /** Set the client model.
@@ -182,7 +182,7 @@ public slots:
                             @see CClientUIInterface::MessageBoxFlags
        @param[in] ret       pointer to a bool that will be modified to whether Ok was clicked (modal only)
     */
-    void message(const QString& title, const QString& message, unsigned int style, bool* ret = NULL);
+    void message(const QString& title, const QString& message, unsigned int style, bool* ret = nullptr);
 
 #ifdef ENABLE_WALLET
     void setStakingStatus();

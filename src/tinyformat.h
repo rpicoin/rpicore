@@ -192,7 +192,7 @@ public:
 // Detect when a type is not a wchar_t string
 template <typename T>
 struct is_wchar {
-    typedef int tinyformat_wchar_is_not_supported;
+    using tinyformat_wchar_is_not_supported = int;
 };
 template <>
 struct is_wchar<wchar_t*> {

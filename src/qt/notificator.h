@@ -30,7 +30,7 @@ public:
     /** Create a new notificator.
        @note Ownership of trayIcon is not transferred to this object.
     */
-    Notificator(const QString& programName, QSystemTrayIcon* trayIcon, QWidget* parent);
+    Notificator(QString  programName, QSystemTrayIcon* trayIcon, QWidget* parent);
     ~Notificator();
 
     // Message class

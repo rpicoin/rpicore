@@ -57,14 +57,14 @@ struct CCoin {
     }
 };
 
-extern void TxToJSON(const CTransaction& tx, const uint256 hashBlock, UniValue& entry);
+extern void TxToJSON(const CTransaction& tx, const uint256& hashBlock, UniValue& entry);
 extern UniValue blockToJSON(const CBlock& block, const CBlockIndex* blockindex, bool txDetails = false);
 extern UniValue mempoolInfoToJSON();
 extern UniValue mempoolToJSON(bool fVerbose = false);
 extern void ScriptPubKeyToJSON(const CScript& scriptPubKey, UniValue& out, bool fIncludeHex);
 extern UniValue blockheaderToJSON(const CBlockIndex* blockindex);
 
-static bool RESTERR(HTTPRequest* req, enum HTTPStatusCode status, std::string message)
+static bool RESTERR(HTTPRequest* req, enum HTTPStatusCode status, const std::string& message)
 {
     req->WriteHeader("Content-Type", "text/plain");
     req->WriteReply(status, message + "\r\n");
@@ -75,9 +75,9 @@ static enum RetFormat ParseDataFormat(std::vector<std::string>& params, const st
 {
     boost::split(params, strReq, boost::is_any_of("."));
     if (params.size() > 1) {
-        for (unsigned int i = 0; i < ARRAYLEN(rf_names); i++)
-            if (params[1] == rf_names[i].name)
-                return rf_names[i].rf;
+        for (auto rf_name : rf_names)
+            if (params[1] == rf_name.name)
+                return rf_name.rf;
     }
 
     return rf_names[0].rf;
@@ -86,10 +86,10 @@ static enum RetFormat ParseDataFormat(std::vector<std::string>& params, const st
 static std::string AvailableDataFormatsString()
 {
     std::string formats = "";
-    for (unsigned int i = 0; i < ARRAYLEN(rf_names); i++)
-        if (strlen(rf_names[i].name) > 0) {
+    for (auto rf_name : rf_names)
+        if (strlen(rf_name.name) > 0) {
             formats.append(".");
-            formats.append(rf_names[i].name);
+            formats.append(rf_name.name);
             formats.append(", ");
         }
 
@@ -129,7 +129,7 @@ static bool rest_headers(HTTPRequest* req,
     if (path.size() != 2)
         return RESTERR(req, HTTP_BAD_REQUEST, "No header count specified. Use /rest/headers/<count>/<hash>.<ext>.");
 
-    long count = strtol(path[0].c_str(), NULL, 10);
+    long count = strtol(path[0].c_str(), nullptr, 10);
     if (count < 1 || count > 2000)
         return RESTERR(req, HTTP_BAD_REQUEST, "Header count out of range: " + path[0]);
 
@@ -429,8 +429,8 @@ static bool rest_getutxos(HTTPRequest* req, const std::string& strURIPart)
         {
             uint256 txid;
             int32_t nOutput;
-            std::string strTxid = uriParts[i].substr(0, uriParts[i].find("-"));
-            std::string strOutput = uriParts[i].substr(uriParts[i].find("-")+1);
+            std::string strTxid = uriParts[i].substr(0, uriParts[i].find('-'));
+            std::string strOutput = uriParts[i].substr(uriParts[i].find('-')+1);
 
             if (!ParseInt32(strOutput, &nOutput) || !IsHex(strTxid))
                 return RESTERR(req, HTTP_INTERNAL_SERVER_ERROR, "Parse error");
@@ -604,8 +604,8 @@ static const struct {
 
 bool StartREST()
 {
-    for (unsigned int i = 0; i < ARRAYLEN(uri_prefixes); i++)
-        RegisterHTTPHandler(uri_prefixes[i].prefix, false, uri_prefixes[i].handler);
+    for (auto uri_prefixe : uri_prefixes)
+        RegisterHTTPHandler(uri_prefixe.prefix, false, uri_prefixe.handler);
     return true;
 }
 
@@ -615,6 +615,6 @@ void InterruptREST()
 
 void StopREST()
 {
-    for (unsigned int i = 0; i < ARRAYLEN(uri_prefixes); i++)
-        UnregisterHTTPHandler(uri_prefixes[i].prefix, false);
+    for (auto uri_prefixe : uri_prefixes)
+        UnregisterHTTPHandler(uri_prefixe.prefix, false);
 }

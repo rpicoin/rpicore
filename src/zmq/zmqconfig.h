@@ -9,7 +9,7 @@
 #include "config/rpicoin-config.h"
 #endif
 
-#include <stdarg.h>
+#include <cstdarg>
 #include <string>
 
 #if ENABLE_ZMQ
