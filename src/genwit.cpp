@@ -4,14 +4,15 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include <iostream>
+#include <utility>
 #include "genwit.h"
 #include "chainparams.h"
 #include "util.h"
 
-CGenWit::CGenWit() : accWitValue(0) {}
+CGenWit::CGenWit() : accWitValue(0) {};
 
-CGenWit::CGenWit(const CBloomFilter &filter, int startingHeight, libzerocoin::CoinDenomination den, int requestNum, CBigNum accWitValue)
-        : filter(filter), startingHeight(startingHeight), den(den), requestNum(requestNum), accWitValue(accWitValue) {}
+CGenWit::CGenWit(CBloomFilter filter, int startingHeight, libzerocoin::CoinDenomination den, int requestNum, const CBigNum& accWitValue)
+        : filter(std::move(filter)), startingHeight(startingHeight), den(den), requestNum(requestNum), accWitValue(accWitValue) {}
 
 bool CGenWit::isValid(int chainActiveHeight) {
     if (den == libzerocoin::CoinDenomination::ZQ_ERROR){

@@ -56,13 +56,13 @@ public:
 
 	timeval start()
 	{
-		gettimeofday(&this->timer[0], NULL);
+		gettimeofday(&this->timer[0], nullptr);
 		return this->timer[0];
 	}
 
 	timeval stop()
 	{
-		gettimeofday(&this->timer[1], NULL);
+		gettimeofday(&this->timer[1], nullptr);
 		return this->timer[1];
 	}
 

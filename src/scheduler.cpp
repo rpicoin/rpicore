@@ -7,7 +7,7 @@
 
 #include "reverselock.h"
 
-#include <assert.h>
+#include <cassert>
 #include <boost/bind.hpp>
 #include <utility>
 
@@ -95,7 +95,7 @@ void CScheduler::stop(bool drain)
     newTaskScheduled.notify_all();
 }
 
-void CScheduler::schedule(CScheduler::Function f, boost::chrono::system_clock::time_point t)
+void CScheduler::schedule(const CScheduler::Function& f, boost::chrono::system_clock::time_point t)
 {
     {
         boost::unique_lock<boost::mutex> lock(newTaskMutex);
@@ -106,10 +106,10 @@ void CScheduler::schedule(CScheduler::Function f, boost::chrono::system_clock::t
 
 void CScheduler::scheduleFromNow(CScheduler::Function f, int64_t deltaSeconds)
 {
-    schedule(f, boost::chrono::system_clock::now() + boost::chrono::seconds(deltaSeconds));
+    schedule(std::move(f), boost::chrono::system_clock::now() + boost::chrono::seconds(deltaSeconds));
 }
 
-static void Repeat(CScheduler* s, CScheduler::Function f, int64_t deltaSeconds)
+static void Repeat(CScheduler* s, const CScheduler::Function& f, int64_t deltaSeconds)
 {
     f();
     s->scheduleFromNow(boost::bind(&Repeat, s, f, deltaSeconds), deltaSeconds);
@@ -117,7 +117,7 @@ static void Repeat(CScheduler* s, CScheduler::Function f, int64_t deltaSeconds)
 
 void CScheduler::scheduleEvery(CScheduler::Function f, int64_t deltaSeconds)
 {
-    scheduleFromNow(boost::bind(&Repeat, this, f, deltaSeconds), deltaSeconds);
+    scheduleFromNow(boost::bind(&Repeat, this, std::move(f), deltaSeconds), deltaSeconds);
 }
 
 size_t CScheduler::getQueueInfo(boost::chrono::system_clock::time_point &first,

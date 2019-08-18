@@ -73,7 +73,7 @@ void CObfuscationPool::SetNull()
     std::srand(seed);
 }
 
-bool CObfuscationPool::SetCollateralAddress(std::string strAddress)
+bool CObfuscationPool::SetCollateralAddress(const std::string& strAddress)
 {
     CBitcoinAddress address;
     if (!address.SetString(strAddress)) {
@@ -133,11 +133,11 @@ void CObfuscationPool::Check()
             CMutableTransaction txNew;
 
             // make our new transaction
-            for (unsigned int i = 0; i < entries.size(); i++) {
-                for (const CTxOut& v : entries[i].vout)
+            for (auto & entrie : entries) {
+                for (const CTxOut& v : entrie.vout)
                     txNew.vout.push_back(v);
 
-                for (const CTxDSIn& s : entries[i].sev)
+                for (const CTxDSIn& s : entrie.sev)
                     txNew.vin.push_back(s);
             }
 
@@ -419,7 +419,7 @@ void CObfuscationPool::CheckTimeout()
 
     // check Obfuscation queue objects for timeouts
     int c = 0;
-    std::vector<CObfuscationQueue>::iterator it = vecObfuscationQueue.begin();
+    auto it = vecObfuscationQueue.begin();
     while (it != vecObfuscationQueue.end()) {
         if ((*it).IsExpired()) {
             LogPrint("obfuscation", "CObfuscationPool::CheckTimeout() : Removing expired queue entry - %d\n", c);
@@ -436,7 +436,7 @@ void CObfuscationPool::CheckTimeout()
         c = 0;
 
         // check for a timeout and reset if needed
-        std::vector<CObfuScationEntry>::iterator it2 = entries.begin();
+        auto it2 = entries.begin();
         while (it2 != entries.end()) {
             if ((*it2).IsExpired()) {
                 LogPrint("obfuscation", "CObfuscationPool::CheckTimeout() : Removing expired entry - %d\n", c);
@@ -533,7 +533,7 @@ bool CObfuScationSigner::IsVinAssociatedWithPubkey(CTxIn& vin, CPubKey& pubkey)
     CTransaction txVin;
     uint256 hash;
     if (GetTransaction(vin.prevout.hash, txVin, hash, true)) {
-        for (CTxOut out: txVin.vout) {
+        for (const CTxOut& out: txVin.vout) {
             if (out.nValue == 125000 * COIN) {
                 if (out.scriptPubKey == payee2) return true;
             }
@@ -543,7 +543,7 @@ bool CObfuScationSigner::IsVinAssociatedWithPubkey(CTxIn& vin, CPubKey& pubkey)
     return false;
 }
 
-bool CObfuScationSigner::SetKey(std::string strSecret, std::string& errorMessage, CKey& key, CPubKey& pubkey)
+bool CObfuScationSigner::SetKey(const std::string& strSecret, std::string& errorMessage, CKey& key, CPubKey& pubkey)
 {
     CBitcoinSecret vchSecret;
     bool fGood = vchSecret.SetString(strSecret);
@@ -559,7 +559,7 @@ bool CObfuScationSigner::SetKey(std::string strSecret, std::string& errorMessage
     return true;
 }
 
-bool CObfuScationSigner::GetKeysFromSecret(std::string strSecret, CKey& keyRet, CPubKey& pubkeyRet)
+bool CObfuScationSigner::GetKeysFromSecret(const std::string& strSecret, CKey& keyRet, CPubKey& pubkeyRet)
 {
     CBitcoinSecret vchSecret;
 
@@ -571,7 +571,7 @@ bool CObfuScationSigner::GetKeysFromSecret(std::string strSecret, CKey& keyRet, 
     return true;
 }
 
-bool CObfuScationSigner::SignMessage(std::string strMessage, std::string& errorMessage, std::vector<unsigned char>& vchSig, CKey key)
+bool CObfuScationSigner::SignMessage(const std::string& strMessage, std::string& errorMessage, std::vector<unsigned char>& vchSig, const CKey& key)
 {
     CHashWriter ss(SER_GETHASH, 0);
     ss << strMessageMagic;
@@ -585,7 +585,7 @@ bool CObfuScationSigner::SignMessage(std::string strMessage, std::string& errorM
     return true;
 }
 
-bool CObfuScationSigner::VerifyMessage(CPubKey pubkey, std::vector<unsigned char>& vchSig, std::string strMessage, std::string& errorMessage)
+bool CObfuScationSigner::VerifyMessage(CPubKey pubkey, std::vector<unsigned char>& vchSig, const std::string& strMessage, std::string& errorMessage)
 {
     CHashWriter ss(SER_GETHASH, 0);
     ss << strMessageMagic;

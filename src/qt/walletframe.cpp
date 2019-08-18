@@ -17,7 +17,7 @@ WalletFrame::WalletFrame(BitcoinGUI* _gui) : QFrame(_gui),
                                              gui(_gui)
 {
     // Leave HBox hook for adding a list view later
-    QHBoxLayout* walletFrameLayout = new QHBoxLayout(this);
+    auto* walletFrameLayout = new QHBoxLayout(this);
     setContentsMargins(0, 0, 0, 0);
     walletStack = new QStackedWidget(this);
     walletFrameLayout->setContentsMargins(0, 0, 0, 0);
@@ -42,7 +42,7 @@ bool WalletFrame::addWallet(const QString& name, WalletModel* walletModel)
     if (!gui || !clientModel || !walletModel || mapWalletViews.count(name) > 0)
         return false;
 
-    WalletView* walletView = new WalletView(walletStack);
+    auto* walletView = new WalletView(walletStack);
     walletView->setBitcoinGUI(gui);
     walletView->setClientModel(clientModel);
     walletView->setWalletModel(walletModel);

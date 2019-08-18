@@ -26,7 +26,7 @@
 #include "wallet/wallet.h"
 #endif
 
-#include <stdint.h>
+#include <cstdint>
 
 #include <boost/assign/list_of.hpp>
 
@@ -57,7 +57,7 @@ void ScriptPubKeyToJSON(const CScript& scriptPubKey, UniValue& out, bool fInclud
     out.push_back(Pair("addresses", a));
 }
 
-void TxToJSON(const CTransaction& tx, const uint256 hashBlock, UniValue& entry)
+void TxToJSON(const CTransaction& tx, const uint256& hashBlock, UniValue& entry)
 {
     // Call into TxToUniv() in bitcoin-common to decode the transaction hex.
     //
@@ -279,7 +279,7 @@ UniValue listunspent(const UniValue& params, bool fHelp)
     std::vector<COutput> vecOutputs;
     assert(pwalletMain != nullptr);
     LOCK2(cs_main, pwalletMain->cs_wallet);
-    pwalletMain->AvailableCoins(vecOutputs, false, NULL, false, ALL_COINS, false, nWatchonlyConfig);
+    pwalletMain->AvailableCoins(vecOutputs, false, nullptr, false, ALL_COINS, false, nWatchonlyConfig);
     for (const COutput& out : vecOutputs) {
         if (out.nDepth < nMinDepth || out.nDepth > nMaxDepth)
             continue;
@@ -603,7 +603,7 @@ UniValue signrawtransaction(const UniValue& params, bool fHelp)
             HelpExampleCli("signrawtransaction", "\"myhex\"") + HelpExampleRpc("signrawtransaction", "\"myhex\""));
 
 #ifdef ENABLE_WALLET
-    LOCK2(cs_main, pwalletMain ? &pwalletMain->cs_wallet : NULL);
+    LOCK2(cs_main, pwalletMain ? &pwalletMain->cs_wallet : nullptr);
 #else
     LOCK(cs_main);
 #endif
@@ -689,7 +689,7 @@ UniValue signrawtransaction(const UniValue& params, bool fHelp)
             if (!p.isObject())
                 throw JSONRPCError(RPC_DESERIALIZATION_ERROR, "expected object with {\"txid'\",\"vout\",\"scriptPubKey\"}");
 
-            UniValue prevOut = p.get_obj();
+            const UniValue& prevOut = p.get_obj();
 
             RPCTypeCheckObj(prevOut, boost::assign::map_list_of("txid", UniValue::VSTR)("vout", UniValue::VNUM)("scriptPubKey", UniValue::VSTR));
 
@@ -757,13 +757,13 @@ UniValue signrawtransaction(const UniValue& params, bool fHelp)
         CTxIn& txin = mergedTx.vin[i];
         const CCoins* coins = view.AccessCoins(txin.prevout.hash);
         if (Params().NetworkID() == CBaseChainParams::REGTEST) {
-            if (mapPrevOut.count(txin.prevout) == 0 && (coins == NULL || !coins->IsAvailable(txin.prevout.n)))
+            if (mapPrevOut.count(txin.prevout) == 0 && (coins == nullptr || !coins->IsAvailable(txin.prevout.n)))
             {
                 TxInErrorToJSON(txin, vErrors, "Input not found");
                 continue;
             }
         } else {
-            if (coins == NULL || !coins->IsAvailable(txin.prevout.n)) {
+            if (coins == nullptr || !coins->IsAvailable(txin.prevout.n)) {
                 TxInErrorToJSON(txin, vErrors, "Input not found or already spent");
                 continue;
             }
@@ -931,7 +931,7 @@ UniValue createrawzerocoinstake(const UniValue& params, bool fHelp)
             HelpExampleRpc("createrawzerocoinstake", "0d8c16eee7737e3cc1e4e70dc006634182b175e039700931283b202715a0818f"));
 
 
-    assert(pwalletMain != NULL);
+    assert(pwalletMain != nullptr);
     LOCK2(cs_main, pwalletMain->cs_wallet);
 
     if(GetAdjustedTime() > GetSporkValue(SPORK_16_ZEROCOIN_MAINTENANCE_MODE))
@@ -1013,7 +1013,7 @@ UniValue createrawzerocoinpublicspend(const UniValue& params, bool fHelp)
             HelpExampleRpc("createrawzerocoinpublicspend", "0d8c16eee7737e3cc1e4e70dc006634182b175e039700931283b202715a0818f"));
 
 
-    assert(pwalletMain != NULL);
+    assert(pwalletMain != nullptr);
     LOCK2(cs_main, pwalletMain->cs_wallet);
 
     std::string serial_hash = params[0].get_str();

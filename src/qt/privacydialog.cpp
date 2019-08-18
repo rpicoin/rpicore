@@ -27,7 +27,7 @@
 
 PrivacyDialog::PrivacyDialog(QWidget* parent) : QDialog(parent, Qt::WindowSystemMenuHint | Qt::WindowTitleHint | Qt::WindowCloseButtonHint | Qt::WindowCloseButtonHint),
                                                           ui(new Ui::PrivacyDialog),
-                                                          walletModel(0),
+                                                          walletModel(nullptr),
                                                           currentBalance(-1),
                                                           fDenomsMinimized(true)
 {
@@ -303,7 +303,7 @@ void PrivacyDialog::on_pushButtonZWspControl_clicked()
     if (!walletModel || !walletModel->getOptionsModel())
         return;
 
-    ZWspControlDialog* zWspControl = new ZWspControlDialog(this);
+    auto* zWspControl = new ZWspControlDialog(this);
     zWspControl->setModel(walletModel);
     zWspControl->exec();
 }

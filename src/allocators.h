@@ -9,7 +9,7 @@
 #include "support/cleanse.h"
 
 #include <map>
-#include <string.h>
+#include <cstring>
 #include <string>
 #include <vector>
 
@@ -39,8 +39,7 @@ public:
     }
 
     ~LockedPageManagerBase()
-    {
-    }
+    = default;
 
 
     // For all pages in affected range, increase lock count
@@ -201,7 +200,7 @@ struct secure_allocator : public std::allocator<T> {
     ~secure_allocator() throw() {}
     template <typename _Other>
     struct rebind {
-        typedef secure_allocator<_Other> other;
+        using other = secure_allocator<_Other>;
     };
 
     T* allocate(std::size_t n, const void* hint = nullptr)
@@ -247,7 +246,7 @@ struct zero_after_free_allocator : public std::allocator<T> {
     ~zero_after_free_allocator() throw() {}
     template <typename _Other>
     struct rebind {
-        typedef zero_after_free_allocator<_Other> other;
+        using other = zero_after_free_allocator<_Other>;
     };
 
     void deallocate(T* p, std::size_t n)
@@ -259,9 +258,9 @@ struct zero_after_free_allocator : public std::allocator<T> {
 };
 
 // This is exactly like std::string, but with a custom allocator.
-typedef std::basic_string<char, std::char_traits<char>, secure_allocator<char> > SecureString;
+using SecureString = std::basic_string<char, std::char_traits<char>, secure_allocator<char> >;
 
 // Byte-vector that clears its contents before deletion.
-typedef std::vector<char, zero_after_free_allocator<char> > CSerializeData;
+using CSerializeData = std::vector<char, zero_after_free_allocator<char> >;
 
 #endif // BITCOIN_ALLOCATORS_H

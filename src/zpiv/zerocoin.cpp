@@ -3,6 +3,8 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include <streams.h>
+
+#include <utility>
 #include "zerocoin.h"
 #include "hash.h"
 #include "util.h"
@@ -29,11 +31,13 @@ uint256 GetPubCoinHash(const CBigNum& bnValue)
 
 bool CZerocoinMint::GetKeyPair(CKey &key) const
 {
-    if (version < STAKABLE_VERSION)
+    if (version < STAKABLE_VERSION){
         return error("%s: version is %d", __func__, version);
+    }
 
-    if (privkey.empty())
+    if (privkey.empty()){
         return error("%s: empty privkey %s", __func__, privkey.data());
+    }
 
     return key.SetPrivKey(privkey, true);
 }
@@ -55,11 +59,11 @@ std::vector<CZerocoinSpend> CZerocoinSpendReceipt::GetSpends()
     return vSpends;
 }
 
-void CZerocoinSpendReceipt::SetStatus(std::string strStatus, int nStatus, int nNeededSpends)
+void CZerocoinSpendReceipt::SetStatus(const std::string& strStatus, int _nStatus, int _nNeededSpends)
 {
-    strStatusMessage = strStatus;
-    this->nStatus = nStatus;
-    this->nNeededSpends = nNeededSpends;
+    strStatusMessage = std::move(strStatus);
+    this->nStatus = _nStatus;
+    this->nNeededSpends = _nNeededSpends;
 }
 
 std::string CZerocoinSpendReceipt::GetStatusMessage()

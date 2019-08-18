@@ -34,8 +34,8 @@
 
 OptionsDialog::OptionsDialog(QWidget* parent, bool enableWallet) : QDialog(parent, Qt::WindowSystemMenuHint | Qt::WindowTitleHint | Qt::WindowCloseButtonHint),
                                                                    ui(new Ui::OptionsDialog),
-                                                                   model(0),
-                                                                   mapper(0),
+                                                                   model(nullptr),
+                                                                   mapper(nullptr),
                                                                    fProxyIpValid(true)
 {
     ui->setupUi(this);

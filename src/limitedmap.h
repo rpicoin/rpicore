@@ -13,8 +13,8 @@ template <typename K, typename V>
 class limitedmap
 {
 public:
-    typedef K key_type;
-    typedef V mapped_type;
+    using key_type = K;
+    using mapped_type = V;
     typedef std::pair<const key_type, mapped_type> value_type;
     typedef typename std::map<K, V>::const_iterator const_iterator;
     typedef typename std::map<K, V>::size_type size_type;

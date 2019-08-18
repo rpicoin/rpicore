@@ -33,7 +33,7 @@ std::string CObfuScationRelay::ToString()
     return info.str();
 }
 
-bool CObfuScationRelay::Sign(std::string strSharedKey)
+bool CObfuScationRelay::Sign(const std::string& strSharedKey)
 {
     std::string strMessage = in.ToString() + out.ToString();
 
@@ -59,7 +59,7 @@ bool CObfuScationRelay::Sign(std::string strSharedKey)
     return true;
 }
 
-bool CObfuScationRelay::VerifyMessage(std::string strSharedKey)
+bool CObfuScationRelay::VerifyMessage(const std::string& strSharedKey)
 {
     std::string strMessage = in.ToString() + out.ToString();
 

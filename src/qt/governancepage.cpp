@@ -24,8 +24,8 @@
 
 GovernancePage::GovernancePage(QWidget* parent) : QWidget(parent),
                                                   ui(new Ui::GovernancePage),
-                                                  clientModel(0),
-                                                  walletModel(0)
+                                                  clientModel(nullptr),
+                                                  walletModel(nullptr)
 {
     ui->setupUi(this);
 

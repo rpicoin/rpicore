@@ -130,7 +130,7 @@ CBitcoinAddress GetAccountAddress(std::string strAccount, bool bForceNew = false
     // Check if the current key has been used
     if (account.vchPubKey.IsValid()) {
         CScript scriptPubKey = GetScriptForDestination(account.vchPubKey.GetID());
-        for (std::map<uint256, CWalletTx>::iterator it = pwalletMain->mapWallet.begin();
+        for (auto it = pwalletMain->mapWallet.begin();
              it != pwalletMain->mapWallet.end() && account.vchPubKey.IsValid();
              ++it) {
             const CWalletTx& wtx = (*it).second;
@@ -277,7 +277,7 @@ UniValue getaccount(const UniValue& params, bool fHelp)
         throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid WISPR address");
 
     std::string strAccount;
-    std::map<CTxDestination, CAddressBookData>::iterator mi = pwalletMain->mapAddressBook.find(address.Get());
+    auto mi = pwalletMain->mapAddressBook.find(address.Get());
     if (mi != pwalletMain->mapAddressBook.end() && !(*mi).second.name.empty())
         strAccount = (*mi).second.name;
     return strAccount;
@@ -475,9 +475,9 @@ UniValue listaddressgroupings(const UniValue& params, bool fHelp)
 
     UniValue jsonGroupings(UniValue::VARR);
     std::map<CTxDestination, CAmount> balances = pwalletMain->GetAddressBalances();
-    for (std::set<CTxDestination> grouping: pwalletMain->GetAddressGroupings()) {
+    for (const std::set<CTxDestination>& grouping: pwalletMain->GetAddressGroupings()) {
         UniValue jsonGrouping(UniValue::VARR);
-        for (CTxDestination address: grouping) {
+        for (const CTxDestination& address: grouping) {
             UniValue addressInfo(UniValue::VARR);
             addressInfo.push_back(CBitcoinAddress(address).ToString());
             addressInfo.push_back(ValueFromAmount(balances[address]));
@@ -588,8 +588,8 @@ UniValue getreceivedbyaddress(const UniValue& params, bool fHelp)
 
     // Tally
     CAmount nAmount = 0;
-    for (std::map<uint256, CWalletTx>::iterator it = pwalletMain->mapWallet.begin(); it != pwalletMain->mapWallet.end(); ++it) {
-        const CWalletTx& wtx = (*it).second;
+    for (auto & it : pwalletMain->mapWallet) {
+        const CWalletTx& wtx = it.second;
         if (wtx.IsCoinBase() || !IsFinalTx(wtx))
             continue;
 
@@ -640,7 +640,7 @@ UniValue getreceivedbyaccount(const UniValue& params, bool fHelp)
 
     // Tally
     CAmount nAmount = 0;
-    for (std::map<uint256, CWalletTx>::iterator it = pwalletMain->mapWallet.begin(); it != pwalletMain->mapWallet.end(); ++it) {
+    for (auto it = pwalletMain->mapWallet.begin(); it != pwalletMain->mapWallet.end(); ++it) {
         const CWalletTx& wtx = (*it).second;
         if (wtx.IsCoinBase() || !IsFinalTx(wtx))
             continue;
@@ -662,8 +662,8 @@ CAmount GetAccountBalance(CWalletDB& walletdb, const std::string& strAccount, in
     CAmount nBalance = 0;
 
     // Tally wallet transactions
-    for (std::map<uint256, CWalletTx>::iterator it = pwalletMain->mapWallet.begin(); it != pwalletMain->mapWallet.end(); ++it) {
-        const CWalletTx& wtx = (*it).second;
+    for (auto & it : pwalletMain->mapWallet) {
+        const CWalletTx& wtx = it.second;
         if (!IsFinalTx(wtx) || wtx.GetBlocksToMaturity() > 0 || wtx.GetDepthInMainChain() < 0)
             continue;
 
@@ -736,8 +736,8 @@ UniValue getbalance(const UniValue& params, bool fHelp)
         // (GetBalance() sums up all unspent TxOuts)
         // getbalance and "getbalance * 1 true" should return the same number
         CAmount nBalance = 0;
-        for (std::map<uint256, CWalletTx>::iterator it = pwalletMain->mapWallet.begin(); it != pwalletMain->mapWallet.end(); ++it) {
-            const CWalletTx& wtx = (*it).second;
+        for (auto & it : pwalletMain->mapWallet) {
+            const CWalletTx& wtx = it.second;
             if (!IsFinalTx(wtx) || wtx.GetBlocksToMaturity() > 0 || wtx.GetDepthInMainChain() < 0)
                 continue;
 
@@ -1073,7 +1073,7 @@ UniValue ListReceived(const UniValue& params, bool fByAccounts)
 
     // Tally
     std::map<CBitcoinAddress, tallyitem> mapTally;
-    for (std::map<uint256, CWalletTx>::iterator it = pwalletMain->mapWallet.begin(); it != pwalletMain->mapWallet.end(); ++it) {
+    for (auto it = pwalletMain->mapWallet.begin(); it != pwalletMain->mapWallet.end(); ++it) {
         const CWalletTx& wtx = (*it).second;
 
         if (wtx.IsCoinBase() || !IsFinalTx(wtx))
@@ -1109,7 +1109,7 @@ UniValue ListReceived(const UniValue& params, bool fByAccounts)
     for (const std::pair<CBitcoinAddress, CAddressBookData> & item: pwalletMain->mapAddressBook) {
         const CBitcoinAddress& address = item.first;
         const std::string& strAccount = item.second.name;
-        std::map<CBitcoinAddress, tallyitem>::iterator it = mapTally.find(address);
+        auto it = mapTally.find(address);
         if (it == mapTally.end() && !fIncludeEmpty)
             continue;
 
@@ -1151,14 +1151,14 @@ UniValue ListReceived(const UniValue& params, bool fByAccounts)
     }
 
     if (fByAccounts) {
-        for (std::map<std::string, tallyitem>::iterator it = mapAccountTally.begin(); it != mapAccountTally.end(); ++it) {
-            CAmount nAmount = (*it).second.nAmount;
-            int nConf = (*it).second.nConf;
-            int nBCConf = (*it).second.nBCConf;
+        for (auto & it : mapAccountTally) {
+            CAmount nAmount = it.second.nAmount;
+            int nConf = it.second.nConf;
+            int nBCConf = it.second.nBCConf;
             UniValue obj(UniValue::VOBJ);
-            if ((*it).second.fIsWatchonly)
+            if (it.second.fIsWatchonly)
                 obj.push_back(Pair("involvesWatchonly", true));
-            obj.push_back(Pair("account", (*it).first));
+            obj.push_back(Pair("account", it.first));
             obj.push_back(Pair("amount", ValueFromAmount(nAmount)));
             obj.push_back(Pair("confirmations", (nConf == std::numeric_limits<int>::max() ? 0 : nConf)));
             obj.push_back(Pair("bcconfirmations", (nBCConf == std::numeric_limits<int>::max() ? 0 : nBCConf)));
@@ -1261,7 +1261,7 @@ void ListTransactions(const CWalletTx& wtx, const std::string& strAccount, int n
                 entry.push_back(Pair("involvesWatchonly", true));
             entry.push_back(Pair("account", strSentAccount));
             MaybePushAddress(entry, s.destination);
-            std::map<std::string, std::string>::const_iterator it = wtx.mapValue.find("DS");
+            auto it = wtx.mapValue.find("DS");
             entry.push_back(Pair("category", (it != wtx.mapValue.end() && it->second == "1") ? "darksent" : "send"));
             entry.push_back(Pair("amount", ValueFromAmount(-s.amount)));
             entry.push_back(Pair("vout", s.vout));
@@ -1406,12 +1406,12 @@ UniValue listtransactions(const UniValue& params, bool fHelp)
     const CWallet::TxItems & txOrdered = pwalletMain->wtxOrdered;
 
     // iterate backwards until we have nCount items to return:
-    for (CWallet::TxItems::const_reverse_iterator it = txOrdered.rbegin(); it != txOrdered.rend(); ++it) {
+    for (auto it = txOrdered.rbegin(); it != txOrdered.rend(); ++it) {
         CWalletTx* const pwtx = (*it).second.first;
-        if (pwtx != 0)
+        if (pwtx != nullptr)
             ListTransactions(*pwtx, strAccount, 0, true, ret, filter);
         CAccountingEntry* const pacentry = (*it).second.second;
-        if (pacentry != 0)
+        if (pacentry != nullptr)
             AcentryToJSON(*pacentry, strAccount, ret);
 
         if ((int)ret.size() >= (nCount + nFrom)) break;
@@ -1425,9 +1425,9 @@ UniValue listtransactions(const UniValue& params, bool fHelp)
 
     std::vector<UniValue> arrTmp = ret.getValues();
 
-    std::vector<UniValue>::iterator first = arrTmp.begin();
+    auto first = arrTmp.begin();
     std::advance(first, nFrom);
-    std::vector<UniValue>::iterator last = arrTmp.begin();
+    auto last = arrTmp.begin();
     std::advance(last, nFrom+nCount);
 
     if (last != arrTmp.end()) arrTmp.erase(last, arrTmp.end());
@@ -1485,8 +1485,8 @@ UniValue listaccounts(const UniValue& params, bool fHelp)
             mapAccountBalances[entry.second.name] = 0;
     }
 
-    for (std::map<uint256, CWalletTx>::iterator it = pwalletMain->mapWallet.begin(); it != pwalletMain->mapWallet.end(); ++it) {
-        const CWalletTx& wtx = (*it).second;
+    for (auto & it : pwalletMain->mapWallet) {
+        const CWalletTx& wtx = it.second;
         CAmount nFee;
         std::string strSentAccount;
         std::list<COutputEntry> listReceived;
@@ -1512,7 +1512,7 @@ UniValue listaccounts(const UniValue& params, bool fHelp)
         mapAccountBalances[entry.strAccount] += entry.nCreditDebit;
 
     UniValue ret(UniValue::VOBJ);
-    for (const std::pair<std::string, CAmount> & accountBalance: mapAccountBalances) {
+    for (const auto& accountBalance: mapAccountBalances) {
         ret.push_back(Pair(accountBalance.first, ValueFromAmount(accountBalance.second)));
     }
     return ret;
@@ -1589,8 +1589,8 @@ UniValue listsinceblock(const UniValue& params, bool fHelp)
 
     UniValue transactions(UniValue::VARR);
 
-    for (std::map<uint256, CWalletTx>::iterator it = pwalletMain->mapWallet.begin(); it != pwalletMain->mapWallet.end(); it++) {
-        CWalletTx tx = (*it).second;
+    for (auto & it : pwalletMain->mapWallet) {
+        CWalletTx tx = it.second;
 
         if (depth == -1 || tx.GetDepthInMainChain(false) < depth)
             ListTransactions(tx, "*", 0, true, transactions, filter);
@@ -2303,8 +2303,8 @@ UniValue printMultiSend()
 
     if (pwalletMain->vDisabledAddresses.size() >= 1) {
         UniValue disAdd(UniValue::VOBJ);
-        for (unsigned int i = 0; i < pwalletMain->vDisabledAddresses.size(); i++) {
-            disAdd.push_back(Pair("Disabled From Sending", pwalletMain->vDisabledAddresses[i]));
+        for (const auto & vDisabledAddresse : pwalletMain->vDisabledAddresses) {
+            disAdd.push_back(Pair("Disabled From Sending", vDisabledAddresse));
         }
         ret.push_back(disAdd);
     }
@@ -2353,8 +2353,8 @@ UniValue printAddresses()
 unsigned int sumMultiSend()
 {
     unsigned int sum = 0;
-    for (unsigned int i = 0; i < pwalletMain->vMultiSend.size(); i++)
-        sum += pwalletMain->vMultiSend[i].second;
+    for (auto & i : pwalletMain->vMultiSend)
+        sum += i.second;
     return sum;
 }
 
@@ -2515,8 +2515,8 @@ UniValue multisend(const UniValue& params, bool fHelp)
         if (nPercent + sumMultiSend() > 100)
             throw JSONRPCError(RPC_INVALID_PARAMETER, "Failed to add to MultiSend vector, the sum of your MultiSend is greater than 100%");
 
-        for (unsigned int i = 0; i < pwalletMain->vMultiSend.size(); i++) {
-            if (pwalletMain->vMultiSend[i].first == strAddress)
+        for (auto & i : pwalletMain->vMultiSend) {
+            if (i.first == strAddress)
                 throw JSONRPCError(RPC_INVALID_PARAMETER, "Failed to add to MultiSend vector, cannot use the same address twice");
         }
 
@@ -2825,7 +2825,7 @@ UniValue mintzerocoin(const UniValue& params, bool fHelp)
         throw JSONRPCError(RPC_WALLET_ERROR, strError);
 
     UniValue arrMints(UniValue::VARR);
-    for (CDeterministicMint dMint : vDMints) {
+    for (const CDeterministicMint& dMint : vDMints) {
         UniValue m(UniValue::VOBJ);
         m.push_back(Pair("txid", wtx.GetHash().ToString()));
         m.push_back(Pair("value", ValueFromAmount(libzerocoin::ZerocoinDenominationToAmount(dMint.GetDenomination()))));
@@ -3027,7 +3027,7 @@ extern UniValue DoZwspSpend(const CAmount nAmount, bool fMintChange, bool fMinim
 
     CAmount nValueIn = 0;
     UniValue arrSpends(UniValue::VARR);
-    for (CZerocoinSpend spend : receipt.GetSpends()) {
+    for (const CZerocoinSpend& spend : receipt.GetSpends()) {
         UniValue obj(UniValue::VOBJ);
         obj.push_back(Pair("denomination", spend.GetDenomination()));
         obj.push_back(Pair("pubcoin", spend.GetPubCoin().GetHex()));
@@ -3040,8 +3040,7 @@ extern UniValue DoZwspSpend(const CAmount nAmount, bool fMintChange, bool fMinim
 
     CAmount nValueOut = 0;
     UniValue vout(UniValue::VARR);
-    for (unsigned int i = 0; i < wtx.vout.size(); i++) {
-        const CTxOut& txout = wtx.vout[i];
+    for (const auto & txout : wtx.vout) {
         UniValue out(UniValue::VOBJ);
         out.push_back(Pair("value", ValueFromAmount(txout.nValue)));
         nValueOut += txout.nValue;
@@ -3109,7 +3108,7 @@ UniValue resetmintzerocoin(const UniValue& params, bool fHelp)
 
     // update the meta data of mints that were marked for updating
     UniValue arrUpdated(UniValue::VARR);
-    for (CMintMeta meta : vMintsToUpdate) {
+    for (const CMintMeta& meta : vMintsToUpdate) {
         zwspTracker->UpdateState(meta);
         arrUpdated.push_back(meta.hashPubcoin.GetHex());
     }
@@ -3156,7 +3155,7 @@ UniValue resetspentzerocoin(const UniValue& params, bool fHelp)
     std::list<CZerocoinSpend> listSpends = walletdb.ListSpentCoins();
     std::list<CZerocoinSpend> listUnconfirmedSpends;
 
-    for (CZerocoinSpend spend : listSpends) {
+    for (const CZerocoinSpend& spend : listSpends) {
         CTransaction tx;
         uint256 hashBlock = 0;
         if (!GetTransaction(spend.GetTxHash(), tx, hashBlock)) {
@@ -3171,7 +3170,7 @@ UniValue resetspentzerocoin(const UniValue& params, bool fHelp)
 
     UniValue objRet(UniValue::VOBJ);
     UniValue arrRestored(UniValue::VARR);
-    for (CZerocoinSpend spend : listUnconfirmedSpends) {
+    for (const CZerocoinSpend& spend : listUnconfirmedSpends) {
         for (auto& meta : setMints) {
             if (meta.hashSerial == GetSerialHash(spend.GetSerial())) {
                 zwspTracker->SetPubcoinNotUsed(meta.hashPubcoin);
@@ -3656,7 +3655,7 @@ UniValue searchdzwsp(const UniValue& params, bool fHelp)
 
     CzWSPWallet* zwallet = pwalletMain->zwalletMain;
 
-    boost::thread_group* dzwspThreads = new boost::thread_group();
+    auto* dzwspThreads = new boost::thread_group();
     int nRangePerThread = nRange / nThreads;
 
     int nPrevThreadEnd = nCount - 1;

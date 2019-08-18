@@ -133,9 +133,9 @@ public:
     void AddTransactionsUpdated(unsigned int n);
 
     /** Affect CreateNewBlock prioritisation of transactions */
-    void PrioritiseTransaction(const uint256 hash, const std::string strHash, double dPriorityDelta, const CAmount& nFeeDelta);
-    void ApplyDeltas(const uint256 hash, double& dPriorityDelta, CAmount& nFeeDelta);
-    void ClearPrioritisation(const uint256 hash);
+    void PrioritiseTransaction(const uint256& hash, const std::string& strHash, double dPriorityDelta, const CAmount& nFeeDelta);
+    void ApplyDeltas(const uint256& hash, double& dPriorityDelta, CAmount& nFeeDelta);
+    void ClearPrioritisation(const uint256& hash);
 
     unsigned long size()
     {
@@ -148,13 +148,13 @@ public:
         return totalTxSize;
     }
 
-    bool exists(uint256 hash)
+    bool exists(const uint256& hash)
     {
         LOCK(cs);
         return (mapTx.count(hash) != 0);
     }
 
-    bool lookup(uint256 hash, CTransaction& result) const;
+    bool lookup(const uint256& hash, CTransaction& result) const;
 
     /** Estimate fee rate needed to get into the next nBlocks */
     CFeeRate estimateFee(int nBlocks) const;

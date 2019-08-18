@@ -36,14 +36,14 @@
 #include <QUrl>
 #include <QVBoxLayout>
 
-TransactionView::TransactionView(QWidget* parent) : QWidget(parent), model(0), transactionProxyModel(0),
-                                                    transactionView(0)
+TransactionView::TransactionView(QWidget* parent) : QWidget(parent), model(nullptr), transactionProxyModel(nullptr),
+                                                    transactionView(nullptr)
 {
     QSettings settings;
     // Build filter row
     setContentsMargins(0, 0, 0, 0);
 
-    QHBoxLayout* hlayout = new QHBoxLayout();
+    auto* hlayout = new QHBoxLayout();
     hlayout->setContentsMargins(0, 0, 0, 0);
 #ifdef Q_OS_MAC
     hlayout->setSpacing(5);
@@ -125,11 +125,11 @@ TransactionView::TransactionView(QWidget* parent) : QWidget(parent), model(0), t
     amountWidget->setValidator(new QDoubleValidator(0, 1e20, 8, this));
     hlayout->addWidget(amountWidget);
 
-    QVBoxLayout* vlayout = new QVBoxLayout(this);
+    auto* vlayout = new QVBoxLayout(this);
     vlayout->setContentsMargins(0, 0, 0, 0);
     vlayout->setSpacing(0);
 
-    QTableView* view = new QTableView(this);
+    auto* view = new QTableView(this);
     vlayout->addLayout(hlayout);
     vlayout->addWidget(createDateRangeWidget());
     vlayout->addWidget(view);
@@ -234,7 +234,7 @@ void TransactionView::setModel(WalletModel* model)
             for (int i = 0; i < listUrls.size(); ++i) {
                 QString host = QUrl(listUrls[i].trimmed(), QUrl::StrictMode).host();
                 if (!host.isEmpty()) {
-                    QAction* thirdPartyTxUrlAction = new QAction(host, this); // use host as menu item label
+                    auto* thirdPartyTxUrlAction = new QAction(host, this); // use host as menu item label
                     if (i == 0)
                         contextMenu->addSeparator();
                     contextMenu->addAction(thirdPartyTxUrlAction);
@@ -386,7 +386,7 @@ void TransactionView::exportClicked()
     // CSV is currently the only supported format
     QString filename = GUIUtil::getSaveFileName(this,
         tr("Export Transaction History"), QString(),
-        tr("Comma separated file (*.csv)"), NULL);
+        tr("Comma separated file (*.csv)"), nullptr);
 
     if (filename.isNull())
         return;
@@ -529,7 +529,7 @@ QWidget* TransactionView::createDateRangeWidget()
     dateRangeWidget = new QFrame();
     dateRangeWidget->setFrameStyle(QFrame::Panel | QFrame::Raised);
     dateRangeWidget->setContentsMargins(1, 1, 1, 1);
-    QHBoxLayout* layout = new QHBoxLayout(dateRangeWidget);
+    auto* layout = new QHBoxLayout(dateRangeWidget);
     layout->setContentsMargins(0, 0, 0, 0);
     layout->addSpacing(23);
     layout->addWidget(new QLabel(tr("Range:")));
@@ -593,7 +593,7 @@ void TransactionView::resizeEvent(QResizeEvent* event)
 bool TransactionView::eventFilter(QObject* obj, QEvent* event)
 {
     if (event->type() == QEvent::KeyPress) {
-        QKeyEvent* ke = static_cast<QKeyEvent*>(event);
+        auto* ke = static_cast<QKeyEvent*>(event);
         if (ke->key() == Qt::Key_C && ke->modifiers().testFlag(Qt::ControlModifier)) {
             QModelIndex i = this->transactionView->currentIndex();
             if (i.isValid() && i.column() == TransactionTableModel::Amount) {

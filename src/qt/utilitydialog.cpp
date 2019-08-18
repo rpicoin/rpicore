@@ -152,7 +152,7 @@ void HelpMessageDialog::on_okButton_accepted()
 /** "Shutdown" window */
 ShutdownWindow::ShutdownWindow(QWidget* parent, Qt::WindowFlags f) : QWidget(parent, f)
 {
-    QVBoxLayout* layout = new QVBoxLayout();
+    auto* layout = new QVBoxLayout();
     layout->addWidget(new QLabel(
         tr("WISPR Core is shutting down...") + "<br /><br />" +
         tr("Do not shut down the computer until this window disappears.")));

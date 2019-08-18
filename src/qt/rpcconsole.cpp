@@ -256,11 +256,11 @@ void RPCExecutor::request(const QString& command)
 
 RPCConsole::RPCConsole(QWidget* parent) : QDialog(parent, Qt::WindowSystemMenuHint | Qt::WindowTitleHint | Qt::WindowCloseButtonHint),
                                           ui(new Ui::RPCConsole),
-                                          clientModel(0),
+                                          clientModel(nullptr),
                                           historyPtr(0),
                                           cachedNodeid(-1),
-                                          peersTableContextMenu(0),
-                                          banTableContextMenu(0)
+                                          peersTableContextMenu(nullptr),
+                                          banTableContextMenu(nullptr)
 {
     ui->setupUi(this);
     GUIUtil::restoreWindowGeometry("nRPCConsoleWindow", this->size(), this);
@@ -344,7 +344,7 @@ bool RPCConsole::eventFilter(QObject* obj, QEvent* event)
 {
     if (event->type() == QEvent::KeyPress) // Special key handling
     {
-        QKeyEvent* keyevt = static_cast<QKeyEvent*>(event);
+        auto* keyevt = static_cast<QKeyEvent*>(event);
         int key = keyevt->key();
         Qt::KeyboardModifiers mod = keyevt->modifiers();
         switch (key) {
@@ -438,7 +438,7 @@ void RPCConsole::setClientModel(ClientModel* model)
         // Add a signal mapping to allow dynamic context menu arguments.
         // We need to use int (instead of int64_t), because signal mapper only supports
         // int or objects, which is okay because max bantime (1 year) is < int_max.
-        QSignalMapper* signalMapper = new QSignalMapper(this);
+        auto* signalMapper = new QSignalMapper(this);
         signalMapper->setMapping(banAction1h, 60*60);
         signalMapper->setMapping(banAction24h, 60*60*24);
         signalMapper->setMapping(banAction7d, 60*60*24*7);
@@ -735,8 +735,8 @@ void RPCConsole::browseHistory(int offset)
 
 void RPCConsole::startExecutor()
 {
-    QThread* thread = new QThread;
-    RPCExecutor* executor = new RPCExecutor();
+    auto* thread = new QThread;
+    auto* executor = new RPCExecutor();
     executor->moveToThread(thread);
 
     // Replies from executor object must go to this object
@@ -865,7 +865,7 @@ void RPCConsole::peerLayoutChanged()
     if (!clientModel || !clientModel->getPeerTableModel())
         return;
 
-    const CNodeCombinedStats* stats = NULL;
+    const CNodeCombinedStats* stats = nullptr;
     bool fUnselect = false;
     bool fReselect = false;
 

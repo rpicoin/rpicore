@@ -36,7 +36,7 @@ class GovernancePage : public QWidget
     Q_OBJECT
 
 public:
-    explicit GovernancePage(QWidget* parent = 0);
+    explicit GovernancePage(QWidget* parent = nullptr);
     ~GovernancePage();
 
     void setClientModel(ClientModel* clientModel);

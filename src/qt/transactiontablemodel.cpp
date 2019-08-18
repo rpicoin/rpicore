@@ -25,6 +25,7 @@
 #include <QDebug>
 #include <QIcon>
 #include <QList>
+#include <utility>
 
 // Amount column is right-aligned it contains numbers
 static int column_alignments[] = {
@@ -526,7 +527,7 @@ QVariant TransactionTableModel::data(const QModelIndex& index, int role) const
 {
     if (!index.isValid())
         return QVariant();
-    TransactionRecord* rec = static_cast<TransactionRecord*>(index.internalPointer());
+    auto* rec = static_cast<TransactionRecord*>(index.internalPointer());
 
     switch (role) {
     case Qt::DecorationRole:
@@ -678,7 +679,7 @@ void TransactionTableModel::updateDisplayUnit()
 struct TransactionNotification {
 public:
     TransactionNotification() {}
-    TransactionNotification(uint256 hash, ChangeType status, bool showTransaction) : hash(hash), status(status), showTransaction(showTransaction) {}
+    TransactionNotification(uint256 hash, ChangeType status, bool showTransaction) : hash(std::move(hash)), status(status), showTransaction(showTransaction) {}
 
     void invoke(QObject* ttm)
     {

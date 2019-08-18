@@ -16,6 +16,7 @@
 #include "timedata.h"
 
 #include <list>
+#include <utility>
 
 class CTransaction;
 
@@ -26,8 +27,8 @@ public:
     uint256 hash;
     uint32_t n;
 
-    COutPoint() { SetNull(); }
-    COutPoint(uint256 hashIn, uint32_t nIn) { hash = hashIn; n = nIn; }
+    COutPoint() { hash.SetNull(); n = (uint32_t) -1; }
+    COutPoint(const uint256& hashIn, uint32_t nIn) { hash = std::move(hashIn); n = nIn; }
 
     ADD_SERIALIZE_METHODS;
 
@@ -79,8 +80,8 @@ public:
         nSequence = std::numeric_limits<unsigned int>::max();
     }
 
-    explicit CTxIn(COutPoint prevoutIn, CScript scriptSigIn=CScript(), uint32_t nSequenceIn=std::numeric_limits<unsigned int>::max());
-    CTxIn(uint256 hashPrevTx, uint32_t nOut, CScript scriptSigIn=CScript(), uint32_t nSequenceIn=std::numeric_limits<uint32_t>::max());
+    explicit CTxIn(const COutPoint& prevoutIn, const CScript& scriptSigIn=CScript(), uint32_t nSequenceIn=std::numeric_limits<unsigned int>::max());
+    CTxIn(const uint256& hashPrevTx, uint32_t nOut, const CScript& scriptSigIn=CScript(), uint32_t nSequenceIn=std::numeric_limits<uint32_t>::max());
     CTxIn(const libzerocoin::CoinSpend& spend, libzerocoin::CoinDenomination denom);
 
     ADD_SERIALIZE_METHODS;
@@ -129,10 +130,12 @@ public:
 
     CTxOut()
     {
-        SetNull();
+        nValue = -1;
+        scriptPubKey.clear();
+        nRounds = -10; // an initial value, should be no way to get this by calculations
     }
 
-    CTxOut(const CAmount& nValueIn, CScript scriptPubKeyIn);
+    CTxOut(const CAmount& nValueIn, const CScript& scriptPubKeyIn);
 
     ADD_SERIALIZE_METHODS;
 
@@ -167,7 +170,7 @@ public:
 
     uint256 GetHash() const;
 
-    bool IsDust(CFeeRate minRelayTxFee) const
+    bool IsDust(const CFeeRate& minRelayTxFee) const
     {
         // "Dust" is defined in terms of CTransaction::minRelayTxFee, which has units uwsp-per-kilobyte.
         // If you'd pay more than 1/3 in fees to spend something, then we consider it dust.
@@ -236,16 +239,15 @@ public:
     ADD_SERIALIZE_METHODS;
 
     template <typename Stream, typename Operation>
-    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
+    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int _nVersion) {
         READWRITE(*const_cast<int32_t*>(&this->nVersion));
-        nVersion = this->nVersion;
-        if(nVersion < 2){
+        _nVersion = this->nVersion;
+        if(_nVersion < 2){
             READWRITE(*const_cast<unsigned int *>(&nTime));
         }
         READWRITE(*const_cast<std::vector<CTxIn>*>(&vin));
         READWRITE(*const_cast<std::vector<CTxOut>*>(&vout));
         READWRITE(*const_cast<uint32_t*>(&nLockTime));
-//        READWRITE(*const_cast<uint256*>(&hash));
         if (ser_action.ForRead()){
             *const_cast<uint256*>(&hash) = SerializeHash(*this);
         }
@@ -284,7 +286,7 @@ public:
     CAmount GetZerocoinSpent() const;
     int GetZerocoinMintCount() const;
 
-    bool UsesUTXO(const COutPoint out);
+    bool UsesUTXO(const COutPoint& out);
     std::list<COutPoint> GetOutPoints() const;
 
     bool IsCoinBase() const
@@ -322,10 +324,10 @@ struct CMutableTransaction
     ADD_SERIALIZE_METHODS;
 
     template <typename Stream, typename Operation>
-    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
+    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int _nVersion) {
         READWRITE(this->nVersion);
-        nVersion = this->nVersion;
-        if(nVersion < 2){
+        _nVersion = this->nVersion;
+        if(_nVersion < 2){
             READWRITE(nTime);
         }
         READWRITE(vin);

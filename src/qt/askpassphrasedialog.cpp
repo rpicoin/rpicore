@@ -213,7 +213,7 @@ bool AskPassphraseDialog::event(QEvent* event)
 {
     // Detect Caps Lock key press.
     if (event->type() == QEvent::KeyPress) {
-        QKeyEvent* ke = static_cast<QKeyEvent*>(event);
+        auto* ke = static_cast<QKeyEvent*>(event);
         if (ke->key() == Qt::Key_CapsLock) {
             fCapsLock = !fCapsLock;
         }
@@ -235,7 +235,7 @@ bool AskPassphraseDialog::eventFilter(QObject* object, QEvent* event)
      * Shift key is not down and the result is an upper case character.
      */
     if (event->type() == QEvent::KeyPress) {
-        QKeyEvent* ke = static_cast<QKeyEvent*>(event);
+        auto* ke = static_cast<QKeyEvent*>(event);
         QString str = ke->text();
         if (str.length() != 0) {
             const QChar* psz = str.unicode();

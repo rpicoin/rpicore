@@ -40,7 +40,13 @@ public:
 
     CBlockHeader()
     {
-        SetNull();
+        nVersion = CBlockHeader::CURRENT_VERSION;
+        hashPrevBlock.SetNull();
+        hashMerkleRoot.SetNull();
+        nTime = 0;
+        nBits = 0;
+        nNonce = 0;
+        nAccumulatorCheckpoint = 0;
     }
 
     ADD_SERIALIZE_METHODS;
@@ -91,7 +97,7 @@ public:
 class CBlockGetHeader : public CBlockHeader
 {
 public:
-    CBlockGetHeader() {};
+    CBlockGetHeader() = default;;
     CBlockGetHeader(const CBlockHeader &header) { *((CBlockHeader*)this) = header; };
     std::vector<CTransaction> vtx;
 
@@ -121,7 +127,7 @@ public:
         SetNull();
     }
 
-    CBlock(const CBlockHeader &header)
+    explicit CBlock(const CBlockHeader &header)
     {
         SetNull();
         *((CBlockHeader*)this) = header;
@@ -206,9 +212,9 @@ struct CBlockLocator
 {
     std::vector<uint256> vHave;
 
-    CBlockLocator() {}
+    CBlockLocator() = default;
 
-    CBlockLocator(const std::vector<uint256>& vHaveIn)
+    explicit CBlockLocator(const std::vector<uint256>& vHaveIn)
     {
         vHave = vHaveIn;
     }

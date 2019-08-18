@@ -105,7 +105,7 @@ void FreespaceChecker::check()
 
 Intro::Intro(QWidget* parent) : QDialog(parent, Qt::WindowSystemMenuHint | Qt::WindowTitleHint | Qt::WindowCloseButtonHint),
                                 ui(new Ui::Intro),
-                                thread(0),
+                                thread(nullptr),
                                 signalled(false)
 {
     ui->setupUi(this);
@@ -248,7 +248,7 @@ void Intro::on_dataDirCustom_clicked()
 void Intro::startThread()
 {
     thread = new QThread(this);
-    FreespaceChecker* executor = new FreespaceChecker(this);
+    auto* executor = new FreespaceChecker(this);
     executor->moveToThread(thread);
 
     connect(executor, SIGNAL(reply(int, QString, quint64)), this, SLOT(setStatus(int, QString, quint64)));
