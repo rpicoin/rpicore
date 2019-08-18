@@ -131,13 +131,12 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
     // -regtest only: allow overriding block.nVersion with
     // -blockversion=N to test forking scenarios
     if (Params().MineBlocksOnDemand()) {
-        if (fZerocoinActive){
+        if (fZerocoinActive) {
             pblock->nVersion = 8;
-        }else{
+        } else {
             pblock->nVersion = 7;
         }
 
-    if (Params().MineBlocksOnDemand()) {
         pblock->nVersion = GetArg("-blockversion", pblock->nVersion);
     }
 
