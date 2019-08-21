@@ -2380,7 +2380,6 @@ bool CWallet::CreateCoinStake(
 
     CAmount nCredit;
     CScript scriptPubKeyKernel;
-    bool newProtocolStart = chainActive.Height() + 1 >= Params().NEW_PROTOCOLS_STARTHEIGHT();
     bool fKernelFound = false;
     int nAttempts = 0;
     for (std::unique_ptr<CStakeInput>& stakeInput : listInputs) {
