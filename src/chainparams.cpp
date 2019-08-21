@@ -222,7 +222,7 @@ public:
         fMineBlocksOnDemand = false;
         consensus.fSkipProofOfWorkCheck = false;
         fTestnetToBeDeprecatedFieldRPC = false;
-        fHeadersFirstSyncingActive = false;
+        fHeadersFirstSyncingActive = true;
 
         consensus.nPoolMaxTransactions = 3;
         consensus.nBudgetCycleBlocks = 43200; //!< Amount of blocks in a months period of time (using 1 minutes per) = (60*24*30)
