@@ -1,5 +1,5 @@
 ---
-name: "rpicoin-linux-0.4.1"
+name: "rpicoin-linux-0.4.2"
 enable_cache: true
 distro: "ubuntu"
 suites:
